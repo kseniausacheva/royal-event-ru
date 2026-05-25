@@ -11,3 +11,7 @@ test-results/
 playwright-report/
 # Vercel
 .vercel
+# Claude Code internal worktrees
+.claude/
+# reg.ru deploy artifacts
+site*.zip

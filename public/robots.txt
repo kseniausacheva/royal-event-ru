@@ -1,4 +1,31 @@
+# robots.txt для royaleventandmice.ru
+# Russian MICE site — основная аудитория: Россия (Москва) + СНГ
+
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /contact.php
+Disallow: /*?*utm_
+Disallow: /*?*ym_
+Disallow: /*?*gclid
+Disallow: /*?*fbclid
 
-Sitemap: https://www.royaleventandmice.com/sitemap.xml
+# Яндекс — отдельная секция с Host и Clean-param
+User-agent: Yandex
+Allow: /
+Disallow: /api/
+Disallow: /contact.php
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ym_uid&gclid&fbclid
+Host: royaleventandmice.ru
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /contact.php
+
+# Картинки Яндекса (отдельный краулер) — разрешаем индексацию изображений
+User-agent: YandexImages
+Allow: /
+
+Sitemap: https://royaleventandmice.ru/sitemap.xml
