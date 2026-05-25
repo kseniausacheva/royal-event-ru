@@ -22,6 +22,14 @@
  *      { type: 'list', items: ['пункт 1', 'пункт 2'], ordered: false },
  *      { type: 'divider' },
  *      { type: 'callout', title: 'Что делать:', text: '...', variant: 'info'|'warning'|'success' },
+ *      { type: 'video', url: 'https://youtu.be/XXX | /videos/foo.mp4', title: 'alt', caption: 'опц.' },
+ *      { type: 'table', headers: ['Кол.1', 'Кол.2'], rows: [['а','б'],['в','г']], caption: 'опц.' },
+ *      { type: 'diagram', svg: '<svg>...</svg>', title: 'alt', caption: 'опц.' },
+ *      { type: 'comparison',
+ *        title: 'Что in / что out',
+ *        left:  { title: 'OUT', items: ['пункт', 'пункт'] },
+ *        right: { title: 'IN',  items: ['пункт', 'пункт'] },
+ *      },
  *    ]
  *
  * Описание полей:
@@ -37,6 +45,233 @@
 
 /** @type {BlogArticle[]} */
 export const blogArticles = [
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    id: 'top-8-tendencii-kejteringa-2026',
+    datePublished: '2026-05-27',
+    image: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=1600',
+    ru: {
+      title: 'Топ-8 тенденций кейтеринга в 2026 году',
+      category: 'Кейтеринг',
+      date: '27 Мая, 2026',
+      excerpt: 'От plant-forward меню и action stations до AI-планирования и съедобной упаковки — что меняется в кейтеринге для корпоративных мероприятий, и почему «обычный фуршет» уже не работает.',
+      content: [
+        { type: 'paragraph', text: 'Кейтеринг на корпоративном мероприятии перестал быть «технической паузой между сессиями». В 2026 году еда — это полноценный продукт мероприятия: то, что обсуждают в кулуарах, постят в соцсети и упоминают в обратной связи. Организаторы, которые подходят к меню так же стратегически, как к контенту сессий, получают на выходе совершенно другой уровень впечатлений у гостей. Разбираем восемь главных трендов, которые определяют MICE-кейтеринг прямо сейчас.' },
+
+        { type: 'stat', number: '78%', label: 'участников отраслевых опросов называют качество кейтеринга одним из ТОП-3 факторов общей оценки мероприятия', source: 'обобщённая статистика индустрии MICE' },
+
+        { type: 'heading', text: '1. Sustainable: устойчивый кейтеринг как базовое требование', level: 2 },
+        { type: 'paragraph', text: 'Sustainability перестала быть «галочкой в брифе» и стала обязательным условием при выборе поставщика. Корпоративные клиенты, особенно с ESG-стратегией, требуют конкретики: откуда мясо, какие продукты местные, что происходит с пищевыми отходами после мероприятия, какая упаковка используется.' },
+        { type: 'image', url: 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&q=80&w=1600', alt: 'Sustainable catering — местные продукты и сезонные ингредиенты на корпоративном мероприятии', caption: 'Locally-sourced, seasonal ingredients — основа sustainable-меню 2026 года' },
+        { type: 'paragraph', text: 'Конкретные практики, которые становятся стандартом: локальные продукты в радиусе 200 км от площадки, сезонные ингредиенты вместо круглогодичных, отказ от одноразового пластика в пользу биоразлагаемой или съедобной упаковки (рисовая бумага, пресс-формы из овощей), компостирование органических отходов, передача излишков еды партнёрским фудбанкам.' },
+        {
+          type: 'callout',
+          variant: 'success',
+          title: 'Практический эффект',
+          text: 'Sustainable-меню обычно на 10–15% дороже обычного, но эта разница окупается двумя способами: positive PR в отчёте мероприятия и право использовать sustainability как маркетинговый аргумент перед клиентом. Многие площадки сами субсидируют переход на eco-практики ради сертификации.',
+        },
+
+        { type: 'heading', text: '2. Action stations: театр на тарелке', level: 2 },
+        { type: 'paragraph', text: 'Action stations — это интерактивные кулинарные точки, где шеф готовит блюдо в реальном времени на глазах у гостя. Pasta-station, где паста выливается из кругa сыра пармезан. Ramen-станция, где бульон наливают из медной кеттла. Sushi-bar, где роллы крутят прямо перед тобой. Это уже не просто еда — это шоу.' },
+        { type: 'video', url: '/videos/ewa-horizontal.mp4', title: 'Атмосфера корпоративного выезда — пример качественного фуд-сервиса', caption: 'Пример: атмосфера корпоративного выезда EWA Product в Шарм-эль-Шейхе. Action stations работали в формате «гость подходит — шеф готовит индивидуальную порцию»' },
+        { type: 'paragraph', text: 'Зачем это организатору, кроме «вау-эффекта»: action stations естественно растягивают приём пищи и создают зоны общения вокруг себя. Гость подошёл за порцией — рядом ещё двое-трое — завязался разговор. Это работает на нетворкинг сильнее, чем любые специальные icebreakers.' },
+        { type: 'quote', text: 'Action station — это не про еду. Это про микровстречи, которые случаются вокруг неё. Хороший шеф у плиты ценнее, чем посредственный спикер на сцене — он работает с гостем один на один, и эта memory долго не уходит.', author: 'Команда Royal Event Group' },
+
+        { type: 'heading', text: '3. Plant-forward: растительное по умолчанию', level: 2 },
+        { type: 'paragraph', text: 'Раньше веганская опция была «галочкой в анкете», и её получали 1–2 человека из 100. В 2026 году картина перевернулась: растительные блюда становятся основой меню, а мясо — одной из опций. Это не идеология — это реакция на запрос. Гости устают от тяжёлых мясных шведских столов; шеф-повара уважают растительные блюда как полноценное гастрономическое направление.' },
+        {
+          type: 'diagram',
+          title: 'Рост доли растительных блюд в меню корпоративных мероприятий 2020–2026',
+          svg: `<svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" preserveAspectRatio="xMidYMid meet">
+  <text x="300" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#1a1a1a">Доля растительных блюд в MICE-меню</text>
+  <line x1="60" y1="50" x2="60" y2="270" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="60" y1="270" x2="560" y2="270" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="60" y1="50" x2="560" y2="50" stroke="#f1f5f9" stroke-dasharray="3,3"/>
+  <line x1="60" y1="116" x2="560" y2="116" stroke="#f1f5f9" stroke-dasharray="3,3"/>
+  <line x1="60" y1="182" x2="560" y2="182" stroke="#f1f5f9" stroke-dasharray="3,3"/>
+  <line x1="60" y1="248" x2="560" y2="248" stroke="#f1f5f9" stroke-dasharray="3,3"/>
+  <text x="50" y="55" text-anchor="end" font-family="system-ui" font-size="11" fill="#64748b">50%</text>
+  <text x="50" y="121" text-anchor="end" font-family="system-ui" font-size="11" fill="#64748b">37%</text>
+  <text x="50" y="187" text-anchor="end" font-family="system-ui" font-size="11" fill="#64748b">25%</text>
+  <text x="50" y="253" text-anchor="end" font-family="system-ui" font-size="11" fill="#64748b">12%</text>
+  <text x="50" y="275" text-anchor="end" font-family="system-ui" font-size="11" fill="#64748b">0</text>
+  <rect x="105" y="217" width="60" height="53" fill="#F72585" fill-opacity="0.35" rx="4"/>
+  <text x="135" y="208" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#1a1a1a">12%</text>
+  <text x="135" y="293" text-anchor="middle" font-family="system-ui" font-size="11" fill="#64748b">2020</text>
+  <rect x="225" y="190" width="60" height="80" fill="#F72585" fill-opacity="0.55" rx="4"/>
+  <text x="255" y="181" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#1a1a1a">18%</text>
+  <text x="255" y="293" text-anchor="middle" font-family="system-ui" font-size="11" fill="#64748b">2022</text>
+  <rect x="345" y="151" width="60" height="119" fill="#F72585" fill-opacity="0.75" rx="4"/>
+  <text x="375" y="142" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#1a1a1a">27%</text>
+  <text x="375" y="293" text-anchor="middle" font-family="system-ui" font-size="11" fill="#64748b">2024</text>
+  <rect x="465" y="94" width="60" height="176" fill="#F72585" rx="4"/>
+  <text x="495" y="85" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="700" fill="#1a1a1a">40%</text>
+  <text x="495" y="293" text-anchor="middle" font-family="system-ui" font-size="11" fill="#64748b">2026</text>
+</svg>`,
+          caption: 'За шесть лет доля растительных блюд в корпоративных меню выросла в три раза. К 2028 году ожидается выход на 50%+',
+        },
+
+        { type: 'heading', text: '4. Hyper-personalization: меню под каждого', level: 2 },
+        { type: 'paragraph', text: 'Допустим, у вас 200 гостей. У 18 — непереносимость глютена, у 24 — лактозы, у 9 — аллергия на орехи, у 12 — кошерное питание, у 7 — халяль, у 31 — веганство. Раньше это решалось одной строчкой «Vegan menu available on request». Сейчас — индивидуальной плашкой на каждом блюде с маркерами аллергенов, мобильным приложением, где гость заранее указал предпочтения, и кухней, которая готовит персонализированные тарелки.' },
+        { type: 'paragraph', text: 'Цифровые инструменты для этого уже доступны: системы вроде Tripleseat, BizBash или внутренние event-приложения позволяют собрать ВСЕ диетические данные за 2 недели до мероприятия и автоматически передать их на кухню. Шеф получает чёткий список: 12 веганских боулов на стол 4, 9 безглютеновых десертов в зону кофе-брейка, 7 халяль-наборов в lunch-box.' },
+        {
+          type: 'callout',
+          variant: 'info',
+          title: 'Маленькая деталь, большой эффект',
+          text: 'Карточки с маркировкой аллергенов и диетических свойств у каждого блюда (V — vegan, GF — gluten free, без лактозы, без свинины) — это не перфекционизм. Это +15% к оценке мероприятия в анкетах обратной связи. Гость с особенностями питания чувствует уважение, а остальные просто узнают что едят.',
+        },
+
+        { type: 'heading', text: '5. Cultural authenticity: локальная кухня без туристического акцента', level: 2 },
+        { type: 'paragraph', text: 'Раньше «египетская тематика» на мероприятии в Шарм-эль-Шейхе означала кускус и хумус, приготовленные европейским шефом по «универсальной» рецептуре. В 2026 году это уже неинтересно. Гости ожидают аутентичности: рецепты от местных шеф-поваров, ингредиенты с локального рынка, традиционные техники приготовления (тажин, бедуинский ужин в пустыне, рыба на углях у Красного моря).' },
+        { type: 'image', url: 'https://images.unsplash.com/photo-1605490120152-d56f6dc3f23f?auto=format&fit=crop&q=80&w=1600', alt: 'Аутентичная региональная кухня — бедуинский ужин в пустыне', caption: 'Бедуинский ужин — пример experiential catering с настоящей региональной кухней' },
+        { type: 'paragraph', text: 'Это работает на двух уровнях. Во-первых, аутентичная локальная еда запоминается лучше — она часть культурного опыта поездки. Во-вторых, организатор может рассказать историю каждого блюда: откуда специи, как готовили предки, кто из местных шефов это делал. Storytelling вокруг еды превращает кейтеринг в самостоятельный элемент программы.' },
+
+        { type: 'heading', text: '6. Functional food: еда, которая работает', level: 2 },
+        { type: 'paragraph', text: 'Конференция с плотной программой — это умственная работа на пределе. Тяжёлый кейтеринг с обильной выпечкой и сладкой газировкой даёт быстрый скачок энергии и резкий спад через час. К концу дня аудитория полусонная. Functional food решает эту проблему: продукты подбираются по их влиянию на когнитивную активность.' },
+        {
+          type: 'list',
+          items: [
+            'Матча-латте — стабильная энергия 3–4 часа без резкого спада (в отличие от эспрессо).',
+            'Чиа-пудинги — омега-3 и клетчатка, поддерживают концентрацию.',
+            'Шоты из имбиря и куркумы — противовоспалительный эффект, иммунитет.',
+            'Адаптогены: ашваганда, родиола — снижение стресса перед презентацией.',
+            'Орехово-фруктовые миксы вместо печенья — белок + сложные углеводы.',
+            'Smoothie-bar с шпинатом, бананом, ягодами — витамины + энергия после обеда.',
+          ],
+        },
+        { type: 'paragraph', text: 'Wellness-меню стало нормой для индустриальных конференций (Tech, Pharma, Finance), где аудитория сама следит за здоровьем и ожидает того же от организатора.' },
+
+        { type: 'heading', text: '7. Instagram-worthy: подача как визуальное событие', level: 2 },
+        { type: 'paragraph', text: 'Если еда не годится в Stories — значит её плохо подали. Звучит цинично, но реальность 2026 года такова: каждое мероприятие выкладывается в соцсети участниками, и визуальная подача блюд напрямую влияет на охват вашего бренда. Хорошее фото гала-ужина в Instagram у одного делегата с 10 000 подписчиков — это бесплатный охват, который не купить рекламой.' },
+        { type: 'image', url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=1600', alt: 'Эстетичная подача десертов на корпоративном мероприятии', caption: 'Визуальная подача = бесплатный PR в соцсетях участников' },
+        { type: 'paragraph', text: 'Что работает: цветовые контрасты в тарелке (зелёное + розовое + золотое), необычные текстуры (мраморные доски, дым жидкого азота, золотая фольга), мини-форматы (verrines, тапасы, амюз-буши), геометрия (sphere-формы, призмы шоколада), сезонные цветы как украшение. Минимализм и чёткие цвета — лучшая основа для фото.' },
+
+        { type: 'heading', text: '8. Tech-enabled: AI на службе кейтеринга', level: 2 },
+        { type: 'paragraph', text: 'Технологии меняют не только подачу, но и backend кейтеринга. Системы умного инвентаря отслеживают потребление в реальном времени и сигналят шефу когда заканчивается тот или иной снэк. AI-планировщики меню анализируют историю мероприятий клиента и его аудитории, предлагают оптимальный баланс блюд. QR-коды на каждой тарелке открывают полный состав с аллергенами на 5 языках. Smart-роботы доставляют тарелки к столам в гала-форматах с 500+ гостей.' },
+        { type: 'paragraph', text: 'Для организатора это означает три практических плюса: меньше пищевых отходов (умный инвентарь), точный расчёт бюджета (AI-планировщик), и снижение риска ошибок с аллергиями (QR-коды).' },
+
+        { type: 'divider' },
+
+        { type: 'heading', text: 'Сравнение форматов кейтеринга в 2026 году', level: 2 },
+        { type: 'paragraph', text: 'Выбор формата напрямую влияет на бюджет, логистику и впечатления гостей. Сводная таблица — где какой формат уместен.' },
+        {
+          type: 'table',
+          headers: ['Формат', 'Стоимость на персону (USD)', 'Wow-фактор', 'Логистика', 'Когда выбирать'],
+          rows: [
+            ['Фуршет / шведский стол', '25–50', 'Средний', 'Простая', 'Нетворкинг 100+ человек, кофе-брейки'],
+            ['Сидячий ужин (plated)', '80–200', 'Высокий', 'Сложная', 'Гала, VIP-приёмы, до 300 гостей'],
+            ['Family-style (общие блюда)', '50–90', 'Высокий', 'Средняя', 'Камерные ужины 20–80 человек'],
+            ['Action stations', '60–120', 'Очень высокий', 'Сложная', 'Премиум-мероприятия 50–200 гостей'],
+            ['Кофе-станция с бариста', '8–15', 'Низкий', 'Простая', 'Дополнение к деловой программе'],
+            ['Late-night sweet bar', '15–30', 'Средний', 'Простая', 'Финальный аккорд после гала'],
+          ],
+          caption: 'Цены ориентировочные для премиум-уровня в Египте/ОАЭ, без учёта алкоголя и сервисного сбора',
+        },
+
+        { type: 'divider' },
+
+        {
+          type: 'comparison',
+          title: 'Что OUT и что IN в кейтеринге 2026',
+          left: {
+            title: 'OUT — больше не работает',
+            items: [
+              'Тяжёлые мясные шведские столы как основа',
+              'Одинаковое меню «для всех» без диетических опций',
+              'Пластиковые тарелки, стаканчики и приборы',
+              'Печенье + газировка на кофе-брейках',
+              'Безликий buffet без storytelling',
+              'Игнорирование Рамадана и местных праздников',
+              'Презентация еды «на дешёвых пластиковых подносах»',
+              'Шеф-повар как невидимая фигура за кулисами',
+            ],
+          },
+          right: {
+            title: 'IN — становится стандартом',
+            items: [
+              'Plant-forward основное меню с мясом как опцией',
+              'Hyper-personalization по диетическим анкетам',
+              'Биоразлагаемая / съедобная упаковка',
+              'Smoothie + матча + functional snacks',
+              'Action stations с chef-storytelling',
+              'Учёт религиозного и культурного контекста',
+              'Эстетика Instagram-worthy — контрасты, текстуры, минимализм',
+              'Шеф в зале, готовит и общается с гостями',
+            ],
+          },
+        },
+
+        { type: 'heading', text: 'Бюджеты и реалистичные ожидания', level: 2 },
+        { type: 'paragraph', text: 'Качественный кейтеринг 2026 года стоит дороже, чем «корпоратив 2015». Но разрыв сокращается за счёт двух факторов: action stations и plant-forward позиции часто дешевле в производстве, чем мясные plated-блюда; технологические решения снижают потери на 15–25%.' },
+        { type: 'stat', number: '$45–75', label: 'средний бюджет качественного кейтеринга на персону для конференции среднего уровня в 2026 году (без алкоголя и сервиса)', source: 'опыт Royal Event Group, Египет/ОАЭ' },
+
+        { type: 'heading', text: 'Чек-лист для организатора', level: 2 },
+        {
+          type: 'list',
+          items: [
+            'За 30 дней: разослать диетические анкеты делегатам, собрать ответы.',
+            'За 21 день: согласовать sustainable-практики с площадкой (источники продуктов, упаковка).',
+            'За 14 дней: food tasting с шеф-поваром, утверждение меню по блокам (кофе-брейк, обед, гала, late-night).',
+            'За 7 дней: финальная маркировка блюд с аллергенами, заказ растительных альтернатив, проверка action-station оборудования.',
+            'День X-1: технический прогон action stations, проверка smart-инвентаря, брифинг персонала.',
+            'День X: фотограф с food-фокусом для контента в соцсети, координация QR-кодов для гостей.',
+          ],
+        },
+
+        { type: 'heading', text: 'Вывод', level: 2 },
+        { type: 'paragraph', text: 'Кейтеринг в 2026 году — это не «технический момент в программе», а полноценный продукт мероприятия. От него зависит обратная связь, фотоконтент в соцсетях, энергия аудитории на сессиях и долгосрочная репутация бренда-организатора.' },
+        { type: 'paragraph', text: 'Royal Event Group работает с проверенными кейтеринговыми партнёрами в Египте, ОАЭ и России. Мы проектируем меню под формат мероприятия и аудиторию — от plant-forward бизнес-завтраков до action-stations гала на 500 человек. Если планируете корпоративное мероприятие и хотите, чтобы про еду говорили — поговорите с нами на этапе концепции, а не за две недели до даты.' },
+      ],
+    },
+    en: {
+      title: 'Top 8 Catering Trends in 2026',
+      category: 'Catering',
+      date: 'May 27, 2026',
+      excerpt: 'From plant-forward menus and action stations to AI planning and edible packaging — what is changing in corporate event catering, and why a "regular buffet" no longer works.',
+      content: `Catering at corporate events is no longer "a technical pause between sessions." In 2026, food is a full-fledged event product: what people discuss in the hallways, post to social media, and mention in feedback. Organizers who approach the menu as strategically as session content get a completely different level of attendee experience.
+
+We break down the eight main trends shaping MICE catering right now.
+
+1. Sustainable catering as a baseline requirement
+
+Sustainability is no longer a "checkbox in the brief" but a mandatory condition when choosing a supplier. Corporate clients, especially those with ESG strategy, demand specifics: where does the meat come from, which products are local, what happens to food waste after the event, what packaging is used.
+
+Standard practices in 2026: local ingredients within 200 km of the venue, seasonal over year-round, no single-use plastic in favor of biodegradable or edible packaging, composting organic waste, donating excess food to partner food banks.
+
+2. Action stations: theatre on a plate
+
+Action stations — interactive culinary points where a chef prepares dishes in real time in front of the guest. Pasta-station with pasta poured from a wheel of Parmesan. Ramen-station where broth is served from a copper kettle. Sushi-bar where rolls are made right in front of you.
+
+Why this matters beyond the "wow factor": action stations naturally extend meal time and create conversation zones around them. Guests come for a portion — two or three others are nearby — a conversation starts. This works for networking better than any specialized icebreakers.
+
+3. Plant-forward by default
+
+Vegan options used to be a "checkbox in the form" picked up by 1–2 people out of 100. In 2026 the picture has flipped: plant-based dishes become the menu foundation, and meat is one of the options. This isn't ideology — it's a response to demand. Guests are tired of heavy meat buffets; chefs respect plant-based as a full gastronomic direction.
+
+4. Hyper-personalization: a menu for each
+
+Say you have 200 guests. 18 are gluten-intolerant, 24 lactose, 9 nut allergies, 12 kosher, 7 halal, 31 vegan. Earlier this was solved with one line "Vegan menu available on request." Now — with individual labels on each dish with allergen markers, mobile apps where guests pre-indicate preferences, and a kitchen preparing personalized plates.
+
+5. Cultural authenticity
+
+The "Egyptian theme" at an event in Sharm El Sheikh used to mean couscous and hummus prepared by a European chef to a "universal" recipe. In 2026 this is no longer interesting. Guests expect authenticity: recipes from local chefs, ingredients from local markets, traditional cooking techniques.
+
+6. Functional food: food that works
+
+A conference with a packed program is mental work at the limit. Heavy catering with abundant pastries and sugary sodas gives a quick energy spike and a sharp drop an hour later. Functional food solves this: products are selected for their effect on cognitive activity — matcha lattes, chia puddings, ginger-turmeric shots, adaptogens.
+
+7. Instagram-worthy: presentation as a visual event
+
+If food isn't Instagram-worthy, it was poorly presented. Sounds cynical, but the reality of 2026: every event is posted on social media by participants, and visual presentation directly affects your brand's reach.
+
+8. Tech-enabled: AI in catering service
+
+Technology changes not only presentation but also catering backend. Smart inventory systems track consumption in real time and alert the chef when snacks run out. AI menu planners analyze the client's event history and audience, suggesting an optimal balance of dishes. QR codes on each plate open full composition with allergens in 5 languages.
+
+Royal Event Group works with proven catering partners in Egypt, UAE, and Russia. We design menus for the event format and audience — from plant-forward business breakfasts to 500-guest gala action stations. If you're planning a corporate event and want people to talk about the food, talk to us at the concept stage, not two weeks before the date.`,
+    },
+  },
+
   // ───────────────────────────────────────────────────────────────────────
   {
     id: 'podvodnye-kamni-konferencii-za-rubezhom',

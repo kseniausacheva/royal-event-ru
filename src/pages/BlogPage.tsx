@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Tag, ArrowLeft, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2, Send } from 'lucide-react';
+import { Calendar, Tag, ArrowLeft, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2, Send, XCircle } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import ArticleShare from '../components/ArticleShare';
 import NewsletterForm from '../components/NewsletterForm';
@@ -35,7 +35,39 @@ type ArticleBlock =
   | { type: 'image'; url: string; alt: string; caption?: string }
   | { type: 'list'; items: string[]; ordered?: boolean }
   | { type: 'divider' }
-  | { type: 'callout'; title?: string; text: string; variant?: 'info' | 'warning' | 'success' };
+  | { type: 'callout'; title?: string; text: string; variant?: 'info' | 'warning' | 'success' }
+  | { type: 'video'; url: string; title: string; caption?: string }
+  | { type: 'table'; headers: string[]; rows: string[][]; caption?: string }
+  | { type: 'diagram'; svg: string; title: string; caption?: string }
+  | {
+      type: 'comparison';
+      title?: string;
+      left: { title: string; items: string[] };
+      right: { title: string; items: string[] };
+    };
+
+/**
+ * Конвертирует URL видео в embed-формат.
+ * Поддерживает YouTube (youtube.com/watch?v=, youtu.be/), RuTube, Vimeo,
+ * локальные MP4 (отдаются через <video>), и произвольные iframe-URL.
+ */
+const getVideoEmbed = (url: string): { kind: 'iframe' | 'video'; src: string } => {
+  // Локальный .mp4 / .webm / .mov → <video>
+  if (/\.(mp4|webm|mov|ogg)(\?.*)?$/i.test(url)) {
+    return { kind: 'video', src: url };
+  }
+  // YouTube
+  const yt = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]+)/);
+  if (yt) return { kind: 'iframe', src: `https://www.youtube.com/embed/${yt[1]}` };
+  // RuTube
+  const rt = url.match(/rutube\.ru\/video\/([a-f0-9]+)/);
+  if (rt) return { kind: 'iframe', src: `https://rutube.ru/play/embed/${rt[1]}` };
+  // Vimeo
+  const vm = url.match(/vimeo\.com\/(\d+)/);
+  if (vm) return { kind: 'iframe', src: `https://player.vimeo.com/video/${vm[1]}` };
+  // Fallback — используем URL как есть в iframe
+  return { kind: 'iframe', src: url };
+};
 
 /**
  * Рендерит один блок богатого контента. Для magazine-style оформления статьи.
@@ -203,6 +235,150 @@ const ArticleBlockRenderer: React.FC<{ block: ArticleBlock; idx: number }> = ({ 
         </aside>
       );
     }
+
+    case 'video': {
+      const embed = getVideoEmbed(block.url);
+      return (
+        <figure className="my-12 -mx-6 md:mx-0">
+          <div className="relative aspect-video md:rounded-2xl overflow-hidden bg-royal-black shadow-xl">
+            {embed.kind === 'iframe' ? (
+              <iframe
+                src={embed.src}
+                title={block.title}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full border-0"
+              />
+            ) : (
+              <video
+                src={embed.src}
+                controls
+                preload="metadata"
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <track kind="captions" />
+              </video>
+            )}
+          </div>
+          {block.caption && (
+            <figcaption className="mt-4 text-sm md:text-base text-gray-500 text-center font-serif italic px-6">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    }
+
+    case 'table':
+      return (
+        <figure className="my-12 -mx-6 md:mx-0">
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full border-collapse min-w-[600px]">
+              <thead>
+                <tr className="bg-gray-50">
+                  {block.headers.map((h, i) => (
+                    <th
+                      key={i}
+                      className="text-left font-display font-bold text-xs md:text-sm uppercase tracking-wider text-gray-900 py-4 px-5 border-b-2 border-gray-300"
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row, i) => (
+                  <tr key={i} className="border-b border-gray-100 hover:bg-royal-pink/5 transition-colors">
+                    {row.map((cell, j) => (
+                      <td
+                        key={j}
+                        className={`py-4 px-5 font-serif text-base text-gray-800 ${
+                          j === 0 ? 'font-bold text-gray-900' : ''
+                        }`}
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {block.caption && (
+            <figcaption className="mt-4 text-sm text-gray-500 text-center font-serif italic px-6">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case 'diagram':
+      return (
+        <figure className="my-12">
+          <div
+            className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 md:p-10 border border-gray-200 overflow-x-auto"
+            dangerouslySetInnerHTML={{ __html: block.svg }}
+            role="img"
+            aria-label={block.title}
+          />
+          {block.caption && (
+            <figcaption className="mt-4 text-sm text-gray-500 text-center font-serif italic">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case 'comparison':
+      return (
+        <div className="my-12">
+          {block.title && (
+            <h3 className="font-display font-bold text-2xl md:text-3xl text-gray-900 mb-6 text-center uppercase tracking-tight">
+              {block.title}
+            </h3>
+          )}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-red-50 border border-red-200 rounded-2xl p-6 md:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <XCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
+                <h4 className="font-display font-bold text-base md:text-lg uppercase text-red-900 tracking-wide">
+                  {block.left.title}
+                </h4>
+              </div>
+              <ul className="space-y-3">
+                {block.left.items.map((item, i) => (
+                  <li key={i} className="font-serif text-base md:text-lg text-gray-800 flex gap-3 leading-snug">
+                    <span className="text-red-400 flex-shrink-0 mt-1 font-bold" aria-hidden>
+                      ×
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 md:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <CheckCircle2 className="w-6 h-6 text-emerald-600 flex-shrink-0" />
+                <h4 className="font-display font-bold text-base md:text-lg uppercase text-emerald-900 tracking-wide">
+                  {block.right.title}
+                </h4>
+              </div>
+              <ul className="space-y-3">
+                {block.right.items.map((item, i) => (
+                  <li key={i} className="font-serif text-base md:text-lg text-gray-800 flex gap-3 leading-snug">
+                    <span className="text-emerald-500 flex-shrink-0 mt-1 font-bold" aria-hidden>
+                      ✓
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      );
 
     default:
       return null;
