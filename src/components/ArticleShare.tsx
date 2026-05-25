@@ -9,6 +9,12 @@ interface ArticleShareProps {
   shareText?: string;
 }
 
+// MAX-профиль Royal Event Group (тот же URL, что в Footer.tsx).
+// MAX (Mail.ru мессенджер) не имеет публичного share-API, поэтому кнопка
+// открывает чат с Royal Event Group — пользователь может написать нам напрямую.
+const MAX_PROFILE_URL =
+  'https://max.ru/u/f9LHodD0cOI6NopEpkHgITsu_AIEFyrbBPaFkURFR2kn3i3inUUuT4dKLgQ';
+
 /**
  * VK SVG-иконка (lucide не содержит VK).
  */
@@ -42,9 +48,17 @@ const ArticleShare: React.FC<ArticleShareProps> = ({ title, shareText }) => {
     openShare(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`);
   };
 
-  const handleWhatsApp = () => {
+  const handleMax = async () => {
+    // MAX не имеет share-URL API → копируем ссылку в буфер и открываем MAX-чат.
+    // Пользователь вставит ссылку в чат сам.
+    if (typeof window === 'undefined') return;
     const url = getUrl();
-    openShare(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + '\n\n' + url)}`);
+    try {
+      await navigator.clipboard.writeText(url + '\n\n' + text);
+    } catch {
+      // если буфер недоступен (старый браузер) — просто откроем MAX
+    }
+    window.open(MAX_PROFILE_URL, '_blank', 'noopener,noreferrer');
   };
 
   const handleVk = () => {
@@ -103,11 +117,16 @@ const ArticleShare: React.FC<ArticleShareProps> = ({ title, shareText }) => {
           <Send className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2} />
         </button>
 
-        {/* WhatsApp */}
+        {/* MAX (мессенджер Mail.ru) — открывает чат с Royal Event Group */}
         <button
-          onClick={handleWhatsApp}
-          aria-label="Поделиться в WhatsApp"
-          className={`${buttonBase} hover:bg-[#25D366]`}
+          onClick={handleMax}
+          aria-label={language === 'ru' ? 'Написать нам в MAX' : 'Message us on MAX'}
+          title={
+            language === 'ru'
+              ? 'Скопирует ссылку и откроет MAX-чат с нами'
+              : 'Will copy the link and open MAX chat with us'
+          }
+          className={`${buttonBase} hover:bg-[#1A8FFF]`}
         >
           <MessageCircle className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2} />
         </button>
