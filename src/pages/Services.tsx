@@ -11,9 +11,10 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 px-6">
-      <SEO 
-        title={t.servicesPage.seo.title} 
-        description={t.servicesPage.seo.description} 
+      <SEO
+        title={t.servicesPage.seo.title}
+        description={t.servicesPage.seo.description}
+        faq={t.servicesPage.faq}
       />
       <div className="max-w-7xl mx-auto">
         <motion.div

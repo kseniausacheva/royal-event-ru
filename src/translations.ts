@@ -266,6 +266,36 @@ export const translations = {
         title: 'Услуги MICE агентства: конференции, тимбилдинги, инсентив-туры',
         description: 'Полный спектр услуг по организации корпоративных событий: от деловых конференций и делегаций до развлекательных шоу и VIP-ретритов. Технический продакшн и логистика.'
       },
+      faq: [
+        {
+          question: 'В каких странах вы организуете мероприятия?',
+          answer: 'Royal Event Group работает в Египте, ОАЭ и России. Главные офисы — в Шарм-эль-Шейхе, Москве и Дубае. Также организуем MICE-проекты в других странах Ближнего Востока по запросу клиента.'
+        },
+        {
+          question: 'Какие форматы мероприятий вы организуете?',
+          answer: 'Корпоративные конференции, тимбилдинги, инсентив-туры, делегации, гала-ужины, выставки, дилерские конференции, ретриты для VIP-клиентов и закрытые частные мероприятия.'
+        },
+        {
+          question: 'Сколько стоит организация корпоративного мероприятия?',
+          answer: 'Бюджет зависит от количества участников, страны, формата и длительности. Минимальный пакет под ключ для группы 20–30 человек на 3 дня стартует от 15 000 USD. Точная стоимость рассчитывается индивидуально под задачу — оставьте заявку.'
+        },
+        {
+          question: 'Сколько времени занимает подготовка мероприятия?',
+          answer: 'В среднем 6–8 недель для группы до 100 человек и 3–4 месяца для крупных проектов от 500 участников. Срочные проекты делаем от 2 недель при наличии свободных площадок.'
+        },
+        {
+          question: 'У вас собственное оборудование или арендуете у подрядчиков?',
+          answer: 'У нас собственная производственная база в Египте: цеха по производству декораций и мебели, склад светового, звукового и LED-оборудования. Это позволяет не зависеть от подрядчиков и держать высокий стандарт качества.'
+        },
+        {
+          question: 'Работаете ли вы с иностранными артистами и звёздами?',
+          answer: 'Да. У нас есть опыт букинга артистов мирового уровня: David Guetta, Son of Son, Tom Enzy, Koroleva и других. Берём на себя переговоры с менеджментом, выполнение технических и бытовых райдеров, логистику и безопасность.'
+        },
+        {
+          question: 'Какие у вас гарантии и условия оплаты?',
+          answer: 'Заключаем официальный договор (есть публичная оферта). Финансовые этапы: предоплата + поэтапная оплата по факту выполнения работ. Бюджет фиксируется в смете. 20+ лет опыта без сорванных проектов.'
+        }
+      ],
       items: [
         { title: 'Корпоративные конференции', desc: 'Полный цикл организации деловых мероприятий, форумов и саммитов.' },
         { title: 'Тимбилдинг', desc: 'Уникальные программы для укрепления корпоративной культуры и командного духа.' },
@@ -312,7 +342,33 @@ export const translations = {
       seo: {
         title: 'Сопровождение делегаций | Профессиональный протокол и перевод',
         description: 'Организация приема иностранных делегаций в России и российских за рубежом. Полный спектр услуг: от виз до VIP-сопровождения.'
-      }
+      },
+      faq: [
+        {
+          question: 'Что входит в услугу сопровождения делегаций?',
+          answer: 'Полный цикл: визовая поддержка, бронирование отелей, VIP-трансферы, синхронный и последовательный перевод (арабский, английский, русский), протокольное сопровождение, культурная программа, координация переговоров и финальная отчётность.'
+        },
+        {
+          question: 'На каких языках вы предоставляете перевод?',
+          answer: 'Арабский, английский и русский — синхронный и последовательный перевод. Все наши переводчики имеют опыт работы на дипломатических, государственных и крупных корпоративных мероприятиях.'
+        },
+        {
+          question: 'Можете ли вы организовать визовое сопровождение?',
+          answer: 'Да. Делаем визовую поддержку для арабских делегаций в Россию и для российских делегаций в ОАЭ, Египет и другие страны региона. Помогаем с приглашениями, пакетом документов и подачей.'
+        },
+        {
+          question: 'Какие гарантии конфиденциальности вы предоставляете?',
+          answer: 'Подписываем NDA. Опыт работы с государственными и корпоративными делегациями высокого уровня. Сотрудники с допусками к чувствительной информации, полный режим неразглашения до и после мероприятия.'
+        },
+        {
+          question: 'Есть ли у вас опыт работы с государственными делегациями?',
+          answer: 'Да, регулярно сопровождаем как государственные, так и корпоративные делегации. Глубокое знание протокола, дипломатического этикета и культурных особенностей арабского региона.'
+        },
+        {
+          question: 'Сколько стоит сопровождение делегации?',
+          answer: 'От 200 USD/час за работу переводчика и от 1500 USD/день за полное протокольное сопровождение группы. Точная стоимость рассчитывается под задачу: количество дней, число делегатов и формат программы.'
+        }
+      ]
     },
     contactPage: {
       title: 'СВЯЖИТЕСЬ С НАМИ',
@@ -724,6 +780,36 @@ export const translations = {
         title: 'MICE Agency Services: Conferences, Team Building, Incentive Tours',
         description: 'A full range of corporate event organization services: from business conferences and delegations to entertainment shows and VIP retreats. Technical production and logistics.'
       },
+      faq: [
+        {
+          question: 'Which countries do you organize events in?',
+          answer: 'Royal Event Group operates in Egypt, UAE, and Russia. Our main offices are in Sharm El Sheikh, Moscow, and Dubai. We also handle MICE projects in other Middle Eastern countries on request.'
+        },
+        {
+          question: 'What types of events do you organize?',
+          answer: 'Corporate conferences, team-building programs, incentive tours, delegation support, gala dinners, exhibitions, dealer conferences, VIP retreats, and private events.'
+        },
+        {
+          question: 'How much does it cost to organize a corporate event?',
+          answer: 'The budget depends on the number of participants, country, format, and duration. Turnkey packages for a group of 20–30 people for 3 days start at USD 15,000. Exact pricing is calculated individually — please send a request.'
+        },
+        {
+          question: 'How long does event preparation take?',
+          answer: 'On average, 6–8 weeks for groups up to 100 people and 3–4 months for major 500+ participant projects. Rush projects can be delivered in as little as 2 weeks, subject to venue availability.'
+        },
+        {
+          question: 'Do you own equipment or rent from contractors?',
+          answer: 'We operate our own production base in Egypt: workshops for decor and furniture, warehouses of lighting, sound, and LED equipment. This lets us avoid third-party dependencies and maintain quality standards.'
+        },
+        {
+          question: 'Do you work with international artists?',
+          answer: 'Yes. We have experience booking world-class artists such as David Guetta, Son of Son, Tom Enzy, Koroleva, and others. We handle negotiations with management, technical and hospitality riders, logistics, and security.'
+        },
+        {
+          question: 'What guarantees and payment terms do you offer?',
+          answer: 'We sign an official contract (public offer available). Payment is structured in stages: prepayment plus milestone-based payments. Budget is fixed in the estimate. 20+ years of experience without a single failed project.'
+        }
+      ],
       items: [
         { title: 'Corporate Conferences', desc: 'Full-cycle organization of business events, forums, and summits.' },
         { title: 'Team Building', desc: 'Unique programs designed to strengthen corporate culture and team spirit.' },
@@ -770,7 +856,33 @@ export const translations = {
       seo: {
         title: 'Delegation Support | Professional Protocol and Translation',
         description: 'Organization of foreign delegations in Russia and Russian delegations abroad. A full range of services: from visas to VIP support.'
-      }
+      },
+      faq: [
+        {
+          question: 'What\'s included in the delegation support service?',
+          answer: 'A full cycle: visa support, hotel bookings, VIP transfers, simultaneous and consecutive translation (Arabic, English, Russian), protocol escort, cultural program, negotiation coordination, and final reporting.'
+        },
+        {
+          question: 'Which languages do you provide translation in?',
+          answer: 'Arabic, English, and Russian — both simultaneous and consecutive translation. All our translators have experience working at diplomatic, government, and major corporate events.'
+        },
+        {
+          question: 'Can you arrange visa support?',
+          answer: 'Yes. We provide visa support for Arab delegations visiting Russia and for Russian delegations traveling to the UAE, Egypt, and other countries in the region. We help with invitation letters, document packages, and submissions.'
+        },
+        {
+          question: 'What confidentiality guarantees do you offer?',
+          answer: 'We sign NDAs. Experience working with high-level government and corporate delegations. Staff with clearances for sensitive information and full non-disclosure regime before and after the event.'
+        },
+        {
+          question: 'Do you have experience with government delegations?',
+          answer: 'Yes, we regularly support both government and corporate delegations. Deep knowledge of protocol, diplomatic etiquette, and the cultural specifics of the Arab region.'
+        },
+        {
+          question: 'How much does delegation support cost?',
+          answer: 'Starting at USD 200/hour for translator services and USD 1,500/day for full protocol support of a group. Exact pricing depends on the task: number of days, delegation size, and program format.'
+        }
+      ]
     },
     contactPage: {
       title: 'GET IN TOUCH',

@@ -119,7 +119,7 @@ const Home = () => {
               animate={{ scale: 1, opacity: 0.4 }}
               transition={{ duration: 2.5, ease: "easeOut" }}
               src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=2000" 
-              alt="Large Scale Event Background" 
+              alt={language === 'ru' ? 'Организация крупных корпоративных мероприятий и MICE-проектов' : 'Large-scale corporate event and MICE project organization'}
               className="w-full h-full object-cover grayscale"
               referrerPolicy="no-referrer"
             />
@@ -305,7 +305,7 @@ const Home = () => {
               className="relative"
             >
               <div className="aspect-square rounded-[60px] overflow-hidden border border-white/10">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt="Production" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt={language === 'ru' ? 'Собственное производство декораций и технического оборудования для мероприятий' : 'In-house production of decor and technical equipment for events'} className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
               </div>
             </motion.div>
           </div>
@@ -567,9 +567,9 @@ const Home = () => {
               transition={{ duration: 1 }}
               className="relative group aspect-video rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/10 bg-royal-black/50"
             >
-              <img 
-                src="/team-full-1.jpg" 
-                alt="Full Team 1" 
+              <img
+                src="/team-full-1.jpg"
+                alt={language === 'ru' ? 'Команда Royal Event Group — MICE-агентство' : 'Royal Event Group team — MICE agency'}
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -586,9 +586,9 @@ const Home = () => {
               transition={{ duration: 1 }}
               className="relative group aspect-video rounded-[30px] md:rounded-[40px] overflow-hidden border border-white/10 bg-royal-black/50"
             >
-              <img 
-                src="/team-full-2.jpg" 
-                alt="Full Team 2" 
+              <img
+                src="/team-full-2.jpg"
+                alt={language === 'ru' ? 'Команда Royal Event Group в работе на мероприятии' : 'Royal Event Group team working at an event'}
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -958,7 +958,7 @@ const Home = () => {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-[60px] overflow-hidden border border-white/10 shadow-2xl shadow-royal-pink/10">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000" alt="Corporate" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000" alt={language === 'ru' ? 'Корпоративное мероприятие от Royal Event Group' : 'Corporate event by Royal Event Group'} className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
             </div>
           </motion.div>
         </div>

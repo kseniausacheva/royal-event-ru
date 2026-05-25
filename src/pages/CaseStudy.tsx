@@ -38,7 +38,16 @@ const CaseStudy = () => {
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 pb-20">
-      <SEO title={`${caseItem.client} | Royal Event Group`} description={caseItem.desc} />
+      <SEO
+        title={`${caseItem.client} | Royal Event Group`}
+        description={caseItem.desc}
+        image={caseItem.image}
+        breadcrumbs={[
+          { name: language === 'ru' ? 'Главная' : 'Home', url: `/${language}` },
+          { name: language === 'ru' ? 'Кейсы' : 'Portfolio', url: `/${language}/portfolio` },
+          { name: caseItem.client, url: `/${language}/portfolio/${caseItem.id}` },
+        ]}
+      />
       
       <AnimatePresence>
         {selectedImage && (
@@ -62,7 +71,7 @@ const CaseStudy = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               src={selectedImage}
-              alt="Full size"
+              alt={language === 'ru' ? `Фото с мероприятия ${caseItem.client} — Royal Event Group` : `Photo from ${caseItem.client} event — Royal Event Group`}
               className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl shadow-royal-pink/20"
               onClick={(e) => e.stopPropagation()}
             />
@@ -148,7 +157,7 @@ const CaseStudy = () => {
                 >
                   <img 
                     src={img} 
-                    alt={`Gallery ${i}`} 
+                    alt={language === 'ru' ? `${caseItem.client} — фото ${i + 1} с мероприятия` : `${caseItem.client} — event photo ${i + 1}`}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-125 transition-all duration-700"
                     referrerPolicy="no-referrer"
                   />
@@ -251,7 +260,7 @@ const CaseStudy = () => {
             >
               <img 
                 src={`https://picsum.photos/seed/video-${id}/1920/1080`} 
-                alt="Video Preview" 
+                alt={language === 'ru' ? `Видео с мероприятия ${caseItem.client}` : `Video from ${caseItem.client} event`}
                 className="w-full h-full object-cover grayscale group-hover:scale-105 transition-all duration-1000"
                 referrerPolicy="no-referrer"
               />

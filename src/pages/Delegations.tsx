@@ -46,9 +46,10 @@ const Delegations = () => {
 
   return (
     <div className="min-h-screen bg-royal-black text-white selection:bg-royal-pink selection:text-white font-manrope">
-      <SEO 
-        title={t.delegationsPage.seo.title} 
-        description={t.delegationsPage.seo.description} 
+      <SEO
+        title={t.delegationsPage.seo.title}
+        description={t.delegationsPage.seo.description}
+        faq={t.delegationsPage.faq}
       />
       
       {/* Internal Hero */}

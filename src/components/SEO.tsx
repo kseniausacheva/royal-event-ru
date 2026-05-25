@@ -3,6 +3,17 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../LanguageContext';
 import { useLocation } from 'react-router-dom';
 
+interface BreadcrumbItem {
+  name: string;
+  /** Absolute URL OR a path relative to the canonical host (we'll prefix it for you) */
+  url: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface SEOProps {
   title?: string;
   description?: string;
@@ -11,7 +22,32 @@ interface SEOProps {
   noindex?: boolean;
   /** Optional JSON-LD structured data object (or array) to inject in addition to the global Organization schema */
   jsonLd?: object | object[];
+  /** Optional breadcrumbs trail. If omitted, we auto-generate from the URL pathname. Pass `false` to disable. */
+  breadcrumbs?: BreadcrumbItem[] | false;
+  /** Optional FAQ list. When provided, emits FAQPage JSON-LD (Яндекс показывает FAQ-блок в выдаче). */
+  faq?: FAQItem[];
 }
+
+/**
+ * Map of URL segments → human-readable label per language.
+ * Used to auto-generate breadcrumbs for top-level pages.
+ * Pages with dynamic params (e.g. /portfolio/:id) should pass `breadcrumbs` prop directly.
+ */
+const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
+  about: { ru: 'О компании', en: 'About' },
+  services: { ru: 'Услуги', en: 'Services' },
+  portfolio: { ru: 'Кейсы', en: 'Portfolio' },
+  delegations: { ru: 'Делегации', en: 'Delegations' },
+  egypt: { ru: 'Египет', en: 'Egypt' },
+  uae: { ru: 'ОАЭ', en: 'UAE' },
+  russia: { ru: 'Россия', en: 'Russia' },
+  blog: { ru: 'Блог', en: 'Blog' },
+  contact: { ru: 'Контакты', en: 'Contact' },
+  privacy: { ru: 'Политика конфиденциальности', en: 'Privacy Policy' },
+  offer: { ru: 'Договор оферты', en: 'Public Offer' },
+  'mailing-consent': { ru: 'Согласие на рассылку', en: 'Mailing Consent' },
+  'data-consent': { ru: 'Согласие на обработку данных', en: 'Data Processing Consent' },
+};
 
 /**
  * Primary site URLs.
@@ -80,7 +116,7 @@ const EN_DEFAULT_KEYWORDS = [
   'Royal Event Group',
 ].join(', ');
 
-const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex, jsonLd }) => {
+const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex, jsonLd, breadcrumbs, faq }) => {
   const { language } = useLanguage();
   const location = useLocation();
 
@@ -105,6 +141,62 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
   const altPath = location.pathname.replace(`/${language}`, `/${altLang}`);
   const altUrl = `${alternateHost}${altPath}`;
   const xDefaultUrl = `${RU_SITE_URL}${location.pathname.replace(/^\/(ru|en)/, '/ru')}`;
+
+  // Build breadcrumbs: explicit prop wins, `false` disables, otherwise auto-generate from URL.
+  const homeLabel = language === 'ru' ? 'Главная' : 'Home';
+  const autoBreadcrumbs: BreadcrumbItem[] = (() => {
+    if (breadcrumbs === false) return [];
+    if (Array.isArray(breadcrumbs)) return breadcrumbs;
+
+    // Auto: parse pathname like /ru/services/foo → [Home, Services, foo]
+    const segments = location.pathname.split('/').filter(Boolean);
+    if (segments.length <= 1) return []; // home page — no crumbs
+
+    const items: BreadcrumbItem[] = [
+      { name: homeLabel, url: `${canonicalHost}/${language}` },
+    ];
+
+    // Skip segments[0] which is the language prefix ('ru' or 'en')
+    for (let i = 1; i < segments.length; i++) {
+      const seg = segments[i];
+      const label = BREADCRUMB_LABELS[seg]?.[language] || seg;
+      const url = `${canonicalHost}/${segments.slice(0, i + 1).join('/')}`;
+      items.push({ name: label, url });
+    }
+    return items;
+  })();
+
+  // BreadcrumbList JSON-LD (Яндекс показывает хлебные крошки в выдаче вместо URL → выше CTR)
+  const breadcrumbsJsonLd =
+    autoBreadcrumbs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: autoBreadcrumbs.map((b, idx) => ({
+            '@type': 'ListItem',
+            position: idx + 1,
+            name: b.name,
+            item: b.url.startsWith('http') ? b.url : `${canonicalHost}${b.url}`,
+          })),
+        }
+      : null;
+
+  // FAQPage JSON-LD (Яндекс рисует свёрнутый FAQ-блок прямо в результатах поиска)
+  const faqJsonLd =
+    faq && faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
 
   // JSON-LD: Organization schema. Yandex parses Schema.org markup and shows it in SERP.
   const organizationJsonLd = {
@@ -182,6 +274,16 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
 
       {/* JSON-LD: Organization */}
       <script type="application/ld+json">{JSON.stringify(organizationJsonLd)}</script>
+
+      {/* JSON-LD: BreadcrumbList (auto-generated unless disabled) */}
+      {breadcrumbsJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(breadcrumbsJsonLd)}</script>
+      )}
+
+      {/* JSON-LD: FAQPage (only when `faq` prop is provided) */}
+      {faqJsonLd && (
+        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
+      )}
 
       {/* Optional per-page JSON-LD */}
       {jsonLd && (

@@ -7,6 +7,21 @@ import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
 
+/**
+ * ISO publication dates per article (Schema.org requires ISO-8601).
+ * Source-of-truth date strings in translations are human-readable per language,
+ * so we keep the machine-readable ISO version here.
+ */
+const ARTICLE_DATES_ISO: Record<string, string> = {
+  'trends-2026': '2026-04-01',
+  'egypt-events': '2026-03-27',
+  'team-building-culture': '2024-01-25',
+  'coffee-break-organization': '2026-03-31',
+};
+
+const SITE_URL_RU = 'https://royaleventandmice.ru';
+const SITE_URL_EN = 'https://www.royaleventandmice.com';
+
 const BlogPage = () => {
   const { id } = useParams();
   const { t, language } = useLanguage();
@@ -27,9 +42,55 @@ const BlogPage = () => {
       );
     }
 
+    const canonicalHost = language === 'ru' ? SITE_URL_RU : SITE_URL_EN;
+    const articleUrl = `${canonicalHost}/${language}/blog/${article.id}`;
+    const datePublished = ARTICLE_DATES_ISO[article.id];
+
+    // Schema.org BlogPosting — Яндекс показывает дату публикации, автора и сниппет в выдаче.
+    const articleJsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: article.title,
+      description: article.excerpt,
+      image: article.image.startsWith('http') ? article.image : `${canonicalHost}${article.image}`,
+      ...(datePublished && {
+        datePublished,
+        dateModified: datePublished,
+      }),
+      author: {
+        '@type': 'Organization',
+        name: 'Royal Event Group',
+        url: SITE_URL_RU,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Royal Event Group',
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL_RU}/logo.png`,
+        },
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': articleUrl,
+      },
+      inLanguage: language === 'ru' ? 'ru-RU' : 'en-US',
+      articleSection: article.category,
+    };
+
     return (
       <div className="pt-32 pb-20 bg-royal-black min-h-screen">
-        <SEO title={`${article.title} | Royal Event Group`} description={article.excerpt} />
+        <SEO
+          title={`${article.title} | Royal Event Group`}
+          description={article.excerpt}
+          image={article.image}
+          breadcrumbs={[
+            { name: language === 'ru' ? 'Главная' : 'Home', url: `/${language}` },
+            { name: language === 'ru' ? 'Блог' : 'Blog', url: `/${language}/blog` },
+            { name: article.title, url: `/${language}/blog/${article.id}` },
+          ]}
+          jsonLd={articleJsonLd}
+        />
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
