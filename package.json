@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host=0.0.0.0",
+    "prebuild": "node scripts/generate-sitemap.mjs",
     "build": "vite build",
     "postbuild": "node scripts/prerender.mjs",
-    "build:no-prerender": "vite build",
+    "build:no-prerender": "node scripts/generate-sitemap.mjs && vite build",
     "prerender": "node scripts/prerender.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",

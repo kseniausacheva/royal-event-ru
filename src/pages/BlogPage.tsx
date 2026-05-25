@@ -8,16 +8,14 @@ import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
 
 /**
- * ISO publication dates per article (Schema.org requires ISO-8601).
- * Source-of-truth date strings in translations are human-readable per language,
- * so we keep the machine-readable ISO version here.
+ * ISO publication dates per article (Schema.org требует ISO-8601).
+ * Берём из единого источника src/content/blog-articles.mjs — datePublished
+ * там обязательное поле, поэтому добавление новой статьи автоматически добавит дату сюда.
  */
-const ARTICLE_DATES_ISO: Record<string, string> = {
-  'trends-2026': '2026-04-01',
-  'egypt-events': '2026-03-27',
-  'team-building-culture': '2024-01-25',
-  'coffee-break-organization': '2026-03-31',
-};
+import { blogArticles } from '../content/blog-articles.mjs';
+const ARTICLE_DATES_ISO: Record<string, string> = Object.fromEntries(
+  blogArticles.map((a: any) => [a.id, a.datePublished]),
+);
 
 const SITE_URL_RU = 'https://royaleventandmice.ru';
 const SITE_URL_EN = 'https://www.royaleventandmice.com';

@@ -15,16 +15,18 @@ import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
 import Prerenderer from '@prerenderer/prerenderer';
 import PuppeteerRenderer from '@prerenderer/renderer-puppeteer';
+import { blogArticles } from '../src/content/blog-articles.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 
 /**
- * Все маршруты сайта (только русская локаль — она основная для .ru-домена).
+ * Статичные маршруты сайта (только русская локаль — она основная для .ru-домена).
  * Английские роуты на этом домене не индексируются (canonical на .com).
+ * Маршруты блог-постов добавляются автоматически из blog-articles.mjs ниже.
  */
-const ROUTES = [
+const STATIC_ROUTES = [
   '/ru',
   '/ru/about',
   '/ru/services',
@@ -40,16 +42,17 @@ const ROUTES = [
   '/ru/russia',
   '/ru/delegations',
   '/ru/blog',
-  '/ru/blog/trends-2026',
-  '/ru/blog/egypt-events',
-  '/ru/blog/coffee-break-organization',
-  '/ru/blog/team-building-culture',
   '/ru/contact',
   '/ru/privacy',
   '/ru/offer',
   '/ru/data-consent',
   '/ru/mailing-consent',
 ];
+
+// Автогенерация маршрутов для каждой статьи блога
+const BLOG_ROUTES = blogArticles.map((a) => `/ru/blog/${a.id}`);
+
+const ROUTES = [...STATIC_ROUTES, ...BLOG_ROUTES];
 
 async function run() {
   console.log('\n🔧 Prerendering', ROUTES.length, 'routes...\n');
