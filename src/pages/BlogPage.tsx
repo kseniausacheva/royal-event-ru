@@ -1,8 +1,10 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Tag, ArrowLeft, Share2, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2 } from 'lucide-react';
+import { Calendar, Tag, ArrowLeft, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2, Send } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
+import ArticleShare from '../components/ArticleShare';
+import NewsletterForm from '../components/NewsletterForm';
 import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
@@ -56,20 +58,46 @@ const ArticleBlockRenderer: React.FC<{ block: ArticleBlock; idx: number }> = ({ 
       return <h3 className={`${baseClass} text-2xl md:text-3xl`}>{block.text}</h3>;
     }
 
-    case 'quote':
+    case 'quote': {
+      const handleShareQuote = () => {
+        if (typeof window === 'undefined') return;
+        const quoteText = `«${block.text}»${block.author ? ' — ' + block.author : ''}`;
+        const url = window.location.href;
+        window.open(
+          `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(quoteText)}`,
+          '_blank',
+          'noopener,noreferrer,width=600,height=500',
+        );
+      };
       return (
-        <figure className="my-14 relative pl-12 md:pl-16">
-          <Quote className="absolute left-0 top-0 w-8 h-8 md:w-10 md:h-10 text-royal-pink opacity-80" strokeWidth={1.5} />
+        <figure className="my-14 relative pl-12 md:pl-16 group">
+          <Quote
+            className="absolute left-0 top-0 w-8 h-8 md:w-10 md:h-10 text-royal-pink opacity-80"
+            strokeWidth={1.5}
+          />
           <blockquote className="font-serif italic text-2xl md:text-3xl leading-relaxed text-gray-900">
             «{block.text}»
           </blockquote>
-          {block.author && (
-            <figcaption className="mt-5 text-sm uppercase tracking-[0.2em] text-gray-500 font-bold">
-              — {block.author}
-            </figcaption>
-          )}
+          <div className="mt-5 flex items-center justify-between gap-4 flex-wrap">
+            {block.author ? (
+              <figcaption className="text-sm uppercase tracking-[0.2em] text-gray-500 font-bold">
+                — {block.author}
+              </figcaption>
+            ) : (
+              <span />
+            )}
+            <button
+              onClick={handleShareQuote}
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 hover:text-royal-pink transition-colors font-bold"
+              aria-label="Поделиться цитатой в Telegram"
+            >
+              <Send className="w-3.5 h-3.5" />
+              Поделиться цитатой
+            </button>
+          </div>
         </figure>
       );
+    }
 
     case 'stat':
       return (
@@ -353,28 +381,14 @@ const BlogPage = () => {
                 renderLegacyContent(article.content as string)
               )}
 
-              {/* Share button */}
-              <div className="mt-20 pt-10 border-t border-gray-200 flex justify-between items-center">
-                <div className="text-sm text-gray-500 font-serif italic">
-                  {language === 'ru' ? 'Понравилась статья?' : 'Liked this article?'}
-                </div>
-                <button
-                  onClick={() => {
-                    const url = window.location.href;
-                    if (navigator.share) {
-                      navigator.share({ title: article.title, url });
-                    } else {
-                      navigator.clipboard.writeText(url).then(() => {
-                        alert(language === 'ru' ? 'Ссылка скопирована!' : 'Link copied!');
-                      });
-                    }
-                  }}
-                  className="flex items-center gap-2 px-5 py-2.5 bg-royal-pink text-white rounded-full hover:opacity-90 transition-opacity group"
-                >
-                  <Share2 size={16} />
-                  <span className="text-xs font-bold uppercase tracking-widest">{blogData.share}</span>
-                </button>
-              </div>
+              {/* Тонкий разделитель после контента */}
+              <div className="mt-16 pt-10 border-t border-gray-200" />
+
+              {/* Share-блок: TG/WhatsApp/VK/Copy */}
+              <ArticleShare title={article.title} shareText={article.excerpt} />
+
+              {/* Подписка на рассылку */}
+              <NewsletterForm source={`blog/${article.id}`} />
             </motion.div>
           </div>
         </article>
