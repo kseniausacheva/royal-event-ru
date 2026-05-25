@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Tag, ArrowLeft, Share2, ChevronRight, ArrowRight } from 'lucide-react';
+import { Calendar, Tag, ArrowLeft, Share2, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2 } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
@@ -20,6 +20,196 @@ const ARTICLE_DATES_ISO: Record<string, string> = Object.fromEntries(
 const SITE_URL_RU = 'https://royaleventandmice.ru';
 const SITE_URL_EN = 'https://www.royaleventandmice.com';
 
+/**
+ * Типы блоков для богатого контента статей.
+ * Если article.content — строка, то это legacy формат (рендерим через splitLegacyContent).
+ * Если article.content — массив, то это новый формат с богатой разметкой.
+ */
+type ArticleBlock =
+  | { type: 'paragraph'; text: string }
+  | { type: 'heading'; text: string; level?: 2 | 3 }
+  | { type: 'quote'; text: string; author?: string }
+  | { type: 'stat'; number: string; label: string; source?: string }
+  | { type: 'image'; url: string; alt: string; caption?: string }
+  | { type: 'list'; items: string[]; ordered?: boolean }
+  | { type: 'divider' }
+  | { type: 'callout'; title?: string; text: string; variant?: 'info' | 'warning' | 'success' };
+
+/**
+ * Рендерит один блок богатого контента. Для magazine-style оформления статьи.
+ */
+const ArticleBlockRenderer: React.FC<{ block: ArticleBlock; idx: number }> = ({ block, idx }) => {
+  switch (block.type) {
+    case 'paragraph':
+      return (
+        <p className="font-serif text-lg md:text-xl leading-[1.8] text-gray-800 mb-7">
+          {block.text}
+        </p>
+      );
+
+    case 'heading': {
+      const level = block.level || 2;
+      const baseClass = 'font-display font-bold text-gray-900 mt-16 mb-6 leading-tight';
+      if (level === 2) {
+        return <h2 className={`${baseClass} text-3xl md:text-4xl`}>{block.text}</h2>;
+      }
+      return <h3 className={`${baseClass} text-2xl md:text-3xl`}>{block.text}</h3>;
+    }
+
+    case 'quote':
+      return (
+        <figure className="my-14 relative pl-12 md:pl-16">
+          <Quote className="absolute left-0 top-0 w-8 h-8 md:w-10 md:h-10 text-royal-pink opacity-80" strokeWidth={1.5} />
+          <blockquote className="font-serif italic text-2xl md:text-3xl leading-relaxed text-gray-900">
+            «{block.text}»
+          </blockquote>
+          {block.author && (
+            <figcaption className="mt-5 text-sm uppercase tracking-[0.2em] text-gray-500 font-bold">
+              — {block.author}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case 'stat':
+      return (
+        <div className="my-14 py-14 px-8 md:px-12 bg-gradient-to-br from-royal-pink/8 via-royal-pink/4 to-transparent rounded-3xl text-center border border-royal-pink/15">
+          <div className="font-display font-black text-6xl md:text-8xl text-royal-pink mb-4 leading-none">
+            {block.number}
+          </div>
+          <div className="font-serif text-xl md:text-2xl text-gray-800 leading-snug max-w-2xl mx-auto">
+            {block.label}
+          </div>
+          {block.source && (
+            <div className="mt-6 text-xs uppercase tracking-[0.2em] text-gray-400 font-bold">
+              Источник: {block.source}
+            </div>
+          )}
+        </div>
+      );
+
+    case 'image':
+      return (
+        <figure className="my-14 -mx-6 md:mx-0">
+          <div className="overflow-hidden md:rounded-2xl">
+            <img
+              src={block.url}
+              alt={block.alt}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="mt-4 text-sm md:text-base text-gray-500 text-center font-serif italic px-6">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case 'list': {
+      const Tag = block.ordered ? 'ol' : 'ul';
+      return (
+        <Tag className={`my-8 space-y-3 ${block.ordered ? 'list-decimal pl-6' : 'pl-0'}`}>
+          {block.items.map((item, i) => (
+            <li
+              key={i}
+              className={`font-serif text-lg leading-relaxed text-gray-800 ${
+                block.ordered ? 'pl-2' : 'flex gap-4'
+              }`}
+            >
+              {!block.ordered && (
+                <span className="text-royal-pink font-bold mt-1 flex-shrink-0" aria-hidden>—</span>
+              )}
+              <span className={block.ordered ? '' : 'flex-1'}>{item}</span>
+            </li>
+          ))}
+        </Tag>
+      );
+    }
+
+    case 'divider':
+      return (
+        <div className="my-16 flex justify-center" aria-hidden>
+          <div className="flex gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-royal-pink/40" />
+            <span className="w-1.5 h-1.5 rounded-full bg-royal-pink/60" />
+            <span className="w-1.5 h-1.5 rounded-full bg-royal-pink/40" />
+          </div>
+        </div>
+      );
+
+    case 'callout': {
+      const variantStyles: Record<string, { bg: string; border: string; icon: React.ReactNode; iconColor: string }> = {
+        info: {
+          bg: 'bg-blue-50',
+          border: 'border-blue-200',
+          icon: <Info className="w-6 h-6" />,
+          iconColor: 'text-blue-600',
+        },
+        warning: {
+          bg: 'bg-amber-50',
+          border: 'border-amber-200',
+          icon: <AlertCircle className="w-6 h-6" />,
+          iconColor: 'text-amber-600',
+        },
+        success: {
+          bg: 'bg-emerald-50',
+          border: 'border-emerald-200',
+          icon: <CheckCircle2 className="w-6 h-6" />,
+          iconColor: 'text-emerald-600',
+        },
+      };
+      const style = variantStyles[block.variant || 'info'];
+      return (
+        <aside className={`my-10 p-6 md:p-8 ${style.bg} border ${style.border} rounded-2xl flex gap-4`}>
+          <div className={`flex-shrink-0 ${style.iconColor} mt-1`}>{style.icon}</div>
+          <div className="flex-1">
+            {block.title && (
+              <h4 className="font-display font-bold text-lg text-gray-900 mb-2">{block.title}</h4>
+            )}
+            <p className="font-serif text-base md:text-lg leading-relaxed text-gray-800">{block.text}</p>
+          </div>
+        </aside>
+      );
+    }
+
+    default:
+      return null;
+  }
+};
+
+/**
+ * Legacy-рендер для статей со строковым content (старые статьи).
+ * Делит на параграфы по \n\n, строки вида "1. Заголовок" становятся h3.
+ */
+const renderLegacyContent = (content: string) =>
+  content.split('\n\n').map((paragraph: string, idx: number) => {
+    const trimmed = paragraph.trim();
+    if (!trimmed) return null;
+    const isHeading = /^\d+\.\s/.test(trimmed) && trimmed.length < 120;
+    if (isHeading) {
+      return (
+        <h3
+          key={idx}
+          className="font-display font-bold text-2xl md:text-3xl text-gray-900 mt-12 mb-5 leading-tight"
+        >
+          {trimmed}
+        </h3>
+      );
+    }
+    return (
+      <p
+        key={idx}
+        className="font-serif text-lg md:text-xl leading-[1.8] text-gray-800 mb-6"
+      >
+        {trimmed}
+      </p>
+    );
+  });
+
 const BlogPage = () => {
   const { id } = useParams();
   const { t, language } = useLanguage();
@@ -32,7 +222,7 @@ const BlogPage = () => {
 
     if (!article) {
       return (
-        <div className="pt-32 pb-20 text-center">
+        <div className="pt-32 pb-20 text-center bg-royal-black min-h-screen">
           <SEO title={language === 'ru' ? 'Статья не найдена' : 'Article not found'} noindex />
           <h1 className="text-4xl font-display font-bold text-white mb-8">Article not found</h1>
           <Link to={lp('/blog')} className="text-royal-pink hover:underline">Back to Blog</Link>
@@ -76,8 +266,10 @@ const BlogPage = () => {
       articleSection: article.category,
     };
 
+    const isRichContent = Array.isArray(article.content);
+
     return (
-      <div className="pt-32 pb-20 bg-royal-black min-h-screen">
+      <div className="min-h-screen">
         <SEO
           title={article.title}
           description={article.excerpt}
@@ -89,86 +281,111 @@ const BlogPage = () => {
           ]}
           jsonLd={articleJsonLd}
         />
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Link 
-              to={lp('/blog')} 
-              className="inline-flex items-center gap-2 text-white/60 hover:text-royal-pink transition-colors mb-12 group"
-            >
-              <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-              <span className="text-[10px] font-bold uppercase tracking-widest">{blogData.backToBlog}</span>
-            </Link>
 
-            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-12">
-              <img 
-                src={article.image} 
+        {/* Dark hero with title, meta, hero image */}
+        <header className="bg-royal-black text-white pt-32 pb-12">
+          <div className="max-w-4xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Link
+                to={lp('/blog')}
+                className="inline-flex items-center gap-2 text-white/60 hover:text-royal-pink transition-colors mb-10 group"
+              >
+                <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+                <span className="text-[10px] font-bold uppercase tracking-widest">{blogData.backToBlog}</span>
+              </Link>
+
+              <div className="flex flex-wrap items-center gap-6 mb-8 text-white/40">
+                <div className="flex items-center gap-2">
+                  <Tag size={14} className="text-royal-pink" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">{article.category}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar size={14} className="text-royal-pink" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">{article.date}</span>
+                </div>
+              </div>
+
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-8 leading-[1.05] tracking-tight">
+                {article.title}
+              </h1>
+
+              <p className="font-serif text-xl md:text-2xl text-white/70 leading-relaxed max-w-3xl italic">
+                {article.excerpt}
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Hero image — bleeds slightly into white section below */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-5xl mx-auto px-6 mt-16"
+          >
+            <div className="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={article.image}
                 alt={article.title}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-royal-black via-transparent to-transparent" />
             </div>
+          </motion.div>
+        </header>
 
-            <div className="flex flex-wrap items-center gap-6 mb-8 text-white/40">
-              <div className="flex items-center gap-2">
-                <Calendar size={14} className="text-royal-pink" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">{article.date}</span>
+        {/* White article body — magazine style for max readability */}
+        <article className="bg-white text-gray-900 pt-20 pb-24">
+          <div className="max-w-3xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              {isRichContent ? (
+                (article.content as ArticleBlock[]).map((block, idx) => (
+                  <ArticleBlockRenderer key={idx} block={block} idx={idx} />
+                ))
+              ) : (
+                renderLegacyContent(article.content as string)
+              )}
+
+              {/* Share button */}
+              <div className="mt-20 pt-10 border-t border-gray-200 flex justify-between items-center">
+                <div className="text-sm text-gray-500 font-serif italic">
+                  {language === 'ru' ? 'Понравилась статья?' : 'Liked this article?'}
+                </div>
+                <button
+                  onClick={() => {
+                    const url = window.location.href;
+                    if (navigator.share) {
+                      navigator.share({ title: article.title, url });
+                    } else {
+                      navigator.clipboard.writeText(url).then(() => {
+                        alert(language === 'ru' ? 'Ссылка скопирована!' : 'Link copied!');
+                      });
+                    }
+                  }}
+                  className="flex items-center gap-2 px-5 py-2.5 bg-royal-pink text-white rounded-full hover:opacity-90 transition-opacity group"
+                >
+                  <Share2 size={16} />
+                  <span className="text-xs font-bold uppercase tracking-widest">{blogData.share}</span>
+                </button>
               </div>
-              <div className="flex items-center gap-2">
-                <Tag size={14} className="text-royal-pink" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">{article.category}</span>
-              </div>
-            </div>
+            </motion.div>
+          </div>
+        </article>
 
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-10 leading-tight">
-              {article.title}
-            </h1>
-
-            <div className="prose prose-invert prose-pink max-w-none">
-              <p className="text-xl text-white/80 leading-relaxed mb-8 font-light italic border-l-2 border-royal-pink pl-6">
-                {article.excerpt}
-              </p>
-              <div className="text-lg text-white/60 leading-relaxed space-y-6">
-                {article.content.split('\n\n').map((paragraph: string, idx: number) => {
-                  const trimmed = paragraph.trim();
-                  if (!trimmed) return null;
-                  // Check if it's a heading-like line (starts with a number and dot, or is a short bold-like line)
-                  const isHeading = /^\d+\.\s/.test(trimmed) && trimmed.length < 120;
-                  if (isHeading) {
-                    return <h3 key={idx} className="text-xl font-display font-bold text-white mt-8">{trimmed}</h3>;
-                  }
-                  return <p key={idx}>{trimmed}</p>;
-                })}
-              </div>
-            </div>
-
-            <div className="mt-16 pt-8 border-t border-white/10 flex justify-between items-center">
-              <button
-                onClick={() => {
-                  const url = window.location.href;
-                  if (navigator.share) {
-                    navigator.share({ title: article.title, url });
-                  } else {
-                    navigator.clipboard.writeText(url).then(() => {
-                      alert(language === 'ru' ? 'Ссылка скопирована!' : 'Link copied!');
-                    });
-                  }
-                }}
-                className="flex items-center gap-2 text-white/60 hover:text-royal-pink transition-colors group"
-              >
-                <Share2 size={18} />
-                <span className="text-[10px] font-bold uppercase tracking-widest">{blogData.share}</span>
-              </button>
-            </div>
-
-            {/* Related Articles — внутренняя перелинковка для SEO */}
+        {/* Dark footer area — related articles, contact, services */}
+        <div className="bg-royal-black text-white py-20">
+          <div className="max-w-5xl mx-auto px-6">
+            {/* Related Articles */}
             {blogData.articles.filter((a: any) => a.id !== article.id).length > 0 && (
-              <section className="mt-20">
-                <h3 className="text-xl font-display font-bold uppercase tracking-tight text-white mb-6">
+              <section className="mb-20">
+                <h3 className="text-xl font-display font-bold uppercase tracking-tight text-white mb-8">
                   {language === 'ru' ? 'Похожие статьи' : 'Related Articles'}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -205,7 +422,7 @@ const BlogPage = () => {
             )}
 
             {/* Contact Form */}
-            <section className="mt-20 bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+            <section className="mb-16 bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
               <h2 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tighter mb-2 text-center">
                 {language === 'ru' ? 'Начнём мероприятие' : 'Let\'s Start Your Event'}
               </h2>
@@ -216,7 +433,7 @@ const BlogPage = () => {
             </section>
 
             {/* Services List */}
-            <section className="mt-16">
+            <section>
               <h3 className="text-xl font-display font-bold uppercase tracking-tight text-white mb-6">
                 {language === 'ru' ? 'Наши услуги' : 'Our Services'}
               </h3>
@@ -236,13 +453,13 @@ const BlogPage = () => {
                 ))}
               </div>
             </section>
-          </motion.div>
+          </div>
         </div>
       </div>
     );
   }
 
-  // Blog List View
+  // Blog List View (unchanged — dark theme)
   return (
     <div className="pt-32 pb-20 bg-royal-black min-h-screen">
       <SEO title={blogData.title} description={blogData.subtitle} />
