@@ -39,7 +39,7 @@ const Portfolio = () => {
               >
                 <div className="aspect-[16/10] rounded-[40px] overflow-hidden mb-8 border border-white/10 bg-white/5 flex items-center justify-center">
                   {project.image ? (
-                    <img src={project.image} alt={project.client} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" referrerPolicy="no-referrer" />
+                    <img src={project.image} alt={project.client} loading="lazy" decoding="async" className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" referrerPolicy="no-referrer" />
                   ) : (
                     <Play className="w-12 h-12 text-royal-pink/50" />
                   )}

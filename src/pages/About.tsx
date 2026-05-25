@@ -50,9 +50,11 @@ const About = () => {
             transition={{ duration: 1 }}
             className="aspect-video rounded-[40px] overflow-hidden border border-white/10"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000" 
+            <img
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000"
               alt={language === 'ru' ? 'Офис Royal Event Group — MICE-агентство' : 'Royal Event Group office — MICE agency'}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover grayscale"
               referrerPolicy="no-referrer"
             />
@@ -71,7 +73,7 @@ const About = () => {
               className="group"
             >
               <div className="aspect-[3/4] rounded-[40px] overflow-hidden mb-8 border border-white/10">
-                <img src={ceo.image} alt={ceo.name} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
+                <img src={ceo.image} alt={ceo.name} loading="lazy" decoding="async" className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
               </div>
               <h4 className="text-3xl font-display font-bold uppercase tracking-tight mb-2">{ceo.name}</h4>
               <p className="text-royal-pink font-bold text-sm uppercase tracking-widest">{ceo.role}</p>

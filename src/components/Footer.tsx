@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
         <div className="flex flex-col items-center md:items-start gap-4">
           <Link to="/" className="group">
-            <img src="/logo.png" alt="Royal Event Group — MICE-агентство" className="h-24 w-auto group-hover:opacity-80 transition-opacity" />
+            <img src="/logo.png" alt="Royal Event Group — MICE-агентство" loading="lazy" decoding="async" className="h-24 w-auto group-hover:opacity-80 transition-opacity" />
           </Link>
           <p className="text-white/20 text-[10px] font-bold uppercase tracking-[0.3em]">
             {t.footer.rights}

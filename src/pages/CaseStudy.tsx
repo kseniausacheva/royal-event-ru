@@ -39,7 +39,7 @@ const CaseStudy = () => {
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 pb-20">
       <SEO
-        title={`${caseItem.client} | Royal Event Group`}
+        title={caseItem.client}
         description={caseItem.desc}
         image={caseItem.image}
         breadcrumbs={[
@@ -155,9 +155,11 @@ const CaseStudy = () => {
                   onClick={() => setSelectedImage(img)}
                   className="aspect-square rounded-3xl overflow-hidden border border-white/10 group cursor-zoom-in relative z-0 hover:z-10"
                 >
-                  <img 
-                    src={img} 
+                  <img
+                    src={img}
                     alt={language === 'ru' ? `${caseItem.client} — фото ${i + 1} с мероприятия` : `${caseItem.client} — event photo ${i + 1}`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-125 transition-all duration-700"
                     referrerPolicy="no-referrer"
                   />
@@ -258,9 +260,11 @@ const CaseStudy = () => {
               viewport={{ once: true }}
               className="relative aspect-video rounded-[60px] overflow-hidden border border-white/10 group cursor-pointer"
             >
-              <img 
-                src={`https://picsum.photos/seed/video-${id}/1920/1080`} 
+              <img
+                src={`https://picsum.photos/seed/video-${id}/1920/1080`}
                 alt={language === 'ru' ? `Видео с мероприятия ${caseItem.client}` : `Video from ${caseItem.client} event`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale group-hover:scale-105 transition-all duration-1000"
                 referrerPolicy="no-referrer"
               />
@@ -272,6 +276,60 @@ const CaseStudy = () => {
             </motion.div>
           </section>
         )}
+
+        {/* Related links — внутренняя перелинковка для SEO */}
+        <section className="max-w-5xl mx-auto mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link
+              to={lp('/services')}
+              className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-royal-pink/50 hover:bg-white/[0.07] transition-all"
+            >
+              <div className="text-royal-pink text-[10px] font-bold uppercase tracking-[0.3em] mb-3">
+                {language === 'ru' ? 'Узнать больше' : 'Learn more'}
+              </div>
+              <h3 className="text-xl font-display font-bold uppercase mb-2 group-hover:text-royal-pink transition-colors">
+                {language === 'ru' ? 'Услуги MICE-агентства' : 'MICE Agency Services'}
+              </h3>
+              <p className="text-sm text-white/40">
+                {language === 'ru'
+                  ? 'Конференции, тимбилдинги, делегации — полный цикл организации'
+                  : 'Conferences, team building, delegations — full-cycle organization'}
+              </p>
+            </Link>
+            <Link
+              to={lp('/portfolio')}
+              className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-royal-pink/50 hover:bg-white/[0.07] transition-all"
+            >
+              <div className="text-royal-pink text-[10px] font-bold uppercase tracking-[0.3em] mb-3">
+                {language === 'ru' ? 'Все кейсы' : 'All cases'}
+              </div>
+              <h3 className="text-xl font-display font-bold uppercase mb-2 group-hover:text-royal-pink transition-colors">
+                {language === 'ru' ? 'Наше портфолио' : 'Our Portfolio'}
+              </h3>
+              <p className="text-sm text-white/40">
+                {language === 'ru'
+                  ? '20+ лет опыта — Carlsberg, NL International, AFA и другие'
+                  : '20+ years of experience — Carlsberg, NL International, AFA and more'}
+              </p>
+            </Link>
+            <Link
+              to={lp('/about')}
+              className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-royal-pink/50 hover:bg-white/[0.07] transition-all"
+            >
+              <div className="text-royal-pink text-[10px] font-bold uppercase tracking-[0.3em] mb-3">
+                {language === 'ru' ? 'О нас' : 'About us'}
+              </div>
+              <h3 className="text-xl font-display font-bold uppercase mb-2 group-hover:text-royal-pink transition-colors">
+                {language === 'ru' ? 'Royal Event Group' : 'Royal Event Group'}
+              </h3>
+              <p className="text-sm text-white/40">
+                {language === 'ru'
+                  ? 'Команда из 40+ человек, собственное производство в Египте'
+                  : 'A team of 40+ people, in-house production base in Egypt'}
+              </p>
+            </Link>
+          </div>
+        </section>
 
         {/* Contact Form Section */}
         <section className="max-w-3xl mx-auto">

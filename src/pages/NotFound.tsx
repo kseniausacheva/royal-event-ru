@@ -16,7 +16,7 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-royal-black text-white flex items-center justify-center px-6">
-      <SEO title={language === 'ru' ? 'Страница не найдена | Royal Event Group' : 'Page Not Found | Royal Event Group'} noindex />
+      <SEO title={language === 'ru' ? 'Страница не найдена' : 'Page Not Found'} noindex />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

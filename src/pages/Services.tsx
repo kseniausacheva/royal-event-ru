@@ -4,10 +4,36 @@ import { useLanguage } from '../LanguageContext';
 import { Briefcase, Users, Globe, Zap, Shield, Star, Languages } from 'lucide-react';
 import SEO from '../components/SEO';
 
+const SITE_URL_RU = 'https://royaleventandmice.ru';
+const SITE_URL_EN = 'https://www.royaleventandmice.com';
+
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const icons = [Briefcase, Users, Globe, Languages, Zap, Shield, Star];
+
+  const canonicalHost = language === 'ru' ? SITE_URL_RU : SITE_URL_EN;
+  const servicesUrl = `${canonicalHost}/${language}/services`;
+
+  // Schema.org Service entities — Яндекс/Google показывают расширенный сниппет с услугами
+  const serviceItems = t.servicesPage.items.map((service) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.desc,
+    provider: {
+      '@type': 'Organization',
+      name: 'Royal Event Group',
+      url: SITE_URL_RU,
+    },
+    areaServed: [
+      { '@type': 'Country', name: language === 'ru' ? 'Россия' : 'Russia' },
+      { '@type': 'Country', name: language === 'ru' ? 'Египет' : 'Egypt' },
+      { '@type': 'Country', name: language === 'ru' ? 'ОАЭ' : 'United Arab Emirates' },
+    ],
+    serviceType: service.title,
+    url: servicesUrl,
+  }));
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 px-6">
@@ -15,6 +41,7 @@ const Services = () => {
         title={t.servicesPage.seo.title}
         description={t.servicesPage.seo.description}
         faq={t.servicesPage.faq}
+        jsonLd={serviceItems}
       />
       <div className="max-w-7xl mx-auto">
         <motion.div

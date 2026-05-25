@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../LanguageContext';
 import { useLocation } from 'react-router-dom';
@@ -229,6 +229,74 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
       availableLanguage: ['Russian', 'English', 'Arabic'],
     },
   };
+
+  // Direct DOM head updater — fallback на случай если react-helmet-async не отработает
+  // (есть известная проблема несовместимости react-helmet-async@2 с React 19 в headless-browsers,
+  // включая Puppeteer для prerender). Это гарантирует, что title/meta/canonical/JSON-LD будут в HEAD.
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+
+    document.title = seoTitle;
+    document.documentElement.lang = language;
+
+    // Утилита: создать или обновить meta-тег по селектору
+    const upsertMeta = (selector: string, attrs: Record<string, string>) => {
+      let el = document.head.querySelector<HTMLMetaElement>(selector);
+      if (!el) {
+        el = document.createElement('meta');
+        for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+        // помечаем как добавленные нами, чтобы потом убрать
+        el.setAttribute('data-seo', 'true');
+        document.head.appendChild(el);
+      } else {
+        if ('content' in attrs) el.setAttribute('content', attrs.content);
+      }
+    };
+
+    upsertMeta('meta[name="description"]', { name: 'description', content: seoDescription });
+    upsertMeta('meta[name="keywords"]', { name: 'keywords', content: seoKeywords });
+    upsertMeta('meta[property="og:title"]', { property: 'og:title', content: seoTitle });
+    upsertMeta('meta[property="og:description"]', { property: 'og:description', content: seoDescription });
+    upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonicalUrl });
+    upsertMeta('meta[property="og:image"]', { property: 'og:image', content: seoImage });
+    upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: seoTitle });
+    upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: seoDescription });
+    upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: seoImage });
+    upsertMeta('meta[name="robots"]', {
+      name: 'robots',
+      content: noindex
+        ? 'noindex, nofollow'
+        : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+    });
+
+    // Canonical link
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+
+    // Удаляем старые JSON-LD блоки, добавленные нашим компонентом
+    document.head.querySelectorAll('script[type="application/ld+json"][data-seo="true"]').forEach((el) => el.remove());
+
+    // Добавляем новые JSON-LD блоки (Organization + breadcrumbs + faq + custom jsonLd)
+    const ldBlocks: object[] = [organizationJsonLd];
+    if (breadcrumbsJsonLd) ldBlocks.push(breadcrumbsJsonLd);
+    if (faqJsonLd) ldBlocks.push(faqJsonLd);
+    if (jsonLd) {
+      if (Array.isArray(jsonLd)) ldBlocks.push(...jsonLd);
+      else ldBlocks.push(jsonLd);
+    }
+    for (const block of ldBlocks) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-seo', 'true');
+      script.textContent = JSON.stringify(block);
+      document.head.appendChild(script);
+    }
+  }, [seoTitle, seoDescription, seoKeywords, canonicalUrl, seoImage, language, noindex, breadcrumbsJsonLd, faqJsonLd, jsonLd]);
 
   return (
     <Helmet>

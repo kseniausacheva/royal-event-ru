@@ -305,7 +305,7 @@ const Home = () => {
               className="relative"
             >
               <div className="aspect-square rounded-[60px] overflow-hidden border border-white/10">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt={language === 'ru' ? 'Собственное производство декораций и технического оборудования для мероприятий' : 'In-house production of decor and technical equipment for events'} className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt={language === 'ru' ? 'Собственное производство декораций и технического оборудования для мероприятий' : 'In-house production of decor and technical equipment for events'} loading="lazy" decoding="async" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
               </div>
             </motion.div>
           </div>
@@ -326,7 +326,7 @@ const Home = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   className="group relative h-[500px] rounded-[40px] overflow-hidden border border-white/10"
                 >
-                  <img src={item.image} alt={item.client} className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" referrerPolicy="no-referrer" />
+                  <img src={item.image} alt={item.client} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-royal-black via-royal-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 w-full p-12">
                     <div className="flex justify-between items-end">
@@ -395,9 +395,11 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
               ) : (
-                <img 
-                  src={t.videos.items[0].poster} 
-                  alt={t.videos.items[0].label} 
+                <img
+                  src={t.videos.items[0].poster}
+                  alt={t.videos.items[0].label}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                   referrerPolicy="no-referrer"
                 />
@@ -447,9 +449,11 @@ const Home = () => {
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                     />
                   ) : (
-                    <img 
-                      src={item.poster} 
-                      alt={item.label} 
+                    <img
+                      src={item.poster}
+                      alt={item.label}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
@@ -549,7 +553,7 @@ const Home = () => {
                   className="group"
                 >
                   <div className="aspect-[3/4] rounded-[40px] overflow-hidden mb-8 border border-white/10">
-                    <img src={ceo.image} alt={ceo.name} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
+                    <img src={ceo.image} alt={ceo.name} loading="lazy" decoding="async" className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
                   </div>
                   <h4 className="text-xl md:text-2xl font-display font-bold uppercase tracking-tight mb-2">{ceo.name}</h4>
                   <p className="text-royal-pink font-bold text-xs uppercase tracking-widest">{ceo.role}</p>
@@ -570,6 +574,8 @@ const Home = () => {
               <img
                 src="/team-full-1.jpg"
                 alt={language === 'ru' ? 'Команда Royal Event Group — MICE-агентство' : 'Royal Event Group team — MICE agency'}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -589,6 +595,8 @@ const Home = () => {
               <img
                 src="/team-full-2.jpg"
                 alt={language === 'ru' ? 'Команда Royal Event Group в работе на мероприятии' : 'Royal Event Group team working at an event'}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -847,6 +855,8 @@ const Home = () => {
                 <img
                   src={partner.logo}
                   alt={partner.name}
+                  loading="lazy"
+                  decoding="async"
                   className={`max-h-full max-w-full object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 mix-blend-lighten grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 ${partner.name === 'Samsung' ? 'scale-150' : ['Four Seasons', 'Carlsberg', 'Ewa Product'].includes(partner.name) ? 'scale-110' : ''}`}
                 />
               </motion.div>
@@ -889,9 +899,11 @@ const Home = () => {
               >
                 <Link to={lp(`/blog/${article.id}`)} className="block">
                   <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-8">
-                    <img 
-                      src={article.image} 
+                    <img
+                      src={article.image}
                       alt={article.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                     />
@@ -958,7 +970,7 @@ const Home = () => {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-[60px] overflow-hidden border border-white/10 shadow-2xl shadow-royal-pink/10">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000" alt={language === 'ru' ? 'Корпоративное мероприятие от Royal Event Group' : 'Corporate event by Royal Event Group'} className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000" alt={language === 'ru' ? 'Корпоративное мероприятие от Royal Event Group' : 'Corporate event by Royal Event Group'} loading="lazy" decoding="async" className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
             </div>
           </motion.div>
         </div>

@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
-import { MapPin, Star, Users, Briefcase } from 'lucide-react';
+import { useLocalizedPath } from '../hooks/useLocalizedPath';
+import { MapPin, Star, Users, Briefcase, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 
 interface DestinationProps {
@@ -16,7 +18,8 @@ interface DestinationProps {
 }
 
 const Destination: React.FC<DestinationProps> = ({ name, image, tagline, description, seo }) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const lp = useLocalizedPath();
 
   const stats = [
     { icon: Briefcase, label: t.destinations.stats.events, value: '500+' },
@@ -47,7 +50,13 @@ const Destination: React.FC<DestinationProps> = ({ name, image, tagline, descrip
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32">
           <div className="aspect-[16/10] rounded-[40px] overflow-hidden border border-white/10">
-            <img src={image} alt={name} className="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+            <img
+              src={image}
+              alt={language === 'ru' ? `MICE-мероприятия в ${name} — Royal Event Group` : `MICE events in ${name} — Royal Event Group`}
+              loading="lazy"
+              className="w-full h-full object-cover grayscale"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <div className="flex flex-col justify-center">
             <p className="text-2xl text-white/60 font-light leading-relaxed mb-12">
@@ -63,6 +72,52 @@ const Destination: React.FC<DestinationProps> = ({ name, image, tagline, descrip
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Related links — внутренняя перелинковка для SEO */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+          <Link
+            to={lp('/services')}
+            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-royal-pink/50 hover:bg-white/[0.07] transition-all"
+          >
+            <ArrowRight className="w-5 h-5 text-royal-pink mb-3 group-hover:translate-x-1 transition-transform" />
+            <h3 className="text-xl font-display font-bold uppercase mb-2 group-hover:text-royal-pink transition-colors">
+              {language === 'ru' ? 'Услуги агентства' : 'Agency Services'}
+            </h3>
+            <p className="text-sm text-white/40">
+              {language === 'ru'
+                ? 'Конференции, тимбилдинги, инсентив-туры и делегации'
+                : 'Conferences, team building, incentive tours and delegations'}
+            </p>
+          </Link>
+          <Link
+            to={lp('/portfolio')}
+            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-royal-pink/50 hover:bg-white/[0.07] transition-all"
+          >
+            <ArrowRight className="w-5 h-5 text-royal-pink mb-3 group-hover:translate-x-1 transition-transform" />
+            <h3 className="text-xl font-display font-bold uppercase mb-2 group-hover:text-royal-pink transition-colors">
+              {language === 'ru' ? `Наши кейсы` : 'Our Cases'}
+            </h3>
+            <p className="text-sm text-white/40">
+              {language === 'ru'
+                ? `Реальные проекты Royal Event Group — Carlsberg, NL International, AFA`
+                : 'Real Royal Event Group projects — Carlsberg, NL International, AFA'}
+            </p>
+          </Link>
+          <Link
+            to={lp('/contact')}
+            className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-royal-pink/50 hover:bg-white/[0.07] transition-all"
+          >
+            <ArrowRight className="w-5 h-5 text-royal-pink mb-3 group-hover:translate-x-1 transition-transform" />
+            <h3 className="text-xl font-display font-bold uppercase mb-2 group-hover:text-royal-pink transition-colors">
+              {language === 'ru' ? 'Связаться с нами' : 'Get in touch'}
+            </h3>
+            <p className="text-sm text-white/40">
+              {language === 'ru'
+                ? `Узнайте стоимость организации мероприятия в ${name}`
+                : `Get a quote for an event in ${name}`}
+            </p>
+          </Link>
         </div>
       </div>
     </div>

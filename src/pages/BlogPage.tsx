@@ -35,7 +35,7 @@ const BlogPage = () => {
     if (!article) {
       return (
         <div className="pt-32 pb-20 text-center">
-          <SEO title="Article not found | Royal Event Group" />
+          <SEO title={language === 'ru' ? 'Статья не найдена' : 'Article not found'} noindex />
           <h1 className="text-4xl font-display font-bold text-white mb-8">Article not found</h1>
           <Link to={lp('/blog')} className="text-royal-pink hover:underline">Back to Blog</Link>
         </div>
@@ -81,7 +81,7 @@ const BlogPage = () => {
     return (
       <div className="pt-32 pb-20 bg-royal-black min-h-screen">
         <SEO
-          title={`${article.title} | Royal Event Group`}
+          title={article.title}
           description={article.excerpt}
           image={article.image}
           breadcrumbs={[
@@ -167,6 +167,45 @@ const BlogPage = () => {
               </button>
             </div>
 
+            {/* Related Articles — внутренняя перелинковка для SEO */}
+            {blogData.articles.filter((a: any) => a.id !== article.id).length > 0 && (
+              <section className="mt-20">
+                <h3 className="text-xl font-display font-bold uppercase tracking-tight text-white mb-6">
+                  {language === 'ru' ? 'Похожие статьи' : 'Related Articles'}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {blogData.articles
+                    .filter((a: any) => a.id !== article.id)
+                    .slice(0, 2)
+                    .map((related: any) => (
+                      <Link
+                        key={related.id}
+                        to={lp(`/blog/${related.id}`)}
+                        className="group rounded-2xl overflow-hidden border border-white/10 hover:border-royal-pink/50 transition-all"
+                      >
+                        <div className="aspect-[16/9] overflow-hidden">
+                          <img
+                            src={related.image}
+                            alt={related.title}
+                            loading="lazy"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <div className="text-royal-pink text-[10px] font-bold uppercase tracking-[0.3em] mb-2">
+                            {related.category}
+                          </div>
+                          <h4 className="font-display font-bold text-white text-lg leading-tight group-hover:text-royal-pink transition-colors">
+                            {related.title}
+                          </h4>
+                        </div>
+                      </Link>
+                    ))}
+                </div>
+              </section>
+            )}
+
             {/* Contact Form */}
             <section className="mt-20 bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
               <h2 className="text-2xl md:text-3xl font-display font-black uppercase tracking-tighter mb-2 text-center">
@@ -208,7 +247,7 @@ const BlogPage = () => {
   // Blog List View
   return (
     <div className="pt-32 pb-20 bg-royal-black min-h-screen">
-      <SEO title={`${blogData.title} | Royal Event Group`} description={blogData.subtitle} />
+      <SEO title={blogData.title} description={blogData.subtitle} />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <motion.div
@@ -237,9 +276,11 @@ const BlogPage = () => {
             >
               <Link to={lp(`/blog/${article.id}`)} className="block">
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6">
-                  <img 
-                    src={article.image} 
+                  <img
+                    src={article.image}
                     alt={article.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
