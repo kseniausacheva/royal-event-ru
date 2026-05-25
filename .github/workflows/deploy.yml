@@ -1,0 +1,100 @@
+name: Build and Deploy to reg.ru
+
+# Workflow запускается при:
+#   - push в ветку main (автоматически после каждого коммита)
+#   - вручную через UI GitHub (Actions → Build and Deploy → Run workflow)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Защита от параллельных деплоев: если идёт build, новый push отменит предыдущий.
+# Это важно, если ты добавишь несколько статей подряд — задеплоится только последний.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build site and deploy via FTP
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # Puppeteer скачивает Chromium при npm install (~120 MB).
+      # Кэшируем чтобы не качать заново на каждый build.
+      - name: Cache Puppeteer Chromium
+        id: puppeteer-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-chromium-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            puppeteer-chromium-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      # На случай если кэш не сработал — установить Chromium вручную
+      - name: Install Chromium for Puppeteer (if missing)
+        if: steps.puppeteer-cache.outputs.cache-hit != 'true'
+        run: npx puppeteer browsers install chrome
+
+      # Build = generate sitemap + vite build (с image optimizer) + prerender 24 страниц
+      - name: Build site (sitemap → vite → image-opt → prerender)
+        run: npm run build
+
+      - name: Show build output stats
+        run: |
+          echo "=== dist/ contents ==="
+          ls -la dist/
+          echo ""
+          echo "=== dist size (без videos) ==="
+          du -sh dist --exclude=videos 2>/dev/null || du -sh dist
+          echo ""
+          echo "=== prerendered routes ==="
+          find dist -name 'index.html' | sort
+
+      # Deploy готовой папки dist/ на reg.ru через FTP.
+      # Использует incremental sync — заливает только изменённые файлы (быстро).
+      # FTP-credentials лежат в GitHub Secrets (Settings → Secrets and variables → Actions).
+      - name: Deploy to reg.ru via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          local-dir: ./dist/
+          # protocol: 'ftps' — попробует FTPS (зашифрованный) — большинство хостингов поддерживает.
+          # Если reg.ru не принимает FTPS, поменяй на 'ftp' (незашифрованный).
+          protocol: ftps
+          # security: 'loose' — не проверять сертификат сервера (reg.ru часто использует self-signed).
+          security: loose
+          # state-name: имя файла где action хранит хеши залитых файлов для incremental sync.
+          # Хранится на сервере — после первого деплоя последующие будут быстрее.
+          state-name: .ftp-deploy-sync-state.json
+          # Не трогаем эти системные файлы/папки на сервере (логи, временные файлы reg.ru)
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/logs/**
+            **/php-bin/**
+            **/php-bin-*/**
+            **/bin-tmp/**
+
+      - name: Success notification
+        if: success()
+        run: |
+          echo "✅ Deployed to https://royaleventandmice.ru"
+          echo "Проверь через 1-2 минуты (CDN может закэшировать старую версию)."
