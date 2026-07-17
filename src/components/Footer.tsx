@@ -3,6 +3,7 @@ import { Instagram, Facebook, Linkedin, Send, MessageCircle } from 'lucide-react
 import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { Link } from 'react-router-dom';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const Footer = () => {
   const { t, language } = useLanguage();
@@ -12,6 +13,7 @@ const Footer = () => {
     { icon: Instagram, href: 'https://www.instagram.com/royalevent_mice_egypt', label: 'Instagram' },
 { icon: Linkedin, href: 'https://www.linkedin.com/in/ksenia-usacheva-b5a7b23b5/', label: 'LinkedIn' },
     { icon: Send, href: 'https://t.me/kseniamerry', label: 'Telegram' },
+    { icon: WhatsAppIcon, href: 'https://wa.me/79261233328', label: 'WhatsApp' },
     { icon: MessageCircle, href: 'https://max.ru/u/f9LHodD0cOI6NopEpkHgITsu_AIEFyrbBPaFkURFR2kn3i3inUUuT4dKLgQ', label: 'Max' },
   ];
 

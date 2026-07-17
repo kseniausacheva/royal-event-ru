@@ -18,12 +18,22 @@ import {
   ChevronRight,
   CheckCircle2,
   X,
-  Send
+  Send,
+  MessageCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
+import WhatsAppIcon from '../components/WhatsAppIcon';
+
+// Каналы быстрой связи — одинаковый набор в герое и нижнем CTA.
+// MessageCircle для MAX — так же, как в футере и на странице контактов.
+const MESSENGERS = [
+  { label: 'Telegram', href: 'https://t.me/kseniamerry', icon: Send },
+  { label: 'WhatsApp', href: 'https://wa.me/79261233328', icon: WhatsAppIcon },
+  { label: 'MAX', href: 'https://max.ru/u/f9LHodD0cOI6NopEpkHgITsu_AIEFyrbBPaFkURFR2kn3i3inUUuT4dKLgQ', icon: MessageCircle },
+];
 
 const SectionHeader = ({ title, subtitle }: { title: string, subtitle?: string }) => (
   <div className="mb-16">
@@ -177,22 +187,29 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                className="flex flex-wrap items-center gap-4"
+                className="flex flex-col items-start gap-4"
               >
                 {/* text-xs на мобильном: «ЗАПРОСИТЬ ПРЕДЛОЖЕНИЕ» в широком Unbounded
                     иначе шире экрана 375px (кнопка резалась справа) */}
                 <Link to={lp('/contact')} className="group px-8 md:px-12 py-5 md:py-6 bg-royal-pink text-royal-black font-display font-bold text-xs sm:text-sm md:text-base rounded-full flex items-center gap-3 md:gap-4 shadow-2xl shadow-royal-pink/20 transition-all hover:scale-105 whitespace-nowrap">
                   {t.hero.cta} <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                {/* B2B-клиенты чаще пишут в мессенджер, чем заполняют форму */}
-                <a
-                  href="https://t.me/kseniamerry"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-5 md:py-6 border border-white/20 text-white font-display font-bold text-xs sm:text-sm md:text-base rounded-full flex items-center gap-3 hover:border-royal-pink hover:text-royal-pink transition-colors whitespace-nowrap"
-                >
-                  <Send className="w-5 h-5" /> {language === 'ru' ? 'НАПИСАТЬ В TELEGRAM' : 'MESSAGE ON TELEGRAM'}
-                </a>
+                {/* B2B-клиенты чаще пишут в мессенджер, чем заполняют форму.
+                    MAX — обязательный канал (решение владельца), WhatsApp привязан
+                    к +7 926 123-33-28, Telegram — @kseniamerry */}
+                <div className="flex flex-wrap items-center gap-3">
+                  {MESSENGERS.map((m) => (
+                    <a
+                      key={m.label}
+                      href={m.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-3 border border-white/20 text-white/90 font-display font-bold text-xs rounded-full flex items-center gap-2 hover:border-royal-pink hover:text-royal-pink transition-colors whitespace-nowrap"
+                    >
+                      <m.icon className="w-4 h-4" /> {m.label}
+                    </a>
+                  ))}
+                </div>
               </motion.div>
             </div>
             <motion.div
@@ -997,21 +1014,26 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-col items-center gap-5">
               <Link
                 to={lp('/contact')}
                 className="inline-flex items-center gap-4 px-16 py-8 bg-royal-black text-white font-display font-bold rounded-full text-xl hover:scale-105 transition-transform"
               >
                 {t.ctaSection.button} <ArrowRight className="w-6 h-6" />
               </Link>
-              <a
-                href="https://t.me/kseniamerry"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-10 py-8 border-2 border-royal-black/30 text-royal-black font-display font-bold rounded-full text-xl hover:bg-royal-black hover:text-white transition-colors"
-              >
-                <Send className="w-6 h-6" /> Telegram
-              </a>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                {MESSENGERS.map((m) => (
+                  <a
+                    key={m.label}
+                    href={m.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 border-2 border-royal-black/30 text-royal-black font-display font-bold text-sm rounded-full hover:bg-royal-black hover:text-white transition-colors"
+                  >
+                    <m.icon className="w-4 h-4" /> {m.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

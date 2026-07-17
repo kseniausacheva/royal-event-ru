@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../LanguageContext';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Send, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 import ContactForm from '../components/ContactForm';
 
@@ -133,6 +134,15 @@ const Contact = () => {
                 className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:border-royal-pink hover:text-royal-pink transition-all"
               >
                 <Send className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/79261233328"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:border-royal-pink hover:text-royal-pink transition-all"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
               </a>
               <a
                 href="https://max.ru/u/f9LHodD0cOI6NopEpkHgITsu_AIEFyrbBPaFkURFR2kn3i3inUUuT4dKLgQ"
