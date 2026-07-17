@@ -11,7 +11,10 @@ RewriteCond %{HTTP_HOST} ^www\.royaleventandmice\.ru$ [NC]
 RewriteRule ^(.*)$ https://royaleventandmice.ru/$1 [L,R=301,NE]
 
 # Форсируем HTTPS — редиректим все http:// запросы на https://
-RewriteCond %{HTTPS} !=on
+# На reg.ru Apache стоит за nginx-прокси, снимающим SSL: %{HTTPS} у Apache
+# всегда off, проверять его нельзя (петля редиректов). Реальный протокол
+# посетителя nginx передаёт в заголовке X-Forwarded-Proto.
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301,NE]
 
 # Don't rewrite real files or directories
