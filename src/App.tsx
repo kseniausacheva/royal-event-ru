@@ -139,7 +139,14 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="lg:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen
+            ? (language === 'ru' ? 'Закрыть меню' : 'Close menu')
+            : (language === 'ru' ? 'Открыть меню' : 'Open menu')}
+          aria-expanded={isOpen}
+        >
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -228,7 +235,9 @@ const AppRoutes = () => {
   );
 };
 
-const AppContent = () => {
+// Экспортируется отдельно от роутера: клиент оборачивает в BrowserRouter (ниже),
+// а SSG-рендер (src/entry-server.tsx) — в StaticRouter с URL страницы.
+export const AppContent = () => {
   return (
     <LanguageProvider>
       <Navbar />

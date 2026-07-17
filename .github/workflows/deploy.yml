@@ -30,27 +30,17 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      # Puppeteer скачивает Chromium при npm install (~120 MB).
-      # Кэшируем чтобы не качать заново на каждый build.
-      - name: Cache Puppeteer Chromium
-        id: puppeteer-cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/puppeteer
-          key: puppeteer-chromium-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            puppeteer-chromium-${{ runner.os }}-
-
+      # Chromium в CI больше не нужен: пререндер — настоящий SSG через
+      # react-dom/static (scripts/prerender.mjs), браузер не используется.
+      # puppeteer остался в devDeps только для локальных _verify-скриптов —
+      # пропускаем скачивание его Chromium (~120 MB).
       - name: Install dependencies
         run: npm ci
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
 
-      # На случай если кэш не сработал — установить Chromium вручную
-      - name: Install Chromium for Puppeteer (if missing)
-        if: steps.puppeteer-cache.outputs.cache-hit != 'true'
-        run: npx puppeteer browsers install chrome
-
-      # Build = generate sitemap + vite build (с image optimizer) + prerender 24 страниц
-      - name: Build site (sitemap → vite → image-opt → prerender)
+      # Build = sitemap → vite build (client, с image optimizer) → vite build --ssr → SSG-prerender
+      - name: Build site (sitemap → vite → image-opt → SSG-prerender)
         run: npm run build
 
       - name: Show build output stats

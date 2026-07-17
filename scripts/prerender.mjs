@@ -1,118 +1,200 @@
 /**
- * Post-build prerender:
- * Запускает headless Chromium через @prerenderer/prerenderer, открывает каждый
- * маршрут SPA-приложения и сохраняет получившийся HTML в `dist/<route>/index.html`.
+ * Post-build SSG-пререндер (настоящий, без браузера).
  *
- * Это критично для SEO под Яндекс/Google: они видят готовый контент с заголовками,
- * мета-тегами и JSON-LD без необходимости выполнять JS.
+ * Как работает:
+ *   1. `vite build` собирает клиент в dist/ (+ .vite/manifest.json).
+ *   2. `vite build --ssr src/entry-server.tsx` собирает серверный бандл в dist-ssr/.
+ *   3. Этот скрипт для каждого маршрута вызывает render() из SSR-бандла
+ *      (prerenderToNodeStream + StaticRouter — дожидается lazy-чанков),
+ *      подставляет разметку в <div id="root"> и заменяет SEO-блок шаблона
+ *      (между <!-- seo:default:start --> и <!-- seo:default:end --> в index.html)
+ *      на вывод react-helmet-async конкретной страницы.
+ *
+ * Чем это лучше старого Puppeteer-слепка: разметка совпадает с клиентским
+ * рендером узел-в-узел, поэтому hydrateRoot в src/main.tsx переиспользует DOM
+ * (слепок склеивал текстовые узлы → React #418 → полная перерисовка → LCP 8-9 c
+ * на мобильных). Плюс не нужен Chromium в CI и рендер занимает секунды.
+ *
+ * Маршруты рендерятся со слэшем на конце: Apache на reg.ru 301-ит /ru → /ru/,
+ * значит в браузере location.pathname всегда слэшный. Рендерим так же, чтобы
+ * серверная разметка (например, активный пункт навбара, сравнивающий pathname)
+ * совпала с клиентской при гидратации.
  *
  * Запускается автоматически через `npm run build` (postbuild-hook в package.json).
- *
- * Если на машине нет Chromium — Puppeteer его скачает (~100 МБ) при первом запуске.
  */
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
-import Prerenderer from '@prerenderer/prerenderer';
-import PuppeteerRenderer from '@prerenderer/renderer-puppeteer';
 import { blogArticles } from '../src/content/blog-articles.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
+const DIST_SSR = path.join(ROOT, 'dist-ssr');
 
 /**
  * Статичные маршруты сайта (только русская локаль — она основная для .ru-домена).
  * Английские роуты на этом домене не индексируются (canonical на .com).
- * Маршруты блог-постов добавляются автоматически из blog-articles.mjs ниже.
+ * module — исходник lazy-страницы для <link rel="modulepreload"> (по манифесту
+ * Vite); null у страниц, которые лежат в основном бандле (Home, Destination).
  */
 const STATIC_ROUTES = [
-  '/ru',
-  '/ru/about',
-  '/ru/services',
-  '/ru/portfolio',
-  '/ru/portfolio/carlsberg',
-  '/ru/portfolio/nl-international',
-  '/ru/portfolio/ewa-product',
-  '/ru/portfolio/afa-agricultural',
-  '/ru/portfolio/world-stars',
-  '/ru/portfolio/bedouin-dinner',
-  '/ru/egypt',
-  '/ru/uae',
-  '/ru/russia',
-  '/ru/delegations',
-  '/ru/blog',
-  '/ru/contact',
-  '/ru/privacy',
-  '/ru/offer',
-  '/ru/data-consent',
-  '/ru/mailing-consent',
+  { route: '/ru', module: null },
+  { route: '/ru/about', module: 'src/pages/About.tsx' },
+  { route: '/ru/services', module: 'src/pages/Services.tsx' },
+  { route: '/ru/portfolio', module: 'src/pages/Portfolio.tsx' },
+  { route: '/ru/portfolio/carlsberg', module: 'src/pages/CaseStudy.tsx' },
+  { route: '/ru/portfolio/nl-international', module: 'src/pages/CaseStudy.tsx' },
+  { route: '/ru/portfolio/ewa-product', module: 'src/pages/CaseStudy.tsx' },
+  { route: '/ru/portfolio/afa-agricultural', module: 'src/pages/CaseStudy.tsx' },
+  { route: '/ru/portfolio/world-stars', module: 'src/pages/CaseStudy.tsx' },
+  { route: '/ru/portfolio/bedouin-dinner', module: 'src/pages/CaseStudy.tsx' },
+  { route: '/ru/egypt', module: null },
+  { route: '/ru/uae', module: null },
+  { route: '/ru/russia', module: null },
+  { route: '/ru/delegations', module: 'src/pages/Delegations.tsx' },
+  { route: '/ru/blog', module: 'src/pages/BlogPage.tsx' },
+  { route: '/ru/contact', module: 'src/pages/Contact.tsx' },
+  { route: '/ru/privacy', module: 'src/pages/PrivacyPolicy.tsx' },
+  { route: '/ru/offer', module: 'src/pages/Offer.tsx' },
+  { route: '/ru/data-consent', module: 'src/pages/DataConsent.tsx' },
+  { route: '/ru/mailing-consent', module: 'src/pages/MailingConsent.tsx' },
 ];
 
 // Автогенерация маршрутов для каждой статьи блога
-const BLOG_ROUTES = blogArticles.map((a) => `/ru/blog/${a.id}`);
+const BLOG_ROUTES = blogArticles.map((a) => ({
+  route: `/ru/blog/${a.id}`,
+  module: 'src/pages/BlogPage.tsx',
+}));
 
 const ROUTES = [...STATIC_ROUTES, ...BLOG_ROUTES];
 
+const SEO_BLOCK_RE = /<!-- seo:default:start[\s\S]*?<!-- seo:default:end -->/;
+const ROOT_DIV = '<div id="root"></div>';
+
+/** Строит <link rel="modulepreload"> + css-линки для lazy-чанка страницы. */
+function buildPreloads(manifest, moduleId) {
+  if (!moduleId || !manifest?.[moduleId]) return '';
+  const entry = manifest[moduleId];
+  const tags = [`<link rel="modulepreload" crossorigin href="/${entry.file}" />`];
+  for (const css of entry.css || []) {
+    tags.push(`<link rel="stylesheet" href="/${css}" />`);
+  }
+  return `\n    ${tags.join('\n    ')}`;
+}
+
+/** Проверки, без которых страницу нельзя выпускать на прод. Бросают при провале. */
+function assertPage(route, html) {
+  const fail = (msg) => {
+    throw new Error(`Sanity-провал на ${route}: ${msg}`);
+  };
+  const canonicals = html.match(/rel="canonical"/g) || [];
+  if (canonicals.length !== 1) fail(`canonical встречается ${canonicals.length} раз(а), должен ровно 1`);
+  const href = html.match(/<link[^>]*rel="canonical"[^>]*href="([^"]+)"/)?.[1];
+  if (!href) fail('canonical без href');
+  if (!href.endsWith('/')) fail(`canonical без конечного слэша: ${href}`);
+  if (!href.startsWith('https://royaleventandmice.ru')) fail(`canonical не на .ru: ${href}`);
+  if (!/property="og:url"/.test(html)) fail('нет og:url');
+  if (!/<h1/.test(html)) fail('в разметке нет <h1> — страница отрендерилась пустой?');
+  const rootIdx = html.indexOf('<div id="root">');
+  if (rootIdx === -1) fail('нет <div id="root">');
+  if (html.length - rootIdx < 3000) fail('подозрительно мало разметки внутри #root');
+  // Незавершённая Suspense-граница = в статике виден фолбэк-спиннер,
+  // а контент спрятан в <div hidden> до выполнения JS. Для SEO это провал.
+  if (html.includes('<!--$?-->')) fail('незавершённая Suspense-граница (спиннер вместо контента)');
+}
+
 async function run() {
-  console.log('\n🔧 Prerendering', ROUTES.length, 'routes...\n');
+  console.log('\n🔧 SSG-prerender', ROUTES.length, 'routes...\n');
   const start = Date.now();
 
-  // Проверяем, что dist/ существует (значит, build прошёл)
+  let template;
   try {
-    await fs.access(DIST);
+    template = await fs.readFile(path.join(DIST, 'index.html'), 'utf-8');
   } catch {
-    console.error('❌ dist/ не найден. Запустите `npm run build` сначала.');
+    console.error('❌ dist/index.html не найден. Запустите `npm run build` сначала.');
+    process.exit(1);
+  }
+  if (!SEO_BLOCK_RE.test(template)) {
+    console.error('❌ В dist/index.html нет маркеров <!-- seo:default:start/end -->.');
+    process.exit(1);
+  }
+  if (!template.includes(ROOT_DIV)) {
+    console.error('❌ В dist/index.html нет пустого <div id="root"></div>.');
     process.exit(1);
   }
 
-  const prerenderer = new Prerenderer({
-    staticDir: DIST,
-    indexPath: path.join(DIST, 'index.html'),
-    renderer: new PuppeteerRenderer({
-      renderAfterTime: 5000,
-      headless: true,
-      launchOptions: {
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      },
-      consoleHandler: (route, message) => {
-        if (message.type() === 'error') {
-          console.log(`[browser error on ${route}]`, message.text());
-        }
-      },
-      async pageHandler(page, route) {
-        page.on('pageerror', (err) => {
-          console.log(`[pageerror on ${route}]`, err.message);
-        });
-      },
-    }),
-  });
-
+  let render;
   try {
-    await prerenderer.initialize();
-    const rendered = await prerenderer.renderRoutes(ROUTES);
-
-    for (const r of rendered) {
-      // Куда писать: для /ru → dist/ru/index.html, для /ru/about → dist/ru/about/index.html
-      const targetDir = path.join(DIST, r.route);
-      await fs.mkdir(targetDir, { recursive: true });
-      const targetFile = path.join(targetDir, 'index.html');
-
-      // Помечаем что HTML — пререндер (поможет в дебаге, если что-то странное в выдаче)
-      const html = r.html.replace(
-        /<head>/,
-        '<head><!-- prerendered ' + new Date().toISOString() + ' -->',
-      );
-
-      await fs.writeFile(targetFile, html, 'utf-8');
-      console.log('  ✓', r.route, '→', path.relative(ROOT, targetFile));
-    }
-
-    const elapsed = ((Date.now() - start) / 1000).toFixed(1);
-    console.log(`\n✅ Prerendered ${rendered.length} routes in ${elapsed}s\n`);
-  } finally {
-    await prerenderer.destroy();
+    ({ render } = await import(pathToUrl(path.join(DIST_SSR, 'entry-server.js'))));
+  } catch (e) {
+    console.error('❌ Не найден SSR-бандл dist-ssr/entry-server.js. Запустите `npm run build` (он соберёт его перед пререндером).');
+    throw e;
   }
+
+  // Манифест клиентской сборки — для modulepreload lazy-чанков страниц
+  let manifest = null;
+  try {
+    manifest = JSON.parse(await fs.readFile(path.join(DIST, '.vite', 'manifest.json'), 'utf-8'));
+  } catch {
+    console.warn('⚠️ dist/.vite/manifest.json не найден — страницы будут без modulepreload lazy-чанков.');
+  }
+
+  for (const { route, module } of ROUTES) {
+    // Рендерим слэшный URL (см. шапку файла), пишем в dist/<route>/index.html
+    const url = route.endsWith('/') ? route : `${route}/`;
+    const { html: appHtml, helmet } = await render(url);
+
+    let page = template;
+
+    // <html lang="…"> — из helmet (данные + data-rh, чтобы клиентский helmet взял тег под управление)
+    const htmlAttrs = helmet.htmlAttributes.toString();
+    if (htmlAttrs) page = page.replace(/<html[^>]*>/, `<html ${htmlAttrs}>`);
+
+    // SEO-блок шаблона → head конкретной страницы
+    const head = [
+      '<!-- ssg:head -->',
+      helmet.title.toString(),
+      helmet.meta.toString(),
+      helmet.link.toString(),
+      helmet.script.toString(),
+    ]
+      .filter(Boolean)
+      .join('\n    ');
+    // Функция-замена и split/join ниже — чтобы «$&»-подобные последовательности
+    // в контенте не трактовались String.replace как спецсимволы подстановки
+    page = page.replace(SEO_BLOCK_RE, () => head);
+
+    // Разметка приложения
+    page = page.split(ROOT_DIV).join(`<div id="root">${appHtml}</div>`);
+
+    // Прелоад lazy-чанка страницы — чтобы гидратация её Suspense-границы
+    // не ждала каскад «главный бандл → потом запрос чанка»
+    const preloads = buildPreloads(manifest, module);
+    if (preloads) page = page.replace('</head>', `${preloads}\n  </head>`);
+
+    // Метка пререндера (помогает в дебаге выдачи)
+    page = page.replace(/<head>/, '<head><!-- prerendered-ssg ' + new Date().toISOString() + ' -->');
+
+    assertPage(route, page);
+
+    const targetDir = path.join(DIST, route);
+    await fs.mkdir(targetDir, { recursive: true });
+    const targetFile = path.join(targetDir, 'index.html');
+    await fs.writeFile(targetFile, page, 'utf-8');
+    console.log('  ✓', url, '→', path.relative(ROOT, targetFile));
+  }
+
+  // Манифест в проде не нужен — не тащим его по FTP
+  await fs.rm(path.join(DIST, '.vite'), { recursive: true, force: true });
+
+  const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+  console.log(`\n✅ SSG-prerendered ${ROUTES.length} routes in ${elapsed}s\n`);
+}
+
+/** Windows-совместимый file:// URL для динамического import() */
+function pathToUrl(p) {
+  return new URL(`file:///${p.replace(/\\/g, '/')}`).href;
 }
 
 run().catch((err) => {

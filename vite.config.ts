@@ -4,7 +4,7 @@ import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
 import {ViteImageOptimizer} from 'vite-plugin-image-optimizer';
 
-export default defineConfig(({mode}) => {
+export default defineConfig(({mode, isSsrBuild}) => {
   const env = loadEnv(mode, '.', '');
   return {
     plugins: [
@@ -13,7 +13,8 @@ export default defineConfig(({mode}) => {
       // Сжимает все картинки в public/ при build без смены формата —
       // ссылки остаются прежними (.jpg, .JPG, .png), но размер падает на 30-60%.
       // Это критично для Core Web Vitals (LCP), который Google и Яндекс используют для ранжирования.
-      ViteImageOptimizer({
+      // В SSR-сборке (vite build --ssr для SSG-пререндера) не нужен: public/ туда не копируется.
+      !isSsrBuild && ViteImageOptimizer({
         jpg: { quality: 80, mozjpeg: true },
         jpeg: { quality: 80, mozjpeg: true },
         png: { quality: 80 },
@@ -32,9 +33,18 @@ export default defineConfig(({mode}) => {
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
+    ssr: {
+      // react-helmet-async — CommonJS; Node в ESM-режиме не видит его named
+      // exports. Бандлим в SSR-выход, чтобы Vite сам превратил CJS → ESM.
+      noExternal: ['react-helmet-async'],
+    },
     build: {
-      // Split vendor libraries into separate chunks for better caching
-      rollupOptions: {
+      // Манифест нужен scripts/prerender.mjs: по нему для каждой страницы
+      // подставляется <link rel="modulepreload"> её lazy-чанка.
+      manifest: !isSsrBuild,
+      // Split vendor libraries into separate chunks for better caching.
+      // Для SSR-бандла чанк-сплит не нужен (его читает только Node при пререндере).
+      rollupOptions: isSsrBuild ? {} : {
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],

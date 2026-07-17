@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Yandex.Webmaster verification -->
+    <meta name="yandex-verification" content="40c899e78233479a" />
+    <!-- Google Search Console verification -->
+    <meta name="google-site-verification" content="gVICt5Os9gl4gWdPI6zakICYHVgAFnXyXsYvZtOajuU" />
+
+    <!-- seo:default:start
+         Всё между маркерами — дефолтная SEO-«шапка» для dev-сервера и
+         SPA-фолбэка (маршруты без пререндера). При SSG (scripts/prerender.mjs)
+         этот блок ЦЕЛИКОМ заменяется на вывод react-helmet-async конкретной
+         страницы: title, description, canonical, hreflang, og/twitter, JSON-LD.
+         Не выносить отсюда теги, которые рендерит SEO.tsx, иначе в статике
+         будут дубли (два canonical — прямой вред SEO). -->
     <title>Royal Event Group — MICE-агентство в Москве: мероприятия в Египте, ОАЭ и России</title>
     <meta name="description" content="Royal Event Group — MICE-агентство полного цикла: организация корпоративных мероприятий, конференций, тимбилдингов и инсентив-туров в Египте, ОАЭ, России и на Ближнем Востоке. 20+ лет опыта, собственное производство, прямые контракты с топ-отелями." />
     <meta name="keywords" content="MICE, MICE агентство, MICE агентство Москва, организация мероприятий, организация корпоративных мероприятий, корпоративы за рубежом, ивент агентство Москва, конференции, тимбилдинг, тимбилдинг ОАЭ, тимбилдинг Египет, инсентив туры, корпоративы в Дубае, корпоративы в Египте, мероприятия в Шарм-эль-Шейхе, мероприятия в Дубае, мероприятия в Москве, делегации, сопровождение делегаций, арабские делегации, DMC агентство, Royal Event Group" />
@@ -12,10 +29,6 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="yandex" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta name="color-scheme" content="dark" />
 
     <!-- Geo (Москва, Россия) — Яндекс учитывает гео-разметку при ранжировании -->
     <meta name="geo.region" content="RU-MOW" />
@@ -23,30 +36,12 @@
     <meta name="geo.position" content="55.755826;37.617300" />
     <meta name="ICBM" content="55.755826, 37.617300" />
 
-    <!-- Yandex.Webmaster verification -->
-    <meta name="yandex-verification" content="40c899e78233479a" />
-    <!-- Google Search Console verification -->
-    <meta name="google-site-verification" content="gVICt5Os9gl4gWdPI6zakICYHVgAFnXyXsYvZtOajuU" />
-
     <!-- Слэш на конце обязателен: Apache 301-ит /ru → /ru/, canonical должен
-         указывать на конечный 200-адрес. SEO.tsx перезапишет на актуальную страницу. -->
+         указывать на конечный 200-адрес. -->
     <link rel="canonical" href="https://royaleventandmice.ru/ru/" />
     <link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/" />
     <link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en" />
     <link rel="alternate" hreflang="x-default" href="https://royaleventandmice.ru/ru/" />
-
-    <link rel="preconnect" href="https://mc.yandex.ru" />
-    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
-
-    <!-- Шрифты локальные (public/fonts) — прелоадим два критичных кириллических:
-         заголовки (Unbounded) и текст (Manrope). Остальные сабсеты браузер
-         возьмёт сам по unicode-range из fonts.css. -->
-    <link rel="preload" href="/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -99,6 +94,20 @@
       }
     }
     </script>
+    <!-- seo:default:end -->
+
+    <link rel="preconnect" href="https://mc.yandex.ru" />
+    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
+
+    <!-- Шрифты локальные (public/fonts) — прелоадим два критичных кириллических:
+         заголовки (Unbounded) и текст (Manrope). Остальные сабсеты браузер
+         возьмёт сам по unicode-range из fonts.css. -->
+    <link rel="preload" href="/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
 
     <!-- JSON-LD: WebSite (включает SearchAction для Sitelinks Search Box в выдаче) -->
     <script type="application/ld+json">
