@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import LazyVideo from '../components/LazyVideo';
 import { 
   Globe, 
   ShieldCheck, 
@@ -384,14 +385,13 @@ const Home = () => {
               onClick={() => setActiveVideo(t.videos.items[0].id)}
             >
               {t.videos.items[0].url ? (
-                <video 
+                <LazyVideo
                   src={t.videos.items[0].url}
                   poster={t.videos.items[0].poster}
                   autoPlay
                   muted
                   loop
                   playsInline
-                  preload="metadata"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 />
               ) : (
@@ -438,14 +438,13 @@ const Home = () => {
                   onClick={() => setActiveVideo(item.id)}
                 >
                   {item.url ? (
-                    <video 
+                    <LazyVideo
                       src={item.url}
                       poster={item.poster}
                       autoPlay
                       muted
                       loop
                       playsInline
-                      preload="metadata"
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                     />
                   ) : (
@@ -741,11 +740,7 @@ const Home = () => {
             <div className="absolute inset-0">
               {/* Moscow & Russia */}
               <div className="absolute top-[20%] left-[55%] group">
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1] }} 
-                  transition={{ repeat: Infinity, duration: 2 }}
-                  className="w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]"
-                />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
                   {t.locations.items[4].name}
                 </div>
@@ -756,21 +751,13 @@ const Home = () => {
 
               {/* Egypt: Cairo & Sharm */}
               <div className="absolute top-[45%] left-[48%] group">
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1] }} 
-                  transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
-                  className="w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]"
-                />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '0.5s' }} />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
                   {t.locations.items[0].name}
                 </div>
               </div>
               <div className="absolute top-[52%] left-[50%] group">
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1] }} 
-                  transition={{ repeat: Infinity, duration: 2, delay: 1 }}
-                  className="w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]"
-                />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '1s' }} />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
                   {t.locations.items[1].name}
                 </div>
@@ -778,21 +765,13 @@ const Home = () => {
 
               {/* UAE: Dubai & Abu Dhabi */}
               <div className="absolute top-[55%] left-[58%] group">
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1] }} 
-                  transition={{ repeat: Infinity, duration: 2, delay: 1.5 }}
-                  className="w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]"
-                />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '1.5s' }} />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
                   {t.locations.items[2].name}
                 </div>
               </div>
               <div className="absolute top-[58%] left-[57%] group">
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1] }} 
-                  transition={{ repeat: Infinity, duration: 2, delay: 2 }}
-                  className="w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]"
-                />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '2s' }} />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
                   {t.locations.items[3].name}
                 </div>

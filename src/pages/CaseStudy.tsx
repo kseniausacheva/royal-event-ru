@@ -198,7 +198,7 @@ const CaseStudy = () => {
                       poster={video.poster}
                       className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                       controls
-                      preload="metadata"
+                      preload="none"
                     />
                   </motion.div>
                 ))}
@@ -237,7 +237,7 @@ const CaseStudy = () => {
                         poster={video.poster}
                         className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-1000"
                         controls
-                        preload="metadata"
+                        preload="none"
                         playsInline
                       />
                     </motion.div>
