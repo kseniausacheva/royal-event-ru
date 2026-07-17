@@ -5,19 +5,70 @@ import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Loader2 } from 'lucide-react';
 
+/** Кнопка-чип мини-брифа: один тап вместо строчки текста. */
+const BriefChip: React.FC<{ active: boolean; onClick: () => void; children: React.ReactNode }> = ({ active, onClick, children }) => (
+  <button
+    type="button"
+    onClick={onClick}
+    aria-pressed={active}
+    className={`px-4 py-2.5 rounded-full border text-xs font-bold uppercase tracking-wider transition-colors ${
+      active
+        ? 'border-royal-pink bg-royal-pink/10 text-royal-pink'
+        : 'border-white/15 text-white/60 hover:border-white/40'
+    }`}
+  >
+    {children}
+  </button>
+);
+
 const ContactForm = () => {
   const { t, language } = useLanguage();
   const lp = useLocalizedPath();
 
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', messenger: '', message: '' });
+  // Мини-бриф: два обязательных тапа (куда и что) вместо пустого поля «Сообщение» —
+  // заполнять свободный текст люди ленятся, а чипы дают отделу продаж сразу
+  // квалифицированную заявку. Ответы упаковываются в message для contact.php
+  // (PHP не трогаем, он требует непустой message — направление+формат это гарантируют).
+  const emptyBrief = { directions: [] as string[], format: '', size: '', timing: '' };
+  const [brief, setBrief] = useState(emptyBrief);
   const [mailingConsent, setMailingConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
+  const ru = language === 'ru';
+  const DIRECTIONS = ru ? ['Египет', 'ОАЭ', 'Россия', 'Другое'] : ['Egypt', 'UAE', 'Russia', 'Other'];
+  const FORMATS = ru
+    ? ['Конференция', 'Корпоратив', 'Тимбилдинг', 'Делегация', 'Другое']
+    : ['Conference', 'Corporate event', 'Team building', 'Delegation', 'Other'];
+  const SIZES = ru ? ['до 50', '50–200', '200–500', '500+'] : ['up to 50', '50–200', '200–500', '500+'];
+
+  const toggleDirection = (d: string) =>
+    setBrief((prev) => ({
+      ...prev,
+      directions: prev.directions.includes(d)
+        ? prev.directions.filter((x) => x !== d)
+        : [...prev.directions, d],
+    }));
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (brief.directions.length === 0 || !brief.format) {
+      setErrorMsg(ru ? 'Выберите направление и формат мероприятия' : 'Please select destination and event format');
+      return;
+    }
     setStatus('sending');
     setErrorMsg('');
+
+    // Ответы брифа + комментарий склеиваются в message — формат письма для
+    // отдела продаж, contact.php остаётся без изменений
+    const message = [
+      `${ru ? 'Направление' : 'Destination'}: ${brief.directions.join(', ')}`,
+      `${ru ? 'Формат' : 'Format'}: ${brief.format}`,
+      brief.size ? `${ru ? 'Гостей' : 'Guests'}: ${brief.size}` : '',
+      brief.timing ? `${ru ? 'Когда' : 'When'}: ${brief.timing}` : '',
+      formData.message ? `${ru ? 'Комментарий' : 'Comment'}: ${formData.message}` : '',
+    ].filter(Boolean).join('\n');
 
     // On reg.ru hosting use contact.php; on Vercel use /api/contact
     const isRu = typeof window !== 'undefined' && window.location.hostname.endsWith('.ru');
@@ -27,7 +78,7 @@ const ContactForm = () => {
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, mailingConsent }),
+        body: JSON.stringify({ ...formData, message, mailingConsent }),
       });
 
       const data = await res.json();
@@ -35,6 +86,7 @@ const ContactForm = () => {
       if (res.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', messenger: '', message: '' });
+        setBrief(emptyBrief);
         setMailingConsent(false);
       } else {
         setStatus('error');
@@ -84,6 +136,64 @@ const ContactForm = () => {
     >
       <h3 className="text-3xl font-display font-bold uppercase mb-12">{t.contactPage.formTitle}</h3>
       <form className="space-y-8" onSubmit={handleSubmit}>
+        {/* ── Мини-бриф: быстрые чипы вместо пустого поля «о чём вы» ── */}
+        <div className="space-y-3">
+          <label className="text-xs uppercase tracking-widest text-white/40 font-bold block">
+            {ru ? 'Куда' : 'Where'} <span className="text-royal-pink">*</span>
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {DIRECTIONS.map((d) => (
+              <BriefChip key={d} active={brief.directions.includes(d)} onClick={() => toggleDirection(d)}>
+                {d}
+              </BriefChip>
+            ))}
+          </div>
+        </div>
+        <div className="space-y-3">
+          <label className="text-xs uppercase tracking-widest text-white/40 font-bold block">
+            {ru ? 'Формат' : 'Format'} <span className="text-royal-pink">*</span>
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {FORMATS.map((f) => (
+              <BriefChip
+                key={f}
+                active={brief.format === f}
+                onClick={() => setBrief((p) => ({ ...p, format: p.format === f ? '' : f }))}
+              >
+                {f}
+              </BriefChip>
+            ))}
+          </div>
+        </div>
+        <div className="space-y-3">
+          <label className="text-xs uppercase tracking-widest text-white/40 font-bold block">
+            {ru ? 'Сколько гостей' : 'Guests'}
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {SIZES.map((s) => (
+              <BriefChip
+                key={s}
+                active={brief.size === s}
+                onClick={() => setBrief((p) => ({ ...p, size: p.size === s ? '' : s }))}
+              >
+                {s}
+              </BriefChip>
+            ))}
+          </div>
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs uppercase tracking-widest text-white/40 font-bold">
+            {ru ? 'Когда планируете' : 'When'}
+          </label>
+          <input
+            type="text"
+            value={brief.timing}
+            onChange={(e) => setBrief((p) => ({ ...p, timing: e.target.value }))}
+            placeholder={ru ? 'например, сентябрь 2026' : 'e.g., September 2026'}
+            className="w-full bg-transparent border-b border-white/10 py-4 focus:border-royal-pink outline-none transition-all placeholder:text-white/20"
+          />
+        </div>
+
         <div className="space-y-2">
           <label className="text-xs uppercase tracking-widest text-white/40 font-bold">{t.contactPage.labels.name} <span className="text-royal-pink">*</span></label>
           <input
@@ -132,10 +242,14 @@ const ContactForm = () => {
           </select>
         </div>
         <div className="space-y-2">
-          <label className="text-xs uppercase tracking-widest text-white/40 font-bold">{t.contactPage.labels.message} <span className="text-royal-pink">*</span></label>
+          {/* Свободный текст стал необязательным комментарием: суть заявки уже
+              собрана чипами брифа выше */}
+          <label className="text-xs uppercase tracking-widest text-white/40 font-bold">
+            {ru ? 'Комментарий' : 'Comment'}{' '}
+            <span className="text-white/25 normal-case tracking-normal">{ru ? '(необязательно)' : '(optional)'}</span>
+          </label>
           <textarea
-            rows={4}
-            required
+            rows={3}
             value={formData.message}
             onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
             className="w-full bg-transparent border-b border-white/10 py-4 focus:border-royal-pink outline-none transition-all resize-none"

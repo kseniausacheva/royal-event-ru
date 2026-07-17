@@ -29,7 +29,7 @@ test.describe('Language switching', () => {
     await page.goto('/en', { waitUntil: 'domcontentloaded' });
     const nav = page.locator('nav').first();
     await expect(nav).toBeVisible({ timeout: 10000 });
-    // Logo should also be visible
-    await expect(page.locator('img[alt="ROYAL EVENT"]').first()).toBeVisible();
+    // Logo should also be visible (alt — «Royal Event Group — MICE-агентство»)
+    await expect(page.locator('img[alt*="Royal Event"]').first()).toBeVisible();
   });
 });

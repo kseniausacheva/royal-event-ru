@@ -12,7 +12,8 @@ test.describe('Navigation', () => {
 
   test('home page loads with logo, navbar and hero', async ({ page }) => {
     await page.goto('/ru');
-    await expect(page.locator('img[alt="ROYAL EVENT"]').first()).toBeVisible();
+    // alt логотипа — «Royal Event Group — MICE-агентство», матчим по подстроке
+    await expect(page.locator('img[alt*="Royal Event"]').first()).toBeVisible();
     await expect(page.locator('nav').first()).toBeVisible();
   });
 

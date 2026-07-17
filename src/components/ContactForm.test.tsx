@@ -49,9 +49,16 @@ describe('ContactForm (integration)', () => {
 
     renderForm('/ru');
 
-    // Fill fields — inputs don't have accessible labels via htmlFor, so grab by tag
-    const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
-    const [nameInput, emailInput, messageInput] = inputs as unknown as HTMLInputElement[];
+    // Мини-бриф: направление и формат обязательны — кликаем чипы
+    await user.click(screen.getByRole('button', { name: 'Египет' }));
+    await user.click(screen.getByRole('button', { name: 'Конференция' }));
+
+    // Fill fields — inputs don't have accessible labels via htmlFor, so grab by tag.
+    // Первый text-инпут — «Когда планируете» из брифа, имя — второй.
+    const textInputs = document.querySelectorAll('input[type="text"]');
+    const nameInput = textInputs[1] as HTMLInputElement;
+    const emailInput = document.querySelector('input[type="email"]') as HTMLInputElement;
+    const messageInput = document.querySelector('textarea') as HTMLTextAreaElement;
 
     await user.type(nameInput, 'Ksenia');
     await user.type(emailInput, 'test@example.com');
@@ -73,13 +80,16 @@ describe('ContactForm (integration)', () => {
       );
     });
 
+    // message теперь собирается из ответов брифа + комментария
     const body = JSON.parse(fetchMock.mock.calls[0][1].body);
     expect(body).toMatchObject({
       name: 'Ksenia',
       email: 'test@example.com',
-      message: 'Hello from tests',
       mailingConsent: false,
     });
+    expect(body.message).toContain('Египет');
+    expect(body.message).toContain('Конференция');
+    expect(body.message).toContain('Hello from tests');
 
     await waitFor(() => {
       expect(screen.getByText(/заявка отправлена/i)).toBeInTheDocument();
@@ -92,9 +102,15 @@ describe('ContactForm (integration)', () => {
 
     renderForm('/ru');
     const form = document.querySelector('form')!;
-    const [nameInput, emailInput, messageInput] = document.querySelectorAll(
-      'input[type="text"], input[type="email"], textarea'
-    ) as any;
+
+    // Обязательные чипы брифа
+    fireEvent.click(screen.getByRole('button', { name: 'Египет' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Конференция' }));
+
+    // Первый text-инпут — «Когда планируете» из брифа, имя — второй
+    const nameInput = document.querySelectorAll('input[type="text"]')[1] as HTMLInputElement;
+    const emailInput = document.querySelector('input[type="email"]') as HTMLInputElement;
+    const messageInput = document.querySelector('textarea') as HTMLTextAreaElement;
     nameInput.value = 'A';
     emailInput.value = 'a@a.com';
     messageInput.value = 'Test';

@@ -579,10 +579,19 @@ const BlogPage = () => {
                 <h3 className="text-xl font-display font-bold uppercase tracking-tight text-white mb-8">
                   {language === 'ru' ? 'Похожие статьи' : 'Related Articles'}
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {blogData.articles
-                    .filter((a: any) => a.id !== article.id)
-                    .slice(0, 2)
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Сначала статьи той же категории, свежие вперёд — раньше тут
+                      всегда висели одни и те же первые две статьи файла */}
+                  {(() => {
+                    const others = blogData.articles
+                      .filter((a: any) => a.id !== article.id)
+                      .sort((a: any, b: any) =>
+                        (ARTICLE_DATES_ISO[b.id] || '').localeCompare(ARTICLE_DATES_ISO[a.id] || ''));
+                    return [
+                      ...others.filter((a: any) => a.category === article.category),
+                      ...others.filter((a: any) => a.category !== article.category),
+                    ].slice(0, 3);
+                  })()
                     .map((related: any) => (
                       <Link
                         key={related.id}

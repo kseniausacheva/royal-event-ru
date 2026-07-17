@@ -192,7 +192,12 @@ describe('E2E — Contact form submission flow', () => {
     const form = document.querySelector('form')!;
     expect(form).toBeTruthy();
 
-    const nameInput = form.querySelector('input[type="text"]') as HTMLInputElement;
+    // Мини-бриф: направление и формат обязательны
+    await user.click(within(form).getByRole('button', { name: 'Египет' }));
+    await user.click(within(form).getByRole('button', { name: 'Конференция' }));
+
+    // Первый text-инпут формы — «Когда планируете» из брифа, имя — второй
+    const nameInput = form.querySelectorAll('input[type="text"]')[1] as HTMLInputElement;
     const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
     const messageInput = form.querySelector('textarea') as HTMLTextAreaElement;
 
