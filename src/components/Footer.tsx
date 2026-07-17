@@ -22,7 +22,7 @@ const Footer = () => {
           <Link to="/" className="group">
             <img src="/logo.png" alt="Royal Event Group — MICE-агентство" loading="lazy" decoding="async" className="h-24 w-auto group-hover:opacity-80 transition-opacity" />
           </Link>
-          <p className="text-white/20 text-[10px] font-bold uppercase tracking-[0.3em]">
+          <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.3em]">
             {t.footer.rights}
           </p>
         </div>
@@ -45,40 +45,40 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto mt-20 pt-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="space-y-2">
-          <p className="text-white/40 text-[10px] uppercase tracking-widest leading-relaxed">
+          <p className="text-white/60 text-[10px] uppercase tracking-widest leading-relaxed">
             {t.footer.legal.ip}<br />
             {t.footer.legal.inn}<br />
             {t.footer.legal.ogrnip}<br />
             {language === 'ru' ? 'г. Москва, ул. Шепелюгинская, д. 5, к. 1, кв. 91' : 'Moscow, Shepelyuginskaya st., 5, bldg. 1, apt. 91'}
           </p>
           <div className="mt-4 space-y-1">
-            <a href="mailto:baxgat@yandex.ru" className="text-white/40 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block">
+            <a href="mailto:baxgat@yandex.ru" className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block py-1">
               baxgat@yandex.ru
             </a>
-            <a href="tel:+79261233328" className="text-white/40 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block">
+            <a href="tel:+79261233328" className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block py-1">
               +7 (926) 123-33-28
             </a>
-            <a href="tel:+201101005061" className="text-white/40 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block">
+            <a href="tel:+201101005061" className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block py-1">
               +20 (110) 100-50-61
             </a>
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <Link to={lp('/privacy')} className="text-white/40 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors">
+          <Link to={lp('/privacy')} className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors py-1">
             {t.footer.legal.privacy}
           </Link>
-          <Link to={lp('/data-consent')} className="text-white/40 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors">
+          <Link to={lp('/data-consent')} className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors py-1">
             {language === 'ru' ? 'Согласие на обработку персональных данных' : 'Personal Data Processing Consent'}
           </Link>
-          <Link to={lp('/mailing-consent')} className="text-white/40 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors">
+          <Link to={lp('/mailing-consent')} className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors py-1">
             {language === 'ru' ? 'Согласие на рассылку' : 'Mailing Consent'}
           </Link>
-          <Link to={lp('/offer')} className="text-white/40 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors">
+          <Link to={lp('/offer')} className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors py-1">
             {language === 'ru' ? 'Договор оферты' : 'Public Offer Agreement'}
           </Link>
         </div>
         <div>
-          <p className="text-white/20 text-[10px] leading-relaxed italic">
+          <p className="text-white/50 text-[10px] leading-relaxed italic">
             {t.footer.legal.disclaimer}
           </p>
         </div>

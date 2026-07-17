@@ -17,7 +17,8 @@ import {
   ChevronLeft,
   ChevronRight,
   CheckCircle2,
-  X
+  X,
+  Send
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../LanguageContext';
@@ -176,12 +177,22 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="flex flex-wrap items-center gap-4"
               >
-                <Link to={lp('/contact')} className="group px-12 py-6 bg-royal-pink text-royal-black font-display font-bold rounded-full flex items-center gap-4 shadow-2xl shadow-royal-pink/20 transition-all whitespace-nowrap">
+                {/* text-xs на мобильном: «ЗАПРОСИТЬ ПРЕДЛОЖЕНИЕ» в широком Unbounded
+                    иначе шире экрана 375px (кнопка резалась справа) */}
+                <Link to={lp('/contact')} className="group px-8 md:px-12 py-5 md:py-6 bg-royal-pink text-royal-black font-display font-bold text-xs sm:text-sm md:text-base rounded-full flex items-center gap-3 md:gap-4 shadow-2xl shadow-royal-pink/20 transition-all hover:scale-105 whitespace-nowrap">
                   {t.hero.cta} <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Link>
+                {/* B2B-клиенты чаще пишут в мессенджер, чем заполняют форму */}
+                <a
+                  href="https://t.me/kseniamerry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-5 md:py-6 border border-white/20 text-white font-display font-bold text-xs sm:text-sm md:text-base rounded-full flex items-center gap-3 hover:border-royal-pink hover:text-royal-pink transition-colors whitespace-nowrap"
+                >
+                  <Send className="w-5 h-5" /> {language === 'ru' ? 'НАПИСАТЬ В TELEGRAM' : 'MESSAGE ON TELEGRAM'}
+                </a>
               </motion.div>
             </div>
             <motion.div
@@ -294,7 +305,7 @@ const Home = () => {
                       <div className="w-12 h-12 rounded-2xl bg-royal-pink/10 flex items-center justify-center mb-6 group-hover:bg-royal-pink group-hover:text-royal-black transition-all">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <h4 className="text-xl font-display font-bold mb-3 uppercase tracking-tight">{item.title}</h4>
+                      <h3 className="text-xl font-display font-bold mb-3 uppercase tracking-tight">{item.title}</h3>
                       <p className="text-sm text-white/40 leading-relaxed">{item.desc}</p>
                     </motion.div>
                   );
@@ -361,14 +372,16 @@ const Home = () => {
             viewport={{ once: true }}
             className="flex gap-4 mb-16"
           >
-            <button 
+            <button
               onClick={() => scrollCarousel('left')}
+              aria-label={language === 'ru' ? 'Предыдущие видео' : 'Previous videos'}
               className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-royal-pink hover:text-royal-black transition-all"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
-            <button 
+            <button
               onClick={() => scrollCarousel('right')}
+              aria-label={language === 'ru' ? 'Следующие видео' : 'Next videos'}
               className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-royal-pink hover:text-royal-black transition-all"
             >
               <ChevronRight className="w-6 h-6" />
@@ -557,7 +570,7 @@ const Home = () => {
                   <div className="aspect-[3/4] rounded-[40px] overflow-hidden mb-8 border border-white/10">
                     <img src={ceo.image} alt={ceo.name} loading="lazy" decoding="async" className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
                   </div>
-                  <h4 className="text-xl md:text-2xl font-display font-bold uppercase tracking-tight mb-2">{ceo.name}</h4>
+                  <h3 className="text-xl md:text-2xl font-display font-bold uppercase tracking-tight mb-2">{ceo.name}</h3>
                   <p className="text-royal-pink font-bold text-xs uppercase tracking-widest">{ceo.role}</p>
                 </motion.div>
               ))}
@@ -937,7 +950,7 @@ const Home = () => {
                       <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
                     <div>
-                      <h4 className="text-lg sm:text-2xl font-display font-bold mb-3 uppercase tracking-tight hyphens-none">{item.title}</h4>
+                      <h3 className="text-lg sm:text-2xl font-display font-bold mb-3 uppercase tracking-tight hyphens-none">{item.title}</h3>
                       <p className="text-white/40 leading-relaxed max-w-md text-sm sm:text-base">{item.desc}</p>
                     </div>
                   </motion.div>
@@ -984,12 +997,22 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <Link
-              to={lp('/contact')}
-              className="inline-flex items-center gap-4 px-16 py-8 bg-royal-black text-white font-display font-bold rounded-full text-xl hover:scale-105 transition-transform"
-            >
-              {t.ctaSection.button} <ArrowRight className="w-6 h-6" />
-            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                to={lp('/contact')}
+                className="inline-flex items-center gap-4 px-16 py-8 bg-royal-black text-white font-display font-bold rounded-full text-xl hover:scale-105 transition-transform"
+              >
+                {t.ctaSection.button} <ArrowRight className="w-6 h-6" />
+              </Link>
+              <a
+                href="https://t.me/kseniamerry"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-10 py-8 border-2 border-royal-black/30 text-royal-black font-display font-bold rounded-full text-xl hover:bg-royal-black hover:text-white transition-colors"
+              >
+                <Send className="w-6 h-6" /> Telegram
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
