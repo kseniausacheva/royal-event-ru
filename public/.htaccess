@@ -3,6 +3,17 @@
 RewriteEngine On
 RewriteBase /
 
+# ===== 301-редиректы для главного зеркала (важно для Яндекса) =====
+# Все запросы к www.royaleventandmice.ru перенаправляем на royaleventandmice.ru
+# (без www). Это то зеркало, которое зарегистрировано в Я.Вебмастере,
+# и которое указано в robots.txt Host: royaleventandmice.ru
+RewriteCond %{HTTP_HOST} ^www\.royaleventandmice\.ru$ [NC]
+RewriteRule ^(.*)$ https://royaleventandmice.ru/$1 [L,R=301,NE]
+
+# Форсируем HTTPS — редиректим все http:// запросы на https://
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301,NE]
+
 # Don't rewrite real files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
