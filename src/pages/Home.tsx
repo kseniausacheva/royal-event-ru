@@ -735,7 +735,8 @@ const Home = () => {
             <div className="absolute inset-0 opacity-10">
               <svg width="100%" height="100%" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 200C200 200 300 100 500 100C700 100 800 300 1000 300" stroke="white" strokeWidth="0.5" strokeDasharray="5 5" />
-                <path d="M0 100C200 100 400 300 600 300C800 300 1000 100" stroke="white" strokeWidth="0.5" strokeDasharray="5 5" />
+                {/* у второй кривой не хватало конечной точки — битый d сыпал ошибки в консоль */}
+                <path d="M0 100C200 100 400 300 600 300C800 300 900 200 1000 100" stroke="white" strokeWidth="0.5" strokeDasharray="5 5" />
               </svg>
             </div>
 
