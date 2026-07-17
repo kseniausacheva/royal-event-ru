@@ -13,7 +13,8 @@ const Services = () => {
   const icons = [Briefcase, Users, Globe, Languages, Zap, Shield, Star];
 
   const canonicalHost = language === 'ru' ? SITE_URL_RU : SITE_URL_EN;
-  const servicesUrl = `${canonicalHost}/${language}/services`;
+  // На .ru конечный адрес — со слэшем (Apache 301-ит без него), .com не трогаем
+  const servicesUrl = `${canonicalHost}/${language}/services${language === 'ru' ? '/' : ''}`;
 
   // Schema.org Service entities — Яндекс/Google показывают расширенный сниппет с услугами
   const serviceItems = t.servicesPage.items.map((service) => ({

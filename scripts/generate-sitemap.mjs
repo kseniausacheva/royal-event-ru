@@ -156,22 +156,33 @@ function xmlEscape(s) {
     .replace(/'/g, '&apos;');
 }
 
+/**
+ * URL страницы на .ru — всегда со слэшем на конце.
+ * Apache отдаёт пререндеренные страницы как папки (/ru/blog/index.html) и
+ * 301-ит адреса без слэша. В sitemap должны быть конечные 200-адреса,
+ * иначе каждый URL из карты встречает краулер редиректом.
+ */
+function ruUrl(loc) {
+  return `${HOST_RU}${loc.endsWith('/') ? loc : `${loc}/`}`;
+}
+
 /** Сгенерировать один <url> блок. */
 function renderEntry(entry) {
   const lines = [];
   lines.push('  <url>');
-  lines.push(`    <loc>${HOST_RU}${entry.loc}</loc>`);
+  lines.push(`    <loc>${ruUrl(entry.loc)}</loc>`);
   lines.push(`    <lastmod>${entry.lastmod || TODAY}</lastmod>`);
   if (entry.changefreq) lines.push(`    <changefreq>${entry.changefreq}</changefreq>`);
   if (entry.priority) lines.push(`    <priority>${entry.priority}</priority>`);
 
   if (entry.hreflang) {
-    lines.push(`    <xhtml:link rel="alternate" hreflang="ru" href="${HOST_RU}${entry.loc}" />`);
-    // EN-версия живёт на .com (cross-domain hreflang)
+    lines.push(`    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl(entry.loc)}" />`);
+    // EN-версия живёт на .com (cross-domain hreflang) — слэш не добавляем,
+    // у .com своё поведение URL
     const enPath = entry.loc.replace(/^\/ru/, '/en');
     lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${HOST_COM}${enPath}" />`);
     if (entry.loc === '/ru') {
-      lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${HOST_RU}/ru" />`);
+      lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${ruUrl('/ru')}" />`);
     }
   }
 

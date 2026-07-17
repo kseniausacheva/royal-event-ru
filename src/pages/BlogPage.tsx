@@ -435,7 +435,8 @@ const BlogPage = () => {
     }
 
     const canonicalHost = language === 'ru' ? SITE_URL_RU : SITE_URL_EN;
-    const articleUrl = `${canonicalHost}/${language}/blog/${article.id}`;
+    // На .ru конечный адрес — со слэшем (Apache 301-ит без него), .com не трогаем
+    const articleUrl = `${canonicalHost}/${language}/blog/${article.id}${language === 'ru' ? '/' : ''}`;
     const datePublished = ARTICLE_DATES_ISO[article.id];
 
     // Schema.org BlogPosting — Яндекс показывает дату публикации, автора и сниппет в выдаче.

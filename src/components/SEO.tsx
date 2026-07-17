@@ -136,11 +136,18 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     ? (image.startsWith('http') ? image : `${canonicalHost}${image}`)
     : `${canonicalHost}${DEFAULT_OG_IMAGE}`;
 
-  const canonicalUrl = `${canonicalHost}${location.pathname}`;
+  // Apache на reg.ru отдаёт пререндеренные страницы как папки (/ru/blog/index.html)
+  // и 301-ит адреса без слэша на слэшные. Canonical/og:url должны указывать на
+  // конечный 200-адрес, а не на редирект — поэтому для .ru всегда добавляем «/».
+  // .com не трогаем: у него свой хостинг со своим поведением URL.
+  const withHost = (host: string, path: string) =>
+    host === RU_SITE_URL && !path.endsWith('/') ? `${host}${path}/` : `${host}${path}`;
+
+  const canonicalUrl = withHost(canonicalHost, location.pathname);
   const altLang = language === 'ru' ? 'en' : 'ru';
   const altPath = location.pathname.replace(`/${language}`, `/${altLang}`);
-  const altUrl = `${alternateHost}${altPath}`;
-  const xDefaultUrl = `${RU_SITE_URL}${location.pathname.replace(/^\/(ru|en)/, '/ru')}`;
+  const altUrl = withHost(alternateHost, altPath);
+  const xDefaultUrl = withHost(RU_SITE_URL, location.pathname.replace(/^\/(ru|en)/, '/ru'));
 
   // Build breadcrumbs: explicit prop wins, `false` disables, otherwise auto-generate from URL.
   const homeLabel = language === 'ru' ? 'Главная' : 'Home';
@@ -153,14 +160,14 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     if (segments.length <= 1) return []; // home page — no crumbs
 
     const items: BreadcrumbItem[] = [
-      { name: homeLabel, url: `${canonicalHost}/${language}` },
+      { name: homeLabel, url: withHost(canonicalHost, `/${language}`) },
     ];
 
     // Skip segments[0] which is the language prefix ('ru' or 'en')
     for (let i = 1; i < segments.length; i++) {
       const seg = segments[i];
       const label = BREADCRUMB_LABELS[seg]?.[language] || seg;
-      const url = `${canonicalHost}/${segments.slice(0, i + 1).join('/')}`;
+      const url = withHost(canonicalHost, `/${segments.slice(0, i + 1).join('/')}`);
       items.push({ name: label, url });
     }
     return items;
