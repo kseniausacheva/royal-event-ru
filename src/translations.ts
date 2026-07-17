@@ -486,8 +486,11 @@ export const translations = {
       }
     },
     partners: {
-      title: 'НАШИ ПАРТНЕРЫ',
-      subtitle: 'Нам доверяют лидеры',
+      // В сетке и клиенты (Carlsberg, Samsung, Adidas), и площадки-партнёры
+      // (Four Seasons, Rixos) — «Нам доверяют» покрывает обоих и работает
+      // как соцдоказательство сильнее нейтрального «Партнёры»
+      title: 'НАМ ДОВЕРЯЮТ',
+      subtitle: 'Клиенты и площадки-партнёры: от мировых брендов до лучших отелей региона',
     },
     ctaSection: {
       title: 'СТАНЬ ЧАСТЬЮ НОВОЙ БОЛЬШОЙ И КРАСИВОЙ ИСТОРИИ',
@@ -963,8 +966,8 @@ export const translations = {
       }
     },
     partners: {
-      title: 'OUR PARTNERS',
-      subtitle: 'Trusted by Leaders',
+      title: 'TRUSTED BY',
+      subtitle: 'Clients and venue partners — from global brands to the region\'s top hotels',
     },
     ctaSection: {
       title: 'BECOME PART OF A NEW BIG AND BEAUTIFUL STORY',
