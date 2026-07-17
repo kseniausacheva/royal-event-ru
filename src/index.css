@@ -41,6 +41,21 @@ h1, h2, h3, h4, .font-display {
 /* Пульс точек на карте. Раньше это делал framer-motion (repeat: Infinity) —
    пять вечных JS-анимаций держали главный поток; CSS-анимация transform
    выполняется на композиторе и не стоит ничего. */
+/* Медленный зум фона героя — раньше это делал framer-motion вместе с фейдом
+   прозрачности, из-за чего LCP ждал загрузки JS. Transform отрисовке не мешает. */
+@keyframes hero-zoom {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+.hero-zoom {
+  animation: hero-zoom 2.5s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom {
+    animation: none;
+  }
+}
+
 @keyframes map-dot-pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }

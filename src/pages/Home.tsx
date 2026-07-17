@@ -115,14 +115,17 @@ const Home = () => {
       <section ref={heroRef} className="relative min-h-screen flex items-center pt-28 md:pt-0 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.div style={{ y: heroY, opacity: heroOpacity }} className="w-full h-full">
-            <motion.img 
-              initial={{ scale: 1.2, opacity: 0 }}
-              animate={{ scale: 1, opacity: 0.4 }}
-              transition={{ duration: 2.5, ease: "easeOut" }}
-              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=2000" 
+            {/* LCP-элемент главной. Локальный webp вместо Unsplash (лишний домен,
+                390+ КБ) и статичная прозрачность вместо JS-фейда: с framer-фейдом
+                картинка не могла нарисоваться до полной загрузки React. Плавный
+                зум остался — CSS-анимацией (transform не задерживает отрисовку). */}
+            <img
+              src="/hero-bg-1600.webp"
+              srcSet="/hero-bg-800.webp 800w, /hero-bg-1600.webp 1600w"
+              sizes="100vw"
+              fetchPriority="high"
               alt={language === 'ru' ? 'Организация крупных корпоративных мероприятий и MICE-проектов' : 'Large-scale corporate event and MICE project organization'}
-              className="w-full h-full object-cover grayscale"
-              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover grayscale opacity-40 hero-zoom"
             />
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-r from-royal-black via-royal-black/60 to-transparent" />
