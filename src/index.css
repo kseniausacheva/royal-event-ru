@@ -41,6 +41,30 @@ h1, h2, h3, h4, .font-display {
 /* Пульс точек на карте. Раньше это делал framer-motion (repeat: Infinity) —
    пять вечных JS-анимаций держали главный поток; CSS-анимация transform
    выполняется на композиторе и не стоит ничего. */
+/* Появление элементов героя — CSS вместо framer-motion: при SSG статика
+   приезжала с framer-стилями opacity:0 и контент был невидим до загрузки
+   всего JS (мобильный LCP ~9 c). CSS-анимация стартует с парсинга HTML,
+   а при гидратации узлы сохраняются и она не перезапускается.
+   Тайминги и стаггер повторяют прежние framer-настройки. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-slide {
+  from { opacity: 0; transform: translateX(-25px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-pop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+.hero-rise { animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.hero-slide { animation: hero-slide 0.8s ease-out both; }
+.hero-pop { animation: hero-pop 0.6s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise, .hero-slide, .hero-pop { animation: none; }
+}
+
 /* Медленный зум фона героя — раньше это делал framer-motion вместе с фейдом
    прозрачности, из-за чего LCP ждал загрузки JS. Transform отрисовке не мешает. */
 @keyframes hero-zoom {

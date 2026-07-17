@@ -143,51 +143,36 @@ const Home = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <motion.span
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="hidden md:inline-block px-5 py-2 rounded-full bg-white/5 border border-white/10 text-royal-pink text-[10px] font-bold uppercase tracking-[0.4em] mb-10"
+          {/* Вступительные анимации героя — CSS-классы hero-* (см. index.css):
+              framer тут нельзя — SSG отдавал бы статику с opacity:0 до загрузки JS */}
+          <div>
+            <span
+              className="hero-slide hidden md:inline-block px-5 py-2 rounded-full bg-white/5 border border-white/10 text-royal-pink text-[10px] font-bold uppercase tracking-[0.4em] mb-10"
+              style={{ animationDelay: '0.6s' }}
             >
               {t.hero.tag}
-            </motion.span>
+            </span>
             <h1 className="text-[1.5rem] sm:text-6xl md:text-[6rem] font-display font-black leading-[0.85] tracking-tighter mb-10 uppercase">
-              <motion.span
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="block"
-              >
+              <span className="hero-rise block" style={{ animationDelay: '0.2s' }}>
                 {t.hero.title}
-              </motion.span>
-              <motion.span 
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-transparent bg-clip-text bg-gradient-to-r from-royal-pink via-purple-400 to-royal-pink bg-[length:200%_auto] animate-gradient-x"
+              </span>
+              <span
+                className="hero-rise inline-block text-transparent bg-clip-text bg-gradient-to-r from-royal-pink via-purple-400 to-royal-pink bg-[length:200%_auto] animate-gradient-x"
+                style={{ animationDelay: '0.4s' }}
               >
                 {t.hero.titleAccent}
-              </motion.span>
+              </span>
             </h1>
             <div className="flex flex-col md:flex-row items-start md:items-center gap-12 max-w-4xl">
-              <motion.p 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                className="text-xl md:text-2xl text-white/50 font-light leading-relaxed border-l-2 border-royal-pink/30 pl-8"
+              <p
+                className="hero-slide text-xl md:text-2xl text-white/50 font-light leading-relaxed border-l-2 border-royal-pink/30 pl-8"
+                style={{ animationDelay: '0.8s' }}
               >
                 {t.hero.subtitle}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="flex flex-col items-start gap-4"
+              </p>
+              <div
+                className="hero-pop flex flex-col items-start gap-4"
+                style={{ animationDelay: '1s' }}
               >
                 {/* text-xs на мобильном: «ЗАПРОСИТЬ ПРЕДЛОЖЕНИЕ» в широком Unbounded
                     иначе шире экрана 375px (кнопка резалась справа) */}
@@ -210,13 +195,11 @@ const Home = () => {
                     </a>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-              className="flex flex-wrap gap-8 md:gap-12 mt-10"
+            <div
+              className="hero-rise flex flex-wrap gap-8 md:gap-12 mt-10"
+              style={{ animationDelay: '1.2s' }}
             >
               {t.hero.stats.map((stat, i) => (
                 <div key={i} className="flex flex-col">
@@ -224,8 +207,8 @@ const Home = () => {
                   <span className="text-xs text-white/40 uppercase tracking-wider mt-1">{stat.label}</span>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
