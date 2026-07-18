@@ -140,9 +140,8 @@ async function run() {
     console.warn('⚠️ dist/.vite/manifest.json не найден — страницы будут без modulepreload lazy-чанков.');
   }
 
-  for (const { route, module } of ROUTES) {
-    // Рендерим слэшный URL (см. шапку файла), пишем в dist/<route>/index.html
-    const url = route.endsWith('/') ? route : `${route}/`;
+  /** Рендерит url и собирает готовый HTML страницы из шаблона. */
+  async function buildPage(url, module) {
     const { html: appHtml, helmet } = await render(url);
 
     let page = template;
@@ -176,6 +175,14 @@ async function run() {
     // Метка пререндера (помогает в дебаге выдачи)
     page = page.replace(/<head>/, '<head><!-- prerendered-ssg ' + new Date().toISOString() + ' -->');
 
+    return page;
+  }
+
+  for (const { route, module } of ROUTES) {
+    // Рендерим слэшный URL (см. шапку файла), пишем в dist/<route>/index.html
+    const url = route.endsWith('/') ? route : `${route}/`;
+    const page = await buildPage(url, module);
+
     assertPage(route, page);
 
     const targetDir = path.join(DIST, route);
@@ -185,11 +192,19 @@ async function run() {
     console.log('  ✓', url, '→', path.relative(ROOT, targetFile));
   }
 
+  // Настоящая страница 404: Apache отдаёт её через ErrorDocument 404 /404.html
+  // (см. public/.htaccess) с честным HTTP-статусом на любом несуществующем пути.
+  // Рендерим NotFound по заведомо несуществующему ru-адресу. Страница noindex.
+  const page404 = await buildPage('/ru/404/', 'src/pages/NotFound.tsx');
+  assertPage('/404.html', page404);
+  await fs.writeFile(path.join(DIST, '404.html'), page404, 'utf-8');
+  console.log('  ✓ /404.html (ErrorDocument для Apache)');
+
   // Манифест в проде не нужен — не тащим его по FTP
   await fs.rm(path.join(DIST, '.vite'), { recursive: true, force: true });
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(1);
-  console.log(`\n✅ SSG-prerendered ${ROUTES.length} routes in ${elapsed}s\n`);
+  console.log(`\n✅ SSG-prerendered ${ROUTES.length} routes + 404.html in ${elapsed}s\n`);
 }
 
 /** Windows-совместимый file:// URL для динамического import() */

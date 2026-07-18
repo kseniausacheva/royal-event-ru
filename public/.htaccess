@@ -26,8 +26,16 @@ RewriteRule ^ - [L]
 RewriteRule ^contact\.php$ - [L]
 RewriteRule ^api/ - [L]
 
-# All other paths go to index.html (SPA routing)
-RewriteRule ^ index.html [L]
+# EN-раздел не пререндерится (canonical указывает на .com) — для него
+# оставляем SPA-фолбэк: React отрисует страницу на клиенте
+RewriteRule ^en(/|$) index.html [L]
+
+# Всё остальное — настоящий 404. После SSG-пререндера каждая реальная
+# ru-страница существует как файл/папка и отдаётся правилом «real files»
+# выше; несуществующий адрес больше НЕ маскируется под index.html с 200
+# (soft-404 вредил SEO). Apache отдаёт стилизованную страницу с честным
+# статусом 404; сам файл 404.html генерирует scripts/prerender.mjs.
+ErrorDocument 404 /404.html
 
 # Cache headers for static assets
 <IfModule mod_expires.c>

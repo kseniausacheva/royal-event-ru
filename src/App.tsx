@@ -226,10 +226,13 @@ const AppRoutes = () => {
       <Route path="/en/data-consent" element={<DataConsent />} />
       <Route path="/en/offer" element={<Offer />} />
 
-      {/* 404 */}
+      {/* 404. Catch-all тоже рендерит NotFound, а не Navigate на главную:
+          Apache отдаёт /404.html на любом несуществующем пути (ErrorDocument),
+          и клиентский рендер обязан совпасть с этой разметкой — иначе #418
+          при гидратации и странный автопереброс посетителя с опечатанного URL */}
       <Route path="/ru/*" element={<NotFound />} />
       <Route path="/en/*" element={<NotFound />} />
-      <Route path="*" element={<Navigate to="/ru" replace />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
     </Suspense>
   );
