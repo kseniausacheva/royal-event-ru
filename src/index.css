@@ -4,9 +4,25 @@
 @import './fonts.css';
 @import "tailwindcss";
 
+/* Фолбэки с подгонкой метрик. После SSG текст виден ДО загрузки woff2,
+   и подмена шрифта двигала вёрстку (CLS 0.24 на герое: «Web font loaded» —
+   Unbounded сильно шире системного). size-adjust растягивает Arial до ширины
+   целевого шрифта, и строки не перескакивают. Коэффициенты замерены
+   canvas.measureText на кириллице (Unbounded/Arial = 1.266, Manrope = 0.964). */
+@font-face {
+  font-family: 'Unbounded Fallback';
+  src: local('Arial Bold'), local('Arial');
+  size-adjust: 126.6%;
+}
+@font-face {
+  font-family: 'Manrope Fallback';
+  src: local('Arial');
+  size-adjust: 96.4%;
+}
+
 @theme {
-  --font-unbounded: "Unbounded", system-ui, sans-serif;
-  --font-manrope: "Manrope", system-ui, sans-serif;
+  --font-unbounded: "Unbounded", "Unbounded Fallback", system-ui, sans-serif;
+  --font-manrope: "Manrope", "Manrope Fallback", system-ui, sans-serif;
   --font-serif: "Lora", Georgia, "Times New Roman", serif;
   --color-royal-pink: #F72585;
   --color-royal-black: #0A0A0A;
