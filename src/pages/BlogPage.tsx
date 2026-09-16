@@ -19,8 +19,7 @@ const ARTICLE_DATES_ISO: Record<string, string> = Object.fromEntries(
   blogArticles.map((a: any) => [a.id, a.datePublished]),
 );
 
-const SITE_URL_RU = 'https://royaleventandmice.ru';
-const SITE_URL_EN = 'https://www.royaleventandmice.com';
+import { RU_SITE_URL as SITE_URL_RU, COM_SITE_URL as SITE_URL_EN } from '../site-config';
 
 /**
  * Типы блоков для богатого контента статей.
@@ -452,12 +451,12 @@ const BlogPage = () => {
       }),
       author: {
         '@type': 'Organization',
-        name: 'Royal Event Group',
+        name: 'La Royal Event',
         url: SITE_URL_RU,
       },
       publisher: {
         '@type': 'Organization',
-        name: 'Royal Event Group',
+        name: 'La Royal Event',
         logo: {
           '@type': 'ImageObject',
           url: `${SITE_URL_RU}/logo.png`,

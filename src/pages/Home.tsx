@@ -26,6 +26,8 @@ import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import { programs, cruises, dmc, privateAccess } from '../content/la-royal-event';
+import { Check, X as XIcon } from 'lucide-react';
 
 // Каналы быстрой связи — одинаковый набор в герое и нижнем CTA.
 // MessageCircle для MAX — так же, как в футере и на странице контактов.
@@ -118,12 +120,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-royal-black text-white selection:bg-royal-pink selection:text-white font-manrope overflow-x-hidden">
       <SEO 
-        title={language === 'ru' ? 'Организация корпоративных мероприятий в Египте, ОАЭ и России' : 'Corporate Event Organization in Egypt, UAE, and Russia'}
+        title={language === 'ru' ? 'Организация корпоративных мероприятий в Египте — MICE и DMC' : 'Corporate Event Organization in Egypt — MICE & DMC'}
         description={t.hero.subtitle}
       />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-28 md:pt-0 px-6 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-36 md:pt-32 md:pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.div style={{ y: heroY, opacity: heroOpacity }} className="w-full h-full">
             {/* LCP-элемент главной. Локальный webp вместо Unsplash (лишний домен,
@@ -358,6 +360,103 @@ const Home = () => {
                 </motion.div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── La Royal Event: Programs ── */}
+      <section className="py-32 px-6 border-t border-royal-rule">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">La Royal Event · Авторские программы</p>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
+            Десять программ — от квеста на пирамидах до ужина внутри кинопремьеры
+          </h2>
+          <p className="max-w-2xl text-royal-sand-2 mb-12">У каждой программы своя глава одной истории. Ни одна не повторяет другую ни механикой, ни местом, ни финалом.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {programs.slice(0, 6).map((pr) => (
+              <Link key={pr.slug} to={lp(`/programmy/${pr.slug}`)} className="group p-6 rounded-2xl bg-royal-card border border-royal-rule hover:border-royal-lilac-deep transition-all hover:-translate-y-0.5">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-2">{pr.eyebrow}</p>
+                <h3 className="text-xl font-display font-bold leading-tight mb-1.5">{pr.name}</h3>
+                <p className="text-royal-lime font-serif italic text-sm mb-2">{pr.tagline}</p>
+                <p className="text-sm text-royal-sand-2">{pr.short}</p>
+              </Link>
+            ))}
+          </div>
+          <Link to={lp('/programmy')} className="inline-flex items-center gap-3 mt-10 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors">
+            Все десять программ <ChevronRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* ── Nile Cruises ── */}
+      <section className="py-32 px-6 border-t border-royal-rule bg-white/[0.02]">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Круизы по Нилу</p>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
+            От Каира до Асуана — по воде, на которой построена вся история
+          </h2>
+          <p className="max-w-2xl text-royal-sand-2 mb-12">Классические 5★ суда, камерные дахабии, длинные круизы через Дендеру и Абидос. Прямые контракты с судовладельцами, корпоративный фрахт.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {cruises.slice(0, 4).map((c) => (
+              <div key={c.slug} className="p-6 rounded-2xl bg-royal-card border border-royal-rule">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lime mb-2">{c.route}</p>
+                <h3 className="text-xl font-display font-bold mb-2">{c.name}</h3>
+                <p className="text-sm text-royal-sand-2 mb-3">{c.text}</p>
+                <div className="flex flex-wrap gap-2">{c.chips.map((ch) => <span key={ch} className="text-[11px] px-3 py-1 rounded-full border border-royal-rule text-royal-sand-2">{ch}</span>)}</div>
+              </div>
+            ))}
+          </div>
+          <Link to={lp('/cruises')} className="inline-flex items-center gap-2 mt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac hover:text-royal-lime transition-colors">
+            Подробнее о круизах <ChevronRight className="w-3 h-3" />
+          </Link>
+        </div>
+      </section>
+
+      {/* ── DMC + Private Access ── */}
+      <section className="py-32 px-6 border-t border-royal-rule">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">DMC Египет</p>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
+            Команда на месте — от аэропорта до последнего трансфера
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+            <p className="lg:col-span-7 text-lg text-royal-sand-2 leading-relaxed">{dmc.intro[0]}</p>
+            <ul className="lg:col-span-5 lg:border-l lg:border-royal-rule lg:pl-8">
+              {dmc.services.slice(0, 5).map((sv, i) => (
+                <li key={i} className="relative py-2 pl-6 border-b border-royal-rule text-sm text-royal-sand-2">
+                  <span className="absolute left-0 top-2 text-royal-lilac-deep">→</span>{sv}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="p-8 rounded-[32px] border border-royal-lilac/25 bg-gradient-to-br from-royal-lilac-deep/12 to-transparent">
+            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-3">Эксклюзив</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-black uppercase tracking-tighter mb-3">Приватный доступ к пирамидам Гизы</h3>
+            <p className="text-royal-sand-2 mb-8 max-w-2xl">Плато — только для вашей группы, до или после рабочих часов. Все три камеры Великой пирамиды, включая закрытые для публики. Приватный вход к Сфинксу. До 50 гостей.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-5 rounded-2xl bg-royal-night/60 border border-royal-rule">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim mb-3">Стандартный вход</p>
+                {privateAccess.standard.map((r) => (
+                  <div key={r.label} className="flex items-center gap-2.5 text-sm py-1">
+                    {r.ok ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <XIcon className="w-3.5 h-3.5 text-red-400" />}
+                    <span className={r.ok ? '' : 'text-royal-dim'}>{r.label}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-5 rounded-2xl bg-royal-night/60 border border-royal-lilac/30">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-3">Приватный доступ · La Royal Event</p>
+                {privateAccess.private.map((r) => (
+                  <div key={r.label} className="flex items-center gap-2.5 text-sm py-1">
+                    <Check className="w-3.5 h-3.5 text-emerald-400" /><span>{r.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <Link to={lp('/dmc')} className="inline-flex items-center gap-2 mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac hover:text-royal-lime transition-colors">
+              Подробнее о DMC и приватном доступе <ChevronRight className="w-3 h-3" />
+            </Link>
           </div>
         </div>
       </section>
@@ -757,40 +856,26 @@ const Home = () => {
             <div className="absolute inset-0">
               {/* Moscow & Russia */}
               <div className="absolute top-[20%] left-[55%] group">
-                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(198,164,245,0.8)]" />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
-                  {t.locations.items[4].name}
+                  {t.locations.items[2].name}
                 </div>
               </div>
               <div className="absolute top-[15%] left-[65%] w-32 h-32 bg-royal-pink/5 rounded-full border border-royal-pink/20 animate-pulse flex items-center justify-center">
-                <span className="text-[8px] uppercase tracking-widest text-royal-pink/40 font-bold">{t.locations.items[5].name}</span>
+                <span className="text-[8px] uppercase tracking-widest text-royal-pink/40 font-bold">{t.locations.items[3].name}</span>
               </div>
 
               {/* Egypt: Cairo & Sharm */}
               <div className="absolute top-[45%] left-[48%] group">
-                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '0.5s' }} />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(198,164,245,0.8)]" style={{ animationDelay: '0.5s' }} />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
                   {t.locations.items[0].name}
                 </div>
               </div>
               <div className="absolute top-[52%] left-[50%] group">
-                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '1s' }} />
+                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(198,164,245,0.8)]" style={{ animationDelay: '1s' }} />
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
                   {t.locations.items[1].name}
-                </div>
-              </div>
-
-              {/* UAE: Dubai & Abu Dhabi */}
-              <div className="absolute top-[55%] left-[58%] group">
-                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '1.5s' }} />
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
-                  {t.locations.items[2].name}
-                </div>
-              </div>
-              <div className="absolute top-[58%] left-[57%] group">
-                <div className="map-dot w-4 h-4 bg-royal-pink rounded-full shadow-[0_0_20px_rgba(255,99,33,0.8)]" style={{ animationDelay: '2s' }} />
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-royal-pink text-royal-black px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">
-                  {t.locations.items[3].name}
                 </div>
               </div>
             </div>

@@ -26,6 +26,11 @@ const SITEMAP_PATH = path.join(ROOT, 'public', 'sitemap.xml');
 const HOST_RU = 'https://royaleventandmice.ru';
 const HOST_COM = 'https://www.royaleventandmice.com';
 
+// `--target com`: карта для www.royaleventandmice.com — основные локи /en/*, hreflang ru → .ru.
+const TARGET = process.argv.includes('--target') ? process.argv[process.argv.indexOf('--target') + 1] : 'ru';
+const HOST = TARGET === 'com' ? HOST_COM : HOST_RU;
+const toTargetPath = (loc) => (TARGET === 'com' ? loc.replace(/^\/ru/, '/en') : loc);
+
 // Сегодняшняя дата в формате YYYY-MM-DD для lastmod статичных страниц
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -47,8 +52,8 @@ const STATIC_ENTRIES = [
     priority: '1.0',
     hreflang: true,
     images: [
-      { loc: '/logo.png', title: 'Royal Event Group — MICE-агентство полного цикла' },
-      { loc: '/carlsberg-0.JPG', title: 'Конференция Carlsberg на 1000 человек в Domina Coral Bay', caption: 'Грандиозная конференция Carlsberg в Шарм-эль-Шейхе от Royal Event Group' },
+      { loc: '/logo.png', title: 'La Royal Event — MICE-агентство полного цикла' },
+      { loc: '/carlsberg-0.JPG', title: 'Конференция Carlsberg на 1000 человек в Domina Coral Bay', caption: 'Грандиозная конференция Carlsberg в Шарм-эль-Шейхе от La Royal Event' },
       { loc: '/nl-7.jpg', title: 'Корпоративное мероприятие NL International на 7 дней', caption: 'Семидневный корпоративный выезд NL International в отеле Park Regency' },
       { loc: '/ewa-14.jpg', title: 'Корпоратив EWA product в Rixos Seagate, Шарм-эль-Шейх' },
     ],
@@ -59,10 +64,10 @@ const STATIC_ENTRIES = [
     priority: '0.9',
     hreflang: true,
     images: [
-      { loc: '/ksenia-usacheva.jpg', title: 'Ксения Усачева — CEO и основатель Royal Event Group' },
-      { loc: '/ekaterina-gaiduk.jpg', title: 'Екатерина Гайдук — CEO и партнёр Royal Event Group' },
-      { loc: '/team-full-1.jpg', title: 'Команда Royal Event Group — MICE-агентство' },
-      { loc: '/team-full-2.jpg', title: 'Команда Royal Event Group в работе на мероприятии' },
+      { loc: '/ksenia-usacheva.jpg', title: 'Ксения Усачева — CEO и основатель La Royal Event' },
+      { loc: '/ekaterina-gaiduk.jpg', title: 'Екатерина Гайдук — CEO и партнёр La Royal Event' },
+      { loc: '/team-full-1.jpg', title: 'Команда La Royal Event — MICE-агентство' },
+      { loc: '/team-full-2.jpg', title: 'Команда La Royal Event в работе на мероприятии' },
     ],
   },
   { loc: '/ru/services', changefreq: 'monthly', priority: '0.9', hreflang: true },
@@ -123,8 +128,21 @@ const STATIC_ENTRIES = [
   },
 
   { loc: '/ru/egypt', changefreq: 'monthly', priority: '0.8', hreflang: true },
-  { loc: '/ru/uae', changefreq: 'monthly', priority: '0.8', hreflang: true },
   { loc: '/ru/russia', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  // La Royal Event: программы, круизы, DMC. Слаги программ — из src/content/la-royal-event.ts
+  { loc: '/ru/programmy', changefreq: 'monthly', priority: '0.9', hreflang: true },
+  { loc: '/ru/programmy/kod-piramid', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/poslednyaya-stranica', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/chetyre-ruki', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/posledniy-kadr', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/ladya', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/put-k-zvezdam', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/zapis-arheologa', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/muzey-ozhivaet', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/sokrovishcha-ra', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/programmy/faraon', changefreq: 'monthly', priority: '0.8', hreflang: true },
+  { loc: '/ru/cruises', changefreq: 'monthly', priority: '0.9', hreflang: true },
+  { loc: '/ru/dmc', changefreq: 'monthly', priority: '0.9', hreflang: true },
   { loc: '/ru/delegations', changefreq: 'monthly', priority: '0.8', hreflang: true },
   { loc: '/ru/blog', changefreq: 'weekly', priority: '0.7', hreflang: true },
   { loc: '/ru/contact', changefreq: 'monthly', priority: '0.7', hreflang: true },
@@ -165,22 +183,28 @@ function xmlEscape(s) {
 function ruUrl(loc) {
   return `${HOST_RU}${loc.endsWith('/') ? loc : `${loc}/`}`;
 }
+function enUrl(loc) {
+  const p = loc.replace(/^\/ru/, '/en');
+  return `${HOST_COM}${p.endsWith('/') ? p : `${p}/`}`;
+}
+/** Основной URL записи для текущей цели сборки. */
+function primaryUrl(loc) {
+  return TARGET === 'com' ? enUrl(loc) : ruUrl(loc);
+}
 
 /** Сгенерировать один <url> блок. */
 function renderEntry(entry) {
   const lines = [];
   lines.push('  <url>');
-  lines.push(`    <loc>${ruUrl(entry.loc)}</loc>`);
+  lines.push(`    <loc>${primaryUrl(entry.loc)}</loc>`);
   lines.push(`    <lastmod>${entry.lastmod || TODAY}</lastmod>`);
   if (entry.changefreq) lines.push(`    <changefreq>${entry.changefreq}</changefreq>`);
   if (entry.priority) lines.push(`    <priority>${entry.priority}</priority>`);
 
   if (entry.hreflang) {
     lines.push(`    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl(entry.loc)}" />`);
-    // EN-версия живёт на .com (cross-domain hreflang) — слэш не добавляем,
-    // у .com своё поведение URL
-    const enPath = entry.loc.replace(/^\/ru/, '/en');
-    lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${HOST_COM}${enPath}" />`);
+    // EN-версия живёт на .com (cross-domain hreflang); все адреса со слэшем на конце
+    lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${enUrl(entry.loc)}" />`);
     if (entry.loc === '/ru') {
       lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${ruUrl('/ru')}" />`);
     }
@@ -188,7 +212,7 @@ function renderEntry(entry) {
 
   if (entry.images && entry.images.length > 0) {
     for (const img of entry.images) {
-      const imageLoc = img.loc.startsWith('http') ? img.loc : `${HOST_RU}${img.loc}`;
+      const imageLoc = img.loc.startsWith('http') ? img.loc : `${HOST}${img.loc}`;
       lines.push('    <image:image>');
       lines.push(`      <image:loc>${xmlEscape(imageLoc)}</image:loc>`);
       lines.push(`      <image:title>${xmlEscape(img.title)}</image:title>`);

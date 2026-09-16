@@ -9,7 +9,7 @@ interface NewsletterFormProps {
 }
 
 /**
- * Форма подписки на рассылку Royal Event Group.
+ * Форма подписки на рассылку La Royal Event.
  * Светлая карточка с розовым акцентом — рассчитана на белый фон тела статьи.
  * Отправляет email на subscribe.php (reg.ru) — далее на baxgat@yandex.ru приходит уведомление.
  */
@@ -25,7 +25,9 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ source = 'blog' }) => {
     setErrorMsg('');
 
     // На reg.ru используем PHP-эндпойнт.
-    const endpoint = '/subscribe.php';
+    // reg.ru (.ru) — PHP; Vercel (.com) — serverless /api/subscribe
+    const isRu = typeof window !== 'undefined' && window.location.hostname.endsWith('.ru');
+    const endpoint = isRu ? '/subscribe.php' : '/api/subscribe';
 
     try {
       const res = await fetch(endpoint, {
@@ -64,8 +66,8 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ source = 'blog' }) => {
         </h3>
         <p className="text-gray-600 font-serif text-base md:text-lg max-w-xl mx-auto">
           {language === 'ru'
-            ? 'Вы подписаны на рассылку Royal Event Group. Новые статьи и кейсы будут приходить на ваш email.'
-            : "You're subscribed to Royal Event Group newsletter. New articles and cases will arrive in your inbox."}
+            ? 'Вы подписаны на рассылку La Royal Event. Новые статьи и кейсы будут приходить на ваш email.'
+            : "You're subscribed to La Royal Event newsletter. New articles and cases will arrive in your inbox."}
         </p>
       </motion.section>
     );

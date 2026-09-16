@@ -71,7 +71,7 @@ const CaseStudy = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               src={selectedImage}
-              alt={language === 'ru' ? `Фото с мероприятия ${caseItem.client} — Royal Event Group` : `Photo from ${caseItem.client} event — Royal Event Group`}
+              alt={language === 'ru' ? `Фото с мероприятия ${caseItem.client} — La Royal Event` : `Photo from ${caseItem.client} event — La Royal Event`}
               className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl shadow-royal-pink/20"
               onClick={(e) => e.stopPropagation()}
             />
@@ -320,7 +320,7 @@ const CaseStudy = () => {
                 {language === 'ru' ? 'О нас' : 'About us'}
               </div>
               <h3 className="text-xl font-display font-bold uppercase mb-2 group-hover:text-royal-pink transition-colors">
-                {language === 'ru' ? 'Royal Event Group' : 'Royal Event Group'}
+                {language === 'ru' ? 'La Royal Event' : 'La Royal Event'}
               </h3>
               <p className="text-sm text-white/40">
                 {language === 'ru'

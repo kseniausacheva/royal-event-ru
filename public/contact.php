@@ -7,11 +7,23 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // ===== CONFIG =====
-$EMAIL_USER = 'baxgat@yandex.ru';
-$EMAIL_PASS = 'wepjrqgubfgydwes';
-$SMTP_HOST  = 'smtp.yandex.ru';
-$SMTP_PORT  = 465;
-$RECIPIENT  = 'baxgat@yandex.ru';
+// Пароль SMTP не хранится в репозитории. Файл mail-config.php кладётся на сервер
+// вручную (один раз) — уровнем выше корня сайта или рядом с этим скриптом.
+// Образец: deploy/mail-config.example.php
+$__cfg = null;
+foreach ([dirname(__DIR__) . '/mail-config.php', __DIR__ . '/mail-config.php'] as $__p) {
+    if (is_readable($__p)) { $__cfg = include $__p; break; }
+}
+if (!is_array($__cfg) || empty($__cfg['user']) || empty($__cfg['pass'])) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Сервер не настроен: отсутствует mail-config.php']);
+    exit;
+}
+$EMAIL_USER = $__cfg['user'];
+$EMAIL_PASS = $__cfg['pass'];
+$SMTP_HOST  = $__cfg['host'] ?? 'smtp.yandex.ru';
+$SMTP_PORT  = (int)($__cfg['port'] ?? 465);
+$RECIPIENT  = $__cfg['recipient'] ?? $EMAIL_USER;
 // ==================
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

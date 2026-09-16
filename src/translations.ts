@@ -31,8 +31,10 @@ export const translations = {
       home: 'Главная',
       about: 'О компании',
       services: 'Услуги',
+      programs: 'Программы',
+      cruises: 'Круизы',
+      dmc: 'DMC',
       egypt: 'Египет',
-      uae: 'ОАЭ',
       russia: 'Россия',
       portfolio: 'Кейсы',
       delegations: 'Делегации',
@@ -40,14 +42,14 @@ export const translations = {
       contact: 'Контакты',
     },
     hero: {
-      tag: 'Royal Event Group — Искусство безупречности',
-      title: 'СОЗДАЕМ СОБЫТИЯ, КОТОРЫЕ СТАНОВЯТСЯ',
+      tag: 'La Royal Event — MICE и DMC в Египте',
+      title: 'СОЗДАЁМ СОБЫТИЯ, КОТОРЫЕ СТАНОВЯТСЯ',
       titleAccent: 'ИСТОРИЕЙ',
-      subtitle: 'MICE-мероприятия полного цикла в Египте, ОАЭ и России. От камерного ужина на 20 человек до конференции на 1000+ гостей. 20+ лет на Ближнем Востоке.',
+      subtitle: 'Мероприятия полного цикла в Египте. От камерного ужина на 20 человек до конференции на 1000+ гостей. Собственное производство, прямые контракты, команда на месте. 20+ лет на Ближнем Востоке.',
       stats: [
         { value: '20+', label: 'ЛЕТ ОПЫТА' },
-        { value: '1 000+', label: 'МЕРОПРИЯТИЙ' },
-        { value: '6', label: 'СТРАН' },
+        { value: '1 000+', label: 'ГОСТЕЙ НА СОБЫТИИ' },
+        { value: '10', label: 'АВТОРСКИХ ПРОГРАММ' },
         { value: '40+', label: 'В КОМАНДЕ' },
       ],
       cta: 'ЗАПРОСИТЬ ПРЕДЛОЖЕНИЕ',
@@ -145,7 +147,7 @@ export const translations = {
           videos: [
             { url: '/videos/ewa-horizontal.mp4', type: 'horizontal', poster: '/ewa-14.jpg' },
             { url: '/videos/ewa-vertical1.mp4', type: 'vertical', poster: '/ewa-5.jpg' },
-            { url: '/videos/ewa-vertical5.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
+            { url: '/videos/ewa-vertical3.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
             { url: '/videos/IMG_7742.MP4', type: 'vertical', poster: '/ewa-7.jpg' }
           ],
           gallery: [
@@ -241,8 +243,6 @@ export const translations = {
       items: [
         { name: 'Каир', country: 'Египет' },
         { name: 'Шарм-эль-шейх', country: 'Египет' },
-        { name: 'Дубай', country: 'ОАЭ' },
-        { name: 'Абу-Даби', country: 'ОАЭ' },
         { name: 'Москва', country: 'Россия' },
         { name: 'Вся Россия', country: 'РФ' }
       ]
@@ -257,10 +257,10 @@ export const translations = {
       ]
     },
     aboutPage: {
-      title: 'ROYAL EVENT GROUP',
+      title: 'LA ROYAL EVENT',
       subtitle: 'Ваш стратегический DMC партнер в арабском мире и России',
-      description: 'Мы специализируемся на организации мероприятий в арабских странах, выступая в роли надежного DMC (Destination Management Company) партнера. Наша экспертиза охватывает как проведение событий для иностранных компаний в Египте и ОАЭ, так и организацию мероприятий для арабских компаний в России.',
-      history: 'Основанная на принципах совершенства и культурной синергии, Royal Event Group уже более двух десятилетий является мостом между международными стандартами и местного опыта. Мы понимаем тонкости ведения бизнеса в обоих регионах и обеспечиваем безупречную коммуникацию и логистику.',
+      description: 'Мы специализируемся на организации мероприятий в арабских странах, выступая в роли надежного DMC (Destination Management Company) партнера. Наша экспертиза охватывает как проведение событий для иностранных компаний в Египте, так и организацию мероприятий для арабских компаний в России.',
+      history: 'Основанная на принципах совершенства и культурной синергии, La Royal Event (ранее La Royal Event) уже более двух десятилетий является мостом между международными стандартами и местного опыта. Мы понимаем тонкости ведения бизнеса в обоих регионах и обеспечиваем безупречную коммуникацию и логистику.',
       mission: {
         title: 'НАША МИССИЯ',
         desc: 'Создавать события, которые становятся легендами. Мы стремимся к тому, чтобы каждое мероприятие не просто соответствовало ожиданиям, а превосходило их, становясь мощным инструментом для развития бизнеса наших клиентов.'
@@ -274,8 +274,8 @@ export const translations = {
         ]
       },
       seo: {
-        title: 'О компании Royal Event Group | MICE агентство с 20-летним опытом',
-        description: 'Узнайте больше о Royal Event Group: наша история, команда и почему мы являемся лидерами в организации мероприятий в Египте, ОАЭ и России. Профессиональный подход к MICE.'
+        title: 'О компании La Royal Event | MICE агентство с 20-летним опытом',
+        description: 'Узнайте больше о La Royal Event: наша история, команда и почему мы являемся лидерами в организации мероприятий в Египте и России. Профессиональный подход к MICE.'
       }
     },
     servicesPage: {
@@ -296,7 +296,7 @@ export const translations = {
       faq: [
         {
           question: 'В каких странах вы организуете мероприятия?',
-          answer: 'Royal Event Group работает в Египте, ОАЭ и России. Главные офисы — в Шарм-эль-Шейхе, Москве и Дубае. Также организуем MICE-проекты в других странах Ближнего Востока по запросу клиента.'
+          answer: 'La Royal Event работает в Египте и России. Главные офисы — в Шарм-эль-Шейхе и Москве. Также организуем MICE-проекты в других странах Ближнего Востока по запросу клиента.'
         },
         {
           question: 'Какие форматы мероприятий вы организуете?',
@@ -381,7 +381,7 @@ export const translations = {
         },
         {
           question: 'Можете ли вы организовать визовое сопровождение?',
-          answer: 'Да. Делаем визовую поддержку для арабских делегаций в Россию и для российских делегаций в ОАЭ, Египет и другие страны региона. Помогаем с приглашениями, пакетом документов и подачей.'
+          answer: 'Да. Делаем визовую поддержку для арабских делегаций в Россию и для российских делегаций в Египет и другие страны региона. Помогаем с приглашениями, пакетом документов и подачей.'
         },
         {
           question: 'Какие гарантии конфиденциальности вы предоставляете?',
@@ -455,15 +455,6 @@ export const translations = {
           description: 'MICE в Египте: организация конференций, корпоративов и бизнес-ретритов в Шарм-эль-Шейхе и Каире. Собственное производство и 20 лет опыта.'
         }
       },
-      uae: {
-        name: 'ОАЭ',
-        tagline: 'РОСКОШЬ И ИННОВАЦИИ',
-        description: 'Дубай и Абу-Даби — это вершина MICE-индустрии, где роскошь встречается с инновациями. Мы организуем статусные корпоративные форумы, саммиты и инсентив-программы в ОАЭ, используя наш доступ к VIP-площадкам и глубокое знание локального рынка. От футуристических конференц-залов до премиальных ретритов — мы создаем события мирового уровня.',
-        seo: {
-          title: 'Организация мероприятий и конференций в ОАЭ (Дубай, Абу-Даби)',
-          description: 'Проведение корпоративных мероприятий и бизнес-форумов в ОАЭ. Премиальный сервис, лучшие площадки Дубая и Абу-Даби от Royal Event Group.'
-        }
-      },
       russia: {
         name: 'РОССИЯ',
         tagline: 'СТРАТЕГИЧЕСКОЕ ПАРТНЕРСТВО',
@@ -475,7 +466,7 @@ export const translations = {
       }
     },
     footer: {
-      rights: '© 2026 ROYAL EVENT GROUP. ВСЕ ПРАВА ЗАЩИЩЕНЫ.',
+      rights: '© 2026 LA ROYAL EVENT. ВСЕ ПРАВА ЗАЩИЩЕНЫ.',
       legal: {
         ip: 'ИП УСАЧЕВА КСЕНИЯ ОЛЕГОВНА',
         inn: 'ИНН 772206846997',
@@ -511,8 +502,10 @@ export const translations = {
       home: 'Home',
       about: 'About Us',
       services: 'Services',
+      programs: 'Programs',
+      cruises: 'Nile Cruises',
+      dmc: 'DMC',
       egypt: 'Egypt',
-      uae: 'UAE',
       russia: 'Russia',
       portfolio: 'Portfolio',
       delegations: 'Delegations',
@@ -520,10 +513,10 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tag: 'Royal Event Group — The Art of Perfection',
+      tag: 'La Royal Event — MICE & DMC in Egypt',
       title: 'WE CREATE',
       titleAccent: 'HISTORY',
-      subtitle: 'Corporate event organization in Egypt, UAE, and Russia. 20+ years of experience in the Arab region. Full-cycle MICE agency.',
+      subtitle: 'Full-cycle corporate events in Egypt. From an intimate dinner for 20 to a conference for 1,000+ guests. In-house production, direct contracts, on-site team. 20+ years in the Middle East.',
       stats: [
         { value: '20+', label: 'YEARS OF EXPERIENCE' },
         { value: '1,000+', label: 'EVENTS DELIVERED' },
@@ -625,7 +618,7 @@ export const translations = {
           videos: [
             { url: '/videos/ewa-horizontal.mp4', type: 'horizontal', poster: '/ewa-14.jpg' },
             { url: '/videos/ewa-vertical1.mp4', type: 'vertical', poster: '/ewa-5.jpg' },
-            { url: '/videos/ewa-vertical5.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
+            { url: '/videos/ewa-vertical3.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
             { url: '/videos/IMG_7742.MP4', type: 'vertical', poster: '/ewa-7.jpg' }
           ],
           gallery: [
@@ -721,8 +714,6 @@ export const translations = {
       items: [
         { name: 'Cairo', country: 'Egypt' },
         { name: 'Sharm El Sheikh', country: 'Egypt' },
-        { name: 'Dubai', country: 'UAE' },
-        { name: 'Abu Dhabi', country: 'UAE' },
         { name: 'Moscow', country: 'Russia' },
         { name: 'All of Russia', country: 'RF' }
       ]
@@ -737,10 +728,10 @@ export const translations = {
       ]
     },
     aboutPage: {
-      title: 'ROYAL EVENT GROUP',
+      title: 'LA ROYAL EVENT',
       subtitle: 'Your Strategic DMC Partner in the Arab World and Russia',
-      description: 'We specialize in organizing events in Arab countries, serving as a reliable DMC (Destination Management Company) partner. Our expertise covers both hosting events for foreign companies in Egypt and the UAE, and organizing events for Arab companies in Russia.',
-      history: 'Founded on the principles of excellence and cultural synergy, Royal Event Group has been the bridge between international standards and local expertise for over two decades. We understand the nuances of doing business in both regions and ensure flawless communication and logistics.',
+      description: 'We specialize in organizing events in Arab countries, serving as a reliable DMC (Destination Management Company) partner. Our expertise covers both hosting events for foreign companies in Egypt, and organizing events for Arab companies in Russia.',
+      history: 'Founded on the principles of excellence and cultural synergy, La Royal Event (formerly La Royal Event) has been the bridge between international standards and local expertise for over two decades. We understand the nuances of doing business in both regions and ensure flawless communication and logistics.',
       mission: {
         title: 'OUR MISSION',
         desc: 'To create events that become legends. We strive to ensure that every event not only meets expectations but exceeds them, becoming a powerful tool for our clients\' business development.'
@@ -754,8 +745,8 @@ export const translations = {
         ]
       },
       seo: {
-        title: 'About Royal Event Group | MICE Agency with 20 Years of Experience',
-        description: 'Learn more about Royal Event Group: our history, team, and why we are leaders in event organization in Egypt, UAE, and Russia. Professional MICE approach.'
+        title: 'About La Royal Event | MICE Agency with 20 Years of Experience',
+        description: 'Learn more about La Royal Event: our history, team, and why we are leaders in event organization in Egypt and Russia. Professional MICE approach.'
       }
     },
     servicesPage: {
@@ -776,7 +767,7 @@ export const translations = {
       faq: [
         {
           question: 'Which countries do you organize events in?',
-          answer: 'Royal Event Group operates in Egypt, UAE, and Russia. Our main offices are in Sharm El Sheikh, Moscow, and Dubai. We also handle MICE projects in other Middle Eastern countries on request.'
+          answer: 'La Royal Event operates in Egypt and Russia. Our main offices are in Sharm El Sheikh and Moscow. We also handle MICE projects in other Middle Eastern countries on request.'
         },
         {
           question: 'What types of events do you organize?',
@@ -861,7 +852,7 @@ export const translations = {
         },
         {
           question: 'Can you arrange visa support?',
-          answer: 'Yes. We provide visa support for Arab delegations visiting Russia and for Russian delegations traveling to the UAE, Egypt, and other countries in the region. We help with invitation letters, document packages, and submissions.'
+          answer: 'Yes. We provide visa support for Arab delegations visiting Russia and for Russian delegations traveling to Egypt and other countries in the region. We help with invitation letters, document packages, and submissions.'
         },
         {
           question: 'What confidentiality guarantees do you offer?',
@@ -935,27 +926,18 @@ export const translations = {
           description: 'MICE in Egypt: organizing conferences, corporate retreats, and business events in Sharm El Sheikh and Cairo. 20 years of experience and in-house production.'
         }
       },
-      uae: {
-        name: 'UAE',
-        tagline: 'LUXURY & INNOVATION',
-        description: 'Dubai and Abu Dhabi represent the pinnacle of the MICE industry, where luxury meets innovation. We organize high-status corporate forums, summits, and incentive programs in the UAE, leveraging our access to VIP venues and deep knowledge of the local market. From futuristic conference halls to premium retreats — we create world-class events.',
-        seo: {
-          title: 'Corporate Events and Conferences in UAE (Dubai, Abu Dhabi)',
-          description: 'Hosting corporate events and business forums in the UAE. Premium service and best venues in Dubai and Abu Dhabi by Royal Event Group.'
-        }
-      },
       russia: {
         name: 'RUSSIA',
         tagline: 'STRATEGIC PARTNERSHIPS',
         description: 'We build a reliable bridge for your business between Russia and the Arab world. Our team provides comprehensive support for Russian companies planning events in the Arab region, and also accompanies Arab delegations in Russia. We handle everything from logistics and protocol to cultural programs and technical equipment, ensuring flawless results at the intersection of two cultures.',
         seo: {
-          title: 'Arabic Delegation Support and Events in Moscow | Royal Event Group',
+          title: 'Arabic Delegation Support and Events in Moscow | La Royal Event',
           description: 'Organizing events in Moscow for international companies and supporting Arabic delegations in Russia. Professional protocol and translation services.'
         }
       }
     },
     footer: {
-      rights: '© 2026 ROYAL EVENT GROUP. ALL RIGHTS RESERVED.',
+      rights: '© 2026 LA ROYAL EVENT. ALL RIGHTS RESERVED.',
       legal: {
         ip: 'IE USACHEVA KSENIA OLEGOVNA',
         inn: 'INN 772206846997',

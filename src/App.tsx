@@ -1,6 +1,10 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 // Version: 1.0.3 - Lazy loaded routes
-import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
+
+// VITE_PREVIEW=1 — сборка превью для статического хостинга без серверного роутинга
+// (артефакт claude.ai): навигация через #, обычная сборка не затрагивается.
+const Router = import.meta.env.VITE_PREVIEW ? HashRouter : BrowserRouter;
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Home from './pages/Home';
@@ -22,6 +26,10 @@ const MailingConsent = lazy(() => import('./pages/MailingConsent'));
 const DataConsent = lazy(() => import('./pages/DataConsent'));
 const Offer = lazy(() => import('./pages/Offer'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const Programs = lazy(() => import('./pages/Programs'));
+const ProgramDetail = lazy(() => import('./pages/ProgramDetail'));
+const Cruises = lazy(() => import('./pages/Cruises'));
+const DMC = lazy(() => import('./pages/DMC'));
 
 const PageLoader = () => (
   <div className="min-h-screen bg-royal-black flex items-center justify-center">
@@ -38,19 +46,6 @@ const Egypt = () => {
       tagline={t.destinations.egypt.tagline}
       description={t.destinations.egypt.description}
       seo={t.destinations.egypt.seo}
-    />
-  );
-};
-
-const UAE = () => {
-  const { t } = useLanguage();
-  return (
-    <Destination
-      name={t.destinations.uae.name}
-      image="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1000"
-      tagline={t.destinations.uae.tagline}
-      description={t.destinations.uae.description}
-      seo={t.destinations.uae.seo}
     />
   );
 };
@@ -88,13 +83,13 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t.nav.home, path: `${langPrefix}` },
-    { name: t.nav.about, path: `${langPrefix}/about` },
+    { name: t.nav.programs, path: `${langPrefix}/programmy` },
+    { name: t.nav.cruises, path: `${langPrefix}/cruises` },
+    { name: t.nav.dmc, path: `${langPrefix}/dmc` },
     { name: t.nav.services, path: `${langPrefix}/services` },
     { name: t.nav.portfolio, path: `${langPrefix}/portfolio` },
     { name: t.nav.delegations, path: `${langPrefix}/delegations` },
-    { name: t.nav.egypt, path: `${langPrefix}/egypt` },
-    { name: t.nav.uae, path: `${langPrefix}/uae` },
-    { name: t.nav.russia, path: `${langPrefix}/russia` },
+    { name: t.nav.about, path: `${langPrefix}/about` },
     { name: t.nav.blog, path: `${langPrefix}/blog` },
     { name: t.nav.contact, path: `${langPrefix}/contact` },
   ];
@@ -103,17 +98,17 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-royal-black/90 backdrop-blur-xl py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to={langPrefix} className="group">
-          <img src="/logo.png" alt="Royal Event Group — MICE-агентство" className="h-20 w-auto group-hover:opacity-80 transition-opacity" />
+          <img src="/logo-horizontal.png" alt="La Royal Event — MICE и DMC в Египте" width="1400" height="197" className="h-7 sm:h-8 xl:h-9 w-auto shrink-0 group-hover:opacity-80 transition-opacity" />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
-          <div className="flex gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-10 ml-6">
+          <div className="flex gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-royal-pink ${location.pathname === link.path ? 'text-royal-pink' : 'text-white/60'}`}
+                className={`text-[10px] font-bold uppercase tracking-[0.18em] whitespace-nowrap transition-all hover:text-royal-pink ${location.pathname === link.path ? 'text-royal-pink' : 'text-white/60'}`}
               >
                 {link.name}
               </Link>
@@ -121,7 +116,7 @@ const Navbar = () => {
           </div>
 
           {/* Language Toggle */}
-          <div className="flex items-center gap-3 border-l border-white/10 pl-10">
+          <div className="flex items-center gap-3 border-l border-white/10 pl-6 xl:pl-10">
             <button
               onClick={() => setLanguage('ru')}
               className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${language === 'ru' ? 'text-royal-pink' : 'text-white/40 hover:text-white'}`}
@@ -197,7 +192,10 @@ const AppRoutes = () => {
       <Route path="/ru/portfolio" element={<Portfolio />} />
       <Route path="/ru/portfolio/:id" element={<CaseStudy />} />
       <Route path="/ru/egypt" element={<Egypt />} />
-      <Route path="/ru/uae" element={<UAE />} />
+      <Route path="/ru/programmy" element={<Programs />} />
+      <Route path="/ru/programmy/:slug" element={<ProgramDetail />} />
+      <Route path="/ru/cruises" element={<Cruises />} />
+      <Route path="/ru/dmc" element={<DMC />} />
       <Route path="/ru/russia" element={<Russia />} />
       <Route path="/ru/delegations" element={<Delegations />} />
       <Route path="/ru/blog" element={<BlogPage />} />
@@ -215,7 +213,10 @@ const AppRoutes = () => {
       <Route path="/en/portfolio" element={<Portfolio />} />
       <Route path="/en/portfolio/:id" element={<CaseStudy />} />
       <Route path="/en/egypt" element={<Egypt />} />
-      <Route path="/en/uae" element={<UAE />} />
+      <Route path="/en/programmy" element={<Programs />} />
+      <Route path="/en/programmy/:slug" element={<ProgramDetail />} />
+      <Route path="/en/cruises" element={<Cruises />} />
+      <Route path="/en/dmc" element={<DMC />} />
       <Route path="/en/russia" element={<Russia />} />
       <Route path="/en/delegations" element={<Delegations />} />
       <Route path="/en/blog" element={<BlogPage />} />

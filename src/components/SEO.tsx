@@ -39,7 +39,9 @@ const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
   portfolio: { ru: 'Кейсы', en: 'Portfolio' },
   delegations: { ru: 'Делегации', en: 'Delegations' },
   egypt: { ru: 'Египет', en: 'Egypt' },
-  uae: { ru: 'ОАЭ', en: 'UAE' },
+  programmy: { ru: 'Программы', en: 'Programs' },
+  cruises: { ru: 'Круизы по Нилу', en: 'Nile Cruises' },
+  dmc: { ru: 'DMC Египет', en: 'DMC Egypt' },
   russia: { ru: 'Россия', en: 'Russia' },
   blog: { ru: 'Блог', en: 'Blog' },
   contact: { ru: 'Контакты', en: 'Contact' },
@@ -55,16 +57,14 @@ const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
  * The .com host is the canonical home for English content.
  * We point cross-domain hreflang accordingly so Yandex/Google don't see duplicate content.
  */
-const RU_SITE_URL = 'https://royaleventandmice.ru';
-const COM_SITE_URL = 'https://www.royaleventandmice.com';
-const SITE_NAME = 'Royal Event Group';
-const DEFAULT_OG_IMAGE = '/logo.png';
+import { RU_SITE_URL, COM_SITE_URL, SITE_NAME, withHost } from '../site-config';
+const DEFAULT_OG_IMAGE = '/og-image.png';
 
 const RU_DEFAULT_DESCRIPTION =
-  'Royal Event Group — MICE-агентство полного цикла: организация корпоративных мероприятий, конференций, тимбилдингов и инсентив-туров в Египте, ОАЭ, России и на Ближнем Востоке. 20+ лет опыта, собственное производство, прямые контракты с топ-отелями.';
+  'La Royal Event — MICE-агентство и DMC полного цикла: организация корпоративных мероприятий, конференций, тимбилдингов и инсентив-туров в Египте и на Ближнем Востоке. 20+ лет опыта, собственное производство, прямые контракты с топ-отелями.';
 
 const EN_DEFAULT_DESCRIPTION =
-  'Royal Event Group — Full-cycle MICE agency: corporate events, conferences, team building and incentive tours in Egypt, UAE, Russia and the Middle East. 20+ years of experience, in-house production, direct contracts with top hotels.';
+  'La Royal Event — Full-cycle MICE & DMC agency: corporate events, conferences, team building and incentive tours in Egypt and the Middle East. 20+ years of experience, in-house production, direct contracts with top hotels.';
 
 const RU_DEFAULT_KEYWORDS = [
   'MICE',
@@ -78,21 +78,21 @@ const RU_DEFAULT_KEYWORDS = [
   'конференции',
   'организация конференций',
   'тимбилдинг',
-  'тимбилдинг ОАЭ',
   'тимбилдинг Египет',
   'инсентив туры',
   'incentive туры',
   'корпоративы в Египте',
-  'корпоративы в ОАЭ',
-  'корпоративы в Дубае',
   'мероприятия в Шарм-эль-Шейхе',
-  'мероприятия в Дубае',
-  'мероприятия в Абу-Даби',
   'организация мероприятий в Москве',
   'делегации',
   'сопровождение делегаций',
   'арабские делегации',
   'DMC агентство',
+  'DMC Египет',
+  'квест на пирамидах',
+  'круиз по Нилу',
+  'приватный доступ к пирамидам',
+  'La Royal Event',
   'Royal Event Group',
 ].join(', ');
 
@@ -106,13 +106,14 @@ const EN_DEFAULT_KEYWORDS = [
   'team building',
   'incentive tours',
   'events in Egypt',
-  'events in UAE',
-  'events in Dubai',
   'events in Sharm El Sheikh',
-  'events in Abu Dhabi',
   'events in Moscow',
   'Arabic delegations',
   'DMC agency',
+  'DMC Egypt',
+  'Nile cruise',
+  'private pyramid access',
+  'La Royal Event',
   'Royal Event Group',
 ].join(', ');
 
@@ -136,12 +137,8 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     ? (image.startsWith('http') ? image : `${canonicalHost}${image}`)
     : `${canonicalHost}${DEFAULT_OG_IMAGE}`;
 
-  // Apache на reg.ru отдаёт пререндеренные страницы как папки (/ru/blog/index.html)
-  // и 301-ит адреса без слэша на слэшные. Canonical/og:url должны указывать на
-  // конечный 200-адрес, а не на редирект — поэтому для .ru всегда добавляем «/».
-  // .com не трогаем: у него свой хостинг со своим поведением URL.
-  const withHost = (host: string, path: string) =>
-    host === RU_SITE_URL && !path.endsWith('/') ? `${host}${path}/` : `${host}${path}`;
+  // Canonical/og:url — всегда со слэшем на конце (см. site-config.withHost):
+  // Apache на reg.ru и Vercel (trailingSlash) 301/308-ят адреса без слэша.
 
   const canonicalUrl = withHost(canonicalHost, location.pathname);
   const altLang = language === 'ru' ? 'en' : 'ru';
@@ -228,7 +225,6 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     areaServed: [
       { '@type': 'Country', name: 'Russia' },
       { '@type': 'Country', name: 'Egypt' },
-      { '@type': 'Country', name: 'United Arab Emirates' },
     ],
     contactPoint: {
       '@type': 'ContactPoint',

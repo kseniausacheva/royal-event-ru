@@ -65,3 +65,8 @@ ErrorDocument 404 /404.html
 
 # Default page
 DirectoryIndex index.html
+
+# SMTP-конфиг форм (если лежит в корне сайта) — никогда не отдавать по HTTP
+<Files "mail-config.php">
+  Require all denied
+</Files>

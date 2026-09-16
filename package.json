@@ -9,6 +9,7 @@
     "build": "vite build",
     "postbuild": "npm run build:ssr && node scripts/prerender.mjs",
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
+    "build:com": "node scripts/generate-sitemap.mjs --target com && vite build --mode com && vite build --mode com --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs --target com",
     "build:no-prerender": "node scripts/generate-sitemap.mjs && vite build",
     "prerender": "node scripts/prerender.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",

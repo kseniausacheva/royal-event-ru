@@ -16,3 +16,10 @@ playwright-report/
 .claude/
 # reg.ru deploy artifacts
 site*.zip
+
+# SMTP-доступ форм — только на сервере
+mail-config.php
+dist-preview/
+.vercel/
+!.env
+!.env.com

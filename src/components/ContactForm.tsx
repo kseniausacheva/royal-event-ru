@@ -37,7 +37,7 @@ const ContactForm = () => {
   const [errorMsg, setErrorMsg] = useState('');
 
   const ru = language === 'ru';
-  const DIRECTIONS = ru ? ['Египет', 'ОАЭ', 'Россия', 'Другое'] : ['Egypt', 'UAE', 'Russia', 'Other'];
+  const DIRECTIONS = ru ? ['Египет', 'Россия', 'Другое'] : ['Egypt', 'Russia', 'Other'];
   const FORMATS = ru
     ? ['Конференция', 'Корпоратив', 'Тимбилдинг', 'Делегация', 'Другое']
     : ['Conference', 'Corporate event', 'Team building', 'Delegation', 'Other'];

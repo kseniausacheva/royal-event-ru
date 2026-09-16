@@ -52,7 +52,7 @@ const Destination: React.FC<DestinationProps> = ({ name, image, tagline, descrip
           <div className="aspect-[16/10] rounded-[40px] overflow-hidden border border-white/10">
             <img
               src={image}
-              alt={language === 'ru' ? `MICE-мероприятия в ${name} — Royal Event Group` : `MICE events in ${name} — Royal Event Group`}
+              alt={language === 'ru' ? `MICE-мероприятия в ${name} — La Royal Event` : `MICE events in ${name} — La Royal Event`}
               loading="lazy"
               className="w-full h-full object-cover grayscale"
               referrerPolicy="no-referrer"
@@ -100,8 +100,8 @@ const Destination: React.FC<DestinationProps> = ({ name, image, tagline, descrip
             </h3>
             <p className="text-sm text-white/40">
               {language === 'ru'
-                ? `Реальные проекты Royal Event Group — Carlsberg, NL International, AFA`
-                : 'Real Royal Event Group projects — Carlsberg, NL International, AFA'}
+                ? `Реальные проекты La Royal Event — Carlsberg, NL International, AFA`
+                : 'Real La Royal Event projects — Carlsberg, NL International, AFA'}
             </p>
           </Link>
           <Link

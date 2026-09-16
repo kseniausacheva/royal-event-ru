@@ -54,6 +54,21 @@ jobs:
           echo "=== prerendered routes ==="
           find dist -name 'index.html' | sort
 
+      # SMTP-пароль форм не хранится в репозитории: берём из GitHub Secret EMAIL_PASS
+      # (Settings → Secrets and variables → Actions) и кладём mail-config.php рядом с contact.php.
+      # По HTTP файл закрыт через .htaccess. Без секрета деплой останавливаем — иначе формы сломаются.
+      - name: Write mail-config.php from secret
+        env:
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+        run: |
+          if [ -z "$EMAIL_PASS" ]; then
+            echo "::error::Секрет EMAIL_PASS не задан. Добавь пароль приложения Яндекс.Почты в Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          ESCAPED=$(printf '%s' "$EMAIL_PASS" | sed "s/\\\\/\\\\\\\\/g; s/'/\\\\'/g")
+          printf "<?php\nreturn [\n  'user' => 'baxgat@yandex.ru',\n  'pass' => '%s',\n  'host' => 'smtp.yandex.ru',\n  'port' => 465,\n  'recipient' => 'baxgat@yandex.ru',\n];\n" "$ESCAPED" > dist/mail-config.php
+          echo "mail-config.php записан ($(wc -c < dist/mail-config.php) байт)"
+
       # Deploy готовой папки dist/ на reg.ru через FTP.
       # Использует incremental sync — заливает только изменённые файлы (быстро).
       # FTP-credentials лежат в GitHub Secrets (Settings → Secrets and variables → Actions).
