@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react';
 import SEO from '../components/SEO';
+import PyramidDiagram from '../components/PyramidDiagram';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { dmc, privateAccess } from '../content/la-royal-event';
 
@@ -92,7 +93,7 @@ const DMC = () => {
             </div>
           </div>
 
-          <div className="p-7 rounded-2xl border border-royal-rule bg-royal-card grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-7 rounded-2xl border border-royal-rule bg-royal-card grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-2">Что вы получаете</p>
               <p className="text-sm text-royal-sand-2 leading-relaxed">{privateAccess.what}</p>
@@ -100,6 +101,45 @@ const DMC = () => {
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-2">Формат</p>
               <p className="text-sm text-royal-sand-2 leading-relaxed">{privateAccess.format}</p>
+            </div>
+          </div>
+
+          {/* Схема пирамиды */}
+          <div className="p-7 rounded-2xl border border-royal-rule bg-royal-card mb-6">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">Куда вы попадёте внутри Великой пирамиды</p>
+            <PyramidDiagram className="max-w-4xl" />
+          </div>
+
+          {/* Два формата дня */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+            {privateAccess.slots.map((slot) => (
+              <div key={slot.name} className="p-7 rounded-2xl border border-royal-rule bg-royal-card">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lime mb-1">{slot.when}</p>
+                <h3 className="text-xl font-display font-bold mb-4">{slot.name}</h3>
+                <ol className="space-y-2.5">
+                  {slot.steps.map((st, i) => (
+                    <li key={st} className="flex gap-3 text-sm text-royal-sand-2">
+                      <span className="shrink-0 w-5 h-5 rounded-full border border-royal-rule text-[10px] font-bold flex items-center justify-center text-royal-lilac">{i + 1}</span>
+                      <span>{st}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
+
+          <div className="p-7 rounded-2xl border border-royal-rule bg-royal-card grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-3">Включено</p>
+              <ul className="space-y-1.5">
+                {privateAccess.included.map((x) => <li key={x} className="flex gap-2 text-sm text-royal-sand-2"><Check className="w-4 h-4 mt-0.5 shrink-0 text-emerald-400" />{x}</li>)}
+              </ul>
+            </div>
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim mb-3">Не включено</p>
+              <ul className="space-y-1.5">
+                {privateAccess.notIncluded.map((x) => <li key={x} className="flex gap-2 text-sm text-royal-dim"><X className="w-4 h-4 mt-0.5 shrink-0" />{x}</li>)}
+              </ul>
             </div>
           </div>
         </div>
