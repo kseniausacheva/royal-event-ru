@@ -410,6 +410,9 @@ export const cruises = [
   },
 ];
 
+/** Фото в public/ — путь от корня сайта и подпись alt на русском. */
+export type Photo = { src: string; alt: string };
+
 export type Ship = {
   slug: string;
   name: string;
@@ -420,7 +423,7 @@ export type Ship = {
   onboard: string[];
   routes: string;
   hero: string;
-  gallery: { src: string; alt: string }[];
+  gallery: Photo[];
 };
 
 export const fleet: Ship[] = [
@@ -486,8 +489,27 @@ export const fleet: Ship[] = [
 ];
 
 // ── Дахабии Nour El Nil ─────────────────────────────────────────────
-// Цифры — с сайта судовладельца (nourelnil.com). Фото — из папки «круизы по Нилу».
-export const dahabiyas = {
+// Цифры — с сайта судовладельца (nourelnil.com). Фото — из папки «круизы по Нилу»,
+// конвертация: node scripts/convert-cruise-photos.mjs <папка> --prefix <лодка>
+// (webp ≤ 1600 px в public/cruises/). Без фото карточка рендерится как текстовая.
+export type Dahabiya = {
+  name: string;
+  facts: string;
+  note: string;
+  /** Обложка карточки — с собственной alt-подписью. */
+  hero?: Photo;
+  /** Дополнительные кадры лодки — миниатюры под описанием. */
+  gallery?: Photo[];
+};
+
+export const dahabiyas: {
+  intro: string[];
+  cabinTypes: { name: string; text: string }[];
+  boats: Dahabiya[];
+  /** Общие кадры флота (под парусом, палуба, каюты), не привязанные к одной лодке. */
+  gallery: Photo[];
+  days: { day: string; place: string; text: string }[];
+} = {
   intro: [
     'Дахабия — это парусная лодка с двумя мачтами, какие ходили по Нилу в XIX веке, только с кондиционером, душем в каждой каюте и солнечными панелями на крыше. Nour El Nil держит флот из десяти таких лодок, и мы берём их целиком под группу.',
     'Маршрут один и лучший: Эсна → Асуан, шесть дней. Отправления по понедельникам и вторникам, сезон — с сентября по май. В стоимость входят полный пансион и все экскурсии с гидом.',
@@ -506,6 +528,7 @@ export const dahabiyas = {
     { name: 'El Nil', facts: '43 м · 10 кают · до 20 гостей', note: 'Самая камерная: панорамные каюты с окнами в пол, река — на расстоянии вытянутой руки.' },
     { name: 'Najafa · Roman · Poppee', facts: 'Новые лодки, самые большие палубы', note: 'Просторные Luxury-каюты и Deluxe Suite с двумя ванными — для семей и партнёрских групп.' },
   ],
+  gallery: [],
   days: [
     { day: 'День 1', place: 'Эсна', text: 'Посадка, знакомство с командой. Прогулка к храму Хнума, который стоит на девять метров ниже улицы, и по торговым рядам.' },
     { day: 'День 2', place: 'Эль-Каб и Эдфу', text: 'Бывшая столица Верхнего Египта: храм Нехбет и гробницы в склоне горы, дорога через рыбацкую деревню. Днём — храм Гора в Эдфу, на конных экипажах.' },

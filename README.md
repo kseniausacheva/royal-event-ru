@@ -33,3 +33,4 @@ npm run build:com  # сборка .com → dist/
 - Блог — `src/content/blog-articles.mjs` (sitemap и пререндер подхватывают автоматически)
 - Переводы интерфейса — `src/translations.ts`
 - Фото круизов — `public/cruises/`, обложки программ — `public/programs/`
+- Конвертация фото судов в webp ≤ 1600 px: `node scripts/convert-cruise-photos.mjs "<папка>" --list`, затем `--prefix <лодка>` (см. шапку скрипта)

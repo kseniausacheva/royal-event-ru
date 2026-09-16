@@ -135,13 +135,53 @@ const Cruises = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {dahabiyas.boats.map((b) => (
-              <div key={b.name} className="p-5 rounded-2xl bg-royal-card border border-royal-rule">
-                <h3 className="text-lg font-display font-bold mb-1">{b.name}</h3>
-                <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-royal-lime mb-3">{b.facts}</p>
-                <p className="text-sm text-royal-sand-2 leading-relaxed">{b.note}</p>
+              <div key={b.name} className="rounded-2xl bg-royal-card border border-royal-rule overflow-hidden flex flex-col">
+                {b.hero && (
+                  <img
+                    src={b.hero.src}
+                    alt={b.hero.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full aspect-[4/3] object-cover border-b border-royal-rule"
+                  />
+                )}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="text-lg font-display font-bold mb-1">{b.name}</h3>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-royal-lime mb-3">{b.facts}</p>
+                  <p className="text-sm text-royal-sand-2 leading-relaxed">{b.note}</p>
+                  {b.gallery && b.gallery.length > 0 && (
+                    <div className="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-royal-rule">
+                      {b.gallery.map((g) => (
+                        <img
+                          key={g.src}
+                          src={g.src}
+                          alt={g.alt}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full aspect-[4/3] object-cover rounded-lg border border-royal-rule"
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
+
+          {dahabiyas.gallery.length > 0 && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+              {dahabiyas.gallery.map((g) => (
+                <img
+                  key={g.src}
+                  src={g.src}
+                  alt={g.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-[4/3] object-cover rounded-xl border border-royal-rule"
+                />
+              ))}
+            </div>
+          )}
 
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">Шесть дней по реке</p>
           <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
