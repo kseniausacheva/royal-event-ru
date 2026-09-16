@@ -22,6 +22,10 @@ const MailingConsent = lazy(() => import('./pages/MailingConsent'));
 const DataConsent = lazy(() => import('./pages/DataConsent'));
 const Offer = lazy(() => import('./pages/Offer'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const Programs = lazy(() => import('./pages/Programs'));
+const ProgramDetail = lazy(() => import('./pages/ProgramDetail'));
+const Cruises = lazy(() => import('./pages/Cruises'));
+const DMC = lazy(() => import('./pages/DMC'));
 
 const PageLoader = () => (
   <div className="min-h-screen bg-royal-black flex items-center justify-center">
@@ -38,19 +42,6 @@ const Egypt = () => {
       tagline={t.destinations.egypt.tagline}
       description={t.destinations.egypt.description}
       seo={t.destinations.egypt.seo}
-    />
-  );
-};
-
-const UAE = () => {
-  const { t } = useLanguage();
-  return (
-    <Destination
-      name={t.destinations.uae.name}
-      image="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1000"
-      tagline={t.destinations.uae.tagline}
-      description={t.destinations.uae.description}
-      seo={t.destinations.uae.seo}
     />
   );
 };
@@ -88,13 +79,13 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t.nav.home, path: `${langPrefix}` },
-    { name: t.nav.about, path: `${langPrefix}/about` },
+    { name: t.nav.programs, path: `${langPrefix}/programmy` },
+    { name: t.nav.cruises, path: `${langPrefix}/cruises` },
+    { name: t.nav.dmc, path: `${langPrefix}/dmc` },
     { name: t.nav.services, path: `${langPrefix}/services` },
     { name: t.nav.portfolio, path: `${langPrefix}/portfolio` },
     { name: t.nav.delegations, path: `${langPrefix}/delegations` },
-    { name: t.nav.egypt, path: `${langPrefix}/egypt` },
-    { name: t.nav.uae, path: `${langPrefix}/uae` },
-    { name: t.nav.russia, path: `${langPrefix}/russia` },
+    { name: t.nav.about, path: `${langPrefix}/about` },
     { name: t.nav.blog, path: `${langPrefix}/blog` },
     { name: t.nav.contact, path: `${langPrefix}/contact` },
   ];
@@ -197,7 +188,10 @@ const AppRoutes = () => {
       <Route path="/ru/portfolio" element={<Portfolio />} />
       <Route path="/ru/portfolio/:id" element={<CaseStudy />} />
       <Route path="/ru/egypt" element={<Egypt />} />
-      <Route path="/ru/uae" element={<UAE />} />
+      <Route path="/ru/programmy" element={<Programs />} />
+      <Route path="/ru/programmy/:slug" element={<ProgramDetail />} />
+      <Route path="/ru/cruises" element={<Cruises />} />
+      <Route path="/ru/dmc" element={<DMC />} />
       <Route path="/ru/russia" element={<Russia />} />
       <Route path="/ru/delegations" element={<Delegations />} />
       <Route path="/ru/blog" element={<BlogPage />} />
@@ -215,7 +209,10 @@ const AppRoutes = () => {
       <Route path="/en/portfolio" element={<Portfolio />} />
       <Route path="/en/portfolio/:id" element={<CaseStudy />} />
       <Route path="/en/egypt" element={<Egypt />} />
-      <Route path="/en/uae" element={<UAE />} />
+      <Route path="/en/programmy" element={<Programs />} />
+      <Route path="/en/programmy/:slug" element={<ProgramDetail />} />
+      <Route path="/en/cruises" element={<Cruises />} />
+      <Route path="/en/dmc" element={<DMC />} />
       <Route path="/en/russia" element={<Russia />} />
       <Route path="/en/delegations" element={<Delegations />} />
       <Route path="/en/blog" element={<BlogPage />} />

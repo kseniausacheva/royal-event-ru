@@ -24,13 +24,12 @@ const Services = () => {
     description: service.desc,
     provider: {
       '@type': 'Organization',
-      name: 'Royal Event Group',
+      name: 'La Royal Event',
       url: SITE_URL_RU,
     },
     areaServed: [
       { '@type': 'Country', name: language === 'ru' ? 'Россия' : 'Russia' },
       { '@type': 'Country', name: language === 'ru' ? 'Египет' : 'Egypt' },
-      { '@type': 'Country', name: language === 'ru' ? 'ОАЭ' : 'United Arab Emirates' },
     ],
     serviceType: service.title,
     url: servicesUrl,

@@ -452,12 +452,12 @@ const BlogPage = () => {
       }),
       author: {
         '@type': 'Organization',
-        name: 'Royal Event Group',
+        name: 'La Royal Event',
         url: SITE_URL_RU,
       },
       publisher: {
         '@type': 'Organization',
-        name: 'Royal Event Group',
+        name: 'La Royal Event',
         logo: {
           '@type': 'ImageObject',
           url: `${SITE_URL_RU}/logo.png`,

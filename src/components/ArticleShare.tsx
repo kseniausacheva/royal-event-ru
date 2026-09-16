@@ -9,9 +9,9 @@ interface ArticleShareProps {
   shareText?: string;
 }
 
-// MAX-профиль Royal Event Group (тот же URL, что в Footer.tsx).
+// MAX-профиль La Royal Event (тот же URL, что в Footer.tsx).
 // MAX (Mail.ru мессенджер) не имеет публичного share-API, поэтому кнопка
-// открывает чат с Royal Event Group — пользователь может написать нам напрямую.
+// открывает чат с La Royal Event — пользователь может написать нам напрямую.
 const MAX_PROFILE_URL =
   'https://max.ru/u/f9LHodD0cOI6NopEpkHgITsu_AIEFyrbBPaFkURFR2kn3i3inUUuT4dKLgQ';
 
@@ -117,7 +117,7 @@ const ArticleShare: React.FC<ArticleShareProps> = ({ title, shareText }) => {
           <Send className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2} />
         </button>
 
-        {/* MAX (мессенджер Mail.ru) — открывает чат с Royal Event Group */}
+        {/* MAX (мессенджер Mail.ru) — открывает чат с La Royal Event */}
         <button
           onClick={handleMax}
           aria-label={language === 'ru' ? 'Написать нам в MAX' : 'Message us on MAX'}

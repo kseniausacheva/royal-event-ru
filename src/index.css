@@ -24,13 +24,28 @@
   --font-unbounded: "Unbounded", "Unbounded Fallback", system-ui, sans-serif;
   --font-manrope: "Manrope", "Manrope Fallback", system-ui, sans-serif;
   --font-serif: "Lora", Georgia, "Times New Roman", serif;
-  --color-royal-pink: #F72585;
-  --color-royal-black: #0A0A0A;
+
+  /* La Royal Event — фирменная палитра из логотипа */
+  --color-royal-lilac: #c6a4f5;
+  --color-royal-lilac-deep: #8b5fd6;
+  --color-royal-lime: #cfe64f;
+  --color-royal-rose: #f5a0c8;
+  --color-royal-night: #0c0814;
+  --color-royal-night-2: #130e1d;
+  --color-royal-card: #1e1730;
+  --color-royal-rule: #2a2040;
+  --color-royal-sand: #f0eae0;
+  --color-royal-sand-2: #c4b8a8;
+  --color-royal-dim: #8a7d96;
+
+  /* Обратная совместимость: royal-pink → лиловый, royal-black → ночной */
+  --color-royal-pink: #c6a4f5;
+  --color-royal-black: #0c0814;
 }
 
 body {
-  background-color: var(--color-royal-black);
-  color: white;
+  background-color: var(--color-royal-night);
+  color: var(--color-royal-sand);
   font-family: var(--font-manrope);
   hyphens: auto;
   overflow-wrap: break-word;

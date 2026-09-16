@@ -39,7 +39,9 @@ const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
   portfolio: { ru: 'Кейсы', en: 'Portfolio' },
   delegations: { ru: 'Делегации', en: 'Delegations' },
   egypt: { ru: 'Египет', en: 'Egypt' },
-  uae: { ru: 'ОАЭ', en: 'UAE' },
+  programmy: { ru: 'Программы', en: 'Programs' },
+  cruises: { ru: 'Круизы по Нилу', en: 'Nile Cruises' },
+  dmc: { ru: 'DMC Египет', en: 'DMC Egypt' },
   russia: { ru: 'Россия', en: 'Russia' },
   blog: { ru: 'Блог', en: 'Blog' },
   contact: { ru: 'Контакты', en: 'Contact' },
@@ -57,14 +59,14 @@ const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
  */
 const RU_SITE_URL = 'https://royaleventandmice.ru';
 const COM_SITE_URL = 'https://www.royaleventandmice.com';
-const SITE_NAME = 'Royal Event Group';
+const SITE_NAME = 'La Royal Event';
 const DEFAULT_OG_IMAGE = '/logo.png';
 
 const RU_DEFAULT_DESCRIPTION =
-  'Royal Event Group — MICE-агентство полного цикла: организация корпоративных мероприятий, конференций, тимбилдингов и инсентив-туров в Египте, ОАЭ, России и на Ближнем Востоке. 20+ лет опыта, собственное производство, прямые контракты с топ-отелями.';
+  'La Royal Event — MICE-агентство и DMC полного цикла: организация корпоративных мероприятий, конференций, тимбилдингов и инсентив-туров в Египте и на Ближнем Востоке. 20+ лет опыта, собственное производство, прямые контракты с топ-отелями.';
 
 const EN_DEFAULT_DESCRIPTION =
-  'Royal Event Group — Full-cycle MICE agency: corporate events, conferences, team building and incentive tours in Egypt, UAE, Russia and the Middle East. 20+ years of experience, in-house production, direct contracts with top hotels.';
+  'La Royal Event — Full-cycle MICE & DMC agency: corporate events, conferences, team building and incentive tours in Egypt and the Middle East. 20+ years of experience, in-house production, direct contracts with top hotels.';
 
 const RU_DEFAULT_KEYWORDS = [
   'MICE',
@@ -78,21 +80,21 @@ const RU_DEFAULT_KEYWORDS = [
   'конференции',
   'организация конференций',
   'тимбилдинг',
-  'тимбилдинг ОАЭ',
   'тимбилдинг Египет',
   'инсентив туры',
   'incentive туры',
   'корпоративы в Египте',
-  'корпоративы в ОАЭ',
-  'корпоративы в Дубае',
   'мероприятия в Шарм-эль-Шейхе',
-  'мероприятия в Дубае',
-  'мероприятия в Абу-Даби',
   'организация мероприятий в Москве',
   'делегации',
   'сопровождение делегаций',
   'арабские делегации',
   'DMC агентство',
+  'DMC Египет',
+  'квест на пирамидах',
+  'круиз по Нилу',
+  'приватный доступ к пирамидам',
+  'La Royal Event',
   'Royal Event Group',
 ].join(', ');
 
@@ -106,13 +108,14 @@ const EN_DEFAULT_KEYWORDS = [
   'team building',
   'incentive tours',
   'events in Egypt',
-  'events in UAE',
-  'events in Dubai',
   'events in Sharm El Sheikh',
-  'events in Abu Dhabi',
   'events in Moscow',
   'Arabic delegations',
   'DMC agency',
+  'DMC Egypt',
+  'Nile cruise',
+  'private pyramid access',
+  'La Royal Event',
   'Royal Event Group',
 ].join(', ');
 
@@ -228,7 +231,6 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     areaServed: [
       { '@type': 'Country', name: 'Russia' },
       { '@type': 'Country', name: 'Egypt' },
-      { '@type': 'Country', name: 'United Arab Emirates' },
     ],
     contactPoint: {
       '@type': 'ContactPoint',

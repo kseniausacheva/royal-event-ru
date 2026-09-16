@@ -26,8 +26,10 @@ describe('translations (unit)', () => {
       'portfolio',
       'delegations',
       'egypt',
-      'uae',
       'russia',
+      'programs',
+      'cruises',
+      'dmc',
       'blog',
       'contact',
     ];
@@ -39,10 +41,9 @@ describe('translations (unit)', () => {
     }
   });
 
-  it('has destinations block for egypt, uae, russia in both locales', () => {
+  it('has destinations block for egypt and russia in both locales', () => {
     for (const lang of ['ru', 'en'] as const) {
       expect(translations[lang].destinations).toHaveProperty('egypt');
-      expect(translations[lang].destinations).toHaveProperty('uae');
       expect(translations[lang].destinations).toHaveProperty('russia');
     }
   });

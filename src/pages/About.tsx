@@ -52,7 +52,7 @@ const About = () => {
           >
             <img
               src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000"
-              alt={language === 'ru' ? 'Офис Royal Event Group — MICE-агентство' : 'Royal Event Group office — MICE agency'}
+              alt={language === 'ru' ? 'Офис La Royal Event — MICE-агентство' : 'La Royal Event office — MICE agency'}
               loading="lazy"
               decoding="async"
               className="w-full h-full object-cover grayscale"
