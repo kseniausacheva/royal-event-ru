@@ -57,9 +57,7 @@ const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
  * The .com host is the canonical home for English content.
  * We point cross-domain hreflang accordingly so Yandex/Google don't see duplicate content.
  */
-const RU_SITE_URL = 'https://royaleventandmice.ru';
-const COM_SITE_URL = 'https://www.royaleventandmice.com';
-const SITE_NAME = 'La Royal Event';
+import { RU_SITE_URL, COM_SITE_URL, SITE_NAME, withHost } from '../site-config';
 const DEFAULT_OG_IMAGE = '/og-image.png';
 
 const RU_DEFAULT_DESCRIPTION =
@@ -139,12 +137,8 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     ? (image.startsWith('http') ? image : `${canonicalHost}${image}`)
     : `${canonicalHost}${DEFAULT_OG_IMAGE}`;
 
-  // Apache на reg.ru отдаёт пререндеренные страницы как папки (/ru/blog/index.html)
-  // и 301-ит адреса без слэша на слэшные. Canonical/og:url должны указывать на
-  // конечный 200-адрес, а не на редирект — поэтому для .ru всегда добавляем «/».
-  // .com не трогаем: у него свой хостинг со своим поведением URL.
-  const withHost = (host: string, path: string) =>
-    host === RU_SITE_URL && !path.endsWith('/') ? `${host}${path}/` : `${host}${path}`;
+  // Canonical/og:url — всегда со слэшем на конце (см. site-config.withHost):
+  // Apache на reg.ru и Vercel (trailingSlash) 301/308-ят адреса без слэша.
 
   const canonicalUrl = withHost(canonicalHost, location.pathname);
   const altLang = language === 'ru' ? 'en' : 'ru';

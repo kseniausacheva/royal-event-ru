@@ -25,7 +25,9 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ source = 'blog' }) => {
     setErrorMsg('');
 
     // На reg.ru используем PHP-эндпойнт.
-    const endpoint = '/subscribe.php';
+    // reg.ru (.ru) — PHP; Vercel (.com) — serverless /api/subscribe
+    const isRu = typeof window !== 'undefined' && window.location.hostname.endsWith('.ru');
+    const endpoint = isRu ? '/subscribe.php' : '/api/subscribe';
 
     try {
       const res = await fetch(endpoint, {

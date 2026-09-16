@@ -11,7 +11,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://royaleventandmice.ru/ru/" />
     <image:image>
       <image:loc>https://royaleventandmice.ru/logo.png</image:loc>
@@ -38,7 +38,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/about/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/about/" />
     <image:image>
       <image:loc>https://royaleventandmice.ru/ksenia-usacheva.jpg</image:loc>
       <image:title>Ксения Усачева — CEO и основатель La Royal Event</image:title>
@@ -62,7 +62,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/services/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/services/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/portfolio/</loc>
@@ -70,7 +70,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/portfolio/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/portfolio/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/portfolio/carlsberg/</loc>
@@ -206,7 +206,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/egypt/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/egypt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/egypt/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/russia/</loc>
@@ -214,7 +214,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/russia/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/russia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/russia/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/</loc>
@@ -222,7 +222,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/kod-piramid/</loc>
@@ -230,7 +230,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/kod-piramid/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/kod-piramid" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/kod-piramid/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/poslednyaya-stranica/</loc>
@@ -238,7 +238,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/poslednyaya-stranica/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/poslednyaya-stranica" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/poslednyaya-stranica/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/chetyre-ruki/</loc>
@@ -246,7 +246,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/chetyre-ruki/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/chetyre-ruki" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/chetyre-ruki/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/posledniy-kadr/</loc>
@@ -254,7 +254,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/posledniy-kadr/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/posledniy-kadr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/posledniy-kadr/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/ladya/</loc>
@@ -262,7 +262,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/ladya/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/ladya" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/ladya/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/put-k-zvezdam/</loc>
@@ -270,7 +270,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/put-k-zvezdam/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/put-k-zvezdam" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/put-k-zvezdam/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/zapis-arheologa/</loc>
@@ -278,7 +278,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/zapis-arheologa/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/zapis-arheologa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/zapis-arheologa/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/muzey-ozhivaet/</loc>
@@ -286,7 +286,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/muzey-ozhivaet/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/muzey-ozhivaet" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/muzey-ozhivaet/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/sokrovishcha-ra/</loc>
@@ -294,7 +294,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/sokrovishcha-ra/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/sokrovishcha-ra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/sokrovishcha-ra/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/programmy/faraon/</loc>
@@ -302,7 +302,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/programmy/faraon/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/faraon" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/programmy/faraon/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/cruises/</loc>
@@ -310,7 +310,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/cruises/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/cruises" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/cruises/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/dmc/</loc>
@@ -318,7 +318,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/dmc/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/dmc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/dmc/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/delegations/</loc>
@@ -326,7 +326,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/delegations/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/delegations" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/delegations/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/blog/</loc>
@@ -334,7 +334,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/blog/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/blog/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/contact/</loc>
@@ -342,7 +342,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://royaleventandmice.ru/ru/contact/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.royaleventandmice.com/en/contact/" />
   </url>
   <url>
     <loc>https://royaleventandmice.ru/ru/privacy/</loc>

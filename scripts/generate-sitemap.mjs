@@ -26,6 +26,11 @@ const SITEMAP_PATH = path.join(ROOT, 'public', 'sitemap.xml');
 const HOST_RU = 'https://royaleventandmice.ru';
 const HOST_COM = 'https://www.royaleventandmice.com';
 
+// `--target com`: карта для www.royaleventandmice.com — основные локи /en/*, hreflang ru → .ru.
+const TARGET = process.argv.includes('--target') ? process.argv[process.argv.indexOf('--target') + 1] : 'ru';
+const HOST = TARGET === 'com' ? HOST_COM : HOST_RU;
+const toTargetPath = (loc) => (TARGET === 'com' ? loc.replace(/^\/ru/, '/en') : loc);
+
 // Сегодняшняя дата в формате YYYY-MM-DD для lastmod статичных страниц
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -178,22 +183,28 @@ function xmlEscape(s) {
 function ruUrl(loc) {
   return `${HOST_RU}${loc.endsWith('/') ? loc : `${loc}/`}`;
 }
+function enUrl(loc) {
+  const p = loc.replace(/^\/ru/, '/en');
+  return `${HOST_COM}${p.endsWith('/') ? p : `${p}/`}`;
+}
+/** Основной URL записи для текущей цели сборки. */
+function primaryUrl(loc) {
+  return TARGET === 'com' ? enUrl(loc) : ruUrl(loc);
+}
 
 /** Сгенерировать один <url> блок. */
 function renderEntry(entry) {
   const lines = [];
   lines.push('  <url>');
-  lines.push(`    <loc>${ruUrl(entry.loc)}</loc>`);
+  lines.push(`    <loc>${primaryUrl(entry.loc)}</loc>`);
   lines.push(`    <lastmod>${entry.lastmod || TODAY}</lastmod>`);
   if (entry.changefreq) lines.push(`    <changefreq>${entry.changefreq}</changefreq>`);
   if (entry.priority) lines.push(`    <priority>${entry.priority}</priority>`);
 
   if (entry.hreflang) {
     lines.push(`    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl(entry.loc)}" />`);
-    // EN-версия живёт на .com (cross-domain hreflang) — слэш не добавляем,
-    // у .com своё поведение URL
-    const enPath = entry.loc.replace(/^\/ru/, '/en');
-    lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${HOST_COM}${enPath}" />`);
+    // EN-версия живёт на .com (cross-domain hreflang); все адреса со слэшем на конце
+    lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${enUrl(entry.loc)}" />`);
     if (entry.loc === '/ru') {
       lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${ruUrl('/ru')}" />`);
     }
@@ -201,7 +212,7 @@ function renderEntry(entry) {
 
   if (entry.images && entry.images.length > 0) {
     for (const img of entry.images) {
-      const imageLoc = img.loc.startsWith('http') ? img.loc : `${HOST_RU}${img.loc}`;
+      const imageLoc = img.loc.startsWith('http') ? img.loc : `${HOST}${img.loc}`;
       lines.push('    <image:image>');
       lines.push(`      <image:loc>${xmlEscape(imageLoc)}</image:loc>`);
       lines.push(`      <image:title>${xmlEscape(img.title)}</image:title>`);

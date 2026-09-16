@@ -32,6 +32,14 @@ const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const DIST_SSR = path.join(ROOT, 'dist-ssr');
 
+// Цель сборки: `--target com` (Vercel, www.royaleventandmice.com) или ru (reg.ru, по умолчанию).
+// На .ru пререндерим только /ru/* (EN там не индексируется — canonical на .com),
+// на .com — и /ru/*, и /en/*.
+const TARGET = process.argv.includes('--target') ? process.argv[process.argv.indexOf('--target') + 1] : 'ru';
+if (!['ru', 'com'].includes(TARGET)) throw new Error(`Неизвестная цель сборки: ${TARGET}`);
+const HOST_RU = 'https://royaleventandmice.ru';
+const HOST_COM = 'https://www.royaleventandmice.com';
+
 /**
  * Статичные маршруты сайта (только русская локаль — она основная для .ru-домена).
  * Английские роуты на этом домене не индексируются (canonical на .com).
@@ -80,7 +88,9 @@ const BLOG_ROUTES = blogArticles.map((a) => ({
   module: 'src/pages/BlogPage.tsx',
 }));
 
-const ROUTES = [...STATIC_ROUTES, ...BLOG_ROUTES];
+const RU_ROUTES = [...STATIC_ROUTES, ...BLOG_ROUTES];
+const EN_ROUTES = RU_ROUTES.map((r) => ({ ...r, route: r.route.replace(/^\/ru/, '/en') }));
+const ROUTES = TARGET === 'com' ? [...RU_ROUTES, ...EN_ROUTES] : RU_ROUTES;
 
 const SEO_BLOCK_RE = /<!-- seo:default:start[\s\S]*?<!-- seo:default:end -->/;
 const ROOT_DIV = '<div id="root"></div>';
@@ -106,7 +116,8 @@ function assertPage(route, html) {
   const href = html.match(/<link[^>]*rel="canonical"[^>]*href="([^"]+)"/)?.[1];
   if (!href) fail('canonical без href');
   if (!href.endsWith('/')) fail(`canonical без конечного слэша: ${href}`);
-  if (!href.startsWith('https://royaleventandmice.ru')) fail(`canonical не на .ru: ${href}`);
+  const expectedHost = route.startsWith('/en') ? HOST_COM : HOST_RU;
+  if (!href.startsWith(expectedHost)) fail(`canonical не на ${expectedHost}: ${href}`);
   if (!/property="og:url"/.test(html)) fail('нет og:url');
   if (!/<h1/.test(html)) fail('в разметке нет <h1> — страница отрендерилась пустой?');
   const rootIdx = html.indexOf('<div id="root">');
@@ -217,6 +228,25 @@ async function run() {
   await fs.rm(path.join(DIST, '.vite'), { recursive: true, force: true });
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+    if (TARGET === 'com') {
+    // На Vercel PHP не исполняется, а .htaccess не нужен — убираем, чтобы не отдавать исходники.
+    for (const f of ['contact.php', 'subscribe.php', '.htaccess', 'mail-config.php']) {
+      await fs.rm(path.join(DIST, f), { force: true });
+    }
+    await fs.writeFile(path.join(DIST, 'robots.txt'), [
+      '# robots.txt для www.royaleventandmice.com',
+      'User-agent: *',
+      'Allow: /',
+      'Disallow: /api/',
+      'Disallow: /*?*utm_',
+      'Disallow: /*?*gclid',
+      'Disallow: /*?*fbclid',
+      '',
+      `Sitemap: ${HOST_COM}/sitemap.xml`,
+      '',
+    ].join('\n'));
+    console.log('  ✓ com: удалены PHP/.htaccess, записан robots.txt');
+  }
   console.log(`\n✅ SSG-prerendered ${ROUTES.length} routes + 404.html in ${elapsed}s\n`);
 }
 

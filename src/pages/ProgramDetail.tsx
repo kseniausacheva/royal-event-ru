@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { SITE_URL } from '../site-config';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { programs } from '../content/la-royal-event';
 
@@ -47,7 +48,7 @@ const ProgramDetail = () => {
       <SEO
         title={p.seoTitle.replace(' — La Royal Event', '')}
         description={p.seoDesc}
-        image={p.image ? `https://royaleventandmice.ru${p.image}` : undefined}
+        image={p.image ? `${SITE_URL}${p.image}` : undefined}
         keywords={`${p.keyword}, тимбилдинг в Египте, корпоратив в Египте, La Royal Event`}
         jsonLd={serviceJsonLd}
         breadcrumbs={[

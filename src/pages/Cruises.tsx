@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { cruises, fleet, cruiseSights, dahabiyas } from '../content/la-royal-event';
 
-const SITE_URL = 'https://royaleventandmice.ru';
+import { SITE_URL } from '../site-config';
 
 const Cruises = () => {
   const lp = useLocalizedPath();

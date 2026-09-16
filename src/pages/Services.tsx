@@ -4,8 +4,7 @@ import { useLanguage } from '../LanguageContext';
 import { Briefcase, Users, Globe, Zap, Shield, Star, Languages } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const SITE_URL_RU = 'https://royaleventandmice.ru';
-const SITE_URL_EN = 'https://www.royaleventandmice.com';
+import { RU_SITE_URL as SITE_URL_RU, COM_SITE_URL as SITE_URL_EN } from '../site-config';
 
 const Services = () => {
   const { t, language } = useLanguage();
