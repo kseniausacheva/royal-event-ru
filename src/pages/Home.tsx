@@ -398,7 +398,7 @@ const Home = () => {
           </h2>
           <p className="max-w-2xl text-royal-sand-2 mb-12">Классические 5★ суда, камерные дахабии, длинные круизы через Дендеру и Абидос. Прямые контракты с судовладельцами, корпоративный фрахт.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {cruises.map((c) => (
+            {cruises.slice(0, 4).map((c) => (
               <div key={c.slug} className="p-6 rounded-2xl bg-royal-card border border-royal-rule">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lime mb-2">{c.route}</p>
                 <h3 className="text-xl font-display font-bold mb-2">{c.name}</h3>

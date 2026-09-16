@@ -75,6 +75,7 @@ jobs:
           state-name: .ftp-deploy-sync-state.json
           # Не трогаем эти системные файлы/папки на сервере (логи, временные файлы reg.ru)
           exclude: |
+            **/mail-config.php
             **/.git*
             **/.git*/**
             **/node_modules/**

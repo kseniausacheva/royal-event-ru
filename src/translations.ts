@@ -147,7 +147,7 @@ export const translations = {
           videos: [
             { url: '/videos/ewa-horizontal.mp4', type: 'horizontal', poster: '/ewa-14.jpg' },
             { url: '/videos/ewa-vertical1.mp4', type: 'vertical', poster: '/ewa-5.jpg' },
-            { url: '/videos/ewa-vertical5.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
+            { url: '/videos/ewa-vertical3.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
             { url: '/videos/IMG_7742.MP4', type: 'vertical', poster: '/ewa-7.jpg' }
           ],
           gallery: [
@@ -618,7 +618,7 @@ export const translations = {
           videos: [
             { url: '/videos/ewa-horizontal.mp4', type: 'horizontal', poster: '/ewa-14.jpg' },
             { url: '/videos/ewa-vertical1.mp4', type: 'vertical', poster: '/ewa-5.jpg' },
-            { url: '/videos/ewa-vertical5.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
+            { url: '/videos/ewa-vertical3.MP4', type: 'vertical', poster: '/ewa-6.jpg' },
             { url: '/videos/IMG_7742.MP4', type: 'vertical', poster: '/ewa-7.jpg' }
           ],
           gallery: [
