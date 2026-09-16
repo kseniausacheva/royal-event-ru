@@ -47,6 +47,7 @@ const ProgramDetail = () => {
       <SEO
         title={p.seoTitle.replace(' — La Royal Event', '')}
         description={p.seoDesc}
+        image={p.image ? `https://royaleventandmice.ru${p.image}` : undefined}
         keywords={`${p.keyword}, тимбилдинг в Египте, корпоратив в Египте, La Royal Event`}
         jsonLd={serviceJsonLd}
         breadcrumbs={[
@@ -58,6 +59,12 @@ const ProgramDetail = () => {
 
       {/* Hero */}
       <section className="pt-40 pb-16 px-6 relative overflow-hidden">
+        {p.image && (
+          <>
+            <img src={p.image} alt="" aria-hidden="true" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-35" />
+            <div className="absolute inset-0 bg-gradient-to-b from-royal-night/40 via-royal-night/70 to-royal-night" />
+          </>
+        )}
         <div className="absolute top-0 right-0 w-2/3 h-full bg-[radial-gradient(60%_60%_at_80%_20%,rgba(139,95,214,0.28),transparent_60%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-4">

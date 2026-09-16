@@ -55,8 +55,18 @@ const Programs = () => {
             >
               <Link
                 to={lp(`/programmy/${p.slug}`)}
-                className="group flex flex-col h-full p-6 rounded-2xl bg-royal-card border border-royal-rule hover:border-royal-lilac-deep transition-all hover:-translate-y-0.5"
+                className="group flex flex-col h-full rounded-2xl bg-royal-card border border-royal-rule hover:border-royal-lilac-deep transition-all hover:-translate-y-0.5 overflow-hidden"
               >
+                {p.image && (
+                  <img
+                    src={p.image}
+                    alt={`${p.name} — ${p.eyebrow}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full aspect-[3/2] object-cover border-b border-royal-rule"
+                  />
+                )}
+                <div className="flex flex-col flex-grow p-6">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-3">{p.eyebrow} · {p.chapter}</p>
                 <h3 className="text-xl font-display font-bold leading-tight mb-2">{p.name}</h3>
                 <p className="text-royal-lime font-serif italic text-base leading-snug mb-3">{p.tagline}</p>
@@ -64,6 +74,7 @@ const Programs = () => {
                 <span className="mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim group-hover:text-royal-lilac transition-colors">
                   Подробно <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </span>
+                </div>
               </Link>
             </motion.div>
           ))}

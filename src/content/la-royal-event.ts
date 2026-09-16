@@ -24,6 +24,8 @@ export interface Program {
   remains: string;
   prep: string;
   disclaimer: string;
+  /** Обложка: /programs/<slug>.webp. Пока файла нет — поле не задаём, карточка текстовая. */
+  image?: string;
 }
 
 export const programs: Program[] = [
