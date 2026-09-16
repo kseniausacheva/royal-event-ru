@@ -125,7 +125,7 @@ const Home = () => {
       />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-28 md:pt-0 px-6 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-36 md:pt-32 md:pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <motion.div style={{ y: heroY, opacity: heroOpacity }} className="w-full h-full">
             {/* LCP-элемент главной. Локальный webp вместо Unsplash (лишний домен,
