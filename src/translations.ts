@@ -257,7 +257,7 @@ export const translations = {
       ]
     },
     aboutPage: {
-      title: 'ROYAL EVENT GROUP',
+      title: 'LA ROYAL EVENT',
       subtitle: 'Ваш стратегический DMC партнер в арабском мире и России',
       description: 'Мы специализируемся на организации мероприятий в арабских странах, выступая в роли надежного DMC (Destination Management Company) партнера. Наша экспертиза охватывает как проведение событий для иностранных компаний в Египте, так и организацию мероприятий для арабских компаний в России.',
       history: 'Основанная на принципах совершенства и культурной синергии, La Royal Event (ранее La Royal Event) уже более двух десятилетий является мостом между международными стандартами и местного опыта. Мы понимаем тонкости ведения бизнеса в обоих регионах и обеспечиваем безупречную коммуникацию и логистику.',
@@ -466,7 +466,7 @@ export const translations = {
       }
     },
     footer: {
-      rights: '© 2026 ROYAL EVENT GROUP. ВСЕ ПРАВА ЗАЩИЩЕНЫ.',
+      rights: '© 2026 LA ROYAL EVENT. ВСЕ ПРАВА ЗАЩИЩЕНЫ.',
       legal: {
         ip: 'ИП УСАЧЕВА КСЕНИЯ ОЛЕГОВНА',
         inn: 'ИНН 772206846997',
@@ -728,7 +728,7 @@ export const translations = {
       ]
     },
     aboutPage: {
-      title: 'ROYAL EVENT GROUP',
+      title: 'LA ROYAL EVENT',
       subtitle: 'Your Strategic DMC Partner in the Arab World and Russia',
       description: 'We specialize in organizing events in Arab countries, serving as a reliable DMC (Destination Management Company) partner. Our expertise covers both hosting events for foreign companies in Egypt, and organizing events for Arab companies in Russia.',
       history: 'Founded on the principles of excellence and cultural synergy, La Royal Event (formerly La Royal Event) has been the bridge between international standards and local expertise for over two decades. We understand the nuances of doing business in both regions and ensure flawless communication and logistics.',
@@ -937,7 +937,7 @@ export const translations = {
       }
     },
     footer: {
-      rights: '© 2026 ROYAL EVENT GROUP. ALL RIGHTS RESERVED.',
+      rights: '© 2026 LA ROYAL EVENT. ALL RIGHTS RESERVED.',
       legal: {
         ip: 'IE USACHEVA KSENIA OLEGOVNA',
         inn: 'INN 772206846997',
