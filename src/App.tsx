@@ -94,17 +94,17 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-royal-black/90 backdrop-blur-xl py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to={langPrefix} className="group">
-          <img src="/logo-horizontal.png" alt="La Royal Event — MICE и DMC в Египте" width="1400" height="197" className="h-8 sm:h-9 md:h-10 w-auto group-hover:opacity-80 transition-opacity" />
+          <img src="/logo-horizontal.png" alt="La Royal Event — MICE и DMC в Египте" width="1400" height="197" className="h-7 sm:h-8 xl:h-9 w-auto shrink-0 group-hover:opacity-80 transition-opacity" />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
-          <div className="flex gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-10 ml-6">
+          <div className="flex gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-royal-pink ${location.pathname === link.path ? 'text-royal-pink' : 'text-white/60'}`}
+                className={`text-[10px] font-bold uppercase tracking-[0.18em] whitespace-nowrap transition-all hover:text-royal-pink ${location.pathname === link.path ? 'text-royal-pink' : 'text-white/60'}`}
               >
                 {link.name}
               </Link>
@@ -112,7 +112,7 @@ const Navbar = () => {
           </div>
 
           {/* Language Toggle */}
-          <div className="flex items-center gap-3 border-l border-white/10 pl-10">
+          <div className="flex items-center gap-3 border-l border-white/10 pl-6 xl:pl-10">
             <button
               onClick={() => setLanguage('ru')}
               className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${language === 'ru' ? 'text-royal-pink' : 'text-white/40 hover:text-white'}`}
