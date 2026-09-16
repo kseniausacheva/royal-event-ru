@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { cruises, fleet, cruiseSights } from '../content/la-royal-event';
+import { cruises, fleet, cruiseSights, dahabiyas } from '../content/la-royal-event';
 
 const SITE_URL = 'https://royaleventandmice.ru';
 
@@ -15,7 +15,7 @@ const Cruises = () => {
       <SEO
         title="Круизы по Нилу для корпоративных групп — Le Fayan Suites, Soleil, Lumière"
         description="Корпоративные круизы Луксор–Асуан на 5★ судах Le Fayan Suites (37 сьютов) и Soleil (53 каюты), приватный чартер Lumière на 20 гостей, дахабии, длинные круизы из Каира. Прямые контракты с судовладельцами, полный фрахт."
-        keywords="круиз по Нилу, круиз Луксор Асуан, Le Fayan Suites, Soleil Nile cruise, Lumière, дахабия, корпоративный круиз, фрахт судна Нил, Дендера, круиз из Каира, La Royal Event"
+        keywords="круиз по Нилу, круиз Луксор Асуан, Le Fayan Suites, Soleil Nile cruise, Lumière, дахабия, Nour El Nil, Dendera, корпоративный круиз, фрахт судна Нил, Дендера, круиз из Каира, La Royal Event"
         image={`${SITE_URL}/cruises/fayan-ship.webp`}
       />
 
@@ -35,7 +35,7 @@ const Cruises = () => {
             </h1>
             <div className="w-24 h-1.5 bg-royal-lilac mb-8" />
             <p className="max-w-2xl text-xl text-royal-sand-2 font-light leading-relaxed">
-              Организуем круизы для корпоративных групп и частных путешественников: 5-звёздочные суда на 37 и 53 каюты, приватный чартер на 20 гостей, дахабии, длинные круизы из Каира. Прямые контракты с судовладельцами — без посредников и наценок.
+              Организуем круизы для корпоративных групп и частных путешественников: 5-звёздочные суда на 37 и 53 каюты, приватный чартер на 20 гостей, парусные дахабии Nour El Nil на 16–24 гостя, длинные круизы из Каира. Прямые контракты с судовладельцами — без посредников и наценок.
             </p>
           </motion.div>
         </div>
@@ -109,6 +109,50 @@ const Cruises = () => {
               </motion.article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Дахабии */}
+      <section id="dahabiya" className="py-16 px-6 border-t border-royal-rule bg-white/[0.02]">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Дахабии</p>
+          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-8">Под парусом: Эсна → Асуан за шесть дней</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+            <div className="lg:col-span-7 space-y-4">
+              {dahabiyas.intro.map((t, i) => (
+                <p key={i} className={i === 0 ? 'text-lg text-royal-sand leading-relaxed' : 'text-royal-sand-2 leading-relaxed'}>{t}</p>
+              ))}
+            </div>
+            <div className="lg:col-span-5 space-y-3">
+              {dahabiyas.cabinTypes.map((c) => (
+                <div key={c.name} className="p-4 rounded-xl bg-royal-card border border-royal-rule">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-1">{c.name}</p>
+                  <p className="text-sm text-royal-sand-2">{c.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            {dahabiyas.boats.map((b) => (
+              <div key={b.name} className="p-5 rounded-2xl bg-royal-card border border-royal-rule">
+                <h3 className="text-lg font-display font-bold mb-1">{b.name}</h3>
+                <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-royal-lime mb-3">{b.facts}</p>
+                <p className="text-sm text-royal-sand-2 leading-relaxed">{b.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">Шесть дней по реке</p>
+          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {dahabiyas.days.map((d) => (
+              <li key={d.day} className="p-5 rounded-2xl border border-royal-rule">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim mb-1">{d.day}</p>
+                <h3 className="text-base font-display font-bold mb-2">{d.place}</h3>
+                <p className="text-sm text-royal-sand-2 leading-relaxed">{d.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
