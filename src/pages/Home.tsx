@@ -243,7 +243,7 @@ const Home = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
             {t.servicesOverview.items.map((service, i) => {
               const icons = [Briefcase, Star, Globe, Languages];
               const Icon = icons[i];
@@ -254,12 +254,12 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: i * 0.15, duration: 0.6 }}
-                  className="p-10 rounded-[40px] bg-white/5 border border-white/10 hover:border-royal-pink/50 transition-all group h-full flex flex-col"
+                  className="p-8 xl:p-9 rounded-[40px] bg-white/5 border border-white/10 hover:border-royal-pink/50 transition-all group h-full flex flex-col"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-royal-pink/10 flex items-center justify-center mb-8 group-hover:bg-royal-pink group-hover:text-royal-black transition-all duration-500">
                     <Icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-base sm:text-xl md:text-2xl font-display font-bold uppercase mb-4 leading-tight whitespace-pre-line">
+                  <h3 className="text-lg xl:text-base font-display font-bold uppercase mb-4 leading-tight whitespace-pre-line break-words">
                     {service.title}
                   </h3>
                   <p className="text-white/40 text-sm leading-relaxed mt-auto">

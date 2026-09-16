@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
         <div className="flex flex-col items-center md:items-start gap-4">
           <Link to="/" className="group">
-            <img src="/logo.png" alt="La Royal Event — MICE-агентство" loading="lazy" decoding="async" width="1000" height="852" className="h-24 w-auto group-hover:opacity-80 transition-opacity" />
+            <img src="/logo-la-royal-event.png" alt="La Royal Event — MICE-агентство" loading="lazy" decoding="async" width="1000" height="852" className="h-24 w-auto group-hover:opacity-80 transition-opacity" />
           </Link>
           <p className="text-white/50 text-[10px] font-bold uppercase tracking-[0.3em]">
             {t.footer.rights}
@@ -50,8 +50,7 @@ const Footer = () => {
           <p className="text-white/60 text-[10px] uppercase tracking-widest leading-relaxed">
             {t.footer.legal.ip}<br />
             {t.footer.legal.inn}<br />
-            {t.footer.legal.ogrnip}<br />
-            {language === 'ru' ? 'г. Москва, ул. Шепелюгинская, д. 5, к. 1, кв. 91' : 'Moscow, Shepelyuginskaya st., 5, bldg. 1, apt. 91'}
+            {t.footer.legal.ogrnip}
           </p>
           <div className="mt-4 space-y-1">
             <a href="mailto:baxgat@yandex.ru" className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block py-1">

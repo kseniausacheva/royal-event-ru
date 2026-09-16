@@ -52,7 +52,7 @@ const STATIC_ENTRIES = [
     priority: '1.0',
     hreflang: true,
     images: [
-      { loc: '/logo.png', title: 'La Royal Event — MICE-агентство полного цикла' },
+      { loc: '/logo-la-royal-event.png', title: 'La Royal Event — MICE-агентство полного цикла' },
       { loc: '/carlsberg-0.JPG', title: 'Конференция Carlsberg на 1000 человек в Domina Coral Bay', caption: 'Грандиозная конференция Carlsberg в Шарм-эль-Шейхе от La Royal Event' },
       { loc: '/nl-7.jpg', title: 'Корпоративное мероприятие NL International на 7 дней', caption: 'Семидневный корпоративный выезд NL International в отеле Park Regency' },
       { loc: '/ewa-14.jpg', title: 'Корпоратив EWA product в Rixos Seagate, Шарм-эль-Шейх' },
