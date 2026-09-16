@@ -459,7 +459,7 @@ const BlogPage = () => {
         name: 'La Royal Event',
         logo: {
           '@type': 'ImageObject',
-          url: `${SITE_URL_RU}/logo.png`,
+          url: `${SITE_URL_RU}/logo-la-royal-event.png`,
         },
       },
       mainEntityOfPage: {

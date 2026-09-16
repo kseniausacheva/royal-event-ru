@@ -209,7 +209,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     name: SITE_NAME,
     legalName: 'Royal Event Group',
     url: RU_SITE_URL,
-    logo: `${RU_SITE_URL}/logo.png`,
+    logo: `${RU_SITE_URL}/logo-la-royal-event.png`,
     description: RU_DEFAULT_DESCRIPTION,
     foundingDate: '2004',
     sameAs: [
