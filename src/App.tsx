@@ -94,7 +94,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-royal-black/90 backdrop-blur-xl py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to={langPrefix} className="group">
-          <img src="/logo.png" alt="Royal Event Group — MICE-агентство" className="h-20 w-auto group-hover:opacity-80 transition-opacity" />
+          <img src="/logo-horizontal.png" alt="La Royal Event — MICE и DMC в Египте" width="1400" height="197" className="h-8 sm:h-9 md:h-10 w-auto group-hover:opacity-80 transition-opacity" />
         </Link>
 
         {/* Desktop Nav */}

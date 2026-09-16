@@ -60,7 +60,7 @@ const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
 const RU_SITE_URL = 'https://royaleventandmice.ru';
 const COM_SITE_URL = 'https://www.royaleventandmice.com';
 const SITE_NAME = 'La Royal Event';
-const DEFAULT_OG_IMAGE = '/logo.png';
+const DEFAULT_OG_IMAGE = '/og-image.png';
 
 const RU_DEFAULT_DESCRIPTION =
   'La Royal Event — MICE-агентство и DMC полного цикла: организация корпоративных мероприятий, конференций, тимбилдингов и инсентив-туров в Египте и на Ближнем Востоке. 20+ лет опыта, собственное производство, прямые контракты с топ-отелями.';
