@@ -1,6 +1,10 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 // Version: 1.0.3 - Lazy loaded routes
-import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
+
+// VITE_PREVIEW=1 — сборка превью для статического хостинга без серверного роутинга
+// (артефакт claude.ai): навигация через #, обычная сборка не затрагивается.
+const Router = import.meta.env.VITE_PREVIEW ? HashRouter : BrowserRouter;
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Home from './pages/Home';

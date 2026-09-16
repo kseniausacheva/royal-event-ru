@@ -19,3 +19,4 @@ site*.zip
 
 # SMTP-доступ форм — только на сервере
 mail-config.php
+dist-preview/
