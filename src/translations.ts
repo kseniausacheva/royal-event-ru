@@ -274,8 +274,8 @@ export const translations = {
         ]
       },
       seo: {
-        title: 'О компании La Royal Event | MICE агентство с 20-летним опытом',
-        description: 'Узнайте больше о La Royal Event: наша история, команда и почему мы являемся лидерами в организации мероприятий в Египте и России. Профессиональный подход к MICE.'
+        title: 'О компании: MICE-агентство и DMC в Египте с 2004 года',
+        description: 'История и команда La Royal Event: MICE-агентство и DMC полного цикла в Египте с 2004 года. Своя команда в Каире и Шарм-эль-Шейхе, прямые контракты.'
       }
     },
     servicesPage: {
@@ -290,8 +290,8 @@ export const translations = {
         ]
       },
       seo: {
-        title: 'Услуги MICE агентства: конференции, тимбилдинги, инсентив-туры',
-        description: 'Полный спектр услуг по организации корпоративных событий: от деловых конференций и делегаций до развлекательных шоу и VIP-ретритов. Технический продакшн и логистика.'
+        title: 'Услуги: конференции, тимбилдинги, инсентив-туры в Египте',
+        description: 'Организация корпоративных событий в Египте: конференции, делегации, тимбилдинги, инсентив-туры, шоу и VIP-ретриты. Технический продакшн и логистика.'
       },
       faq: [
         {
@@ -367,7 +367,7 @@ export const translations = {
         button: 'ОТПРАВИТЬ ЗАПРОС'
       },
       seo: {
-        title: 'Сопровождение делегаций | Профессиональный протокол и перевод',
+        title: 'Сопровождение делегаций: протокол и перевод',
         description: 'Организация приема иностранных делегаций в России и российских за рубежом. Полный спектр услуг: от виз до VIP-сопровождения.'
       },
       faq: [
@@ -451,7 +451,7 @@ export const translations = {
         tagline: 'НАШ ПРОИЗВОДСТВЕННЫЙ ХАБ',
         description: 'Египет — идеальное направление для масштабных MICE-мероприятий с круглогодичным солнцем и развитой инфраструктурой. Наш производственный хаб в Шарм-эль-Шейхе и Каире позволяет реализовывать проекты любой сложности: от конференций на 1000+ человек до эксклюзивных тимбилдингов в пустыне и на Красном море. Мы предлагаем лучшие площадки, отели и полную техническую поддержку без посредников.',
         seo: {
-          title: 'Организация корпоративных мероприятий и тимбилдингов в Египте',
+          title: 'Корпоративные мероприятия и тимбилдинги в Египте',
           description: 'MICE в Египте: организация конференций, корпоративов и бизнес-ретритов в Шарм-эль-Шейхе и Каире. Собственное производство и 20 лет опыта.'
         }
       },
@@ -460,7 +460,7 @@ export const translations = {
         tagline: 'СТРАТЕГИЧЕСКОЕ ПАРТНЕРСТВО',
         description: 'Мы строим надежный мост для вашего бизнеса между Россией и арабским миром. Наша команда обеспечивает комплексную поддержку российским компаниям, планирующим мероприятия в арабском регионе, а также сопровождает арабские делегации в России. Мы берем на себя все вопросы: от логистики и протокола до культурной программы и технического оснащения, гарантируя безупречный результат на стыке двух культур.',
         seo: {
-          title: 'Сопровождение арабских делегаций и мероприятия в Москве',
+          title: 'Арабские делегации и мероприятия в Москве',
           description: 'Организация мероприятий в Москве для иностранных компаний и сопровождение арабских делегаций в России. Профессиональный протокол и перевод.'
         }
       }
@@ -745,8 +745,8 @@ export const translations = {
         ]
       },
       seo: {
-        title: 'About La Royal Event | MICE Agency with 20 Years of Experience',
-        description: 'Learn more about La Royal Event: our history, team, and why we are leaders in event organization in Egypt and Russia. Professional MICE approach.'
+        title: 'About Us: MICE Agency and DMC in Egypt Since 2004',
+        description: 'The story and team behind La Royal Event: a full-service MICE agency and DMC in Egypt since 2004, with its own team in Cairo and Sharm El Sheikh.'
       }
     },
     servicesPage: {
@@ -761,8 +761,8 @@ export const translations = {
         ]
       },
       seo: {
-        title: 'MICE Agency Services: Conferences, Team Building, Incentive Tours',
-        description: 'A full range of corporate event organization services: from business conferences and delegations to entertainment shows and VIP retreats. Technical production and logistics.'
+        title: 'Services: Conferences, Team Building, Incentives in Egypt',
+        description: 'Corporate event services in Egypt: conferences, delegations, team building, incentive trips, shows and VIP retreats. Technical production and logistics.'
       },
       faq: [
         {
@@ -838,7 +838,7 @@ export const translations = {
         button: 'SEND REQUEST'
       },
       seo: {
-        title: 'Delegation Support | Professional Protocol and Translation',
+        title: 'Delegation Support: Protocol and Translation',
         description: 'Organization of foreign delegations in Russia and Russian delegations abroad. A full range of services: from visas to VIP support.'
       },
       faq: [
@@ -922,7 +922,7 @@ export const translations = {
         tagline: 'OUR PRODUCTION HUB',
         description: 'Egypt is the perfect destination for large-scale MICE events with year-round sun and developed infrastructure. Our production hub in Sharm El Sheikh and Cairo allows us to implement projects of any complexity: from conferences for 1000+ people to exclusive team buildings in the desert and on the Red Sea. We offer the best venues, hotels, and full technical support without intermediaries.',
         seo: {
-          title: 'Corporate Events and Team Building in Egypt | MICE Organizer',
+          title: 'Corporate Events and Team Building in Egypt',
           description: 'MICE in Egypt: organizing conferences, corporate retreats, and business events in Sharm El Sheikh and Cairo. 20 years of experience and in-house production.'
         }
       },
@@ -931,7 +931,7 @@ export const translations = {
         tagline: 'STRATEGIC PARTNERSHIPS',
         description: 'We build a reliable bridge for your business between Russia and the Arab world. Our team provides comprehensive support for Russian companies planning events in the Arab region, and also accompanies Arab delegations in Russia. We handle everything from logistics and protocol to cultural programs and technical equipment, ensuring flawless results at the intersection of two cultures.',
         seo: {
-          title: 'Arabic Delegation Support and Events in Moscow | La Royal Event',
+          title: 'Arabic Delegations and Events in Moscow',
           description: 'Organizing events in Moscow for international companies and supporting Arabic delegations in Russia. Professional protocol and translation services.'
         }
       }

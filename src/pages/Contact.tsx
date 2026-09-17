@@ -8,11 +8,16 @@ import WhatsAppIcon from '../components/WhatsAppIcon';
 import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 px-6">
-      <SEO title={t.nav.contact} />
+      <SEO
+        title={language === 'ru' ? 'Контакты: заявка на мероприятие в Египте' : 'Contact Us: Plan an Event in Egypt'}
+        description={language === 'ru'
+          ? 'Напишите дату, число гостей и город, вернёмся с предложением. Команда в Каире и Шарм-эль-Шейхе, телефоны в России и Египте, Telegram и WhatsApp.'
+          : 'Send us the date, group size and city and we will come back with a proposal. Team in Cairo and Sharm El Sheikh, phones in Russia and Egypt, Telegram and WhatsApp.'}
+      />
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

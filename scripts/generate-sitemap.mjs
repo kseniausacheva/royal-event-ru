@@ -17,6 +17,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
+import { execSync } from 'child_process';
 import { blogArticles } from '../src/content/blog-articles.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -31,8 +32,15 @@ const TARGET = process.argv.includes('--target') ? process.argv[process.argv.ind
 const HOST = TARGET === 'com' ? HOST_COM : HOST_RU;
 const toTargetPath = (loc) => (TARGET === 'com' ? loc.replace(/^\/ru/, '/en') : loc);
 
-// Сегодняшняя дата в формате YYYY-MM-DD для lastmod статичных страниц
-const TODAY = new Date().toISOString().slice(0, 10);
+// lastmod статичных страниц — дата последнего коммита (а не каждой сборки:
+// иначе все страницы выглядят «обновлёнными» при любом деплое). Без git — сегодня.
+const TODAY = (() => {
+  try {
+    return execSync('git log -1 --format=%cs', { cwd: ROOT, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() || new Date().toISOString().slice(0, 10);
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
+})();
 
 /**
  * @typedef {Object} SitemapEntry
@@ -201,14 +209,11 @@ function renderEntry(entry) {
   if (entry.changefreq) lines.push(`    <changefreq>${entry.changefreq}</changefreq>`);
   if (entry.priority) lines.push(`    <priority>${entry.priority}</priority>`);
 
-  if (entry.hreflang) {
-    lines.push(`    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl(entry.loc)}" />`);
-    // EN-версия живёт на .com (cross-domain hreflang); все адреса со слэшем на конце
-    lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${enUrl(entry.loc)}" />`);
-    if (entry.loc === '/ru') {
-      lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${ruUrl('/ru')}" />`);
-    }
-  }
+  // У каждой страницы есть зеркало на другом языке: RU на .ru, EN на .com
+  // (cross-domain hreflang), все адреса со слэшем на конце. x-default — русская версия.
+  lines.push(`    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl(entry.loc)}" />`);
+  lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${enUrl(entry.loc)}" />`);
+  lines.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${ruUrl(entry.loc)}" />`);
 
   if (entry.images && entry.images.length > 0) {
     for (const img of entry.images) {

@@ -14,8 +14,8 @@ const Cruises = () => {
   return (
     <div className="min-h-screen bg-royal-night text-royal-sand font-manrope">
       <SEO
-        title="Круизы по Нилу для корпоративных групп — Le Fayan Suites, Soleil, Lumière"
-        description="Корпоративные круизы Луксор–Асуан на 5★ судах Le Fayan Suites (37 сьютов) и Soleil (53 каюты), приватный чартер Lumière на 20 гостей, дахабии, длинные круизы из Каира. Прямые контракты с судовладельцами, полный фрахт."
+        title="Круизы по Нилу для корпоративных групп"
+        description="Корпоративные круизы Луксор–Асуан на Le Fayan Suites и Soleil, приватный чартер Lumière, дахабии Nour El Nil, круизы из Каира. Прямые контракты, полный фрахт."
         keywords="круиз по Нилу, круиз Луксор Асуан, Le Fayan Suites, Soleil Nile cruise, Lumière, дахабия, Nour El Nil, Dendera, корпоративный круиз, фрахт судна Нил, Дендера, круиз из Каира, La Royal Event"
         image={`${SITE_URL}/cruises/fayan-ship.webp`}
       />

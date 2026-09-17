@@ -11,7 +11,10 @@ const MailingConsent = () => {
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 pb-20">
-      <SEO title={language === 'ru' ? 'Согласие на рассылку' : 'Mailing Consent'} />
+      <SEO
+        title={language === 'ru' ? 'Согласие на рассылку' : 'Mailing Consent'}
+        description={language === 'ru' ? 'Условия согласия на получение информационных и рекламных материалов La Royal Event и порядок отказа от рассылки.' : 'Terms of consent to receive informational and promotional materials from La Royal Event and how to opt out.'}
+      />
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-none mb-12">
           {language === 'ru' ? 'Согласие на получение информационных и рекламных материалов' : 'Consent to Receive Informational and Promotional Materials'}

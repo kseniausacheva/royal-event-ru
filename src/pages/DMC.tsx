@@ -22,8 +22,8 @@ const DMC = () => {
   return (
     <div className="min-h-screen bg-royal-night text-royal-sand font-manrope">
       <SEO
-        title="DMC Египет — Destination Management, приватный доступ к пирамидам"
-        description="La Royal Event — DMC-компания в Египте: команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями и судовладельцами, ground-handling для агентств, разрешения на съёмку, приватный доступ к пирамидам Гизы."
+        title="DMC в Египте: принимающая компания для мероприятий"
+        description="DMC-компания в Египте: команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями и судовладельцами, пермиты, приватный доступ к пирамидам Гизы."
         keywords="DMC Египет, DMC Egypt, приватный доступ к пирамидам, VIP Гиза, ground handling Египет, La Royal Event"
       />
 
