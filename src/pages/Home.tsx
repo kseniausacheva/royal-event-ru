@@ -438,7 +438,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">La Royal Event · Авторские программы</p>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
-            Десять программ — от квеста на пирамидах до ужина внутри кинопремьеры
+            Десять программ в каталоге — от квеста на пирамидах до ужина внутри кинопремьеры
           </h2>
           <p className="max-w-2xl text-royal-sand-2 mb-12">У каждой программы своя глава одной истории. Ни одна не повторяет другую ни механикой, ни местом, ни финалом.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -452,7 +452,7 @@ const Home = () => {
             ))}
           </div>
           <Link to={lp('/programmy')} className="inline-flex items-center gap-3 mt-10 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors">
-            Все десять программ <ChevronRight className="w-4 h-4" />
+            Весь каталог программ <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

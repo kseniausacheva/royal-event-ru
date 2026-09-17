@@ -2579,7 +2579,7 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "В этой статье — десять форматов, с которыми мы работаем в Каире и Шарм-эль-Шейхе: восемь авторских программ La Royal Event и форматы, проверенные на корпоративных выездах наших клиентов. Для каждого — где проходит, для кого и какой уровень активности и напряжения по шкале от одного до пяти. Активность — сколько ходить, нырять и ехать. Напряжение — сколько в сценарии темноты, актёров и обратного отсчёта."
+          "text": "В этой статье — десять форматов, с которыми мы работаем в Каире и Шарм-эль-Шейхе: авторские программы La Royal Event и форматы, проверенные на корпоративных выездах наших клиентов. Для каждого — где проходит, для кого и какой уровень активности и напряжения по шкале от одного до пяти. Активность — сколько ходить, нырять и ехать. Напряжение — сколько в сценарии темноты, актёров и обратного отсчёта."
         },
         {
           "type": "callout",
@@ -2721,7 +2721,7 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "Все восемь авторских программ рассчитаны на 20–100 гостей и команды по пять. Разница — в цели. Ниже — как мы обычно раскладываем запрос клиента."
+          "text": "Все десять авторских программ рассчитаны на 20–100 гостей и команды по пять. Разница — в цели. Ниже — как мы обычно раскладываем запрос клиента."
         },
         {
           "type": "table",
@@ -2873,7 +2873,7 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "Below are ten formats we run in Cairo and Sharm El Sheikh: eight signature programmes written by La Royal Event, plus formats proven on our clients' corporate retreats. For each one you will find where it runs, who it suits, and two scores from one to five. Activity is how much walking, diving and driving is involved. Tension is how much darkness, live acting and countdown the script contains."
+          "text": "Below are ten formats we run in Cairo and Sharm El Sheikh: signature programmes written by La Royal Event, plus formats proven on our clients' corporate retreats. For each one you will find where it runs, who it suits, and two scores from one to five. Activity is how much walking, diving and driving is involved. Tension is how much darkness, live acting and countdown the script contains."
         },
         {
           "type": "callout",
@@ -3015,7 +3015,7 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "All eight signature programmes are designed for 20–100 guests in teams of five. What differs is the purpose. This is how we usually sort a client's brief."
+          "text": "All ten signature programmes are designed for 20–100 guests in teams of five. What differs is the purpose. This is how we usually sort a client's brief."
         },
         {
           "type": "table",
