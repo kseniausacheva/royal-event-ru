@@ -521,14 +521,68 @@ export const dahabiyas: {
   ],
   boats: [
     { name: 'Dendera', facts: '60 м · 10 кают · до 24 гостей', note: 'Флагман и новейшая лодка флота: самые просторные палубы и самые большие каюты на реке.' },
-    { name: 'Meroe', facts: '10 кают · до 20 гостей', note: 'Перестроена с нуля в 2017-м; крупные каюты и палуба, на которой хочется задержаться.' },
-    { name: 'Adelaïde', facts: '~57 м · 12 кают · 2 панорамных сьюта', note: 'Современная, с продуманным «течением» пространств; есть Deluxe Suite на две спальни.' },
+    {
+      name: 'Meroe', facts: '10 кают · до 20 гостей', note: 'Перестроена с нуля в 2017-м; крупные каюты и палуба, на которой хочется задержаться.',
+      hero: { src: '/cruises/meroe-panoramic-suite.webp', alt: 'Meroe — Panoramic Suite с окнами в пол и видом на Нил' },
+      gallery: [
+        { src: '/cruises/meroe-salon.webp', alt: 'Meroe — салон с полосатыми диванами и книжными полками' },
+        { src: '/cruises/meroe-luxury.webp', alt: 'Meroe — каюта Luxury Room' },
+        { src: '/cruises/meroe-luxury-view.webp', alt: 'Meroe — Luxury Room с окном на реку' },
+      ],
+    },
+    {
+      name: 'Adelaïde', facts: '~57 м · 12 кают · 2 панорамных сьюта', note: 'Современная, с продуманным «течением» пространств; есть Deluxe Suite на две спальни.',
+      hero: { src: '/cruises/adelaide-panoramic.webp', alt: 'Adelaïde — панорамная каюта с окнами на Нил' },
+      gallery: [
+        { src: '/cruises/adelaide-salon.webp', alt: 'Adelaïde — салон с полосатыми диванами и библиотекой' },
+        { src: '/cruises/adelaide-sundeck.webp', alt: 'Adelaïde — верхняя палуба под тентом' },
+        { src: '/cruises/adelaide-corner-suite.webp', alt: 'Adelaïde — угловая панорамная каюта с окнами на 180°' },
+        { src: '/cruises/adelaide-deluxe-desk.webp', alt: 'Adelaïde — Deluxe Suite, гостиная с рабочим столом' },
+        { src: '/cruises/adelaide-deluxe-bedroom.webp', alt: 'Adelaïde — Deluxe Suite, спальня' },
+        { src: '/cruises/adelaide-tea-window.webp', alt: 'Adelaïde — чай у окна каюты, за окном парус дахабии' },
+      ],
+    },
     { name: 'Agatha', facts: '10 кают · 2 панорамных сьюта', note: 'Построена в 2020-м: свежие интерьеры без потери характера дахабии.' },
-    { name: 'Malouka', facts: '45 м · 10 кают', note: 'Классика флота: компактные каюты, ностальгическая атмосфера, очень личная.' },
+    {
+      name: 'Malouka', facts: '45 м · 10 кают', note: 'Классика флота: компактные каюты, ностальгическая атмосфера, очень личная.',
+      hero: { src: '/cruises/malouka-panoramic.webp', alt: 'Malouka — панорамная каюта с окнами на реку' },
+    },
     { name: 'El Nil', facts: '43 м · 10 кают · до 20 гостей', note: 'Самая камерная: панорамные каюты с окнами в пол, река — на расстоянии вытянутой руки.' },
-    { name: 'Najafa · Roman · Poppee', facts: 'Новые лодки, самые большие палубы', note: 'Просторные Luxury-каюты и Deluxe Suite с двумя ванными — для семей и партнёрских групп.' },
+    {
+      name: 'Najafa', facts: 'Новая лодка · самые большие палубы', note: 'Просторные Luxury-каюты, панорамные каюты и Deluxe Suite с двумя ванными — для семей и партнёрских групп.',
+      hero: { src: '/cruises/najafa-sail-sunset.webp', alt: 'Najafa под парусом на закате' },
+      gallery: [
+        { src: '/cruises/najafa-sundeck.webp', alt: 'Najafa — верхняя палуба под тентом' },
+        { src: '/cruises/najafa-panoramic.webp', alt: 'Najafa — панорамная каюта, окна на Нил' },
+        { src: '/cruises/najafa-luxury.webp', alt: 'Najafa — каюта Luxury Room' },
+        { src: '/cruises/najafa-deluxe-living.webp', alt: 'Najafa — Deluxe Suite, гостиная' },
+        { src: '/cruises/najafa-deluxe-bedroom.webp', alt: 'Najafa — Deluxe Suite, спальня' },
+        { src: '/cruises/najafa-panoramic-bed.webp', alt: 'Najafa — панорамная каюта, вид с кровати на реку' },
+      ],
+    },
+    {
+      name: 'Roman', facts: 'Новая лодка · самые большие палубы', note: 'Панорамные каюты с угловыми окнами на воду и длинная палуба под тентом с диванами.',
+      hero: { src: '/cruises/roman-panoramic.webp', alt: 'Roman — панорамная каюта с креслами у окна' },
+      gallery: [
+        { src: '/cruises/roman-sundeck.webp', alt: 'Roman — верхняя палуба с диванами под тентом' },
+        { src: '/cruises/roman-corner-windows.webp', alt: 'Roman — угловые окна каюты на воду' },
+        { src: '/cruises/roman-cabin.webp', alt: 'Roman — панорамная каюта' },
+      ],
+    },
+    {
+      name: 'Poppee', facts: 'Новая лодка · самые большие палубы', note: 'Та же новая серия: широкая верхняя палуба под тентом, где группа проводит большую часть дня.',
+      hero: { src: '/cruises/poppee-sail-sunset.webp', alt: 'Poppee под парусом на закате' },
+      gallery: [{ src: '/cruises/poppee-sundeck.webp', alt: 'Poppee — верхняя палуба под тентом' }],
+    },
   ],
-  gallery: [],
+  gallery: [
+    { src: '/cruises/dahabiya-sail-sunset.webp', alt: 'Дахабия Nour El Nil под парусом на закате' },
+    { src: '/cruises/dahabiya-two-sails.webp', alt: 'Две дахабии под полосатыми парусами на Ниле' },
+    { src: '/cruises/dahabiya-rocks.webp', alt: 'Дахабия у скалистого берега Нила' },
+    { src: '/cruises/dahabiya-sundeck-tent.webp', alt: 'Верхняя палуба под тентом: диваны, ковры, низкие столики' },
+    { src: '/cruises/dahabiya-hammock.webp', alt: 'Гамак на верхней палубе в вечернем свете' },
+    { src: '/cruises/dahabiya-tea-window.webp', alt: 'Утро в каюте: чай у окна с видом на реку' },
+  ],
   days: [
     { day: 'День 1', place: 'Эсна', text: 'Посадка, знакомство с командой. Прогулка к храму Хнума, который стоит на девять метров ниже улицы, и по торговым рядам.' },
     { day: 'День 2', place: 'Эль-Каб и Эдфу', text: 'Бывшая столица Верхнего Египта: храм Нехбет и гробницы в склоне горы, дорога через рыбацкую деревню. Днём — храм Гора в Эдфу, на конных экипажах.' },

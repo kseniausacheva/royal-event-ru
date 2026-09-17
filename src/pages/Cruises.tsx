@@ -133,7 +133,7 @@ const Cruises = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start mb-12">
             {dahabiyas.boats.map((b) => (
               <div key={b.name} className="rounded-2xl bg-royal-card border border-royal-rule overflow-hidden flex flex-col">
                 {b.hero && (
