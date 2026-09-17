@@ -54,6 +54,3162 @@
 export const blogArticles = [
   // ───────────────────────────────────────────────────────────────────────
   {
+    "id": "dmc-v-egipte",
+    "datePublished": "2026-09-17",
+    "image": "/nl-5.jpg",
+    "ru": {
+      "title": "DMC в Египте: что делает принимающая компания и как её выбрать",
+      "category": "Деловые мероприятия",
+      "date": "17 сентября 2026",
+      "excerpt": "Что такое DMC в Египте, чем принимающая компания отличается от турагентства, как она работает по шагам и какие вопросы задать ей до договора.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "«DMC в Египте» — запрос, который появляется, когда мероприятие уже почти решено: даты согласованы, руководство сказало «да» пирамидам или Красному морю, и дальше начинается работа, которую нельзя сделать из другой страны. Разрешение на съёмку у Сфинкса выдаёт не отель, автобусы для группы нужно откуда-то взять, а кто-то должен встретить ночной рейс. Всё это — зона ответственности принимающей компании, destination management company, или коротко DMC."
+        },
+        {
+          "type": "paragraph",
+          "text": "Мы работаем в Египте как DMC с 2004 года и разбираем в этой статье без рекламных формул: что принимающая сторона делает на самом деле, чем отличается от турагентства и ивент-агентства, что в Египте решается только на месте и какие вопросы задать любой DMC до договора — включая нас."
+        },
+        {
+          "type": "stat",
+          "number": "с 2004 года",
+          "label": "La Royal Event принимает корпоративные группы в Египте: собственная команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями, судовладельцами и площадками"
+        },
+        {
+          "type": "heading",
+          "text": "Что такое DMC и чем она отличается от турагентства и ивент-агентства",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Destination management company находится в стране проведения и отвечает за всё, что происходит с группой на её территории: отели и площадки, транспорт, гиды, разрешения, локальный продакшн, координация в день мероприятия. Принимающая сторона не придумывает идею события и не продаёт билеты на самолёт — она делает так, чтобы идея заказчика была исполнена в чужой стране с той же точностью, что и дома."
+        },
+        {
+          "type": "paragraph",
+          "text": "Путаница возникает потому, что все три типа компаний могут написать в презентации «организуем мероприятия за рубежом». Разница — в том, кто и где физически делает работу."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Кто",
+            "Что делает",
+            "Чего обычно не делает"
+          ],
+          "rows": [
+            [
+              "Турагентство",
+              "Билеты, отели, страховки, визы. Работает из вашей страны через системы бронирования",
+              "Само мероприятие: площадки вне отеля, продакшн, пермиты, работа на месте"
+            ],
+            [
+              "Ивент-агентство",
+              "Концепция, сценарий, программа, режиссура, общение с заказчиком. За рубежом ищет местного партнёра",
+              "Прямые контракты с отелями и площадками, локальную логистику"
+            ],
+            [
+              "DMC",
+              "Всё, что происходит с группой в стране: площадки, транспорт, гиды, разрешения, продакшн, работа на месте",
+              "Креативную концепцию, если у заказчика есть своё агентство; перелёт"
+            ]
+          ],
+          "caption": "Роли пересекаются, но у каждой есть ядро. Вопрос к подрядчику один: что он делает своими руками, а что перекупает"
+        },
+        {
+          "type": "paragraph",
+          "text": "Самая надёжная схема для корпоративной группы — DMC, которая совмещает роль принимающей стороны с полным циклом ивент-агентства: собственная команда в стране, прямые контракты, свой продакшн. Между заказчиком и площадкой нет цепочки посредников — нет и потерь на «испорченном телефоне»."
+        },
+        {
+          "type": "heading",
+          "text": "Что делает DMC в Египте: семь шагов от брифа до отчёта",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Работа принимающей стороны выглядит одинаково, кто бы ни был заказчиком — корпорация напрямую или агентство, которое ведёт своего клиента. Вот последовательность, по которой мы проводим каждую группу."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Бриф. Цели, формат, число участников, даты, города, ограничения. DMC на этом этапе задаёт вопросы, а не присылает шаблон: что для вас «успех», кто аудитория, что должно остаться после события.",
+            "Инспекция площадок. Отели, залы и локации проверяются под конкретную задачу: вместимость, техника, монтаж, подъезд транспорта, свет в нужное время суток. Инспекционный визит заказчика DMC собирает в один-два дня.",
+            "Предложение. Сценарий дней, площадки по каждому блоку, схема логистики, перечень включённого. Хорошее предложение читается как план мероприятия, а не как брошюра.",
+            "Договоры. DMC заключает контракты с отелем, судовладельцем, площадками, транспортом и артистами от своего имени по прямым соглашениям. Заказчик получает один договор и одну точку ответственности.",
+            "Логистика. Списки участников, распределение по номерам, графики прилётов и трансферов, пермиты, райдеры, меню, тайминги — всё сводится в единый документ для команды на месте.",
+            "Работа на месте. Встреча в аэропорту, fast-track, заселение, координаторы на каждом блоке программы, техническая команда, круглосуточный duty-office. Заказчик видит одного руководителя проекта, за которым стоит вся команда.",
+            "Отчёт. Закрывающие документы по каждой позиции, фото и видео, разбор: что сработало, что изменить в следующий раз. Для агентств — документация на английском и арабском."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Один документ вместо десяти переписок",
+          "text": "К заезду у заказчика должна быть рабочая книга проекта: кто, где и когда встречает группу, где она живёт, что происходит в каждый час программы и кто за это отвечает — по имени и телефону. Если DMC не может её собрать, на месте будут импровизировать."
+        },
+        {
+          "type": "image",
+          "url": "/nl-12.jpg",
+          "alt": "Корпоративный выезд NL International в Шарм-эль-Шейхе — семидневная программа в Park Regency",
+          "caption": "Семидневный выезд NL International в Park Regency: деловая часть, тимбилдинг, тематические вечера — семь логистических планов, сведённых в один"
+        },
+        {
+          "type": "heading",
+          "text": "Специфика Египта: что решается только на месте",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Египет — направление с очень щедрой «сценой»: пирамиды, Нил, Красное море, храмы Луксора. Но именно поэтому принимающая сторона должна быть здесь физически и работать с местными структурами напрямую. Пять отличий от привычного европейского сценария."
+        },
+        {
+          "type": "heading",
+          "text": "Пермиты: плато Гизы, музеи, исторический Каир",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Мероприятие, ужин или съёмка на плато Гизы, в музее или на улицах старого Каира проходят в охраняемых зонах, где нужны отдельные разрешения. Их получает не отель и не заказчик, а лицензированная принимающая компания — заранее, с документами на группу. Приватный доступ к пирамидам до открытия и после закрытия плато, включая камеры Великой пирамиды и ограждение Сфинкса, тоже работает через пермиты: до 50 гостей на один пермит. Если DMC говорит «решим на месте», пермита не будет."
+        },
+        {
+          "type": "heading",
+          "text": "Сезон и жара",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Комфортный сезон для программ на открытом воздухе — с октября по апрель. Летом дневную часть в Каире и на плато Гизы строят вокруг раннего утра и вечера, в Шарм-эль-Шейхе — вокруг моря и кондиционированных залов. Отдельный фактор — Рамадан: персонал и площадки работают в особом режиме, и программу планируют с учётом этого заранее."
+        },
+        {
+          "type": "heading",
+          "text": "Каир или Шарм-эль-Шейх: две разные логистики",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Каир — большой город с плотным трафиком, историческими площадками и деловыми отелями; здесь главное умение DMC — честно считать время в пути и держать резерв транспорта. Шарм-эль-Шейх — курорт, где конференц-отели, пустыня и море расположены рядом, а логистика упирается в графики рейсов и вместимость залов. Многим группам подходит связка: деловая часть у моря в Шарме, культурный блок с пирамидами в Каире. Тогда у принимающей компании должна быть команда в обоих городах, а не «партнёр» в одном из них."
+        },
+        {
+          "type": "heading",
+          "text": "Безопасность и сопровождение",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Корпоративная группа в Египте передвигается по согласованным маршрутам, с сопровождением, на транспорте принимающей стороны — со своими водителями, а не на арендованных автобусах со случайным экипажем. Для закрытых форматов DMC организует приватную охрану. Это не про страх, а про то, что группа из ста человек не должна зависеть от импровизации."
+        },
+        {
+          "type": "heading",
+          "text": "Языки и документы",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Рабочие языки Египта — арабский и английский: на них ведутся договоры с площадками, разрешения, счета и переписка с госструктурами. Поэтому принимающая компания должна выставлять документацию на английском и арабском, а для русскоязычных групп — иметь гидов-египтологов, координаторов и duty-office на русском. «Гид, который немного говорит по-русски» — не то же самое, что египтолог, ведущий экскурсию на вашем языке."
+        },
+        {
+          "type": "stat",
+          "number": "24/7",
+          "label": "режим duty-office во время заезда группы: ночной рейс, потерянный багаж, замена номера или маршрута решаются в момент, когда возникают"
+        },
+        {
+          "type": "image",
+          "url": "/carlsberg-8.JPG",
+          "alt": "Конференция Carlsberg на 1000 участников в Domina Coral Bay, Шарм-эль-Шейх",
+          "caption": "Конференция Carlsberg на 1000 участников в Domina Coral Bay. На таком масштабе DMC — не «помощь с трансферами», а операционная система всего события"
+        },
+        {
+          "type": "heading",
+          "text": "Чек-лист: что спросить у DMC до подписания договора",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Эти вопросы стоит задать любой принимающей компании в Египте. Ответ «уточним позже» считается ответом «нет»."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Своя команда или субподряд? Кто конкретно будет работать с нашей группой в Каире и Шарм-эль-Шейхе — штатные сотрудники или партнёры?",
+            "Прямые контракты или посредники? С какими отелями, судовладельцами и площадками у вас прямые соглашения?",
+            "Лицензии и пермиты. Есть ли лицензия на приём групп и опыт получения разрешений на мероприятия и съёмку на плато Гизы, в музеях и историческом Каире?",
+            "Как устроен duty-office? Кто отвечает ночью и в выходные, как быстро и на каком языке?",
+            "Документы. Выставите ли договор, счета и закрывающие документы на английском и арабском под требования нашей бухгалтерии?",
+            "Условия для агентств. Работаете ли по нетто-тарифам и не выходите ли на клиентов агентства напрямую?",
+            "Кейсы нашего масштаба. Покажите проекты с сопоставимым числом участников и форматом и дайте контакты заказчиков.",
+            "Кто руководитель проекта? Один человек с именем и телефоном или «отдел», в котором ответственность растворяется?",
+            "Что при изменениях? Как меняется предложение, если участников становится меньше или больше, сдвигаются даты, отель предлагает замену?"
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Красные флаги",
+          "text": "Площадку не показывают до подписания договора. На связи один менеджер — и он же «на всех проектах». «Всё включено» без письменного перечня включённого. Не задают вопросов о целях мероприятия. Говорят, что разрешения «не нужны» там, где они нужны по умолчанию."
+        },
+        {
+          "type": "heading",
+          "text": "Как выглядит хорошее сотрудничество агентства и DMC",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Значительная часть наших групп приходит через агентства, которые ведут своего клиента и ищут принимающую сторону в Египте. Хорошая связка выглядит так: агентство владеет отношениями с клиентом, концепцией и коммуникацией, а DMC — страной. Роли разведены, ответственность не дублируется."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Агентство: бриф от клиента, концепция и сценарий, согласование условий с заказчиком, коммуникация с участниками, брендинг и контент.",
+            "DMC: инспекция и подбор площадок, прямые контракты, пермиты, транспорт и гиды, локальный продакшн, работа на месте, документация.",
+            "Общее: единая рабочая книга проекта, одна точка ответственности с каждой стороны, статусы до заезда и ежедневный брифинг во время события.",
+            "Правило долгого партнёрства: DMC работает по нетто-тарифам и не выходит на клиента агентства в обход партнёра."
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/cruises/fayan-ship.webp",
+          "alt": "Судно Le Fayan Suites на Ниле — круизный формат для корпоративных групп",
+          "caption": "Le Fayan Suites, 37 сьютов. Круиз по Нилу для группы — фрахт судна, гид-египтолог, разрешения в храмах и логистика Луксор — Асуан в одной программе"
+        },
+        {
+          "type": "heading",
+          "text": "Когда DMC нужна, а когда достаточно отеля",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Честный ответ: не каждой группе нужна принимающая компания. Если всё мероприятие проходит в одном отеле, а программа — зал, банкет и пляж, банкетный отдел отеля справится сам. DMC нужна в тот момент, когда группа выходит за ворота отеля."
+        },
+        {
+          "type": "comparison",
+          "title": "Отель или принимающая компания",
+          "left": {
+            "title": "Достаточно отеля, если",
+            "items": [
+              "Вся программа внутри одного отеля: зал, банкет, бассейн",
+              "Группа летит одним рейсом, трансфер организует отель",
+              "Не нужны съёмка, внешние площадки и разрешения",
+              "Нет многодневной программы с выездами",
+              "Заказчик сам ведёт переписку с отелем на английском"
+            ]
+          },
+          "right": {
+            "title": "Нужна DMC, если",
+            "items": [
+              "В программе пирамиды, музеи, старый Каир, Нил или пустыня",
+              "Несколько городов или отелей",
+              "Участники летят разными рейсами, нужен fast-track",
+              "Нужны продакшн, декор, сцена, артисты, съёмка",
+              "Нужна одна точка ответственности и duty-office 24/7"
+            ]
+          }
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Вместо вывода",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Хорошая DMC в Египте не продаёт «Египет вообще» — она продаёт исполнение. La Royal Event работает как принимающая компания полного цикла с 2004 года: своя команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями, судовладельцами и площадками, разрешения на плато Гизы, в музеях и историческом Каире, гиды-египтологи на русском и английском, свои водители, кейтеринг, декор, звук и свет, duty-office 24/7, документы на английском и арабском, нетто-тарифы для агентств. От конференции Carlsberg на 1000 человек до приватного чартера Lumière на восемь кают. Задайте нам вопросы из чек-листа — мы любим заказчиков, которые их задают."
+        }
+      ]
+    },
+    "en": {
+      "title": "DMC in Egypt: What a Destination Management Company Does and How to Choose One",
+      "category": "Business Events",
+      "date": "September 17, 2026",
+      "excerpt": "What a DMC in Egypt actually does, how it differs from a travel agent or event agency, how ground handling works step by step and what to ask before you sign.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "“DMC in Egypt” is the search that starts once the event is almost decided: the dates are set, the board has said yes to the pyramids or the Red Sea, and someone now has to make it happen on the ground. The permit to film at the Sphinx is not the hotel’s to give, coaches for a hundred delegates have to come from somewhere, and someone has to meet a night arrival at Cairo airport. All of that is the job of a destination management company, or DMC."
+        },
+        {
+          "type": "paragraph",
+          "text": "We have worked in Egypt as a DMC since 2004. This article sets out, without brochure language, what a destination management company in Egypt actually does, how it differs from a travel agent and an event agency, what can only be solved locally, and what to ask any Egypt DMC before you sign — including us."
+        },
+        {
+          "type": "stat",
+          "number": "since 2004",
+          "label": "La Royal Event has handled corporate groups in Egypt: an in-house team in Cairo and Sharm El Sheikh, direct contracts with hotels, ship owners and venues"
+        },
+        {
+          "type": "heading",
+          "text": "What a DMC is, and how it differs from a travel agent and an event agency",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A destination management company is based in the destination and owns everything that happens to a group inside the country: hotels and venues, transport, guides, permits, local production and coordination on the day. It does not invent the creative idea and does not sell the flights; its job is to deliver the client’s idea abroad with the same precision as at home."
+        },
+        {
+          "type": "paragraph",
+          "text": "The confusion exists because all three types of company can put “events abroad” on a slide. The difference is who does the work, and where."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Who",
+            "What they do",
+            "What they usually do not do"
+          ],
+          "rows": [
+            [
+              "Travel agent",
+              "Flights, rooms, insurance, visas. Works from your home market through booking systems",
+              "The event itself: venues outside the hotel, production, permits, on-site coordination"
+            ],
+            [
+              "Event agency",
+              "Concept, script, programme, show direction, client communication. Abroad, it looks for a local partner",
+              "Direct contracts with hotels and venues in the destination, local logistics"
+            ],
+            [
+              "DMC",
+              "Everything that happens to the group in-country: venues, transport, guides, permits, production, on-site operations",
+              "The creative concept when the client has an agency; flights from home"
+            ]
+          ],
+          "caption": "The roles overlap, but each has a core. The question to any supplier is the same: what do you deliver yourself, and what do you resell"
+        },
+        {
+          "type": "paragraph",
+          "text": "The most reliable set-up for a corporate group is a DMC that also runs the full event cycle: its own team in the country, direct contracts and its own production. There is no chain of intermediaries between the client and the venue, so nothing gets lost or marked up along the way."
+        },
+        {
+          "type": "heading",
+          "text": "What a DMC in Egypt does: seven steps from brief to report",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Ground handling in Egypt follows the same sequence whether the client is a corporation working with us directly or an agency managing its own client. This is how we take every group through it."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Brief. Objectives, format, headcount, dates, cities, constraints. At this stage a DMC asks questions rather than sending a template: what does success look like, who is the audience, what should remain after the event.",
+            "Site inspection. Hotels, halls and locations are checked against the specific task: capacity, technical set-up, load-in, coach access, the light at the right time of day. A client’s inspection visit is built to cover everything in a day or two.",
+            "Proposal. A day-by-day scenario, venues for each block, the logistics scheme and a list of what is included. A good proposal reads like an event plan, not a brochure.",
+            "Contracts. The DMC contracts the hotel, the ship owner, venues, transport and artists in its own name under direct agreements. The client receives one contract and one point of accountability.",
+            "Logistics. Rooming lists, arrival and transfer schedules, permits, technical riders, menus, timings — all merged into one working document for the on-site team.",
+            "On-site operations. Airport meet and greet, fast-track, check-in, coordinators on every block of the programme, the technical crew, a duty office that answers around the clock. The client sees one project lead with the whole team behind them.",
+            "Report. Closing documents for every line, photo and video, and a debrief: what worked, what to change next time. For agencies, paperwork in English and Arabic."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "One working document instead of ten email threads",
+          "text": "By arrival day the client should hold the project book: who meets the group where and when, where it stays, what happens in every hour of the programme and who is responsible, by name and phone number. If a DMC cannot produce it, the operation will be improvised on the ground."
+        },
+        {
+          "type": "image",
+          "url": "/nl-12.jpg",
+          "alt": "NL International corporate retreat in Sharm El Sheikh — a seven-day programme at Park Regency",
+          "caption": "NL International, seven days at Park Regency: business sessions, team building, themed evenings — seven logistics plans merged into one"
+        },
+        {
+          "type": "heading",
+          "text": "What is specific to Egypt: the tasks only solved on the ground",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Egypt offers an unusually generous stage: the pyramids, the Nile, the Red Sea, the temples of Luxor. That is exactly why the receiving party has to be physically here and work directly with local authorities and suppliers. Five differences from a familiar European scenario."
+        },
+        {
+          "type": "heading",
+          "text": "Permits: the Giza Plateau, museums and historic Cairo",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "An event, a dinner or a film shoot on the Giza Plateau, inside a museum or in the streets of old Cairo takes place in a protected zone and needs its own permit. It is issued not to the hotel or the client but to a licensed receiving company, in advance, with the group’s documents. Private access to the pyramids before the plateau opens and after it closes — including the chambers of the Great Pyramid and the Sphinx enclosure — also runs on permits, up to 50 guests per permit. If a DMC says it will “sort it out on the day”, it will not have one."
+        },
+        {
+          "type": "heading",
+          "text": "Season and heat",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The comfortable season for outdoor programmes runs from October to April. In summer the daytime part in Cairo and on the Giza Plateau is built around early morning and evening, and in Sharm El Sheikh around the sea and air-conditioned halls. Ramadan is a separate factor: local staff and venues work to a different rhythm, and the programme is planned around it in advance."
+        },
+        {
+          "type": "heading",
+          "text": "Cairo or Sharm El Sheikh: two different logistics",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Cairo is a large city with heavy traffic, historic venues and business hotels; the key DMC skill here is counting travel time honestly and keeping transport in reserve. Sharm El Sheikh is a resort where conference hotels, the desert and the sea sit close together, and logistics come down to flight schedules and hall capacity. Many groups combine the two: business sessions by the sea in Sharm, a cultural block with the pyramids in Cairo. That takes an event DMC with a team in both cities, not a “partner” in one of them."
+        },
+        {
+          "type": "heading",
+          "text": "Security and escort",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A corporate group in Egypt moves along agreed routes, with an escort, on the receiving company’s own transport with its own drivers — not hired coaches with a random crew. For closed formats the DMC arranges private security. This is not about fear; it is about a hundred people never depending on improvisation."
+        },
+        {
+          "type": "heading",
+          "text": "Languages and paperwork",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Egypt’s working languages are Arabic and English: venue contracts, permits, invoices and correspondence with the authorities are conducted in them, so a receiving company must issue documentation in both. For the group itself the DMC should provide Egyptologist guides and coordinators in the delegates’ language; we work in English and Russian. “A guide who speaks some English” is not the same as a trained Egyptologist leading the tour in your language."
+        },
+        {
+          "type": "stat",
+          "number": "24/7",
+          "label": "the duty-office regime while a group is in the country: a night flight, lost luggage, a room change or a route change is solved the moment it comes up"
+        },
+        {
+          "type": "image",
+          "url": "/carlsberg-8.JPG",
+          "alt": "Carlsberg conference for 1,000 delegates at Domina Coral Bay, Sharm El Sheikh",
+          "caption": "The Carlsberg conference for 1,000 delegates at Domina Coral Bay. At this scale the DMC is not “help with transfers” but the operating system of the whole event"
+        },
+        {
+          "type": "heading",
+          "text": "Checklist: what to ask an Egypt DMC before you sign",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "These questions are worth putting to any destination management company in Egypt. “We will confirm later” counts as a no."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "In-house team or subcontractors? Who exactly will work with our group in Cairo and Sharm El Sheikh — your own staff or partners?",
+            "Direct contracts or intermediaries? Which hotels, ship owners and venues do you hold direct agreements with?",
+            "Licences and permits. Is the company licensed to receive groups, and has it obtained permits for events and filming on the Giza Plateau, in museums and in historic Cairo?",
+            "How does the duty office work? Who answers at night and at weekends, how fast, and in which language?",
+            "Paperwork. Can you issue the contract, invoices and closing documents in English and Arabic to match our accounting requirements?",
+            "Terms for agencies. Do you work on net rates, and do you commit not to approach the agency’s clients directly?",
+            "Cases at our scale. Show us projects with a comparable headcount and format, and give us client references we can call.",
+            "Who is the project lead? One named person with a phone number, or a “department” in which responsibility dissolves?",
+            "What happens when things change? How does the proposal change if the headcount moves, the dates shift or the hotel offers a substitute?"
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Red flags",
+          "text": "The venue is not shown before the contract is signed. One manager is your only contact — and he is “on all the projects”. “All inclusive” without a written list of what is included. Nobody asks about the objectives of the event. Permits are “not needed” where they are required by default."
+        },
+        {
+          "type": "heading",
+          "text": "What a good agency-and-DMC partnership looks like",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A large share of our groups arrive through agencies that manage their own client and are looking for a receiving partner in Egypt. A good partnership works like this: the agency owns the client relationship, the concept and the communication; the DMC owns the country. Roles are separate and responsibility is not duplicated."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Agency: the client brief, concept and script, agreeing terms with the client, delegate communication, branding and content.",
+            "DMC: site inspection and venue selection, direct contracts, permits, transport and guides, local production, on-site operations, documentation.",
+            "Shared: one project book, one accountable person on each side, status calls before arrival and a daily briefing during the event.",
+            "The rule that keeps a partnership long-term: the DMC works on net rates and never goes around its partner to the agency’s client."
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/cruises/fayan-ship.webp",
+          "alt": "Le Fayan Suites on the Nile — a cruise format for corporate groups",
+          "caption": "Le Fayan Suites, 37 suites. A Nile cruise for a group: the vessel charter, an Egyptologist guide, temple permits and Luxor–Aswan logistics in one programme"
+        },
+        {
+          "type": "heading",
+          "text": "When you need a DMC, and when the hotel is enough",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The honest answer: not every group needs a destination management company. If the whole event takes place in one hotel and the programme is a hall, a banquet and a beach, the hotel’s banqueting team can handle it. A DMC becomes necessary the moment the group leaves the hotel gates."
+        },
+        {
+          "type": "comparison",
+          "title": "Hotel or DMC",
+          "left": {
+            "title": "The hotel is enough if",
+            "items": [
+              "The entire programme is inside one hotel: hall, banquet, pool",
+              "The group arrives on one flight and the hotel arranges the transfer",
+              "No filming, external venues or permits",
+              "No multi-day programme with excursions",
+              "The client handles all correspondence with the hotel"
+            ]
+          },
+          "right": {
+            "title": "You need a DMC if",
+            "items": [
+              "The programme includes the pyramids, museums, old Cairo, the Nile or the desert",
+              "Several cities or several hotels",
+              "Delegates arrive on different flights and need fast-track",
+              "You need production, décor, a stage, artists, filming",
+              "You need one point of accountability and a 24/7 duty office"
+            ]
+          }
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "In place of a conclusion",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A good DMC in Egypt does not sell “Egypt in general” — it sells delivery. La Royal Event has operated as a full-cycle destination management company since 2004: an in-house team in Cairo and Sharm El Sheikh, direct contracts with hotels, ship owners and venues, permits for the Giza Plateau, museums and historic Cairo, Egyptologist guides in English and Russian, our own drivers, catering, décor, sound and light, a 24/7 duty office, documentation in English and Arabic and net rates for agencies. From the Carlsberg conference for 1,000 delegates to a private charter of Lumière with eight cabins. Ask us the questions from the checklist above — we like clients who ask them."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    "id": "organizaciya-meropriyatiya-za-granicej-s-dmc",
+    "datePublished": "2026-09-17",
+    "image": "/afa-1.JPG",
+    "ru": {
+      "title": "Организация мероприятия за границей: как работать с принимающей стороной, чтобы ничего не сорвалось",
+      "category": "Деловые мероприятия",
+      "date": "17 сентября 2026",
+      "excerpt": "Кто за что отвечает при организации мероприятия за границей: документы и пермиты, инспекция площадки, райдер, договоры, план Б и контроль на месте.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Организация мероприятий за границей отличается от домашнего проекта одним принципиальным моментом: вы не можете «доехать и посмотреть». Площадка, подрядчики, разрешения, водители, повара — всё находится в другой стране, в другом часовом поясе и часто на другом языке. Поэтому главный вопрос зарубежного проекта не «что делать», а «кто за что отвечает» — и как построить работу с принимающей стороной так, чтобы каждый участок был закрыт конкретным человеком."
+        },
+        {
+          "type": "paragraph",
+          "text": "Чек-лист по срокам подготовки мы уже публиковали. Эта статья — о модели работы: как распределить ответственность между заказчиком, агентством и принимающей компанией, какие документы понадобятся за рубежом, зачем нужна инспекция площадки, как устроены договоры и что происходит на площадке в день мероприятия. Примеры — из Египта: Каир и Шарм-эль-Шейх, где мы работаем как принимающая сторона."
+        },
+        {
+          "type": "heading",
+          "text": "Организация мероприятий за границей: три стороны и одна точка ответственности",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "В выездном корпоративном мероприятии участвуют три стороны. Заказчик — компания, которая ставит цели, утверждает бюджет и отвечает за содержание: программу, спикеров, состав участников. Агентство — команда, которая превращает цели в проект: концепция, сценарий, продакшн, координация. Принимающая сторона, или DMC (Destination Management Company), — компания в стране проведения, у которой есть контракты с отелями и площадками, лицензии для получения разрешений, собственные водители, гиды и подрядчики."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Зона",
+            "Заказчик",
+            "Агентство",
+            "Принимающая сторона"
+          ],
+          "rows": [
+            [
+              "Цели и программа",
+              "Ставит задачу, утверждает контент и спикеров",
+              "Пишет сценарий и тайминг, режиссирует",
+              "Адаптирует сценарий под площадку и местные правила"
+            ],
+            [
+              "Участники",
+              "Собирает список, паспортные данные, анкеты",
+              "Ведёт ростер и коммуникацию с гостями",
+              "Визовая поддержка, размещение, встреча в аэропорту"
+            ],
+            [
+              "Площадка и отель",
+              "Утверждает выбор",
+              "Формирует шорт-лист и требования",
+              "Бронирует по прямым контрактам, ведёт отель до и во время события"
+            ],
+            [
+              "Документы и разрешения",
+              "Предоставляет данные и доверенности",
+              "Собирает пакет, контролирует сроки",
+              "Получает пермиты на площадки, съёмку и мероприятия в охраняемых зонах"
+            ],
+            [
+              "Техника и декор",
+              "Согласует райдер и визуал",
+              "Составляет технический райдер",
+              "Подбирает локальных подрядчиков, монтирует, отвечает за прогон"
+            ],
+            [
+              "Логистика",
+              "Даёт расписание рейсов",
+              "Строит схему перемещений",
+              "Трансферы со своими водителями, fast-track, сопровождение"
+            ],
+            [
+              "На месте",
+              "Принимает решения по программе",
+              "Руководитель проекта на площадке",
+              "Duty-office 24/7, координаторы, связь с подрядчиками"
+            ]
+          ],
+          "caption": "Распределение ответственности при организации мероприятия за границей. Каждая строка должна быть закрыта именем и телефоном, а не названием компании"
+        },
+        {
+          "type": "paragraph",
+          "text": "Агентство и принимающая сторона могут быть одной компанией: так работаем мы в Египте. Своя команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями, судовладельцами и площадками — и мероприятие не передаётся субподрядчику. Но даже когда стороны разные, у заказчика должна быть одна точка ответственности: человек, который отвечает за весь проект и сам разбирается с отелем, подрядчиками и разрешениями. Если заказчику приходится звонить отелю напрямую, модель уже сломана."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Главное правило",
+          "text": "У каждой задачи в проекте один владелец. Не «отель обещал» и не «подрядчик сказал», а конкретный человек на стороне принимающей компании, который знает текущий статус и несёт ответственность за результат. Все остальные — исполнители в его зоне."
+        },
+        {
+          "type": "image",
+          "url": "/afa-3.JPG",
+          "alt": "Зал конференции AFA в Шарм-эль-Шейхе: рассадка «класс», экраны и драпировка потолка",
+          "caption": "Конференция AFA в Шарм-эль-Шейхе: зал, свет, экраны и рассадка — результат согласованного райдера и инспекции, а не фотографий из брошюры отеля"
+        },
+        {
+          "type": "heading",
+          "text": "Какие документы и разрешения нужны за границей",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Документальная часть зарубежного мероприятия делится на два потока: документы участников и документы самого события. Первый поток заказчик знает и по домашним проектам, второй за рубежом часто становится сюрпризом."
+        },
+        {
+          "type": "heading",
+          "text": "Визы и страховки участников",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Визовые условия зависят от паспорта участника и региона проведения: для Шарм-эль-Шейха и Каира они различаются, и первое, что делает принимающая сторона, — сверяет список группы с актуальными правилами въезда. Заказчик собирает паспортные данные и анкеты, агентство ведёт ростер, принимающая компания готовит визовую поддержку и подтверждения размещения, если они требуются. Медицинская страховка должна действовать в стране проведения и покрывать активности программы: день на яхте, вечер в пустыне или погружение — это не «отдых в отеле»."
+        },
+        {
+          "type": "heading",
+          "text": "Пермиты на площадки, съёмку и мероприятия в охраняемых зонах",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "В Египте мероприятие или съёмка на плато Гизы, в музеях и историческом Каире проходят только по разрешению. Пермит оформляется на конкретную дату, локацию, число гостей и формат — и запросить его может только лицензированная местная компания. Заказчику важно понимать три вещи: разрешение запрашивается заранее и на основании сценария; изменение формата после выдачи пермита означает новое согласование; съёмка — отдельное разрешение, которое не входит в «аренду площадки»."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Список участников с паспортными данными — для виз, размещения и пропусков на площадки",
+            "Сценарий и тайминг мероприятия — на его основании оформляются пермиты на охраняемые зоны",
+            "Перечень техники и декора, которые ввозятся или монтируются на площадке",
+            "Задание на фото- и видеосъёмку: локации, оборудование, использование дронов",
+            "Реквизиты и доверенности для договоров с отелем и площадками",
+            "Диетические и медицинские анкеты участников — для кейтеринга и страховки"
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Язык документов",
+          "text": "Договоры с египетскими площадками и подрядчиками, разрешения и счета существуют на арабском. Принимающая сторона должна выдавать заказчику документацию на английском и арабском — и отвечать за то, что версии совпадают. Это не формальность: именно по этим документам бухгалтерия заказчика закроет проект."
+        },
+        {
+          "type": "heading",
+          "text": "Инспекция площадки: зачем ехать и что проверять",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Фотографии отеля и планы залов показывают, как площадка выглядит. Инспекция показывает, как она работает. Принимающая сторона проводит её вместе с руководителем проекта от заказчика или агентства, и на выходе появляется не «впечатление», а документ: схема залов с размерами, список ограничений и решение по каждому спорному пункту."
+        },
+        {
+          "type": "paragraph",
+          "text": "На конференции Carlsberg на 1000 человек в Domina Coral Bay инспекция касалась не только главного зала. Тысяча гостей — это потоки: регистрация, кофе-брейки, рассадка на гала-ужине, движение автобусов, работа хостес. Каждый поток проверяется ногами — где образуется очередь, сколько занимает переход, откуда заезжает техника."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Залы: реальные размеры, высота потолка, колонны, точки подвеса для света и экранов, нагрузка на пол",
+            "Электрика: мощность, расположение вводов, отдельные линии под сцену и кухню кейтеринга",
+            "Монтаж: грузовой въезд, размеры дверей и лифтов, время, с которого отель пускает на монтаж",
+            "Интернет: выделенный канал под трансляцию и регистрацию, а не гостевой Wi-Fi",
+            "Потоки гостей: путь от номера до зала, регистрация, кофе-брейки, эвакуационные выходы",
+            "Open-air зоны: ветер, солнце, освещение после заката, шумовые ограничения отеля",
+            "Кухня и кейтеринг: дегустация, возможности по диетам, время подачи для больших групп",
+            "Резервные помещения: куда переносится программа при дожде, ветре или ремонте в зале"
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Что не видно на фотографиях",
+          "text": "Колонна посреди зала, низкий потолок, единственный грузовой лифт, чужая свадьба в соседнем зале в тот же вечер. Всё это выясняется только на площадке — и только до подписания договора с отелем, пока ещё можно поменять зал или даты."
+        },
+        {
+          "type": "heading",
+          "text": "Технический райдер и локальные подрядчики",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Технический райдер переводит замысел в требования: сцена, экраны, звук, свет, синхронный перевод, трансляция, электропитание. Его составляет агентство, а принимающая сторона отвечает на главный вопрос: чем каждая позиция обеспечивается на месте. Что даёт отель, что привозит локальный подрядчик, что нужно везти с собой — и какие разрешения потребуются на ввоз."
+        },
+        {
+          "type": "paragraph",
+          "text": "Локальные подрядчики — зона ответственности принимающей стороны, и это закрепляется в договоре. Заказчику не нужно знать имя монтажника, но нужно знать, что за звук отвечает та же компания, которая отвечает за всё остальное. Райдер согласовывается письменно, со схемами и списком оборудования, а не «по телефону». Инструкции для монтажных бригад в Египте готовятся на арабском."
+        },
+        {
+          "type": "image",
+          "url": "/carlsberg-5.JPG",
+          "alt": "Монтаж LED-экрана и звукового оборудования в конференц-зале перед мероприятием",
+          "caption": "Монтаж перед конференцией: экран, свет и звук ставятся по согласованной схеме, а не по памяти. Прогон с трансляцией и переводом проходит до того, как в зал войдёт первый гость"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Схема сцены и зала с размерами и точками подвеса",
+            "Список оборудования по позициям с указанием, кто его предоставляет",
+            "Электропитание: мощность, фазы, разъёмы и переходники",
+            "Расписание монтажа, прогона и демонтажа, согласованное с отелем",
+            "Резерв ключевых позиций: микрофоны, медиасервер, ноутбук спикера",
+            "Ответственный техник на всё время события, а не только на настройку"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Договоры и этапность оплаты",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Организация корпоративного мероприятия за рубежом держится на трёх уровнях договоров: заказчик — агентство, агентство — принимающая сторона, принимающая сторона — отели, площадки и подрядчики. Для заказчика удобна модель, в которой он подписывает один договор с одним исполнителем, а всю цепочку ниже исполнитель держит сам. Когда агентство и принимающая сторона — одна компания, так и происходит."
+        },
+        {
+          "type": "paragraph",
+          "text": "Оплата строится по вехам, а не по календарю: аванс закрепляет даты и блок номеров, следующие платежи привязаны к подтверждениям от отеля и подрядчиков, финальный расчёт — к сверке после мероприятия. Доли и сроки зависят от проекта, но принцип один: каждый платёж что-то фиксирует, и заказчик получает подтверждение этого до перевода."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Что должно быть в договоре",
+            "Зачем"
+          ],
+          "rows": [
+            [
+              "Перечень услуг по позициям",
+              "Чтобы у «полного цикла» были границы, а «дополнительно» не появлялось в финальном счёте"
+            ],
+            [
+              "Ростер и дедлайн изменений",
+              "Отель и авиакомпания живут по своим срокам; после дедлайна каждое имя — отдельное согласование"
+            ],
+            [
+              "Условия отмены и сокращения группы",
+              "Правила отелей и площадок в стране проведения отличаются от привычных"
+            ],
+            [
+              "Форс-мажор и план Б",
+              "Кто и как принимает решение о переносе и что считается основанием"
+            ],
+            [
+              "Язык договора и документов",
+              "Английский плюс арабский для площадок; какая версия имеет силу"
+            ],
+            [
+              "Ответственный руководитель проекта",
+              "Имя, телефон, часы доступности — одна точка ответственности"
+            ]
+          ],
+          "caption": "Минимальный состав договора с принимающей стороной. Суммы и доли платежей — предмет переговоров, структура — нет"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Что попросить до подписания",
+          "text": "Подтверждение бронирования от отеля напрямую, копии лицензий принимающей стороны, примеры пермитов на аналогичные площадки, контакты duty-office. Компания, которая работает легально и давно, показывает это без задержки."
+        },
+        {
+          "type": "heading",
+          "text": "План Б: погода, логистика, люди",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Зарубежное мероприятие живёт в реальной среде: в Шарм-эль-Шейхе к вечеру поднимается ветер, в Каире летом жарко уже с утра, рейс может задержаться, а ключевой спикер — заболеть. План Б — это не «что-нибудь придумаем», а заранее согласованные и оплаченные резервы с порогом принятия решения и человеком, который это решение принимает."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Open-air формат: закрытый резервный зал в том же отеле и время, до которого принимается решение о переносе",
+            "Уличные программы в Каире и на плато Гизы: ранний старт летом, тень и вода на каждой точке, сокращённый маршрут в запасе",
+            "Трансферы: резервный транспорт на маршруте, свои водители, VIP-встреча и fast-track в аэропорту на случай задержки рейса",
+            "Люди: дублёр на каждую ключевую роль — ведущий, звукорежиссёр, руководитель площадки",
+            "Техника: резервный комплект микрофонов, медиасервера и питания на площадке, а не на складе подрядчика",
+            "Медицина: ближайшая клиника, контакты страховой, человек, который сопровождает гостя"
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/nl-6.jpg",
+          "alt": "Деловая сессия корпоративного выезда NL International: сцена, LED-экран и дублирующий экран в зале",
+          "caption": "Семидневный выезд NL International в Park Regency: деловая программа в зале и вечерние форматы под открытым небом. Для каждого open-air вечера резервная площадка согласуется заранее"
+        },
+        {
+          "type": "heading",
+          "text": "Коммуникация: одна точка ответственности и duty-office 24/7",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Большинство срывов за границей происходит не из-за нехватки ресурсов, а из-за разрыва в коммуникации: заказчик договорился с отелем, отель не сказал подрядчику, подрядчик приехал не в то время. Рабочая модель проста: один руководитель проекта со стороны заказчика, один — со стороны исполнителя, общий рабочий чат и единый документ с таймингом, который обновляется в одном месте."
+        },
+        {
+          "type": "comparison",
+          "title": "Как устроена коммуникация",
+          "left": {
+            "title": "ПРОЕКТ СОРВЁТСЯ",
+            "items": [
+              "Заказчик пишет отелю, агентству и подрядчикам параллельно",
+              "Тайминг живёт в пяти версиях в разных переписках",
+              "На площадке никто не знает, кто принимает решение",
+              "Инструкции подрядчикам передаются устно и на английском",
+              "Ночью и в выходные связаться не с кем"
+            ]
+          },
+          "right": {
+            "title": "ПРОЕКТ СРАБОТАЕТ",
+            "items": [
+              "Одна точка ответственности со стороны исполнителя",
+              "Единый run-sheet на двух языках с одним владельцем",
+              "Порядок эскалации: кто решает и в какие сроки",
+              "Письменные инструкции подрядчикам на арабском, со схемами",
+              "Duty-office 24/7 на всё время мероприятия"
+            ]
+          }
+        },
+        {
+          "type": "stat",
+          "number": "24/7",
+          "label": "duty-office принимающей стороны работает круглосуточно на всё время мероприятия: один номер, по которому решается любой вопрос — от опоздавшего трансфера до замены микрофона"
+        },
+        {
+          "type": "heading",
+          "text": "Контроль на месте: день мероприятия",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Команда принимающей стороны выходит на площадку раньше гостей: монтаж, приёмка залов по чек-листу, прогон со звуком, светом, трансляцией и переводом. В день мероприятия у каждого потока свой координатор — регистрация, зал, кейтеринг, трансферы, вечерняя программа, — и все они выходят на одного руководителя площадки. Заказчик видит одного человека и получает статусы, а не проблемы."
+        },
+        {
+          "type": "paragraph",
+          "text": "Отклонения неизбежны, важно, как они обрабатываются. Задержался автобус — гостей встречает координатор, программа сдвигается по заранее согласованному сценарию. Вышел из строя микрофон — резерв уже на сцене. Ни одно из этих решений не требует звонка заказчику: он узнаёт о них из отчёта, а не в момент кризиса."
+        },
+        {
+          "type": "heading",
+          "text": "Разбор после мероприятия",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Проект заканчивается не отъездом гостей, а закрытием: сверка счетов отеля и подрядчиков с договором, акты и документы на английском и арабском, передача фото- и видеоматериалов с правами на использование, обратная связь от участников. И короткий разбор с принимающей стороной: что сработало, что пришлось менять на ходу и что заложить в следующий проект."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Сверка финального счёта с договором и ростером — построчно",
+            "Пакет закрывающих документов на нужных языках",
+            "Фото, видео и материалы съёмки с правами и разрешениями",
+            "Отчёт о ходе мероприятия: отклонения от сценария и принятые решения",
+            "Рекомендации для следующего выезда: площадка, сезон, формат"
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Что спросить у принимающей стороны до старта",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Кто именно будет руководителем нашего проекта и как с ним связаться в любое время?",
+            "Какие договоры с отелями и площадками у вас прямые, а какие — через посредников?",
+            "Какие разрешения потребуются для нашей программы и кто их оформляет?",
+            "Кто отвечает за локальных подрядчиков и как согласуется технический райдер?",
+            "Как устроен план Б для уличных форматов и логистики?",
+            "Какие документы мы получим на выходе и на каких языках?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event работает в Египте с 2004 года как MICE-агентство и DMC полного цикла: собственная команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями, судовладельцами и площадками, разрешения на мероприятия и съёмку в охраняемых зонах, гиды-египтологи на русском и английском, трансферы со своими водителями, кейтеринг, декор, техника и duty-office 24/7. Если вы планируете выездное корпоративное мероприятие в Каире или Шарм-эль-Шейхе, начните с разговора о модели работы — мы предложим схему ответственности под ваш проект до того, как будет подписан первый договор."
+        }
+      ]
+    },
+    "en": {
+      "title": "Organizing a Corporate Event Abroad: How to Work With a Local DMC So Nothing Falls Through",
+      "category": "Business Events",
+      "date": "September 17, 2026",
+      "excerpt": "Who does what at a corporate event abroad: permits and visas, site inspection, the tech rider, contracts, plan B and on-site control when working with a DMC.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "A corporate event abroad differs from a home project in one fundamental way: you cannot simply drive over and take a look. The venue, the contractors, the permits, the drivers and the kitchen are all in another country, another time zone and, more often than not, another language. So the central question of organizing an event overseas is not what to do but who owns each piece, and how to structure the work with a local DMC so that every task has a name attached to it."
+        },
+        {
+          "type": "paragraph",
+          "text": "We have already published a month-by-month preparation checklist. This article is about the operating model instead: how responsibility is split between the client, the agency and the destination management company, which documents and permits you will need abroad, why a site inspection is non-negotiable, how contracts and payment stages are structured, and what actually happens on the ground on event day. The examples come from Egypt, from Cairo and Sharm El Sheikh, where we act as the receiving party."
+        },
+        {
+          "type": "heading",
+          "text": "A corporate event abroad has three parties and one point of accountability",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Destination event planning involves three parties. The client sets the goals, approves the budget and owns the content: the program, the speakers, the guest list. The agency turns those goals into a project: concept, script, production, coordination. The DMC, the destination management company, is the receiving party in the host country. It holds the contracts with hotels and venues, the licenses needed to obtain permits, and its own drivers, guides and contractors."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Area",
+            "Client",
+            "Agency",
+            "DMC (receiving party)"
+          ],
+          "rows": [
+            [
+              "Goals and program",
+              "Sets the brief, approves content and speakers",
+              "Writes the script and timing, directs the show",
+              "Adapts the script to the venue and local rules"
+            ],
+            [
+              "Participants",
+              "Collects the list, passport data and questionnaires",
+              "Manages the roster and guest communication",
+              "Visa support, rooming, airport meet-and-greet"
+            ],
+            [
+              "Venue and hotel",
+              "Approves the choice",
+              "Builds the shortlist and requirements",
+              "Books on direct contracts, manages the hotel before and during the event"
+            ],
+            [
+              "Documents and permits",
+              "Provides data and authorizations",
+              "Assembles the package, tracks deadlines",
+              "Obtains permits for venues, filming and protected sites"
+            ],
+            [
+              "Technical and decor",
+              "Approves the rider and visuals",
+              "Writes the technical rider",
+              "Sources local contractors, builds, runs the rehearsal"
+            ],
+            [
+              "Logistics",
+              "Provides flight schedules",
+              "Designs the movement plan",
+              "Transfers with in-house drivers, fast-track, escort"
+            ],
+            [
+              "On site",
+              "Makes program decisions",
+              "Project lead on the floor",
+              "Duty office 24/7, coordinators, contractor liaison"
+            ]
+          ],
+          "caption": "How responsibility is split when organizing an event overseas. Every row should end in a name and a phone number, not a company name"
+        },
+        {
+          "type": "paragraph",
+          "text": "The agency and the DMC can be the same company; that is how we work in Egypt, with our own team in Cairo and Sharm El Sheikh, direct contracts with hotels, ship owners and venues, and no subcontracting of the event itself. But even when the two are separate, the client needs a single point of accountability: one person who owns the whole project and deals with the hotel, the contractors and the permits personally. The moment the client has to call the hotel directly, the model is already broken."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "The one rule",
+          "text": "Every task has exactly one owner. Not 'the hotel promised' or 'the contractor said', but a named person on the DMC side who knows the current status and answers for the result. Everyone else is a supplier within that person's area."
+        },
+        {
+          "type": "image",
+          "url": "/afa-3.JPG",
+          "alt": "AFA conference hall in Sharm El Sheikh: classroom seating, screens and a draped ceiling",
+          "caption": "AFA conference in Sharm El Sheikh: the hall, the light, the screens and the seating come out of an agreed rider and a site inspection, not out of the hotel brochure"
+        },
+        {
+          "type": "heading",
+          "text": "Documents and permits you will need abroad",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The paperwork of an international event runs in two streams: documents for the participants and documents for the event itself. Clients know the first stream from their home projects; the second is where overseas surprises live."
+        },
+        {
+          "type": "heading",
+          "text": "Visas and insurance for participants",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Entry rules depend on the passport of each participant and on the region: for Sharm El Sheikh and Cairo they differ, and the first thing a DMC does is check the group list against the current regulations. The client collects passport data and questionnaires, the agency keeps the roster, the receiving party prepares visa support and accommodation confirmations where required. Medical insurance must be valid in the host country and cover the actual program: a yacht day, a desert evening or a dive are not a stay at the hotel."
+        },
+        {
+          "type": "heading",
+          "text": "Permits for venues, filming and protected sites",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "In Egypt, an event or a shoot on the Giza Plateau, in a museum or in historic Cairo happens only with a permit. It is issued for a specific date, location, headcount and format, and only a licensed local company can apply for it. Three things matter to the client here: the permit is requested in advance and on the basis of the script; changing the format after the permit is issued means a new approval; and filming is a separate permit that is not part of renting the venue."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Participant list with passport data, for visas, rooming and site access",
+            "Event script and timing, which is the basis for permits in protected zones",
+            "Inventory of equipment and decor being imported or installed at the venue",
+            "Photo and video brief: locations, equipment, drone use",
+            "Company details and authorizations for contracts with the hotel and venues",
+            "Dietary and medical questionnaires, for catering and insurance"
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "The language of the paperwork",
+          "text": "Contracts with Egyptian venues and suppliers, permits and invoices exist in Arabic. The DMC should issue the client documentation in English and Arabic and take responsibility for the two versions matching. This is not a formality: these are the documents your finance team will use to close the project."
+        },
+        {
+          "type": "heading",
+          "text": "Site inspection: why you go and what you check",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Hotel photos and floor plans show what a venue looks like. An inspection shows how it works. The DMC walks it together with the project lead from the client or the agency, and the output is not an impression but a document: hall drawings with real dimensions, a list of constraints and a decision on every disputed point."
+        },
+        {
+          "type": "paragraph",
+          "text": "At the Carlsberg conference for 1,000 participants at Domina Coral Bay, the inspection was never only about the main hall. A thousand guests are flows: registration, coffee breaks, gala dinner seating, bus movements, hostess positions. Each flow is checked on foot: where the queue forms, how long the walk takes, where the equipment comes in."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Halls: real dimensions, ceiling height, columns, rigging points for light and screens, floor load",
+            "Power: capacity, location of feeds, separate lines for the stage and the catering kitchen",
+            "Load-in: service entrance, door and lift sizes, the hour the hotel allows the build to start",
+            "Internet: a dedicated line for streaming and registration, not the guest Wi-Fi",
+            "Guest flows: room to hall, registration, coffee breaks, emergency exits",
+            "Open-air areas: wind, sun, lighting after sunset, the hotel noise curfew",
+            "Kitchen and catering: tasting, dietary options, service time for large groups",
+            "Backup rooms: where the program moves in case of rain, wind or works in the hall"
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "What photos never show",
+          "text": "A column in the middle of the hall, a low ceiling, a single service lift, a wedding in the next room on the same night. All of this surfaces only on site, and only before the hotel contract is signed, while the hall or the dates can still be changed."
+        },
+        {
+          "type": "heading",
+          "text": "The technical rider and local contractors",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The technical rider translates the idea into requirements: stage, screens, sound, light, simultaneous interpretation, streaming, power. The agency writes it; the DMC answers the key question of how each line is delivered on site. What the hotel provides, what a local contractor brings, what has to travel with the group, and which import permits that requires."
+        },
+        {
+          "type": "paragraph",
+          "text": "Local contractors are the DMC's responsibility, and the contract should say so. The client does not need the name of the rigger, but does need to know that the company answering for everything else also answers for the sound. The rider is agreed in writing, with drawings and an equipment list, not over the phone. In Egypt, instructions for the build crews are prepared in Arabic."
+        },
+        {
+          "type": "image",
+          "url": "/carlsberg-5.JPG",
+          "alt": "LED wall and sound equipment being installed in a conference hall before an event",
+          "caption": "Build day before a conference: screen, light and sound go up according to the agreed drawing, not from memory. The full rehearsal with streaming and interpretation happens before the first guest walks in"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Stage and hall drawing with dimensions and rigging points",
+            "Equipment list by line item, stating who supplies each one",
+            "Power: capacity, phases, connectors and adapters",
+            "Build, rehearsal and strike schedule agreed with the hotel",
+            "Backup for critical items: microphones, media server, speaker laptop",
+            "A named technician for the whole event, not just for the setup"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Contracts and payment stages",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Working with a DMC means three layers of contracts: client to agency, agency to DMC, DMC to hotels, venues and suppliers. The convenient model for the client is one contract with one provider, with the provider holding the entire chain below. When the agency and the DMC are the same company, that is exactly what happens."
+        },
+        {
+          "type": "paragraph",
+          "text": "Payments follow milestones rather than the calendar: a deposit secures the dates and the room block, the following payments are tied to confirmations from the hotel and the suppliers, and the final settlement follows the post-event reconciliation. The shares and timing depend on the project, but the principle is constant: every payment locks something in, and the client sees proof of it before the transfer."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "What the contract must include",
+            "Why"
+          ],
+          "rows": [
+            [
+              "Itemized list of services",
+              "So that full service has boundaries and nothing extra appears on the final invoice"
+            ],
+            [
+              "Roster and change deadline",
+              "Hotels and airlines run on their own deadlines; after the cutoff every name is a separate approval"
+            ],
+            [
+              "Cancellation and attrition terms",
+              "Hotel and venue terms in the host country differ from what you are used to"
+            ],
+            [
+              "Force majeure and plan B",
+              "Who decides on a change of plan, how, and what counts as grounds"
+            ],
+            [
+              "Language of the contract and documents",
+              "English plus Arabic for venues; which version prevails"
+            ],
+            [
+              "Named project lead",
+              "Name, phone, hours of availability: the single point of accountability"
+            ]
+          ],
+          "caption": "The minimum content of a contract with a DMC. Amounts and payment shares are negotiable; the structure is not"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Ask for this before you sign",
+          "text": "A booking confirmation from the hotel itself, copies of the DMC's licenses, examples of permits for similar venues, and the duty office contacts. A company that has been operating legally for years produces these without delay."
+        },
+        {
+          "type": "heading",
+          "text": "Plan B: weather, logistics, people",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "An event abroad lives in a real environment. In Sharm El Sheikh the wind picks up in the evening, in Cairo the summer heat starts early in the morning, a flight can be delayed and a keynote speaker can fall ill. Plan B is not a promise to figure something out, but reserves that are agreed and paid for in advance, with a decision threshold and a person who makes the call."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Open-air formats: an indoor backup room in the same hotel and a cutoff time for the decision to move",
+            "Outdoor programs in Cairo and on the Giza Plateau: early start in summer, shade and water at every stop, a shortened route in reserve",
+            "Transfers: backup vehicles on the route, in-house drivers, VIP meet-and-greet and fast-track at the airport in case of flight delays",
+            "People: an understudy for every critical role, from the host to the sound engineer to the floor manager",
+            "Equipment: a backup set of microphones, media server and power on site, not in the supplier warehouse",
+            "Medical: the nearest clinic, the insurer hotline, a person who accompanies the guest"
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/nl-6.jpg",
+          "alt": "Business session at the NL International corporate retreat: stage, LED screen and a relay screen in the hall",
+          "caption": "The seven-day NL International retreat at Park Regency: business sessions in the hall and evening formats outdoors. For every open-air evening, the backup venue is agreed in advance"
+        },
+        {
+          "type": "heading",
+          "text": "Communication: one point of accountability and a 24/7 duty office",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Most failures abroad come not from a lack of resources but from a gap in communication: the client agreed something with the hotel, the hotel did not tell the contractor, the contractor arrived at the wrong hour. The working model is simple. One project lead on the client side, one on the provider side, a shared working chat and a single run sheet that is updated in one place only."
+        },
+        {
+          "type": "comparison",
+          "title": "How the communication is set up",
+          "left": {
+            "title": "IT FALLS THROUGH",
+            "items": [
+              "The client writes to the hotel, the agency and the contractors in parallel",
+              "The timing exists in five versions across different threads",
+              "Nobody on site knows who makes the decision",
+              "Contractor instructions are passed on verbally and in English",
+              "Nobody answers at night or on weekends"
+            ]
+          },
+          "right": {
+            "title": "IT HOLDS",
+            "items": [
+              "A single point of accountability on the provider side",
+              "One bilingual run sheet with one owner",
+              "An escalation path: who decides and how fast",
+              "Written instructions to contractors in Arabic, with drawings",
+              "A duty office working 24/7 for the whole event"
+            ]
+          }
+        },
+        {
+          "type": "stat",
+          "number": "24/7",
+          "label": "the DMC duty office runs around the clock for the entire event: one number that resolves any issue, from a late transfer to a microphone swap"
+        },
+        {
+          "type": "heading",
+          "text": "On-site control: event day",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The DMC team is on site before the guests: build, hall acceptance against a checklist, full rehearsal with sound, light, streaming and interpretation. On event day every flow has its own coordinator, from registration and the hall to catering, transfers and the evening program, and all of them report to one floor manager. The client sees one person and receives status updates, not problems."
+        },
+        {
+          "type": "paragraph",
+          "text": "Deviations are inevitable; what matters is how they are handled. A bus is late: a coordinator meets the guests and the program shifts according to a scenario agreed in advance. A microphone fails: the backup is already on stage. None of these decisions requires a call to the client, who learns about them from the report rather than in the middle of a crisis."
+        },
+        {
+          "type": "heading",
+          "text": "The post-event review",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The project ends not when the guests leave but when it is closed: hotel and supplier invoices reconciled against the contract, closing documents in English and Arabic, photo and video handed over with usage rights, participant feedback collected. And a short review with the DMC: what worked, what had to change on the fly, and what to build into the next project."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Line-by-line reconciliation of the final invoice against the contract and the roster",
+            "A closing document package in the required languages",
+            "Photo, video and shoot materials with rights and permits",
+            "An event report: deviations from the script and the decisions taken",
+            "Recommendations for the next trip: venue, season, format"
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "What to ask a DMC before you start",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Who exactly will lead our project and how do we reach that person at any hour?",
+            "Which hotel and venue contracts are direct and which go through intermediaries?",
+            "Which permits will our program require and who obtains them?",
+            "Who is responsible for local contractors and how is the technical rider agreed?",
+            "How is plan B set up for outdoor formats and logistics?",
+            "Which documents do we receive at the end and in which languages?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event has worked in Egypt since 2004 as a full-cycle MICE agency and DMC: an in-house team in Cairo and Sharm El Sheikh, direct contracts with hotels, ship owners and venues, permits for events and filming in protected sites, Russian- and English-speaking Egyptologist guides, transfers with our own drivers, catering, decor, technical production and a 24/7 duty office. If you are planning a corporate event abroad in Cairo or Sharm El Sheikh, start with a conversation about the operating model, and we will propose a responsibility scheme for your project before the first contract is signed."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    "id": "insentiv-tur-v-egipet",
+    "datePublished": "2026-09-17",
+    "image": "/nl-16.jpg",
+    "ru": {
+      "title": "Инсентив-тур в Египет: маршруты, сезон и программы, которые запоминаются",
+      "category": "Корпоративная культура",
+      "date": "17 сентября 2026",
+      "excerpt": "Инсентив-тур в Египет: три маршрута по дням — Шарм, Каир и Нил, — сезон, размер группы, приватный доступ к пирамидам и что прислать в брифе.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Инсентив-тур в Египет — это поездка, в которой за одну неделю умещаются три разные среды: Красное море, пустыня Синая и пять тысяч лет истории. Компания награждает лучших сотрудников или партнёров не отелем, а доступом: к рифу с борта своей яхты, к плато Гизы без других посетителей, к храму, куда большие суда не заходят. В этой статье — конкретика по направлению: когда ехать, как выстроить маршрут по дням в Шарм-эль-Шейхе, Каире и на Ниле, из чего собирается программа и что нужно прислать нам, чтобы получить её в ответ."
+        },
+        {
+          "type": "paragraph",
+          "text": "О том, чем мотивационная поездка отличается от корпоратива и как считать её эффект, мы писали отдельно. Здесь исходим из того, что решение принято, и разбираем только Египет."
+        },
+        {
+          "type": "stat",
+          "number": "20–100",
+          "label": "гостей — расчётный размер группы для каждой из десяти авторских программ. Команды по пять человек, у каждого своя роль и свой предмет, без которого станция не решается"
+        },
+        {
+          "type": "heading",
+          "text": "Почему Египет подходит для инсентив-тура",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Поощрительная поездка для сотрудников живёт впечатлениями, а не переездами. Египет выигрывает тем, что впечатления здесь лежат близко друг к другу: из отеля на Красном море за час можно оказаться в горах Синая, а между каирским отелем и пирамидами — дорога через город. Прямой перелёт из Москвы занимает около четырёх часов, и группа прилетает без потерянного дня на акклиматизацию."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Море: риф прямо от берега Шарм-эль-Шейха, яхты под приватный фрахт, снорклинг и первое погружение с инструктором для тех, кто никогда не нырял.",
+            "Пустыня: горы Синая в часе езды от отелей, чай у бедуинов, лагерь, который зажигается в темноте, и небо, ради которого стоит выключить фары.",
+            "История: плато Гизы, Большой Египетский музей, улица Аль-Муизз в старом Каире, храмы Луксора и Асуана — с гидами-египтологами на русском и английском.",
+            "Инфраструктура: отели, где вся группа живёт под одной крышей, а конференц-зал, пляж и площадка для гала-вечера находятся в пяти минутах друг от друга."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Сезон: с октября по май и летнее правило",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Основной сезон для инсентива в Египте — с октября по май: комфортная температура для уличных программ, прозрачное небо для вечера в пустыне, тёплое море. Дахабии Nour El Nil ходят по Нилу с сентября по май, и это хороший ориентир для речной части поездки. Лето не закрыто, но у него свои правила."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Летнее правило",
+          "text": "С мая по сентябрь уличные программы стартуют рано утром или после четырёх. Летом мы не ставим Гизу в полдень ни за какие деньги: квест на плато выходит на рассвете, вечер в пустыне начинается по закату, а середина дня отдаётся морю, спа и залам с кондиционером."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-25.jpg",
+          "alt": "Команда на верхней палубе яхты в Красном море во время инсентив-тура в Шарм-эль-Шейхе",
+          "caption": "Яхта под приватный фрахт — самый простой способ собрать всю группу в одном кадре. Наш проект для EWA product в Шарм-эль-Шейхе"
+        },
+        {
+          "type": "heading",
+          "text": "Три шаблона маршрута по дням",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Ниже — три каркаса, с которых мы обычно начинаем разговор. Их можно соединять: Шарм плюс Каир — самая частая связка, Каир плюс Нил — самая насыщенная. Дни указаны без цен и без расписания по минутам: это карта, а не смета."
+        },
+        {
+          "type": "heading",
+          "text": "Шарм-эль-Шейх: «море и пустыня»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Формат для групп, которым нужен один отель на всю поездку и максимум времени на воздухе. Всё, кроме перелёта, происходит в радиусе часа от номера."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "День",
+            "Что происходит"
+          ],
+          "rows": [
+            [
+              "День 1",
+              "Прилёт, VIP-встреча и fast-track в аэропорту, трансфер своими водителями, заселение. Вечером — приветственный ужин на берегу без сцены и речей."
+            ],
+            [
+              "День 2",
+              "Свободное утро на пляже. После обеда — «Последняя запись археолога»: два с половиной часа в музее Шарм-эль-Шейха в вечерний заход, между морем и ужином."
+            ],
+            [
+              "День 3",
+              "«Ладья идёт за солнцем»: восемь часов на четырёхпалубной яхте под приватный фрахт. Половина группы уходит на риф со снорклингом или первым погружением, половина работает в штабе на борту. Возвращение в закат."
+            ],
+            [
+              "День 4",
+              "День без программы: спа, море, дайвинг для сертифицированных. Вечером — гала-ужин с награждением."
+            ],
+            [
+              "День 5",
+              "«Путь к звёздам»: выезд в горы Синая по закату, чай у бедуинов, лагерь в темноте, ужин под небом и своя звезда в телескопе у каждого."
+            ],
+            [
+              "День 6",
+              "Поздний завтрак, выезд, fast-track на вылете."
+            ]
+          ],
+          "caption": "Шесть дней, один отель, два выезда за его пределы. Порядок дней меняется под даты и погоду"
+        },
+        {
+          "type": "heading",
+          "text": "Каир: «история и приватный доступ»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Формат для тех, кто уже видел пирамиды из окна автобуса и хочет провести с ними день, где надо думать. Ядро маршрута — плато Гизы до открытия или после закрытия для публики: только ваша группа, все три камеры Великой пирамиды и вход внутрь ограждения Сфинкса."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "День",
+            "Что происходит"
+          ],
+          "rows": [
+            [
+              "День 1",
+              "Прилёт в Каир, VIP-встреча, заселение. Вечером — «Последний кадр»: иммерсивный ужин из трёх подач на премьере 1959 года, где финал фильма выбирает зал. В Каире его можно провести на судне на Ниле целиком."
+            ],
+            [
+              "День 2",
+              "«Код пирамид»: четыре часа на плато Гизы с ранним стартом. Шесть команд, дневник археолога, в котором половина написанного — ложь, и ларец, который откроется только всем вместе."
+            ],
+            [
+              "День 3",
+              "«Последняя страница»: четыре часа в Большом Египетском музее. Группа становится редакцией каталога и ловит ошибки, глядя на оригиналы. Дополнительно — первая лодка Хуфу."
+            ],
+            [
+              "День 4",
+              "«Четыре руки, одно письмо»: улица Аль-Муизз, каллиграф, медник и чайная. Каждый пишет тушью одно слово, и во дворе из этих слов собирается письмо, последняя строка которого — про вашу компанию."
+            ],
+            [
+              "День 5",
+              "Приватный доступ к пирамидам. Утренний слот: выезд из отеля затемно, плато без других людей, панорамная площадка на рассвете, завтрак с видом на пирамиды. Или вечерний слот — после закрытия плато, в закатном свете. Вылет вечером или переезд в Шарм-эль-Шейх."
+            ]
+          ],
+          "caption": "Пять дней в Каире. Приватный доступ ставим последним днём: после него любая обычная экскурсия выглядит бледно"
+        },
+        {
+          "type": "image",
+          "url": "/cruises/lumiere-island-dinner.webp",
+          "alt": "Ужин у костра на острове Хербиаб во время приватного чартера по Нилу",
+          "caption": "Приватный чартер Lumière: стоянка у острова Хербиаб и ужин у костра — вечер, который есть только у группы, идущей на своём судне"
+        },
+        {
+          "type": "heading",
+          "text": "Нил: «круиз как инсентив»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Круиз решает главную задачу инсентива без усилий: группа несколько дней живёт вместе, без переездов и чемоданов, а маршрут сам приводит к Карнаку, Долине Царей, Эдфу, Ком-Омбо и Филе. Три варианта — по размеру группы и характеру поездки."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Классический круиз Луксор — Асуан на 3, 4 или 7 ночей: Le Fayan Suites, где нет обычных кают, только сьюты с панорамными окнами, или Soleil — самое вместительное из наших судов с самым большим спа на Ниле. Формат для групп от 20 до 80 человек и больше.",
+            "Приватный чартер Lumière: восемь кают, до 20 гостей, пять ночей Луксор — Асуан по вашему расписанию. Ночёвки у островов Фавза и Хербиаб, ужин у костра, приватные вечера в храмах. Формат для правления и ключевых партнёров.",
+            "Дахабия Nour El Nil: парусная лодка на 16–24 гостя, шесть дней Эсна — Асуан. Стоянки у пустынных берегов и ночь у подсвеченного храма в Гебель-эль-Сильсила, куда большим судам нельзя. Для тех, кому нужен не маршрут, а ритм."
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "День",
+            "Приватный чартер Lumière, Луксор → Асуан"
+          ],
+          "rows": [
+            [
+              "День 1",
+              "Прилёт в Луксор, посадка на судно. Карнак и Луксорский храм до заката, первый ужин на борту."
+            ],
+            [
+              "День 2",
+              "Долина Царей, храм Хатшепсут и Колоссы Мемнона с утра. Отход, ночёвка у острова Фавза."
+            ],
+            [
+              "День 3",
+              "Эдфу: храм Гора, подъезд на конных экипажах. Вечером — ужин у костра на острове Хербиаб."
+            ],
+            [
+              "День 4",
+              "Гебель-эль-Сильсила и Ком-Омбо: храм Собека на излучине реки. Вечер на солнечной палубе."
+            ],
+            [
+              "День 5",
+              "Асуан: остров Филе, нубийская деревня на лодках. Приватный вечер в храме и церемония награждения."
+            ],
+            [
+              "День 6",
+              "Высадка. По желанию — Абу-Симбел, затем вылет из Асуана."
+            ]
+          ],
+          "caption": "Судно идёт по расписанию группы, поэтому остановки и вечера двигаются под программу"
+        },
+        {
+          "type": "image",
+          "url": "/cruises/dahabiya-sail-sunset.webp",
+          "alt": "Дахабия Nour El Nil под парусом на закате — круиз по Нилу для небольшой группы",
+          "caption": "Дахабия идёт под парусом: до 24 гостей, вся лодка под группу и шесть дней, в которые никто никуда не спешит"
+        },
+        {
+          "type": "heading",
+          "text": "Из чего складывается программа",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Шаблон маршрута — это каркас. Программой он становится, когда в нём есть четыре элемента, и у каждого своя роль."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Гала-вечер с награждением. Кульминация поездки, ради которой её объявляли. В Шарме это площадка на берегу или на скале под открытым небом, в Каире — судно на Ниле, в круизе — верхняя палуба.",
+            "Квест на настоящем месте. Одна из десяти авторских программ: плато, музей, улица, яхта или горы становятся полем игры, а гиды-египтологи рассказывают их подлинную историю. Роли в команде разные, и не все они про говорить: обычно к середине самые тихие гости оказываются самыми вовлечёнными.",
+            "Свободный день. Инсентив — не конференция: минимум обязательного, максимум выбора. Один день без программы делает остальные сильнее.",
+            "Финал, который остаётся. У каждой программы есть предмет, который гость увозит домой, и это не сувенир с логотипом."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Что остаётся после программы",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Мы проектируем финал так, чтобы у него был физический след. Вот что увозят гости из разных программ:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "«Ладья идёт за солнцем» — именная печать с вашим именем египетскими знаками и съёмка с камер инструкторов.",
+            "«Путь к звёздам» — именная карточка со «своей» звездой и подписью астронома.",
+            "«Код пирамид» — восстановленный маршрут с фотографиями всех команд, письмо экспедиции и фрагмент солнечной печати каждому гостю.",
+            "«Последняя страница» — вёрстка собранной последней страницы каталога с подписями всех команд и именем вашей компании в выходных данных.",
+            "«Четыре руки, одно письмо» — карточка со своим словом, написанным тушью под рукой мастера, и копия собранного письма.",
+            "«Последний кадр» — общий снимок с хлопушкой в рамке из киноплёнки, напечатанный к выходу, и имя в титрах."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "Правило финала",
+          "text": "Ошибиться можно, остаться без финала нельзя — это правило записано в каждом сценарии отдельной строкой. Развязку услышат все, и предмет получит каждый гость, а не только команда-победитель."
+        },
+        {
+          "type": "heading",
+          "text": "Размер группы и логистика",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Авторские программы рассчитаны на группы от 20 до 100 гостей. На приватный доступ к пирамидам действует ограничение — до 50 гостей на один пермит, поэтому большая группа делится на два слота, утренний и вечерний. На реке размер группы задаёт судно: Lumière берёт до 20 гостей, дахабия — до 24, Le Fayan Suites — до 74, Soleil — до 106."
+        },
+        {
+          "type": "paragraph",
+          "text": "Группы больше ста мы тоже возим, но это уже гибрид инсентива и конференции, где отель становится базой. Так был устроен семидневный выезд NL International на 300 участников в Park Regency: деловые сессии в конференц-залах, мастер-классы по йоге, визажу, танцам и живописи, тимбилдинг-квесты, вечер в стиле «Luxury Egypt» и «Белая вечеринка» на скале под открытым небом. Пятидневный выезд EWA product в Rixos Seagate соединил воркшопы, мастер-классы и тимбилдинг с вечерами на площадках Marlin и Space. А конференция Carlsberg на тысячу участников в Domina Coral Bay прошла с полным техническим продакшном — от логистики до финального гала-ужина."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-21.jpg",
+          "alt": "Большая группа в куфиях на фоне гор Синая — выезд в пустыню в рамках инсентив-тура",
+          "caption": "Выезд в пустыню Синая: горы в часе езды от отелей Шарм-эль-Шейха. Наш проект для EWA product"
+        },
+        {
+          "type": "heading",
+          "text": "Что берём на себя",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            "VIP-встреча и fast-track в аэропортах Каира и Шарм-эль-Шейха, трансферы по всему Египту своими водителями.",
+            "Пермиты на плато Гизы, в музеях и историческом Каире, разрешения на съёмку и мероприятия в охраняемых зонах.",
+            "Гиды-египтологи на русском и английском. Программы ведём на обоих языках одинаково, международной группе это подходит.",
+            "Отели, суда и площадки по прямым контрактам — без субподрядчика между вами и исполнителем.",
+            "Координация и duty-office 24/7 на всё время поездки."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "На подготовку авторской программы нужно от четырёх до шести недель: разведка площадки, изготовление реквизита, персональные детали — имя компании, дата, факт из её истории. «Сокровища Ра» и «Фараон. Пропавшая экспедиция», которые мы привозим с декорациями в ваш зал, требуют восемь–десять недель на первый показ. Круиз и приватный доступ к пирамидам бронируются под конкретные даты, поэтому чем раньше известен месяц поездки, тем шире выбор."
+        },
+        {
+          "type": "heading",
+          "text": "Что прислать в брифе",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Чтобы вернуться с маршрутом, а не с вопросами, нам нужны пять вещей:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Дата или месяц поездки — от этого зависит сезонная логика: стартуем ли на рассвете, ходит ли дахабия, свободно ли судно.",
+            "Число гостей — оно задаёт судно, количество пермитов и формат гала-вечера.",
+            "Отель, если он уже выбран, или город: Шарм-эль-Шейх, Каир, Луксор.",
+            "Язык группы — русский, английский или оба.",
+            "Цели поездки: кого награждаете, за что и какой момент должен стать главным. Из ответов на короткий вопросник мы собираем финал программы."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Прогон без обязательств",
+          "text": "Для тех, кто принимает решение, мы проводим сорокапятиминутный прогон одной станции выбранной программы. Без обязательств и без оплаты — чтобы вы увидели формат до того, как объявите поездку команде."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event работает в Египте с 2004 года: собственная команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями, судовладельцами и площадками, пермиты и гиды-египтологи — всё внутри одной компании. Напишите дату и число гостей — вернёмся с маршрутом по дням."
+        }
+      ]
+    },
+    "en": {
+      "title": "Incentive Travel to Egypt: Itineraries, Seasons and Programs Teams Remember",
+      "category": "Corporate Culture",
+      "date": "September 17, 2026",
+      "excerpt": "Incentive travel to Egypt: three day-by-day itineraries for Sharm El Sheikh, Cairo and the Nile, the best season, group sizes and what to put in your brief.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Incentive travel to Egypt works because three very different worlds sit within an hour of each other: the Red Sea, the Sinai desert and five thousand years of history. A company that rewards its best people here is not buying them a hotel; it is buying access. A reef from the deck of a private yacht. The Giza plateau with no other visitors on it. A temple that cruise ships cannot reach. This guide is about Egypt specifically: when to travel, how to build a day-by-day itinerary in Sharm El Sheikh, Cairo or on the Nile, what turns a route into a program, and what we need from you to send one back."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you are still deciding whether an incentive trip is the right tool at all, we have covered formats and impact in a separate piece. Here we assume the decision is made and the only questions are where and how."
+        },
+        {
+          "type": "stat",
+          "number": "20–100",
+          "label": "guests is the group size each of our ten signature programs is built for: teams of five, every member with a role and an object the team cannot solve the station without"
+        },
+        {
+          "type": "heading",
+          "text": "Why Egypt works for corporate incentive travel",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "An incentive trip lives on impressions, not transfers, and Egypt keeps its impressions close together. An hour from a Red Sea resort you are in the mountains of Sinai; from a Cairo hotel the pyramids are a drive across town. The group arrives without losing a day to recovery and spends its time in the water, in the desert or in front of a temple wall rather than on a coach."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Sea: house reefs straight off the shore in Sharm El Sheikh, private yacht charters, snorkelling and a first supervised dive for people who have never been under water.",
+            "Desert: the Sinai mountains an hour from the hotels, tea with Bedouin hosts, a camp that lights up in the dark and a sky worth switching the headlights off for.",
+            "History: the Giza plateau, the Grand Egyptian Museum, Al-Muizz Street in historic Cairo, the temples of Luxor and Aswan, all with Egyptologist guides working in English and Russian.",
+            "Infrastructure: resorts where the whole group stays under one roof, with the conference hall, the beach and the gala venue a few minutes apart."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Season: October to May, and the summer rule",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The main season for an incentive trip to Egypt runs from October to May: comfortable temperatures for outdoor programs, clear skies for a desert evening, warm sea. The Nour El Nil dahabiyas sail from September to May, which is a useful anchor for the river part of a trip. Summer is not off the table, but it has its own rules."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "The summer rule",
+          "text": "From May to September, outdoor programs start early in the morning or after four in the afternoon. We will not put a group on the Giza plateau at noon in summer at any price: the plateau quest starts at dawn, the desert evening starts at sunset, and the middle of the day belongs to the sea, the spa and air-conditioned halls."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-25.jpg",
+          "alt": "Corporate group on the upper deck of a private yacht in the Red Sea during an incentive trip to Sharm El Sheikh",
+          "caption": "A privately chartered yacht is the easiest way to get the whole group into one frame. Our project for EWA product in Sharm El Sheikh"
+        },
+        {
+          "type": "heading",
+          "text": "Three itinerary templates, day by day",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "These are the three skeletons we usually open a conversation with. They combine well: Sharm El Sheikh plus Cairo is the most common pairing, Cairo plus the Nile the richest. Days are listed without prices and without a minute-by-minute schedule. This is a map, not a quote."
+        },
+        {
+          "type": "heading",
+          "text": "Sharm El Sheikh: sea and desert",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "For groups that want one hotel for the whole trip and as much time outdoors as possible. Everything except the flight happens within an hour of the room."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Day",
+            "What happens"
+          ],
+          "rows": [
+            [
+              "Day 1",
+              "Arrival, VIP meet and greet with airport fast-track, transfer with our own drivers, check-in. A welcome dinner on the beach in the evening, with no stage and no speeches."
+            ],
+            [
+              "Day 2",
+              "A free morning on the beach. In the afternoon, The Archaeologist's Last Entry: two and a half hours in the Sharm El Sheikh museum on an evening slot, between the sea and dinner."
+            ],
+            [
+              "Day 3",
+              "The Barque Follows the Sun: eight hours on a privately chartered four-deck yacht. Half the group goes to the reef for snorkelling or a first dive, the other half runs the headquarters on board. The yacht turns for home straight into the sunset."
+            ],
+            [
+              "Day 4",
+              "A day with nothing scheduled: spa, sea, diving for certified divers. Gala dinner and awards in the evening."
+            ],
+            [
+              "Day 5",
+              "The Way to the Stars: departure for the Sinai mountains timed to the sunset, tea with Bedouin hosts, a camp in the dark, dinner under the sky and a star of their own in the telescope for every guest."
+            ],
+            [
+              "Day 6",
+              "Late breakfast, departure, fast-track at the airport."
+            ]
+          ],
+          "caption": "Six days, one hotel, two outings beyond it. The order of days shifts with dates and weather"
+        },
+        {
+          "type": "heading",
+          "text": "Cairo: history and private access",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "For people who have already seen the pyramids through a bus window and want a day with them where they have to think. The core of this route is the Giza plateau before it opens or after it closes to the public: only your group, all three chambers of the Great Pyramid and access inside the Sphinx enclosure."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Day",
+            "What happens"
+          ],
+          "rows": [
+            [
+              "Day 1",
+              "Arrival in Cairo, VIP meet and greet, check-in. In the evening, The Last Frame: a three-course immersive dinner set at a 1959 premiere, where the room votes on how the film ends. In Cairo it can take over a whole boat on the Nile."
+            ],
+            [
+              "Day 2",
+              "The Pyramid Code: four hours on the Giza plateau with an early start. Six teams, an archaeologist's diary in which half of what is written is a lie, and a chest that opens only when every team has done its part."
+            ],
+            [
+              "Day 3",
+              "The Last Page: four hours in the Grand Egyptian Museum. The group becomes the editorial board of a catalogue and catches the errors by looking at the originals. Optional extension: the first boat of Khufu."
+            ],
+            [
+              "Day 4",
+              "Four Hands, One Letter: Al-Muizz Street with a calligrapher, a coppersmith and a tea house. Every guest writes a single word in ink, and in a courtyard the words become a letter whose last line is about your company."
+            ],
+            [
+              "Day 5",
+              "Private access to the pyramids. Morning slot: leave the hotel in the dark, the plateau with nobody else on it, the panorama at sunrise, breakfast with a view of the pyramids. Or the evening slot after the plateau closes, in sunset light. Fly out in the evening or continue to Sharm El Sheikh."
+            ]
+          ],
+          "caption": "Five days in Cairo. We put private access last: after it, any ordinary excursion looks pale"
+        },
+        {
+          "type": "image",
+          "url": "/cruises/lumiere-island-dinner.webp",
+          "alt": "Dinner by the fire on Herbiab island during a private Nile charter",
+          "caption": "Private charter on Lumière: a night moored at Herbiab island and dinner by the fire, an evening that only exists for a group travelling on its own boat"
+        },
+        {
+          "type": "heading",
+          "text": "The Nile: a cruise as the incentive",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A cruise solves the central task of an incentive without effort. The group lives together for several days with no transfers and no suitcases, and the route itself delivers Karnak, the Valley of the Kings, Edfu, Kom Ombo and Philae. Three options, depending on group size and the character of the trip."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Classic cruise, Luxor to Aswan, 3, 4 or 7 nights: Le Fayan Suites, an all-suite ship with panoramic windows in every cabin, or Soleil, the largest ship in our fleet with the largest spa on the Nile. For groups from 20 to 80 and beyond.",
+            "Private charter on Lumière: eight cabins, up to 20 guests, five nights from Luxor to Aswan on your own schedule. Nights moored at Fawza and Herbiab islands, dinner by the fire, private evenings in temples. For boards, key partners and executive retreats.",
+            "A dahabiya from the Nour El Nil fleet: a twin-masted sailing boat for 16 to 24 guests, six days from Esna to Aswan. Stops on empty desert banks and a night beside the lit temple at Gebel el-Silsila, where large ships cannot go. For groups that need a rhythm more than a route."
+          ]
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Day",
+            "Private charter on Lumière, Luxor to Aswan"
+          ],
+          "rows": [
+            [
+              "Day 1",
+              "Arrival in Luxor, embarkation. Karnak and Luxor Temple before sunset, first dinner on board."
+            ],
+            [
+              "Day 2",
+              "Valley of the Kings, the temple of Hatshepsut and the Colossi of Memnon in the morning. Departure, night moored at Fawza island."
+            ],
+            [
+              "Day 3",
+              "Edfu: the temple of Horus, approached by horse-drawn carriage. Dinner by the fire on Herbiab island."
+            ],
+            [
+              "Day 4",
+              "Gebel el-Silsila and Kom Ombo, the temple of Sobek on a bend in the river. Evening on the sun deck."
+            ],
+            [
+              "Day 5",
+              "Aswan: Philae and the Nubian village by boat. A private evening in a temple and the awards ceremony."
+            ],
+            [
+              "Day 6",
+              "Disembarkation. Abu Simbel as an option, then the flight out of Aswan."
+            ]
+          ],
+          "caption": "The ship runs on the group's schedule, so stops and evenings move to fit the program"
+        },
+        {
+          "type": "image",
+          "url": "/cruises/dahabiya-sail-sunset.webp",
+          "alt": "Nour El Nil dahabiya under sail at sunset, a Nile cruise for a small incentive group",
+          "caption": "A dahabiya under sail: up to 24 guests, the whole boat for one group, and six days in which nobody hurries anywhere"
+        },
+        {
+          "type": "heading",
+          "text": "What turns an itinerary into a program",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A template is a skeleton. It becomes a program when four elements are in place, each with its own job."
+        },
+        {
+          "type": "list",
+          "items": [
+            "A gala evening with the awards. The climax the trip was announced for. In Sharm El Sheikh that means a venue on the beach or on a cliff under the open sky; in Cairo, a boat on the Nile; on a cruise, the sun deck.",
+            "A quest in a real place. One of our ten signature programs turns the plateau, the museum, the street, the yacht or the mountains into the playing field, while Egyptologist guides tell the real history. Roles within a team differ, and not every role is about talking: by the halfway point the quietest guests are usually the most involved.",
+            "A free day. An incentive is not a conference: the minimum of mandatory, the maximum of choice. One day with nothing scheduled makes the other days stronger.",
+            "A finale that stays. Every program ends with an object the guest takes home, and it is not a branded pen."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "What guests take home",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "We design each finale to leave a physical trace. This is what stays after some of the programs:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "The Barque Follows the Sun: a personal seal with the guest's name in Egyptian signs, plus footage from the instructors' cameras.",
+            "The Way to the Stars: a personal card with a star of their own, signed by the astronomer.",
+            "The Pyramid Code: the restored route with photographs of every team, the expedition letter and a fragment of the solar seal for each guest.",
+            "The Last Page: the layout of the assembled last catalogue page with every team's captions and your company's name in the imprint.",
+            "Four Hands, One Letter: a card with the guest's own word written in ink under the calligrapher's hand, and a copy of the assembled letter.",
+            "The Last Frame: the group photo with the clapperboard, printed in a film-strip frame by the time guests leave, and their names in the credits."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "The finale rule",
+          "text": "You can get it wrong, but you cannot be left without a finale; that line is written into every script. Everyone hears the resolution, and every guest receives the object, not just the winning team."
+        },
+        {
+          "type": "heading",
+          "text": "Group size and logistics",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The signature programs are built for groups of 20 to 100 guests. Private access to the pyramids is limited to 50 guests per permit, so a larger group is split into two slots, morning and evening. On the river the ship sets the number: Lumière takes up to 20 guests, a dahabiya up to 24, Le Fayan Suites up to 74 and Soleil up to 106."
+        },
+        {
+          "type": "paragraph",
+          "text": "We also handle groups well above a hundred, but that becomes a hybrid of incentive and conference with the hotel as the base. That is how the seven-day NL International trip for 300 participants at Park Regency was built: business sessions in the conference halls, workshops in yoga, make-up, dance and fine art, team-building quests, a Luxury Egypt evening and a White Party on an open-air cliff. The five-day EWA product retreat at Rixos Seagate combined workshops, master classes and team building with evenings at the Marlin and Space venues. And the Carlsberg conference for 1,000 participants at Domina Coral Bay ran with full technical production from logistics through to the closing gala dinner."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-21.jpg",
+          "alt": "Large corporate group in keffiyehs against the Sinai mountains during a desert outing on an incentive trip",
+          "caption": "A desert outing in Sinai: the mountains are an hour from the hotels of Sharm El Sheikh. Our project for EWA product"
+        },
+        {
+          "type": "heading",
+          "text": "What we take care of",
+          "level": 3
+        },
+        {
+          "type": "list",
+          "items": [
+            "VIP meet and greet with fast-track at Cairo and Sharm El Sheikh airports, transfers across Egypt with our own drivers.",
+            "Permits for the Giza plateau, the museums and historic Cairo, plus filming and event permissions in protected areas.",
+            "Egyptologist guides in English and Russian. Programs run identically in both languages, so a mixed international group is not a problem.",
+            "Hotels, ships and venues under direct contracts, with no subcontractor between you and the people delivering the event.",
+            "Coordination and a 24/7 duty office for the whole trip."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A signature program needs four to six weeks of preparation: a site survey, props, and the personal details, such as your company's name, the date and a fact from its history. Treasures of Ra and Pharaoh: The Lost Expedition, the two programs we bring with full sets into your hotel ballroom, need eight to ten weeks before the first show. Cruises and private pyramid access are booked against specific dates, so the earlier the month is known, the wider the choice."
+        },
+        {
+          "type": "heading",
+          "text": "What to put in your brief",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "To come back with an itinerary rather than a list of questions, we need five things:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "The date or the month. It drives the seasonal logic: whether we start at dawn, whether the dahabiyas are sailing, whether the ship is free.",
+            "The number of guests. It sets the ship, the number of permits and the format of the gala.",
+            "The hotel, if it is already chosen, or the city: Sharm El Sheikh, Cairo or Luxor.",
+            "The language of the group: English, Russian or both.",
+            "The goals: who is being rewarded, for what, and which moment should be the main one. A short questionnaire on this is what we build the finale from."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "A run-through with no strings",
+          "text": "For the people making the decision we run a forty-five-minute walkthrough of one station of the chosen program. No commitment and no charge, so you see the format before you announce the trip to the team."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event has worked in Egypt since 2004, with its own team in Cairo and Sharm El Sheikh, direct contracts with hotels, ship owners and venues, permits and Egyptologist guides all inside one company. Send us the date and the number of guests, and we will come back with a day-by-day itinerary."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    "id": "timbilding-v-egipte",
+    "datePublished": "2026-09-17",
+    "image": "/nl-14.jpg",
+    "ru": {
+      "title": "Тимбилдинг в Египте: 10 форматов от квеста на плато Гизы до регаты в Красном море",
+      "category": "Корпоративная культура",
+      "date": "17 сентября 2026",
+      "excerpt": "Десять форматов тимбилдинга в Египте: авторские квесты на плато Гизы, в музеях и на яхте, сафари, мастер-классы. Для кого, где и какой уровень активности.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Тимбилдинг в Египте — редкий случай, когда выездной тимбилдинг не приходится собирать из компромиссов. В одну поездку помещаются настоящие пирамиды, музей с подлинными экспонатами, Красное море и горы Синая, а перелёт и отели здесь давно отработаны. Вопрос обычно не «где», а «что именно делать с командой», чтобы день у пирамид не превратился в очередную экскурсию с фотографией на фоне."
+        },
+        {
+          "type": "paragraph",
+          "text": "В этой статье — десять форматов, с которыми мы работаем в Каире и Шарм-эль-Шейхе: восемь авторских программ La Royal Event и форматы, проверенные на корпоративных выездах наших клиентов. Для каждого — где проходит, для кого и какой уровень активности и напряжения по шкале от одного до пяти. Активность — сколько ходить, нырять и ехать. Напряжение — сколько в сценарии темноты, актёров и обратного отсчёта."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Как читать шкалу",
+          "text": "Активность 1 — сидеть, смотреть, спорить; 5 — целый день на воде и в движении. Напряжение 1 — светло, спокойно, без гонки; 4 — темнота, живые актёры и ощущение, что за стеной кто-то есть. В «Фараоне» уровень напряжения вы выбираете заранее."
+        },
+        {
+          "type": "stat",
+          "number": "20–100",
+          "label": "гостей — рабочий диапазон каждой авторской программы. Команды по пять человек, у каждого своя роль и свой предмет, без которого станция не решается. Группы больше ста ведём параллельными потоками — так прошёл семидневный выезд NL International на 300 участников в Park Regency"
+        },
+        {
+          "type": "heading",
+          "text": "Тимбилдинг в Египте: 10 форматов по уровню активности и напряжения",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "1. Квест на плато Гизы: «Код пирамид»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Дневник археолога подменили, и половина написанного в нём — ложь. Сверить его можно только с самой кладкой: команды выходят на плато рано, пока известняк не раскалился, и четыре часа ходят между Хуфу, Хафрой и Сфинксом с папкой свидетельств. В каждой подлинной странице спрятана цифра, и ларец в финале открывается только тогда, когда все шесть команд принесут свои. Для команд от 20 человек, которые уже фотографировались на фоне пирамид и хотят провести здесь день, где надо думать, а не кивать. Плато Гизы, 4 часа, 20–100 гостей. Активность 3, напряжение 1."
+        },
+        {
+          "type": "heading",
+          "text": "2. Квест в Большом Египетском музее: «Последняя страница»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Каталог выставки уходит в печать завтра, а его последнюю страницу напишете вы. Команда становится редакцией: у шести предметов ей вручают уверенные, красиво свёрстанные подписи, и поймать, где они врут, можно только глядя на оригинал в витрине. Самый спокойный из форматов на локации и лучший вариант для тех, кто музеи уже видел и хочет не слушать про экспонаты, а спорить о них. Гиза, Большой Египетский музей, 4 часа, три потока по десять. Активность 1, напряжение 1."
+        },
+        {
+          "type": "heading",
+          "text": "3. Квест в старом Каире: «Четыре руки, одно письмо»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Тимбилдинг в Каире, который идёт не через стекло автобуса, а на своих ногах. Письмо шло к вашей команде семьсот лет и не дошло: его несли каллиграф, чайханщик, медник и переписчик, и один из четверых соврал. Команды читают фасады улицы Аль-Муизз в поисках одной резной детали, пишут тростниковым пером своё слово арабской вязью под рукой настоящего каллиграфа и слушают в чайной две версии одной истории. Письмо собирается во дворе из слов, написанных вашей рукой, и его последняя строка адресована вашей компании. Исторический Каир, 4 часа, три потока. Активность 3, напряжение 1."
+        },
+        {
+          "type": "heading",
+          "text": "4. Вечерний квест в музее Шарм-эль-Шейха: «Последняя запись археолога»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Короткий умный вечер для группы, у которой день занят морем, а ужин ещё впереди. Залы уже без дневной толпы, шесть витрин, шесть подписей, и ни одной, которой можно верить на слово: команда сначала ставит жетоны на свою версию и только потом получает перевод музейной этикетки. Если нужен целый вечер, продолжение «Музей оживает» добавляет полтора часа с актёрами, ужином и очной ставкой среди витрин. Шарм-эль-Шейх, 2,5 часа или 4 с продолжением, вечерний заход. Активность 1, напряжение 1."
+        },
+        {
+          "type": "heading",
+          "text": "5. Квесты в зале отеля: «Сокровища Ра» и «Фараон. Пропавшая экспедиция»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Два формата, которые мы привозим с декорациями к вам: конференц-зал отеля в Каире или Шарм-эль-Шейхе за одну ночь становится залом храма или лагерем пропавшей экспедиции. «Сокровища Ра» — 90 минут, из них час игры: команда делится надвое, работает параллельно, и ни одна находка не срабатывает в одиночку, потому что половина ключей у коллег. Активность 2, напряжение 2. «Фараон» — 100 минут с живыми актёрами, рацией с помехами и силуэтом за полупрозрачной панелью; уровень напряжения выбираете заранее, от сумерек до полной гробницы. Активность 2, напряжение до 4. Оба формата — для команд, которые предпочитают думать руками и получать результат за вечер."
+        },
+        {
+          "type": "heading",
+          "text": "6. Вечер в горах Синая: «Путь к звёздам»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Для тех, кто уже катался по пустыне на джипах и хочет вечер, который держится не на скорости, а на небе. Днём команды сверяют настоящий хребет с рисунком из дневника пропавшего картографа, потом пьют обжигающий чай у бедуинов и слушают человека, который находит север без карты и телефона. Последнюю подсказку приносит закат, а в лагере астроном показывает каждому его звезду в телескоп. Единственная из программ, куда можно с детьми: здесь нет соревнования и темноты без взрослого рядом. Шарм-эль-Шейх, 6 часов с трансферами, старт по закату. Активность 3, напряжение 1."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-21.jpg",
+          "alt": "Команда EWA product в куфиях на выезде в пустыню под Шарм-эль-Шейхом",
+          "caption": "Выезд в пустыню на корпоративе EWA product: общий кадр на фоне гор Синая — формат, который держит и двести человек"
+        },
+        {
+          "type": "heading",
+          "text": "7. Пустынное сафари",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Самый простой способ вытащить большую группу из отеля на полдня. Джипы, горы Синая, бедуинский лагерь, чай и ужин под небом. Формат не требует сценария и хорошо держит группу от ста человек, когда квест с командами по пять уже не собрать в один поток. Так прошёл выезд в пустыню на корпоративе EWA product в Rixos Seagate: общий кадр в куфиях на фоне скал и вечер в лагере. Летом сафари ставим ближе к закату — о жаре ниже. Шарм-эль-Шейх, полдня. По нашей шкале — активность 3, напряжение 1."
+        },
+        {
+          "type": "image",
+          "url": "/nl-17.jpg",
+          "alt": "Мастер-класс живописи на корпоративном выезде NL International в Шарм-эль-Шейхе",
+          "caption": "Мольберты у барной стойки Park Regency: мастер-класс живописи шёл параллельно с деловой частью форума NL International"
+        },
+        {
+          "type": "heading",
+          "text": "8. Творческие мастер-классы",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Живопись, визаж, танцы — форматы, в которых человек, обычно молчащий на планёрках, вдруг оказывается самым заметным в комнате. На семидневном выезде NL International в Park Regency мастер-классы шли параллельно с деловой частью: утром сессии в конференц-зале, днём мольберты и коврики для йоги. Сила формата — в масштабе: сто человек делятся по интересам, и каждый выбирает своё. Из авторских программ сюда же относится каллиграфия внутри «Четырёх рук»: слово, написанное тушью под рукой мастера, гость увозит с собой. Каир или Шарм-эль-Шейх, в отеле. Активность 1–2, напряжение 1."
+        },
+        {
+          "type": "image",
+          "url": "/nl-26.jpg",
+          "alt": "Йога на траве на корпоративном выезде NL International в Park Regency",
+          "caption": "Йога на газоне отеля — утренний формат, который не требует ни реквизита, ни трансфера"
+        },
+        {
+          "type": "heading",
+          "text": "9. Спортивные и вечерние форматы",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Стрельба из лука, йога на газоне, танцевальные мастер-классы — лёгкая нагрузка, после которой идут на ужин, а не спать. Вечера — отдельный жанр. У NL International кульминацией недели стали вечер в стиле «Luxury Egypt» и «Белая вечеринка» на скале под открытым небом, где лук и стрелы оказались частью шоу, а не спортзала. У EWA product вечерние шоу прошли на площадках Marlin и Space с нашими декорациями. Если вечеру нужен сюжет, есть «Последний кадр»: ужин из трёх подач внутри премьеры 1959 года, четыре подозреваемых за столами и финал, за который голосует зал. Активность 1, напряжение 2."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-22.jpg",
+          "alt": "Команда EWA product в гидрокостюмах на палубе яхты в Красном море",
+          "caption": "Яхта на день для всей группы: выезд EWA product в Шарм-эль-Шейхе"
+        },
+        {
+          "type": "heading",
+          "text": "10. День на яхте и регата в Красном море: «Ладья идёт за солнцем»",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Командообразование в Шарм-эль-Шейхе логично заканчивать морем. Простой вариант — яхта на день для всей группы, как на выезде EWA product: гидрокостюмы, снаряжение, обед на борту; с несколькими лодками тот же день превращается в регату между командами. Вариант со сценарием — «Ладья идёт за солнцем»: восемь часов, четыре палубы и два мира. Половина команды уходит с гидом на риф, делает первый вдох под водой или пробует фридайвинг; половина работает в штабе на палубе над картой и двумя бортовыми журналами, в одном из которых переписана строка. Доказать подделку без наблюдений с воды нельзя, поэтому ларец открывают все вместе — когда яхта ложится на обратный курс в закат. Формат для команд, где есть и сертифицированные дайверы, и те, кто в воду не пойдёт: вклад у них одинаковый. Шарм-эль-Шейх, 8 часов, яхта и рабочие лодки. Активность 4, напряжение 1."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Как выбрать формат по цели и размеру группы",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Все восемь авторских программ рассчитаны на 20–100 гостей и команды по пять. Разница — в цели. Ниже — как мы обычно раскладываем запрос клиента."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Цель",
+            "Размер группы",
+            "Что подойдёт",
+            "Активность / напряжение"
+          ],
+          "rows": [
+            [
+              "Смешать отделы, познакомить новичков",
+              "20–100",
+              "«Код пирамид», «Четыре руки, одно письмо»: команды по пять, у каждого своя роль",
+              "3 / 1"
+            ],
+            [
+              "Думать и спорить без беготни",
+              "20–100",
+              "«Последняя страница» в GEM, «Последняя запись археолога» в музее Шарма",
+              "1 / 1"
+            ],
+            [
+              "Результат за один вечер, не выходя из отеля",
+              "20–100",
+              "«Сокровища Ра», «Фараон. Пропавшая экспедиция»",
+              "2 / 2–4"
+            ],
+            [
+              "Объединить дайверов и тех, кто не пойдёт в воду",
+              "20–100",
+              "«Ладья идёт за солнцем»",
+              "4 / 1"
+            ],
+            [
+              "Семьи с детьми, вечер без соревнования",
+              "20–100",
+              "«Путь к звёздам»",
+              "3 / 1"
+            ],
+            [
+              "Вечер с едой, музыкой и разговором",
+              "20–100",
+              "«Последний кадр»",
+              "1 / 2"
+            ],
+            [
+              "Большая группа, перезагрузка и общий кадр",
+              "от 100",
+              "Сафари, яхта, мастер-классы и вечерние форматы параллельными потоками",
+              "по выбору"
+            ]
+          ],
+          "caption": "Шкала активности и напряжения — от 1 до 5. Для форматов из кейсов уровень указан по нашей оценке"
+        },
+        {
+          "type": "paragraph",
+          "text": "Для выезда на несколько дней форматы обычно комбинируют: один квест на локации, один вечер и одно море. Так семидневная программа NL International собралась из деловых сессий, мастер-классов, тимбилдинг-квестов и двух вечеринок, и ни один день не повторил предыдущий."
+        },
+        {
+          "type": "heading",
+          "text": "Жара, сезон и время старта",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Главное правило уличных программ в Египте — время старта. С мая по сентябрь квесты на плато и на Аль-Муизз, как и сафари, начинаются рано утром или после четырёх часов дня. Гизу в полдень летом мы не ставим ни за какие деньги: в «Код пирамид» заложены тень и вода на каждой остановке и ранний старт. Вечерние форматы — музей Шарма, «Путь к звёздам», «Последний кадр» — от жары не зависят по определению, а «Сокровища Ра», «Фараон» и Большой Египетский музей проходят в помещении. На море восемь часов идут с зонами отдыха, полотенцами и водой, и глубину каждый выбирает под себя — от штаба на палубе до первого погружения."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Что уточнить до выбора даты",
+          "text": "Язык группы: русский и английский ведём одинаково, арабский звучит у мастеров с переводом гида; в «Ладье» и «Сокровищах Ра» задания устроены так, что язык не даёт преимущества. Дети: только «Путь к звёздам», остальные программы — от четырнадцати лет. Те, кто не любит игры: роли в команде разные, и не все они про говорить — хранитель работает с бумагами, картограф с картой, глаз с деталью на камне."
+        },
+        {
+          "type": "heading",
+          "text": "Что остаётся у команды после",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Мы против сувениров ради сувениров, поэтому у каждой программы предмет на выходе привязан к тому, что команда сделала сама."
+        },
+        {
+          "type": "list",
+          "items": [
+            "«Код пирамид» — восстановленный маршрут с фотографиями всех команд, письмо экспедиции и фрагмент солнечной печати каждому гостю.",
+            "«Последняя страница» — вёрстка собранной страницы каталога с подписями всех команд и именем компании в выходных данных.",
+            "«Четыре руки, одно письмо» — карточка со словом, написанным тушью под рукой мастера, и копия собранного письма.",
+            "«Последняя запись археолога» — страница дневника с шестью штампами станций и вашей строкой; в «Музей оживает» — личная печать с именем египетскими знаками.",
+            "«Ладья идёт за солнцем» — именная печать с именем иероглифами и съёмка с камер инструкторов.",
+            "«Путь к звёздам» — карточка со «своей» звездой и подписью астронома.",
+            "«Сокровища Ра» — «золотой» жетон экспедиции и кадр общего прохода через портал под обратный отсчёт.",
+            "«Фараон» — печать экспедиции с именем вашего археолога и фотографии с актёрами у подсвеченного саркофага.",
+            "«Последний кадр» — общий снимок в рамке из киноплёнки и имя в титрах."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Остальное предметом не измеряется. Финал каждого сценария устроен так, что ошибиться можно, а остаться без развязки нельзя: её услышат все. Это правило записано в каждом сценарии отдельной строкой."
+        },
+        {
+          "type": "heading",
+          "text": "Как это готовится",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            "Сроки: от четырёх недель на «Ладью» и «Путь к звёздам» до восьми–десяти на первый показ «Сокровищ Ра» и «Фараона» с декорациями. В эти недели входят разведка площадки, изготовление реквизита и персональные детали: имя компании, дата, факт из её истории.",
+            "Что мы просим у вас: дату, число гостей, отель, язык группы и один вопросник — из ответов на него собирается финал.",
+            "Что входит: сценарий, ведущий, гиды-египтологи, актёры, координаторы, реквизит, трансферы по маршруту на своих водителях и входные билеты. Пермиты на плато Гизы и в музеях берём на себя.",
+            "Как решиться: для тех, кто принимает решение, мы проводим сорокапятиминутный прогон одной станции — без обязательств и без оплаты."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Тимбилдинг за границей стоит выбирать по одному критерию: что команда будет вспоминать через год. Пирамиды и Красное море запомнятся и сами по себе; наша работа — чтобы вместе с ними вспоминали спор у витрины, слово, написанное тушью, и щелчок замка, который открылся только всем вместе. La Royal Event работает в Египте с 2004 года: своя команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями и площадками, duty-office 24/7. Напишите дату и число гостей — вернёмся с предложением в тот же день."
+        }
+      ]
+    },
+    "en": {
+      "title": "Team Building in Egypt: 10 Formats From a Giza Plateau Quest to a Red Sea Regatta",
+      "category": "Corporate Culture",
+      "date": "September 17, 2026",
+      "excerpt": "Ten team building formats in Egypt: signature quests at Giza, in museums and on a yacht, desert safari, workshops. Who each suits, where it runs, how intense it is.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Team building in Egypt solves the problem that most corporate team building abroad never quite gets past: the choice between a memorable place and a programme that actually does something for the group. Here the two sit in the same trip. The pyramids, a museum full of originals, the Red Sea and the mountains of Sinai are all within reach of one hotel, and the flights and venues have been worked out for years. The real question is what to do with the team once it is there, so that a day at the pyramids does not turn into one more guided tour with a group photo at the end."
+        },
+        {
+          "type": "paragraph",
+          "text": "Below are ten formats we run in Cairo and Sharm El Sheikh: eight signature programmes written by La Royal Event, plus formats proven on our clients' corporate retreats. For each one you will find where it runs, who it suits, and two scores from one to five. Activity is how much walking, diving and driving is involved. Tension is how much darkness, live acting and countdown the script contains."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "How to read the scale",
+          "text": "Activity 1 means sitting, looking and arguing; 5 means a whole day on the water and on the move. Tension 1 is daylight, calm and no race; 4 is darkness, live actors and the feeling that someone is behind the wall. In Pharaoh you choose the tension level in advance."
+        },
+        {
+          "type": "stat",
+          "number": "20–100",
+          "label": "guests is the working range of every signature programme. Teams of five, each member with a role and an object of their own, without which the station cannot be solved. Larger groups run in parallel streams, as on the seven-day NL International retreat for 300 people at Park Regency"
+        },
+        {
+          "type": "heading",
+          "text": "Team building in Egypt: 10 formats by activity and tension",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "1. A quest on the Giza Plateau: The Pyramid Code",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "An archaeologist's diary has been tampered with, and half of what it says is a lie. The only way to check it is against the stones themselves. Teams arrive on the plateau early, before the limestone heats up, and spend four hours moving between Khufu, Khafre and the Sphinx with a folder of evidence to test. Each genuine page hides a digit, and the chest at the finale opens only when all six teams bring theirs. Built for groups of twenty or more who have already posed in front of the pyramids and want a day here that asks them to think rather than nod. Giza Plateau, 4 hours, 20–100 guests. Activity 3, tension 1."
+        },
+        {
+          "type": "heading",
+          "text": "2. A quest in the Grand Egyptian Museum: The Last Page",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The exhibition catalogue goes to print tomorrow, and its last page will be written by you. The group becomes the editorial team. At six objects it receives a confident, beautifully laid-out caption, and the only way to catch where it lies is to look at the original in the case. This is the calmest of the location formats and the right choice for people who have seen museums and would rather argue about the exhibits than hear a lecture about them. Giza, Grand Egyptian Museum, 4 hours, three streams of ten. Activity 1, tension 1."
+        },
+        {
+          "type": "heading",
+          "text": "3. A quest in historic Cairo: Four Hands, One Letter",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Of all team building activities in Cairo, this is the one that happens on foot rather than through a coach window. A letter has been travelling to your team for seven hundred years and never arrived. Four people carried it, a calligrapher, a tea-house keeper, a coppersmith and a scribe, and one of them lied. Teams read the facades of Al-Muizz Street for a single carved detail, write one word of their own in Arabic script with a reed pen under a real calligrapher's hand, and hear two versions of the same story in a tea house. The letter is assembled in a courtyard from words written by your own hands, and its last line is addressed to your company. Historic Cairo, 4 hours, three streams. Activity 3, tension 1."
+        },
+        {
+          "type": "heading",
+          "text": "4. An evening quest in the Sharm El Sheikh Museum: The Archaeologist's Last Entry",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A short, clever evening for a group whose day belongs to the sea and whose dinner is still ahead. The halls are empty of the daytime crowd, six display cases carry six captions, and not one can be taken on trust: the team places its tokens on its own version first and only then receives the translation of the museum label. If you want the whole evening, the sequel The Museum Comes Alive adds an hour and a half with actors, dinner and a confrontation among the cases. Sharm El Sheikh, 2.5 hours or 4 with the sequel, evening slot. Activity 1, tension 1."
+        },
+        {
+          "type": "heading",
+          "text": "5. Quests in your hotel ballroom: Treasures of Ra and Pharaoh: The Lost Expedition",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Two formats we bring to you with full set design: overnight, a conference hall in Cairo or Sharm El Sheikh becomes a temple hall or the camp of a missing expedition. Treasures of Ra runs 90 minutes, 60 of them pure play. The team splits in two and works in parallel, and no find works on its own, because half of the keys are held by colleagues. Activity 2, tension 2. Pharaoh runs 100 minutes with live actors, a radio full of static and a silhouette behind a translucent panel; you set the tension level in advance, from dusk to full tomb. Activity 2, tension up to 4. Both are for teams that like to think with their hands and want a result by the end of the evening."
+        },
+        {
+          "type": "heading",
+          "text": "6. An evening in the Sinai mountains: Path to the Stars",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "For people who have done the jeep ride and want an evening that rests on the sky rather than on speed. By day, teams match a real ridge against the drawing in a missing cartographer's diary; then they sit on a rug with scalding tea and listen to a man who grew up here and finds north without a map or a phone. The last clue arrives with the sunset, and after dark an astronomer shows each guest their own star through a telescope. This is the one programme that welcomes families: no competition and no darkness without an adult nearby. Sharm El Sheikh, 6 hours including transfers, timed to the sunset. Activity 3, tension 1."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-21.jpg",
+          "alt": "EWA product team in keffiyehs on a desert trip near Sharm El Sheikh",
+          "caption": "Desert day on the EWA product retreat: a group shot against the Sinai mountains, a format that holds two hundred people with ease"
+        },
+        {
+          "type": "heading",
+          "text": "7. Desert safari",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The simplest way to get a large group out of the hotel for half a day. Jeeps, the Sinai mountains, a Bedouin camp, tea and dinner under the open sky. The format needs no script and holds a group of a hundred or more comfortably, at the point where a quest in teams of five can no longer run as a single stream. This is how the desert day went on the EWA product retreat at Rixos Seagate: a group shot in keffiyehs against the rocks and an evening in camp. In summer we schedule it towards sunset; more on heat below. Sharm El Sheikh, half a day. On our scale, activity 3, tension 1."
+        },
+        {
+          "type": "image",
+          "url": "/nl-17.jpg",
+          "alt": "Painting workshop at the NL International corporate retreat in Sharm El Sheikh",
+          "caption": "Easels along the bar at Park Regency: the painting workshop ran alongside the business agenda of the NL International forum"
+        },
+        {
+          "type": "heading",
+          "text": "8. Creative workshops",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Painting, make-up artistry, dance: formats in which the person who never speaks at meetings suddenly becomes the most visible one in the room. On the seven-day NL International retreat at Park Regency the workshops ran alongside the business agenda, with sessions in the conference hall in the morning and easels and yoga mats in the afternoon. The strength of the format is scale: a hundred people split by interest and everyone picks their own. Among the signature programmes, the calligraphy inside Four Hands, One Letter belongs here too; the word written in ink under a master's hand goes home with the guest. Cairo or Sharm El Sheikh, in the hotel. Activity 1–2, tension 1."
+        },
+        {
+          "type": "image",
+          "url": "/nl-26.jpg",
+          "alt": "Yoga on the lawn at the NL International retreat at Park Regency",
+          "caption": "Yoga on the hotel lawn: a morning format that needs neither props nor a transfer"
+        },
+        {
+          "type": "heading",
+          "text": "9. Sport and evening formats",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Archery, yoga on the lawn, dance classes: light physical formats that leave the group ready for dinner rather than for bed. Evenings are a genre of their own. For NL International the week peaked with a Luxury Egypt night and a White Party on a cliff under the open sky, where the bow and arrows became part of the show rather than a gym exercise. For EWA product the evening shows ran at the Marlin and Space venues with our set design. When an evening needs a plot, there is The Final Frame: a three-course dinner inside a 1959 film premiere, four suspects dining in the same room and an ending the audience votes for. Activity 1, tension 2."
+        },
+        {
+          "type": "image",
+          "url": "/ewa-22.jpg",
+          "alt": "EWA product team in wetsuits on the deck of a yacht in the Red Sea",
+          "caption": "A yacht for the whole group for a day: the EWA product retreat in Sharm El Sheikh"
+        },
+        {
+          "type": "heading",
+          "text": "10. A yacht day and regatta in the Red Sea: The Barque Follows the Sun",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Team building in Sharm El Sheikh should end at sea. The simple version is a yacht for the whole group for a day, as on the EWA product retreat: wetsuits, gear and lunch on board; with several boats the same day becomes a regatta between teams. The scripted version is The Barque Follows the Sun: eight hours, four decks and two worlds. Half the team goes out to the reef with a guide, takes its first breath underwater or tries freediving; the other half works at a headquarters on the main deck over a chart and two logbooks, one of which has a rewritten line. The forgery cannot be proven without observations from the water, so the chest is opened by everyone together, at the moment the yacht turns onto its homeward course into the sunset. Made for teams with certified divers and people who will not go near the water: their contributions count the same. Sharm El Sheikh, 8 hours, a yacht plus working boats. Activity 4, tension 1."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "How to choose a format by goal and group size",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "All eight signature programmes are designed for 20–100 guests in teams of five. What differs is the purpose. This is how we usually sort a client's brief."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Goal",
+            "Group size",
+            "What fits",
+            "Activity / tension"
+          ],
+          "rows": [
+            [
+              "Mix departments, integrate newcomers",
+              "20–100",
+              "The Pyramid Code, Four Hands, One Letter: teams of five, a role for everyone",
+              "3 / 1"
+            ],
+            [
+              "Think and argue, no running around",
+              "20–100",
+              "The Last Page at the GEM, The Archaeologist's Last Entry in the Sharm museum",
+              "1 / 1"
+            ],
+            [
+              "A result in one evening without leaving the hotel",
+              "20–100",
+              "Treasures of Ra, Pharaoh: The Lost Expedition",
+              "2 / 2–4"
+            ],
+            [
+              "Unite divers and people who will not go in the water",
+              "20–100",
+              "The Barque Follows the Sun",
+              "4 / 1"
+            ],
+            [
+              "Families with children, an evening with no contest",
+              "20–100",
+              "Path to the Stars",
+              "3 / 1"
+            ],
+            [
+              "An evening of food, music and conversation",
+              "20–100",
+              "The Final Frame",
+              "1 / 2"
+            ],
+            [
+              "A large group, a reset and one big photo",
+              "100+",
+              "Safari, yacht, workshops and evening formats in parallel streams",
+              "your choice"
+            ]
+          ],
+          "caption": "Activity and tension are scored from 1 to 5. For the case-study formats the level is our own estimate"
+        },
+        {
+          "type": "paragraph",
+          "text": "For a multi-day retreat the formats are usually combined: one location quest, one evening and one day at sea. The seven-day NL International programme was built that way, from business sessions, workshops, team quests and two parties, and no two days repeated each other."
+        },
+        {
+          "type": "heading",
+          "text": "Heat, season and start times",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The first rule of outdoor programmes in Egypt is the start time. From May to September the quests on the plateau and on Al-Muizz, like the safari, begin early in the morning or after four in the afternoon. We do not put Giza at noon in summer at any price: The Pyramid Code is built with shade and water at every stop and an early start. The evening formats, the Sharm museum, Path to the Stars and The Final Frame, are independent of the heat by definition, while Treasures of Ra, Pharaoh and the Grand Egyptian Museum run indoors. At sea the eight hours come with rest areas, towels and water, and everyone chooses their own depth, from the headquarters on deck to a first dive."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Check before you fix the date",
+          "text": "Language: we run Russian and English equally, and Arabic is spoken by the craftsmen with the guide translating; in The Barque and Treasures of Ra the tasks are built so that language gives no advantage. Children: only Path to the Stars; every other programme is for ages fourteen and up. People who do not like games: the roles in a team are different, and not all of them are about talking. The keeper works with papers, the cartographer with the map, the eye with a detail on the stone."
+        },
+        {
+          "type": "heading",
+          "text": "What the team keeps afterwards",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "We are against souvenirs for the sake of souvenirs, so in every programme the object you take away is tied to something the team made itself."
+        },
+        {
+          "type": "list",
+          "items": [
+            "The Pyramid Code: the restored route with photographs of every team, the expedition letter and a fragment of the solar seal for each guest.",
+            "The Last Page: the layout of the assembled catalogue page with the captions of all teams and your company's name in the imprint.",
+            "Four Hands, One Letter: a card with your word written in ink under a master's hand, and a copy of the assembled letter.",
+            "The Archaeologist's Last Entry: a diary page with six station stamps and your own line; in The Museum Comes Alive, a personal seal with your name in Egyptian signs.",
+            "The Barque Follows the Sun: a personal seal with your name in hieroglyphs and footage from the instructors' cameras.",
+            "Path to the Stars: a card with your own star, signed by the astronomer.",
+            "Treasures of Ra: the golden expedition token and the shot of the whole group passing through the portal under the countdown.",
+            "Pharaoh: an expedition seal with your archaeologist's name and photographs with the actors by the lit sarcophagus.",
+            "The Final Frame: a group shot framed in film stock, and your name in the credits."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The rest cannot be measured by an object. Every script is built so that a team can get it wrong but can never be left without the ending: everyone hears it. That rule is written into each scenario as a separate line."
+        },
+        {
+          "type": "heading",
+          "text": "How a programme is prepared",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            "Lead time: from four weeks for The Barque and Path to the Stars to eight to ten for the first staging of Treasures of Ra and Pharaoh with their sets. Those weeks cover a site survey, prop making and the personal details: your company's name, the date, a fact from its history.",
+            "What we ask of you: the date, the number of guests, the hotel, the group's language and one questionnaire, from which the finale is assembled.",
+            "What is included: the script, host, Egyptologist guides, actors, coordinators, all props, transfers along the route with our own drivers, and entrance tickets. Permits for the Giza Plateau and the museums are on us.",
+            "How to decide: for the people making the decision we run a forty-five-minute rehearsal of one station, with no obligation and no charge."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Corporate team building abroad is worth choosing by one criterion: what the team will still be talking about a year later. The pyramids and the Red Sea will be remembered on their own; our job is to make sure the argument at a display case, the word written in ink and the click of a lock that opened only for everyone together are remembered with them. La Royal Event has worked in Egypt since 2004, with its own team in Cairo and Sharm El Sheikh, direct contracts with hotels and venues, and a duty office around the clock. Send us the date and the number of guests, and we will come back with a proposal the same day."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    "id": "korporativnyj-kruiz-po-nilu",
+    "datePublished": "2026-09-17",
+    "image": "/cruises/soleil-ship.webp",
+    "ru": {
+      "title": "Корпоративный круиз по Нилу: как устроен фрахт судна и что успеет группа за четыре ночи",
+      "category": "Локации",
+      "date": "17 сентября 2026",
+      "excerpt": "Корпоративный круиз по Нилу: три судна, полный фрахт или блок кают, маршрут на четыре ночи из Луксора по дням и альтернативы — от дахабии до гала в Каире.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Корпоративный круиз по Нилу — это формат, в котором отель, конференц-зал, ресторан и экскурсионная программа собраны на одном судне, и это судно само везёт группу от храма к храму. Утром — Карнак или Долина Царей с гидом-египтологом, днём — переход по реке и бассейн на верхней палубе, вечером — ужин и программа на борту. Никаких переездов между отелями, никаких чемоданов посреди недели: группа один раз заселяется в Луксоре и сходит на берег в Асуане."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event работает в Египте как MICE- и DMC-компания с 2004 года. С судовладельцами у нас прямые контракты — без посредников и наценок, а гиды-египтологи ведут программу на русском и английском. В этой статье разбираем, чем круиз удобен для группы, какое из трёх судов под какой формат подходит, что даёт полный фрахт по сравнению с блоком кают, как выглядит маршрут на четыре ночи из Луксора по дням и какие есть альтернативы — от парусной дахабии до вечернего круиза по Каиру для гала-ужина."
+        },
+        {
+          "type": "heading",
+          "text": "Корпоративный круиз по Нилу: почему группе удобнее на судне, чем в отеле",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Главный аргумент — всё в одном месте. Круиз по Нилу для группы уже включает программу на берегу: гид-египтолог, входные билеты и трансферы к храмам входят в круиз, как и полный пансион. Организатору не нужно собирать логистику из десятка подрядчиков: судно идёт по расписанию, автобусы ждут у причала, гид встречает у трапа. Когда судно вечером уходит на юг, группа уже на борту — и вечерняя программа начинается там же, где закончился ужин."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Один заезд и один выезд: посадка в Луксоре, высадка в Асуане, между ними — ни одного переезда с багажом.",
+            "Программа на берегу уже входит: гид-египтолог, билеты в храмы и некрополи, трансферы к каждому объекту.",
+            "Вечера на борту: ужин в ресторане, лаундж-бар, солнечная палуба — ничего не нужно арендовать отдельно.",
+            "Закрытый контур: на судне группа не пересекается с городом, и это одинаково удобно для конфиденциальной сессии и для инсентива.",
+            "Ритм: утром — храмы, днём — река, вечером — палуба. У группы появляется то, чего не бывает в отеле у конференц-зала: общее пространство и общее время."
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/cruises/fayan-lounge.webp",
+          "alt": "Лаундж-бар Le Fayan Suites — вечернее пространство группы на борту",
+          "caption": "Лаундж-бар Le Fayan Suites. Вечером сюда переходит вся группа — без аренды отдельного зала и без трансферов"
+        },
+        {
+          "type": "heading",
+          "text": "Три судна: какое подходит вашей группе",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Мы работаем напрямую с тремя судами на маршруте Луксор — Асуан. Они закрывают три разные задачи: инсентив или конференция до 74 гостей, где каждому нужен одинаково высокий уровень; конференция на 80–100 человек с пленарной сессией на борту; приватный чартер для правления или ключевых партнёров."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Судно",
+            "Каюты",
+            "Вместимость",
+            "Формат",
+            "Для какой группы"
+          ],
+          "rows": [
+            [
+              "Le Fayan Suites",
+              "37 сьютов, all-suite: 36 сьютов по 39 м² и Royal Suite 58 м² с террасой и джакузи",
+              "До 74 гостей",
+              "Классический круиз 3, 4 или 7 ночей; возможен полный фрахт",
+              "Конференции и инсентивы, где каждому гостю нужен одинаково высокий уровень"
+            ],
+            [
+              "Soleil",
+              "53 каюты: 41 люкс-каюта с балконом, 8 junior-сьютов, 2 Royal, 2 Soleil Suite с джакузи",
+              "До 106 гостей",
+              "Классический круиз 3, 4 или 7 ночей; для группы от 80 человек — фрахт целиком",
+              "Конференции на 80–100 человек: пленарка в лаундже, ужины в ресторане"
+            ],
+            [
+              "Lumière",
+              "8 кают: 5 люкс-кают, 2 junior-сьюта и Lumière Suite с джакузи и батлером",
+              "До 20 гостей",
+              "Только полный фрахт: 5 ночей Луксор → Асуан по вашему расписанию",
+              "Правление, ключевые партнёры, executive-ретрит"
+            ]
+          ],
+          "caption": "Все три судна — по прямым контрактам с судовладельцами. Категории кают и расселение подбираем под состав группы"
+        },
+        {
+          "type": "heading",
+          "text": "Le Fayan Suites: all-suite для инсентива и конференции",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "На Le Fayan Suites нет обычных кают — только сьюты с панорамными окнами на воду: 36 сьютов по 39 м² и Royal Suite 58 м² с террасой и джакузи. Это снимает вечный вопрос инсентива: кому достанется каюта хуже. Здесь она не достанется никому. Четыре палубы плюс солнечная с бассейном и баром, ресторан с панорамными окнами, лаундж-бар, велнес-центр с массажем, сауной и хаммамом, тренажёрный зал. В каждом сьюте — Wi-Fi, кофе-машина и сейф. Маршруты: 3 ночи из Асуана, 4 ночи из Луксора с понедельника по пятницу и 7 ночей из любого из двух портов. Полный фрахт под группу возможен."
+        },
+        {
+          "type": "heading",
+          "text": "Soleil: конференция на корабле для 80–100 человек",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Soleil — самое вместительное из наших судов: 53 каюты и до 106 гостей. 41 люкс-каюта площадью 21 м² с балконом в пол, восемь junior-сьютов по 39 м², два Royal по 44 м² и два Soleil Suite по 58 м² с джакузи. Для организатора важнее другое: ресторан на 110 мест, куда вся группа садится одновременно; лаундж 260 м², который на день превращается в зал пленарной сессии; верхняя палуба для вечеров. Спа здесь самое большое на Ниле: крытый джакузи в два этажа окон, две массажные, сауна и хаммам. На борту есть лифт и клиника, ресторан готовит диетические меню по запросу. Для группы от 80 человек мы берём судно целиком."
+        },
+        {
+          "type": "stat",
+          "number": "53 каюты",
+          "label": "на Soleil — самом вместительном судне, с которым мы работаем: до 106 гостей, ресторан на 110 мест и лаундж 260 м² под пленарную сессию"
+        },
+        {
+          "type": "heading",
+          "text": "Lumière: судно на одну компанию",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Lumière — не круизный лайнер, а плавучий дом на одну компанию: восемь кают и до 20 гостей. Пять люкс-кают по 24 м², два junior-сьюта по 39 м² и Lumière Suite 68 м² с джакузи и батлером. Судно ходит только полным фрахтом и идёт по вашему расписанию: встаёт на ночь у островов, где нет других судов, и на пятый день приводит в Асуан группу, которая успела поговорить обо всём. Ресторан a la carte, лаундж-бар открыт весь день, бассейн на солнечной палубе, массажный кабинет с окном в пол, йога на палубе. Формат для правления, ключевых партнёров и семьи владельца."
+        },
+        {
+          "type": "heading",
+          "text": "Фрахт судна на Ниле или блок кают: что меняется",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Есть два способа посадить группу на судно. Первый — блок кают на регулярном рейсе: группа занимает часть судна, остальные каюты продаются другим пассажирам, судно идёт по своему расписанию, а ресторан и лаундж общие. Второй — полный фрахт: судно целиком под вашу компанию. Разница не только в приватности — меняется сама природа программы."
+        },
+        {
+          "type": "comparison",
+          "title": "Блок кают против полного фрахта",
+          "left": {
+            "title": "Блок кают на регулярном рейсе",
+            "items": [
+              "Расписание судна: отправление, стоянки и время выхода на берег заданы рейсом",
+              "Ресторан и лаундж делятся с другими пассажирами — пленарную сессию провести негде",
+              "Вечерняя программа общая для всего судна",
+              "Подходит небольшой группе, которой нужен именно круиз, а не мероприятие",
+              "Гид-египтолог и программа на берегу при этом работают отдельно для вашей группы"
+            ]
+          },
+          "right": {
+            "title": "Полный фрахт",
+            "items": [
+              "Своё расписание: можно задержаться у храма, сдвинуть выход, добавить стоянку",
+              "Лаундж — зал пленарной сессии, ресторан — гала-ужин, верхняя палуба — вечер компании",
+              "Брендинг общих пространств и своя вечерняя программа на борту",
+              "Приватные вечера в храмах и ужины на берегу — формат Lumière",
+              "Никого постороннего: конфиденциальные сессии и инсентив в закрытом контуре"
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "Конференция на корабле при полном фрахте выглядит так: утром группа выходит к храмам с гидом, к обеду возвращается, после обеда — пленарная сессия в лаундже, пока судно идёт на юг, вечером — ужин в ресторане и вечер на верхней палубе. На Soleil под это есть всё нужное: лаундж 260 м², ресторан на 110 мест, где вся группа садится за один заход, и открытая палуба с бассейном и баром. На Le Fayan Suites тот же сценарий работает для группы до 74 гостей."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Когда фрахт — единственный вариант",
+          "text": "Lumière ходит только полным фрахтом: судно на 20 гостей не продаётся по каютам. Дахабии Nour El Nil мы тоже берём целиком под группу. Вечерний круиз по Каиру для гала-ужина — всегда фрахт судна. На Soleil для группы от 80 человек имеет смысл брать судно целиком: группа и так занимает большую его часть."
+        },
+        {
+          "type": "image",
+          "url": "/cruises/soleil-deck-dinner.webp",
+          "alt": "Ужин на верхней палубе Soleil в сумерках",
+          "caption": "Верхняя палуба Soleil в сумерках. При полном фрахте это площадка для вечера компании — с баром, бассейном и рекой вместо декораций"
+        },
+        {
+          "type": "heading",
+          "text": "Маршрут на четыре ночи из Луксора: по дням",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Четыре ночи из Луксора — самый востребованный формат для корпоративной группы: он укладывается в рабочую неделю (Le Fayan Suites выходит из Луксора в понедельник и приходит в Асуан в пятницу) и при этом закрывает все главные объекты между Луксором и Асуаном. Порядок остановок зависит от направления и числа ночей, поэтому ниже — логика маршрута, а не расписание по часам."
+        },
+        {
+          "type": "heading",
+          "text": "День 1. Луксор: Карнак и Луксорский храм",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Посадка на судно и первый выход на берег — Карнак и Луксорский храм, два храма, с которых начинается любой разговор о Древнем Египте. Вечером — приветственный ужин на борту: группа осваивает судно, лаундж и верхнюю палубу."
+        },
+        {
+          "type": "heading",
+          "text": "День 2. Западный берег: Долина Царей, храм Хатшепсут, Колоссы Мемнона",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Для желающих день начинается затемно: воздушный шар над Луксором идёт по желанию, как дополнение к базовой программе. Затем весь западный берег: Долина Царей, храм Хатшепсут, Колоссы Мемнона. После обеда судно отходит от Луксора и берёт курс на юг; вторая половина дня — палуба, вечер — ужин и программа на борту. При полном фрахте это удобное время для первой рабочей сессии."
+        },
+        {
+          "type": "heading",
+          "text": "День 3. Эдфу и Ком-Омбо",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Утро в Эдфу: к храму Гора группа подъезжает на конных экипажах. Дальше судно идёт до Ком-Омбо, где на излучине реки стоит двойной храм Собека и Гора. Между двумя храмами — переход по реке, и это лучшее время для сессии в лаундже или просто для палубы с бассейном."
+        },
+        {
+          "type": "heading",
+          "text": "День 4. Асуан: Филе, нубийская деревня и заповедник",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Судно приходит в Асуан. В программе — храм Исиды на острове Филе, нубийская деревня и заповедник Асуана, куда группу везут на лодках. Вечер — заключительный ужин на борту; при фрахте это гала-вечер компании на верхней палубе."
+        },
+        {
+          "type": "heading",
+          "text": "День 5. Высадка в Асуане",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Завтрак и высадка. Для тех, кто хочет продлить программу, Абу-Симбел организуем по желанию — как и воздушный шар, это дополнение к базовому маршруту. Дальше группа либо летит домой, либо продолжает поездку: Каир с пирамидами или Красное море мы собираем в ту же программу."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Альтернативы классическому маршруту",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Не каждой группе нужен большой пятизвёздочный лайнер. Три других формата из нашей практики — под другой размер группы и другой ритм. Есть и длинный круиз Каир → Асуан на 10–17 ночей с Абидосом и Дендерой — для тех, у кого есть время на полный Нил."
+        },
+        {
+          "type": "heading",
+          "text": "Приватный чартер Lumière: пять ночей только для вашей группы",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Базовый маршрут Lumière — пять ночей Луксор → Асуан с ночёвками у островов Фавза и Хербиаб, у Гебель-эль-Сильсила, в Ком-Омбо и у Филе. Судно встаёт на ночь там, где нет других судов; один из вечеров — ужин у костра на острове Хербиаб, другой — приватный вечер в храме, когда группа остаётся в нём одна. Программа и остановки — под группу: это формат для правления, стратегической сессии партнёров или executive-ретрита, где разговор важнее количества увиденного."
+        },
+        {
+          "type": "image",
+          "url": "/cruises/lumiere-private-night.webp",
+          "alt": "Приватный вечер в храме — формат чартера Lumière",
+          "caption": "Приватный вечер в храме: один из форматов чартера Lumière, когда группа остаётся в храме одна"
+        },
+        {
+          "type": "heading",
+          "text": "Дахабия Nour El Nil: шесть дней под парусом из Эсны",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Дахабия — парусная лодка с двумя мачтами, какие ходили по Нилу в XIX веке, только с кондиционером, душем в каждой каюте и солнечными панелями на крыше. Nour El Nil держит флот из десяти таких лодок на 16–24 гостя, и мы берём их целиком под группу. Маршрут один: Эсна → Асуан, шесть дней, отправления по понедельникам и вторникам, сезон — с сентября по май. Полный пансион и все экскурсии с гидом входят."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Эсна: посадка, храм Хнума, который стоит на девять метров ниже улицы, торговые ряды.",
+            "Эль-Каб и Эдфу: храм Нехбет и гробницы в склоне горы, затем храм Гора на конных экипажах.",
+            "Просто Нил: день под парусом, стоянка у пустынного берега — прогулка или купание.",
+            "Гебель-эль-Сильсила: ночь у подсвеченного храма Хоремхеба в самом узком месте Нила. Большим судам сюда нельзя — обычно вы единственные гости.",
+            "Ком-Омбо: храм Собека и музей крокодилов, остаток дня под парусом.",
+            "Асуан: утро у Асуанского моста, где пустыня подходит к самой воде. Высадка."
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/cruises/dahabiya-two-sails.webp",
+          "alt": "Две дахабии Nour El Nil под полосатыми парусами на Ниле",
+          "caption": "Дахабии Nour El Nil под парусом. Формат для группы до 24 гостей, которой нужен не маршрут, а ритм"
+        },
+        {
+          "type": "heading",
+          "text": "Вечерний круиз по Каиру для гала-ужина",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Если программа группы проходит в Каире и нужен один сильный вечер, а не неделя на реке, — вечерний круиз по Каиру. Два-три часа на воде, ужин на борту с видом на ночной город, живая музыка, до 200 гостей. Судно берётся целиком: формат для гала-вечеров, корпоративных приёмов и делегаций. Хорошо сочетается с конференцией в Каире или как финальный вечер программы с пирамидами."
+        },
+        {
+          "type": "heading",
+          "text": "Сезон и горизонт бронирования",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Дахабии Nour El Nil ходят с сентября по май. У классических судов ограничение другое — фиксированные дни отправления: четыре ночи на Le Fayan Suites начинаются в Луксоре по понедельникам, дахабии выходят из Эсны по понедельникам и вторникам. Для группы это значит, что даты поездки подстраиваются под расписание судна, а не наоборот, — и чем раньше вы приходите с датами, тем шире выбор: судно, категории кают, свободные недели под полный фрахт."
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "Чем раньше, тем шире выбор",
+          "text": "Полный фрахт — это целое судно на конкретную неделю, а таких недель в году столько, сколько рейсов. Присылайте даты, как только они появились, даже если состав группы ещё не финальный: судно и неделю мы подбираем раньше, чем закрывается список гостей."
+        },
+        {
+          "type": "heading",
+          "text": "Что прислать для подбора судна",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Чтобы предложить судно, категории кают и маршрут под вашу группу, нам достаточно короткого письма."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Даты или диапазон дат и желаемое число ночей: 3, 4, 5 или 7.",
+            "Число гостей и схема расселения: по двое, по одному, VIP-гости в сьютах.",
+            "Формат: инсентив, конференция с пленарной сессией, ретрит правления, гала-вечер.",
+            "Нужна ли рабочая сессия на борту и на сколько человек — от этого зависит выбор между Le Fayan Suites и Soleil.",
+            "Язык гида — русский или английский.",
+            "Дополнения: Абу-Симбел, воздушный шар над Луксором, приватный вечер в храме, ужин на берегу.",
+            "Что до и после круиза: Каир, Красное море или только Нил."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Инсентив-круиз по Египту или конференция на Ниле — в любом формате мы ведём группу сами: от подбора судна и категорий кают до координации на борту и duty-office 24/7. Напишите даты и число гостей — подберём судно и маршрут и скажем, есть ли под ваши даты возможность полного фрахта."
+        }
+      ]
+    },
+    "en": {
+      "title": "Corporate Nile Cruise: How a Full-Ship Charter Works and What a Group Can Do in Four Nights",
+      "category": "Locations",
+      "date": "September 17, 2026",
+      "excerpt": "A corporate Nile cruise for groups: three ships, full charter vs cabin block, a four-night Luxor itinerary by day, and alternatives from dahabiya to a Cairo gala.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "A corporate Nile cruise puts the hotel, the meeting room, the restaurant and the excursion programme on one vessel, and that vessel carries the group from temple to temple. Mornings are for Karnak or the Valley of the Kings with an Egyptologist guide, afternoons for the river and the pool on the sun deck, evenings for dinner and the programme on board. Nobody changes hotels mid-week and nobody repacks a suitcase: the group checks in once in Luxor and steps ashore in Aswan."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event has been running MICE and DMC operations in Egypt since 2004. We hold direct contracts with the ship owners, with no intermediaries in between, and our Egyptologist guides work in English and Russian. This article covers why a cruise suits a group, which of the three ships fits which format, what a full-ship charter changes compared with a block of cabins, how a four-night itinerary from Luxor unfolds day by day, and which alternatives exist, from a sailing dahabiya to an evening cruise in Cairo for a gala dinner."
+        },
+        {
+          "type": "heading",
+          "text": "Corporate Nile cruise: why a group is better off on a ship than in a hotel",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The core argument is that everything is in one place. A Nile cruise for groups already includes the shore programme: the Egyptologist guide, entrance tickets and transfers to the temples come with the cruise, and so does full board. The organiser does not have to assemble logistics from a dozen suppliers; the ship sails on schedule, the coaches wait at the pier, the guide meets the group at the gangway. When the ship moves south in the evening, the group is already back on board, and the evening programme starts where dinner ends."
+        },
+        {
+          "type": "list",
+          "items": [
+            "One check-in and one check-out: embark in Luxor, disembark in Aswan, and not a single hotel transfer with luggage in between.",
+            "The shore programme is already included: Egyptologist guide, tickets to the temples and necropolises, transfers to every site.",
+            "Evenings on board: dinner in the restaurant, the lounge bar, the sun deck. Nothing has to be rented separately.",
+            "A closed environment: on the ship the group does not mix with the city, which suits a confidential session as much as it suits an incentive.",
+            "A rhythm: temples in the morning, the river in the afternoon, the deck in the evening. The group gets what a hotel next to a conference hall never gives it: shared space and shared time."
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/cruises/fayan-lounge.webp",
+          "alt": "Lounge bar on Le Fayan Suites, the evening space for a group on board",
+          "caption": "The lounge bar on Le Fayan Suites. In the evening the whole group moves here, with no separate venue to rent and no transfers"
+        },
+        {
+          "type": "heading",
+          "text": "Three ships and the groups they fit",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "We work directly with three ships on the Luxor to Aswan route. Each answers a different brief: an incentive or conference of up to 74 guests where everyone gets the same high standard, a conference of 80 to 100 people with a plenary session on board, and a private charter for a board or key partners."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ship",
+            "Cabins",
+            "Capacity",
+            "Format",
+            "Best for"
+          ],
+          "rows": [
+            [
+              "Le Fayan Suites",
+              "37 suites, all-suite: 36 suites of 39 m² and a Royal Suite of 58 m² with terrace and jacuzzi",
+              "Up to 74 guests",
+              "Classic cruise of 3, 4 or 7 nights; full charter possible",
+              "Conferences and incentives where every guest must get the same level"
+            ],
+            [
+              "Soleil",
+              "53 cabins: 41 deluxe cabins with balcony, 8 junior suites, 2 Royal, 2 Soleil Suites with jacuzzi",
+              "Up to 106 guests",
+              "Classic cruise of 3, 4 or 7 nights; full charter for groups of 80 and more",
+              "Conferences of 80 to 100: plenary in the lounge, dinners in the restaurant"
+            ],
+            [
+              "Lumière",
+              "8 cabins: 5 deluxe cabins, 2 junior suites and the Lumière Suite with jacuzzi and butler",
+              "Up to 20 guests",
+              "Full charter only: 5 nights Luxor to Aswan on your own schedule",
+              "Board, key partners, executive retreat"
+            ]
+          ],
+          "caption": "All three ships are booked under direct contracts with the owners. Cabin categories and the rooming plan are matched to the make-up of the group"
+        },
+        {
+          "type": "heading",
+          "text": "Le Fayan Suites: all-suite for incentives and conferences",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "There are no ordinary cabins on Le Fayan Suites, only suites with panoramic windows onto the water: 36 suites of 39 m² and a Royal Suite of 58 m² with a terrace and jacuzzi. That settles the eternal incentive question of who gets the worse cabin. Here nobody does. Four decks plus a sun deck with pool and bar, a restaurant with panoramic windows, a lounge bar, a wellness centre with massage, sauna and hammam, and a gym. Every suite has Wi-Fi, a coffee machine and a safe. Itineraries: 3 nights from Aswan, 4 nights from Luxor running Monday to Friday, and 7 nights from either port. A full charter for a group is possible."
+        },
+        {
+          "type": "heading",
+          "text": "Soleil: a conference on a Nile cruise ship for 80 to 100 people",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Soleil is the largest ship we work with: 53 cabins and up to 106 guests. 41 deluxe cabins of 21 m² with floor-to-ceiling balconies, eight junior suites of 39 m², two Royal suites of 44 m² and two Soleil Suites of 58 m² with jacuzzi. What matters more to an organiser is the rest: a 110-seat restaurant where the whole group sits down at once, a 260 m² lounge that becomes the plenary room for the day, and the upper deck for the evenings. The spa is the largest on the Nile, with an indoor jacuzzi under two storeys of windows, two massage rooms, a sauna and a hammam. There is a lift and a clinic on board, and the restaurant prepares dietary menus on request. For groups of 80 and more we take the whole ship."
+        },
+        {
+          "type": "stat",
+          "number": "53 cabins",
+          "label": "on Soleil, the largest ship we work with: up to 106 guests, a 110-seat restaurant and a 260 m² lounge for the plenary session"
+        },
+        {
+          "type": "heading",
+          "text": "Lumière: a ship for one company",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Lumière is not a cruise liner but a floating house for one company: eight cabins and up to 20 guests. Five deluxe cabins of 24 m², two junior suites of 39 m² and the Lumière Suite of 68 m² with jacuzzi and butler. The ship sails on full charter only and keeps your schedule: it moors for the night at islands where there are no other vessels, and on the fifth day it brings to Aswan a group that has had time to talk everything through. An à la carte restaurant, a lounge bar open all day, a pool on the sun deck, a massage room with a floor-to-ceiling window, yoga on deck. The format for a board, key partners or the owner’s family."
+        },
+        {
+          "type": "heading",
+          "text": "Nile cruise charter or a block of cabins: what changes",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "There are two ways to put a group on a ship. The first is a block of cabins on a scheduled departure: the group takes part of the ship, the remaining cabins go to other passengers, the ship keeps its own timetable, and the restaurant and lounge are shared. The second is a full-ship charter: the entire vessel for your company. The difference is not only privacy; it changes what kind of programme is possible at all."
+        },
+        {
+          "type": "comparison",
+          "title": "Cabin block versus full charter",
+          "left": {
+            "title": "Cabin block on a scheduled departure",
+            "items": [
+              "The ship’s timetable: departure, stops and shore times are fixed by the sailing",
+              "Restaurant and lounge are shared with other passengers, so there is nowhere to hold a plenary",
+              "The evening programme is the ship’s, for everyone on board",
+              "Works for a small group that wants a cruise rather than an event",
+              "Your Egyptologist guide and shore programme still run separately for your group"
+            ]
+          },
+          "right": {
+            "title": "Full-ship charter",
+            "items": [
+              "Your own schedule: linger at a temple, shift a departure, add a stop",
+              "The lounge becomes the plenary room, the restaurant the gala dinner, the upper deck the company evening",
+              "Branding of the public spaces and your own evening programme on board",
+              "Private evenings in temples and dinners ashore, the Lumière format",
+              "Nobody outside the company: confidential sessions and incentives in a closed environment"
+            ]
+          }
+        },
+        {
+          "type": "paragraph",
+          "text": "A conference on a chartered ship runs like this: the group goes out to the temples with the guide in the morning, returns for lunch, holds the plenary session in the lounge in the afternoon while the ship sails south, then dinner in the restaurant and an evening on the upper deck. Soleil has everything this needs: the 260 m² lounge, the 110-seat restaurant where the whole group sits in one seating, and the open deck with pool and bar. On Le Fayan Suites the same scenario works for a group of up to 74 guests."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "When a charter is the only option",
+          "text": "Lumière sails on full charter only; a ship for 20 guests is not sold cabin by cabin. The Nour El Nil dahabiyas are also taken as whole boats for a group. An evening cruise in Cairo for a gala dinner is always a full charter. On Soleil, a group of 80 or more makes sense as a full charter: it occupies most of the ship anyway."
+        },
+        {
+          "type": "image",
+          "url": "/cruises/soleil-deck-dinner.webp",
+          "alt": "Dinner on the upper deck of Soleil at dusk",
+          "caption": "The upper deck of Soleil at dusk. Under a full charter this is the company evening, with the bar, the pool and the river instead of decor"
+        },
+        {
+          "type": "heading",
+          "text": "A four-night itinerary from Luxor, day by day",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Four nights from Luxor is the most requested format for a corporate group: it fits inside a working week (Le Fayan Suites leaves Luxor on Monday and reaches Aswan on Friday) and still covers every major site between Luxor and Aswan. The order of stops depends on the direction and the number of nights, so what follows is the logic of the route rather than an hour-by-hour timetable."
+        },
+        {
+          "type": "heading",
+          "text": "Day 1. Luxor: Karnak and Luxor Temple",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Embarkation and the first shore excursion: Karnak and Luxor Temple, the two temples where any conversation about ancient Egypt begins. In the evening, a welcome dinner on board; the group gets to know the ship, the lounge and the upper deck."
+        },
+        {
+          "type": "heading",
+          "text": "Day 2. The West Bank: Valley of the Kings, Hatshepsut, Colossi of Memnon",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "For those who want it, the day starts before dawn: the hot-air balloon over Luxor is optional and comes as an add-on to the base programme. Then the whole West Bank: the Valley of the Kings, the temple of Hatshepsut, the Colossi of Memnon. After lunch the ship leaves Luxor and heads south; the afternoon belongs to the deck, the evening to dinner and the programme on board. On a full charter this is a convenient slot for the first working session."
+        },
+        {
+          "type": "heading",
+          "text": "Day 3. Edfu and Kom Ombo",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Morning in Edfu, where the group reaches the temple of Horus by horse-drawn carriage. The ship then continues to Kom Ombo and the double temple of Sobek and Horus on a bend of the river. Between the two temples there is a stretch of sailing, the best time for a session in the lounge or simply for the pool deck."
+        },
+        {
+          "type": "heading",
+          "text": "Day 4. Aswan: Philae, the Nubian village and the reserve",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The ship arrives in Aswan. On the programme: the temple of Isis on the island of Philae, then the Nubian village and the Aswan reserve, which the group visits by boat. The evening is the farewell dinner on board; on a charter this is the company gala on the upper deck."
+        },
+        {
+          "type": "heading",
+          "text": "Day 5. Disembarkation in Aswan",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Breakfast and disembarkation. For those who want to extend the programme, Abu Simbel is arranged on request; like the balloon, it is an add-on to the base route. From here the group either flies home or continues: Cairo with the pyramids or the Red Sea can be built into the same trip."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Alternatives to the classic route",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Not every group needs a large five-star ship. Three other formats from our practice suit a different group size and a different pace. There is also the long cruise, Cairo to Aswan over 10 to 17 nights with Abydos and Dendera, for groups that have the time for the whole Nile."
+        },
+        {
+          "type": "heading",
+          "text": "Private charter on Lumière: five nights for your group alone",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The base route on Lumière is five nights from Luxor to Aswan with overnight moorings at the islands of Fawza and Herbiab, at Gebel el-Silsila, at Kom Ombo and at Philae. The ship stops for the night where there are no other vessels; one evening is a campfire dinner on Herbiab island, another a private evening in a temple with the group there alone. The programme and the stops are built around the group: this is the format for a board, a partners’ strategy session or an executive retreat where the conversation matters more than the number of sights."
+        },
+        {
+          "type": "image",
+          "url": "/cruises/lumiere-private-night.webp",
+          "alt": "A private evening in a temple, the Lumière charter format",
+          "caption": "A private evening in a temple: one of the Lumière charter formats, with the group alone inside"
+        },
+        {
+          "type": "heading",
+          "text": "Nour El Nil dahabiya: six days under sail from Esna",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A dahabiya is a two-masted sailing boat of the kind that plied the Nile in the nineteenth century, now with air conditioning, a shower in every cabin and solar panels on the roof. Nour El Nil runs a fleet of ten such boats for 16 to 24 guests, and we take them as whole boats for a group. There is one route: Esna to Aswan in six days, departing on Mondays and Tuesdays, in season from September to May. Full board and all guided excursions are included."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Esna: embarkation, the temple of Khnum, which stands nine metres below street level, and the market streets.",
+            "El Kab and Edfu: the temple of Nekhbet and the tombs in the hillside, then the temple of Horus by horse-drawn carriage.",
+            "Just the Nile: a day under sail, a stop at a desert bank for a walk or a swim.",
+            "Gebel el-Silsila: a night beside the illuminated temple of Horemheb at the narrowest point of the Nile. Large ships cannot come here, so the group is usually the only one.",
+            "Kom Ombo: the temple of Sobek and the crocodile museum, the rest of the day under sail.",
+            "Aswan: morning by the Aswan bridge, where the desert comes down to the water. Disembarkation."
+          ]
+        },
+        {
+          "type": "image",
+          "url": "/cruises/dahabiya-two-sails.webp",
+          "alt": "Two Nour El Nil dahabiyas under striped sails on the Nile",
+          "caption": "Nour El Nil dahabiyas under sail. A format for a group of up to 24 that wants a pace rather than an itinerary"
+        },
+        {
+          "type": "heading",
+          "text": "An evening cruise in Cairo for a gala dinner",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "If the group’s programme is in Cairo and what it needs is one strong evening rather than a week on the river, there is the evening cruise in Cairo. Two to three hours on the water, dinner on board with the night city as the view, live music, up to 200 guests. The ship is taken whole: a format for gala evenings, corporate receptions and delegations. It pairs well with a conference in Cairo or as the closing night of a programme built around the pyramids."
+        },
+        {
+          "type": "heading",
+          "text": "Season and how far ahead to book",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The Nour El Nil dahabiyas sail from September to May. For the classic ships the constraint is different: departures are tied to days of the week. The four-night sailing on Le Fayan Suites starts in Luxor on Mondays, and the dahabiyas leave Esna on Mondays and Tuesdays. For a group this means the trip dates follow the ship’s calendar rather than the other way round, and the earlier you come with dates, the wider the choice: the ship, the cabin categories and the free weeks for a full charter."
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "The earlier, the wider the choice",
+          "text": "A full charter means the whole ship for a specific week, and there are only as many such weeks in a year as there are sailings. Send us your dates as soon as they exist, even if the guest list is not final: we match the ship and the week before the list is closed."
+        },
+        {
+          "type": "heading",
+          "text": "What to send us to match a ship",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "To propose a ship, cabin categories and a route for your group, a short email is enough."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Dates or a date range, and the preferred length: 3, 4, 5 or 7 nights.",
+            "Number of guests and the rooming pattern: twin, single, VIP guests in suites.",
+            "The format: incentive, conference with a plenary, board retreat, gala evening.",
+            "Whether a working session on board is needed and for how many people; this decides between Le Fayan Suites and Soleil.",
+            "Guide language: English or Russian.",
+            "Add-ons: Abu Simbel, the balloon over Luxor, a private evening in a temple, a dinner ashore.",
+            "What comes before and after the cruise: Cairo, the Red Sea, or the Nile alone."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "An incentive Nile cruise or a conference on the river: whatever the format, we run the group ourselves, from choosing the ship and cabin categories to coordination on board and a 24/7 duty office. Send us the dates and the number of guests, and we will propose a ship and a route and tell you whether a full charter is available for your week."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
     id: 'organizaciya-konferencii-za-rubezhom',
     datePublished: '2026-07-18',
     image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&q=80&w=1600',
