@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import SEO from '../components/SEO';
+import { PhotoSet, ZoomImage } from '../components/PhotoLightbox';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { cruises, fleet, cruiseSights, dahabiyas } from '../content/la-royal-event';
 
@@ -48,66 +49,73 @@ const Cruises = () => {
           <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-12">Три судна, с которыми мы работаем напрямую</h2>
 
           <div className="space-y-16">
-            {fleet.map((ship, i) => (
-              <motion.article
-                key={ship.slug}
-                id={ship.slug}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.5 }}
-                className="rounded-3xl bg-royal-card border border-royal-rule overflow-hidden"
-              >
-                <div className={`grid grid-cols-1 lg:grid-cols-5 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-                  <div className="lg:col-span-3 relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px]">
-                    <img
-                      src={ship.hero}
-                      alt={`${ship.name} — судно на Ниле`}
-                      loading={i === 0 ? 'eager' : 'lazy'}
-                      decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-royal-night/70 via-transparent to-transparent" />
-                    <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
-                      <h3 className="text-3xl sm:text-4xl font-display font-black uppercase tracking-tight text-white drop-shadow">{ship.name}</h3>
-                      <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full bg-royal-night/70 border border-white/15 text-royal-lime">{ship.capacity}</span>
-                    </div>
-                  </div>
+            {fleet.map((ship, i) => {
+              const heroAlt = `${ship.name} — судно на Ниле`;
+              return (
+                <PhotoSet key={ship.slug} photos={[{ src: ship.hero, alt: heroAlt }, ...ship.gallery]}>
+                  {(open) => (
+                    <motion.article
+                      id={ship.slug}
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-80px' }}
+                      transition={{ duration: 0.5 }}
+                      className="rounded-3xl bg-royal-card border border-royal-rule overflow-hidden"
+                    >
+                      <div className={`grid grid-cols-1 lg:grid-cols-5 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+                        <div className="lg:col-span-3 relative aspect-[16/10] lg:aspect-auto lg:min-h-[420px]">
+                          <ZoomImage
+                            src={ship.hero}
+                            alt={heroAlt}
+                            onOpen={() => open(0)}
+                            loading={i === 0 ? 'eager' : 'lazy'}
+                            className="absolute inset-0 w-full h-full"
+                            imgClassName="object-cover"
+                          />
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-royal-night/70 via-transparent to-transparent" />
+                          <div className="pointer-events-none absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+                            <h3 className="text-3xl sm:text-4xl font-display font-black uppercase tracking-tight text-white drop-shadow">{ship.name}</h3>
+                            <span className="shrink-0 text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full bg-royal-night/70 border border-white/15 text-royal-lime">{ship.capacity}</span>
+                          </div>
+                        </div>
 
-                  <div className="lg:col-span-2 p-7 sm:p-9 flex flex-col">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">{ship.kicker}</p>
-                    <p className="text-royal-sand-2 leading-relaxed mb-6">{ship.text}</p>
-                    <ul className="space-y-2.5 mb-6">
-                      {ship.facts.map((f) => (
-                        <li key={f} className="flex gap-3 text-sm text-royal-sand">
-                          <Check className="w-4 h-4 mt-0.5 shrink-0 text-royal-lime" />
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-xs text-royal-dim leading-relaxed mt-auto">{ship.routes}</p>
-                  </div>
-                </div>
+                        <div className="lg:col-span-2 p-7 sm:p-9 flex flex-col">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">{ship.kicker}</p>
+                          <p className="text-royal-sand-2 leading-relaxed mb-6">{ship.text}</p>
+                          <ul className="space-y-2.5 mb-6">
+                            {ship.facts.map((f) => (
+                              <li key={f} className="flex gap-3 text-sm text-royal-sand">
+                                <Check className="w-4 h-4 mt-0.5 shrink-0 text-royal-lime" />
+                                <span>{f}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="text-xs text-royal-dim leading-relaxed mt-auto">{ship.routes}</p>
+                        </div>
+                      </div>
 
-                <div className="px-7 sm:px-9 pb-8 pt-2 border-t border-royal-rule">
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-6">
-                    {ship.gallery.map((g) => (
-                      <img
-                        key={g.src}
-                        src={g.src}
-                        alt={g.alt}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full aspect-[4/3] object-cover rounded-xl border border-royal-rule"
-                      />
-                    ))}
-                  </div>
-                  <p className="mt-5 text-[11px] uppercase tracking-[0.18em] text-royal-dim">
-                    На борту: {ship.onboard.join(' · ')}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
+                      <div className="px-7 sm:px-9 pb-8 pt-2 border-t border-royal-rule">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-6">
+                          {ship.gallery.map((g, gi) => (
+                            <ZoomImage
+                              key={g.src}
+                              src={g.src}
+                              alt={g.alt}
+                              onOpen={() => open(gi + 1)}
+                              className="w-full aspect-[4/3] rounded-xl border border-royal-rule"
+                              imgClassName="object-cover"
+                            />
+                          ))}
+                        </div>
+                        <p className="mt-5 text-[11px] uppercase tracking-[0.18em] text-royal-dim">
+                          На борту: {ship.onboard.join(' · ')}
+                        </p>
+                      </div>
+                    </motion.article>
+                  )}
+                </PhotoSet>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -134,53 +142,66 @@ const Cruises = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start mb-12">
-            {dahabiyas.boats.map((b) => (
-              <div key={b.name} className="rounded-2xl bg-royal-card border border-royal-rule overflow-hidden flex flex-col">
-                {b.hero && (
-                  <img
-                    src={b.hero.src}
-                    alt={b.hero.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full aspect-[4/3] object-cover border-b border-royal-rule"
-                  />
-                )}
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="text-lg font-display font-bold mb-1">{b.name}</h3>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-royal-lime mb-3">{b.facts}</p>
-                  <p className="text-sm text-royal-sand-2 leading-relaxed">{b.note}</p>
-                  {b.gallery && b.gallery.length > 0 && (
-                    <div className="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-royal-rule">
-                      {b.gallery.map((g) => (
-                        <img
-                          key={g.src}
-                          src={g.src}
-                          alt={g.alt}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full aspect-[4/3] object-cover rounded-lg border border-royal-rule"
+            {dahabiyas.boats.map((b) => {
+              const gallery = b.gallery ?? [];
+              const photos = [...(b.hero ? [b.hero] : []), ...gallery];
+              const galleryOffset = b.hero ? 1 : 0;
+              return (
+                <PhotoSet key={b.name} photos={photos}>
+                  {(open) => (
+                    <div className="rounded-2xl bg-royal-card border border-royal-rule overflow-hidden flex flex-col">
+                      {b.hero && (
+                        <ZoomImage
+                          src={b.hero.src}
+                          alt={b.hero.alt}
+                          onOpen={() => open(0)}
+                          className="w-full aspect-[4/3] border-b border-royal-rule"
+                          imgClassName="object-cover"
                         />
-                      ))}
+                      )}
+                      <div className="p-5 flex flex-col flex-1">
+                        <h3 className="text-lg font-display font-bold mb-1">{b.name}</h3>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.15em] text-royal-lime mb-3">{b.facts}</p>
+                        <p className="text-sm text-royal-sand-2 leading-relaxed">{b.note}</p>
+                        {gallery.length > 0 && (
+                          <div className="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-royal-rule">
+                            {gallery.map((g, gi) => (
+                              <ZoomImage
+                                key={g.src}
+                                src={g.src}
+                                alt={g.alt}
+                                onOpen={() => open(galleryOffset + gi)}
+                                className="w-full aspect-[4/3] rounded-lg border border-royal-rule"
+                                imgClassName="object-cover"
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
-                </div>
-              </div>
-            ))}
+                </PhotoSet>
+              );
+            })}
           </div>
 
           {dahabiyas.gallery.length > 0 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
-              {dahabiyas.gallery.map((g) => (
-                <img
-                  key={g.src}
-                  src={g.src}
-                  alt={g.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full aspect-[4/3] object-cover rounded-xl border border-royal-rule"
-                />
-              ))}
-            </div>
+            <PhotoSet photos={dahabiyas.gallery}>
+              {(open) => (
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+                  {dahabiyas.gallery.map((g, gi) => (
+                    <ZoomImage
+                      key={g.src}
+                      src={g.src}
+                      alt={g.alt}
+                      onOpen={() => open(gi)}
+                      className="w-full aspect-[4/3] rounded-xl border border-royal-rule"
+                      imgClassName="object-cover"
+                    />
+                  ))}
+                </div>
+              )}
+            </PhotoSet>
           )}
 
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">Шесть дней по реке</p>
