@@ -26,6 +26,8 @@ export interface Program {
   disclaimer: string;
   /** Обложка: /programs/<slug>.webp. Пока файла нет — поле не задаём, карточка текстовая. */
   image?: string;
+  /** Сюжетные кадры программы (/programs/<slug>-1.webp …): блок «Кадры программы» на странице. */
+  gallery?: Photo[];
 }
 
 export const programs: Program[] = [

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import { PhotoSet, ZoomImage } from '../components/PhotoLightbox';
 import { SITE_URL } from '../site-config';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { programs } from '../content/la-royal-event';
@@ -148,6 +149,33 @@ const ProgramDetail = () => {
           </aside>
         </div>
       </section>
+
+      {/* Сюжетные кадры — только если у программы есть галерея */}
+      {p.gallery && p.gallery.length > 0 && (
+        <section className="py-16 px-6 border-t border-royal-rule bg-white/[0.02]">
+          <div className="max-w-7xl mx-auto">
+            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Кадры программы</p>
+            <h2 className="text-2xl font-display font-bold uppercase tracking-tight mb-8">Как это выглядит</h2>
+            <PhotoSet photos={p.gallery}>
+              {(open) => (
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {p.gallery!.map((g, gi) => (
+                    <ZoomImage
+                      key={g.src}
+                      src={g.src}
+                      alt={g.alt}
+                      onOpen={() => open(gi)}
+                      className="w-full aspect-[3/2] rounded-2xl border border-royal-rule"
+                      imgClassName="object-cover"
+                    />
+                  ))}
+                </div>
+              )}
+            </PhotoSet>
+            <p className="mt-4 text-xs text-royal-dim">Кадры иллюстрируют атмосферу программы. Истории, персонажи и находки вымышлены.</p>
+          </div>
+        </section>
+      )}
 
       {/* Neighbors */}
       <section className="py-12 px-6 border-t border-royal-rule">
