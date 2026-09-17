@@ -10,6 +10,7 @@ import { Menu, X } from 'lucide-react';
 import Home from './pages/Home';
 import Destination from './pages/Destination';
 import CookieBanner from './components/CookieBanner';
+import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 
@@ -248,6 +249,7 @@ const AppRoutes = () => {
 export const AppContent = () => {
   return (
     <LanguageProvider>
+      <ScrollToTop />
       <Navbar />
       <div className="min-h-screen flex flex-col relative">
         <div className="flex-grow">
