@@ -53,8 +53,8 @@ const Footer = () => {
             {t.footer.legal.ogrnip}
           </p>
           <div className="mt-4 space-y-1">
-            <a href="mailto:baxgat@yandex.ru" className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block py-1">
-              baxgat@yandex.ru
+            <a href="mailto:sale@royaleventandmice.ru" className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block py-1">
+              sale@royaleventandmice.ru
             </a>
             <a href="tel:+79261233328" className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors block py-1">
               +7 (926) 123-33-28

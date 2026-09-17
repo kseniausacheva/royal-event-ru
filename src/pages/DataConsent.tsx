@@ -50,7 +50,7 @@ const DataConsent = () => {
               <p>Персональные данные обрабатываются до отказа в дальнейшем обсуждении сотрудничества или до заключения договора, смотря что произойдёт быстрее.</p>
 
               <p>Согласие может быть отозвано вами или вашим представителем путём направления письменного заявления по адресу, указанному в начале Согласия, либо на электронную почту{' '}
-                <a href="mailto:baxgat@yandex.ru" className="text-royal-pink hover:underline">baxgat@yandex.ru</a>.
+                <a href="mailto:sale@royaleventandmice.ru" className="text-royal-pink hover:underline">sale@royaleventandmice.ru</a>.
               </p>
 
               <p>В случае отзыва вами или вашим представителем Согласия Оператор вправе продолжить обработку персональных данных без него при наличии оснований, указанных в пунктах 2–11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального закона № 152-ФЗ «О персональных данных» от 27.07.2006 г.</p>
@@ -89,7 +89,7 @@ const DataConsent = () => {
               <p>Personal data is processed until a refusal to further discuss cooperation or until a contract is concluded, whichever occurs first.</p>
 
               <p>Consent may be revoked by you or your representative by sending a written statement to the address specified at the beginning of the Consent, or by email to{' '}
-                <a href="mailto:baxgat@yandex.ru" className="text-royal-pink hover:underline">baxgat@yandex.ru</a>.
+                <a href="mailto:sale@royaleventandmice.ru" className="text-royal-pink hover:underline">sale@royaleventandmice.ru</a>.
               </p>
 
               <p>In the event of revocation of Consent by you or your representative, the Operator has the right to continue processing personal data without it if there are grounds specified in paragraphs 2–11 of part 1 of Article 6, part 2 of Article 10, and part 2 of Article 11 of Federal Law No. 152-FZ "On Personal Data" dated July 27, 2006.</p>

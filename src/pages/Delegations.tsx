@@ -168,7 +168,7 @@ const Delegations = () => {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest opacity-60">Email</p>
-                  <p className="font-bold">baxgat@yandex.ru</p>
+                  <p className="font-bold">sale@royaleventandmice.ru</p>
                 </div>
               </div>
             </div>
