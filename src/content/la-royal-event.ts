@@ -701,7 +701,8 @@ export type Concert = {
   dateISO: string;
   /** Старт открытых продаж, ISO. */
   salesStartISO: string;
-  bookingUrl: string;
+  /** Афиша события: /tickets/<slug>.webp. Пока файла нет — поле не задаём. */
+  image?: Photo;
   ru: ConcertCopy;
   en: ConcertCopy;
 };
@@ -731,7 +732,6 @@ export const concerts: Concert[] = [
     tour: 'Las Mujeres Ya No Lloran World Tour',
     dateISO: '2027-11-28',
     salesStartISO: '2026-10-01',
-    bookingUrl: 'https://clck.ru/3V82RC',
     ru: {
       dateLabel: '28 ноября 2027',
       salesLabel: 'Старт продаж — 1 октября 2026',

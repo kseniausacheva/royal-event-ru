@@ -249,19 +249,17 @@ const Home = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
-                    <a
-                      href={event.bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      {language === 'ru' ? 'Забронировать' : 'Book now'} <ArrowRight className="w-4 h-4" />
-                    </a>
                     <Link
                       to={lp('/tickets')}
+                      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      {language === 'ru' ? 'Подробнее' : 'Details'} <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <Link
+                      to={`${lp('/tickets')}#booking`}
                       className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/20 rounded-xl text-sm font-bold uppercase tracking-widest text-royal-sand hover:border-royal-lilac hover:text-royal-lilac transition-colors whitespace-nowrap"
                     >
-                      {language === 'ru' ? 'Подробнее' : 'Details'}
+                      {language === 'ru' ? 'Забронировать' : 'Book tickets'}
                     </Link>
                   </div>
                 </div>
