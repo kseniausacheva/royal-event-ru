@@ -21,6 +21,9 @@ const ARTICLE_DATES_ISO: Record<string, string> = Object.fromEntries(
 
 import { RU_SITE_URL as SITE_URL_RU, COM_SITE_URL as SITE_URL_EN } from '../site-config';
 
+/** Статья с необязательным блоком ссылок на разделы сайта (перелинковка). */
+type ArticleWithLinks = { links?: { path: string; label: string }[] };
+
 /**
  * Типы блоков для богатого контента статей.
  * Если article.content — строка, то это legacy формат (рендерим через splitLegacyContent).
@@ -557,6 +560,28 @@ const BlogPage = () => {
                 ))
               ) : (
                 renderLegacyContent(article.content as string)
+              )}
+
+              {/* Ссылки на разделы сайта: перелинковка из статьи в услуги */}
+              {Array.isArray((article as ArticleWithLinks).links) && (article as ArticleWithLinks).links!.length > 0 && (
+                <aside className="mt-16 pt-10 border-t border-gray-200">
+                  <h2 className="font-display font-bold uppercase tracking-tight text-gray-900 text-xl mb-6">
+                    {language === 'ru' ? 'Читайте на сайте' : 'More on the site'}
+                  </h2>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {(article as ArticleWithLinks).links!.map((l) => (
+                      <li key={l.path}>
+                        <Link
+                          to={lp(l.path)}
+                          className="group flex items-center justify-between gap-4 rounded-xl border border-gray-200 px-5 py-4 hover:border-royal-pink transition-colors"
+                        >
+                          <span className="font-serif text-lg leading-snug text-gray-800 group-hover:text-royal-pink transition-colors">{l.label}</span>
+                          <ArrowRight className="w-4 h-4 shrink-0 text-gray-400 group-hover:text-royal-pink group-hover:translate-x-1 transition-all" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </aside>
               )}
 
               {/* Тонкий разделитель после контента */}

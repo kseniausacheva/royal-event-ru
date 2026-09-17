@@ -13,6 +13,8 @@ const ruArticles = blogArticles.map((a) => ({
   excerpt: a.ru.excerpt,
   content: a.ru.content,
   image: a.image,
+  // Ссылки на разделы сайта под статьёй (перелинковка), если заданы
+  links: a.ru.links,
 }));
 
 const enArticles = blogArticles.map((a) => ({
@@ -23,6 +25,7 @@ const enArticles = blogArticles.map((a) => ({
   excerpt: a.en.excerpt,
   content: a.en.content,
   image: a.image,
+  links: a.en.links,
 }));
 
 export const translations = {
