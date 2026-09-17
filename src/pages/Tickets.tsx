@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CalendarDays, Check, MapPin, Ticket } from 'lucide-react';
 import SEO from '../components/SEO';
+import ContactForm from '../components/ContactForm';
 import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { concerts } from '../content/la-royal-event';
@@ -38,18 +39,17 @@ const Tickets = () => {
     description: c.teaser,
     offers: {
       '@type': 'Offer',
-      url: event.bookingUrl,
+      url: `${SITE_URL}/${language}/tickets/`,
       availability: 'https://schema.org/PreOrder',
       validFrom: event.salesStartISO,
       seller: { '@type': 'Organization', name: 'La Royal Event' },
     },
   };
 
+  // Бронь идёт через нашу форму внизу страницы, а не через сторонний сервис
   const book = (
     <a
-      href={event.bookingUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="#booking"
       className="inline-flex items-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors"
     >
       {ru ? 'Забронировать' : 'Book now'} <ArrowRight className="w-4 h-4" />
@@ -203,26 +203,27 @@ const Tickets = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 border-t border-royal-rule bg-[radial-gradient(70%_80%_at_25%_20%,rgba(139,95,214,0.2),transparent_50%)]">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{ru ? 'Следующий шаг' : 'Next step'}</p>
+      {/* Заявка на бронирование — наша форма, без сторонних сервисов */}
+      <section id="booking" className="py-20 px-6 border-t border-royal-rule bg-[radial-gradient(70%_80%_at_25%_20%,rgba(139,95,214,0.2),transparent_50%)] scroll-mt-24">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{ru ? 'Бронирование' : 'Booking'}</p>
           <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">
-            {ru ? 'Забронируйте места заранее' : 'Book your seats early'}
+            {ru ? 'Оставьте заявку на билеты' : 'Request your tickets'}
           </h2>
-          <p className="max-w-2xl text-royal-sand-2 mb-8">
+          <p className="max-w-2xl text-royal-sand-2 mb-10">
             {ru
-              ? 'Напишите число гостей и категорию лаунжа — подтвердим наличие мест и пришлём условия. Поездку вокруг концерта соберём под вас.'
-              : 'Tell us the number of guests and the lounge category. We confirm availability, send the terms and build the trip around the concert for you.'}
+              ? 'Напишите число гостей и категорию лаунжа — подтвердим наличие мест и пришлём условия. В поле сообщения укажите «Шакира, 28 ноября» и нужную категорию: А или Б.'
+              : 'Tell us the number of guests and the lounge category. We confirm availability and send the terms. In the message field, write “Shakira, 28 November” and the category you want: A or B.'}
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            {book}
+          <ContactForm />
+          <div className="mt-10">
             <Link to={lp('/dmc')} className="inline-flex items-center gap-3 px-8 py-4 border border-royal-rule rounded-xl text-sm font-bold uppercase tracking-widest text-royal-sand-2 hover:border-royal-lilac-deep hover:text-royal-lilac transition-colors">
               {ru ? 'Что мы делаем в Египте' : 'What we do in Egypt'}
             </Link>
           </div>
         </div>
       </section>
+
     </div>
   );
 };
