@@ -11,7 +11,10 @@ const Offer = () => {
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 pb-20">
-      <SEO title={language === 'ru' ? 'Договор оферты' : 'Public Offer Agreement'} />
+      <SEO
+        title={language === 'ru' ? 'Договор оферты' : 'Public Offer Agreement'}
+        description={language === 'ru' ? 'Публичная оферта La Royal Event на услуги по организации мероприятий: порядок заказа, оплаты и ответственность сторон.' : 'Public offer of La Royal Event for event services: ordering, payment and liability terms.'}
+      />
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-none mb-12">
           {language === 'ru' ? 'Договор оферты' : 'Public Offer Agreement'}

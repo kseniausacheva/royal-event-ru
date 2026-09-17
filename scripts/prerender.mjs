@@ -41,8 +41,9 @@ const HOST_RU = 'https://royaleventandmice.ru';
 const HOST_COM = 'https://www.royaleventandmice.com';
 
 /**
- * Статичные маршруты сайта (только русская локаль — она основная для .ru-домена).
- * Английские роуты на этом домене не индексируются (canonical на .com).
+ * Статичные маршруты сайта (русская локаль; английские зеркала строятся из них ниже).
+ * EN-страницы пререндерятся на обеих целях: на .ru их canonical указывает на .com,
+ * но краулер получает готовую разметку, а не SPA-фолбэк с русским head.
  * module — исходник lazy-страницы для <link rel="modulepreload"> (по манифесту
  * Vite); null у страниц, которые лежат в основном бандле (Home, Destination).
  */
@@ -90,7 +91,7 @@ const BLOG_ROUTES = blogArticles.map((a) => ({
 
 const RU_ROUTES = [...STATIC_ROUTES, ...BLOG_ROUTES];
 const EN_ROUTES = RU_ROUTES.map((r) => ({ ...r, route: r.route.replace(/^\/ru/, '/en') }));
-const ROUTES = TARGET === 'com' ? [...RU_ROUTES, ...EN_ROUTES] : RU_ROUTES;
+const ROUTES = [...RU_ROUTES, ...EN_ROUTES];
 
 const SEO_BLOCK_RE = /<!-- seo:default:start[\s\S]*?<!-- seo:default:end -->/;
 const ROOT_DIV = '<div id="root"></div>';
@@ -187,6 +188,9 @@ async function run() {
     // Функция-замена и split/join ниже — чтобы «$&»-подобные последовательности
     // в контенте не трактовались String.replace как спецсимволы подстановки
     page = page.replace(SEO_BLOCK_RE, () => head);
+
+    // JSON-LD WebSite в шаблоне (вне SEO-блока) — язык по маршруту
+    if (url.startsWith('/en')) page = page.replace('"inLanguage": "ru-RU"', '"inLanguage": "en-US"');
 
     // Разметка приложения
     page = page.split(ROOT_DIV).join(`<div id="root">${appHtml}</div>`);

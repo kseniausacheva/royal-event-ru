@@ -26,6 +26,12 @@ interface SEOProps {
   breadcrumbs?: BreadcrumbItem[] | false;
   /** Optional FAQ list. When provided, emits FAQPage JSON-LD (Яндекс показывает FAQ-блок в выдаче). */
   faq?: FAQItem[];
+  /** og:type. Статьи блога передают 'article' — тогда же уходят article:published_time / modified_time. */
+  type?: 'website' | 'article';
+  /** ISO-дата публикации (только для type="article"). */
+  publishedTime?: string;
+  /** ISO-дата обновления (только для type="article"); по умолчанию = publishedTime. */
+  modifiedTime?: string;
 }
 
 /**
@@ -117,7 +123,7 @@ const EN_DEFAULT_KEYWORDS = [
   'Royal Event Group',
 ].join(', ');
 
-const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex, jsonLd, breadcrumbs, faq }) => {
+const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex, jsonLd, breadcrumbs, faq, type = 'website', publishedTime, modifiedTime }) => {
   const { language } = useLanguage();
   const location = useLocation();
 
@@ -180,7 +186,8 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
             '@type': 'ListItem',
             position: idx + 1,
             name: b.name,
-            item: b.url.startsWith('http') ? b.url : `${canonicalHost}${b.url}`,
+            // Как и canonical — со слэшем на конце, иначе крошки ведут на 301-адреса
+            item: b.url.startsWith('http') ? b.url : withHost(canonicalHost, b.url),
           })),
         }
       : null;
@@ -208,12 +215,16 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     '@type': 'Organization',
     name: SITE_NAME,
     legalName: 'Royal Event Group',
-    url: RU_SITE_URL,
-    logo: `${RU_SITE_URL}/logo-la-royal-event.png`,
-    description: RU_DEFAULT_DESCRIPTION,
+    // Хост и описание — по языку страницы: RU-страницы принадлежат .ru, EN — .com
+    url: `${canonicalHost}/`,
+    logo: `${canonicalHost}/logo-la-royal-event.png`,
+    description: defaultDescription,
     foundingDate: '2004',
     sameAs: [
-      COM_SITE_URL,
+      `${alternateHost}/`,
+      'https://www.instagram.com/royalevent_mice_egypt',
+      'https://www.linkedin.com/in/ksenia-usacheva-b5a7b23b5/',
+      'https://t.me/kseniamerry',
     ],
     address: {
       '@type': 'PostalAddress',
@@ -284,6 +295,10 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
     // Удаляем старые JSON-LD блоки, добавленные нашим компонентом
     document.head.querySelectorAll('script[type="application/ld+json"][data-seo="true"]').forEach((el) => el.remove());
 
+    // Если helmet отработал (его скрипты помечены data-rh), свои копии не добавляем —
+    // иначе в живом DOM каждый JSON-LD блок оказывается дважды.
+    if (document.head.querySelector('script[type="application/ld+json"][data-rh]')) return;
+
     // Добавляем новые JSON-LD блоки (Organization + breadcrumbs + faq + custom jsonLd)
     const ldBlocks: object[] = [organizationJsonLd];
     if (breadcrumbsJsonLd) ldBlocks.push(breadcrumbsJsonLd);
@@ -320,22 +335,31 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
       <link rel="alternate" hrefLang="en" href={language === 'en' ? canonicalUrl : altUrl} />
       <link rel="alternate" hrefLang="x-default" href={xDefaultUrl} />
 
-      {/* Geo (Russian audience). Yandex respects geo meta for regional ranking. */}
-      <meta name="geo.region" content="RU-MOW" />
-      <meta name="geo.placename" content="Moscow" />
-      <meta name="geo.position" content="55.755826;37.617300" />
-      <meta name="ICBM" content="55.755826, 37.617300" />
+      {/* Geo: RU-версия — для российской аудитории (Яндекс учитывает регион),
+          EN-версия — офис в Шарм-эль-Шейхе, где проходят мероприятия. */}
+      {language === 'ru' ? (
+        <meta name="geo.region" content="RU-MOW" />
+      ) : (
+        <meta name="geo.region" content="EG-JS" />
+      )}
+      <meta name="geo.placename" content={language === 'ru' ? 'Moscow' : 'Sharm El Sheikh'} />
+      <meta name="geo.position" content={language === 'ru' ? '55.755826;37.617300' : '27.915817;34.329950'} />
+      <meta name="ICBM" content={language === 'ru' ? '55.755826, 37.617300' : '27.915817, 34.329950'} />
 
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:title" content={seoTitle} />
       <meta property="og:description" content={seoDescription} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={seoImage} />
-      <meta property="og:image:alt" content={SITE_NAME} />
+      {!image && <meta property="og:image:width" content="1200" />}
+      {!image && <meta property="og:image:height" content="630" />}
+      <meta property="og:image:alt" content={title || SITE_NAME} />
       <meta property="og:locale" content={language === 'ru' ? 'ru_RU' : 'en_US'} />
       <meta property="og:locale:alternate" content={language === 'ru' ? 'en_US' : 'ru_RU'} />
+      {type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {type === 'article' && (modifiedTime || publishedTime) && <meta property="article:modified_time" content={modifiedTime || publishedTime} />}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

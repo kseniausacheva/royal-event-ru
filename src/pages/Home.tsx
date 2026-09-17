@@ -120,8 +120,10 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-royal-black text-white selection:bg-royal-pink selection:text-white font-manrope overflow-x-hidden">
       <SEO 
-        title={language === 'ru' ? 'Организация корпоративных мероприятий в Египте — MICE и DMC' : 'Corporate Event Organization in Egypt — MICE & DMC'}
-        description={t.hero.subtitle}
+        title={language === 'ru' ? 'Корпоративные мероприятия в Египте: MICE и DMC' : 'Corporate Events in Egypt: MICE and DMC'}
+        description={language === 'ru'
+          ? 'Мероприятия в Египте под ключ: конференции, инсентивы, корпоративы, круизы по Нилу, авторские квесты. Своя команда в Каире и Шарм-эль-Шейхе, с 2004 года.'
+          : 'Turnkey events in Egypt: conferences, incentives, corporate retreats, Nile cruises and signature quests. Our own team in Cairo and Sharm El Sheikh since 2004.'}
       />
       
       {/* Hero Section */}

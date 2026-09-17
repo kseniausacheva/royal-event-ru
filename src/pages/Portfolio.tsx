@@ -7,12 +7,17 @@ import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
 
 const Portfolio = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const lp = useLocalizedPath();
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 px-6">
-      <SEO title={t.nav.portfolio} />
+      <SEO
+        title={language === 'ru' ? 'Кейсы: конференции и корпоративы в Египте' : 'Case Studies: Conferences and Corporate Events in Egypt'}
+        description={language === 'ru'
+          ? 'Реализованные проекты: конференция Carlsberg на 1000 гостей в Шарм-эль-Шейхе, недельный выезд NL International, корпоратив EWA product в Rixos Seagate и другие.'
+          : 'Delivered projects: the Carlsberg conference for 1,000 guests in Sharm El Sheikh, a week-long NL International retreat, the EWA product party at Rixos Seagate and more.'}
+      />
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

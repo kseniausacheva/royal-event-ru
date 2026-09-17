@@ -45,7 +45,23 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-20 pt-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto mt-20 pt-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <nav aria-label={language === 'ru' ? 'Разделы сайта' : 'Site sections'} className="flex flex-col gap-4">
+          {([
+            ['/programmy', t.nav.programs],
+            ['/cruises', t.nav.cruises],
+            ['/dmc', t.nav.dmc],
+            ['/services', t.nav.services],
+            ['/portfolio', t.nav.portfolio],
+            ['/delegations', t.nav.delegations],
+            ['/blog', t.nav.blog],
+            ['/contact', t.nav.contact],
+          ] as [string, string][]).map(([path, label]) => (
+            <Link key={path} to={lp(path)} className="text-white/60 text-[10px] uppercase tracking-widest hover:text-royal-pink transition-colors py-1">
+              {label}
+            </Link>
+          ))}
+        </nav>
         <div className="space-y-2">
           <p className="text-white/60 text-[10px] uppercase tracking-widest leading-relaxed">
             {t.footer.legal.ip}<br />

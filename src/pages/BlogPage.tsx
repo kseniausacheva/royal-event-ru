@@ -434,8 +434,8 @@ const BlogPage = () => {
     }
 
     const canonicalHost = language === 'ru' ? SITE_URL_RU : SITE_URL_EN;
-    // На .ru конечный адрес — со слэшем (Apache 301-ит без него), .com не трогаем
-    const articleUrl = `${canonicalHost}/${language}/blog/${article.id}${language === 'ru' ? '/' : ''}`;
+    // Конечный адрес — со слэшем на обоих доменах (Apache 301-ит без него, на Vercel trailingSlash)
+    const articleUrl = `${canonicalHost}/${language}/blog/${article.id}/`;
     const datePublished = ARTICLE_DATES_ISO[article.id];
 
     // Schema.org BlogPosting — Яндекс показывает дату публикации, автора и сниппет в выдаче.
@@ -452,14 +452,14 @@ const BlogPage = () => {
       author: {
         '@type': 'Organization',
         name: 'La Royal Event',
-        url: SITE_URL_RU,
+        url: `${canonicalHost}/`,
       },
       publisher: {
         '@type': 'Organization',
         name: 'La Royal Event',
         logo: {
           '@type': 'ImageObject',
-          url: `${SITE_URL_RU}/logo-la-royal-event.png`,
+          url: `${canonicalHost}/logo-la-royal-event.png`,
         },
       },
       mainEntityOfPage: {
@@ -478,6 +478,8 @@ const BlogPage = () => {
           title={article.title}
           description={article.excerpt}
           image={article.image}
+          type="article"
+          publishedTime={datePublished}
           breadcrumbs={[
             { name: language === 'ru' ? 'Главная' : 'Home', url: `/${language}` },
             { name: language === 'ru' ? 'Блог' : 'Blog', url: `/${language}/blog` },

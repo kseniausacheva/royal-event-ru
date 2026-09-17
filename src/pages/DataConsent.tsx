@@ -11,7 +11,10 @@ const DataConsent = () => {
 
   return (
     <div className="min-h-screen bg-royal-black text-white pt-32 pb-20">
-      <SEO title={language === 'ru' ? 'Согласие на обработку персональных данных' : 'Personal Data Processing Consent'} />
+      <SEO
+        title={language === 'ru' ? 'Согласие на обработку персональных данных' : 'Personal Data Processing Consent'}
+        description={language === 'ru' ? 'Текст согласия на обработку персональных данных, которое даёт посетитель при отправке форм на сайте La Royal Event.' : 'The personal data processing consent given by visitors when submitting forms on the La Royal Event website.'}
+      />
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-none mb-12">
           {language === 'ru' ? 'Согласие на обработку персональных данных' : 'Personal Data Processing Consent'}
