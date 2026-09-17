@@ -228,9 +228,22 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5 }}
-                className="rounded-[32px] border border-royal-lilac-deep/40 bg-[radial-gradient(120%_140%_at_85%_10%,rgba(139,95,214,0.35),rgba(12,8,20,0.9))] p-8 sm:p-12"
+                className="rounded-[32px] border border-royal-lilac-deep/40 bg-[radial-gradient(120%_140%_at_85%_10%,rgba(139,95,214,0.35),rgba(12,8,20,0.9))] overflow-hidden"
               >
-                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+                {event.image && (
+                  <Link to={lp('/tickets')} className="block border-b border-white/10">
+                    <img
+                      src={event.image.src}
+                      alt={event.image.alt}
+                      width={1600}
+                      height={551}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full aspect-[3/1] object-cover"
+                    />
+                  </Link>
+                )}
+                <div className="p-8 sm:p-12 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
                   <div className="max-w-2xl">
                     <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-5">
                       {language === 'ru' ? 'Билеты на концерты' : 'Concert tickets'}
