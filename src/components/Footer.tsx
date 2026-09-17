@@ -48,6 +48,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto mt-20 pt-12 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <nav aria-label={language === 'ru' ? 'Разделы сайта' : 'Site sections'} className="flex flex-col gap-4">
           {([
+            ['/tickets', t.nav.tickets],
             ['/programmy', t.nav.programs],
             ['/cruises', t.nav.cruises],
             ['/dmc', t.nav.dmc],

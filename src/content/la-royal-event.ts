@@ -686,3 +686,127 @@ export const privateAccess = {
   what: 'Плато Гизы эксклюзивно — до или после рабочих часов, когда территория закрыта для публики. Все три камеры Великой пирамиды, включая закрытые. Приватный вход в ограждение Большого Сфинкса. Панорамная площадка для фото на рассвете или закате. Завтрак в ресторане с видом на пирамиды.',
   format: 'Утренний слот: старт до рабочих часов, финиш к 11:00–12:00. Вечерний слот: с 17:00 до 19:00+. До 50 гостей на один пермит. Гид-египтолог на русском языке. Все входные билеты, пермиты и трансферы включены. Возможна организация фотосъёмки и приватной охраны.',
 };
+
+// ── Билеты на концерты ──────────────────────────────────────────────
+// Продаём VIP-места на события в Египте. Цены на сайте не публикуем:
+// стоимость фиксируется при подтверждении брони.
+//
+// ВАЖНО о датах: dateISO — день концерта, salesStartISO — старт продаж.
+// Обе даты заданы заказчиком; менять только эти два поля и подписи рядом.
+export type Concert = {
+  slug: string;
+  artist: string;
+  tour: string;
+  /** День концерта, ISO. */
+  dateISO: string;
+  /** Старт открытых продаж, ISO. */
+  salesStartISO: string;
+  bookingUrl: string;
+  ru: ConcertCopy;
+  en: ConcertCopy;
+};
+
+type ConcertCopy = {
+  dateLabel: string;
+  salesLabel: string;
+  venue: string;
+  city: string;
+  /** Короткая строка для анонса на главной. */
+  teaser: string;
+  lead: string;
+  about: string[];
+  /** Что мы даём: VIP-лаунжи и поездка вокруг концерта. */
+  vipTitle: string;
+  vip: string[];
+  categories: { name: string; text: string }[];
+  stepsTitle: string;
+  steps: string[];
+  notes: string[];
+};
+
+export const concerts: Concert[] = [
+  {
+    slug: 'shakira-giza',
+    artist: 'Shakira',
+    tour: 'Las Mujeres Ya No Lloran World Tour',
+    dateISO: '2027-11-28',
+    salesStartISO: '2026-10-01',
+    bookingUrl: 'https://clck.ru/3V82RC',
+    ru: {
+      dateLabel: '28 ноября 2027',
+      salesLabel: 'Старт продаж — 1 октября 2026',
+      venue: 'Пирамиды Гизы',
+      city: 'Каир, Египет',
+      teaser: 'Шакира у пирамид Гизы — 28 ноября 2027. Бронируем VIP-места в лаунжах категорий А и Б.',
+      lead: 'Шакира выступит у подножия пирамид Гизы — там, где фоном сцены служит единственное уцелевшее чудо света. Мы бронируем VIP-места в лаунжах категорий А и Б и собираем поездку вокруг концерта.',
+      about: [
+        'Площадка здесь — половина впечатления. Плато Гизы невозможно построить или повторить: подсвеченные грани Великой пирамиды за сценой, пустыня по сторонам и звук, уходящий в открытое небо. За вечер сходятся музыка мирового уровня и пять тысяч лет истории, и ни одна арена мира такого фона не даёт.',
+        'Концерты Шакиры собирают стадионы в каждом городе тура, а выступление у пирамид ждут далеко за пределами Египта. Мест в VIP-лаунжах заметно меньше, чем в общих секторах, поэтому их разбирают первыми — бронировать имеет смысл сразу после открытия продаж.',
+        'Для нас это работа на своей территории: команда в Каире, прямые контракты с отелями и транспортом, гиды-египтологи. Концерт можно сделать частью поездки, а не отдельным вечером с перелётом туда-обратно.',
+      ],
+      vipTitle: 'Что мы берём на себя',
+      vip: [
+        'VIP-билеты в лаунжи категорий А и Б — бронь на ваше имя',
+        'Подбор мест под состав группы: пара, семья, партнёры, корпоративная группа',
+        'Трансфер от отеля до площадки и обратно после концерта',
+        'Отель в Каире по прямым контрактам — рядом с плато или в центре',
+        'Русскоязычное сопровождение в день концерта',
+        'Программа вокруг даты: приватный доступ к пирамидам, Большой Египетский музей, круиз по Нилу',
+      ],
+      categories: [
+        { name: 'VIP-лаундж категории А', text: 'Верхняя категория закрытой зоны. Состав мест и сервис подтверждаем при бронировании — организатор объявляет их отдельно по каждой категории.' },
+        { name: 'VIP-лаундж категории Б', text: 'Вторая категория закрытой зоны. Точные места, вход и сервис фиксируем в подтверждении брони.' },
+      ],
+      stepsTitle: 'Как забронировать',
+      steps: [
+        'Оставляете заявку: дата, число гостей, желаемая категория лаунжа.',
+        'Подтверждаем наличие мест и присылаем условия — состав, сроки, порядок оплаты.',
+        'Фиксируем бронь на ваше имя после оплаты.',
+        'Передаём билеты и, если нужно, собираем остальную поездку: отель, трансферы, программу.',
+      ],
+      notes: [
+        'Стоимость фиксируется в момент подтверждения брони — до этого она может измениться.',
+        'Билеты возврату не подлежат.',
+        'Если концерт отменят, возврат идёт по курсу на день возврата: курсовую разницу компенсирует конечный клиент.',
+      ],
+    },
+    en: {
+      dateLabel: '28 November 2027',
+      salesLabel: 'Public sale opens 1 October 2026',
+      venue: 'The Pyramids of Giza',
+      city: 'Cairo, Egypt',
+      teaser: 'Shakira at the Pyramids of Giza on 28 November 2027. We book VIP lounge seats, categories A and B.',
+      lead: 'Shakira performs at the foot of the Pyramids of Giza, with the only surviving wonder of the ancient world standing behind the stage. We book VIP lounge seats in categories A and B and build the trip around the show.',
+      about: [
+        'Half of the experience is the venue. The Giza plateau cannot be built or imitated: the lit face of the Great Pyramid behind the stage, desert on either side, sound rising into open sky. One evening holds world-class music and five thousand years of history at once, and no arena anywhere offers that backdrop.',
+        'Shakira fills stadiums in every city of the tour, and a show at the pyramids is awaited far beyond Egypt. VIP lounges hold far fewer seats than the general sectors, so they go first. Booking right after the sale opens is the safer plan.',
+        'This is home ground for us: our own team in Cairo, direct contracts with hotels and transport, Egyptologist guides. The concert can be the centre of a trip rather than a single evening between two flights.',
+      ],
+      vipTitle: 'What we handle',
+      vip: [
+        'VIP tickets in lounge categories A and B, booked in your name',
+        'Seat selection to match the group: a couple, a family, partners, a corporate party',
+        'Transfers from your hotel to the venue and back after the show',
+        'Hotels in Cairo on direct contracts, near the plateau or downtown',
+        'English-speaking host with you on the day of the concert',
+        'A programme around the date: private access to the pyramids, the Grand Egyptian Museum, a Nile cruise',
+      ],
+      categories: [
+        { name: 'VIP lounge, category A', text: 'The upper tier of the closed area. Seating and service are confirmed at booking: the promoter publishes them separately for each category.' },
+        { name: 'VIP lounge, category B', text: 'The second tier of the closed area. Exact seats, entrance and service are fixed in your booking confirmation.' },
+      ],
+      stepsTitle: 'How to book',
+      steps: [
+        'Send a request: date, number of guests, preferred lounge category.',
+        'We confirm availability and send the terms: what is included, deadlines, how payment works.',
+        'The booking is held in your name once payment is made.',
+        'You receive the tickets, and we assemble the rest of the trip if you want it: hotel, transfers, programme.',
+      ],
+      notes: [
+        'The price is fixed at the moment your booking is confirmed and may change until then.',
+        'Tickets are non-refundable.',
+        'If the concert is cancelled, refunds follow the exchange rate on the day of the refund; any currency difference is covered by the end client.',
+      ],
+    },
+  },
+];

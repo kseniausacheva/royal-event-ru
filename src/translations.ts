@@ -32,6 +32,7 @@ export const translations = {
   ru: {
     nav: {
       home: 'Главная',
+      tickets: 'Билеты',
       about: 'О компании',
       services: 'Услуги',
       programs: 'Программы',
@@ -52,7 +53,7 @@ export const translations = {
       stats: [
         { value: '20+', label: 'ЛЕТ ОПЫТА' },
         { value: '1 000+', label: 'ГОСТЕЙ НА СОБЫТИИ' },
-        { value: '10', label: 'АВТОРСКИХ ПРОГРАММ' },
+        { value: '150+', label: 'АВТОРСКИХ ПРОГРАММ' },
         { value: '40+', label: 'В КОМАНДЕ' },
       ],
       cta: 'ЗАПРОСИТЬ ПРЕДЛОЖЕНИЕ',
@@ -503,6 +504,7 @@ export const translations = {
   en: {
     nav: {
       home: 'Home',
+      tickets: 'Tickets',
       about: 'About Us',
       services: 'Services',
       programs: 'Programs',

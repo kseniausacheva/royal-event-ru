@@ -151,6 +151,7 @@ const STATIC_ENTRIES = [
   { loc: '/ru/programmy/faraon', changefreq: 'monthly', priority: '0.8', hreflang: true },
   { loc: '/ru/cruises', changefreq: 'monthly', priority: '0.9', hreflang: true },
   { loc: '/ru/dmc', changefreq: 'monthly', priority: '0.9', hreflang: true },
+  { loc: '/ru/tickets', changefreq: 'weekly', priority: '0.9', hreflang: true },
   { loc: '/ru/delegations', changefreq: 'monthly', priority: '0.8', hreflang: true },
   { loc: '/ru/blog', changefreq: 'weekly', priority: '0.7', hreflang: true },
   { loc: '/ru/contact', changefreq: 'monthly', priority: '0.7', hreflang: true },

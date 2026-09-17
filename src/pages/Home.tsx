@@ -26,7 +26,7 @@ import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
 import WhatsAppIcon from '../components/WhatsAppIcon';
-import { programs, cruises, dmc, privateAccess } from '../content/la-royal-event';
+import { programs, cruises, dmc, privateAccess, concerts } from '../content/la-royal-event';
 import { Check, X as XIcon } from 'lucide-react';
 
 // Каналы быстрой связи — одинаковый набор в герое и нижнем CTA.
@@ -215,6 +215,61 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Анонс концерта: билеты ── */}
+      {(() => {
+        const event = concerts[0];
+        const c = language === 'ru' ? event.ru : event.en;
+        return (
+          <section className="px-6 -mt-4 md:-mt-10 relative z-10">
+            <div className="max-w-7xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5 }}
+                className="rounded-[32px] border border-royal-lilac-deep/40 bg-[radial-gradient(120%_140%_at_85%_10%,rgba(139,95,214,0.35),rgba(12,8,20,0.9))] p-8 sm:p-12"
+              >
+                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+                  <div className="max-w-2xl">
+                    <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-5">
+                      {language === 'ru' ? 'Билеты на концерты' : 'Concert tickets'}
+                    </p>
+                    <h2 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-[0.95] mb-5">
+                      {language === 'ru' ? 'Шакира у пирамид Гизы' : 'Shakira at the Pyramids of Giza'}
+                    </h2>
+                    <p className="text-lg text-royal-sand-2 leading-relaxed mb-6">{c.teaser}</p>
+                    <div className="flex flex-wrap gap-3">
+                      {[c.dateLabel, c.venue, c.salesLabel].map((chip) => (
+                        <span key={chip} className="text-[11px] font-bold uppercase tracking-[0.15em] px-4 py-2 rounded-full border border-white/15 text-royal-sand">
+                          {chip}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+                    <a
+                      href={event.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      {language === 'ru' ? 'Забронировать' : 'Book now'} <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <Link
+                      to={lp('/tickets')}
+                      className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/20 rounded-xl text-sm font-bold uppercase tracking-widest text-royal-sand hover:border-royal-lilac hover:text-royal-lilac transition-colors whitespace-nowrap"
+                    >
+                      {language === 'ru' ? 'Подробнее' : 'Details'}
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Services Overview */}
       <section className="py-40 px-6 bg-royal-black">
