@@ -35,7 +35,7 @@ const Tickets = () => {
       name: c.venue,
       address: { '@type': 'PostalAddress', addressLocality: ru ? 'Гиза' : 'Giza', addressCountry: 'EG' },
     },
-    image: `${SITE_URL}/og-image.png`,
+    image: `${SITE_URL}${event.ogImage || '/og-image.png'}`,
     description: c.teaser,
     offers: {
       '@type': 'Offer',
@@ -70,11 +70,30 @@ const Tickets = () => {
             ? 'билеты на Шакиру, концерт Шакиры в Египте, Шакира пирамиды Гизы, VIP билеты на концерт, Shakira Giza, концерт у пирамид, La Royal Event'
             : 'Shakira tickets, Shakira Giza concert, concert at the pyramids, VIP lounge tickets Egypt, Shakira Egypt 2027, La Royal Event'
         }
+        image={event.ogImage}
         jsonLd={eventJsonLd}
       />
 
+      {/* Афиша события */}
+      {event.image && (
+        <section className="pt-28 sm:pt-32 px-6">
+          <div className="max-w-7xl mx-auto">
+            <img
+              src={event.image.src}
+              alt={event.image.alt}
+              width={1600}
+              height={551}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="w-full rounded-2xl sm:rounded-3xl border border-royal-rule"
+            />
+          </div>
+        </section>
+      )}
+
       {/* Hero */}
-      <section className="pt-40 pb-20 px-6 relative overflow-hidden">
+      <section className={`${event.image ? 'pt-12 pb-16' : 'pt-40 pb-20'} px-6 relative overflow-hidden`}>
         <div className="absolute top-0 right-0 w-2/3 h-full bg-[radial-gradient(60%_60%_at_80%_20%,rgba(139,95,214,0.28),transparent_60%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-4">

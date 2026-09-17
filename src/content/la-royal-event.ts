@@ -703,6 +703,8 @@ export type Concert = {
   salesStartISO: string;
   /** Афиша события: /tickets/<slug>.webp. Пока файла нет — поле не задаём. */
   image?: Photo;
+  /** Картинка 1200×630 для мессенджеров и соцсетей (og:image). */
+  ogImage?: string;
   ru: ConcertCopy;
   en: ConcertCopy;
 };
@@ -732,6 +734,11 @@ export const concerts: Concert[] = [
     tour: 'Las Mujeres Ya No Lloran World Tour',
     dateISO: '2027-11-28',
     salesStartISO: '2026-10-01',
+    image: {
+      src: '/tickets/shakira-giza.webp',
+      alt: 'Афиша мирового тура Шакиры Las Mujeres Ya No Lloran',
+    },
+    ogImage: '/tickets/shakira-giza-og.jpg',
     ru: {
       dateLabel: '28 ноября 2027',
       salesLabel: 'Старт продаж — 1 октября 2026',
