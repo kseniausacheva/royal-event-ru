@@ -76,7 +76,7 @@ const Offer = () => {
                 ИНН: 772206846997<br />
                 ОГРНИП: 324774600436282<br />
                 Адрес: г. Москва, ул. Шепелюгинская, д. 5, к. 1, кв. 91<br />
-                E-mail: <a href="mailto:baxgat@yandex.ru" className="text-royal-pink hover:underline">baxgat@yandex.ru</a></p>
+                E-mail: <a href="mailto:sale@royaleventandmice.ru" className="text-royal-pink hover:underline">sale@royaleventandmice.ru</a></p>
               </section>
             </>
           ) : (
@@ -137,7 +137,7 @@ const Offer = () => {
                 INN: 772206846997<br />
                 OGRNIP: 324774600436282<br />
                 Address: Moscow, Shepelyuginskaya st., 5, bldg. 1, apt. 91<br />
-                E-mail: <a href="mailto:baxgat@yandex.ru" className="text-royal-pink hover:underline">baxgat@yandex.ru</a></p>
+                E-mail: <a href="mailto:sale@royaleventandmice.ru" className="text-royal-pink hover:underline">sale@royaleventandmice.ru</a></p>
               </section>
             </>
           )}

@@ -53,7 +53,7 @@ const MailingConsent = () => {
                 <p>3.3. Пользователь вправе в любой момент отказаться от получения рассылок, воспользовавшись:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>ссылкой «отписаться» в письме (если доступно);</li>
-                  <li>либо направив письменный отказ на e-mail Оператора: <a href="mailto:baxgat@yandex.ru" className="text-royal-pink hover:underline">baxgat@yandex.ru</a>.</li>
+                  <li>либо направив письменный отказ на e-mail Оператора: <a href="mailto:sale@royaleventandmice.ru" className="text-royal-pink hover:underline">sale@royaleventandmice.ru</a>.</li>
                 </ul>
                 <p>3.4. Оператор обязуется прекратить направление рекламных сообщений в течение 3 (трёх) рабочих дней с момента получения отзыва Пользователя.</p>
               </section>
@@ -103,7 +103,7 @@ const MailingConsent = () => {
                 <p>3.3. The User may opt out of receiving mailings at any time by:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>using the "unsubscribe" link in the email (if available);</li>
-                  <li>or sending a written opt-out request to the Operator's email: <a href="mailto:baxgat@yandex.ru" className="text-royal-pink hover:underline">baxgat@yandex.ru</a>.</li>
+                  <li>or sending a written opt-out request to the Operator's email: <a href="mailto:sale@royaleventandmice.ru" className="text-royal-pink hover:underline">sale@royaleventandmice.ru</a>.</li>
                 </ul>
                 <p>3.4. The Operator undertakes to cease sending promotional messages within 3 (three) business days from receiving the User's revocation.</p>
               </section>
