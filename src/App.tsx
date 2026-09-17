@@ -30,6 +30,7 @@ const Programs = lazy(() => import('./pages/Programs'));
 const ProgramDetail = lazy(() => import('./pages/ProgramDetail'));
 const Cruises = lazy(() => import('./pages/Cruises'));
 const DMC = lazy(() => import('./pages/DMC'));
+const Tickets = lazy(() => import('./pages/Tickets'));
 
 const PageLoader = () => (
   <div className="min-h-screen bg-royal-black flex items-center justify-center">
@@ -83,6 +84,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t.nav.home, path: `${langPrefix}` },
+    { name: t.nav.tickets, path: `${langPrefix}/tickets` },
     { name: t.nav.programs, path: `${langPrefix}/programmy` },
     { name: t.nav.cruises, path: `${langPrefix}/cruises` },
     { name: t.nav.dmc, path: `${langPrefix}/dmc` },
@@ -196,6 +198,7 @@ const AppRoutes = () => {
       <Route path="/ru/programmy/:slug" element={<ProgramDetail />} />
       <Route path="/ru/cruises" element={<Cruises />} />
       <Route path="/ru/dmc" element={<DMC />} />
+      <Route path="/ru/tickets" element={<Tickets />} />
       <Route path="/ru/russia" element={<Russia />} />
       <Route path="/ru/delegations" element={<Delegations />} />
       <Route path="/ru/blog" element={<BlogPage />} />
@@ -217,6 +220,7 @@ const AppRoutes = () => {
       <Route path="/en/programmy/:slug" element={<ProgramDetail />} />
       <Route path="/en/cruises" element={<Cruises />} />
       <Route path="/en/dmc" element={<DMC />} />
+      <Route path="/en/tickets" element={<Tickets />} />
       <Route path="/en/russia" element={<Russia />} />
       <Route path="/en/delegations" element={<Delegations />} />
       <Route path="/en/blog" element={<BlogPage />} />

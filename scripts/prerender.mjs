@@ -74,6 +74,7 @@ const STATIC_ROUTES = [
   { route: '/ru/programmy/faraon', module: 'src/pages/ProgramDetail.tsx' },
   { route: '/ru/cruises', module: 'src/pages/Cruises.tsx' },
   { route: '/ru/dmc', module: 'src/pages/DMC.tsx' },
+  { route: '/ru/tickets', module: 'src/pages/Tickets.tsx' },
   { route: '/ru/delegations', module: 'src/pages/Delegations.tsx' },
   { route: '/ru/blog', module: 'src/pages/BlogPage.tsx' },
   { route: '/ru/contact', module: 'src/pages/Contact.tsx' },

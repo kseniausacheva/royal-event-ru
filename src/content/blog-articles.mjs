@@ -54,6 +54,442 @@
 export const blogArticles = [
   // ───────────────────────────────────────────────────────────────────────
   {
+    "id": "shakira-piramidy-gizy-bilety",
+    "datePublished": "2026-09-17",
+    "image": "/carlsberg-12.JPG",
+    "ru": {
+      "title": "Шакира у пирамид Гизы: билеты на концерт 28 ноября 2027",
+      "category": "Локации",
+      "date": "17 сентября 2026",
+      "excerpt": "Концерт Шакиры у пирамид Гизы 28 ноября 2027: что известно о площадке, когда старт продаж и как забронировать VIP-места в лаунжах категорий А и Б.",
+      "links": [
+        {
+          "path": "/tickets",
+          "label": "Билеты и VIP-лаунжи: условия брони"
+        },
+        {
+          "path": "/dmc",
+          "label": "Что мы делаем в Египте как DMC"
+        },
+        {
+          "path": "/cruises",
+          "label": "Круизы по Нилу после концерта"
+        },
+        {
+          "path": "/contact",
+          "label": "Запросить бронь"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Билеты на Шакиру в Египте — запрос, который появится у тысяч людей в один день: 28 ноября 2027 года певица выступит у пирамид Гизы. Площадка такого масштаба сама по себе становится новостью, а мест в закрытых зонах всегда меньше, чем желающих. Ниже — что известно о концерте, чем отличаются категории билетов и как спланировать поездку, чтобы вечер у пирамид не превратился в перелёт ради трёх часов музыки."
+        },
+        {
+          "type": "stat",
+          "number": "28 ноября 2027",
+          "label": "день концерта у пирамид Гизы. Старт открытых продаж — 1 октября 2026 года"
+        },
+        {
+          "type": "heading",
+          "text": "Что известно о концерте",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Выступление проходит в рамках мирового тура Las Mujeres Ya No Lloran. Сцену ставят на плато Гизы — там же, где стоят пирамида Хеопса, Хефрена и Микерина и Большой Сфинкс. Для Египта формат не новый: плато принимало крупные концерты и раньше, но каждый такой вечер остаётся событием отдельного порядка, потому что площадку нельзя расширить, перенести или повторить."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Артист: Шакира, мировой тур Las Mujeres Ya No Lloran",
+            "Дата: 28 ноября 2027 года",
+            "Площадка: пирамиды Гизы, Каир, Египет",
+            "Старт открытых продаж: 1 октября 2026 года",
+            "Через нас: VIP-билеты в лаунжи категорий А и Б плюс поездка вокруг концерта"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Коротко",
+          "text": "Общие сектора продаются у официальных операторов. Мы работаем с закрытыми зонами: бронируем места в VIP-лаунжах категорий А и Б на ваше имя и собираем вокруг даты трансферы, отель и программу в Каире.",
+          "variant": "info"
+        },
+        {
+          "type": "heading",
+          "text": "Почему площадка решает половину впечатления",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Обычный стадион одинаков в любой стране: чаша, экраны, свет. На плато Гизы фон заменить нечем. За сценой стоит единственное уцелевшее чудо света, по сторонам — пустыня, а звук уходит в открытое небо, а не отражается от бетонных ярусов. Пирамиды подсвечивают вечером, и к началу концерта силуэты читаются полностью."
+        },
+        {
+          "type": "paragraph",
+          "text": "Есть и практическая сторона. Плато — охраняемая зона с собственным режимом доступа, поэтому вход, парковка и маршруты движения здесь работают не так, как на городской площадке. Это как раз тот случай, когда местная команда и заранее выстроенная логистика экономят вам несколько часов и пару нервных ситуаций."
+        },
+        {
+          "type": "image",
+          "url": "/carlsberg-12.JPG",
+          "alt": "Вечерняя концертная площадка под открытым небом в Египте",
+          "caption": "Открытая площадка вечером: свет, сцена и небо вместо потолка. Наш кадр с другого события в Египте"
+        },
+        {
+          "type": "heading",
+          "text": "Билеты: общие сектора и VIP-лаунжи",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "На крупных событиях билеты делят на общие сектора и закрытые зоны. Общие сектора — это вход в фан-зону или на нумерованные места, они продаются массово и разлетаются в первые часы. Закрытые зоны меньше по вместимости: отдельный вход, своя зона обслуживания, спокойный доступ к сцене без давки на входе и выходе."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Тип билета",
+            "Где покупать",
+            "Что учесть"
+          ],
+          "rows": [
+            [
+              "Общий сектор",
+              "Официальные операторы события",
+              "Продаётся массово, разбирается в первые часы после старта"
+            ],
+            [
+              "VIP-лаундж категории А",
+              "Через нас, бронь на ваше имя",
+              "Верхняя категория закрытой зоны; состав мест и сервис подтверждаем при бронировании"
+            ],
+            [
+              "VIP-лаундж категории Б",
+              "Через нас, бронь на ваше имя",
+              "Вторая категория закрытой зоны; точные места и вход фиксируем в подтверждении"
+            ]
+          ],
+          "caption": "Организатор объявляет наполнение каждой категории отдельно — мы передаём условия в момент подтверждения брони"
+        },
+        {
+          "type": "paragraph",
+          "text": "Для пары или семьи важнее место и комфортный вход. Для партнёрской или корпоративной группы — возможность посадить всех рядом и не собирать людей по разным секторам. Это как раз то, что решается на этапе брони, а не на входе в день концерта."
+        },
+        {
+          "type": "heading",
+          "text": "Когда открываются продажи и почему стоит бронировать заранее",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Открытые продажи стартуют 1 октября 2026 года. Разрыв между стартом и самим концертом большой, и это нормально для событий такого масштаба: логистика, пермиты и монтаж на охраняемой территории планируются сильно заранее. Для покупателя это скорее плюс — есть время спокойно собрать поездку, а не ловить последние места за месяц до даты."
+        },
+        {
+          "type": "paragraph",
+          "text": "Но закрытые зоны заканчиваются первыми и почти всегда до общих секторов. Концерты Шакиры собирают стадионы в каждом городе тура, а выступление у пирамид ждут далеко за пределами Египта — от Европы до Залива. Практический вывод простой: если нужен VIP-лаундж, заявку имеет смысл оставить до старта продаж, чтобы бронь ушла в работу в первый же день."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Как спланировать поездку в Каир",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "Перелёт и документы",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Основной аэропорт — Каирский международный. Для многих направлений есть и прямые рейсы, и удобные стыковки через хабы Залива и Турции. Визовые правила Египта меняются, поэтому порядок въезда лучше проверять ближе к дате: мы подскажем актуальный на момент бронирования и предупредим, если по вашему паспорту есть нюансы."
+        },
+        {
+          "type": "heading",
+          "text": "Где остановиться",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Два рабочих варианта. Отели рядом с плато — минимальный путь до площадки и вид на пирамиды прямо с террасы. Отели в центре Каира или на берегу Нила — больше выбора по ресторанам и городской жизни, дорога до площадки длиннее. Мы работаем по прямым контрактам с отелями обеих зон и подбираем под состав группы."
+        },
+        {
+          "type": "heading",
+          "text": "Сколько дней брать",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Минимум — три ночи: день на акклиматизацию и город, день концерта, день на отъезд без спешки. Комфортно — пять-семь: тогда концерт становится финалом поездки, а не единственной её точкой."
+        },
+        {
+          "type": "image",
+          "url": "/nl-11.jpg",
+          "alt": "Вечерняя площадка под открытым небом со сценой и световым оформлением",
+          "caption": "Вечерний формат под открытым небом — то, ради чего в Египет и едут в ноябре"
+        },
+        {
+          "type": "heading",
+          "text": "Что добавить к концерту",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Ноябрь — лучшее время для Египта: жары уже нет, вечера тёплые, на плато комфортно даже днём. Вокруг даты легко собирается программа, ради которой сюда едут отдельно."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Приватный доступ к пирамидам до открытия плато или после закрытия — все три камеры Великой пирамиды и время у подножия без других посетителей",
+            "Большой Египетский музей в Гизе — коллекция, ради которой стоит заложить полдня",
+            "Круиз по Нилу из Луксора или Асуана, включая приватный чартер и парусные дахабии",
+            "Старый Каир: улица Аль-Муизз, медные мастерские, чайные"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Как забронировать через нас",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Оставляете заявку: дата, число гостей, желаемая категория лаунжа.",
+            "Подтверждаем наличие мест и присылаем условия: состав, сроки, порядок оплаты.",
+            "Фиксируем бронь на ваше имя после оплаты.",
+            "Передаём билеты и, если нужно, собираем остальную поездку: отель, трансферы, программу."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Важно знать до брони",
+          "text": "Стоимость фиксируется в момент подтверждения брони и до этого может измениться. Билеты возврату не подлежат. Если концерт отменят, возврат идёт по курсу на день возврата, и курсовую разницу компенсирует конечный клиент.",
+          "variant": "warning"
+        },
+        {
+          "type": "paragraph",
+          "text": "Мы работаем в Египте с 2004 года: собственная команда в Каире и Шарм-эль-Шейхе, прямые контракты с отелями и транспортом, пермиты на охраняемые зоны. Поэтому билет у нас — не единичная услуга, а часть поездки, за которую отвечает одна команда от прилёта до вылета."
+        }
+      ]
+    },
+    "en": {
+      "title": "Shakira at the Pyramids of Giza: Tickets for 28 November 2027",
+      "category": "Locations",
+      "date": "September 17, 2026",
+      "excerpt": "Shakira plays the Pyramids of Giza on 28 November 2027: what is known about the venue, when tickets go on sale and how to book VIP lounge seats.",
+      "links": [
+        {
+          "path": "/tickets",
+          "label": "Tickets and VIP lounges: booking terms"
+        },
+        {
+          "path": "/dmc",
+          "label": "What we do in Egypt as a DMC"
+        },
+        {
+          "path": "/cruises",
+          "label": "Nile cruises after the show"
+        },
+        {
+          "path": "/contact",
+          "label": "Request a booking"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Shakira tickets in Egypt will become a search thousands of people run on the same day: on 28 November 2027 she performs at the Pyramids of Giza. A venue of that order is news in itself, and the closed areas always hold fewer seats than there is demand for. Here is what is known about the concert, how the ticket categories differ, and how to plan the trip so that an evening at the pyramids is more than a flight for three hours of music."
+        },
+        {
+          "type": "stat",
+          "number": "28 November 2027",
+          "label": "the concert at the Pyramids of Giza. Public sale opens on 1 October 2026"
+        },
+        {
+          "type": "heading",
+          "text": "What is known about the concert",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The show is part of the Las Mujeres Ya No Lloran world tour. The stage goes up on the Giza plateau, alongside the pyramids of Khufu, Khafre and Menkaure and the Great Sphinx. The format is not new for Egypt: the plateau has hosted major concerts before. Each one still stands apart, because the venue cannot be widened, moved or recreated."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Artist: Shakira, Las Mujeres Ya No Lloran world tour",
+            "Date: 28 November 2027",
+            "Venue: the Pyramids of Giza, Cairo, Egypt",
+            "Public sale opens: 1 October 2026",
+            "Through us: VIP tickets in lounge categories A and B, plus the trip around the show"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "In short",
+          "text": "General sectors are sold by the official operators. We work with the closed areas: seats in VIP lounges A and B booked in your name, with transfers, hotels and a programme in Cairo built around the date.",
+          "variant": "info"
+        },
+        {
+          "type": "heading",
+          "text": "Why the venue is half the experience",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "An ordinary stadium is the same in every country: a bowl, screens, lights. On the Giza plateau there is nothing to swap the backdrop for. The only surviving wonder of the ancient world stands behind the stage, desert runs off to either side, and the sound rises into open sky instead of bouncing off concrete tiers. The pyramids are lit in the evening, so by showtime the silhouettes read in full."
+        },
+        {
+          "type": "paragraph",
+          "text": "There is a practical side too. The plateau is a protected site with its own access regime, so entrances, parking and traffic routes work differently from a city venue. This is exactly where a local team and logistics arranged in advance save you a couple of hours and a couple of tense moments."
+        },
+        {
+          "type": "image",
+          "url": "/carlsberg-12.JPG",
+          "alt": "An open-air concert venue in Egypt in the evening",
+          "caption": "An open-air venue after dark: light, a stage and sky instead of a ceiling. Our own photograph from another event in Egypt"
+        },
+        {
+          "type": "heading",
+          "text": "Tickets: general sectors and VIP lounges",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "At large events tickets split into general sectors and closed areas. General sectors cover the fan zone or numbered seats; they sell in volume and go in the first hours. Closed areas are far smaller: a separate entrance, their own service area, and calm access to the stage without a crush on the way in or out."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ticket type",
+            "Where to buy",
+            "What to keep in mind"
+          ],
+          "rows": [
+            [
+              "General sector",
+              "Official event operators",
+              "Sold in volume, usually gone within hours of the on-sale"
+            ],
+            [
+              "VIP lounge, category A",
+              "Through us, booked in your name",
+              "Upper tier of the closed area; seating and service confirmed at booking"
+            ],
+            [
+              "VIP lounge, category B",
+              "Through us, booked in your name",
+              "Second tier of the closed area; exact seats and entrance fixed in the confirmation"
+            ]
+          ],
+          "caption": "The promoter publishes what each category includes separately; we pass the terms on when your booking is confirmed"
+        },
+        {
+          "type": "paragraph",
+          "text": "For a couple or a family, the seat and an easy entrance matter most. For a partner or corporate group, what matters is seating everyone together instead of collecting people from three different sectors afterwards. That is settled at the booking stage, not at the gate on the day."
+        },
+        {
+          "type": "heading",
+          "text": "When tickets go on sale, and why to book early",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The public sale opens on 1 October 2026. The gap between the on-sale and the concert is wide, which is normal at this scale: logistics, permits and build on a protected site are planned far ahead. For a buyer that is mostly good news, since there is time to assemble the trip properly rather than chase the last seats a month out."
+        },
+        {
+          "type": "paragraph",
+          "text": "Closed areas, though, run out first, almost always before the general sectors. Shakira fills stadiums in every city of the tour, and a show at the pyramids is awaited well beyond Egypt, from Europe to the Gulf. The practical conclusion is simple: if you want a VIP lounge, send the request before the sale opens so the booking goes in on day one."
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "text": "Planning the trip to Cairo",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "Flights and paperwork",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The main gateway is Cairo International. Many markets have both direct flights and comfortable connections through the Gulf and Turkish hubs. Egyptian entry rules change, so check them closer to the date: we confirm the current procedure at the time of booking and flag anything specific to your passport."
+        },
+        {
+          "type": "heading",
+          "text": "Where to stay",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Two workable options. Hotels beside the plateau give the shortest route to the venue and a view of the pyramids from the terrace. Hotels downtown or on the Nile offer more restaurants and city life, with a longer drive to the site. We hold direct contracts in both areas and match the hotel to the group."
+        },
+        {
+          "type": "heading",
+          "text": "How many days to take",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Three nights is the minimum: a day to land and see the city, the day of the concert, and a day to leave without rushing. Five to seven is comfortable, and then the concert becomes the finale of a trip rather than its only point."
+        },
+        {
+          "type": "image",
+          "url": "/nl-11.jpg",
+          "alt": "An open-air evening venue with a stage and show lighting",
+          "caption": "The open-air evening format is exactly what November in Egypt is for"
+        },
+        {
+          "type": "heading",
+          "text": "What to add around the concert",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "November is the best month for Egypt: the heat is gone, the evenings are warm, and the plateau is comfortable even at midday. A programme worth travelling for on its own assembles easily around the date."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Private access to the pyramids before the plateau opens or after it closes: all three chambers of the Great Pyramid and time at its foot with no other visitors",
+            "The Grand Egyptian Museum in Giza, a collection worth half a day of anyone’s itinerary",
+            "A Nile cruise from Luxor or Aswan, including a private charter or a sailing dahabiya",
+            "Old Cairo: Al-Muizz street, the coppersmiths, the tea houses"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "How to book through us",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Send a request: date, number of guests, preferred lounge category.",
+            "We confirm availability and send the terms: what is included, deadlines, how payment works.",
+            "The booking is held in your name once payment is made.",
+            "You receive the tickets, and we assemble the rest of the trip if you want it: hotel, transfers, programme."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Before you book",
+          "text": "The price is fixed at the moment your booking is confirmed and may change until then. Tickets are non-refundable. If the concert is cancelled, refunds follow the exchange rate on the day of the refund, and any currency difference is covered by the end client.",
+          "variant": "warning"
+        },
+        {
+          "type": "paragraph",
+          "text": "We have worked in Egypt since 2004: our own team in Cairo and Sharm El Sheikh, direct contracts with hotels and transport, permits for protected sites. A ticket from us is therefore not a standalone purchase but part of a trip that one team owns from arrival to departure."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
     "id": "dmc-v-egipte",
     "datePublished": "2026-09-17",
     "image": "/nl-5.jpg",

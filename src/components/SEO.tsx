@@ -48,6 +48,7 @@ const BREADCRUMB_LABELS: Record<string, { ru: string; en: string }> = {
   programmy: { ru: 'Программы', en: 'Programs' },
   cruises: { ru: 'Круизы по Нилу', en: 'Nile Cruises' },
   dmc: { ru: 'DMC Египет', en: 'DMC Egypt' },
+  tickets: { ru: 'Билеты на концерты', en: 'Concert tickets' },
   russia: { ru: 'Россия', en: 'Russia' },
   blog: { ru: 'Блог', en: 'Blog' },
   contact: { ru: 'Контакты', en: 'Contact' },
