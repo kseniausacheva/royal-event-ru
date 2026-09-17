@@ -62,7 +62,25 @@ export const blogArticles = [
       "category": "Деловые мероприятия",
       "date": "17 сентября 2026",
       "excerpt": "Что такое DMC в Египте, чем принимающая компания отличается от турагентства, как она работает по шагам и какие вопросы задать ей до договора.",
-      "content": [
+      "links": [
+          {
+            "path": "/dmc",
+            "label": "DMC в Египте: что мы берём на себя"
+          },
+          {
+            "path": "/programmy",
+            "label": "Десять программ для компаний"
+          },
+          {
+            "path": "/cruises",
+            "label": "Круизы по Нилу для групп"
+          },
+          {
+            "path": "/contact",
+            "label": "Запросить предложение"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "«DMC в Египте» — запрос, который появляется, когда мероприятие уже почти решено: даты согласованы, руководство сказало «да» пирамидам или Красному морю, и дальше начинается работа, которую нельзя сделать из другой страны. Разрешение на съёмку у Сфинкса выдаёт не отель, автобусы для группы нужно откуда-то взять, а кто-то должен встретить ночной рейс. Всё это — зона ответственности принимающей компании, destination management company, или коротко DMC."
@@ -324,7 +342,25 @@ export const blogArticles = [
       "category": "Business Events",
       "date": "September 17, 2026",
       "excerpt": "What a DMC in Egypt actually does, how it differs from a travel agent or event agency, how ground handling works step by step and what to ask before you sign.",
-      "content": [
+      "links": [
+          {
+            "path": "/dmc",
+            "label": "What our DMC in Egypt covers"
+          },
+          {
+            "path": "/programmy",
+            "label": "Ten programs for corporate groups"
+          },
+          {
+            "path": "/cruises",
+            "label": "Nile cruises for groups"
+          },
+          {
+            "path": "/contact",
+            "label": "Request a proposal"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "“DMC in Egypt” is the search that starts once the event is almost decided: the dates are set, the board has said yes to the pyramids or the Red Sea, and someone now has to make it happen on the ground. The permit to film at the Sphinx is not the hotel’s to give, coaches for a hundred delegates have to come from somewhere, and someone has to meet a night arrival at Cairo airport. All of that is the job of a destination management company, or DMC."
@@ -592,7 +628,25 @@ export const blogArticles = [
       "category": "Деловые мероприятия",
       "date": "17 сентября 2026",
       "excerpt": "Кто за что отвечает при организации мероприятия за границей: документы и пермиты, инспекция площадки, райдер, договоры, план Б и контроль на месте.",
-      "content": [
+      "links": [
+          {
+            "path": "/dmc",
+            "label": "Принимающая компания в Египте"
+          },
+          {
+            "path": "/services",
+            "label": "Услуги: конференции, инсентивы, делегации"
+          },
+          {
+            "path": "/portfolio",
+            "label": "Кейсы: как это было на практике"
+          },
+          {
+            "path": "/contact",
+            "label": "Обсудить мероприятие"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "Организация мероприятий за границей отличается от домашнего проекта одним принципиальным моментом: вы не можете «доехать и посмотреть». Площадка, подрядчики, разрешения, водители, повара — всё находится в другой стране, в другом часовом поясе и часто на другом языке. Поэтому главный вопрос зарубежного проекта не «что делать», а «кто за что отвечает» — и как построить работу с принимающей стороной так, чтобы каждый участок был закрыт конкретным человеком."
@@ -966,7 +1020,25 @@ export const blogArticles = [
       "category": "Business Events",
       "date": "September 17, 2026",
       "excerpt": "Who does what at a corporate event abroad: permits and visas, site inspection, the tech rider, contracts, plan B and on-site control when working with a DMC.",
-      "content": [
+      "links": [
+          {
+            "path": "/dmc",
+            "label": "Our DMC in Egypt"
+          },
+          {
+            "path": "/services",
+            "label": "Services: conferences, incentives, delegations"
+          },
+          {
+            "path": "/portfolio",
+            "label": "Case studies"
+          },
+          {
+            "path": "/contact",
+            "label": "Discuss your event"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "A corporate event abroad differs from a home project in one fundamental way: you cannot simply drive over and take a look. The venue, the contractors, the permits, the drivers and the kitchen are all in another country, another time zone and, more often than not, another language. So the central question of organizing an event overseas is not what to do but who owns each piece, and how to structure the work with a local DMC so that every task has a name attached to it."
@@ -1346,7 +1418,25 @@ export const blogArticles = [
       "category": "Корпоративная культура",
       "date": "17 сентября 2026",
       "excerpt": "Инсентив-тур в Египет: три маршрута по дням — Шарм, Каир и Нил, — сезон, размер группы, приватный доступ к пирамидам и что прислать в брифе.",
-      "content": [
+      "links": [
+          {
+            "path": "/programmy",
+            "label": "Программы и квесты для групп"
+          },
+          {
+            "path": "/cruises",
+            "label": "Круизы по Нилу и дахабии"
+          },
+          {
+            "path": "/dmc",
+            "label": "Приватный доступ к пирамидам"
+          },
+          {
+            "path": "/contact",
+            "label": "Собрать маршрут под группу"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "Инсентив-тур в Египет — это поездка, в которой за одну неделю умещаются три разные среды: Красное море, пустыня Синая и пять тысяч лет истории. Компания награждает лучших сотрудников или партнёров не отелем, а доступом: к рифу с борта своей яхты, к плато Гизы без других посетителей, к храму, куда большие суда не заходят. В этой статье — конкретика по направлению: когда ехать, как выстроить маршрут по дням в Шарм-эль-Шейхе, Каире и на Ниле, из чего собирается программа и что нужно прислать нам, чтобы получить её в ответ."
@@ -1675,7 +1765,25 @@ export const blogArticles = [
       "category": "Corporate Culture",
       "date": "September 17, 2026",
       "excerpt": "Incentive travel to Egypt: three day-by-day itineraries for Sharm El Sheikh, Cairo and the Nile, the best season, group sizes and what to put in your brief.",
-      "content": [
+      "links": [
+          {
+            "path": "/programmy",
+            "label": "Programs and quests for groups"
+          },
+          {
+            "path": "/cruises",
+            "label": "Nile cruises and dahabiyas"
+          },
+          {
+            "path": "/dmc",
+            "label": "Private access to the pyramids"
+          },
+          {
+            "path": "/contact",
+            "label": "Build an itinerary for your group"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "Incentive travel to Egypt works because three very different worlds sit within an hour of each other: the Red Sea, the Sinai desert and five thousand years of history. A company that rewards its best people here is not buying them a hotel; it is buying access. A reef from the deck of a private yacht. The Giza plateau with no other visitors on it. A temple that cruise ships cannot reach. This guide is about Egypt specifically: when to travel, how to build a day-by-day itinerary in Sharm El Sheikh, Cairo or on the Nile, what turns a route into a program, and what we need from you to send one back."
@@ -2010,7 +2118,25 @@ export const blogArticles = [
       "category": "Корпоративная культура",
       "date": "17 сентября 2026",
       "excerpt": "Десять форматов тимбилдинга в Египте: авторские квесты на плато Гизы, в музеях и на яхте, сафари, мастер-классы. Для кого, где и какой уровень активности.",
-      "content": [
+      "links": [
+          {
+            "path": "/programmy",
+            "label": "Все десять программ подробно"
+          },
+          {
+            "path": "/portfolio",
+            "label": "Кейсы корпоративных выездов"
+          },
+          {
+            "path": "/dmc",
+            "label": "Площадки, пермиты и логистика"
+          },
+          {
+            "path": "/contact",
+            "label": "Подобрать формат под команду"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "Тимбилдинг в Египте — редкий случай, когда выездной тимбилдинг не приходится собирать из компромиссов. В одну поездку помещаются настоящие пирамиды, музей с подлинными экспонатами, Красное море и горы Синая, а перелёт и отели здесь давно отработаны. Вопрос обычно не «где», а «что именно делать с командой», чтобы день у пирамид не превратился в очередную экскурсию с фотографией на фоне."
@@ -2286,7 +2412,25 @@ export const blogArticles = [
       "category": "Corporate Culture",
       "date": "September 17, 2026",
       "excerpt": "Ten team building formats in Egypt: signature quests at Giza, in museums and on a yacht, desert safari, workshops. Who each suits, where it runs, how intense it is.",
-      "content": [
+      "links": [
+          {
+            "path": "/programmy",
+            "label": "All ten programs in detail"
+          },
+          {
+            "path": "/portfolio",
+            "label": "Corporate retreat case studies"
+          },
+          {
+            "path": "/dmc",
+            "label": "Venues, permits and logistics"
+          },
+          {
+            "path": "/contact",
+            "label": "Find the right format for your team"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "Team building in Egypt solves the problem that most corporate team building abroad never quite gets past: the choice between a memorable place and a programme that actually does something for the group. Here the two sit in the same trip. The pyramids, a museum full of originals, the Red Sea and the mountains of Sinai are all within reach of one hotel, and the flights and venues have been worked out for years. The real question is what to do with the team once it is there, so that a day at the pyramids does not turn into one more guided tour with a group photo at the end."
@@ -2568,7 +2712,25 @@ export const blogArticles = [
       "category": "Локации",
       "date": "17 сентября 2026",
       "excerpt": "Корпоративный круиз по Нилу: три судна, полный фрахт или блок кают, маршрут на четыре ночи из Луксора по дням и альтернативы — от дахабии до гала в Каире.",
-      "content": [
+      "links": [
+          {
+            "path": "/cruises",
+            "label": "Флот и маршруты круизов"
+          },
+          {
+            "path": "/programmy",
+            "label": "Программы на борту и на берегу"
+          },
+          {
+            "path": "/dmc",
+            "label": "Прямые контракты с судовладельцами"
+          },
+          {
+            "path": "/contact",
+            "label": "Подобрать судно под группу"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "Корпоративный круиз по Нилу — это формат, в котором отель, конференц-зал, ресторан и экскурсионная программа собраны на одном судне, и это судно само везёт группу от храма к храму. Утром — Карнак или Долина Царей с гидом-египтологом, днём — переход по реке и бассейн на верхней палубе, вечером — ужин и программа на борту. Никаких переездов между отелями, никаких чемоданов посреди недели: группа один раз заселяется в Луксоре и сходит на берег в Асуане."
@@ -2890,7 +3052,25 @@ export const blogArticles = [
       "category": "Locations",
       "date": "September 17, 2026",
       "excerpt": "A corporate Nile cruise for groups: three ships, full charter vs cabin block, a four-night Luxor itinerary by day, and alternatives from dahabiya to a Cairo gala.",
-      "content": [
+      "links": [
+          {
+            "path": "/cruises",
+            "label": "Fleet and cruise routes"
+          },
+          {
+            "path": "/programmy",
+            "label": "Programs on board and ashore"
+          },
+          {
+            "path": "/dmc",
+            "label": "Direct contracts with ship owners"
+          },
+          {
+            "path": "/contact",
+            "label": "Match a ship to your group"
+          }
+        ],
+        "content": [
         {
           "type": "paragraph",
           "text": "A corporate Nile cruise puts the hotel, the meeting room, the restaurant and the excursion programme on one vessel, and that vessel carries the group from temple to temple. Mornings are for Karnak or the Valley of the Kings with an Egyptologist guide, afternoons for the river and the pool on the sun deck, evenings for dinner and the programme on board. Nobody changes hotels mid-week and nobody repacks a suitcase: the group checks in once in Luxor and steps ashore in Aswan."
