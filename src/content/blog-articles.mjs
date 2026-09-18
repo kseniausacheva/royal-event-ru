@@ -54,6 +54,313 @@
 export const blogArticles = [
   // ───────────────────────────────────────────────────────────────────────
   {
+    "id": "mice4u-2026-egipet-mice-dmc",
+    "datePublished": "2026-09-18",
+    "image": "/carlsberg-3.JPG",
+    "ru": {
+      "title": "MICE4U 2026: представили Египет как MICE-направление",
+      "category": "Индустрия",
+      "date": "18 сентября 2026",
+      "excerpt": "9 сентября в московском The Carlton прошёл воркшоп MICE4U: более 250 MICE-агентств, корпоративных заказчиков, отелей и принимающих компаний. Мы приехали с Египтом — рассказываем, о чём спрашивали заказчики и что мы отвечали.",
+      "links": [
+        {
+          "path": "/dmc",
+          "label": "Что мы делаем в Египте как DMC"
+        },
+        {
+          "path": "/programmy",
+          "label": "Авторские программы для групп"
+        },
+        {
+          "path": "/cruises",
+          "label": "Круизы по Нилу и дахабии"
+        },
+        {
+          "path": "/contact",
+          "label": "Обсудить проект в Египте"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "MICE в Египте перестал быть экзотикой из презентаций и вернулся в рабочие короткие списки. 9 сентября 2026 года мы приехали на воркшоп MICE4U в Москве и весь день говорили об этом с корпоративными заказчиками и агентствами: что сегодня реально собрать в Каире и Шарм-эль-Шейхе, за какие сроки и с кем на месте. Ниже — как прошёл день, какие вопросы звучали чаще всего и что мы на них отвечали."
+        },
+        {
+          "type": "stat",
+          "number": "250+",
+          "label": "представителей MICE-агентств, корпоративных заказчиков, турорганизаций, отелей, авиакомпаний и принимающих компаний собирает MICE4U. Воркшоп проходит в отеле The Carlton на Тверской третий год подряд"
+        },
+        {
+          "type": "heading",
+          "text": "Что такое MICE4U",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "MICE4U — воркшоп в формате быстрых встреч: каждые десять минут за столом новый собеседник, без выставочной толкотни и без очереди к стенду. Организатор — агентство IM Marketing, площадка — The Carlton на Тверской, 3. В 2026 году воркшоп прошёл 9 сентября, с десяти утра до девяти вечера, и завершился вечерней интерактивной программой в двух потоках."
+        },
+        {
+          "type": "paragraph",
+          "text": "Формат жёсткий, и этим он хорош. Десять минут не оставляют места общим словам про «индивидуальный подход»: за это время нужно назвать направление, показать, что конкретно вы делаете руками, и услышать, какая задача у человека напротив. К концу дня становится видно не то, кто красивее презентует, а кто действительно работает на месте."
+        },
+        {
+          "type": "heading",
+          "text": "Мы представляли Египет — и как направление, и как принимающую сторону",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Мы приехали на MICE4U с Египтом: как с MICE-направлением для корпоративных групп и как с собственной принимающей компанией — DMC, которая ведёт проект на земле. Это принципиальная разница. Одно дело продать направление и передать группу подрядчику, другое — самим встретить её в аэропорту, договориться о пермитах, поставить свет и звук в зале и отвечать за каждый трансфер. Мы работаем по прямым контрактам с судовладельцами и отелями, а команда сидит в Каире и Шарм-эль-Шейхе, а не в переписке через посредника."
+        },
+        {
+          "type": "paragraph",
+          "text": "Что показывали за столом:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Авторские программы для групп от 20 до 100 гостей: квесты на плато Гизы, в Большом Египетском музее, в историческом Каире и на Синае",
+            "Круизы по Нилу: 5★ суда на 37 и 53 каюты, приватный чартер на 20 гостей и парусные дахабии Nour El Nil по маршруту Эсна — Асуан",
+            "Площадки, которых нет в открытых каталогах: приватные вечера в храмах, ужины с видом на пирамиды, стоянки там, куда большие суда не заходят",
+            "Полный DMC-цикл: пермиты и согласования, транспорт, гиды-египтологи, технический продакшн, сопровождение делегаций и протокол",
+            "Поездки вокруг больших событий — включая концерты на плато Гизы"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "О чём спрашивали корпоративные заказчики",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "Насколько это сложно логистически",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Это первый вопрос почти на каждой встрече — и он справедливый. Ответ короткий: перелёт из Москвы короче, чем кажется, а дальше начинается зона ответственности принимающей компании. Группа не пересаживается сама, не ищет автобусы и не выясняет, кто встречает у трапа. Для организатора Египет устроен проще многих европейских направлений именно потому, что вся наземная часть собирается у одного подрядчика."
+        },
+        {
+          "type": "heading",
+          "text": "Что с площадками для деловой части",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Спрашивали о конференц-залах на 300–1000 человек, о синхронном переводе и о технике. Отвечали честно: залы в Египте есть, а вот технический продакшн нельзя отдавать «отельному подрядчику по умолчанию» — это самый частый источник провалов на зарубежных конференциях. Мы возим своё оборудование и свою команду, а зал принимаем инспекционным визитом заранее, а не по фотографиям с сайта отеля."
+        },
+        {
+          "type": "heading",
+          "text": "Можно ли получить закрытый доступ к памятникам",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Можно, и это одна из причин, по которым Египет вообще попадает в короткий список. Приватный доступ, вечерние программы на археологических площадках и стоянки в местах, закрытых для больших судов, — вопрос не денег, а сроков и согласований. Поэтому такие блоки закладываются в проект первыми, а не «если успеем»."
+        },
+        {
+          "type": "heading",
+          "text": "Сколько времени нужно на подготовку",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "На авторскую программу — от четырёх до шести недель: разведка площадки, изготовление реквизита, персональные детали под компанию. Программы с декорациями, которые мы привозим в зал, требуют восьми–десяти недель на первый показ. Круиз и приватные доступы бронируются под конкретные даты, поэтому чем раньше известен месяц, тем шире выбор."
+        },
+        {
+          "type": "heading",
+          "text": "Кто отвечает на месте",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Вопрос, который задают те, у кого уже был неудачный выезд. На проекте есть конкретный человек с телефоном, который находится в той же стране, в том же часовом поясе и на той же площадке, что и группа. Не колл-центр и не «наш партнёр в Каире»."
+        },
+        {
+          "type": "callout",
+          "title": "Короткий ответ, который мы повторяли весь день",
+          "text": "Египет сегодня — это не «пирамиды и всё». Это готовая отельная база с полным пансионом, короткий перелёт, площадки, которых нет больше нигде, и принимающая компания, которая отвечает за всю наземную часть одним контрактом.",
+          "variant": "info"
+        },
+        {
+          "type": "heading",
+          "text": "Почему Египет снова в коротких списках",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            "Короткий перелёт из России — сезон длится с сентября по май, то есть охватывает и осенние конференции, и весенние инсентивы",
+            "Отели работают по системе полного пансиона: питание группы уже внутри, а не отдельной строкой сметы",
+            "Площадки с собственной историей: плато Гизы, Большой Египетский музей, Нил, Синай — фон, который не купишь декорациями",
+            "Один подрядчик на наземную часть: пермиты, транспорт, гиды, техника и программа не разваливаются между пятью компаниями",
+            "Формат масштабируется: от правления на восемь человек до дилерской конференции на тысячу участников"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Что дальше",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "После воркшопа остаётся самое полезное — конкретные задачи конкретных компаний: осенние конференции, весенние инсентивы, юбилеи и выездные стратегические сессии. Если ваша задача из этого списка, напишите: мы посчитаем и покажем, как это выглядит на площадке, а не на слайде."
+        }
+      ]
+    },
+    "en": {
+      "title": "MICE4U 2026: presenting Egypt as a MICE destination",
+      "category": "Industry",
+      "date": "18 September 2026",
+      "excerpt": "On 9 September the MICE4U workshop took place at The Carlton in Moscow: more than 250 MICE agencies, corporate buyers, hotels and destination management companies. We came with Egypt — here is what buyers asked and how we answered.",
+      "links": [
+        {
+          "path": "/dmc",
+          "label": "What we do in Egypt as a DMC"
+        },
+        {
+          "path": "/programmy",
+          "label": "Signature programmes for groups"
+        },
+        {
+          "path": "/cruises",
+          "label": "Nile cruises and dahabiyas"
+        },
+        {
+          "path": "/contact",
+          "label": "Discuss a project in Egypt"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Egypt has stopped being the exotic slide in a deck and is back on real shortlists. On 9 September 2026 we joined the MICE4U workshop in Moscow and spent the day talking to corporate buyers and agencies about exactly that: what can realistically be built in Cairo and Sharm El Sheikh today, on what lead time, and with whom on the ground. Here is how the day went, which questions came up most often and what we answered."
+        },
+        {
+          "type": "stat",
+          "number": "250+",
+          "label": "representatives of MICE agencies, corporate buyers, tour operators, hotels, airlines and destination management companies attend MICE4U. The workshop has run at The Carlton on Tverskaya for three years running"
+        },
+        {
+          "type": "heading",
+          "text": "What MICE4U is",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "MICE4U is a workshop built on speed meetings: a new person across the table every ten minutes, with none of the trade-show scrum and no queue at a booth. It is run by the IM Marketing agency at The Carlton, 3 Tverskaya Street. In 2026 it took place on 9 September, from ten in the morning until nine in the evening, and closed with an interactive evening programme in two streams."
+        },
+        {
+          "type": "paragraph",
+          "text": "The format is unforgiving, and that is its virtue. Ten minutes leave no room for talk of a bespoke approach: you have to name the destination, show what you actually do with your own hands, and hear what the person opposite is trying to solve. By the end of the day what shows is not who presents best, but who genuinely works on the ground."
+        },
+        {
+          "type": "heading",
+          "text": "We presented Egypt — as a destination and as the receiving side",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "We came to MICE4U with Egypt: as a MICE destination for corporate groups, and with our own receiving company — a DMC that runs the project on the ground. That distinction matters. Selling a destination and handing the group to a contractor is one thing; meeting them at the airport yourself, securing the permits, rigging light and sound in the room and answering for every transfer is another. We work on direct contracts with ship owners and hotels, and our team sits in Cairo and Sharm El Sheikh rather than in an email thread through an intermediary."
+        },
+        {
+          "type": "paragraph",
+          "text": "What we put on the table:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Signature programmes for groups of 20 to 100 guests: quests on the Giza plateau, in the Grand Egyptian Museum, in historic Cairo and in Sinai",
+            "Nile cruises: five-star ships with 37 and 53 cabins, a private charter for 20 guests, and the sailing dahabiyas of Nour El Nil on the Esna–Aswan route",
+            "Venues that are not in any open catalogue: private evenings inside temples, dinners with the pyramids in view, moorings where large ships cannot go",
+            "The full DMC cycle: permits and approvals, transport, Egyptologist guides, technical production, delegation handling and protocol",
+            "Travel built around major events, including concerts on the Giza plateau"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "What corporate buyers asked",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "How hard is the logistics",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "This came up at almost every meeting, and it is a fair question. The short answer: the flight is shorter than people assume, and everything after it is the receiving company's responsibility. The group does not arrange its own connections, hunt for coaches or work out who is meeting them at the aircraft door. For an organiser Egypt is in fact simpler than many European destinations, precisely because the whole ground operation sits with one contractor."
+        },
+        {
+          "type": "heading",
+          "text": "What about venues for the business programme",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "People asked about halls for 300 to 1,000 delegates, simultaneous interpretation and technical kit. We answered honestly: the halls exist, but technical production must not be left to the hotel's default contractor — that is the single most common source of failure at conferences abroad. We bring our own equipment and our own crew, and we inspect the room in person beforehand rather than trusting photographs on a hotel website."
+        },
+        {
+          "type": "heading",
+          "text": "Can you get private access to the monuments",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "You can, and it is one of the reasons Egypt makes a shortlist at all. Private access, evening programmes on archaeological sites and moorings closed to large vessels are a question of lead time and approvals rather than budget. That is why those elements go into the plan first, not as an afterthought."
+        },
+        {
+          "type": "heading",
+          "text": "How long does preparation take",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A signature programme needs four to six weeks: site reconnaissance, prop making, the personal details tied to the company. Programmes that travel with their own set design need eight to ten weeks for a first staging. Cruises and private access are booked against specific dates, so the earlier the month is known, the wider the choice."
+        },
+        {
+          "type": "heading",
+          "text": "Who is accountable on site",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The question asked by anyone who has already had a trip go wrong. Every project has a named person with a phone, in the same country, the same time zone and the same venue as the group. Not a call centre, and not \"our partner in Cairo\"."
+        },
+        {
+          "type": "callout",
+          "title": "The short answer we repeated all day",
+          "text": "Egypt today is not \"the pyramids and nothing else\". It is a ready hotel base on full board, a short flight, venues that exist nowhere else, and a receiving company that answers for the entire ground operation under one contract.",
+          "variant": "info"
+        },
+        {
+          "type": "heading",
+          "text": "Why Egypt is back on shortlists",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "items": [
+            "A short flight, and a season running from September to May — covering autumn conferences and spring incentives alike",
+            "Hotels run on full board: feeding the group is already inside the package rather than a separate budget line",
+            "Venues with a history of their own: the Giza plateau, the Grand Egyptian Museum, the Nile, Sinai — a backdrop no set build can buy",
+            "One contractor for the ground operation, so permits, transport, guides, technical production and programme do not fall apart between five companies",
+            "The format scales: from a board of eight to a dealer conference of a thousand delegates"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "What happens next",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "What remains after a workshop is the useful part: specific briefs from specific companies — autumn conferences, spring incentives, anniversaries and offsite strategy sessions. If your brief is on that list, write to us: we will cost it and show you how it looks on site rather than on a slide."
+        }
+      ]
+    }
+  },
+  {
     "id": "shakira-piramidy-gizy-bilety",
     "datePublished": "2026-09-17",
     "image": "/carlsberg-12.JPG",
