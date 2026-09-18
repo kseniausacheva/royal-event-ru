@@ -415,6 +415,15 @@ export const cruises = [
 /** Фото в public/ — путь от корня сайта и подпись alt на русском. */
 export type Photo = { src: string; alt: string };
 
+/** День маршрута дахабии Эсна → Асуан: точка на карте, текст и кадр дня. */
+export type CruiseDay = {
+  day: string;
+  place: string;
+  text: string;
+  /** Кадр дня для интерактивной карты маршрута. Пока фото нет — рисуется заставка. */
+  image?: Photo;
+};
+
 export type Ship = {
   slug: string;
   name: string;
@@ -520,7 +529,7 @@ export const dahabiyas: {
   boats: Dahabiya[];
   /** Общие кадры флота (под парусом, палуба, каюты), не привязанные к одной лодке. */
   gallery: Photo[];
-  days: { day: string; place: string; text: string }[];
+  days: CruiseDay[];
 } = {
   intro: [
     'Дахабия — это парусная лодка с двумя мачтами, какие ходили по Нилу в XIX веке, только с кондиционером, душем в каждой каюте и солнечными панелями на крыше. Nour El Nil держит флот из десяти таких лодок, и мы берём их целиком под группу.',

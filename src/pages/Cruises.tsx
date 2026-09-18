@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import SEO from '../components/SEO';
 import { PhotoSet, ZoomImage } from '../components/PhotoLightbox';
+import CruiseRouteMap from '../components/CruiseRouteMap';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { cruises, fleet, cruiseSights, dahabiyas } from '../content/la-royal-event';
 
@@ -205,15 +206,11 @@ const Cruises = () => {
           )}
 
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">Шесть дней по реке</p>
-          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {dahabiyas.days.map((d) => (
-              <li key={d.day} className="p-5 rounded-2xl border border-royal-rule">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim mb-1">{d.day}</p>
-                <h3 className="text-base font-display font-bold mb-2">{d.place}</h3>
-                <p className="text-sm text-royal-sand-2 leading-relaxed">{d.text}</p>
-              </li>
-            ))}
-          </ol>
+          <CruiseRouteMap
+            days={dahabiyas.days}
+            routeLabel="Эсна → Асуан"
+            routeMeta="5 ночей · 6 дней · 250 км"
+          />
         </div>
       </section>
 
