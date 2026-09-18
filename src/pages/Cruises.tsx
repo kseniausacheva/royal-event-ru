@@ -83,6 +83,9 @@ const Cruises = () => {
                         <div className="lg:col-span-2 p-7 sm:p-9 flex flex-col">
                           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">{ship.kicker}</p>
                           <p className="text-royal-sand-2 leading-relaxed mb-6">{ship.text}</p>
+                          {ship.detail?.map((d) => (
+                            <p key={d} className="text-sm text-royal-sand-2 leading-relaxed mb-4">{d}</p>
+                          ))}
                           <ul className="space-y-2.5 mb-6">
                             {ship.facts.map((f) => (
                               <li key={f} className="flex gap-3 text-sm text-royal-sand">

@@ -26,7 +26,8 @@ import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
 import WhatsAppIcon from '../components/WhatsAppIcon';
-import { programs, cruises, dmc, privateAccess, concerts } from '../content/la-royal-event';
+import { programs, cruises, fleet, dahabiyas, dmc, privateAccess, concerts } from '../content/la-royal-event';
+import CruiseRouteMap from '../components/CruiseRouteMap';
 import { Check, X as XIcon } from 'lucide-react';
 
 // Каналы быстрой связи — одинаковый набор в герое и нижнем CTA.
@@ -475,7 +476,45 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <Link to={lp('/cruises')} className="inline-flex items-center gap-2 mt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac hover:text-royal-lime transition-colors">
+          {/* Суда, с которыми работаем напрямую */}
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mt-16 mb-6">Флот · прямые контракты</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {fleet.map((ship) => (
+              <Link
+                key={ship.slug}
+                to={`${lp('/cruises')}#${ship.slug}`}
+                className="group rounded-2xl bg-royal-card border border-royal-rule overflow-hidden hover:border-royal-lilac-deep transition-colors"
+              >
+                <div className="relative aspect-[16/10]">
+                  <img
+                    src={ship.hero}
+                    alt={`${ship.name} — судно на Ниле`}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-royal-night via-royal-night/25 to-transparent" />
+                  <div className="absolute bottom-4 left-5 right-5">
+                    <h3 className="text-2xl font-display font-black uppercase tracking-tight text-white drop-shadow">{ship.name}</h3>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lime mt-1">{ship.capacity}</p>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-2">{ship.kicker}</p>
+                  <p className="text-sm text-royal-sand-2 leading-relaxed line-clamp-4">{ship.text}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Маршрут дахабии */}
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mt-16 mb-6">Дахабия под парусом · шесть дней по реке</p>
+          <CruiseRouteMap
+            days={dahabiyas.days}
+            routeLabel="Эсна → Асуан"
+            routeMeta="5 ночей · 6 дней · 250 км"
+          />
+
+          <Link to={lp('/cruises')} className="inline-flex items-center gap-2 mt-10 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac hover:text-royal-lime transition-colors">
             Подробнее о круизах <ChevronRight className="w-3 h-3" />
           </Link>
         </div>
