@@ -16,6 +16,7 @@ const photos: Photo[] = [
   ...fleet.flatMap((s) => [{ src: s.hero, alt: `${s.name} — судно на Ниле` }, ...s.gallery]),
   ...dahabiyas.boats.flatMap((b) => [...(b.hero ? [b.hero] : []), ...(b.gallery ?? [])]),
   ...dahabiyas.gallery,
+  ...dahabiyas.days.flatMap((d) => (d.image ? [d.image] : [])),
   ...programs.flatMap((p) => p.gallery ?? []),
 ];
 

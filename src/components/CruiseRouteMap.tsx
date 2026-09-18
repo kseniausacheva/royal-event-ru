@@ -50,7 +50,7 @@ const CruiseRouteMap = ({ days, routeLabel, routeMeta }: Props) => {
   const go = (next: number) => setActive(Math.min(Math.max(next, 0), last));
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-6 lg:gap-0 rounded-3xl overflow-hidden border border-royal-rule bg-royal-card">
+    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-0 rounded-3xl overflow-hidden border border-royal-rule bg-royal-card">
       {/* Кадр дня */}
       <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-[560px] flex flex-col">
         {day.image ? (
