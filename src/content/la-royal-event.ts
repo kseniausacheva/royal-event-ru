@@ -532,7 +532,17 @@ export const dahabiyas: {
     { name: 'Deluxe Suite', text: 'Две смежные каюты как одна: спальня с гостиной или две спальни для семьи. Есть не на всех лодках.' },
   ],
   boats: [
-    { name: 'Dendera', facts: '60 м · 10 кают · до 24 гостей', note: 'Флагман и новейшая лодка флота: самые просторные палубы и самые большие каюты на реке.' },
+    {
+      name: 'Dendera', facts: '60 м · 10 кают · до 24 гостей', note: 'Флагман и новейшая лодка флота: самые просторные палубы и самые большие каюты на реке.',
+      hero: { src: '/cruises/dendera-panoramic.webp', alt: 'Dendera — панорамная каюта с окнами на Нил и столиком у воды' },
+      gallery: [
+        { src: '/cruises/dendera-sundeck.webp', alt: 'Dendera — верхняя палуба под тентом с гамаком' },
+        { src: '/cruises/dendera-luxury.webp', alt: 'Dendera — каюта Luxury Room с окном на реку' },
+        { src: '/cruises/dendera-cabin.webp', alt: 'Dendera — каюта с картинами и видом на берег' },
+        { src: '/cruises/dendera-bath.webp', alt: 'Dendera — ванная комната каюты с душем и окном' },
+        { src: '/cruises/dendera-nile-rocks.webp', alt: 'Дахабии Nour El Nil под парусом у скалистого берега Нила' },
+      ],
+    },
     {
       name: 'Meroe', facts: '10 кают · до 20 гостей', note: 'Перестроена с нуля в 2017-м; крупные каюты и палуба, на которой хочется задержаться.',
       hero: { src: '/cruises/meroe-panoramic-suite.webp', alt: 'Meroe — Panoramic Suite с окнами в пол и видом на Нил' },
@@ -540,6 +550,9 @@ export const dahabiyas: {
         { src: '/cruises/meroe-salon.webp', alt: 'Meroe — салон с полосатыми диванами и книжными полками' },
         { src: '/cruises/meroe-luxury.webp', alt: 'Meroe — каюта Luxury Room' },
         { src: '/cruises/meroe-luxury-view.webp', alt: 'Meroe — Luxury Room с окном на реку' },
+        { src: '/cruises/meroe-sundeck.webp', alt: 'Meroe — верхняя палуба под тентом, столы к обеду' },
+        { src: '/cruises/meroe-bath.webp', alt: 'Meroe — ванная комната каюты с душем и окном' },
+        { src: '/cruises/meroe-sketching.webp', alt: 'Гостья рисует в блокноте на палубе Meroe' },
       ],
     },
     {
@@ -554,12 +567,38 @@ export const dahabiyas: {
         { src: '/cruises/adelaide-tea-window.webp', alt: 'Adelaïde — чай у окна каюты, за окном парус дахабии' },
       ],
     },
-    { name: 'Agatha', facts: '10 кают · 2 панорамных сьюта', note: 'Построена в 2020-м: свежие интерьеры без потери характера дахабии.' },
+    {
+      name: 'Agatha', facts: '10 кают · 2 панорамных сьюта', note: 'Построена в 2020-м: свежие интерьеры без потери характера дахабии.',
+      hero: { src: '/cruises/agatha-panoramic.webp', alt: 'Agatha — панорамная каюта с окнами на Нил' },
+      gallery: [
+        { src: '/cruises/agatha-sail.webp', alt: 'Agatha под полосатыми парусами на Ниле' },
+        { src: '/cruises/agatha-salon.webp', alt: 'Agatha — салон с полосатыми диванами и библиотекой' },
+        { src: '/cruises/agatha-sundeck.webp', alt: 'Agatha — верхняя палуба под тентом' },
+        { src: '/cruises/agatha-luxury.webp', alt: 'Agatha — каюта Luxury Room' },
+        { src: '/cruises/agatha-breakfast.webp', alt: 'Agatha — завтрак у окна каюты с видом на реку' },
+      ],
+    },
     {
       name: 'Malouka', facts: '45 м · 10 кают', note: 'Классика флота: компактные каюты, ностальгическая атмосфера, очень личная.',
       hero: { src: '/cruises/malouka-panoramic.webp', alt: 'Malouka — панорамная каюта с окнами на реку' },
+      gallery: [
+        { src: '/cruises/malouka-sundeck.webp', alt: 'Malouka — верхняя палуба с гамаком под тентом' },
+        { src: '/cruises/malouka-salon.webp', alt: 'Malouka — салон с полосатыми диванами и библиотекой' },
+        { src: '/cruises/malouka-luxury.webp', alt: 'Malouka — каюта Luxury Room' },
+        { src: '/cruises/malouka-tea-window.webp', alt: 'Malouka — завтрак у окна каюты' },
+      ],
     },
-    { name: 'El Nil', facts: '43 м · 10 кают · до 20 гостей', note: 'Самая камерная: панорамные каюты с окнами в пол, река — на расстоянии вытянутой руки.' },
+    {
+      name: 'El Nil', facts: '43 м · 10 кают · до 20 гостей', note: 'Самая камерная: панорамные каюты с окнами в пол, река — на расстоянии вытянутой руки.',
+      hero: { src: '/cruises/elnil-panoramic.webp', alt: 'El Nil — панорамная каюта с окнами в пол на Нил' },
+      gallery: [
+        { src: '/cruises/elnil-sundeck.webp', alt: 'El Nil — верхняя палуба под тентом' },
+        { src: '/cruises/elnil-salon.webp', alt: 'El Nil — салон с полосатыми диванами' },
+        { src: '/cruises/elnil-panoramic-windows.webp', alt: 'El Nil — панорамная каюта, окна по всей стене' },
+        { src: '/cruises/elnil-luxury.webp', alt: 'El Nil — каюта Luxury Room' },
+        { src: '/cruises/elnil-bath.webp', alt: 'El Nil — ванная комната каюты с душем' },
+      ],
+    },
     {
       name: 'Najafa', facts: 'Новая лодка · самые большие палубы', note: 'Просторные Luxury-каюты, панорамные каюты и Deluxe Suite с двумя ванными — для семей и партнёрских групп.',
       hero: { src: '/cruises/najafa-sail-sunset.webp', alt: 'Najafa под парусом на закате' },
@@ -579,12 +618,22 @@ export const dahabiyas: {
         { src: '/cruises/roman-sundeck.webp', alt: 'Roman — верхняя палуба с диванами под тентом' },
         { src: '/cruises/roman-corner-windows.webp', alt: 'Roman — угловые окна каюты на воду' },
         { src: '/cruises/roman-cabin.webp', alt: 'Roman — панорамная каюта' },
+        { src: '/cruises/roman-deluxe-suite.webp', alt: 'Roman — Deluxe Suite, спальня' },
+        { src: '/cruises/roman-salon.webp', alt: 'Roman — салон с полосатыми диванами' },
+        { src: '/cruises/roman-bath.webp', alt: 'Roman — ванная комната каюты с душем' },
+        { src: '/cruises/roman-sail.webp', alt: 'Roman под полосатыми парусами на Ниле' },
       ],
     },
     {
       name: 'Poppee', facts: 'Новая лодка · самые большие палубы', note: 'Та же новая серия: широкая верхняя палуба под тентом, где группа проводит большую часть дня.',
       hero: { src: '/cruises/poppee-sail-sunset.webp', alt: 'Poppee под парусом на закате' },
-      gallery: [{ src: '/cruises/poppee-sundeck.webp', alt: 'Poppee — верхняя палуба под тентом' }],
+      gallery: [
+        { src: '/cruises/poppee-sundeck.webp', alt: 'Poppee — верхняя палуба под тентом' },
+        { src: '/cruises/poppee-panoramic.webp', alt: 'Poppee — панорамная каюта, завтрак у окна' },
+        { src: '/cruises/poppee-luxury.webp', alt: 'Poppee — каюта Luxury Room' },
+        { src: '/cruises/poppee-cabin-view.webp', alt: 'Poppee — каюта с окнами на реку' },
+        { src: '/cruises/poppee-twin.webp', alt: 'Poppee — каюта с раздельными кроватями' },
+      ],
     },
   ],
   gallery: [
