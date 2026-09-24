@@ -56,7 +56,7 @@ export const blogArticles = [
   {
     "id": "mice4u-2026-egipet-mice-dmc",
     "datePublished": "2026-09-18",
-    "image": "/carlsberg-3.JPG",
+    "image": "/mice4u/photozone.webp",
     "ru": {
       "title": "MICE4U 2026: представили Египет как MICE-направление",
       "category": "Индустрия",
@@ -100,8 +100,20 @@ export const blogArticles = [
           "text": "MICE4U — воркшоп в формате быстрых встреч: каждые десять минут за столом новый собеседник, без выставочной толкотни и без очереди к стенду. Организатор — агентство IM Marketing, площадка — The Carlton на Тверской, 3. В 2026 году воркшоп прошёл 9 сентября, с десяти утра до девяти вечера, и завершился вечерней интерактивной программой в двух потоках."
         },
         {
+          "type": "image",
+          "url": "/mice4u/networking.webp",
+          "alt": "Участница воркшопа MICE4U с фирменным стаканом кофе у стойки в отеле The Carlton",
+          "caption": "Утро воркшопа: кофе и первые знакомства до начала встреч. The Carlton, Москва, 9 сентября 2026"
+        },
+        {
           "type": "paragraph",
           "text": "Формат жёсткий, и этим он хорош. Десять минут не оставляют места общим словам про «индивидуальный подход»: за это время нужно назвать направление, показать, что конкретно вы делаете руками, и услышать, какая задача у человека напротив. К концу дня становится видно не то, кто красивее презентует, а кто действительно работает на месте."
+        },
+        {
+          "type": "image",
+          "url": "/mice4u/zal.webp",
+          "alt": "Зал воркшопа MICE4U: десятки круглых столов с табличками участников и подсолнухами",
+          "caption": "Зал MICE4U: больше сорока столов, каждые десять минут за столом новый собеседник"
         },
         {
           "type": "heading",
@@ -125,6 +137,12 @@ export const blogArticles = [
             "Полный DMC-цикл: пермиты и согласования, транспорт, гиды-египтологи, технический продакшн, сопровождение делегаций и протокол",
             "Поездки вокруг больших событий — включая концерты на плато Гизы"
           ]
+        },
+        {
+          "type": "image",
+          "url": "/mice4u/stol-39.webp",
+          "alt": "Переговоры за столом La Royal Event, DMC Египет, на воркшопе MICE4U",
+          "caption": "Наш стол № 39 — La Royal Event, DMC в Египте: с десяти утра до девяти вечера без пауз"
         },
         {
           "type": "heading",
@@ -175,6 +193,12 @@ export const blogArticles = [
         {
           "type": "paragraph",
           "text": "Вопрос, который задают те, у кого уже был неудачный выезд. На проекте есть конкретный человек с телефоном, который находится в той же стране, в том же часовом поясе и на той же площадке, что и группа. Не колл-центр и не «наш партнёр в Каире»."
+        },
+        {
+          "type": "image",
+          "url": "/mice4u/badge.webp",
+          "alt": "Ксения Усачёва, основатель La Royal Event, с бейджем участника воркшопа MICE4U",
+          "caption": "Ксения Усачёва, основатель La Royal Event: на воркшопе — за столом 39, на проекте — на площадке в Египте"
         },
         {
           "type": "callout",
@@ -251,8 +275,20 @@ export const blogArticles = [
           "text": "MICE4U is a workshop built on speed meetings: a new person across the table every ten minutes, with none of the trade-show scrum and no queue at a booth. It is run by the IM Marketing agency at The Carlton, 3 Tverskaya Street. In 2026 it took place on 9 September, from ten in the morning until nine in the evening, and closed with an interactive evening programme in two streams."
         },
         {
+          "type": "image",
+          "url": "/mice4u/networking.webp",
+          "alt": "A MICE4U delegate with a branded coffee cup at The Carlton in Moscow",
+          "caption": "The morning of the workshop: coffee and first introductions before the meetings begin. The Carlton, Moscow, 9 September 2026"
+        },
+        {
           "type": "paragraph",
           "text": "The format is unforgiving, and that is its virtue. Ten minutes leave no room for talk of a bespoke approach: you have to name the destination, show what you actually do with your own hands, and hear what the person opposite is trying to solve. By the end of the day what shows is not who presents best, but who genuinely works on the ground."
+        },
+        {
+          "type": "image",
+          "url": "/mice4u/zal.webp",
+          "alt": "The MICE4U workshop floor: dozens of round tables with exhibitor signs and sunflowers",
+          "caption": "The MICE4U floor: more than forty tables, a new person across each one every ten minutes"
         },
         {
           "type": "heading",
@@ -276,6 +312,12 @@ export const blogArticles = [
             "The full DMC cycle: permits and approvals, transport, Egyptologist guides, technical production, delegation handling and protocol",
             "Travel built around major events, including concerts on the Giza plateau"
           ]
+        },
+        {
+          "type": "image",
+          "url": "/mice4u/stol-39.webp",
+          "alt": "A meeting at the La Royal Event, DMC Egypt table during the MICE4U workshop",
+          "caption": "Our table 39 — La Royal Event, DMC in Egypt: from ten in the morning to nine in the evening without a break"
         },
         {
           "type": "heading",
@@ -326,6 +368,12 @@ export const blogArticles = [
         {
           "type": "paragraph",
           "text": "The question asked by anyone who has already had a trip go wrong. Every project has a named person with a phone, in the same country, the same time zone and the same venue as the group. Not a call centre, and not \"our partner in Cairo\"."
+        },
+        {
+          "type": "image",
+          "url": "/mice4u/badge.webp",
+          "alt": "Ksenia Usacheva, founder of La Royal Event, wearing a MICE4U delegate badge",
+          "caption": "Ksenia Usacheva, founder of La Royal Event: at the workshop behind table 39, on a project on site in Egypt"
         },
         {
           "type": "callout",
