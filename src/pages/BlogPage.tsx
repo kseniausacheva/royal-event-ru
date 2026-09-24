@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Tag, ArrowLeft, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2, Send, XCircle } from 'lucide-react';
+import { Calendar, Tag, User, ArrowLeft, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2, Send, XCircle } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 import ArticleShare from '../components/ArticleShare';
 import NewsletterForm from '../components/NewsletterForm';
@@ -452,11 +452,22 @@ const BlogPage = () => {
         datePublished,
         dateModified: datePublished,
       }),
-      author: {
-        '@type': 'Organization',
-        name: 'La Royal Event',
-        url: `${canonicalHost}/`,
-      },
+      author: article.author
+        ? {
+            '@type': 'Person',
+            name: article.author.name,
+            jobTitle: article.author.jobTitle,
+            worksFor: {
+              '@type': 'Organization',
+              name: 'La Royal Event',
+              url: `${canonicalHost}/`,
+            },
+          }
+        : {
+            '@type': 'Organization',
+            name: 'La Royal Event',
+            url: `${canonicalHost}/`,
+          },
       publisher: {
         '@type': 'Organization',
         name: 'La Royal Event',
@@ -516,6 +527,15 @@ const BlogPage = () => {
                   <Calendar size={14} className="text-royal-pink" />
                   <span className="text-[10px] font-bold uppercase tracking-widest">{article.date}</span>
                 </div>
+                {article.author && (
+                  <div className="flex items-center gap-2">
+                    <User size={14} className="text-royal-pink" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest">
+                      {article.author.name}
+                      {article.author.jobTitle ? `, ${article.author.jobTitle}` : ''}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-8 leading-[1.05] tracking-tight">

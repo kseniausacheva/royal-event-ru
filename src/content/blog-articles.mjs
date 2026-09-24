@@ -61,6 +61,10 @@ export const blogArticles = [
       "title": "MICE4U 2026: представили Египет как MICE-направление",
       "category": "Индустрия",
       "date": "18 сентября 2026",
+      "author": {
+        "name": "Ксения Усачёва",
+        "jobTitle": "основатель и генеральный директор La Royal Event"
+      },
       "excerpt": "9 сентября в московском The Carlton прошёл воркшоп MICE4U: более 250 MICE-агентств, корпоративных заказчиков, отелей и принимающих компаний. Мы приехали с Египтом — рассказываем, о чём спрашивали заказчики и что мы отвечали.",
       "links": [
         {
@@ -83,7 +87,7 @@ export const blogArticles = [
       "content": [
         {
           "type": "paragraph",
-          "text": "MICE в Египте перестал быть экзотикой из презентаций и вернулся в рабочие короткие списки. 9 сентября 2026 года мы приехали на воркшоп MICE4U в Москве и весь день говорили об этом с корпоративными заказчиками и агентствами: что сегодня реально собрать в Каире и Шарм-эль-Шейхе, за какие сроки и с кем на месте. Ниже — как прошёл день, какие вопросы звучали чаще всего и что мы на них отвечали."
+          "text": "MICE в Египте перестал быть экзотикой из презентаций и вернулся в рабочие короткие списки. 9 сентября 2026 года компанию на воркшопе MICE4U в Москве представляла Ксения Усачёва, основатель и генеральный директор La Royal Event: весь день за столом 39 она говорила с корпоративными заказчиками и агентствами о том, что сегодня реально собрать в Каире и Шарм-эль-Шейхе, за какие сроки и с кем на месте. Ниже — как прошёл день, какие вопросы звучали чаще всего и что мы на них отвечали."
         },
         {
           "type": "stat",
@@ -122,7 +126,12 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "Мы приехали на MICE4U с Египтом: как с MICE-направлением для корпоративных групп и как с собственной принимающей компанией — DMC, которая ведёт проект на земле. Это принципиальная разница. Одно дело продать направление и передать группу подрядчику, другое — самим встретить её в аэропорту, договориться о пермитах, поставить свет и звук в зале и отвечать за каждый трансфер. Мы работаем по прямым контрактам с судовладельцами и отелями, а команда сидит в Каире и Шарм-эль-Шейхе, а не в переписке через посредника."
+          "text": "Египет на MICE4U представляла Ксения Усачёва — основатель и генеральный директор La Royal Event, MICE- и DMC-агентства с командой в Каире и Шарм-эль-Шейхе. Мы приехали на воркшоп с Египтом: как с MICE-направлением для корпоративных групп и как с собственной принимающей компанией — DMC, которая ведёт проект на земле. Это принципиальная разница. Одно дело продать направление и передать группу подрядчику, другое — самим встретить её в аэропорту, договориться о пермитах, поставить свет и звук в зале и отвечать за каждый трансфер. Мы работаем по прямым контрактам с судовладельцами и отелями, а команда сидит в Каире и Шарм-эль-Шейхе, а не в переписке через посредника."
+        },
+        {
+          "type": "quote",
+          "text": "Мы не продаём направление, чтобы потом передать группу подрядчику. Мы сами встречаем её в аэропорту, сами получаем пермиты и сами отвечаем за каждый трансфер — поэтому и говорим о Египте как принимающая сторона, а не как посредник.",
+          "author": "Ксения Усачёва, основатель и генеральный директор La Royal Event"
         },
         {
           "type": "paragraph",
@@ -156,7 +165,7 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "Это первый вопрос почти на каждой встрече — и он справедливый. Ответ короткий: перелёт из Москвы короче, чем кажется, а дальше начинается зона ответственности принимающей компании. Группа не пересаживается сама, не ищет автобусы и не выясняет, кто встречает у трапа. Для организатора Египет устроен проще многих европейских направлений именно потому, что вся наземная часть собирается у одного подрядчика."
+          "text": "Это первый вопрос почти на каждой встрече из нескольких десятков, что прошли за день у стола 39 — и он справедливый. Ответ короткий: перелёт из Москвы короче, чем кажется, а дальше начинается зона ответственности принимающей компании. Группа не пересаживается сама, не ищет автобусы и не выясняет, кто встречает у трапа. Для организатора Египет устроен проще многих европейских направлений именно потому, что вся наземная часть собирается у одного подрядчика."
         },
         {
           "type": "heading",
@@ -195,6 +204,11 @@ export const blogArticles = [
           "text": "Вопрос, который задают те, у кого уже был неудачный выезд. На проекте есть конкретный человек с телефоном, который находится в той же стране, в том же часовом поясе и на той же площадке, что и группа. Не колл-центр и не «наш партнёр в Каире»."
         },
         {
+          "type": "quote",
+          "text": "«Кто отвечает на месте» — единственный вопрос, на который нельзя ответить презентацией. Поэтому имя и телефон человека, который будет с группой в Египте, заказчик знает до подписания договора.",
+          "author": "Ксения Усачёва, основатель и генеральный директор La Royal Event"
+        },
+        {
           "type": "image",
           "url": "/mice4u/badge.webp",
           "alt": "Ксения Усачёва, основатель La Royal Event, с бейджем участника воркшопа MICE4U",
@@ -229,6 +243,12 @@ export const blogArticles = [
         {
           "type": "paragraph",
           "text": "После воркшопа остаётся самое полезное — конкретные задачи конкретных компаний: осенние конференции, весенние инсентивы, юбилеи и выездные стратегические сессии. Если ваша задача из этого списка, напишите: мы посчитаем и покажем, как это выглядит на площадке, а не на слайде."
+        },
+        {
+          "type": "callout",
+          "title": "Об авторе",
+          "text": "Ксения Усачёва — основатель и генеральный директор La Royal Event, MICE- и DMC-агентства в Египте. На воркшопе MICE4U 2026 в Москве представляла Египет как MICE- и DMC-направление и отвечала на вопросы корпоративных заказчиков и агентств о логистике, площадках, сроках подготовки и ответственности принимающей стороны.",
+          "variant": "info"
         }
       ]
     },
@@ -236,6 +256,10 @@ export const blogArticles = [
       "title": "MICE4U 2026: presenting Egypt as a MICE destination",
       "category": "Industry",
       "date": "18 September 2026",
+      "author": {
+        "name": "Ksenia Usacheva",
+        "jobTitle": "founder and CEO of La Royal Event"
+      },
       "excerpt": "On 9 September the MICE4U workshop took place at The Carlton in Moscow: more than 250 MICE agencies, corporate buyers, hotels and destination management companies. We came with Egypt — here is what buyers asked and how we answered.",
       "links": [
         {
@@ -258,7 +282,7 @@ export const blogArticles = [
       "content": [
         {
           "type": "paragraph",
-          "text": "Egypt has stopped being the exotic slide in a deck and is back on real shortlists. On 9 September 2026 we joined the MICE4U workshop in Moscow and spent the day talking to corporate buyers and agencies about exactly that: what can realistically be built in Cairo and Sharm El Sheikh today, on what lead time, and with whom on the ground. Here is how the day went, which questions came up most often and what we answered."
+          "text": "Egypt has stopped being the exotic slide in a deck and is back on real shortlists. On 9 September 2026 the company was represented at the MICE4U workshop in Moscow by Ksenia Usacheva, founder and CEO of La Royal Event: she spent the day at table 39 talking to corporate buyers and agencies about exactly that — what can realistically be built in Cairo and Sharm El Sheikh today, on what lead time, and with whom on the ground. Here is how the day went, which questions came up most often and what we answered."
         },
         {
           "type": "stat",
@@ -297,7 +321,12 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "We came to MICE4U with Egypt: as a MICE destination for corporate groups, and with our own receiving company — a DMC that runs the project on the ground. That distinction matters. Selling a destination and handing the group to a contractor is one thing; meeting them at the airport yourself, securing the permits, rigging light and sound in the room and answering for every transfer is another. We work on direct contracts with ship owners and hotels, and our team sits in Cairo and Sharm El Sheikh rather than in an email thread through an intermediary."
+          "text": "Egypt at MICE4U was presented by Ksenia Usacheva — founder and CEO of La Royal Event, a MICE and DMC agency with its team in Cairo and Sharm El Sheikh. We came to the workshop with Egypt: as a MICE destination for corporate groups, and with our own receiving company — a DMC that runs the project on the ground. That distinction matters. Selling a destination and handing the group to a contractor is one thing; meeting them at the airport yourself, securing the permits, rigging light and sound in the room and answering for every transfer is another. We work on direct contracts with ship owners and hotels, and our team sits in Cairo and Sharm El Sheikh rather than in an email thread through an intermediary."
+        },
+        {
+          "type": "quote",
+          "text": "We do not sell a destination only to hand the group over to a contractor. We meet them at the airport ourselves, secure the permits ourselves and answer for every transfer ourselves — which is why we speak about Egypt as the receiving side, not as an intermediary.",
+          "author": "Ksenia Usacheva, founder and CEO of La Royal Event"
         },
         {
           "type": "paragraph",
@@ -331,7 +360,7 @@ export const blogArticles = [
         },
         {
           "type": "paragraph",
-          "text": "This came up at almost every meeting, and it is a fair question. The short answer: the flight is shorter than people assume, and everything after it is the receiving company's responsibility. The group does not arrange its own connections, hunt for coaches or work out who is meeting them at the aircraft door. For an organiser Egypt is in fact simpler than many European destinations, precisely because the whole ground operation sits with one contractor."
+          "text": "This came up at almost every one of the several dozen meetings held at table 39 that day, and it is a fair question. The short answer: the flight is shorter than people assume, and everything after it is the receiving company's responsibility. The group does not arrange its own connections, hunt for coaches or work out who is meeting them at the aircraft door. For an organiser Egypt is in fact simpler than many European destinations, precisely because the whole ground operation sits with one contractor."
         },
         {
           "type": "heading",
@@ -370,6 +399,11 @@ export const blogArticles = [
           "text": "The question asked by anyone who has already had a trip go wrong. Every project has a named person with a phone, in the same country, the same time zone and the same venue as the group. Not a call centre, and not \"our partner in Cairo\"."
         },
         {
+          "type": "quote",
+          "text": "Who is accountable on site is the one question a presentation cannot answer. That is why the client knows the name and phone number of the person who will be with the group in Egypt before the contract is signed.",
+          "author": "Ksenia Usacheva, founder and CEO of La Royal Event"
+        },
+        {
           "type": "image",
           "url": "/mice4u/badge.webp",
           "alt": "Ksenia Usacheva, founder of La Royal Event, wearing a MICE4U delegate badge",
@@ -404,6 +438,12 @@ export const blogArticles = [
         {
           "type": "paragraph",
           "text": "What remains after a workshop is the useful part: specific briefs from specific companies — autumn conferences, spring incentives, anniversaries and offsite strategy sessions. If your brief is on that list, write to us: we will cost it and show you how it looks on site rather than on a slide."
+        },
+        {
+          "type": "callout",
+          "title": "About the author",
+          "text": "Ksenia Usacheva is the founder and CEO of La Royal Event, a MICE and DMC agency in Egypt. At the MICE4U 2026 workshop in Moscow she presented Egypt as a MICE and DMC destination and answered questions from corporate buyers and agencies on logistics, venues, lead times and the accountability of the receiving side.",
+          "variant": "info"
         }
       ]
     }

@@ -15,6 +15,8 @@ const ruArticles = blogArticles.map((a) => ({
   image: a.image,
   // Ссылки на разделы сайта под статьёй (перелинковка), если заданы
   links: a.ru.links,
+  // Автор статьи (Person в Schema.org + подпись в шапке), если задан
+  author: a.ru.author,
 }));
 
 const enArticles = blogArticles.map((a) => ({
@@ -26,6 +28,7 @@ const enArticles = blogArticles.map((a) => ({
   content: a.en.content,
   image: a.image,
   links: a.en.links,
+  author: a.en.author,
 }));
 
 export const translations = {
