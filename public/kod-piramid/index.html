@@ -1,0 +1,226 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Код пирамид</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Golos+Text:wght@400;500;600&family=Marck+Script&display=swap">
+<style>
+/* Единый образ: полевой дневник экспедиции — пергамент, чернила, сургуч.
+   Страница намеренно одной темы (как печатные материалы квеста). */
+:root{
+  --paper:#f3e6c9;      /* пергамент */
+  --paper-deep:#ead9b4; /* тень пергамента */
+  --card:#fdf6e6;       /* светлая плашка */
+  --ink:#3a2317;        /* чернила */
+  --ink-soft:#6b4a33;   /* выцветшие чернила */
+  --seal:#8d2f23;       /* сургуч */
+  --gold:#c08a2d;       /* латунь */
+  --display:'Spectral',Georgia,serif;
+  --body:'Golos Text',Arial,sans-serif;
+  --hand:'Marck Script',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;line-height:1.6;
+  padding-inline:16px;
+}
+.wrap{max-width:620px;margin:0 auto;padding-block:8px 40px}
+
+/* — шапка — */
+.hero{text-align:center;padding-block:40px 28px;border-bottom:1px solid var(--gold)}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--seal);font-weight:600}
+h1{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(40px,11vw,64px);letter-spacing:.08em;
+  color:var(--ink);margin-top:14px;line-height:1.05;text-wrap:balance;
+}
+.hero .sub{margin-top:12px;font-size:15px;color:var(--ink-soft)}
+.hero .date{
+  display:inline-block;margin-top:18px;padding:7px 18px;
+  border:1px solid var(--seal);border-radius:999px;
+  font-family:var(--display);font-size:15px;letter-spacing:.12em;color:var(--seal);
+}
+.pyramids{margin:26px auto 0;display:block;max-width:300px;width:70%}
+
+/* — секции — */
+section{padding-block:30px;border-bottom:1px solid var(--paper-deep)}
+section:last-of-type{border-bottom:none}
+h2{
+  font-family:var(--display);font-weight:600;font-size:22px;
+  letter-spacing:.1em;color:var(--seal);text-transform:uppercase;text-wrap:balance;
+}
+h2 small{display:block;font-family:var(--body);font-weight:400;font-size:12px;letter-spacing:.18em;color:var(--gold);margin-bottom:6px}
+section p{margin-top:12px;max-width:58ch}
+.quote{
+  font-family:var(--hand);font-size:26px;line-height:1.5;color:var(--ink);
+  margin-top:18px;padding:4px 0 4px 18px;border-left:3px solid var(--gold);
+}
+.quote .who{display:block;font-size:20px;color:var(--ink-soft);margin-top:6px}
+
+/* — правила в три пункта — */
+.rules{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.rule{
+  background:var(--card);border:1px solid var(--gold);border-radius:4px;
+  padding:14px 16px;display:flex;gap:14px;align-items:flex-start;
+}
+.rule b{font-family:var(--display);font-size:20px;color:var(--seal);line-height:1.2;min-width:1.2em;text-align:center}
+.rule span{min-width:0}
+
+/* — план дня — */
+.plan{margin-top:18px;display:flex;flex-direction:column}
+.step{display:flex;gap:16px;position:relative;padding-bottom:20px}
+.step:last-child{padding-bottom:0}
+.step::before{
+  content:'';position:absolute;left:62px;top:26px;bottom:2px;width:1px;background:var(--gold);
+}
+.step:last-child::before{display:none}
+.t{
+  font-family:var(--display);font-weight:600;font-size:16px;color:var(--seal);
+  min-width:52px;text-align:right;font-variant-numeric:tabular-nums;padding-top:1px;
+}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--seal);margin-top:8px;flex:none;position:relative;z-index:1;outline:3px solid var(--paper)}
+.step .what{min-width:0}
+.step .what b{display:block;font-weight:600}
+.step .what span{font-size:14px;color:var(--ink-soft)}
+
+/* — команды — */
+.teams{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.team{
+  width:92px;text-align:center;
+}
+.team .em{
+  width:68px;height:68px;margin:0 auto;border:2px solid var(--seal);border-radius:50%;
+  background:var(--card);padding:10px;
+}
+.team .nm{font-family:var(--display);font-size:12px;letter-spacing:.08em;margin-top:7px;color:var(--ink)}
+
+/* — что взять — */
+.pack{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.pack li{
+  list-style:none;background:var(--card);border:1px solid var(--paper-deep);
+  border-radius:4px;padding:12px 14px;font-size:15px;min-width:0;
+}
+.pack li b{color:var(--seal)}
+
+/* — вопросы — */
+.faq{margin-top:14px}
+.faq dt{font-weight:600;margin-top:16px}
+.faq dd{margin-top:4px;color:var(--ink-soft)}
+
+/* — подвал — */
+.rsvp{
+  margin-top:26px;background:var(--card);border:1px solid var(--seal);border-radius:4px;
+  padding:18px 18px;text-align:center;
+}
+.rsvp b{font-family:var(--display);letter-spacing:.06em;color:var(--seal)}
+footer{padding-block:26px 10px;text-align:center;font-size:12px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase}
+footer .mail{letter-spacing:.04em;text-transform:none;font-size:13px;margin-top:6px;user-select:all}
+</style>
+
+</head><body><div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">La Royal Event · квест в коробке</div>
+  <h1>КОД ПИРАМИД</h1>
+  <div class="sub">Закрытая экспедиция для вашей команды · плато Гиза</div>
+  <div class="date">СРЕДА · 15 ОКТЯБРЯ</div>
+  <svg class="pyramids" viewBox="0 0 300 110" role="img" aria-label="Силуэт трёх пирамид">
+    <circle cx="245" cy="26" r="14" fill="#c08a2d"/>
+    <path d="M10 100 L95 32 L180 100 Z" fill="none" stroke="#3a2317" stroke-width="2.5"/>
+    <path d="M95 32 L118 100" stroke="#3a2317" stroke-width="1.2"/>
+    <path d="M120 100 L195 44 L270 100 Z" fill="none" stroke="#6b4a33" stroke-width="2"/>
+    <path d="M225 100 L262 72 L298 100 Z" fill="none" stroke="#6b4a33" stroke-width="1.6"/>
+    <line x1="0" y1="100" x2="300" y2="100" stroke="#3a2317" stroke-width="2"/>
+  </svg>
+</header>
+
+<section>
+  <h2><small>Зачем мы едем</small>История</h2>
+  <p>Археолог А.&nbsp;Камаль двадцать лет ходил по плато Гиза и записывал всё, что видел, в полевой дневник. Его экспедиция оборвалась. Остались дневник и шесть запертых ларцов — код от них не записан нигде. Он разобран на семь находок, спрятанных на плато.</p>
+  <div class="quote">«Тому, кто пойдёт за мной: доверяй этим страницам, как мне самому».<span class="who">— последняя подписанная запись в дневнике</span></div>
+  <p>15 октября дневник и ларцы вернутся на плато. Вместе с вами.</p>
+</section>
+
+<section>
+  <h2><small>Три вещи, которые стоит знать</small>Как это устроено</h2>
+  <div class="rules">
+    <div class="rule"><b>I</b><span>Вы играете командами по шесть человек. Свою команду узнаете утром, вскрыв конверт с эмблемой. Первым делом команда выберет хранителя — он несёт дневник и отвечает за находки. Цель команды — открыть ларец со своим гербом.</span></div>
+    <div class="rule"><b>II</b><span>Находки не выдают — их зарабатывают: что-то пересчитать, что-то измерить шагами, что-то вынести из темноты. Перед каждой проверкой команда делает ставку на свой ответ.</span></div>
+    <div class="rule"><b>III</b><span>Ошибаться можно. Остаться без финала — нельзя: ларцы в этот день откроются в любом случае. Вопрос только в том, чьими руками будет добыт код.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><small>Одно задание по шагам</small>Как проходит задание</h2>
+  <p>Весь день состоит из коротких заданий на разных точках плато. Каждое устроено одинаково, и уже ко второму вы будете чувствовать себя ветераном экспедиции:</p>
+  <div class="rules" style="margin-top:14px">
+    <div class="rule"><b>1</b><span><b>Читаем дневник.</b> Помощник экспедиции открывает страницу и читает утверждение Камаля. Например: «Ступеней у входа — двенадцать». Дневник — единственный источник, других подсказок нет.</span></div>
+    <div class="rule"><b>2</b><span><b>Проверяем на местности.</b> Команда идёт и проверяет сама: пересчитывает, измеряет шагами, ищет точку, с которой видно ответ. Всё, что нужно, — у вас в руках или перед глазами.</span></div>
+    <div class="rule"><b>3</b><span><b>Делаем ставку.</b> Договорились об ответе — ставите фишки команды на свою версию. Ставка до проверки, всей командой. Чем увереннее ответ, тем смелее ставка.</span></div>
+    <div class="rule"><b>4</b><span><b>Получаем находку.</b> Помощник вскрывает конверт с проверкой. Находка — карточка, на которой написано: какую шестерёнку крутить, до какой цифры и какая это буква по счёту. Хранитель команды убирает её в конверт, помощник ставит печать в таблицу дневника.</span></div>
+    <div class="rule"><b>5</b><span><b>Слушаем, как было на самом деле.</b> После каждой проверки гид рассказывает короткую правду об этом месте — ту, которую не пишут в путеводителях.</span></div>
+  </div>
+  <p>Так команда собирает семь находок. За обедом они превратятся в слово, слово укажет на код, код откроет ларец. Как именно — увидите на месте: для этого будет машинка с шестерёнками.</p>
+  <p><b>Про фишки.</b> Каждая верная ставка пополняет счёт команды. Неверная — сгорает. Курс обмена накопленного объявим за обедом; скажем только, что он имеет прямое отношение к вашей профессии.</p>
+</section>
+
+<section>
+  <h2><small>Вы не останетесь одни</small>Кто рядом</h2>
+  <p>С группой весь день работают ведущая экспедиции, три помощника с печатями и гиды-египтологи. Задание можно переспрашивать сколько угодно — это не экзамен. Единственное, чего помощники не делают, — не отвечают за вас.</p>
+</section>
+
+<section>
+  <h2><small>От отеля до открытых ларцов</small>План дня</h2>
+  <div class="plan">
+    <div class="step"><div class="t">8:10</div><div class="dot"></div><div class="what"><b>Выезд из отеля</b><span>дорога — время выспаться или познакомиться с соседом</span></div></div>
+    <div class="step"><div class="t">10:40</div><div class="dot"></div><div class="what"><b>Старт экспедиции</b><span>плато Гиза, у подножия пирамиды Хеопса: конверты, дневники, первые находки</span></div></div>
+    <div class="step"><div class="t">12:00</div><div class="dot"></div><div class="what"><b>Вход внутрь пирамиды Хеопса</b><span>закрытое посещение — только наша группа. Одна из находок ждёт там, где нет света</span></div></div>
+    <div class="step"><div class="t">13:45</div><div class="dot"></div><div class="what"><b>Обед с видом на пирамиды</b><span>ресторан на плато. За столом история дойдёт до конца — и ларцы откроются</span></div></div>
+    <div class="step"><div class="t">15:00</div><div class="dot"></div><div class="what"><b>Обратная дорога</b><span>с фотографиями, которые придётся долго объяснять коллегам</span></div></div>
+  </div>
+</section>
+
+<section>
+  <h2><small>Чей герб достанется вам — решит конверт</small>Пять команд</h2>
+  <div class="teams">
+    <div class="team"><div class="em"><svg viewBox="0 0 120 120" width="100%" height="100%"><ellipse cx="60" cy="66" rx="20" ry="24" fill="#8d2f23"/><circle cx="60" cy="38" r="9" fill="#8d2f23"/><line x1="56" y1="31" x2="50" y2="22" stroke="#3a2317" stroke-width="3" stroke-linecap="round"/><line x1="64" y1="31" x2="70" y2="22" stroke="#3a2317" stroke-width="3" stroke-linecap="round"/><path d="M40 54 Q18 46 12 62" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 54 Q102 46 108 62" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 70 Q20 70 14 84" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 70 Q100 70 106 84" stroke="#c08a2d" stroke-width="7" fill="none" stroke-linecap="round"/><line x1="60" y1="46" x2="60" y2="88" stroke="#fdf6e6" stroke-width="2.5"/><circle cx="60" cy="16" r="7" fill="#c08a2d"/></svg></div><div class="nm">СКАРАБЕЙ</div></div>
+    <div class="team"><div class="em"><svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M60 86 Q40 69.3 22 46 Q49.6 44.4 60 86 Z" fill="#8d2f23" stroke="#3a2317" stroke-width="2"/><path d="M60 86 Q41.9 57.2 34 31 Q57.4 40.2 60 86 Z" fill="#c08a2d" stroke="#3a2317" stroke-width="2"/><path d="M60 86 Q47 47.2 51 23 Q65.7 41.3 60 86 Z" fill="#8d2f23" stroke="#3a2317" stroke-width="2"/><path d="M60 86 Q54.3 41.3 69 23 Q73 47.2 60 86 Z" fill="#c08a2d" stroke="#3a2317" stroke-width="2"/><path d="M60 86 Q62.6 40.2 86 31 Q78.1 57.2 60 86 Z" fill="#8d2f23" stroke="#3a2317" stroke-width="2"/><path d="M60 86 Q70.4 44.4 98 46 Q80 69.3 60 86 Z" fill="#c08a2d" stroke="#3a2317" stroke-width="2"/><path d="M60 86 L60 104" stroke="#3a2317" stroke-width="5"/></svg></div><div class="nm">ЛОТОС</div></div>
+    <div class="team"><div class="em"><svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M14 58 Q60 28 106 58 Q60 82 14 58 Z" fill="none" stroke="#3a2317" stroke-width="6"/><circle cx="60" cy="56" r="13" fill="#8d2f23"/><path d="M14 58 Q8 52 10 44" stroke="#3a2317" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M74 70 Q78 92 62 96" stroke="#3a2317" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M88 66 L104 90" stroke="#3a2317" stroke-width="6" stroke-linecap="round"/><path d="M16 40 Q60 18 104 40" stroke="#3a2317" stroke-width="5" fill="none"/></svg></div><div class="nm">ГЛАЗ ГОРА</div></div>
+    <div class="team"><div class="em"><svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M44 26 L54 52 L50 58 Z" fill="#3a2317"/><path d="M76 26 L66 52 L70 58 Z" fill="#3a2317"/><path d="M50 50 Q60 42 70 50 L88 72 Q92 78 84 80 L60 84 L40 66 Q44 54 50 50 Z" fill="#8d2f23"/><circle cx="64" cy="62" r="3.5" fill="#fdf6e6"/><path d="M44 82 Q60 92 84 84 L84 100 Q60 108 44 100 Z" fill="#c08a2d"/><line x1="44" y1="90" x2="84" y2="90" stroke="#3a2317" stroke-width="2.5"/></svg></div><div class="nm">АНУБИС</div></div>
+    <div class="team"><div class="em"><svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M60 18 Q34 26 34 52 Q34 74 52 80 L52 94 Q40 98 40 104 L80 104 Q80 96 68 93 L68 80 Q86 74 86 52 Q86 26 60 18 Z" fill="#c08a2d" stroke="#3a2317" stroke-width="3"/><path d="M60 30 Q46 36 46 52 Q46 66 58 70 L58 92 L66 92 L66 70 Q74 64 74 52 Q74 36 60 30 Z" fill="#8d2f23"/><circle cx="56" cy="48" r="3" fill="#fdf6e6"/><circle cx="66" cy="48" r="3" fill="#fdf6e6"/><path d="M58 58 Q61 62 64 58" stroke="#fdf6e6" stroke-width="2.5" fill="none"/></svg></div><div class="nm">КОБРА</div></div>
+  </div>
+</section>
+
+<section>
+  <h2><small>Погода: солнце, около +32</small>Что надеть и взять</h2>
+  <ul class="pack">
+    <li><b>Закрытые удобные кроссовки.</b> Плато — это песок и камень, каблуки и шлёпанцы не переживут день.</li>
+    <li><b>Лёгкая одежда, в которой удобно пригнуться.</b> Проходы внутри пирамиды низкие.</li>
+    <li><b>Головной убор и солнцезащитный крем.</b> Тени на плато почти нет.</li>
+    <li><b>Заряженный телефон.</b> Фотографий будет много. Вода и всё для игры — на нас.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><small>Короткие ответы</small>Вопросы</h2>
+  <dl class="faq">
+    <dt>Нужно ли готовиться — читать про Египет, тренироваться?</dt>
+    <dd>Нет. Всё, что понадобится, вы получите на месте. Пригодятся наблюдательность и здоровое недоверие.</dd>
+    <dt>Это физическая нагрузка?</dt>
+    <dd>Спокойная прогулка: около двух километров за день, без бега. Внутри пирамиды один наклонный подъём.</dd>
+    <dt>Можно снимать?</dt>
+    <dd>Да, сколько угодно. Внутри пирамиды — без вспышки.</dd>
+    <dt>А если наша команда ошибётся во всех ответах?</dt>
+    <dd>Финал получают все. Ошибка стоит ставки, но не места за столом, где откроются ларцы.</dd>
+  </dl>
+
+  <div class="rsvp"><b>ПОДТВЕРДИТЕ УЧАСТИЕ</b><br>ответным сообщением в чате, где вы получили эту ссылку.</div>
+</section>
+
+<footer>
+  Квест в коробке «Код пирамид» · La Royal Event
+  <div class="mail">sale@royaleventandmice.ru</div>
+</footer>
+
+</div>
+</body></html>
