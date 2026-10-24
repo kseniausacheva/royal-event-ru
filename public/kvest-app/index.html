@@ -8,13 +8,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <style>
   :root {
-    --bg: #120d1c;
-    --fg: #f3ece1;
-    --muted: #9b8fa8;
-    --lilac: #c6a4f5;
-    --lilac-deep: #8b5fd6;
-    --lime: #cfe64f;
-    --rose: #ff85b3;
+    --bg: #0e0b06;
+    --fg: #f5ecd9;
+    --muted: #a3906d;
+    --gold: #e9c36a;
+    --gold-deep: #c08a2d;
+    --teal: #46d6c0;
+    --flame: #ff9d66;
     --glass: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
     --glass-border: rgba(255,255,255,.17);
   }
@@ -22,20 +22,35 @@
   html, body { height: 100%; }
   body {
     background: var(--bg); color: var(--fg);
+    background-image: linear-gradient(180deg, #0a0d13 0%, #0e0b06 52%, #19100a 100%);
+    background-attachment: fixed;
     font-family: 'Golos Text', Arial, sans-serif; font-size: 16px; line-height: 1.5;
     overflow-x: hidden;
   }
   .stage { position: relative; min-height: 100%; padding: 22px 18px calc(30px + env(safe-area-inset-bottom, 0px)); max-width: 460px; margin: 0 auto; }
   .glow { position: fixed; border-radius: 50%; filter: blur(10px); pointer-events: none; z-index: 0; }
-  .g1 { width: 70vw; height: 70vw; top: -22vw; left: -20vw; background: radial-gradient(circle, rgba(139,95,214,.5), rgba(139,95,214,0) 70%); }
-  .g2 { width: 55vw; height: 55vw; bottom: -14vw; right: -18vw; background: radial-gradient(circle, rgba(207,230,79,.28), rgba(207,230,79,0) 70%); }
-  .g3 { width: 40vw; height: 40vw; bottom: 22vh; left: -16vw; background: radial-gradient(circle, rgba(255,133,179,.22), rgba(255,133,179,0) 70%); }
+  .g1 { width: 70vw; height: 70vw; top: -22vw; left: -20vw; background: radial-gradient(circle, rgba(233,195,106,.34), rgba(233,195,106,0) 70%); }
+  .g2 { width: 55vw; height: 55vw; bottom: -14vw; right: -18vw; background: radial-gradient(circle, rgba(70,214,192,.16), rgba(70,214,192,0) 70%); }
+  .g3 { width: 40vw; height: 40vw; bottom: 22vh; left: -16vw; background: radial-gradient(circle, rgba(255,157,102,.16), rgba(255,157,102,0) 70%); }
+  .pyr { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 560px; height: 150px; z-index: 0; pointer-events: none; }
+  .stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .8;
+    background-image:
+      radial-gradient(1.4px 1.4px at 11% 14%, rgba(255,243,214,.9), transparent 60%),
+      radial-gradient(1px 1px at 27% 7%, rgba(255,243,214,.7), transparent 60%),
+      radial-gradient(1.2px 1.2px at 44% 19%, rgba(255,243,214,.55), transparent 60%),
+      radial-gradient(1px 1px at 62% 9%, rgba(255,243,214,.8), transparent 60%),
+      radial-gradient(1.6px 1.6px at 78% 16%, rgba(255,243,214,.65), transparent 60%),
+      radial-gradient(1px 1px at 91% 6%, rgba(255,243,214,.7), transparent 60%),
+      radial-gradient(1px 1px at 18% 30%, rgba(255,243,214,.45), transparent 60%),
+      radial-gradient(1.2px 1.2px at 69% 27%, rgba(255,243,214,.5), transparent 60%),
+      radial-gradient(1px 1px at 86% 34%, rgba(255,243,214,.4), transparent 60%),
+      radial-gradient(1.3px 1.3px at 35% 38%, rgba(255,243,214,.35), transparent 60%); }
   .screen { position: relative; z-index: 1; display: none; flex-direction: column; gap: 16px; }
   .screen.on { display: flex; }
 
-  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--lime); }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
   h1 { font-family: 'Prata', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.1; text-wrap: balance; }
-  h1 .acc { color: var(--lilac); }
+  h1 .acc { color: var(--gold); }
   h2 { font-family: 'Prata', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2; }
   p { color: #e7ddcf; }
   .muted { color: var(--muted); font-size: 14px; }
@@ -48,19 +63,19 @@
   }
   .btn {
     display: block; width: 100%; border: none; cursor: pointer; text-align: center;
-    background: linear-gradient(135deg, var(--lilac), var(--lilac-deep)); color: #140d22;
+    background: linear-gradient(135deg, var(--gold), var(--gold-deep)); color: #241604;
     font-family: 'Golos Text', sans-serif; font-weight: 700; font-size: 17px;
     padding: 15px 18px; border-radius: 16px;
   }
   .btn:active { transform: scale(.98); }
   .btn.ghost { background: rgba(255,255,255,.08); color: var(--fg); border: 1px solid var(--glass-border); font-weight: 500; }
-  .btn.lime { background: var(--lime); color: #1d210a; }
+  .btn.teal { background: var(--teal); color: #06231e; }
   .btn[disabled] { opacity: .4; pointer-events: none; }
   input[type=text], input[type=number] {
     width: 100%; background: rgba(255,255,255,.07); border: 1px solid var(--glass-border);
     border-radius: 14px; padding: 14px 16px; color: var(--fg); font-size: 18px; font-family: 'Golos Text', sans-serif;
   }
-  input:focus { outline: 2px solid var(--lilac); }
+  input:focus { outline: 2px solid var(--gold); }
   .row { display: flex; gap: 10px; }
   .row > * { flex: 1; }
 
@@ -72,45 +87,53 @@
   /* прогресс */
   .prog { display: flex; gap: 7px; }
   .prog div { flex: 1; height: 7px; border-radius: 4px; background: rgba(255,255,255,.1); }
-  .prog div.done { background: var(--lime); }
+  .prog div.done { background: var(--teal); }
 
   /* список станций */
   .st-item { display: flex; align-items: center; gap: 13px; padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,.07); cursor: pointer; }
   .st-item:last-child { border-bottom: none; }
-  .st-num { font-family: 'JetBrains Mono', monospace; color: var(--lilac); font-size: 16px; width: 20px; }
+  .st-num { font-family: 'JetBrains Mono', monospace; color: var(--gold); font-size: 16px; width: 20px; }
   .st-name { flex: 1; }
   .st-state { font-size: 13px; color: var(--muted); }
-  .st-item.done .st-state { color: var(--lime); }
+  .st-item.done .st-state { color: var(--teal); }
   .st-item.locked { opacity: .45; }
 
   /* навигация к точке */
   .navbox { text-align: center; padding: 26px 18px; }
   .arrow-wrap { width: 150px; height: 150px; margin: 8px auto; border-radius: 50%; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.04); }
-  .arrow { font-size: 58px; color: var(--lime); transition: transform .3s; }
+  .arrow { font-size: 58px; color: var(--gold); transition: transform .3s; }
   .dist { font-family: 'Prata', Georgia, serif; font-size: 40px; }
   .dist small { font-size: 18px; color: var(--muted); font-family: 'Golos Text', sans-serif; }
 
   /* эмблема команды */
-  .emb { width: 120px; height: 120px; margin: 0 auto; border: 2px solid var(--lilac); border-radius: 50%; background: rgba(255,255,255,.06); padding: 18px; }
+  .emb { width: 120px; height: 120px; margin: 0 auto; border: 2px solid var(--gold); border-radius: 50%; background: rgba(255,255,255,.06); padding: 18px; }
   .teamname { font-family: 'Prata', Georgia, serif; font-size: 28px; text-align: center; }
 
   /* шифр */
   .cipher { text-align: center; padding: 26px 18px; }
   .cipher .lab { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em; color: var(--muted); text-transform: uppercase; }
-  .cipher .val { font-family: 'Prata', Georgia, serif; font-size: 34px; color: var(--lime); margin: 2px 0 14px; }
+  .cipher .val { font-family: 'Prata', Georgia, serif; font-size: 34px; color: var(--gold); margin: 2px 0 14px; }
   .attempts { display: flex; gap: 6px; justify-content: center; }
-  .attempts span { width: 10px; height: 10px; border-radius: 50%; background: var(--rose); display: inline-block; }
+  .attempts span { width: 10px; height: 10px; border-radius: 50%; background: var(--flame); display: inline-block; }
   .attempts span.used { background: rgba(255,255,255,.15); }
   .hintline { font-size: 14px; color: var(--muted); text-align: center; }
-  .hintline button { background: none; border: none; color: var(--lilac); font-size: 14px; cursor: pointer; text-decoration: underline; }
-  .err { color: var(--rose); font-size: 14px; text-align: center; min-height: 20px; }
+  .hintline button { background: none; border: none; color: var(--gold); font-size: 14px; cursor: pointer; text-decoration: underline; }
+  .err { color: var(--flame); font-size: 14px; text-align: center; min-height: 20px; }
   .choice { display: flex; flex-direction: column; gap: 10px; }
   .choice button { text-align: left; }
-  .foot { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; color: rgba(155,143,168,.6); text-transform: uppercase; margin-top: 10px; }
+  .foot { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; color: rgba(163,144,109,.6); text-transform: uppercase; margin-top: 10px; }
 </style>
 </head>
 <body>
+<div class="stars"></div>
 <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+<svg class="pyr" viewBox="0 0 460 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <polygon points="-40,150 70,92 180,150" fill="rgba(233,195,106,.05)"/>
+  <polygon points="90,150 235,28 380,150" fill="rgba(233,195,106,.085)"/>
+  <polyline points="90,150 235,28" stroke="rgba(233,195,106,.4)" stroke-width="1.2" fill="none"/>
+  <polygon points="300,150 395,76 490,150" fill="rgba(233,195,106,.06)"/>
+  <polyline points="300,150 395,76" stroke="rgba(233,195,106,.22)" stroke-width="1" fill="none"/>
+</svg>
 <div class="stage">
 
   <!-- ВХОД -->
@@ -168,7 +191,7 @@
       <div style="height:10px"></div>
       <input type="text" id="word" placeholder="Слово">
       <div class="err" id="word-err"></div>
-      <button class="btn lime" onclick="App.checkWord()">Проверить слово</button>
+      <button class="btn teal" onclick="App.checkWord()">Проверить слово</button>
     </div>
   </section>
 
@@ -215,12 +238,56 @@
     <button class="btn" onclick="App.show('s-map'); App.renderMap()">Продолжить</button>
   </section>
 
-  <!-- ФИНАЛ -->
-  <section class="screen" id="s-final">
+  <!-- ФИНАЛ: ГДЕ СЛОВО -->
+  <section class="screen" id="s-where">
     <div class="eyebrow">Слово верно</div>
-    <h1>Оно весь день было у человека <span class="acc">рядом</span></h1>
+    <h1>Блокнот. Но <span class="acc">чей?</span></h1>
     <div class="card">
-      <p>Вы знаете, у кого блокнот. Код от ларца — на его последнем развороте. Дальше — руками, не телефоном.</p>
+      <p>Весь день кто-то вёл записи у вас на глазах. Вспомните — и напишите, у кого блокнот.</p>
+      <div style="height:12px"></div>
+      <input type="text" id="where" placeholder="У кого блокнот?">
+      <div class="err" id="where-err"></div>
+      <button class="btn" onclick="App.checkWhere()">Проверить</button>
+    </div>
+  </section>
+
+  <!-- ФИНАЛ: КОД ЛАРЦА -->
+  <section class="screen" id="s-code">
+    <div class="eyebrow">Блокнот у вас</div>
+    <h2>Код на последнем развороте</h2>
+    <div class="card">
+      <p>Загляните в блокнот. На последнем развороте — четыре диска и четыре цифры. Введите код ларца.</p>
+      <div style="height:12px"></div>
+      <input type="number" id="boxcode" placeholder="Код из четырёх цифр">
+      <div class="err" id="code-err"></div>
+      <button class="btn" onclick="App.checkBoxCode()">Открыть ларец</button>
+    </div>
+  </section>
+
+  <!-- ФИНАЛ: QR ИЗ КОРОБКИ -->
+  <section class="screen" id="s-box">
+    <div class="eyebrow">Ларец открыт</div>
+    <h2>Последний шаг</h2>
+    <div class="card">
+      <p>Внутри ларца — знак с кодом. Отсканируйте его или введите цифры: это остановит ваше время.</p>
+      <div style="height:12px"></div>
+      <input type="number" id="boxqr" placeholder="Код из ларца">
+      <div class="err" id="box-err"></div>
+      <button class="btn teal" onclick="App.checkBoxQR()">Завершить экспедицию</button>
+    </div>
+  </section>
+
+  <!-- ФИНАЛ: ПОБЕДА -->
+  <section class="screen" id="s-final">
+    <div class="eyebrow">Экспедиция завершена</div>
+    <h1>Ларец <span class="acc">открыт</span></h1>
+    <div class="card" style="text-align:center; padding:26px 18px">
+      <div class="emb" id="emb-final"></div>
+      <div style="height:12px"></div>
+      <div class="teamname" id="final-team"></div>
+      <p class="muted" style="margin-top:10px">Время экспедиции</p>
+      <div class="dist" id="final-time">—</div>
+      <p class="muted" style="margin-top:10px">Семь раз вы проверили чужие слова камнем, числом и темнотой. Обереги в ларце — ваши. Разберите, и пусть каждому достанется своё.</p>
     </div>
     <div class="foot">Код пирамид · финал</div>
   </section>
@@ -231,7 +298,7 @@
     <h2>Точки и тесты</h2>
     <div class="card" id="setup-list"></div>
     <div class="card">
-      <p class="muted">Тестовые коды капсул: станция 4 — <b>3434</b>, станция 5 — <b>2525</b>, станция 7 — <b>1919</b>. Подсказка открывается через 5 минут (в тесте можно сразу).</p>
+      <p class="muted">Тестовые коды: капсулы — станция 4 <b>3434</b>, станция 5 <b>2525</b>, станция 7 <b>1919</b>. Финал: слово <b>блокнот</b> → у кого (<b>курьер</b>/<b>египтянин</b>) → код ларца <b>1256</b> → знак из ларца <b>2026</b>. Подсказка — через 5 минут.</p>
     </div>
     <button class="btn ghost" onclick="App.reset()">Сбросить игру (начать заново)</button>
     <button class="btn" onclick="App.show('s-map')">← Назад</button>
@@ -241,11 +308,11 @@
 
 <script>
 const EMBLEMS = {
-  skarabei: '<svg viewBox="0 0 120 120"><ellipse cx="60" cy="66" rx="20" ry="24" fill="#c6a4f5"/><circle cx="60" cy="38" r="9" fill="#c6a4f5"/><line x1="56" y1="31" x2="50" y2="22" stroke="#cfe64f" stroke-width="3" stroke-linecap="round"/><line x1="64" y1="31" x2="70" y2="22" stroke="#cfe64f" stroke-width="3" stroke-linecap="round"/><path d="M40 54 Q18 46 12 62" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 54 Q102 46 108 62" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 70 Q20 70 14 84" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 70 Q100 70 106 84" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><line x1="60" y1="46" x2="60" y2="88" stroke="#120d1c" stroke-width="2.5"/><circle cx="60" cy="16" r="7" fill="#cfe64f"/></svg>',
-  lotos: '<svg viewBox="0 0 120 120"><path d="M60 86 Q40 69 22 46 Q50 44 60 86Z" fill="#c6a4f5"/><path d="M60 86 Q42 57 34 31 Q57 40 60 86Z" fill="#cfe64f"/><path d="M60 86 Q47 47 51 23 Q66 41 60 86Z" fill="#c6a4f5"/><path d="M60 86 Q54 41 69 23 Q73 47 60 86Z" fill="#cfe64f"/><path d="M60 86 Q63 40 86 31 Q78 57 60 86Z" fill="#c6a4f5"/><path d="M60 86 Q70 44 98 46 Q80 69 60 86Z" fill="#cfe64f"/><path d="M60 86 L60 104" stroke="#cfe64f" stroke-width="5"/></svg>',
-  glazgora: '<svg viewBox="0 0 120 120"><path d="M14 58 Q60 28 106 58 Q60 82 14 58Z" fill="none" stroke="#c6a4f5" stroke-width="6"/><circle cx="60" cy="56" r="13" fill="#cfe64f"/><path d="M14 58 Q8 52 10 44" stroke="#c6a4f5" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M74 70 Q78 92 62 96" stroke="#c6a4f5" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M88 66 L104 90" stroke="#c6a4f5" stroke-width="6" stroke-linecap="round"/><path d="M16 40 Q60 18 104 40" stroke="#c6a4f5" stroke-width="5" fill="none"/></svg>',
-  anubis: '<svg viewBox="0 0 120 120"><path d="M44 26 L54 52 L50 58Z" fill="#c6a4f5"/><path d="M76 26 L66 52 L70 58Z" fill="#c6a4f5"/><path d="M50 50 Q60 42 70 50 L88 72 Q92 78 84 80 L60 84 L40 66 Q44 54 50 50Z" fill="#c6a4f5"/><circle cx="64" cy="62" r="3.5" fill="#120d1c"/><path d="M44 82 Q60 92 84 84 L84 100 Q60 108 44 100Z" fill="#cfe64f"/><line x1="44" y1="90" x2="84" y2="90" stroke="#120d1c" stroke-width="2.5"/></svg>',
-  kobra: '<svg viewBox="0 0 120 120"><path d="M60 18 Q34 26 34 52 Q34 74 52 80 L52 94 Q40 98 40 104 L80 104 Q80 96 68 93 L68 80 Q86 74 86 52 Q86 26 60 18Z" fill="#cfe64f" stroke="#c6a4f5" stroke-width="3"/><path d="M60 30 Q46 36 46 52 Q46 66 58 70 L58 92 L66 92 L66 70 Q74 64 74 52 Q74 36 60 30Z" fill="#c6a4f5"/><circle cx="56" cy="48" r="3" fill="#120d1c"/><circle cx="66" cy="48" r="3" fill="#120d1c"/></svg>',
+  skarabei: '<svg viewBox="0 0 120 120"><ellipse cx="60" cy="66" rx="20" ry="24" fill="#e9c36a"/><circle cx="60" cy="38" r="9" fill="#e9c36a"/><line x1="56" y1="31" x2="50" y2="22" stroke="#46d6c0" stroke-width="3" stroke-linecap="round"/><line x1="64" y1="31" x2="70" y2="22" stroke="#46d6c0" stroke-width="3" stroke-linecap="round"/><path d="M40 54 Q18 46 12 62" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 54 Q102 46 108 62" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 70 Q20 70 14 84" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 70 Q100 70 106 84" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><line x1="60" y1="46" x2="60" y2="88" stroke="#0e0b06" stroke-width="2.5"/><circle cx="60" cy="16" r="7" fill="#46d6c0"/></svg>',
+  lotos: '<svg viewBox="0 0 120 120"><path d="M60 86 Q40 69 22 46 Q50 44 60 86Z" fill="#e9c36a"/><path d="M60 86 Q42 57 34 31 Q57 40 60 86Z" fill="#46d6c0"/><path d="M60 86 Q47 47 51 23 Q66 41 60 86Z" fill="#e9c36a"/><path d="M60 86 Q54 41 69 23 Q73 47 60 86Z" fill="#46d6c0"/><path d="M60 86 Q63 40 86 31 Q78 57 60 86Z" fill="#e9c36a"/><path d="M60 86 Q70 44 98 46 Q80 69 60 86Z" fill="#46d6c0"/><path d="M60 86 L60 104" stroke="#46d6c0" stroke-width="5"/></svg>',
+  glazgora: '<svg viewBox="0 0 120 120"><path d="M14 58 Q60 28 106 58 Q60 82 14 58Z" fill="none" stroke="#e9c36a" stroke-width="6"/><circle cx="60" cy="56" r="13" fill="#46d6c0"/><path d="M14 58 Q8 52 10 44" stroke="#e9c36a" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M74 70 Q78 92 62 96" stroke="#e9c36a" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M88 66 L104 90" stroke="#e9c36a" stroke-width="6" stroke-linecap="round"/><path d="M16 40 Q60 18 104 40" stroke="#e9c36a" stroke-width="5" fill="none"/></svg>',
+  anubis: '<svg viewBox="0 0 120 120"><path d="M44 26 L54 52 L50 58Z" fill="#e9c36a"/><path d="M76 26 L66 52 L70 58Z" fill="#e9c36a"/><path d="M50 50 Q60 42 70 50 L88 72 Q92 78 84 80 L60 84 L40 66 Q44 54 50 50Z" fill="#e9c36a"/><circle cx="64" cy="62" r="3.5" fill="#0e0b06"/><path d="M44 82 Q60 92 84 84 L84 100 Q60 108 44 100Z" fill="#46d6c0"/><line x1="44" y1="90" x2="84" y2="90" stroke="#0e0b06" stroke-width="2.5"/></svg>',
+  kobra: '<svg viewBox="0 0 120 120"><path d="M60 18 Q34 26 34 52 Q34 74 52 80 L52 94 Q40 98 40 104 L80 104 Q80 96 68 93 L68 80 Q86 74 86 52 Q86 26 60 18Z" fill="#46d6c0" stroke="#e9c36a" stroke-width="3"/><path d="M60 30 Q46 36 46 52 Q46 66 58 70 L58 92 L66 92 L66 70 Q74 64 74 52 Q74 36 60 30Z" fill="#e9c36a"/><circle cx="56" cy="48" r="3" fill="#0e0b06"/><circle cx="66" cy="48" r="3" fill="#0e0b06"/></svg>',
 };
 const TEAMS = [
   { key: 'skarabei', name: 'Скарабей' }, { key: 'lotos', name: 'Лотос' },
@@ -308,7 +375,7 @@ const App = {
   register() {
     const n = document.getElementById('name').value.trim();
     if (!n) { document.getElementById('name').focus(); return; }
-    this.st.name = n; this.save();
+    this.st.name = n; if (!this.st.start) this.st.start = Date.now(); this.save();
     document.getElementById('hello').textContent = n.split(' ')[0] + ', добро пожаловать в экспедицию';
     this.show('s-brief');
   },
@@ -411,7 +478,7 @@ const App = {
     this.renderAtt(); this.renderHint();
     this.show('s-q');
   },
-  markPick(btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.style.outline = 'none'); btn.style.outline = '2px solid var(--lime)'; },
+  markPick(btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.style.outline = 'none'); btn.style.outline = '2px solid var(--gold)'; },
   renderAtt() {
     const used = this.st.att[this.cur.id] || 0;
     document.getElementById('q-att').innerHTML = [0, 1, 2].map(i => `<span class="${i < used ? 'used' : ''}"></span>`).join('');
@@ -455,8 +522,35 @@ const App = {
   },
   checkWord() {
     const v = (document.getElementById('word').value || '').trim().toLowerCase().replace('ё', 'е');
-    if (v === 'блокнот') { this.st.word = true; this.save(); this.show('s-final'); }
+    if (v === 'блокнот') { this.st.word = true; this.save(); this.show('s-where'); }
     else document.getElementById('word-err').textContent = 'Нет. Крутите шестерёнки по номерам букв.';
+  },
+  checkWhere() {
+    const v = (document.getElementById('where').value || '').trim().toLowerCase();
+    if (/егип|курьер|фарид|фарида/.test(v)) { this.st.where = true; this.save(); this.show('s-code'); }
+    else document.getElementById('where-err').textContent = 'Вспомните, кто весь день делал пометки на ваших глазах.';
+  },
+  checkBoxCode() {
+    const v = (document.getElementById('boxcode').value || '').trim();
+    if (v === '1256') { this.st.code = true; this.save(); this.show('s-box'); }
+    else document.getElementById('code-err').textContent = 'Диски не щёлкнули. Сверьтесь с блокнотом ещё раз.';
+  },
+  checkBoxQR() {
+    const v = (document.getElementById('boxqr').value || '').trim();
+    if (v === '2026') {
+      this.st.box = true; this.st.finish = this.st.finish || Date.now(); this.save(); this.showVictory();
+    } else document.getElementById('box-err').textContent = 'Это не знак из вашего ларца.';
+  },
+  showVictory() {
+    const t = TEAMS.find(x => x.key === this.st.team);
+    if (t) {
+      document.getElementById('emb-final').innerHTML = EMBLEMS[t.key];
+      document.getElementById('final-team').textContent = 'Команда «' + t.name + '»';
+    }
+    const ms = (this.st.finish || Date.now()) - (this.st.start || Date.now());
+    const m = Math.floor(ms / 60000), h = Math.floor(m / 60);
+    document.getElementById('final-time').textContent = h > 0 ? h + ' ч ' + (m % 60) + ' мин' : m + ' мин';
+    this.show('s-final');
   },
   // --- настройки ---
   renderSetup() {
@@ -484,7 +578,7 @@ window.addEventListener('deviceorientation', e => {
 App.load();
 if (App.st.name) {
   document.getElementById('hello').textContent = App.st.name.split(' ')[0] + ', с возвращением';
-  if (App.st.team) { App.revealTeam(); App.show(App.st.word ? 's-final' : 's-map'); }
+  if (App.st.team) { App.revealTeam(); if (App.st.box) App.showVictory(); else if (App.st.code) App.show('s-box'); else if (App.st.where) App.show('s-code'); else if (App.st.word) App.show('s-where'); else App.show('s-map'); }
   else App.show('s-brief');
 }
 </script>
