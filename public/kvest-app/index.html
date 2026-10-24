@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Код пирамид</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #120d1c;
+    --fg: #f3ece1;
+    --muted: #9b8fa8;
+    --lilac: #c6a4f5;
+    --lilac-deep: #8b5fd6;
+    --lime: #cfe64f;
+    --rose: #ff85b3;
+    --glass: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+    --glass-border: rgba(255,255,255,.17);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-family: 'Golos Text', Arial, sans-serif; font-size: 16px; line-height: 1.5;
+    overflow-x: hidden;
+  }
+  .stage { position: relative; min-height: 100%; padding: 22px 18px calc(30px + env(safe-area-inset-bottom, 0px)); max-width: 460px; margin: 0 auto; }
+  .glow { position: fixed; border-radius: 50%; filter: blur(10px); pointer-events: none; z-index: 0; }
+  .g1 { width: 70vw; height: 70vw; top: -22vw; left: -20vw; background: radial-gradient(circle, rgba(139,95,214,.5), rgba(139,95,214,0) 70%); }
+  .g2 { width: 55vw; height: 55vw; bottom: -14vw; right: -18vw; background: radial-gradient(circle, rgba(207,230,79,.28), rgba(207,230,79,0) 70%); }
+  .g3 { width: 40vw; height: 40vw; bottom: 22vh; left: -16vw; background: radial-gradient(circle, rgba(255,133,179,.22), rgba(255,133,179,0) 70%); }
+  .screen { position: relative; z-index: 1; display: none; flex-direction: column; gap: 16px; }
+  .screen.on { display: flex; }
+
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--lime); }
+  h1 { font-family: 'Prata', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.1; text-wrap: balance; }
+  h1 .acc { color: var(--lilac); }
+  h2 { font-family: 'Prata', Georgia, serif; font-weight: 400; font-size: 22px; line-height: 1.2; }
+  p { color: #e7ddcf; }
+  .muted { color: var(--muted); font-size: 14px; }
+
+  .card {
+    background: var(--glass); border: 1px solid var(--glass-border); border-radius: 22px;
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 18px 50px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.2);
+    padding: 18px;
+  }
+  .btn {
+    display: block; width: 100%; border: none; cursor: pointer; text-align: center;
+    background: linear-gradient(135deg, var(--lilac), var(--lilac-deep)); color: #140d22;
+    font-family: 'Golos Text', sans-serif; font-weight: 700; font-size: 17px;
+    padding: 15px 18px; border-radius: 16px;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn.ghost { background: rgba(255,255,255,.08); color: var(--fg); border: 1px solid var(--glass-border); font-weight: 500; }
+  .btn.lime { background: var(--lime); color: #1d210a; }
+  .btn[disabled] { opacity: .4; pointer-events: none; }
+  input[type=text], input[type=number] {
+    width: 100%; background: rgba(255,255,255,.07); border: 1px solid var(--glass-border);
+    border-radius: 14px; padding: 14px 16px; color: var(--fg); font-size: 18px; font-family: 'Golos Text', sans-serif;
+  }
+  input:focus { outline: 2px solid var(--lilac); }
+  .row { display: flex; gap: 10px; }
+  .row > * { flex: 1; }
+
+  /* верхняя панель */
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .chip { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; }
+  .gear { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+
+  /* прогресс */
+  .prog { display: flex; gap: 7px; }
+  .prog div { flex: 1; height: 7px; border-radius: 4px; background: rgba(255,255,255,.1); }
+  .prog div.done { background: var(--lime); }
+
+  /* список станций */
+  .st-item { display: flex; align-items: center; gap: 13px; padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,.07); cursor: pointer; }
+  .st-item:last-child { border-bottom: none; }
+  .st-num { font-family: 'JetBrains Mono', monospace; color: var(--lilac); font-size: 16px; width: 20px; }
+  .st-name { flex: 1; }
+  .st-state { font-size: 13px; color: var(--muted); }
+  .st-item.done .st-state { color: var(--lime); }
+  .st-item.locked { opacity: .45; }
+
+  /* навигация к точке */
+  .navbox { text-align: center; padding: 26px 18px; }
+  .arrow-wrap { width: 150px; height: 150px; margin: 8px auto; border-radius: 50%; border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.04); }
+  .arrow { font-size: 58px; color: var(--lime); transition: transform .3s; }
+  .dist { font-family: 'Prata', Georgia, serif; font-size: 40px; }
+  .dist small { font-size: 18px; color: var(--muted); font-family: 'Golos Text', sans-serif; }
+
+  /* эмблема команды */
+  .emb { width: 120px; height: 120px; margin: 0 auto; border: 2px solid var(--lilac); border-radius: 50%; background: rgba(255,255,255,.06); padding: 18px; }
+  .teamname { font-family: 'Prata', Georgia, serif; font-size: 28px; text-align: center; }
+
+  /* шифр */
+  .cipher { text-align: center; padding: 26px 18px; }
+  .cipher .lab { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em; color: var(--muted); text-transform: uppercase; }
+  .cipher .val { font-family: 'Prata', Georgia, serif; font-size: 34px; color: var(--lime); margin: 2px 0 14px; }
+  .attempts { display: flex; gap: 6px; justify-content: center; }
+  .attempts span { width: 10px; height: 10px; border-radius: 50%; background: var(--rose); display: inline-block; }
+  .attempts span.used { background: rgba(255,255,255,.15); }
+  .hintline { font-size: 14px; color: var(--muted); text-align: center; }
+  .hintline button { background: none; border: none; color: var(--lilac); font-size: 14px; cursor: pointer; text-decoration: underline; }
+  .err { color: var(--rose); font-size: 14px; text-align: center; min-height: 20px; }
+  .choice { display: flex; flex-direction: column; gap: 10px; }
+  .choice button { text-align: left; }
+  .foot { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; color: rgba(155,143,168,.6); text-transform: uppercase; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+<div class="stage">
+
+  <!-- ВХОД -->
+  <section class="screen on" id="s-login">
+    <div class="eyebrow">Квест · плато Гизы</div>
+    <h1>Код <span class="acc">пирамид</span></h1>
+    <p>Шесть ларцов заперты сто лет. Код разобран на семь шифров, спрятанных на плато. Сегодня их добудете вы.</p>
+    <div class="card">
+      <p class="muted" style="margin-bottom:10px">Как вас записать в экспедицию?</p>
+      <input type="text" id="name" placeholder="Имя и фамилия" autocomplete="name">
+      <div style="height:12px"></div>
+      <button class="btn" onclick="App.register()">Вступить в экспедицию</button>
+    </div>
+    <div class="foot">Код пирамид · прототип</div>
+  </section>
+
+  <!-- БРИФИНГ -->
+  <section class="screen" id="s-brief">
+    <div class="eyebrow">Брифинг</div>
+    <h2 id="hello"></h2>
+    <div class="card">
+      <p>Археолог А. Камаль двадцать лет вёл полевой дневник и оставил шесть запертых ларцов. Дневник — единственный ключ. <b>Если ему можно верить.</b></p>
+      <div style="height:10px"></div>
+      <p>Правила простые: на каждой станции — задание. Отвечает капитан, попыток три. За верный ответ — шифр. Семь шифров сложатся в слово, а слово откроет ларцы.</p>
+    </div>
+    <button class="btn" onclick="App.show('s-team'); App.revealTeam()">Узнать свою команду</button>
+  </section>
+
+  <!-- КОМАНДА -->
+  <section class="screen" id="s-team">
+    <div class="eyebrow">Жребий брошен</div>
+    <div class="card" style="text-align:center; padding:28px 18px">
+      <div class="emb" id="emb"></div>
+      <div style="height:14px"></div>
+      <div class="teamname" id="teamname"></div>
+      <p class="muted" style="margin-top:8px">Вы — капитан этой команды.<br>Вводить ответы можете только вы.</p>
+    </div>
+    <button class="btn" onclick="App.show('s-map')">К станциям</button>
+  </section>
+
+  <!-- СПИСОК СТАНЦИЙ -->
+  <section class="screen" id="s-map">
+    <div class="top">
+      <div>
+        <div class="eyebrow">Экспедиция</div>
+        <h2 id="map-team"></h2>
+      </div>
+      <button class="gear" onclick="App.show('s-setup')">⚙</button>
+    </div>
+    <div class="prog" id="prog"></div>
+    <div class="card" id="stlist"></div>
+    <div class="card" id="finalcard" style="display:none; text-align:center">
+      <div class="eyebrow" style="margin-bottom:8px">Все шифры собраны</div>
+      <p>Семь букв ждут на планке с шестерёнками. Какое слово получилось?</p>
+      <div style="height:10px"></div>
+      <input type="text" id="word" placeholder="Слово">
+      <div class="err" id="word-err"></div>
+      <button class="btn lime" onclick="App.checkWord()">Проверить слово</button>
+    </div>
+  </section>
+
+  <!-- НАВИГАЦИЯ К ТОЧКЕ -->
+  <section class="screen" id="s-nav">
+    <div class="eyebrow" id="nav-eyebrow">Станция</div>
+    <h2 id="nav-title"></h2>
+    <div class="card navbox">
+      <div class="arrow-wrap"><div class="arrow" id="arrow">↑</div></div>
+      <div class="dist" id="dist">—<small> м</small></div>
+      <p class="muted" id="nav-hint">Идите по стрелке. Задание откроется на месте.</p>
+    </div>
+    <button class="btn ghost" id="btn-compass" onclick="App.askCompass()" style="display:none">Разрешить компас</button>
+    <button class="btn ghost" onclick="App.fakeArrive()">Я на месте (тест без GPS)</button>
+    <button class="btn ghost" onclick="App.show('s-map')">← К списку</button>
+  </section>
+
+  <!-- ЗАДАНИЕ -->
+  <section class="screen" id="s-q">
+    <div class="eyebrow" id="q-eyebrow">Станция</div>
+    <h2 id="q-title"></h2>
+    <div class="card">
+      <p id="q-text"></p>
+      <div style="height:14px"></div>
+      <div id="q-input"></div>
+      <div class="err" id="q-err"></div>
+      <div class="attempts" id="q-att"></div>
+    </div>
+    <div class="hintline" id="q-hint"></div>
+    <button class="btn" id="q-btn" onclick="App.answer()">Ответить</button>
+    <button class="btn ghost" onclick="App.show('s-map')">← К списку</button>
+  </section>
+
+  <!-- НАХОДКА -->
+  <section class="screen" id="s-win">
+    <div class="eyebrow">Находка заработана</div>
+    <div class="card cipher">
+      <h2 id="w-title" style="margin-bottom:16px"></h2>
+      <div class="lab">Шестерёнка</div><div class="val" id="w-gear"></div>
+      <div class="lab">Крутить до цифры</div><div class="val" id="w-num"></div>
+      <div class="lab">Буква слова №</div><div class="val" id="w-letter"></div>
+      <p class="muted">Запишите в таблицу дневника — и дальше.</p>
+    </div>
+    <button class="btn" onclick="App.show('s-map'); App.renderMap()">Продолжить</button>
+  </section>
+
+  <!-- ФИНАЛ -->
+  <section class="screen" id="s-final">
+    <div class="eyebrow">Слово верно</div>
+    <h1>Оно весь день было у человека <span class="acc">рядом</span></h1>
+    <div class="card">
+      <p>Вы знаете, у кого блокнот. Код от ларца — на его последнем развороте. Дальше — руками, не телефоном.</p>
+    </div>
+    <div class="foot">Код пирамид · финал</div>
+  </section>
+
+  <!-- НАСТРОЙКИ (для организатора) -->
+  <section class="screen" id="s-setup">
+    <div class="eyebrow">Настройка · для организатора</div>
+    <h2>Точки и тесты</h2>
+    <div class="card" id="setup-list"></div>
+    <div class="card">
+      <p class="muted">Тестовые коды капсул: станция 4 — <b>3434</b>, станция 5 — <b>2525</b>, станция 7 — <b>1919</b>. Подсказка открывается через 5 минут (в тесте можно сразу).</p>
+    </div>
+    <button class="btn ghost" onclick="App.reset()">Сбросить игру (начать заново)</button>
+    <button class="btn" onclick="App.show('s-map')">← Назад</button>
+  </section>
+
+</div>
+
+<script>
+const EMBLEMS = {
+  skarabei: '<svg viewBox="0 0 120 120"><ellipse cx="60" cy="66" rx="20" ry="24" fill="#c6a4f5"/><circle cx="60" cy="38" r="9" fill="#c6a4f5"/><line x1="56" y1="31" x2="50" y2="22" stroke="#cfe64f" stroke-width="3" stroke-linecap="round"/><line x1="64" y1="31" x2="70" y2="22" stroke="#cfe64f" stroke-width="3" stroke-linecap="round"/><path d="M40 54 Q18 46 12 62" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 54 Q102 46 108 62" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 70 Q20 70 14 84" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 70 Q100 70 106 84" stroke="#cfe64f" stroke-width="7" fill="none" stroke-linecap="round"/><line x1="60" y1="46" x2="60" y2="88" stroke="#120d1c" stroke-width="2.5"/><circle cx="60" cy="16" r="7" fill="#cfe64f"/></svg>',
+  lotos: '<svg viewBox="0 0 120 120"><path d="M60 86 Q40 69 22 46 Q50 44 60 86Z" fill="#c6a4f5"/><path d="M60 86 Q42 57 34 31 Q57 40 60 86Z" fill="#cfe64f"/><path d="M60 86 Q47 47 51 23 Q66 41 60 86Z" fill="#c6a4f5"/><path d="M60 86 Q54 41 69 23 Q73 47 60 86Z" fill="#cfe64f"/><path d="M60 86 Q63 40 86 31 Q78 57 60 86Z" fill="#c6a4f5"/><path d="M60 86 Q70 44 98 46 Q80 69 60 86Z" fill="#cfe64f"/><path d="M60 86 L60 104" stroke="#cfe64f" stroke-width="5"/></svg>',
+  glazgora: '<svg viewBox="0 0 120 120"><path d="M14 58 Q60 28 106 58 Q60 82 14 58Z" fill="none" stroke="#c6a4f5" stroke-width="6"/><circle cx="60" cy="56" r="13" fill="#cfe64f"/><path d="M14 58 Q8 52 10 44" stroke="#c6a4f5" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M74 70 Q78 92 62 96" stroke="#c6a4f5" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M88 66 L104 90" stroke="#c6a4f5" stroke-width="6" stroke-linecap="round"/><path d="M16 40 Q60 18 104 40" stroke="#c6a4f5" stroke-width="5" fill="none"/></svg>',
+  anubis: '<svg viewBox="0 0 120 120"><path d="M44 26 L54 52 L50 58Z" fill="#c6a4f5"/><path d="M76 26 L66 52 L70 58Z" fill="#c6a4f5"/><path d="M50 50 Q60 42 70 50 L88 72 Q92 78 84 80 L60 84 L40 66 Q44 54 50 50Z" fill="#c6a4f5"/><circle cx="64" cy="62" r="3.5" fill="#120d1c"/><path d="M44 82 Q60 92 84 84 L84 100 Q60 108 44 100Z" fill="#cfe64f"/><line x1="44" y1="90" x2="84" y2="90" stroke="#120d1c" stroke-width="2.5"/></svg>',
+  kobra: '<svg viewBox="0 0 120 120"><path d="M60 18 Q34 26 34 52 Q34 74 52 80 L52 94 Q40 98 40 104 L80 104 Q80 96 68 93 L68 80 Q86 74 86 52 Q86 26 60 18Z" fill="#cfe64f" stroke="#c6a4f5" stroke-width="3"/><path d="M60 30 Q46 36 46 52 Q46 66 58 70 L58 92 L66 92 L66 70 Q74 64 74 52 Q74 36 60 30Z" fill="#c6a4f5"/><circle cx="56" cy="48" r="3" fill="#120d1c"/><circle cx="66" cy="48" r="3" fill="#120d1c"/></svg>',
+};
+const TEAMS = [
+  { key: 'skarabei', name: 'Скарабей' }, { key: 'lotos', name: 'Лотос' },
+  { key: 'glazgora', name: 'Глаз Гора' }, { key: 'anubis', name: 'Анубис' },
+  { key: 'kobra', name: 'Кобра' },
+];
+const HINT_MS = 5 * 60 * 1000;
+const STATIONS = [
+  { id: 1, title: 'Северная грань', geo: { lat: 29.98065, lng: 31.13415, r: 25 },
+    text: 'Дневник уверяет: «Проём в грани один, и прорублен он самими строителями». Посмотрите на грань. Сколько проёмов на самом деле?',
+    type: 'choice', options: ['Один', 'Два', 'Три'], correct: 1,
+    hint: 'Ровную раму делают неделями — так работают строители. Грубую дыру бьют быстро — так работают взломщики. Посчитайте и то, и другое.',
+    cipher: { gear: 'I', num: 2, letter: 6 } },
+  { id: 2, title: 'Грань шагами', geo: { lat: 29.98065, lng: 31.13415, r: 25 },
+    text: 'Дневник: «Сто пятьдесят метров от угла до угла». Откалибруйте шаг и проверьте. Сколько метров в грани на самом деле?',
+    type: 'number', target: 230, tol: 20, placeholder: 'Метров',
+    hint: 'Сначала узнайте длину своего шага: пройдите десять шагов вдоль рулетки.',
+    cipher: { gear: 'I', num: 3, letter: 1 } },
+  { id: 3, title: 'Спутницы', geo: { lat: 29.97870, lng: 31.13630, r: 30 },
+    text: 'Дневник: «У великой пирамиды четыре малые спутницы, стоят у западной грани». Здесь два вранья или ни одного. Сколько спутниц вы видите — и у какой они грани?',
+    type: 'multi', placeholder: 'Сколько спутниц', correctN: 3, options: ['Западная', 'Восточная'], correct: 1,
+    hint: 'Компас вам не положили нарочно. Утром солнце встаёт на востоке.',
+    cipher: { gear: 'II', num: 7, letter: 5 } },
+  { id: 4, title: 'Во тьме', geo: null,
+    text: 'Четвёртый ключ — в самом сердце пирамиды, там, куда солнце не заглядывало четыре с половиной тысячи лет. Найдите капсулу с гербом вашей команды и введите код с неё.',
+    type: 'code', code: '3434', placeholder: 'Код с капсулы',
+    hint: 'Ищите у стен камеры. Тьма хранит честнее людей.',
+    cipher: { gear: 'III', num: 4, letter: 7 } },
+  { id: 5, title: 'Точка съёмки', geo: { lat: 29.98211, lng: 31.13351, r: 30 },
+    text: 'Камаль снял отсюда свой снимок. Встаньте так, чтобы ракурс совпал. Дальше — его маршрут: «Солнце за спину — 16 шагов. Солнце в правое плечо — 20. Солнце в лицо — 35. Встань — и ищи капсулы». Введите код с вашей капсулы.',
+    type: 'code', code: '2525', placeholder: 'Код с капсулы',
+    hint: 'Промахнулись — вернитесь на точку съёмки и пройдите маршрут заново. Шаги обычные, не гигантские.',
+    cipher: { gear: 'II', num: 5, letter: 2 } },
+  { id: 6, title: 'Третья пирамида', geo: { lat: 29.98211, lng: 31.13351, r: 30 },
+    text: 'Дневник: «В третьей пирамиде ровно сто метров высоты, я измерил её сам». Инструментов у вас нет. Измерьте доступным способом. Сколько в ней метров?',
+    type: 'number', target: 63, tol: 15, placeholder: 'Метров',
+    hint: 'Ваш рост вы знаете. Что ещё здесь отбрасывает тень?',
+    cipher: { gear: 'III', num: 1, letter: 4 } },
+  { id: 7, title: 'За столом', geo: null,
+    text: 'Последний ключ уже в этом зале. Утром вы прочитали, где его искать. Когда найдёте и разобьёте — смотрите на фотографию внимательно: пингвину важно не кто он, а где он. Введите код с капсулы.',
+    type: 'code', code: '1919', placeholder: 'Код с капсулы',
+    hint: 'Где в этом зале так же холодно, как на фото?',
+    cipher: { gear: 'I', num: 9, letter: 3 } },
+];
+
+const App = {
+  st: null, cur: null, watchId: null, heading: null, bearing: 0,
+  load() {
+    try { this.st = JSON.parse(localStorage.getItem('kp') || 'null'); } catch (e) { this.st = null; }
+    if (!this.st) this.st = { name: '', team: null, done: {}, att: {}, opened: {}, pts: {}, word: false };
+  },
+  save() { try { localStorage.setItem('kp', JSON.stringify(this.st)); } catch (e) {} },
+  show(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('on'));
+    document.getElementById(id).classList.add('on');
+    if (id !== 's-nav' && this.watchId !== null) { navigator.geolocation.clearWatch(this.watchId); this.watchId = null; }
+    if (id === 's-setup') this.renderSetup();
+    window.scrollTo(0, 0);
+  },
+  register() {
+    const n = document.getElementById('name').value.trim();
+    if (!n) { document.getElementById('name').focus(); return; }
+    this.st.name = n; this.save();
+    document.getElementById('hello').textContent = n.split(' ')[0] + ', добро пожаловать в экспедицию';
+    this.show('s-brief');
+  },
+  revealTeam() {
+    if (!this.st.team) { this.st.team = TEAMS[Math.floor(Math.random() * TEAMS.length)].key; this.save(); }
+    const t = TEAMS.find(x => x.key === this.st.team);
+    document.getElementById('emb').innerHTML = EMBLEMS[t.key];
+    document.getElementById('teamname').textContent = 'Команда «' + t.name + '»';
+    document.getElementById('map-team').textContent = '«' + t.name + '»';
+    this.renderMap();
+  },
+  renderMap() {
+    const t = TEAMS.find(x => x.key === this.st.team);
+    if (t) document.getElementById('map-team').textContent = '«' + t.name + '»';
+    const doneCount = Object.keys(this.st.done).length;
+    document.getElementById('prog').innerHTML = STATIONS.map(s => `<div class="${this.st.done[s.id] ? 'done' : ''}"></div>`).join('');
+    document.getElementById('stlist').innerHTML = STATIONS.map(s => {
+      const done = this.st.done[s.id];
+      const out = this.st.att[s.id] >= 3 && !done;
+      return `<div class="st-item ${done ? 'done' : ''}" onclick="App.open(${s.id})">
+        <div class="st-num">${s.id}</div>
+        <div class="st-name">${s.title}</div>
+        <div class="st-state">${done ? 'шифр получен' : out ? 'попытки кончились' : s.geo ? 'идти к точке' : 'без точки'}</div>
+      </div>`;
+    }).join('');
+    document.getElementById('finalcard').style.display = doneCount === STATIONS.length && !this.st.word ? 'block' : 'none';
+  },
+  open(id) {
+    this.cur = STATIONS.find(s => s.id === id);
+    if (this.st.done[id]) { this.showWin(this.cur); return; }
+    if (!this.st.opened[id]) { this.st.opened[id] = Date.now(); this.save(); }
+    if (this.cur.geo) this.showNav(); else this.showQ();
+  },
+  // --- навигация ---
+  pt() { const o = this.st.pts[this.cur.id]; return o ? o : this.cur.geo; },
+  showNav() {
+    document.getElementById('nav-eyebrow').textContent = 'Станция ' + this.cur.id;
+    document.getElementById('nav-title').textContent = this.cur.title;
+    document.getElementById('dist').innerHTML = '…<small> м</small>';
+    this.show('s-nav');
+    if (window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission === 'function')
+      document.getElementById('btn-compass').style.display = 'block';
+    this.startGeo();
+  },
+  startGeo() {
+    if (!navigator.geolocation) { document.getElementById('nav-hint').textContent = 'GPS недоступен — используйте кнопку теста.'; return; }
+    this.watchId = navigator.geolocation.watchPosition(p => this.onPos(p), () => {
+      document.getElementById('nav-hint').textContent = 'Нет сигнала GPS. Разрешите доступ к геопозиции или используйте кнопку теста.';
+    }, { enableHighAccuracy: true, maximumAge: 2000, timeout: 15000 });
+  },
+  onPos(p) {
+    const t = this.pt(); if (!t) return;
+    const d = this.distM(p.coords.latitude, p.coords.longitude, t.lat, t.lng);
+    this.bearing = this.bearingDeg(p.coords.latitude, p.coords.longitude, t.lat, t.lng);
+    document.getElementById('dist').innerHTML = Math.round(d) + '<small> м</small>';
+    this.rotate();
+    if (d <= (t.r || 25)) { this.showQ(); }
+  },
+  askCompass() {
+    DeviceOrientationEvent.requestPermission().then(r => {
+      if (r === 'granted') { document.getElementById('btn-compass').style.display = 'none'; }
+    }).catch(() => {});
+  },
+  rotate() {
+    const h = this.heading;
+    const a = document.getElementById('arrow');
+    if (h === null || h === undefined) { a.textContent = this.compassWord(this.bearing); a.style.transform = 'none'; a.style.fontSize = '30px'; }
+    else { a.textContent = '↑'; a.style.fontSize = '58px'; a.style.transform = 'rotate(' + ((this.bearing - h + 360) % 360) + 'deg)'; }
+  },
+  compassWord(b) {
+    const dirs = ['на север', 'на северо-восток', 'на восток', 'на юго-восток', 'на юг', 'на юго-запад', 'на запад', 'на северо-запад'];
+    return dirs[Math.round(b / 45) % 8];
+  },
+  distM(a, b, c, d) {
+    const R = 6371000, r = Math.PI / 180;
+    const x = (c - a) * r, y = (d - b) * r;
+    const s = Math.sin(x / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin(y / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(s));
+  },
+  bearingDeg(a, b, c, d) {
+    const r = Math.PI / 180;
+    const y = Math.sin((d - b) * r) * Math.cos(c * r);
+    const x = Math.cos(a * r) * Math.sin(c * r) - Math.sin(a * r) * Math.cos(c * r) * Math.cos((d - b) * r);
+    return (Math.atan2(y, x) / r + 360) % 360;
+  },
+  fakeArrive() { this.showQ(); },
+  // --- задание ---
+  showQ() {
+    const s = this.cur;
+    document.getElementById('q-eyebrow').textContent = 'Станция ' + s.id;
+    document.getElementById('q-title').textContent = s.title;
+    document.getElementById('q-text').textContent = s.text;
+    document.getElementById('q-err').textContent = '';
+    const box = document.getElementById('q-input');
+    if (s.type === 'choice') box.innerHTML = '<div class="choice">' + s.options.map((o, i) => `<button class="btn ghost" onclick="App.pick=${i}; App.markPick(this)">${o}</button>`).join('') + '</div>';
+    else if (s.type === 'number') box.innerHTML = `<input type="number" id="ans" placeholder="${s.placeholder}">`;
+    else if (s.type === 'code') box.innerHTML = `<input type="number" id="ans" placeholder="${s.placeholder}">`;
+    else if (s.type === 'multi') box.innerHTML = `<input type="number" id="ans" placeholder="${s.placeholder}"><div style="height:10px"></div><div class="choice">` + s.options.map((o, i) => `<button class="btn ghost" onclick="App.pick=${i}; App.markPick(this)">${o}</button>`).join('') + '</div>';
+    this.pick = null;
+    this.renderAtt(); this.renderHint();
+    this.show('s-q');
+  },
+  markPick(btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.style.outline = 'none'); btn.style.outline = '2px solid var(--lime)'; },
+  renderAtt() {
+    const used = this.st.att[this.cur.id] || 0;
+    document.getElementById('q-att').innerHTML = [0, 1, 2].map(i => `<span class="${i < used ? 'used' : ''}"></span>`).join('');
+    document.getElementById('q-btn').disabled = used >= 3;
+    if (used >= 3) document.getElementById('q-err').textContent = 'Попытки закончились. Подойдите к организатору.';
+  },
+  renderHint() {
+    const s = this.cur, el = document.getElementById('q-hint');
+    const openAt = (this.st.opened[s.id] || Date.now()) + HINT_MS;
+    const tick = () => {
+      if (!document.getElementById('s-q').classList.contains('on')) return;
+      const left = openAt - Date.now();
+      if (this.st['hint' + s.id]) el.innerHTML = '💡 ' + s.hint;
+      else if (left <= 0) el.innerHTML = `<button onclick="App.useHint()">Открыть подсказку</button>`;
+      else el.innerHTML = `Подсказка откроется через ${Math.ceil(left / 60000)} мин · <button onclick="App.useHint()">открыть сейчас (тест)</button>`;
+      setTimeout(tick, 5000);
+    };
+    tick();
+  },
+  useHint() { this.st['hint' + this.cur.id] = true; this.save(); document.getElementById('q-hint').innerHTML = '💡 ' + this.cur.hint; },
+  answer() {
+    const s = this.cur;
+    let ok = false;
+    if (s.type === 'choice') { if (this.pick === null) return; ok = this.pick === s.correct; }
+    else if (s.type === 'number') { const v = parseFloat(document.getElementById('ans').value); if (isNaN(v)) return; ok = Math.abs(v - s.target) <= s.tol; }
+    else if (s.type === 'code') { const v = (document.getElementById('ans').value || '').trim(); if (!v) return; ok = v === s.code; }
+    else if (s.type === 'multi') { const v = parseFloat(document.getElementById('ans').value); if (isNaN(v) || this.pick === null) return; ok = v === s.correctN && this.pick === s.correct; }
+    if (ok) { this.st.done[s.id] = true; this.save(); this.showWin(s); }
+    else {
+      this.st.att[s.id] = (this.st.att[s.id] || 0) + 1; this.save();
+      document.getElementById('q-err').textContent = s.type === 'code' ? 'Код не подходит. Это точно капсула вашей команды?' : 'Дневник бы вам поверил. Камень — нет. Ставка сгорела.';
+      this.renderAtt();
+    }
+  },
+  showWin(s) {
+    document.getElementById('w-title').textContent = s.title;
+    document.getElementById('w-gear').textContent = s.cipher.gear;
+    document.getElementById('w-num').textContent = s.cipher.num;
+    document.getElementById('w-letter').textContent = s.cipher.letter;
+    this.show('s-win');
+  },
+  checkWord() {
+    const v = (document.getElementById('word').value || '').trim().toLowerCase().replace('ё', 'е');
+    if (v === 'блокнот') { this.st.word = true; this.save(); this.show('s-final'); }
+    else document.getElementById('word-err').textContent = 'Нет. Крутите шестерёнки по номерам букв.';
+  },
+  // --- настройки ---
+  renderSetup() {
+    document.getElementById('setup-list').innerHTML = STATIONS.filter(s => s.geo).map(s => {
+      const own = this.st.pts[s.id];
+      return `<div class="st-item"><div class="st-num">${s.id}</div>
+        <div class="st-name">${s.title}<div class="st-state">${own ? 'точка: ваша (' + own.lat.toFixed(5) + ', ' + own.lng.toFixed(5) + ')' : 'точка: стандартная'}</div></div>
+        <button class="btn ghost" style="width:auto;padding:8px 10px;font-size:13px" onclick="App.setHere(${s.id})">Точка здесь</button></div>`;
+    }).join('');
+  },
+  setHere(id) {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(p => {
+      this.st.pts[id] = { lat: p.coords.latitude, lng: p.coords.longitude, r: 25 };
+      this.save(); this.renderSetup();
+    }, () => alert('Не удалось получить позицию — разрешите доступ к геолокации.'), { enableHighAccuracy: true });
+  },
+  reset() { localStorage.removeItem('kp'); location.reload(); },
+};
+window.addEventListener('deviceorientationabsolute', e => { if (e.alpha !== null) { App.heading = 360 - e.alpha; App.rotate && App.rotate(); } }, true);
+window.addEventListener('deviceorientation', e => {
+  if (e.webkitCompassHeading !== undefined) { App.heading = e.webkitCompassHeading; App.rotate && App.rotate(); }
+  else if (App.heading === null && e.alpha !== null && e.absolute) { App.heading = 360 - e.alpha; }
+}, true);
+App.load();
+if (App.st.name) {
+  document.getElementById('hello').textContent = App.st.name.split(' ')[0] + ', с возвращением';
+  if (App.st.team) { App.revealTeam(); App.show(App.st.word ? 's-final' : 's-map'); }
+  else App.show('s-brief');
+}
+</script>
+</body>
+</html>
