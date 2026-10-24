@@ -273,6 +273,7 @@
       <div style="height:12px"></div>
       <input type="number" id="boxqr" placeholder="Код из ларца">
       <div class="err" id="box-err"></div>
+      <button class="btn ghost" onclick="App.scan('boxqr')" style="margin-bottom:10px">📷 Сканировать QR</button>
       <button class="btn teal" onclick="App.checkBoxQR()">Завершить экспедицию</button>
     </div>
   </section>
@@ -304,6 +305,12 @@
     <button class="btn" onclick="App.show('s-map')">← Назад</button>
   </section>
 
+</div>
+
+<div id="scan-ov" style="display:none; position:fixed; inset:0; z-index:50; background:rgba(10,8,4,.93); flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:22px">
+  <video id="scan-video" playsinline muted style="width:100%; max-width:420px; border-radius:20px; border:1px solid var(--glass-border)"></video>
+  <p class="muted" style="text-align:center">Наведите камеру на QR-код</p>
+  <button class="btn ghost" style="max-width:420px" onclick="App.stopScan()">Отмена</button>
 </div>
 
 <script>
@@ -368,6 +375,11 @@ const App = {
   show(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('on'));
     document.getElementById(id).classList.add('on');
+    if (this.pendingQR) {
+      const el = id === 's-box' ? document.getElementById('boxqr')
+        : (id === 's-q' && this.cur && this.cur.type === 'code' ? document.getElementById('ans') : null);
+      if (el) { el.value = this.pendingQR; this.pendingQR = null; }
+    }
     if (id !== 's-nav' && this.watchId !== null) { navigator.geolocation.clearWatch(this.watchId); this.watchId = null; }
     if (id === 's-setup') this.renderSetup();
     window.scrollTo(0, 0);
@@ -472,7 +484,7 @@ const App = {
     const box = document.getElementById('q-input');
     if (s.type === 'choice') box.innerHTML = '<div class="choice">' + s.options.map((o, i) => `<button class="btn ghost" onclick="App.pick=${i}; App.markPick(this)">${o}</button>`).join('') + '</div>';
     else if (s.type === 'number') box.innerHTML = `<input type="number" id="ans" placeholder="${s.placeholder}">`;
-    else if (s.type === 'code') box.innerHTML = `<input type="number" id="ans" placeholder="${s.placeholder}">`;
+    else if (s.type === 'code') box.innerHTML = `<input type="number" id="ans" placeholder="${s.placeholder}"><button class="btn ghost" onclick="App.scan('ans')" style="margin-top:10px">📷 Сканировать QR</button>`;
     else if (s.type === 'multi') box.innerHTML = `<input type="number" id="ans" placeholder="${s.placeholder}"><div style="height:10px"></div><div class="choice">` + s.options.map((o, i) => `<button class="btn ghost" onclick="App.pick=${i}; App.markPick(this)">${o}</button>`).join('') + '</div>';
     this.pick = null;
     this.renderAtt(); this.renderHint();
@@ -569,7 +581,46 @@ const App = {
     }, () => alert('Не удалось получить позицию — разрешите доступ к геолокации.'), { enableHighAccuracy: true });
   },
   reset() { localStorage.removeItem('kp'); location.reload(); },
+  // --- сканер QR ---
+  async scan(targetId) {
+    if (!('BarcodeDetector' in window) || !navigator.mediaDevices) {
+      alert('На этом телефоне проще штатной камерой: наведите её на QR-код — откроется эта страница, и код подставится сам.');
+      return;
+    }
+    const ov = document.getElementById('scan-ov');
+    const video = document.getElementById('scan-video');
+    ov.style.display = 'flex';
+    try {
+      const det = new BarcodeDetector({ formats: ['qr_code'] });
+      this._stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+      video.srcObject = this._stream; await video.play();
+      this._scanTimer = setInterval(async () => {
+        try {
+          const codes = await det.detect(video);
+          if (!codes.length) return;
+          const raw = codes[0].rawValue || '';
+          const m = raw.match(/(?:[?&]qr=)?(\d{4})\s*$/);
+          const val = m ? m[1] : raw.trim();
+          this.stopScan();
+          const el = document.getElementById(targetId);
+          if (el) el.value = val;
+          if (targetId === 'boxqr') this.checkBoxQR(); else this.answer();
+        } catch (e) {}
+      }, 350);
+    } catch (e) { this.stopScan(); alert('Камера недоступна. Введите код цифрами.'); }
+  },
+  stopScan() {
+    clearInterval(this._scanTimer);
+    if (this._stream) { this._stream.getTracks().forEach(t => t.stop()); this._stream = null; }
+    document.getElementById('scan-ov').style.display = 'none';
+  },
 };
+
+// QR-ссылка со стикера: ?qr=XXXX — код подставляется сам
+(() => {
+  const qp = new URLSearchParams(location.search).get('qr');
+  if (qp) { App.pendingQR = (qp.match(/\d{4}/) || [qp])[0]; history.replaceState(null, '', location.pathname); }
+})();
 window.addEventListener('deviceorientationabsolute', e => { if (e.alpha !== null) { App.heading = 360 - e.alpha; App.rotate && App.rotate(); } }, true);
 window.addEventListener('deviceorientation', e => {
   if (e.webkitCompassHeading !== undefined) { App.heading = e.webkitCompassHeading; App.rotate && App.rotate(); }
