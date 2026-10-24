@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#0e0b06">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <title>Код пирамид</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <style>
@@ -626,6 +630,7 @@ window.addEventListener('deviceorientation', e => {
   if (e.webkitCompassHeading !== undefined) { App.heading = e.webkitCompassHeading; App.rotate && App.rotate(); }
   else if (App.heading === null && e.alpha !== null && e.absolute) { App.heading = 360 - e.alpha; }
 }, true);
+if ('serviceWorker' in navigator && location.protocol === 'https:' || location.hostname === 'localhost') navigator.serviceWorker.register('./sw.js').catch(() => {});
 App.load();
 if (App.st.name) {
   document.getElementById('hello').textContent = App.st.name.split(' ')[0] + ', с возвращением';
