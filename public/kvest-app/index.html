@@ -91,7 +91,7 @@
   /* прогресс */
   .prog { display: flex; gap: 7px; }
   .prog div { flex: 1; height: 7px; border-radius: 4px; background: rgba(255,255,255,.1); }
-  .prog div.done { background: var(--teal); }
+  .prog div.done { background: var(--teal); box-shadow: 0 0 10px rgba(70,214,192,.45); }
 
   /* список станций */
   .st-item { display: flex; align-items: center; gap: 13px; padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,.07); cursor: pointer; }
@@ -126,6 +126,40 @@
   .choice { display: flex; flex-direction: column; gap: 10px; }
   .choice button { text-align: left; }
   .foot { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; color: rgba(163,144,109,.6); text-transform: uppercase; margin-top: 10px; }
+  .orn { text-align: center; opacity: .85; margin-top: 2px; }
+
+  /* --- движение --- */
+  @keyframes screen-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .screen.on { animation: screen-in .32s cubic-bezier(.22,1,.36,1) both; }
+  @keyframes shake { 10%,90% { transform: translateX(-2px); } 20%,80% { transform: translateX(5px); } 30%,70% { transform: translateX(-7px); } 40%,60% { transform: translateX(7px); } 50% { transform: translateX(-4px); } }
+  .shake { animation: shake .4s cubic-bezier(.36,.07,.19,.97) both; }
+  .btn { position: relative; overflow: hidden; transition: transform .12s cubic-bezier(.25,1,.5,1); }
+  .btn:not(.ghost) { box-shadow: 0 10px 26px rgba(233,195,106,.22); }
+  .btn:not(.ghost)::after { content: ''; position: absolute; inset: 0; width: 55%; transform: translateX(-160%) skewX(-18deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent); pointer-events: none; }
+  @keyframes sheen { to { transform: translateX(260%) skewX(-18deg); } }
+  .btn.pressed::after { animation: sheen .55s cubic-bezier(.22,1,.36,1); }
+  input[type=text], input[type=number] { transition: box-shadow .25s, border-color .25s; }
+  input:focus { box-shadow: 0 0 0 5px rgba(233,195,106,.13); }
+  .choice button.picked { border-color: var(--gold); background: rgba(233,195,106,.15); }
+  .emb { transition: box-shadow .45s; }
+  @keyframes emb-pop { 0% { transform: scale(.72); } 55% { transform: scale(1.07); } 100% { transform: scale(1); } }
+  .emb.landed { animation: emb-pop .55s cubic-bezier(.22,1,.36,1); box-shadow: 0 0 0 4px rgba(233,195,106,.25), 0 0 46px rgba(233,195,106,.42); }
+  @keyframes ringpulse { 0% { box-shadow: 0 0 0 0 rgba(70,214,192,.45); } 100% { box-shadow: 0 0 0 26px rgba(70,214,192,0); } }
+  .arrow-wrap.near { animation: ringpulse 1.4s ease-out infinite; border-color: var(--teal); }
+  .prog div { transition: background .35s, box-shadow .35s; }
+  @keyframes st-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .stagger .st-item { animation: st-in .4s cubic-bezier(.22,1,.36,1) both; animation-delay: calc(var(--i) * 45ms); }
+  .cipher { overflow: hidden; }
+  @keyframes val-in { from { opacity: 0; transform: translateY(10px) scale(.86); } to { opacity: 1; transform: none; } }
+  .cipher > * { animation: val-in .5s cubic-bezier(.22,1,.36,1) both; animation-delay: calc(var(--i, 0) * 80ms); }
+  @keyframes shine-card { to { transform: translateX(340%) skewX(-18deg); } }
+  .cipher::after { content: ''; position: absolute; inset: 0; width: 40%; transform: translateX(-160%) skewX(-18deg); background: linear-gradient(90deg, transparent, rgba(233,195,106,.16), transparent); pointer-events: none; animation: shine-card 1.15s .35s cubic-bezier(.22,1,.36,1) both; }
+  .attempts span { transition: background .25s; }
+  @keyframes att-pop { 0% { transform: scale(1.7); } 100% { transform: scale(1); } }
+  .attempts span.just { animation: att-pop .32s cubic-bezier(.22,1,.36,1) both; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
 </style>
 </head>
 <body>
@@ -151,7 +185,8 @@
       <div style="height:12px"></div>
       <button class="btn" onclick="App.register()">Вступить в экспедицию</button>
     </div>
-    <div class="foot">Код пирамид · прототип</div>
+    <div class="orn"><svg viewBox="0 0 120 60" width="52" aria-hidden="true"><path d="M8 28 Q60 4 112 28 Q60 48 8 28Z" fill="none" stroke="#e9c36a" stroke-width="4"/><circle cx="60" cy="27" r="8" fill="#e9c36a"/><path d="M78 38 Q82 54 68 57" stroke="#e9c36a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M8 28 Q4 24 5 18" stroke="#e9c36a" stroke-width="4" fill="none" stroke-linecap="round"/></svg></div>
+    <div class="foot">Код пирамид · плато Гизы · MMXXVI</div>
   </section>
 
   <!-- БРИФИНГ -->
@@ -184,6 +219,7 @@
       <div>
         <div class="eyebrow">Экспедиция</div>
         <h2 id="map-team"></h2>
+        <div class="chip" id="prog-num"></div>
       </div>
       <button class="gear" onclick="App.show('s-setup')">⚙</button>
     </div>
@@ -231,11 +267,11 @@
   <section class="screen" id="s-win">
     <div class="eyebrow">Находка заработана</div>
     <div class="card cipher">
-      <h2 id="w-title" style="margin-bottom:16px"></h2>
-      <div class="lab">Шестерёнка</div><div class="val" id="w-gear"></div>
-      <div class="lab">Крутить до цифры</div><div class="val" id="w-num"></div>
-      <div class="lab">Буква слова №</div><div class="val" id="w-letter"></div>
-      <p class="muted">Запишите в таблицу дневника — и дальше.</p>
+      <h2 id="w-title" style="margin-bottom:16px; --i:0"></h2>
+      <div class="lab" style="--i:1">Шестерёнка</div><div class="val" id="w-gear" style="--i:2"></div>
+      <div class="lab" style="--i:3">Крутить до цифры</div><div class="val" id="w-num" style="--i:4"></div>
+      <div class="lab" style="--i:5">Буква слова №</div><div class="val" id="w-letter" style="--i:6"></div>
+      <p class="muted" style="--i:7">Запишите в таблицу дневника — и дальше.</p>
     </div>
     <button class="btn" onclick="App.afterWin()">Продолжить</button>
   </section>
@@ -306,6 +342,7 @@
       <div class="dist" id="final-time">—</div>
       <p class="muted" style="margin-top:10px">Семь раз вы проверили чужие слова камнем, числом и темнотой. Обереги в ларце — ваши. Разберите, и пусть каждому достанется своё.</p>
     </div>
+    <div class="orn"><svg viewBox="0 0 120 60" width="52" aria-hidden="true"><path d="M8 28 Q60 4 112 28 Q60 48 8 28Z" fill="none" stroke="#e9c36a" stroke-width="4"/><circle cx="60" cy="27" r="8" fill="#e9c36a"/><path d="M78 38 Q82 54 68 57" stroke="#e9c36a" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M8 28 Q4 24 5 18" stroke="#e9c36a" stroke-width="4" fill="none" stroke-linecap="round"/></svg></div>
     <div class="foot">Код пирамид · финал</div>
   </section>
 
@@ -323,6 +360,7 @@
 
 </div>
 
+<canvas id="fx" style="display:none; position:fixed; inset:0; z-index:40; pointer-events:none"></canvas>
 <div id="scan-ov" style="display:none; position:fixed; inset:0; z-index:50; background:rgba(10,8,4,.93); flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:22px">
   <video id="scan-video" playsinline muted style="width:100%; max-width:420px; border-radius:20px; border:1px solid var(--glass-border)"></video>
   <p class="muted" style="text-align:center">Наведите камеру на QR-код</p>
@@ -408,27 +446,46 @@ const App = {
     this.show('s-brief');
   },
   revealTeam() {
-    if (!this.st.team) { this.st.team = TEAMS[Math.floor(Math.random() * TEAMS.length)].key; this.save(); }
+    const fresh = !this.st.team;
+    if (fresh) { this.st.team = TEAMS[Math.floor(Math.random() * TEAMS.length)].key; this.save(); }
     const t = TEAMS.find(x => x.key === this.st.team);
-    document.getElementById('emb').innerHTML = EMBLEMS[t.key];
-    document.getElementById('teamname').textContent = 'Команда «' + t.name + '»';
     document.getElementById('map-team').textContent = '«' + t.name + '»';
     this.renderMap();
+    const emb = document.getElementById('emb'), nameEl = document.getElementById('teamname');
+    const land = () => {
+      emb.innerHTML = EMBLEMS[t.key];
+      nameEl.textContent = 'Команда «' + t.name + '»';
+      emb.classList.add('landed');
+      this.buzz([25, 45, 25]);
+    };
+    if (fresh && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      nameEl.textContent = 'Жребий брошен…';
+      const keys = Object.keys(EMBLEMS); let i = Math.floor(Math.random() * keys.length), delay = 75;
+      const spin = () => {
+        emb.innerHTML = EMBLEMS[keys[i++ % keys.length]];
+        delay *= 1.16;
+        if (delay < 300) setTimeout(spin, delay); else setTimeout(land, delay);
+      };
+      spin();
+    } else land();
   },
   renderMap() {
     const t = TEAMS.find(x => x.key === this.st.team);
     if (t) document.getElementById('map-team').textContent = '«' + t.name + '»';
     const doneCount = Object.keys(this.st.done).length;
+    document.getElementById('prog-num').textContent = 'Собрано шифров: ' + doneCount + ' из ' + STATIONS.length;
     document.getElementById('prog').innerHTML = STATIONS.map(s => `<div class="${this.st.done[s.id] ? 'done' : ''}"></div>`).join('');
-    document.getElementById('stlist').innerHTML = STATIONS.map(s => {
+    const list = document.getElementById('stlist');
+    list.innerHTML = STATIONS.map((s, i) => {
       const done = this.st.done[s.id];
       const out = this.st.att[s.id] >= 3 && !done;
-      return `<div class="st-item ${done ? 'done' : ''}" onclick="App.open(${s.id})">
+      return `<div class="st-item ${done ? 'done' : ''}" style="--i:${i}" onclick="App.open(${s.id})">
         <div class="st-num">${s.id}</div>
         <div class="st-name">${s.title}</div>
-        <div class="st-state">${done ? 'шифр получен' : out ? 'попытки кончились' : s.geo ? 'идти к точке' : 'без точки'}</div>
+        <div class="st-state">${done ? '✓ шифр получен' : out ? 'попытки кончились' : s.geo ? 'идти к точке' : 'без точки'}</div>
       </div>`;
     }).join('');
+    if (!this._mapAnim) { this._mapAnim = true; list.classList.add('stagger'); setTimeout(() => list.classList.remove('stagger'), 1000); }
     document.getElementById('finalcard').style.display = doneCount === STATIONS.length && !this.st.word ? 'block' : 'none';
   },
   open(id) {
@@ -458,7 +515,8 @@ const App = {
     const t = this.pt(); if (!t) return;
     const d = this.distM(p.coords.latitude, p.coords.longitude, t.lat, t.lng);
     this.bearing = this.bearingDeg(p.coords.latitude, p.coords.longitude, t.lat, t.lng);
-    document.getElementById('dist').innerHTML = Math.round(d) + '<small> м</small>';
+    this.tweenDist(d);
+    document.querySelector('.arrow-wrap').classList.toggle('near', d <= (t.r || 25) * 2);
     this.rotate();
     if (d <= (t.r || 25)) { this.showQ(); }
   },
@@ -490,6 +548,20 @@ const App = {
     return (Math.atan2(y, x) / r + 360) % 360;
   },
   fakeArrive() { this.showQ(); },
+  tweenDist(to) {
+    const el = document.getElementById('dist');
+    const from = this._dShown == null ? to : this._dShown;
+    const t0 = performance.now();
+    cancelAnimationFrame(this._dRaf);
+    const step = (now) => {
+      const k = Math.min(1, (now - t0) / 280);
+      const v = Math.round(from + (to - from) * (1 - Math.pow(1 - k, 3)));
+      el.innerHTML = v + '<small> м</small>';
+      if (k < 1) this._dRaf = requestAnimationFrame(step); else this._dShown = to;
+    };
+    this._dRaf = requestAnimationFrame(step);
+  },
+  buzz(p) { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) {} },
   // --- задание ---
   showQ() {
     const s = this.cur;
@@ -506,7 +578,7 @@ const App = {
     this.renderAtt(); this.renderHint();
     this.show('s-q');
   },
-  markPick(btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.style.outline = 'none'); btn.style.outline = '2px solid var(--gold)'; },
+  markPick(btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('picked')); btn.classList.add('picked'); this.buzz(12); },
   renderAtt() {
     const used = this.st.att[this.cur.id] || 0;
     document.getElementById('q-att').innerHTML = [0, 1, 2].map(i => `<span class="${i < used ? 'used' : ''}"></span>`).join('');
@@ -534,12 +606,19 @@ const App = {
     else if (s.type === 'number') { const v = parseFloat(document.getElementById('ans').value); if (isNaN(v)) return; ok = Math.abs(v - s.target) <= s.tol; }
     else if (s.type === 'code') { const v = (document.getElementById('ans').value || '').trim(); if (!v) return; ok = v === s.code; }
     else if (s.type === 'multi') { const v = parseFloat(document.getElementById('ans').value); if (isNaN(v) || this.pick === null) return; ok = v === s.correctN && this.pick === s.correct; }
-    if (ok) { this.st.done[s.id] = true; this.save(); this.showWin(s); }
+    if (ok) { this.st.done[s.id] = true; this.save(); this.buzz([25, 45, 25]); this.showWin(s); }
     else {
       this.st.att[s.id] = (this.st.att[s.id] || 0) + 1; this.save();
       document.getElementById('q-err').textContent = s.type === 'code' ? 'Код не подходит. Это точно капсула вашей команды?' : 'Дневник бы вам поверил. Камень — нет. Ставка сгорела.';
       this.renderAtt();
+      this.buzz(70); this.shake('#s-q .card');
+      const dots = document.querySelectorAll('#q-att span.used');
+      if (dots.length) dots[dots.length - 1].classList.add('just');
     }
+  },
+  shake(sel) {
+    const el = document.querySelector(sel); if (!el) return;
+    el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake');
   },
   showWin(s) {
     document.getElementById('w-title').textContent = s.title;
@@ -555,24 +634,24 @@ const App = {
   },
   checkWord() {
     const v = (document.getElementById('word').value || '').trim().toLowerCase().replace('ё', 'е');
-    if (v === 'блокнот') { this.st.word = true; this.save(); this.show('s-where'); }
-    else document.getElementById('word-err').textContent = 'Нет. Крутите шестерёнки по номерам букв.';
+    if (v === 'блокнот') { this.st.word = true; this.save(); this.buzz([25, 45, 25]); this.show('s-where'); }
+    else { document.getElementById('word-err').textContent = 'Нет. Крутите шестерёнки по номерам букв.'; this.buzz(70); this.shake('#s-word .card'); }
   },
   checkWhere() {
     const v = (document.getElementById('where').value || '').trim().toLowerCase();
-    if (/егип|курьер|фарид|фарида/.test(v)) { this.st.where = true; this.save(); this.show('s-code'); }
-    else document.getElementById('where-err').textContent = 'Вспомните, кто весь день делал пометки на ваших глазах.';
+    if (/егип|курьер|фарид|фарида/.test(v)) { this.st.where = true; this.save(); this.buzz([25, 45, 25]); this.show('s-code'); }
+    else { document.getElementById('where-err').textContent = 'Вспомните, кто весь день делал пометки на ваших глазах.'; this.buzz(70); this.shake('#s-where .card'); }
   },
   checkBoxCode() {
     const v = (document.getElementById('boxcode').value || '').trim();
-    if (v === '1256') { this.st.code = true; this.save(); this.show('s-box'); }
-    else document.getElementById('code-err').textContent = 'Диски не щёлкнули. Сверьтесь с блокнотом ещё раз.';
+    if (v === '1256') { this.st.code = true; this.save(); this.buzz([25, 45, 25]); this.show('s-box'); }
+    else { document.getElementById('code-err').textContent = 'Диски не щёлкнули. Сверьтесь с блокнотом ещё раз.'; this.buzz(70); this.shake('#s-code .card'); }
   },
   checkBoxQR() {
     const v = (document.getElementById('boxqr').value || '').trim();
     if (v === '2026') {
       this.st.box = true; this.st.finish = this.st.finish || Date.now(); this.save(); this.showVictory();
-    } else document.getElementById('box-err').textContent = 'Это не знак из вашего ларца.';
+    } else { document.getElementById('box-err').textContent = 'Это не знак из вашего ларца.'; this.buzz(70); this.shake('#s-box .card'); }
   },
   showVictory() {
     const t = TEAMS.find(x => x.key === this.st.team);
@@ -581,9 +660,55 @@ const App = {
       document.getElementById('final-team').textContent = 'Команда «' + t.name + '»';
     }
     const ms = (this.st.finish || Date.now()) - (this.st.start || Date.now());
-    const m = Math.floor(ms / 60000), h = Math.floor(m / 60);
-    document.getElementById('final-time').textContent = h > 0 ? h + ' ч ' + (m % 60) + ' мин' : m + ' мин';
+    const m = Math.floor(ms / 60000);
+    const fmt = (x) => { const h = Math.floor(x / 60); return h > 0 ? h + ' ч ' + (x % 60) + ' мин' : x + ' мин'; };
+    const el = document.getElementById('final-time');
     this.show('s-final');
+    document.getElementById('emb-final').classList.add('landed');
+    this.buzz([40, 60, 40, 60, 90]);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || m === 0) el.textContent = fmt(m);
+    else {
+      const t0 = performance.now();
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / 1200);
+        el.textContent = fmt(Math.round(m * (1 - Math.pow(1 - k, 3))));
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+    this.goldRain();
+  },
+  goldRain() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const c = document.getElementById('fx'), x = c.getContext('2d');
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    c.width = innerWidth * dpr; c.height = innerHeight * dpr;
+    c.style.width = innerWidth + 'px'; c.style.height = innerHeight + 'px';
+    c.style.display = 'block'; c.style.opacity = 1; x.scale(dpr, dpr);
+    const colors = ['#e9c36a', '#f5ecd9', '#c08a2d', '#46d6c0'];
+    const P = Array.from({ length: 90 }, () => ({
+      x: Math.random() * innerWidth, y: -20 - Math.random() * innerHeight,
+      s: 2 + Math.random() * 3.5, v: 1.2 + Math.random() * 2.4,
+      sw: 14 + Math.random() * 26, ph: Math.random() * 6.28, rot: Math.random() * 6.28,
+      c: colors[Math.random() < 0.82 ? Math.floor(Math.random() * 3) : 3],
+    }));
+    const t0 = performance.now();
+    const loop = (now) => {
+      const dt = (now - t0) / 1000;
+      x.clearRect(0, 0, innerWidth, innerHeight);
+      for (const p of P) {
+        p.y += p.v; p.rot += 0.03;
+        const px = p.x + Math.sin(dt * 1.6 + p.ph) * p.sw;
+        if (p.y > innerHeight + 20) { p.y = -20; p.x = Math.random() * innerWidth; }
+        x.save(); x.translate(px, p.y); x.rotate(p.rot);
+        x.fillStyle = p.c; x.globalAlpha = 0.9;
+        x.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2);
+        x.restore();
+      }
+      if (dt < 6.5) this._fxRaf = requestAnimationFrame(loop);
+      else { c.style.transition = 'opacity 1s'; c.style.opacity = 0; setTimeout(() => { c.style.display = 'none'; c.style.transition = ''; }, 1100); }
+    };
+    cancelAnimationFrame(this._fxRaf); this._fxRaf = requestAnimationFrame(loop);
   },
   // --- настройки ---
   renderSetup() {
@@ -647,6 +772,10 @@ window.addEventListener('deviceorientation', e => {
   if (e.webkitCompassHeading !== undefined) { App.heading = e.webkitCompassHeading; App.rotate && App.rotate(); }
   else if (App.heading === null && e.alpha !== null && e.absolute) { App.heading = 360 - e.alpha; }
 }, true);
+document.addEventListener('pointerdown', e => {
+  const b = e.target.closest('.btn'); if (!b || b.classList.contains('ghost')) return;
+  b.classList.remove('pressed'); void b.offsetWidth; b.classList.add('pressed');
+});
 if ('serviceWorker' in navigator && location.protocol === 'https:' || location.hostname === 'localhost') navigator.serviceWorker.register('./sw.js').catch(() => {});
 App.load();
 if (App.st.name) {
