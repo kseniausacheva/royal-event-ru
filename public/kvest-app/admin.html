@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0e0b06">
+<title>Код пирамид · организатор</title>
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #0e0b06; --fg: #f5ecd9; --muted: #a3906d;
+    --gold: #e9c36a; --gold-deep: #c08a2d; --teal: #46d6c0; --flame: #ff9d66;
+    --glass: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+    --line: rgba(255,255,255,.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { background: var(--bg) linear-gradient(180deg, #0a0d13 0%, #0e0b06 50%, #19100a 100%) fixed; color: var(--fg);
+    font-family: 'Golos Text', Arial, sans-serif; font-size: 15px; line-height: 1.45; min-height: 100vh; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 20px 16px 60px; }
+  h1 { font-family: 'Prata', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.15; }
+  h1 .acc { color: var(--gold); }
+  h2 { font-family: 'Prata', Georgia, serif; font-weight: 400; font-size: 19px; margin-bottom: 10px; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .card { background: var(--glass); border: 1px solid var(--line); border-radius: 20px; padding: 16px; box-shadow: 0 14px 40px rgba(0,0,0,.35); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: none; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 15px;
+    padding: 11px 16px; border-radius: 13px; background: linear-gradient(135deg, var(--gold), var(--gold-deep)); color: #241604; transition: transform .12s; }
+  .btn:active { transform: scale(.97); }
+  .btn.ghost { background: rgba(255,255,255,.07); color: var(--fg); border: 1px solid var(--line); font-weight: 500; }
+  .btn.danger { background: rgba(255,157,102,.12); color: var(--flame); border: 1px solid rgba(255,157,102,.4); font-weight: 600; }
+  .btn.sm { padding: 7px 11px; font-size: 13px; border-radius: 10px; }
+  .btn.full { width: 100%; }
+  input, select { background: rgba(255,255,255,.07); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; color: var(--fg); font-size: 16px; font-family: inherit; }
+  input:focus, select:focus { outline: 2px solid var(--gold); }
+  select option { background: #1a140b; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .stat { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); }
+  .stat b { color: var(--fg); font-weight: 500; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px rgba(70,214,192,.6); vertical-align: 1px; }
+  .dot.off { background: var(--flame); box-shadow: 0 0 8px rgba(255,157,102,.6); }
+  .grid-main { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (max-width: 600px) { .top > .stat { text-align: left !important; } }
+  @media (min-width: 900px) { .grid-main { grid-template-columns: 1.6fr 1fr; align-items: start; } }
+  .col { display: grid; gap: 14px; }
+  .teams { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .team-h { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .team-h svg { width: 44px; height: 44px; flex: none; }
+  .team-h .nm { font-family: 'Prata', Georgia, serif; font-size: 19px; line-height: 1.1; }
+  .team-h .sub { font-size: 12px; color: var(--muted); }
+  .team-h .badge { margin-left: auto; text-align: right; }
+  .stage { font-size: 12px; padding: 4px 9px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+  .stage.fin { border-color: rgba(70,214,192,.6); color: var(--teal); }
+  .stns { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 8px; }
+  .stn { height: 44px; border-radius: 10px; border: 1px solid var(--line); background: rgba(255,255,255,.04); color: var(--muted); font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; line-height: 1.1; }
+  .stn small { font-size: 9px; letter-spacing: .02em; }
+  .stn.open { border-color: rgba(233,195,106,.45); color: var(--gold); }
+  .stn.done { background: rgba(70,214,192,.16); border-color: rgba(70,214,192,.6); color: var(--teal); }
+  .stn.manual { background: rgba(233,195,106,.14); border-color: var(--gold); color: var(--gold); }
+  .stn.out { background: rgba(255,157,102,.12); border-color: rgba(255,157,102,.55); color: var(--flame); }
+  .letters { display: flex; gap: 4px; margin: 8px 0; }
+  .letters div { flex: 1; height: 30px; border-radius: 7px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--gold); font-size: 15px; }
+  .fin-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 10px; }
+  .fin-steps button { font-family: inherit; font-size: 11px; padding: 6px 2px; border-radius: 9px; border: 1px solid var(--line); background: rgba(255,255,255,.04); color: var(--muted); cursor: pointer; }
+  .fin-steps button.on { background: rgba(70,214,192,.16); border-color: rgba(70,214,192,.6); color: var(--teal); }
+  .players { display: flex; flex-direction: column; gap: 2px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 8px; }
+  .pl { display: flex; align-items: center; gap: 8px; padding: 6px 4px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+  .pl:hover { background: rgba(255,255,255,.04); }
+  .pl .ago { margin-left: auto; font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .pl .cap { color: var(--gold); }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .seg button { font-family: inherit; font-size: 15px; padding: 9px 14px; background: none; border: none; color: var(--fg); cursor: pointer; }
+  .seg button.on { background: var(--gold); color: #241604; font-weight: 700; }
+  .toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  .toggle .sw { width: 46px; height: 27px; border-radius: 99px; background: rgba(255,255,255,.15); position: relative; transition: background .2s; flex: none; }
+  .toggle .sw::after { content: ''; position: absolute; top: 3px; left: 3px; width: 21px; height: 21px; border-radius: 50%; background: #fff; transition: transform .2s cubic-bezier(.22,1,.36,1); }
+  .toggle.on .sw { background: var(--flame); }
+  .toggle.on .sw::after { transform: translateX(19px); }
+  .warn { font-size: 13px; color: var(--flame); margin-top: 8px; }
+  .pt { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .pt:last-child { border-bottom: none; }
+  .pt .ttl { font-weight: 600; }
+  .pt .crd { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); margin: 2px 0 8px; }
+  .log { max-height: 360px; overflow: auto; font-size: 13px; }
+  .log div { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.05); display: flex; gap: 8px; }
+  .log time { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: 11px; flex: none; padding-top: 2px; }
+  .log .tm { color: var(--gold); flex: none; }
+  .rank { display: flex; align-items: center; gap: 10px; padding: 7px 0; }
+  .rank .n { font-family: 'Prata', serif; font-size: 22px; color: var(--gold); width: 26px; }
+  .rank svg { width: 30px; height: 30px; }
+  .rank .t { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  dialog { margin: auto; border: 1px solid rgba(233,195,106,.35); border-radius: 20px; background: #17120a; color: var(--fg); padding: 18px; width: min(420px, calc(100% - 32px)); box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+  dialog::backdrop { background: rgba(5,4,2,.7); backdrop-filter: blur(3px); }
+  dialog h3 { font-family: 'Prata', serif; font-weight: 400; font-size: 20px; margin-bottom: 4px; }
+  dialog .acts { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+  .login { max-width: 380px; margin: 12vh auto 0; display: flex; flex-direction: column; gap: 14px; }
+  .err { color: var(--flame); font-size: 13px; min-height: 18px; }
+  #toast { position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 20px); opacity: 0; z-index: 60; background: rgba(24,18,10,.95); border: 1px solid rgba(233,195,106,.4);
+    border-radius: 14px; padding: 11px 16px; font-size: 14px; transition: opacity .25s, transform .3s cubic-bezier(.22,1,.36,1); pointer-events: none; max-width: calc(100% - 32px); }
+  #toast.on { opacity: 1; transform: translate(-50%, 0); }
+  .empty { color: var(--muted); font-size: 14px; padding: 6px 0; }
+  @media (prefers-reduced-motion: reduce) { *, *::after { transition-duration: .01ms !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section id="v-login" class="login" style="display:none">
+    <div class="stat">Код пирамид · плато Гизы</div>
+    <h1>Панель <span class="acc">организатора</span></h1>
+    <div class="card">
+      <p class="muted" id="login-hint" style="margin-bottom:10px">Введите PIN организатора.</p>
+      <input type="password" id="pin" inputmode="numeric" placeholder="PIN" autocomplete="current-password" style="width:100%">
+      <div class="err" id="login-err"></div>
+      <button class="btn full" onclick="A.login()">Войти</button>
+    </div>
+  </section>
+
+  <section id="v-main" style="display:none">
+    <div class="top">
+      <div>
+        <div class="stat">Код пирамид · панель организатора</div>
+        <h1>Экспедиция <span class="acc">в реальном времени</span></h1>
+      </div>
+      <div class="stat" style="text-align:right">
+        <div><span class="dot" id="net-dot"></span> <span id="net-txt">на связи</span></div>
+        <div>Игроков: <b id="s-players">0</b> · обновлено <b id="s-upd">—</b></div>
+        <div><a href="./" style="color:var(--gold)">Открыть игру →</a></div>
+      </div>
+    </div>
+
+    <div class="grid-main">
+      <div class="col">
+        <div class="teams" id="teams"></div>
+      </div>
+      <div class="col">
+        <div class="card" id="rank-card" style="display:none">
+          <h2>Порядок финиша</h2>
+          <div id="rank"></div>
+        </div>
+        <div class="card">
+          <h2>Настройки игры</h2>
+          <div class="muted" style="margin-bottom:6px">Сколько команд. Новые игроки раскладываются по ним поровну.</div>
+          <div class="seg" id="seg-teams"></div>
+          <div style="height:14px"></div>
+          <div class="row">
+            <span>Подсказка открывается через</span>
+            <input type="number" id="hint-min" min="0" max="60" style="width:76px">
+            <span>мин</span>
+            <button class="btn sm ghost" onclick="A.saveHint()">Сохранить</button>
+          </div>
+          <div style="height:14px"></div>
+          <div class="toggle" id="tg-test" onclick="A.toggleTest()"><div class="sw"></div><div><b>Тестовый режим</b><div class="muted">Кнопки «я на месте», «подсказка сейчас» и ⚙ видны всем</div></div></div>
+          <div class="warn" id="test-warn">Перед стартом квеста выключите тестовый режим.</div>
+        </div>
+        <div class="card">
+          <h2>Точки на плато</h2>
+          <p class="muted" style="margin-bottom:4px">Встаньте на место станции и нажмите «Точка здесь». Радиус — насколько близко подойти, чтобы открылось задание.</p>
+          <div id="pts"></div>
+        </div>
+        <div class="card">
+          <h2>Журнал</h2>
+          <div class="log" id="log"></div>
+        </div>
+        <div class="card">
+          <h2>Коды для проверки</h2>
+          <p class="muted">Капсулы: станция 4 <b>3434</b>, станция 5 <b>2525</b>, станция 7 <b>1919</b>. Слово <b>БЛОКНОТ</b> → блокнот у <b>курьера / египтянина</b> → код ларца <b>1256</b> → знак из ларца <b>2026</b>.</p>
+        </div>
+        <div class="card">
+          <h2>Управление</h2>
+          <div class="acts" style="display:flex; flex-direction:column; gap:8px">
+            <button class="btn ghost full" onclick="A.openPin()">Сменить PIN</button>
+            <button class="btn danger full" onclick="A.openReset()">Новая игра: удалить всех игроков</button>
+            <button class="btn ghost full" onclick="A.logout()">Выйти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<dialog id="dlg"><div id="dlg-body"></div></dialog>
+<div id="toast"></div>
+
+<script>
+const EMB = {
+  skarabei: '<svg viewBox="0 0 120 120"><ellipse cx="60" cy="66" rx="20" ry="24" fill="#e9c36a"/><circle cx="60" cy="38" r="9" fill="#e9c36a"/><path d="M40 54 Q18 46 12 62" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 54 Q102 46 108 62" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M40 70 Q20 70 14 84" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><path d="M80 70 Q100 70 106 84" stroke="#46d6c0" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="60" cy="16" r="7" fill="#46d6c0"/></svg>',
+  lotos: '<svg viewBox="0 0 120 120"><path d="M60 86 Q40 69 22 46 Q50 44 60 86Z" fill="#e9c36a"/><path d="M60 86 Q42 57 34 31 Q57 40 60 86Z" fill="#46d6c0"/><path d="M60 86 Q47 47 51 23 Q66 41 60 86Z" fill="#e9c36a"/><path d="M60 86 Q54 41 69 23 Q73 47 60 86Z" fill="#46d6c0"/><path d="M60 86 Q63 40 86 31 Q78 57 60 86Z" fill="#e9c36a"/><path d="M60 86 Q70 44 98 46 Q80 69 60 86Z" fill="#46d6c0"/></svg>',
+  glazgora: '<svg viewBox="0 0 120 120"><path d="M14 58 Q60 28 106 58 Q60 82 14 58Z" fill="none" stroke="#e9c36a" stroke-width="6"/><circle cx="60" cy="56" r="13" fill="#46d6c0"/><path d="M74 70 Q78 92 62 96" stroke="#e9c36a" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M88 66 L104 90" stroke="#e9c36a" stroke-width="6" stroke-linecap="round"/></svg>',
+  anubis: '<svg viewBox="0 0 120 120"><path d="M44 26 L54 52 L50 58Z" fill="#e9c36a"/><path d="M76 26 L66 52 L70 58Z" fill="#e9c36a"/><path d="M50 50 Q60 42 70 50 L88 72 Q92 78 84 80 L60 84 L40 66 Q44 54 50 50Z" fill="#e9c36a"/><path d="M44 82 Q60 92 84 84 L84 100 Q60 108 44 100Z" fill="#46d6c0"/></svg>',
+  kobra: '<svg viewBox="0 0 120 120"><path d="M60 18 Q34 26 34 52 Q34 74 52 80 L52 94 Q40 98 40 104 L80 104 Q80 96 68 93 L68 80 Q86 74 86 52 Q86 26 60 18Z" fill="#46d6c0" stroke="#e9c36a" stroke-width="3"/><path d="M60 30 Q46 36 46 52 Q46 66 58 70 L58 92 L66 92 L66 70 Q74 64 74 52 Q74 36 60 30Z" fill="#e9c36a"/></svg>',
+  veer: '<svg viewBox="0 0 120 120"><path d="M60 76 L15 53 A10 10 0 0 1 21 38Z" fill="#e9c36a"/><path d="M60 76 L22 36 A10 10 0 0 1 34 24Z" fill="#46d6c0"/><path d="M60 76 L35 23 A10 10 0 0 1 50 17Z" fill="#e9c36a"/><path d="M60 76 L52 16 A10 10 0 0 1 68 16Z" fill="#46d6c0"/><path d="M60 76 L70 17 A10 10 0 0 1 85 23Z" fill="#e9c36a"/><path d="M60 76 L86 24 A10 10 0 0 1 98 36Z" fill="#46d6c0"/><path d="M60 76 L99 38 A10 10 0 0 1 105 53Z" fill="#e9c36a"/><circle cx="60" cy="78" r="7" fill="#e9c36a"/><line x1="60" y1="84" x2="60" y2="104" stroke="#e9c36a" stroke-width="5" stroke-linecap="round"/></svg>',
+};
+const NAMES = { skarabei: 'Скарабей', lotos: 'Лотос', glazgora: 'Глаз Гора', anubis: 'Анубис', kobra: 'Кобра', veer: 'Веер' };
+const ST_TITLES = { 1: 'Северная грань', 2: 'Грань шагами', 3: 'Спутницы', 4: 'Во тьме', 5: 'Точка съёмки', 6: 'Третья пирамида', 7: 'За столом' };
+const FIN = [['word', 'Слово'], ['where', 'Блокнот'], ['code', 'Код'], ['box', 'Ларец']];
+const PLACES = [
+  { name: 'Северная грань', sids: [1, 2], def: { lat: 29.98065, lng: 31.13415, r: 25 } },
+  { name: 'Восточная грань', sids: [3], def: { lat: 29.97870, lng: 31.13630, r: 30 } },
+  { name: 'Точка съёмки', sids: [5, 6], def: { lat: 29.98211, lng: 31.13351, r: 30 } },
+];
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const hm = (ts) => { const d = new Date(ts); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); };
+const dur = (ms) => { const m = Math.max(0, Math.floor(ms / 60000)); const h = Math.floor(m / 60); return h ? h + ' ч ' + (m % 60) + ' мин' : m + ' мин'; };
+
+const A = {
+  pin: null, d: null, skew: 0,
+  async api(body) {
+    const ctl = new AbortController(); const to = setTimeout(() => ctl.abort(), 10000);
+    try {
+      const r = await fetch('api.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({ pin: this.pin }, body)), signal: ctl.signal, cache: 'no-store' });
+      const j = await r.json().catch(() => ({}));
+      if (r.status === 403) { this.logout('Неверный PIN'); throw new Error('pin'); }
+      return j;
+    } finally { clearTimeout(to); }
+  },
+  toast(m) { const t = document.getElementById('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(this._t); this._t = setTimeout(() => t.classList.remove('on'), 3000); },
+  now() { return Date.now() + this.skew; },
+  async boot() {
+    try { this.pin = localStorage.getItem('kp-admin'); } catch (e) {}
+    if (this.pin) { document.getElementById('v-main').style.display = 'block'; this.poll(); return; }
+    document.getElementById('v-login').style.display = 'flex';
+    try {
+      const r = await fetch('api.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ a: 'admin_state', pin: '' }) });
+      const j = await r.json().catch(() => ({}));
+      if (j.setup) { document.getElementById('login-hint').textContent = 'PIN ещё не задан. Придумайте PIN организатора (от 4 цифр) — он сохранится на сервере.'; this.setup = true; }
+    } catch (e) {}
+  },
+  async login() {
+    const p = document.getElementById('pin').value.trim();
+    if (p.length < 4) { document.getElementById('login-err').textContent = 'Минимум 4 символа'; return; }
+    this.pin = p;
+    try {
+      const r = await this.api({ a: 'admin_login' });
+      if (!r.ok) { document.getElementById('login-err').textContent = 'Не получилось войти'; return; }
+      try { localStorage.setItem('kp-admin', p); } catch (e) {}
+      document.getElementById('v-login').style.display = 'none';
+      document.getElementById('v-main').style.display = 'block';
+      this.render(r); this.poll();
+    } catch (e) { if (e.message !== 'pin') document.getElementById('login-err').textContent = 'Нет связи с сервером'; }
+  },
+  logout(msg) {
+    try { localStorage.removeItem('kp-admin'); } catch (e) {}
+    this.pin = null; clearTimeout(this._poll);
+    document.getElementById('v-main').style.display = 'none';
+    document.getElementById('v-login').style.display = 'flex';
+    document.getElementById('login-err').textContent = msg || '';
+  },
+  async poll() {
+    clearTimeout(this._poll);
+    try { const r = await this.api({ a: 'admin_state' }); if (r.ok) { this.render(r); this.net(true); } } catch (e) { if (e.message !== 'pin') this.net(false); }
+    if (this.pin) this._poll = setTimeout(() => this.poll(), document.hidden ? 15000 : 4000);
+  },
+  net(on) {
+    document.getElementById('net-dot').classList.toggle('off', !on);
+    document.getElementById('net-txt').textContent = on ? 'на связи' : 'нет связи с сервером';
+  },
+  async act(body, okMsg) {
+    try { const r = await this.api(body); if (r.ok) { this.render(r); if (okMsg) this.toast(okMsg); } else this.toast('Не получилось: ' + (r.error || '')); }
+    catch (e) { if (e.message !== 'pin') this.toast('Нет связи с сервером'); }
+  },
+  render(d) {
+    this.d = d; this.skew = d.now - Date.now();
+    document.getElementById('s-players').textContent = d.players;
+    document.getElementById('s-upd').textContent = hm(d.now);
+    // настройки
+    document.getElementById('seg-teams').innerHTML = [2, 3, 4, 5, 6].map(n => `<button class="${d.cfg.teams === n ? 'on' : ''}" onclick="A.setTeams(${n})">${n}</button>`).join('');
+    const hi = document.getElementById('hint-min'); if (document.activeElement !== hi) hi.value = d.cfg.hintMin;
+    document.getElementById('tg-test').classList.toggle('on', !!d.cfg.test);
+    document.getElementById('test-warn').style.display = d.cfg.test ? 'block' : 'none';
+    // команды
+    const now = d.now;
+    document.getElementById('teams').innerHTML = d.teams.map(t => this.teamCard(t, now)).join('') ||
+      '<div class="card empty">Пока никто не зарегистрировался.</div>';
+    // финиш
+    const fin = d.teams.filter(t => t.T.box).map(t => ({ t, ms: t.T.box - this.startOf(t.T) })).sort((a, b) => a.t.T.box - b.t.T.box);
+    document.getElementById('rank-card').style.display = fin.length ? 'block' : 'none';
+    document.getElementById('rank').innerHTML = fin.map((f, i) => `<div class="rank"><div class="n">${i + 1}</div>${EMB[f.t.key]}<div>«${NAMES[f.t.key]}»<div class="muted">финиш в ${hm(f.t.T.box)}</div></div><div class="t">${dur(f.ms)}</div></div>`).join('');
+    // точки
+    document.getElementById('pts').innerHTML = PLACES.map((pl, i) => {
+      const cur = d.pts[pl.sids[0]];
+      const p = cur || pl.def;
+      return `<div class="pt"><div class="ttl">${pl.name} <span class="muted">· станции ${pl.sids.join(' и ')}</span></div>
+        <div class="crd">${cur ? 'ваша точка' : 'стандартная точка'}: ${p.lat.toFixed(5)}, ${p.lng.toFixed(5)} · радиус ${p.r} м</div>
+        <div class="row"><button class="btn sm" onclick="A.here(${i})">Точка здесь</button>
+        <a class="btn sm ghost" style="text-decoration:none" target="_blank" rel="noopener" href="https://maps.google.com/?q=${p.lat},${p.lng}">На карте</a>
+        <span class="muted">радиус</span><input type="number" id="r-${i}" value="${p.r}" min="5" max="200" style="width:70px; padding:7px 9px; font-size:14px">
+        ${cur ? `<button class="btn sm ghost" onclick="A.ptSave(${i})">Сохранить</button><button class="btn sm ghost" onclick="A.ptClear(${i})">Стандартная</button>` : ''}</div></div>`;
+    }).join('');
+    // журнал
+    document.getElementById('log').innerHTML = d.log.map(l => `<div><time>${hm(l.t)}</time>${l.team ? `<span class="tm">${NAMES[l.team] || ''}</span>` : ''}<span>${esc(l.m)}</span></div>`).join('') || '<div class="empty">Событий пока нет.</div>';
+  },
+  startOf(T) { const v = Object.values(T.opened || {}); return v.length ? Math.min.apply(null, v) : null; },
+  teamCard(t, now) {
+    const T = t.T, done = Object.keys(T.done).length;
+    const start = this.startOf(T);
+    let stage = 'не начали';
+    if (T.box) stage = 'финиш · ' + dur(T.box - start);
+    else if (T.code) stage = 'ищут знак в ларце';
+    else if (T.where) stage = 'открывают ларец';
+    else if (T.word) stage = 'ищут блокнот';
+    else if (start) stage = 'в пути · ' + dur(now - start);
+    const stns = [1, 2, 3, 4, 5, 6, 7].map(i => {
+      const a = T.att[i] ? T.att[i].n : 0;
+      let cls = '', sub = '';
+      if (T.done[i]) { cls = T.manual[i] ? 'manual' : 'done'; sub = T.manual[i] ? 'выдан' : '✓'; }
+      else if (a >= 3) { cls = 'out'; sub = '3/3'; }
+      else if (T.opened[i]) { cls = 'open'; sub = a ? a + '/3' : 'идут'; }
+      if (!sub && T.hints[i]) sub = '💡';
+      return `<div class="stn ${cls}" onclick="A.stnMenu('${t.key}', ${i})">${i}<small>${sub}${T.hints[i] && sub !== '💡' ? '💡' : ''}</small></div>`;
+    }).join('');
+    const letters = [1, 2, 3, 4, 5, 6, 7].map(i => `<div>${esc(T.letters[i] ? T.letters[i].l : '')}</div>`).join('');
+    const fin = FIN.map(([k, l]) => `<button class="${T[k] ? 'on' : ''}" onclick="A.finMenu('${t.key}', '${k}', '${l}')">${T[k] ? '✓ ' : ''}${l}</button>`).join('');
+    const players = t.players.map(p => {
+      const ago = now - p.seen, on = ago < 60000;
+      return `<div class="pl" onclick="A.plMenu('${p.pid}')"><span class="dot ${on ? '' : 'off'}" style="${on ? '' : 'background:rgba(255,255,255,.2);box-shadow:none'}"></span>${p.captain ? '<span class="cap">★</span>' : ''}<span>${esc(p.name)}</span><span class="ago">${on ? 'в сети' : dur(ago) + ' назад'}</span></div>`;
+    }).join('') || '<div class="empty">Пока никого</div>';
+    return `<div class="card"><div class="team-h">${EMB[t.key]}<div><div class="nm">«${NAMES[t.key]}»</div><div class="sub">${t.players.length} чел. · шифров ${done} из 7${t.active ? '' : ' · команда выключена'}</div></div>
+      <div class="badge"><span class="stage ${T.box ? 'fin' : ''}">${stage}</span></div></div>
+      <div class="stns">${stns}</div><div class="letters">${letters}</div><div class="fin-steps">${fin}</div><div class="players">${players}</div></div>`;
+  },
+  dlg(html) { document.getElementById('dlg-body').innerHTML = html; const d = document.getElementById('dlg'); if (!d.open) d.showModal(); },
+  close() { document.getElementById('dlg').close(); },
+  team(key) { return this.d.teams.find(t => t.key === key); },
+  stnMenu(key, i) {
+    const T = this.team(key).T, a = T.att[i] ? T.att[i].n : 0;
+    const st = T.done[i] ? (T.manual[i] ? 'шифр выдан организатором' : 'шифр получен') : a >= 3 ? 'попытки кончились' : T.opened[i] ? 'команда на станции, попыток ' + a + ' из 3' : 'ещё не открывали';
+    this.dlg(`<h3>Станция ${i} · ${ST_TITLES[i]}</h3><div class="muted">«${NAMES[key]}» · ${st}${T.hints[i] ? ' · подсказку открыли' : ''}</div>
+      <div class="acts">${T.done[i] ? '' : `<button class="btn full" onclick="A.close(); A.act({a:'admin_grant', team:'${key}', sid:'${i}'}, 'Шифр выдан')">Выдать шифр команде</button>`}
+      ${a > 0 && !T.done[i] ? `<button class="btn ghost full" onclick="A.close(); A.act({a:'admin_resetatt', team:'${key}', sid:'${i}'}, 'Попытки сброшены')">Сбросить попытки (сейчас ${a} из 3)</button>` : ''}
+      <button class="btn ghost full" onclick="A.close()">Закрыть</button></div>`);
+  },
+  finMenu(key, k, l) {
+    const T = this.team(key).T;
+    if (T[k]) { this.toast(l + ': уже пройдено в ' + hm(T[k])); return; }
+    this.dlg(`<h3>${l} · «${NAMES[key]}»</h3><div class="muted">Засчитать этот шаг финала, если команда справилась без приложения.</div>
+      <div class="acts"><button class="btn full" onclick="A.close(); A.act({a:'admin_grant', team:'${key}', sid:'${k}'}, 'Засчитано')">Засчитать</button>
+      <button class="btn ghost full" onclick="A.close()">Отмена</button></div>`);
+  },
+  plMenu(pid) {
+    let p, team;
+    for (const t of this.d.teams) { const x = t.players.find(y => y.pid === pid); if (x) { p = x; team = t; } }
+    if (!p) return;
+    const opts = Object.keys(NAMES).filter(k => k !== team.key).map(k => `<option value="${k}">«${NAMES[k]}»</option>`).join('');
+    this.dlg(`<h3>${esc(p.name)}</h3><div class="muted">«${NAMES[team.key]}»${p.captain ? ' · капитан' : ''} · в игре с ${hm(p.joined)}</div>
+      <div class="acts">${p.captain ? '' : `<button class="btn full" onclick="A.close(); A.act({a:'admin_captain', pid:'${pid}'}, 'Капитан назначен')">Сделать капитаном</button>`}
+      <div class="row"><select id="mv" style="flex:1">${opts}</select><button class="btn ghost" onclick="A.close(); A.act({a:'admin_move', pid:'${pid}', team: document.getElementById('mv').value}, 'Игрок переведён')">Перевести</button></div>
+      <button class="btn danger full" onclick="if (confirm('Удалить игрока из игры?')) { A.close(); A.act({a:'admin_remove', pid:'${pid}'}, 'Игрок удалён'); }">Удалить из игры</button>
+      <button class="btn ghost full" onclick="A.close()">Закрыть</button></div>`);
+  },
+  setTeams(n) { this.act({ a: 'admin_config', teams: n }, 'Команд: ' + n); },
+  saveHint() { this.act({ a: 'admin_config', hintMin: +document.getElementById('hint-min').value || 0 }, 'Сохранено'); },
+  toggleTest() { this.act({ a: 'admin_config', test: !this.d.cfg.test }, this.d.cfg.test ? 'Тестовый режим выключен' : 'Тестовый режим включён'); },
+  here(i) {
+    const pl = PLACES[i];
+    if (!navigator.geolocation) { this.toast('Геолокация недоступна'); return; }
+    this.toast('Определяю место…');
+    navigator.geolocation.getCurrentPosition(p => {
+      const acc = Math.round(p.coords.accuracy);
+      const r = Math.max(+document.getElementById('r-' + i).value || pl.def.r, Math.min(60, acc + 10));
+      this.act({ a: 'admin_pt', sids: pl.sids, lat: p.coords.latitude, lng: p.coords.longitude, r }, `«${pl.name}» сохранена · точность ±${acc} м · радиус ${r} м`);
+    }, () => this.toast('Не удалось получить позицию: разрешите доступ к геолокации'), { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 });
+  },
+  ptSave(i) {
+    const pl = PLACES[i], cur = this.d.pts[pl.sids[0]];
+    this.act({ a: 'admin_pt', sids: pl.sids, lat: cur.lat, lng: cur.lng, r: +document.getElementById('r-' + i).value || pl.def.r }, 'Радиус сохранён');
+  },
+  ptClear(i) { this.act({ a: 'admin_pt', sids: PLACES[i].sids, clear: true }, 'Вернули стандартную точку'); },
+  openPin() {
+    this.dlg(`<h3>Сменить PIN</h3><input type="password" id="np" inputmode="numeric" placeholder="Новый PIN (от 4 цифр)" style="width:100%; margin-top:10px">
+      <div class="acts"><button class="btn full" onclick="A.savePin()">Сохранить</button><button class="btn ghost full" onclick="A.close()">Отмена</button></div>`);
+  },
+  async savePin() {
+    const np = document.getElementById('np').value.trim();
+    if (np.length < 4) { this.toast('Минимум 4 символа'); return; }
+    this.close();
+    const r = await this.api({ a: 'admin_pin', newPin: np }).catch(() => null);
+    if (r && r.ok) { this.pin = np; try { localStorage.setItem('kp-admin', np); } catch (e) {} this.toast('PIN изменён'); } else this.toast('Не получилось');
+  },
+  openReset() {
+    this.dlg(`<h3>Новая игра</h3><div class="muted">Все игроки, команды, шифры и журнал будут удалены. Точки на карте и настройки останутся. Телефоны игроков попросят зарегистрироваться заново.</div>
+      <input type="text" id="rs" placeholder="Напишите СБРОС" style="width:100%; margin-top:12px">
+      <div class="acts"><button class="btn danger full" onclick="if (document.getElementById('rs').value.trim().toUpperCase() === 'СБРОС') { A.close(); A.act({a:'admin_reset'}, 'Новая игра начата'); } else A.toast('Напишите слово СБРОС')">Удалить всех и начать заново</button>
+      <button class="btn ghost full" onclick="A.close()">Отмена</button></div>`);
+  },
+};
+document.getElementById('pin').addEventListener('keydown', e => { if (e.key === 'Enter') A.login(); });
+document.addEventListener('visibilitychange', () => { if (!document.hidden && A.pin) A.poll(); });
+A.boot();
+</script>
+</body>
+</html>

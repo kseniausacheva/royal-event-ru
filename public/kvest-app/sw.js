@@ -1,5 +1,5 @@
 // Код пирамид: офлайн-кэш для плато (сеть сначала, кэш как запасной)
-const C = 'kp-v2';
+const C = 'kp-v3';
 self.addEventListener('install', e => {
   self.skipWaiting();
   e.waitUntil(caches.open(C).then(c => c.addAll(['./', './index.html', './manifest.json', './icon-192.png'])));
