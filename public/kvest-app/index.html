@@ -188,15 +188,13 @@
       <button class="gear" onclick="App.show('s-setup')">⚙</button>
     </div>
     <div class="prog" id="prog"></div>
-    <div class="card" id="stlist"></div>
     <div class="card" id="finalcard" style="display:none; text-align:center">
       <div class="eyebrow" style="margin-bottom:8px">Все шифры собраны</div>
-      <p>Семь букв ждут на планке с шестерёнками. Какое слово получилось?</p>
+      <p>Семь букв ждут на планке с шестерёнками.</p>
       <div style="height:10px"></div>
-      <input type="text" id="word" placeholder="Слово">
-      <div class="err" id="word-err"></div>
-      <button class="btn teal" onclick="App.checkWord()">Проверить слово</button>
+      <button class="btn teal" onclick="App.show('s-word')">Ввести слово</button>
     </div>
+    <div class="card" id="stlist"></div>
   </section>
 
   <!-- НАВИГАЦИЯ К ТОЧКЕ -->
@@ -239,7 +237,21 @@
       <div class="lab">Буква слова №</div><div class="val" id="w-letter"></div>
       <p class="muted">Запишите в таблицу дневника — и дальше.</p>
     </div>
-    <button class="btn" onclick="App.show('s-map'); App.renderMap()">Продолжить</button>
+    <button class="btn" onclick="App.afterWin()">Продолжить</button>
+  </section>
+
+  <!-- ФИНАЛ: СЛОВО -->
+  <section class="screen" id="s-word">
+    <div class="eyebrow">Все шифры собраны</div>
+    <h1>Семь букв. Одно <span class="acc">слово</span></h1>
+    <div class="card">
+      <p>Выставьте шестерёнки на планке по номерам букв — и прочитайте слово Камаля.</p>
+      <div style="height:12px"></div>
+      <input type="text" id="word" placeholder="Слово">
+      <div class="err" id="word-err"></div>
+      <button class="btn teal" onclick="App.checkWord()">Проверить слово</button>
+    </div>
+    <button class="btn ghost" onclick="App.show('s-map')">← К списку</button>
   </section>
 
   <!-- ФИНАЛ: ГДЕ СЛОВО -->
@@ -535,6 +547,11 @@ const App = {
     document.getElementById('w-num').textContent = s.cipher.num;
     document.getElementById('w-letter').textContent = s.cipher.letter;
     this.show('s-win');
+  },
+  afterWin() {
+    this.renderMap();
+    if (Object.keys(this.st.done).length === STATIONS.length && !this.st.word) this.show('s-word');
+    else this.show('s-map');
   },
   checkWord() {
     const v = (document.getElementById('word').value || '').trim().toLowerCase().replace('ё', 'е');
