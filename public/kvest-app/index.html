@@ -128,6 +128,17 @@
   .foot { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .18em; color: rgba(163,144,109,.6); text-transform: uppercase; margin-top: 10px; }
   .orn { text-align: center; opacity: .85; margin-top: 2px; }
 
+  /* окошки слова */
+  .squares { display: flex; gap: 6px; }
+  .sq { flex: 1; text-align: center; min-width: 0; }
+  .sq .n { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+  .sq input { width: 100%; padding: 0; height: 52px; text-align: center; font-size: 22px; font-weight: 700; text-transform: uppercase; border-radius: 12px; }
+  .sq input.f { border-color: rgba(233,195,106,.65); color: var(--gold); background: rgba(233,195,106,.09); }
+  .sq .g { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); margin-top: 4px; min-height: 13px; white-space: nowrap; letter-spacing: -.02em; }
+  .mini { display: flex; gap: 5px; justify-content: center; }
+  .mini div { width: 34px; height: 40px; border: 1px solid var(--glass-border); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; color: var(--gold); background: rgba(255,255,255,.05); }
+  .mini div.f { border-color: rgba(233,195,106,.5); background: rgba(233,195,106,.09); }
+
   /* --- движение --- */
   @keyframes screen-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   .screen.on { animation: screen-in .32s cubic-bezier(.22,1,.36,1) both; }
@@ -224,11 +235,12 @@
       <button class="gear" onclick="App.show('s-setup')">⚙</button>
     </div>
     <div class="prog" id="prog"></div>
-    <div class="card" id="finalcard" style="display:none; text-align:center">
-      <div class="eyebrow" style="margin-bottom:8px">Все шифры собраны</div>
-      <p>Семь букв ждут на планке с шестерёнками.</p>
+    <div class="card" id="finalcard" style="text-align:center">
+      <div class="eyebrow" style="margin-bottom:8px">Слово Камаля</div>
+      <div class="mini" id="mini-squares"></div>
+      <p class="muted" style="margin-top:9px">Нашли шифр — крутите шестерёнки и вписывайте буквы. Хоть с первой минуты.</p>
       <div style="height:10px"></div>
-      <button class="btn teal" onclick="App.show('s-word')">Ввести слово</button>
+      <button class="btn teal" onclick="App.show('s-word')">Крутить шестерёнки</button>
     </div>
     <div class="card" id="stlist"></div>
   </section>
@@ -278,12 +290,15 @@
 
   <!-- ФИНАЛ: СЛОВО -->
   <section class="screen" id="s-word">
-    <div class="eyebrow">Все шифры собраны</div>
+    <div class="eyebrow">Слово Камаля</div>
     <h1>Семь букв. Одно <span class="acc">слово</span></h1>
     <div class="card">
-      <p>Выставьте шестерёнки на планке по номерам букв — и прочитайте слово Камаля.</p>
-      <div style="height:12px"></div>
-      <input type="text" id="word" placeholder="Слово">
+      <p><b>Как собрать слово.</b> На планке три шестерёнки: I, II и III. Каждый шифр называет шестерёнку, цифру и номер окошка. Выставьте шестерёнку на цифру — откроется буква. Впишите её в окошко с номером из шифра.</p>
+      <div style="height:6px"></div>
+      <p class="muted">Попытки не ограничены. Не хватает шифра — букву можно угадать.</p>
+    </div>
+    <div class="card">
+      <div class="squares" id="squares"></div>
       <div class="err" id="word-err"></div>
       <button class="btn teal" onclick="App.checkWord()">Проверить слово</button>
     </div>
@@ -436,6 +451,7 @@ const App = {
     }
     if (id !== 's-nav' && this.watchId !== null) { navigator.geolocation.clearWatch(this.watchId); this.watchId = null; }
     if (id === 's-setup') this.renderSetup();
+    if (id === 's-word') this.renderWord();
     window.scrollTo(0, 0);
   },
   register() {
@@ -486,7 +502,9 @@ const App = {
       </div>`;
     }).join('');
     if (!this._mapAnim) { this._mapAnim = true; list.classList.add('stagger'); setTimeout(() => list.classList.remove('stagger'), 1000); }
-    document.getElementById('finalcard').style.display = doneCount === STATIONS.length && !this.st.word ? 'block' : 'none';
+    const L = this.st.letters || {};
+    document.getElementById('mini-squares').innerHTML = [1, 2, 3, 4, 5, 6, 7].map(i => `<div class="${L[i] ? 'f' : ''}">${L[i] || ''}</div>`).join('');
+    document.getElementById('finalcard').style.display = this.st.word ? 'none' : 'block';
   },
   open(id) {
     this.cur = STATIONS.find(s => s.id === id);
@@ -632,10 +650,33 @@ const App = {
     if (Object.keys(this.st.done).length === STATIONS.length && !this.st.word) this.show('s-word');
     else this.show('s-map');
   },
+  renderWord() {
+    const L = this.st.letters || {};
+    const hints = {};
+    for (const st of STATIONS) if (this.st.done[st.id]) hints[st.cipher.letter] = st.cipher.gear + '·' + st.cipher.num;
+    document.getElementById('squares').innerHTML = [1, 2, 3, 4, 5, 6, 7].map(i =>
+      `<div class="sq"><div class="n">${i}</div><input type="text" maxlength="2" autocapitalize="characters" autocomplete="off" inputmode="text" data-i="${i}" class="${L[i] ? 'f' : ''}" value="${L[i] || ''}" oninput="App.sqIn(this)" onkeydown="App.sqKey(event, this)"><div class="g">${hints[i] || ''}</div></div>`
+    ).join('');
+  },
+  sqIn(el) {
+    const v = (el.value || '').replace(/[^а-яёa-z]/gi, '').slice(-1).toUpperCase();
+    el.value = v; el.classList.toggle('f', !!v);
+    this.st.letters = this.st.letters || {};
+    this.st.letters[el.dataset.i] = v; this.save();
+    if (v) { const nx = document.querySelector(`.sq input[data-i="${+el.dataset.i + 1}"]`); if (nx) nx.focus(); }
+  },
+  sqKey(e, el) {
+    if (e.key === 'Backspace' && !el.value) {
+      const pv = document.querySelector(`.sq input[data-i="${+el.dataset.i - 1}"]`);
+      if (pv) { pv.focus(); pv.select && pv.select(); }
+    }
+  },
   checkWord() {
-    const v = (document.getElementById('word').value || '').trim().toLowerCase().replace('ё', 'е');
+    const L = this.st.letters || {};
+    const v = [1, 2, 3, 4, 5, 6, 7].map(i => L[i] || '').join('').toLowerCase().replace(/ё/g, 'е');
     if (v === 'блокнот') { this.st.word = true; this.save(); this.buzz([25, 45, 25]); this.show('s-where'); }
-    else { document.getElementById('word-err').textContent = 'Нет. Крутите шестерёнки по номерам букв.'; this.buzz(70); this.shake('#s-word .card'); }
+    else if (v.length < 7) { document.getElementById('word-err').textContent = 'Заполните все семь окошек — недостающие буквы можно угадать.'; this.buzz(70); this.shake('#squares'); }
+    else { document.getElementById('word-err').textContent = 'Не складывается. Сверьте буквы с шестерёнками — или угадайте иначе.'; this.buzz(70); this.shake('#squares'); }
   },
   checkWhere() {
     const v = (document.getElementById('where').value || '').trim().toLowerCase();
