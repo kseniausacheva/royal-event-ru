@@ -1034,6 +1034,7 @@ const Home = () => {
               { name: 'Lionsdale', logo: '/partners/lionsdale.png' },
               // Знак Альфа-Банка: русский вордмарк на RU-страницах, английский — на EN
               { name: 'Alfa-Bank', logo: language === 'ru' ? '/partners/alfa-bank.png' : '/partners/alfa-bank-en.png' },
+              { name: 'HS Sports Travel', logo: '/partners/hs-sports-travel.png' },
             ].map((partner, i) => (
               <motion.div
                 key={i}
