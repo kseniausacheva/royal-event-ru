@@ -1017,7 +1017,8 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <SectionHeader title={t.partners.title} subtitle={t.partners.subtitle} />
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          {/* flex вместо grid: неполный последний ряд центрируется, а не прижимается к левому краю */}
+          <div className="flex flex-wrap justify-center gap-8">
             {[
               { name: 'Carlsberg', logo: '/partners/carlsberg.png' },
               { name: 'NL International', logo: '/partners/nl-international.png' },
@@ -1031,6 +1032,8 @@ const Home = () => {
               { name: 'Adidas', logo: '/partners/adidas.png' },
               { name: 'Puma', logo: '/partners/puma.png' },
               { name: 'Lionsdale', logo: '/partners/lionsdale.png' },
+              // Знак Альфа-Банка: русский вордмарк на RU-страницах, английский — на EN
+              { name: 'Alfa-Bank', logo: language === 'ru' ? '/partners/alfa-bank.png' : '/partners/alfa-bank-en.png' },
             ].map((partner, i) => (
               <motion.div
                 key={i}
@@ -1038,7 +1041,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 viewport={{ once: true }}
-                className={`aspect-video rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group hover:border-royal-pink/50 transition-all ${['Four Seasons', 'Samsung', 'Carlsberg', 'Ewa Product'].includes(partner.name) ? 'p-0' : 'p-4'}`}
+                className={`w-[calc((100%-2rem)/2)] md:w-[calc((100%-6rem)/4)] lg:w-[calc((100%-10rem)/6)] aspect-video rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group hover:border-royal-pink/50 transition-all ${['Four Seasons', 'Samsung', 'Carlsberg', 'Ewa Product'].includes(partner.name) ? 'p-0' : 'p-4'}`}
               >
                 <img
                   src={partner.logo}
