@@ -5,8 +5,63 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { PhotoSet, ZoomImage } from '../components/PhotoLightbox';
 import { SITE_URL } from '../site-config';
+import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { useLaRoyalContent } from '../content/useLaRoyalContent';
+
+const UI_RU = {
+  keywordsSuffix: 'тимбилдинг в Египте, корпоратив в Египте, La Royal Event',
+  crumbHome: 'Главная',
+  crumbPrograms: 'Программы',
+  allPrograms: 'Все программы',
+  aboutTitle: 'О программе',
+  doingTitle: 'Что вы делаете',
+  finaleLabel: 'Финал',
+  whereLabel: 'Где и сколько',
+  forWhomLabel: 'Для кого',
+  loadLabel: 'Нагрузка',
+  activityLabel: 'Активность',
+  tensionLabel: 'Напряжение',
+  includesLabel: 'Что входит',
+  remainsLabel: 'Что останется',
+  prepLabel: 'Готовим за',
+  galleryEyebrow: 'Кадры программы',
+  galleryTitle: 'Как это выглядит',
+  galleryNote: 'Кадры иллюстрируют атмосферу программы. Истории, персонажи и находки вымышлены.',
+  alsoEyebrow: 'Смотрите также',
+  ctaEyebrow: 'Следующий шаг',
+  ctaTitle: 'Напишите дату, число гостей и отель',
+  ctaLead: 'Остальное спросим сами. Если хотите сначала попробовать — проведём для вашей команды принятия решения сорокапятиминутный прогон одной станции, без обязательств.',
+  ctaButton: 'Запросить предложение',
+} as const;
+
+const UI_EN: Record<keyof typeof UI_RU, string> = {
+  keywordsSuffix: 'team building Egypt, corporate event Egypt, La Royal Event',
+  crumbHome: 'Home',
+  crumbPrograms: 'Programs',
+  allPrograms: 'All Programs',
+  aboutTitle: 'About the Program',
+  doingTitle: 'What You Do',
+  finaleLabel: 'Finale',
+  whereLabel: 'Where and How Long',
+  forWhomLabel: 'Who It Is For',
+  loadLabel: 'Intensity',
+  activityLabel: 'Activity',
+  tensionLabel: 'Tension',
+  includesLabel: 'What Is Included',
+  remainsLabel: 'What You Keep',
+  prepLabel: 'Lead Time',
+  galleryEyebrow: 'Program Stills',
+  galleryTitle: 'What It Looks Like',
+  galleryNote: 'These stills show the atmosphere of the program. The stories, characters and finds are fictional.',
+  alsoEyebrow: 'See Also',
+  ctaEyebrow: 'Next Step',
+  ctaTitle: 'Send us the date, headcount and hotel',
+  ctaLead: 'We will ask the rest. If you would rather try first, we will run a 45-minute trial of one station for your decision-makers, no strings attached.',
+  ctaButton: 'Request a Proposal',
+};
+
+const UI = { ru: UI_RU, en: UI_EN };
 
 const Dots = ({ n, warm = false }: { n: number; warm?: boolean }) => (
   <span className="inline-flex gap-1">
@@ -27,6 +82,8 @@ const ProgramDetail = () => {
   const { programs } = useLaRoyalContent();
   const { slug } = useParams<{ slug: string }>();
   const lp = useLocalizedPath();
+  const { language } = useLanguage();
+  const u = UI[language];
 
   const idx = programs.findIndex((p) => p.slug === slug);
   if (idx === -1) return <Navigate to={lp('/programmy')} replace />;
@@ -51,11 +108,11 @@ const ProgramDetail = () => {
         title={p.seoTitle.replace(' — La Royal Event', '')}
         description={p.seoDesc}
         image={p.image ? `${SITE_URL}${p.image}` : undefined}
-        keywords={`${p.keyword}, тимбилдинг в Египте, корпоратив в Египте, La Royal Event`}
+        keywords={`${p.keyword}, ${u.keywordsSuffix}`}
         jsonLd={serviceJsonLd}
         breadcrumbs={[
-          { name: 'Главная', url: lp('/') },
-          { name: 'Программы', url: lp('/programmy') },
+          { name: u.crumbHome, url: lp('/') },
+          { name: u.crumbPrograms, url: lp('/programmy') },
           { name: p.name, url: lp(`/programmy/${p.slug}`) },
         ]}
       />
@@ -72,7 +129,7 @@ const ProgramDetail = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-4">
             <Link to={lp('/programmy')} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-royal-dim hover:text-royal-lilac transition-colors">
-              <ArrowLeft className="w-3 h-3" /> Все программы
+              <ArrowLeft className="w-3 h-3" /> {u.allPrograms}
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
@@ -92,7 +149,7 @@ const ProgramDetail = () => {
           {/* Main */}
           <div className="lg:col-span-7 space-y-12">
             <div>
-              <h2 className="text-2xl font-display font-bold uppercase tracking-tight mb-6">О программе</h2>
+              <h2 className="text-2xl font-display font-bold uppercase tracking-tight mb-6">{u.aboutTitle}</h2>
               <div className="space-y-4 text-royal-sand-2 leading-relaxed">
                 {p.text.map((para, i) => (
                   <p key={i} className={i === 0 ? 'text-lg text-royal-sand' : ''}>{para}</p>
@@ -101,7 +158,7 @@ const ProgramDetail = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-display font-bold uppercase tracking-tight mb-6">Что вы делаете</h2>
+              <h2 className="text-2xl font-display font-bold uppercase tracking-tight mb-6">{u.doingTitle}</h2>
               <ul className="border-t border-royal-rule">
                 {p.doing.map((d, i) => (
                   <li key={i} className="relative py-3 pl-7 border-b border-royal-rule text-sm text-royal-sand-2 leading-relaxed">
@@ -113,7 +170,7 @@ const ProgramDetail = () => {
             </div>
 
             <div className="p-6 rounded-2xl border border-royal-lilac/25 bg-gradient-to-b from-royal-lilac-deep/15 to-royal-lilac-deep/5">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-2">Финал</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-2">{u.finaleLabel}</p>
               <p className="text-royal-sand leading-relaxed">{p.finale}</p>
             </div>
           </div>
@@ -121,30 +178,30 @@ const ProgramDetail = () => {
           {/* Aside */}
           <aside className="lg:col-span-5 lg:border-l lg:border-royal-rule lg:pl-10 space-y-7 text-sm">
             <div>
-              <Label>Где и сколько</Label>
+              <Label>{u.whereLabel}</Label>
               <p className="text-royal-sand-2">{p.where}</p>
             </div>
             <div>
-              <Label>Для кого</Label>
+              <Label>{u.forWhomLabel}</Label>
               <p className="text-royal-sand-2">{p.forWhom}</p>
             </div>
             <div>
-              <Label>Нагрузка</Label>
-              <div className="flex items-center gap-3 text-royal-sand-2 mb-1.5">Активность <Dots n={p.activity} /></div>
-              <div className="flex items-center gap-3 text-royal-sand-2">Напряжение <Dots n={p.tension} warm /></div>
+              <Label>{u.loadLabel}</Label>
+              <div className="flex items-center gap-3 text-royal-sand-2 mb-1.5">{u.activityLabel} <Dots n={p.activity} /></div>
+              <div className="flex items-center gap-3 text-royal-sand-2">{u.tensionLabel} <Dots n={p.tension} warm /></div>
             </div>
             <div>
-              <Label>Что входит</Label>
+              <Label>{u.includesLabel}</Label>
               <ul className="list-disc list-inside text-royal-sand-2 space-y-1">
                 {p.includes.map((inc, i) => <li key={i}>{inc}</li>)}
               </ul>
             </div>
             <div>
-              <Label>Что останется</Label>
+              <Label>{u.remainsLabel}</Label>
               <p className="text-royal-sand-2">{p.remains}</p>
             </div>
             <div>
-              <Label>Готовим за</Label>
+              <Label>{u.prepLabel}</Label>
               <p className="text-royal-sand-2">{p.prep}</p>
             </div>
           </aside>
@@ -155,8 +212,8 @@ const ProgramDetail = () => {
       {p.gallery && p.gallery.length > 0 && (
         <section className="py-16 px-6 border-t border-royal-rule bg-white/[0.02]">
           <div className="max-w-7xl mx-auto">
-            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Кадры программы</p>
-            <h2 className="text-2xl font-display font-bold uppercase tracking-tight mb-8">Как это выглядит</h2>
+            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.galleryEyebrow}</p>
+            <h2 className="text-2xl font-display font-bold uppercase tracking-tight mb-8">{u.galleryTitle}</h2>
             <PhotoSet photos={p.gallery}>
               {(open) => (
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -173,7 +230,7 @@ const ProgramDetail = () => {
                 </div>
               )}
             </PhotoSet>
-            <p className="mt-4 text-xs text-royal-dim">Кадры иллюстрируют атмосферу программы. Истории, персонажи и находки вымышлены.</p>
+            <p className="mt-4 text-xs text-royal-dim">{u.galleryNote}</p>
           </div>
         </section>
       )}
@@ -181,10 +238,10 @@ const ProgramDetail = () => {
       {/* Neighbors */}
       <section className="py-12 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Смотрите также</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.alsoEyebrow}</p>
           <div className="flex flex-wrap gap-3">
             <Link to={lp('/programmy')} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-royal-rule text-sm text-royal-sand-2 hover:border-royal-lilac-deep hover:text-royal-lilac transition-colors">
-              <ArrowLeft className="w-3.5 h-3.5" /> Все программы
+              <ArrowLeft className="w-3.5 h-3.5" /> {u.allPrograms}
             </Link>
             {prev && (
               <Link to={lp(`/programmy/${prev.slug}`)} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-royal-rule text-sm text-royal-sand-2 hover:border-royal-lilac-deep hover:text-royal-lilac transition-colors">
@@ -203,11 +260,11 @@ const ProgramDetail = () => {
       {/* CTA */}
       <section className="py-20 px-6 border-t border-royal-rule bg-[radial-gradient(70%_80%_at_25%_20%,rgba(139,95,214,0.2),transparent_50%)]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Следующий шаг</p>
-          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">Напишите дату, число гостей и отель</h2>
-          <p className="max-w-2xl text-royal-sand-2 mb-8">Остальное спросим сами. Если хотите сначала попробовать — проведём для вашей команды принятия решения сорокапятиминутный прогон одной станции, без обязательств.</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.ctaEyebrow}</p>
+          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">{u.ctaTitle}</h2>
+          <p className="max-w-2xl text-royal-sand-2 mb-8">{u.ctaLead}</p>
           <Link to={lp('/contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors">
-            Запросить предложение <ArrowRight className="w-4 h-4" />
+            {u.ctaButton} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

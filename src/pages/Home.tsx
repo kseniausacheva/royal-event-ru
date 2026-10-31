@@ -38,6 +38,58 @@ const MESSENGERS = [
   { label: 'MAX', href: 'https://max.ru/u/f9LHodD0cOI6NopEpkHgITsu_AIEFyrbBPaFkURFR2kn3i3inUUuT4dKLgQ', icon: MessageCircle },
 ];
 
+// Подписи секций главной (программы, круизы, флот, DMC, приватный доступ).
+// Русские строки — эталон; английские подставляются на EN-сайте.
+const UI_RU = {
+  programsEyebrow: 'La Royal Event · Авторские программы',
+  programsTitle: 'Десять программ в каталоге — от квеста на пирамидах до ужина внутри кинопремьеры',
+  programsLead: 'У каждой программы своя глава одной истории. Ни одна не повторяет другую ни механикой, ни местом, ни финалом.',
+  programsAll: 'Весь каталог программ',
+  cruisesEyebrow: 'Круизы по Нилу',
+  cruisesTitle: 'От Каира до Асуана — по воде, на которой построена вся история',
+  cruisesLead: 'Классические 5★ суда, камерные дахабии, длинные круизы через Дендеру и Абидос. Прямые контракты с судовладельцами, корпоративный фрахт.',
+  fleetEyebrow: 'Флот · прямые контракты',
+  shipAltSuffix: ' — судно на Ниле',
+  dahabiyaEyebrow: 'Дахабия под парусом · шесть дней по реке',
+  routeLabel: 'Эсна → Асуан',
+  routeMeta: '5 ночей · 6 дней · 250 км',
+  cruisesMore: 'Подробнее о круизах',
+  dmcEyebrow: 'DMC Египет',
+  dmcTitle: 'Команда на месте — от аэропорта до последнего трансфера',
+  exclusiveEyebrow: 'Эксклюзив',
+  privateTitle: 'Приватный доступ к пирамидам Гизы',
+  privateLead: 'Плато — только для вашей группы, до или после рабочих часов. Все три камеры Великой пирамиды, включая закрытые для публики. Приватный вход к Сфинксу. До 50 гостей.',
+  standardEntry: 'Стандартный вход',
+  privateEntry: 'Приватный доступ · La Royal Event',
+  dmcMore: 'Подробнее о DMC и приватном доступе',
+} as const;
+
+const UI_EN: Record<keyof typeof UI_RU, string> = {
+  programsEyebrow: 'La Royal Event · Signature Programs',
+  programsTitle: 'Ten programs in the catalog, from a quest on the pyramids to a dinner inside a film premiere',
+  programsLead: 'Each program is its own chapter of one story. No two share a mechanic, a setting or an ending.',
+  programsAll: 'Full program catalog',
+  cruisesEyebrow: 'Nile Cruises',
+  cruisesTitle: "From Cairo to Aswan, on the river that all of Egypt's history was built on",
+  cruisesLead: 'Classic 5★ ships, intimate dahabiyas, long cruises through Dendera and Abydos. Direct contracts with ship owners and corporate charter.',
+  fleetEyebrow: 'Fleet · Direct Contracts',
+  shipAltSuffix: ', Nile cruise ship',
+  dahabiyaEyebrow: 'Dahabiya Under Sail · Six Days on the River',
+  routeLabel: 'Esna → Aswan',
+  routeMeta: '5 nights · 6 days · 250 km',
+  cruisesMore: 'More about cruises',
+  dmcEyebrow: 'DMC Egypt',
+  dmcTitle: 'A team on the ground, from the airport to the last transfer',
+  exclusiveEyebrow: 'Exclusive',
+  privateTitle: 'Private Access to the Pyramids of Giza',
+  privateLead: 'The plateau for your group alone, before or after public hours. All three chambers of the Great Pyramid, including the ones closed to the public. Private entry to the Sphinx. Up to 50 guests.',
+  standardEntry: 'Standard Entry',
+  privateEntry: 'Private Access · La Royal Event',
+  dmcMore: 'More about DMC and private access',
+};
+
+const UI = { ru: UI_RU, en: UI_EN };
+
 const SectionHeader = ({ title, subtitle }: { title: string, subtitle?: string }) => (
   <div className="mb-16">
     <motion.span 
@@ -64,6 +116,7 @@ const SectionHeader = ({ title, subtitle }: { title: string, subtitle?: string }
 
 const Home = () => {
   const { t, language } = useLanguage();
+  const u = UI[language];
   const { programs, cruises, fleet, dahabiyas, dmc, privateAccess, concerts } = useLaRoyalContent();
   const lp = useLocalizedPath();
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -236,7 +289,7 @@ const Home = () => {
                   <Link to={lp('/tickets')} className="block border-b border-white/10">
                     <img
                       src={event.image.src}
-                      alt={event.image.alt}
+                      alt={language === 'ru' ? event.image.alt : `${event.artist} — ${event.tour} poster`}
                       width={1600}
                       height={551}
                       loading="lazy"
@@ -438,11 +491,11 @@ const Home = () => {
       {/* ── La Royal Event: Programs ── */}
       <section className="py-32 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">La Royal Event · Авторские программы</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.programsEyebrow}</p>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
-            Десять программ в каталоге — от квеста на пирамидах до ужина внутри кинопремьеры
+            {u.programsTitle}
           </h2>
-          <p className="max-w-2xl text-royal-sand-2 mb-12">У каждой программы своя глава одной истории. Ни одна не повторяет другую ни механикой, ни местом, ни финалом.</p>
+          <p className="max-w-2xl text-royal-sand-2 mb-12">{u.programsLead}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {programs.slice(0, 6).map((pr) => (
               <Link key={pr.slug} to={lp(`/programmy/${pr.slug}`)} className="group p-6 rounded-2xl bg-royal-card border border-royal-rule hover:border-royal-lilac-deep transition-all hover:-translate-y-0.5">
@@ -454,7 +507,7 @@ const Home = () => {
             ))}
           </div>
           <Link to={lp('/programmy')} className="inline-flex items-center gap-3 mt-10 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors">
-            Весь каталог программ <ChevronRight className="w-4 h-4" />
+            {u.programsAll} <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
@@ -462,11 +515,11 @@ const Home = () => {
       {/* ── Nile Cruises ── */}
       <section className="py-32 px-6 border-t border-royal-rule bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Круизы по Нилу</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.cruisesEyebrow}</p>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
-            От Каира до Асуана — по воде, на которой построена вся история
+            {u.cruisesTitle}
           </h2>
-          <p className="max-w-2xl text-royal-sand-2 mb-12">Классические 5★ суда, камерные дахабии, длинные круизы через Дендеру и Абидос. Прямые контракты с судовладельцами, корпоративный фрахт.</p>
+          <p className="max-w-2xl text-royal-sand-2 mb-12">{u.cruisesLead}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {cruises.slice(0, 4).map((c) => (
               <div key={c.slug} className="p-6 rounded-2xl bg-royal-card border border-royal-rule">
@@ -478,7 +531,7 @@ const Home = () => {
             ))}
           </div>
           {/* Суда, с которыми работаем напрямую */}
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mt-16 mb-6">Флот · прямые контракты</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mt-16 mb-6">{u.fleetEyebrow}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {fleet.map((ship) => (
               <Link
@@ -489,7 +542,7 @@ const Home = () => {
                 <div className="relative aspect-[16/10]">
                   <img
                     src={ship.hero}
-                    alt={`${ship.name} — судно на Ниле`}
+                    alt={`${ship.name}${u.shipAltSuffix}`}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -508,15 +561,16 @@ const Home = () => {
           </div>
 
           {/* Маршрут дахабии */}
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mt-16 mb-6">Дахабия под парусом · шесть дней по реке</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mt-16 mb-6">{u.dahabiyaEyebrow}</p>
           <CruiseRouteMap
             days={dahabiyas.days}
-            routeLabel="Эсна → Асуан"
-            routeMeta="5 ночей · 6 дней · 250 км"
+            routeLabel={u.routeLabel}
+            routeMeta={u.routeMeta}
+            lang={language}
           />
 
           <Link to={lp('/cruises')} className="inline-flex items-center gap-2 mt-10 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac hover:text-royal-lime transition-colors">
-            Подробнее о круизах <ChevronRight className="w-3 h-3" />
+            {u.cruisesMore} <ChevronRight className="w-3 h-3" />
           </Link>
         </div>
       </section>
@@ -524,9 +578,9 @@ const Home = () => {
       {/* ── DMC + Private Access ── */}
       <section className="py-32 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">DMC Египет</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.dmcEyebrow}</p>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
-            Команда на месте — от аэропорта до последнего трансфера
+            {u.dmcTitle}
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
             <p className="lg:col-span-7 text-lg text-royal-sand-2 leading-relaxed">{dmc.intro[0]}</p>
@@ -540,12 +594,12 @@ const Home = () => {
           </div>
 
           <div className="p-8 rounded-[32px] border border-royal-lilac/25 bg-gradient-to-br from-royal-lilac-deep/12 to-transparent">
-            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-3">Эксклюзив</p>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-black uppercase tracking-tighter mb-3">Приватный доступ к пирамидам Гизы</h3>
-            <p className="text-royal-sand-2 mb-8 max-w-2xl">Плато — только для вашей группы, до или после рабочих часов. Все три камеры Великой пирамиды, включая закрытые для публики. Приватный вход к Сфинксу. До 50 гостей.</p>
+            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-3">{u.exclusiveEyebrow}</p>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-black uppercase tracking-tighter mb-3">{u.privateTitle}</h3>
+            <p className="text-royal-sand-2 mb-8 max-w-2xl">{u.privateLead}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="p-5 rounded-2xl bg-royal-night/60 border border-royal-rule">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim mb-3">Стандартный вход</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim mb-3">{u.standardEntry}</p>
                 {privateAccess.standard.map((r) => (
                   <div key={r.label} className="flex items-center gap-2.5 text-sm py-1">
                     {r.ok ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <XIcon className="w-3.5 h-3.5 text-red-400" />}
@@ -554,7 +608,7 @@ const Home = () => {
                 ))}
               </div>
               <div className="p-5 rounded-2xl bg-royal-night/60 border border-royal-lilac/30">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-3">Приватный доступ · La Royal Event</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-3">{u.privateEntry}</p>
                 {privateAccess.private.map((r) => (
                   <div key={r.label} className="flex items-center gap-2.5 text-sm py-1">
                     <Check className="w-3.5 h-3.5 text-emerald-400" /><span>{r.label}</span>
@@ -563,7 +617,7 @@ const Home = () => {
               </div>
             </div>
             <Link to={lp('/dmc')} className="inline-flex items-center gap-2 mt-6 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac hover:text-royal-lime transition-colors">
-              Подробнее о DMC и приватном доступе <ChevronRight className="w-3 h-3" />
+              {u.dmcMore} <ChevronRight className="w-3 h-3" />
             </Link>
           </div>
         </div>

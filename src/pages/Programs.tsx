@@ -2,21 +2,64 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import SEO from '../components/SEO';
+import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import { useLaRoyalContent } from '../content/useLaRoyalContent';
+
+const UI_RU = {
+  seoTitle: 'Программы и квесты в Египте для компаний',
+  seoDescription: 'Десять авторских программ в Гизе, Каире, Шарме и на Синае: квесты, иммерсивные ужины, экспедиции. Тимбилдинг и корпоратив в Египте для групп от 20 до 100 человек.',
+  seoKeywords: 'тимбилдинг в Египте, корпоратив в Египте, квест на пирамидах, квест в Каире, иммерсивный ужин в Египте, La Royal Event',
+  backHome: 'Назад на главную',
+  heroEyebrow: 'La Royal Event · тимбилдинг в Египте',
+  heroTitle: 'Десять программ для компаний в Египте',
+  heroLead: 'Корпоратив в Египте — от квеста на плато Гиза до ужина внутри кинопремьеры 1959 года. У каждой программы своя глава одной истории. Ни одна не повторяет другую ни механикой, ни местом, ни финалом.',
+  more: 'Подробно',
+  howEyebrow: 'Как это устроено',
+  howTitle: 'Всё, что вы спрашиваете в первом письме',
+  faqEyebrow: 'Частые вопросы',
+  faqTitle: 'Семь ответов, которые снимают половину переписки',
+  ctaEyebrow: 'Следующий шаг',
+  ctaTitle: 'Напишите дату, число гостей и отель',
+  ctaLead: 'Остальное спросим сами. Если хотите сначала попробовать — проведём для вашей команды принятия решения сорокапятиминутный прогон одной станции, без обязательств.',
+  ctaButton: 'Запросить предложение',
+} as const;
+
+const UI_EN: Record<keyof typeof UI_RU, string> = {
+  seoTitle: 'Corporate Programs and Quests in Egypt',
+  seoDescription: 'Ten original programs in Giza, Cairo, Sharm El Sheikh and Sinai: quests, immersive dinners, expeditions. Team building and corporate events in Egypt for groups of 20 to 100.',
+  seoKeywords: 'team building Egypt, corporate event Egypt, pyramids quest, Cairo quest, immersive dinner Egypt, La Royal Event',
+  backHome: 'Back to home',
+  heroEyebrow: 'La Royal Event · Team Building in Egypt',
+  heroTitle: 'Ten Corporate Programs in Egypt',
+  heroLead: 'Corporate events in Egypt, from a quest on the Giza Plateau to dinner inside a 1959 film premiere. Each program is its own chapter of a single story. No two share a mechanic, a setting or an ending.',
+  more: 'Details',
+  howEyebrow: 'How It Works',
+  howTitle: 'Everything you ask in the first email',
+  faqEyebrow: 'FAQ',
+  faqTitle: 'Seven answers that cut the back-and-forth in half',
+  ctaEyebrow: 'Next Step',
+  ctaTitle: 'Send us the date, headcount and hotel',
+  ctaLead: 'We will ask the rest. If you would rather try first, we will run a 45-minute trial of one station for your decision-makers, no strings attached.',
+  ctaButton: 'Request a Proposal',
+};
+
+const UI = { ru: UI_RU, en: UI_EN };
 
 const Programs = () => {
   const { programs, programsFaq, programsHow } = useLaRoyalContent();
   const lp = useLocalizedPath();
+  const { language } = useLanguage();
+  const u = UI[language];
 
   const faq = programsFaq.map((f) => ({ question: f.q, answer: f.a }));
 
   return (
     <div className="min-h-screen bg-royal-night text-royal-sand font-manrope">
       <SEO
-        title="Программы и квесты в Египте для компаний"
-        description="Десять авторских программ в Гизе, Каире, Шарме и на Синае: квесты, иммерсивные ужины, экспедиции. Тимбилдинг и корпоратив в Египте для групп от 20 до 100 человек."
-        keywords="тимбилдинг в Египте, корпоратив в Египте, квест на пирамидах, квест в Каире, иммерсивный ужин в Египте, La Royal Event"
+        title={u.seoTitle}
+        description={u.seoDescription}
+        keywords={u.seoKeywords}
         faq={faq}
       />
 
@@ -26,18 +69,18 @@ const Programs = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-4">
             <Link to={lp('/')} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-royal-dim hover:text-royal-lilac transition-colors">
-              <ArrowLeft className="w-3 h-3" /> Назад на главную
+              <ArrowLeft className="w-3 h-3" /> {u.backHome}
             </Link>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-5">La Royal Event · тимбилдинг в Египте</p>
+            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-5">{u.heroEyebrow}</p>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-black tracking-tighter mb-6 uppercase leading-[0.95]">
-              Десять программ для компаний в Египте
+              {u.heroTitle}
             </h1>
             <div className="w-24 h-1.5 bg-royal-lilac mb-8" />
             <p className="max-w-2xl text-xl text-royal-sand-2 font-light leading-relaxed">
-              Корпоратив в Египте — от квеста на плато Гиза до ужина внутри кинопремьеры 1959 года. У каждой программы своя глава одной истории. Ни одна не повторяет другую ни механикой, ни местом, ни финалом.
+              {u.heroLead}
             </p>
           </motion.div>
         </div>
@@ -73,7 +116,7 @@ const Programs = () => {
                 <p className="text-royal-lime font-serif italic text-base leading-snug mb-3">{p.tagline}</p>
                 <p className="text-sm text-royal-sand-2 leading-relaxed flex-grow">{p.short}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-royal-dim group-hover:text-royal-lilac transition-colors">
-                  Подробно <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  {u.more} <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </span>
                 </div>
               </Link>
@@ -85,9 +128,9 @@ const Programs = () => {
       {/* How it works */}
       <section className="py-20 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Как это устроено</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.howEyebrow}</p>
           <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-10">
-            Всё, что вы спрашиваете в первом письме
+            {u.howTitle}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {programsHow.map((h) => (
@@ -103,9 +146,9 @@ const Programs = () => {
       {/* FAQ */}
       <section className="py-20 px-6 border-t border-royal-rule">
         <div className="max-w-4xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Частые вопросы</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.faqEyebrow}</p>
           <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-10">
-            Семь ответов, которые снимают половину переписки
+            {u.faqTitle}
           </h2>
           <div className="divide-y divide-royal-rule">
             {programsFaq.map((f) => (
@@ -124,18 +167,18 @@ const Programs = () => {
       {/* CTA */}
       <section className="py-24 px-6 border-t border-royal-rule bg-[radial-gradient(70%_80%_at_25%_20%,rgba(139,95,214,0.2),transparent_50%)]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Следующий шаг</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.ctaEyebrow}</p>
           <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">
-            Напишите дату, число гостей и отель
+            {u.ctaTitle}
           </h2>
           <p className="max-w-2xl text-royal-sand-2 mb-8">
-            Остальное спросим сами. Если хотите сначала попробовать — проведём для вашей команды принятия решения сорокапятиминутный прогон одной станции, без обязательств.
+            {u.ctaLead}
           </p>
           <Link
             to={lp('/contact')}
             className="inline-flex items-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors"
           >
-            Запросить предложение <ArrowRight className="w-4 h-4" />
+            {u.ctaButton} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
