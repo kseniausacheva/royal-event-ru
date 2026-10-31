@@ -26,7 +26,7 @@ import { useLanguage } from '../LanguageContext';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
 import SEO from '../components/SEO';
 import WhatsAppIcon from '../components/WhatsAppIcon';
-import { programs, cruises, fleet, dahabiyas, dmc, privateAccess, concerts } from '../content/la-royal-event';
+import { useLaRoyalContent } from '../content/useLaRoyalContent';
 import CruiseRouteMap from '../components/CruiseRouteMap';
 import { Check, X as XIcon } from 'lucide-react';
 
@@ -64,6 +64,7 @@ const SectionHeader = ({ title, subtitle }: { title: string, subtitle?: string }
 
 const Home = () => {
   const { t, language } = useLanguage();
+  const { programs, cruises, fleet, dahabiyas, dmc, privateAccess, concerts } = useLaRoyalContent();
   const lp = useLocalizedPath();
   const carouselRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef(null);

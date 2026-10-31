@@ -5,11 +5,12 @@ import SEO from '../components/SEO';
 import { PhotoSet, ZoomImage } from '../components/PhotoLightbox';
 import CruiseRouteMap from '../components/CruiseRouteMap';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { cruises, fleet, cruiseSights, dahabiyas } from '../content/la-royal-event';
+import { useLaRoyalContent } from '../content/useLaRoyalContent';
 
 import { SITE_URL } from '../site-config';
 
 const Cruises = () => {
+  const { cruises, fleet, cruiseSights, dahabiyas } = useLaRoyalContent();
   const lp = useLocalizedPath();
 
   return (

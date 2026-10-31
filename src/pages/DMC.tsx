@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react';
 import SEO from '../components/SEO';
 import PyramidDiagram from '../components/PyramidDiagram';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { dmc, privateAccess } from '../content/la-royal-event';
+import { useLaRoyalContent } from '../content/useLaRoyalContent';
 
 const AccessRow: React.FC<{ ok: boolean; label: string }> = ({ ok, label }) => (
   <div className="flex items-center gap-3 text-sm py-1.5">
@@ -17,6 +17,7 @@ const AccessRow: React.FC<{ ok: boolean; label: string }> = ({ ok, label }) => (
 );
 
 const DMC = () => {
+  const { dmc, privateAccess } = useLaRoyalContent();
   const lp = useLocalizedPath();
 
   return (

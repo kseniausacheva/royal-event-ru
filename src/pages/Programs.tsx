@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { programs, programsFaq, programsHow } from '../content/la-royal-event';
+import { useLaRoyalContent } from '../content/useLaRoyalContent';
 
 const Programs = () => {
+  const { programs, programsFaq, programsHow } = useLaRoyalContent();
   const lp = useLocalizedPath();
 
   const faq = programsFaq.map((f) => ({ question: f.q, answer: f.a }));

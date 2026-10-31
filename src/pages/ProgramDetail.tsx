@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 import { PhotoSet, ZoomImage } from '../components/PhotoLightbox';
 import { SITE_URL } from '../site-config';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { programs } from '../content/la-royal-event';
+import { useLaRoyalContent } from '../content/useLaRoyalContent';
 
 const Dots = ({ n, warm = false }: { n: number; warm?: boolean }) => (
   <span className="inline-flex gap-1">
@@ -24,6 +24,7 @@ const Label = ({ children }: { children: ReactNode }) => (
 );
 
 const ProgramDetail = () => {
+  const { programs } = useLaRoyalContent();
   const { slug } = useParams<{ slug: string }>();
   const lp = useLocalizedPath();
 
