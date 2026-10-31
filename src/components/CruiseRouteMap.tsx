@@ -34,15 +34,31 @@ const SEGMENTS = [
 const VIEW_W = 400;
 const VIEW_H = 560;
 
+// Подписи для скринридера (кнопки-стрелки).
+const UI_RU = {
+  prevDay: 'Предыдущий день маршрута',
+  nextDay: 'Следующий день маршрута',
+} as const;
+
+const UI_EN: Record<keyof typeof UI_RU, string> = {
+  prevDay: 'Previous day of the route',
+  nextDay: 'Next day of the route',
+};
+
+const UI = { ru: UI_RU, en: UI_EN };
+
 type Props = {
   days: CruiseDay[];
   /** Подпись маршрута под картой, например «Эсна → Асуан». */
   routeLabel: string;
   /** Вторая строка подписи: ночи, дни, километры. */
   routeMeta: string;
+  /** Язык служебных подписей (aria-label стрелок). По умолчанию — русский. */
+  lang?: keyof typeof UI;
 };
 
-const CruiseRouteMap = ({ days, routeLabel, routeMeta }: Props) => {
+const CruiseRouteMap = ({ days, routeLabel, routeMeta, lang = 'ru' }: Props) => {
+  const u = UI[lang];
   const [active, setActive] = useState(0);
   const day = days[active];
   const last = days.length - 1;
@@ -86,7 +102,7 @@ const CruiseRouteMap = ({ days, routeLabel, routeMeta }: Props) => {
             type="button"
             onClick={() => go(active - 1)}
             disabled={active === 0}
-            aria-label="Предыдущий день маршрута"
+            aria-label={u.prevDay}
             className="shrink-0 w-10 h-10 rounded-full border border-white/20 bg-royal-night/60 backdrop-blur flex items-center justify-center text-royal-sand hover:border-royal-lilac hover:text-royal-lilac transition-colors disabled:opacity-30 disabled:hover:border-white/20 disabled:hover:text-royal-sand"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -96,7 +112,7 @@ const CruiseRouteMap = ({ days, routeLabel, routeMeta }: Props) => {
             type="button"
             onClick={() => go(active + 1)}
             disabled={active === last}
-            aria-label="Следующий день маршрута"
+            aria-label={u.nextDay}
             className="min-w-0 flex items-center gap-3 text-right text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-royal-sand hover:text-royal-lilac transition-colors disabled:opacity-30 disabled:hover:text-royal-sand"
           >
             <span className="truncate">

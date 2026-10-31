@@ -80,7 +80,7 @@ const Tickets = () => {
           <div className="max-w-7xl mx-auto">
             <img
               src={event.image.src}
-              alt={event.image.alt}
+              alt={ru ? event.image.alt : `${event.artist} — ${event.tour} poster`}
               width={1600}
               height={551}
               loading="eager"

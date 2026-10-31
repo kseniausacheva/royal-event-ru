@@ -5,19 +5,86 @@ import SEO from '../components/SEO';
 import { PhotoSet, ZoomImage } from '../components/PhotoLightbox';
 import CruiseRouteMap from '../components/CruiseRouteMap';
 import { useLocalizedPath } from '../hooks/useLocalizedPath';
-import { cruises, fleet, cruiseSights, dahabiyas } from '../content/la-royal-event';
+import { useLaRoyalContent } from '../content/useLaRoyalContent';
+import { useLanguage } from '../LanguageContext';
 
 import { SITE_URL } from '../site-config';
 
+// Строки интерфейса страницы (не контент из useLaRoyalContent — он переводится отдельно).
+const UI_RU = {
+  seoTitle: 'Круизы по Нилу для корпоративных групп',
+  seoDescription: 'Корпоративные круизы Луксор–Асуан на Le Fayan Suites и Soleil, приватный чартер Lumière, дахабии Nour El Nil, круизы из Каира. Прямые контракты, полный фрахт.',
+  seoKeywords: 'круиз по Нилу, круиз Луксор Асуан, Le Fayan Suites, Soleil Nile cruise, Lumière, дахабия, Nour El Nil, Dendera, корпоративный круиз, фрахт судна Нил, Дендера, круиз из Каира, La Royal Event',
+  backHome: 'Назад на главную',
+  heroEyebrow: 'Круизы по Нилу',
+  heroTitle: 'От Каира до Асуана — по воде, на которой построена вся история',
+  heroText: 'Организуем круизы для корпоративных групп и частных путешественников: 5-звёздочные суда на 37 и 53 каюты, приватный чартер на 20 гостей, парусные дахабии Nour El Nil на 16–24 гостя, длинные круизы из Каира. Прямые контракты с судовладельцами — без посредников и наценок.',
+  fleetEyebrow: 'Флот',
+  fleetTitle: 'Три судна, с которыми мы работаем напрямую',
+  shipAlt: (name: string) => `${name} — судно на Ниле`,
+  onboard: 'На борту:',
+  dahabiyaEyebrow: 'Дахабии',
+  dahabiyaTitle: 'Под парусом: Эсна → Асуан за шесть дней',
+  sixDays: 'Шесть дней по реке',
+  routeLabel: 'Эсна → Асуан',
+  routeMeta: '5 ночей · 6 дней · 250 км',
+  formatsEyebrow: 'Форматы',
+  formatsTitle: 'Как это может быть устроено',
+  sightsEyebrow: 'Маршрут',
+  sightsTitle: 'Что увидит группа между Луксором и Асуаном',
+  sightsText: 'Программа на берегу входит в стоимость: гид-египтолог на русском, входные билеты, трансферы к храмам. Вечером — ужин и программа на борту. Порядок остановок зависит от направления и числа ночей.',
+  ctaEyebrow: 'Следующий шаг',
+  ctaTitle: 'Напишите даты и число гостей',
+  ctaText: 'Подберём судно, категории кают и маршрут под вашу группу. Возможен полный фрахт.',
+  ctaButton: 'Запросить предложение',
+} as const;
+
+type UiStrings = {
+  [K in keyof typeof UI_RU]: (typeof UI_RU)[K] extends string ? string : (name: string) => string;
+};
+
+const UI_EN: UiStrings = {
+  seoTitle: 'Nile Cruises for Corporate Groups',
+  seoDescription: 'Corporate Nile cruises Luxor–Aswan aboard Le Fayan Suites and Soleil, private charter of Lumière, Nour El Nil dahabiyas, and long cruises from Cairo. Direct contracts with the owners, full-ship charter available.',
+  seoKeywords: 'Nile cruise, Luxor Aswan cruise, Le Fayan Suites, Soleil Nile cruise, Lumière, dahabiya, Nour El Nil, Dendera, corporate Nile cruise, Nile ship charter, Dendera dahabiya, cruise from Cairo, La Royal Event',
+  backHome: 'Back to home',
+  heroEyebrow: 'Nile Cruises',
+  heroTitle: 'From Cairo to Aswan, down the river that built all of history',
+  heroText: 'We run cruises for corporate groups and private travelers: five-star ships with 37 and 53 cabins, a private charter for 20 guests, Nour El Nil sailing dahabiyas for 16–24 guests, and long cruises out of Cairo. We contract directly with the ship owners, so there are no middlemen and no markups.',
+  fleetEyebrow: 'The Fleet',
+  fleetTitle: 'Three ships we work with directly',
+  shipAlt: (name: string) => `${name}, a cruise ship on the Nile`,
+  onboard: 'On board:',
+  dahabiyaEyebrow: 'Dahabiyas',
+  dahabiyaTitle: 'Under sail: Esna → Aswan in six days',
+  sixDays: 'Six days on the river',
+  routeLabel: 'Esna → Aswan',
+  routeMeta: '5 nights · 6 days · 250 km',
+  formatsEyebrow: 'Formats',
+  formatsTitle: 'How it can be put together',
+  sightsEyebrow: 'The Route',
+  sightsTitle: 'What your group will see between Luxor and Aswan',
+  sightsText: 'The shore program is included: an Egyptologist guide in your language, entrance tickets, and transfers to the temples. Evenings are for dinner and entertainment on board. The order of stops depends on the direction of travel and the number of nights.',
+  ctaEyebrow: 'Next Step',
+  ctaTitle: 'Send us your dates and group size',
+  ctaText: 'We will match the ship, cabin categories and route to your group. Full-ship charter is available.',
+  ctaButton: 'Request a Proposal',
+};
+
+const UI = { ru: UI_RU, en: UI_EN };
+
 const Cruises = () => {
+  const { cruises, fleet, cruiseSights, dahabiyas } = useLaRoyalContent();
   const lp = useLocalizedPath();
+  const { language } = useLanguage();
+  const u = UI[language];
 
   return (
     <div className="min-h-screen bg-royal-night text-royal-sand font-manrope">
       <SEO
-        title="Круизы по Нилу для корпоративных групп"
-        description="Корпоративные круизы Луксор–Асуан на Le Fayan Suites и Soleil, приватный чартер Lumière, дахабии Nour El Nil, круизы из Каира. Прямые контракты, полный фрахт."
-        keywords="круиз по Нилу, круиз Луксор Асуан, Le Fayan Suites, Soleil Nile cruise, Lumière, дахабия, Nour El Nil, Dendera, корпоративный круиз, фрахт судна Нил, Дендера, круиз из Каира, La Royal Event"
+        title={u.seoTitle}
+        description={u.seoDescription}
+        keywords={u.seoKeywords}
         image={`${SITE_URL}/cruises/fayan-ship.webp`}
       />
 
@@ -27,17 +94,17 @@ const Cruises = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-4">
             <Link to={lp('/')} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-royal-dim hover:text-royal-lilac transition-colors">
-              <ArrowLeft className="w-3 h-3" /> Назад на главную
+              <ArrowLeft className="w-3 h-3" /> {u.backHome}
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-5">Круизы по Нилу</p>
+            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-5">{u.heroEyebrow}</p>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-black tracking-tighter mb-6 uppercase leading-[0.95]">
-              От Каира до Асуана — по воде, на которой построена вся история
+              {u.heroTitle}
             </h1>
             <div className="w-24 h-1.5 bg-royal-lilac mb-8" />
             <p className="max-w-2xl text-xl text-royal-sand-2 font-light leading-relaxed">
-              Организуем круизы для корпоративных групп и частных путешественников: 5-звёздочные суда на 37 и 53 каюты, приватный чартер на 20 гостей, парусные дахабии Nour El Nil на 16–24 гостя, длинные круизы из Каира. Прямые контракты с судовладельцами — без посредников и наценок.
+              {u.heroText}
             </p>
           </motion.div>
         </div>
@@ -46,12 +113,12 @@ const Cruises = () => {
       {/* Флот */}
       <section className="py-16 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Флот</p>
-          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-12">Три судна, с которыми мы работаем напрямую</h2>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.fleetEyebrow}</p>
+          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-12">{u.fleetTitle}</h2>
 
           <div className="space-y-16">
             {fleet.map((ship, i) => {
-              const heroAlt = `${ship.name} — судно на Ниле`;
+              const heroAlt = u.shipAlt(ship.name);
               return (
                 <PhotoSet key={ship.slug} photos={[{ src: ship.hero, alt: heroAlt }, ...ship.gallery]}>
                   {(open) => (
@@ -112,7 +179,7 @@ const Cruises = () => {
                           ))}
                         </div>
                         <p className="mt-5 text-[11px] uppercase tracking-[0.18em] text-royal-dim">
-                          На борту: {ship.onboard.join(' · ')}
+                          {u.onboard} {ship.onboard.join(' · ')}
                         </p>
                       </div>
                     </motion.article>
@@ -127,8 +194,8 @@ const Cruises = () => {
       {/* Дахабии */}
       <section id="dahabiya" className="py-16 px-6 border-t border-royal-rule bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Дахабии</p>
-          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-8">Под парусом: Эсна → Асуан за шесть дней</h2>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.dahabiyaEyebrow}</p>
+          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-8">{u.dahabiyaTitle}</h2>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
             <div className="lg:col-span-7 space-y-4">
               {dahabiyas.intro.map((t, i) => (
@@ -208,11 +275,12 @@ const Cruises = () => {
             </PhotoSet>
           )}
 
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">Шесть дней по реке</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-royal-lilac mb-4">{u.sixDays}</p>
           <CruiseRouteMap
             days={dahabiyas.days}
-            routeLabel="Эсна → Асуан"
-            routeMeta="5 ночей · 6 дней · 250 км"
+            routeLabel={u.routeLabel}
+            routeMeta={u.routeMeta}
+            lang={language}
           />
         </div>
       </section>
@@ -220,8 +288,8 @@ const Cruises = () => {
       {/* Форматы */}
       <section className="py-16 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Форматы</p>
-          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-10">Как это может быть устроено</h2>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.formatsEyebrow}</p>
+          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-10">{u.formatsTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {cruises.map((c, i) => (
               <motion.div
@@ -250,10 +318,10 @@ const Cruises = () => {
       <section className="py-16 px-6 border-t border-royal-rule bg-white/[0.02]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div>
-            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Маршрут</p>
-            <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">Что увидит группа между Луксором и Асуаном</h2>
+            <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.sightsEyebrow}</p>
+            <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">{u.sightsTitle}</h2>
             <p className="text-royal-sand-2 leading-relaxed">
-              Программа на берегу входит в стоимость: гид-египтолог на русском, входные билеты, трансферы к храмам. Вечером — ужин и программа на борту. Порядок остановок зависит от направления и числа ночей.
+              {u.sightsText}
             </p>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -270,11 +338,11 @@ const Cruises = () => {
       {/* CTA */}
       <section className="py-20 px-6 border-t border-royal-rule bg-[radial-gradient(70%_80%_at_25%_20%,rgba(139,95,214,0.2),transparent_50%)]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">Следующий шаг</p>
-          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">Напишите даты и число гостей</h2>
-          <p className="max-w-2xl text-royal-sand-2 mb-8">Подберём судно, категории кают и маршрут под вашу группу. Возможен полный фрахт.</p>
+          <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.ctaEyebrow}</p>
+          <h2 className="text-2xl sm:text-4xl font-display font-black uppercase tracking-tighter mb-6">{u.ctaTitle}</h2>
+          <p className="max-w-2xl text-royal-sand-2 mb-8">{u.ctaText}</p>
           <Link to={lp('/contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors">
-            Запросить предложение <ArrowRight className="w-4 h-4" />
+            {u.ctaButton} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
