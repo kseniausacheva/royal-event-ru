@@ -303,7 +303,7 @@ export const translations = {
       faq: [
         {
           question: 'В каких странах вы организуете мероприятия?',
-          answer: 'La Royal Event работает в Египте и России. Главные офисы — в Шарм-эль-Шейхе и Москве. Также организуем MICE-проекты в других странах Ближнего Востока по запросу клиента.'
+          answer: 'La Royal Event работает в Египте и России. Офисы — в Каире, Шарм-эль-Шейхе и Москве. Также организуем MICE-проекты в других странах Ближнего Востока по запросу клиента.'
         },
         {
           question: 'Какие форматы мероприятий вы организуете?',
@@ -410,7 +410,7 @@ export const translations = {
       labels: {
         email: 'Email',
         phone: 'Телефон',
-        location: 'Локация',
+        location: 'Офисы',
         name: 'Полное имя',
         emailAddr: 'Электронная почта',
         phoneNumber: 'Номер телефона',
@@ -418,7 +418,7 @@ export const translations = {
         message: 'Сообщение',
         submit: 'Отправить запрос'
       },
-      locations: '19090 Египет, Шарм-эль-Шейх, Генина Сити молл, офис 3090'
+      locations: 'Каир: Apartment 24, Building 11, Group 74, Phase 7, Madinaty, New Cairo\n\nШарм-эль-Шейх: 19090, Генина Сити молл, офис 3090'
     },
     accessibleSection: {
       header: "ROYAL EVENT",
@@ -775,7 +775,7 @@ export const translations = {
       faq: [
         {
           question: 'Which countries do you organize events in?',
-          answer: 'La Royal Event operates in Egypt and Russia. Our main offices are in Sharm El Sheikh and Moscow. We also handle MICE projects in other Middle Eastern countries on request.'
+          answer: 'La Royal Event operates in Egypt and Russia. Our offices are in Cairo, Sharm El Sheikh and Moscow. We also handle MICE projects in other Middle Eastern countries on request.'
         },
         {
           question: 'What types of events do you organize?',
@@ -882,7 +882,7 @@ export const translations = {
       labels: {
         email: 'Email',
         phone: 'Phone',
-        location: 'Location',
+        location: 'Offices',
         name: 'Full Name',
         emailAddr: 'Email Address',
         phoneNumber: 'Phone Number',
@@ -890,7 +890,7 @@ export const translations = {
         message: 'Message',
         submit: 'Submit Request'
       },
-      locations: '19090 Egypt, Sharm El Sheikh, Genena City Mall, office 3090'
+      locations: 'Cairo: Apartment 24, Building 11, Group 74, Phase 7, Madinaty, New Cairo\n\nSharm El Sheikh: Genena City Mall, office 3090, 19090'
     },
     accessibleSection: {
       header: "ROYAL EVENT",
