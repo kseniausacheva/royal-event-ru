@@ -117,7 +117,7 @@ const SectionHeader = ({ title, subtitle }: { title: string, subtitle?: string }
 const Home = () => {
   const { t, language } = useLanguage();
   const u = UI[language];
-  const { programs, cruises, fleet, dahabiyas, dmc, privateAccess, concerts } = useLaRoyalContent();
+  const { programs, cruises, fleet, dahabiyas, dmc, privateAccess } = useLaRoyalContent();
   const lp = useLocalizedPath();
   const carouselRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef(null);
@@ -270,72 +270,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* ── Анонс концерта: билеты ── */}
-      {(() => {
-        const event = concerts[0];
-        const c = language === 'ru' ? event.ru : event.en;
-        return (
-          <section className="px-6 -mt-4 md:-mt-10 relative z-10">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.5 }}
-                className="rounded-[32px] border border-royal-lilac-deep/40 bg-[radial-gradient(120%_140%_at_85%_10%,rgba(139,95,214,0.35),rgba(12,8,20,0.9))] overflow-hidden"
-              >
-                {event.image && (
-                  <Link to={lp('/tickets')} className="block border-b border-white/10">
-                    <img
-                      src={event.image.src}
-                      alt={language === 'ru' ? event.image.alt : `${event.artist} — ${event.tour} poster`}
-                      width={1600}
-                      height={551}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full aspect-[3/1] object-cover"
-                    />
-                  </Link>
-                )}
-                <div className="p-8 sm:p-12 flex flex-col lg:flex-row lg:items-end justify-between gap-10">
-                  <div className="max-w-2xl">
-                    <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-5">
-                      {language === 'ru' ? 'Билеты на концерты' : 'Concert tickets'}
-                    </p>
-                    <h2 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-[0.95] mb-5">
-                      {language === 'ru' ? 'Шакира у пирамид Гизы' : 'Shakira at the Pyramids of Giza'}
-                    </h2>
-                    <p className="text-lg text-royal-sand-2 leading-relaxed mb-6">{c.teaser}</p>
-                    <div className="flex flex-wrap gap-3">
-                      {[c.dateLabel, c.venue, c.salesLabel].map((chip) => (
-                        <span key={chip} className="text-[11px] font-bold uppercase tracking-[0.15em] px-4 py-2 rounded-full border border-white/15 text-royal-sand">
-                          {chip}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
-                    <Link
-                      to={lp('/tickets')}
-                      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-royal-lilac text-royal-night font-bold text-sm uppercase tracking-widest rounded-xl hover:bg-royal-lilac-deep hover:text-white transition-colors whitespace-nowrap"
-                    >
-                      {language === 'ru' ? 'Подробнее' : 'Details'} <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <Link
-                      to={`${lp('/tickets')}#booking`}
-                      className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/20 rounded-xl text-sm font-bold uppercase tracking-widest text-royal-sand hover:border-royal-lilac hover:text-royal-lilac transition-colors whitespace-nowrap"
-                    >
-                      {language === 'ru' ? 'Забронировать' : 'Book tickets'}
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </section>
-        );
-      })()}
 
       {/* Services Overview */}
       <section className="py-40 px-6 bg-royal-black">
@@ -1135,7 +1069,10 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {t.blogPage.articles.slice(0, 3).map((article: any, i: number) => (
+            {t.blogPage.articles
+              .filter((article: any) => article.id !== 'shakira-piramidy-gizy-bilety')
+              .slice(0, 3)
+              .map((article: any, i: number) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
