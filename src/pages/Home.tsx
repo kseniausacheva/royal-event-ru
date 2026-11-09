@@ -1009,21 +1009,23 @@ const Home = () => {
           {/* flex вместо grid: неполный последний ряд центрируется, а не прижимается к левому краю */}
           <div className="flex flex-wrap justify-center gap-8">
             {[
-              { name: 'Carlsberg', logo: '/partners/carlsberg.png' },
-              { name: 'NL International', logo: '/partners/nl-international.png' },
-              { name: 'Ewa Product', logo: '/partners/ewa-product.png' },
+              // url — официальный сайт: логотип кликабелен и открывается в новой вкладке
+              { name: 'Carlsberg', logo: '/partners/carlsberg.png', url: 'https://www.carlsberggroup.com/' },
+              { name: 'NL International', logo: '/partners/nl-international.png', url: 'https://nlstar.com/' },
+              { name: 'Ewa Product', logo: '/partners/ewa-product.png', url: 'https://ewaproduct.com/' },
               { name: 'AFA', logo: '/partners/afa.png' },
-              { name: 'Samsung', logo: '/partners/samsung.png' },
+              { name: 'Samsung', logo: '/partners/samsung.png', url: 'https://www.samsung.com/' },
               { name: 'Space', logo: '/partners/space.png' },
-              { name: 'Four Seasons', logo: '/partners/four-seasons.png' },
-              { name: 'Rixos', logo: '/partners/rixos.png' },
+              { name: 'Four Seasons', logo: '/partners/four-seasons.png', url: 'https://www.fourseasons.com/' },
+              { name: 'Rixos', logo: '/partners/rixos.png', url: 'https://www.rixos.com/' },
               { name: 'Myway', logo: '/partners/myway.png' },
-              { name: 'Adidas', logo: '/partners/adidas.png' },
-              { name: 'Puma', logo: '/partners/puma.png' },
-              { name: 'Lionsdale', logo: '/partners/lionsdale.png' },
+              { name: 'Adidas', logo: '/partners/adidas.png', url: 'https://www.adidas.com/' },
+              { name: 'Puma', logo: '/partners/puma.png', url: 'https://www.puma.com/' },
+              { name: 'Lonsdale', logo: '/partners/lionsdale.png', url: 'https://www.lonsdale.com/' },
               // Знак Альфа-Банка: русский вордмарк на RU-страницах, английский — на EN
-              { name: 'Alfa-Bank', logo: language === 'ru' ? '/partners/alfa-bank.png' : '/partners/alfa-bank-en.png' },
-              { name: 'HS Sports Travel', logo: '/partners/hs-sports-travel.png' },
+              { name: 'Alfa-Bank', logo: language === 'ru' ? '/partners/alfa-bank.png' : '/partners/alfa-bank-en.png', url: 'https://alfabank.ru/' },
+              { name: 'HS Sports Travel', logo: '/partners/hs-sports-travel.png', url: 'https://hssports.travel/' },
+              { name: 'XP', logo: '/partners/xp.png', url: 'https://www.xpinc.com/' },
             ].map((partner, i) => (
               <motion.div
                 key={i}
@@ -1033,13 +1035,31 @@ const Home = () => {
                 viewport={{ once: true }}
                 className={`w-[calc((100%-2rem)/2)] md:w-[calc((100%-6rem)/4)] lg:w-[calc((100%-10rem)/6)] aspect-video rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group hover:border-royal-pink/50 transition-all ${['Four Seasons', 'Samsung', 'Carlsberg', 'Ewa Product'].includes(partner.name) ? 'p-0' : 'p-4'}`}
               >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  loading="lazy"
-                  decoding="async"
-                  className={`max-h-full max-w-full object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 mix-blend-lighten grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 ${partner.name === 'Samsung' ? 'scale-150' : ['Four Seasons', 'Carlsberg', 'Ewa Product'].includes(partner.name) ? 'scale-110' : ''}`}
-                />
+                {(() => {
+                  const img = (
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      loading="lazy"
+                      decoding="async"
+                      className={`max-h-full max-w-full object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 mix-blend-lighten grayscale brightness-200 group-hover:grayscale-0 group-hover:brightness-100 ${partner.name === 'Samsung' ? 'scale-150' : ['Four Seasons', 'Carlsberg', 'Ewa Product'].includes(partner.name) ? 'scale-110' : ''}`}
+                    />
+                  );
+                  if (!partner.url) return img;
+                  const label = `${partner.name} — ${language === 'ru' ? 'официальный сайт, откроется в новой вкладке' : 'official website, opens in a new tab'}`;
+                  return (
+                    <a
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={label}
+                      title={label}
+                      className="w-full h-full flex items-center justify-center rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-royal-pink"
+                    >
+                      {img}
+                    </a>
+                  );
+                })()}
               </motion.div>
             ))}
           </div>
