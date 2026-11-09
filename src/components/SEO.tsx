@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../LanguageContext';
 import { useLocation } from 'react-router-dom';
+import { localizePath } from '../content/blog-slugs.mjs';
 
 interface BreadcrumbItem {
   name: string;
@@ -149,9 +150,10 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, noindex,
 
   const canonicalUrl = withHost(canonicalHost, location.pathname);
   const altLang = language === 'ru' ? 'en' : 'ru';
-  const altPath = location.pathname.replace(`/${language}`, `/${altLang}`);
+  // localizePath переводит и слаги статей блога (/ru/blog/{id} ↔ /en/blog/{en.slug})
+  const altPath = localizePath(location.pathname, altLang);
   const altUrl = withHost(alternateHost, altPath);
-  const xDefaultUrl = withHost(RU_SITE_URL, location.pathname.replace(/^\/(ru|en)/, '/ru'));
+  const xDefaultUrl = withHost(RU_SITE_URL, language === 'ru' ? location.pathname : altPath);
 
   // Build breadcrumbs: explicit prop wins, `false` disables, otherwise auto-generate from URL.
   const homeLabel = language === 'ru' ? 'Главная' : 'Home';

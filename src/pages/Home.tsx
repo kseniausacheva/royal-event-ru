@@ -1015,7 +1015,7 @@ const Home = () => {
               { name: 'Ewa Product', logo: '/partners/ewa-product.png', url: 'https://ewaproduct.com/' },
               { name: 'AFA', logo: '/partners/afa.png' },
               { name: 'Samsung', logo: '/partners/samsung.png', url: 'https://www.samsung.com/' },
-              { name: 'Space', logo: '/partners/space.png' },
+              { name: 'Space', logo: '/partners/space.png', url: 'https://www.spacesharm.com/' },
               { name: 'Four Seasons', logo: '/partners/four-seasons.png', url: 'https://www.fourseasons.com/' },
               { name: 'Rixos', logo: '/partners/rixos.png', url: 'https://www.rixos.com/' },
               { name: 'Myway', logo: '/partners/myway.png' },
@@ -1101,7 +1101,7 @@ const Home = () => {
                 transition={{ delay: i * 0.1 }}
                 className="group"
               >
-                <Link to={lp(`/blog/${article.id}`)} className="block">
+                <Link to={lp(`/blog/${article.slug}`)} className="block">
                   <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-8">
                     <img
                       src={article.image}
