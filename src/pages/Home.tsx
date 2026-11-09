@@ -1015,7 +1015,7 @@ const Home = () => {
               { name: 'Ewa Product', logo: '/partners/ewa-product.png', url: 'https://ewaproduct.com/' },
               { name: 'AFA', logo: '/partners/afa.png' },
               { name: 'Samsung', logo: '/partners/samsung.png', url: 'https://www.samsung.com/' },
-              { name: 'Space', logo: '/partners/space.png' },
+              { name: 'Space', logo: '/partners/space.png', url: 'https://www.spacesharm.com/' },
               { name: 'Four Seasons', logo: '/partners/four-seasons.png', url: 'https://www.fourseasons.com/' },
               { name: 'Rixos', logo: '/partners/rixos.png', url: 'https://www.rixos.com/' },
               { name: 'Myway', logo: '/partners/myway.png' },
