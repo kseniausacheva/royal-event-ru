@@ -547,7 +547,7 @@ const BlogPage = () => {
                 )}
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-8 leading-[1.05] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl break-words font-display font-bold text-white mb-8 leading-[1.05] tracking-tight">
                 {article.title}
               </h1>
 
@@ -728,7 +728,7 @@ const BlogPage = () => {
             <span className="text-royal-pink text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">
               {blogData.title}
             </span>
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl break-words font-display font-bold text-white mb-6">
               {blogData.subtitle}
             </h1>
           </motion.div>

@@ -90,7 +90,9 @@ const UI_EN: Record<keyof typeof UI_RU, string> = {
 
 const UI = { ru: UI_RU, en: UI_EN };
 
-const SectionHeader = ({ title, subtitle }: { title: string, subtitle?: string }) => (
+// half — заголовок в половине ширины (колонка lg:grid-cols-2): шрифт меньше, иначе
+// «ПРОИЗВОДСТВО» и «ИСКУССТВО» вылезали за колонку.
+const SectionHeader = ({ title, subtitle, half = false }: { title: string, subtitle?: string, half?: boolean }) => (
   <div className="mb-16">
     <motion.span 
       initial={{ opacity: 0, x: -20 }}
@@ -102,7 +104,7 @@ const SectionHeader = ({ title, subtitle }: { title: string, subtitle?: string }
     <motion.h2 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="text-2xl sm:text-4xl md:text-7xl font-display font-black uppercase tracking-tighter leading-none"
+      className={`${half ? 'text-2xl sm:text-5xl md:text-6xl lg:text-4xl xl:text-5xl' : 'text-2xl sm:text-4xl md:text-7xl'} font-display font-black uppercase tracking-tighter leading-none break-words`}
     >
       {title}
     </motion.h2>
@@ -211,7 +213,7 @@ const Home = () => {
             >
               {t.hero.tag}
             </span>
-            <h1 className="text-[1.5rem] sm:text-6xl md:text-[6rem] font-display font-black leading-[0.85] tracking-tighter mb-10 uppercase">
+            <h1 className="text-[1.5rem] sm:text-5xl md:text-6xl lg:text-[6rem] font-display font-black leading-[0.85] tracking-tighter mb-10 uppercase">
               <span className="hero-rise block" style={{ animationDelay: '0.2s' }}>
                 {t.hero.title}
               </span>
@@ -339,7 +341,7 @@ const Home = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <SectionHeader title={t.production.title} subtitle={t.production.subtitle} />
+              <SectionHeader half title={t.production.title} subtitle={t.production.subtitle} />
               <motion.p 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -348,7 +350,7 @@ const Home = () => {
               >
                 {t.production.desc}
               </motion.p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
                 {t.production.items.map((item, i) => {
                   const icons = [Hammer, Speaker, Monitor, Settings];
                   const Icon = icons[i];
@@ -364,7 +366,7 @@ const Home = () => {
                       <div className="w-12 h-12 rounded-2xl bg-royal-pink/10 flex items-center justify-center mb-6 group-hover:bg-royal-pink group-hover:text-royal-black transition-all">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <h3 className="text-xl font-display font-bold mb-3 uppercase tracking-tight">{item.title}</h3>
+                      <h3 className="text-xl leading-tight break-words font-display font-bold mb-3 uppercase tracking-tight">{item.title}</h3>
                       <p className="text-sm text-white/40 leading-relaxed">{item.desc}</p>
                     </motion.div>
                   );
@@ -426,7 +428,7 @@ const Home = () => {
       <section className="py-32 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
           <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.programsEyebrow}</p>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
+          <h2 className="text-2xl min-[400px]:text-3xl sm:text-5xl md:text-6xl break-words font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
             {u.programsTitle}
           </h2>
           <p className="max-w-2xl text-royal-sand-2 mb-12">{u.programsLead}</p>
@@ -450,7 +452,7 @@ const Home = () => {
       <section className="py-32 px-6 border-t border-royal-rule bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
           <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.cruisesEyebrow}</p>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
+          <h2 className="text-2xl min-[400px]:text-3xl sm:text-5xl md:text-6xl break-words font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
             {u.cruisesTitle}
           </h2>
           <p className="max-w-2xl text-royal-sand-2 mb-12">{u.cruisesLead}</p>
@@ -513,7 +515,7 @@ const Home = () => {
       <section className="py-32 px-6 border-t border-royal-rule">
         <div className="max-w-7xl mx-auto">
           <p className="text-royal-lime text-[10px] font-bold uppercase tracking-[0.25em] mb-4">{u.dmcEyebrow}</p>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
+          <h2 className="text-2xl min-[400px]:text-3xl sm:text-5xl md:text-6xl break-words font-display font-black uppercase tracking-tighter leading-none mb-6 max-w-4xl">
             {u.dmcTitle}
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
@@ -823,7 +825,7 @@ const Home = () => {
       <section className="py-40 px-6 bg-royal-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <SectionHeader title={t.whyUs.title} subtitle={t.whyUs.subtitle} />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {t.whyUs.items.map((item, i) => (
               <motion.div
                 key={i}
@@ -831,12 +833,12 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-10 rounded-[40px] bg-white/[0.03] border border-white/10 hover:border-royal-pink/50 transition-all group"
+                className="p-8 xl:p-10 rounded-[40px] bg-white/[0.03] border border-white/10 hover:border-royal-pink/50 transition-all group"
               >
                 <div className="w-12 h-12 rounded-2xl bg-royal-pink/10 flex items-center justify-center text-royal-pink mb-8 group-hover:scale-110 transition-transform">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-display font-bold uppercase tracking-tight mb-4">{item.title}</h3>
+                <h3 className="text-xl leading-tight break-words font-display font-bold uppercase tracking-tight mb-4">{item.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -863,7 +865,7 @@ const Home = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
             {t.accessibleSection.cards.map((card, i) => (
               <motion.div
                 key={i}
@@ -884,10 +886,10 @@ const Home = () => {
                 </div>
 
                 <div className="mt-auto">
-                  <h3 className="text-3xl font-display font-black uppercase tracking-tighter mb-2">
+                  <h3 className="text-lg sm:text-3xl lg:text-lg xl:text-2xl break-words font-display font-black uppercase tracking-tighter mb-2">
                     {card.title.split(' ')[0]}
                   </h3>
-                  <h3 className="text-4xl font-display font-black uppercase tracking-tighter mb-6">
+                  <h3 className="text-xl sm:text-4xl lg:text-xl xl:text-3xl break-words font-display font-black uppercase tracking-tighter mb-6">
                     {card.title.split(' ')[1]}
                   </h3>
                   <p className={`text-sm leading-relaxed mb-8 ${i === 1 ? 'text-white/60' : 'text-royal-black/60'}`}>
@@ -1140,7 +1142,7 @@ const Home = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <SectionHeader title={t.philosophy.title} subtitle={t.philosophy.subtitle} />
+            <SectionHeader half title={t.philosophy.title} subtitle={t.philosophy.subtitle} />
             <div className="space-y-12">
               {t.philosophy.items.map((item, i) => {
                 const icons = [ShieldCheck, Star, Languages];
