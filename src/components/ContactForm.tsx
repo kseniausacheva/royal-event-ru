@@ -134,7 +134,7 @@ const ContactForm = () => {
       transition={{ duration: 0.8 }}
       className="p-8 md:p-12 rounded-[40px] bg-white/5 border border-white/10"
     >
-      <h3 className="text-3xl font-display font-bold uppercase mb-12">{t.contactPage.formTitle}</h3>
+      <h3 className="text-xl sm:text-2xl md:text-3xl break-words font-display font-bold uppercase mb-12">{t.contactPage.formTitle}</h3>
       <form className="space-y-8" onSubmit={handleSubmit}>
         {/* ── Мини-бриф: быстрые чипы вместо пустого поля «о чём вы» ── */}
         <div className="space-y-3">

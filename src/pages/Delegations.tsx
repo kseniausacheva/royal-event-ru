@@ -95,7 +95,7 @@ const Delegations = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <h2 className="text-2xl font-display font-bold mb-8 uppercase tracking-tight flex items-center gap-4">
+              <h2 className="text-xl sm:text-2xl font-display font-bold mb-8 uppercase tracking-tight flex items-center gap-4">
                 <span className="text-royal-pink">01.</span> {t.delegationsPage.sections[0].title}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -117,7 +117,7 @@ const Delegations = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              <h2 className="text-2xl font-display font-bold mb-8 uppercase tracking-tight flex items-center gap-4">
+              <h2 className="text-xl sm:text-2xl font-display font-bold mb-8 uppercase tracking-tight flex items-center gap-4">
                 <span className="text-royal-pink">02.</span> {t.delegationsPage.sections[1].title}
               </h2>
               <div className="p-8 rounded-3xl bg-gradient-to-br from-white/5 to-transparent border border-white/10">
@@ -144,10 +144,10 @@ const Delegations = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="lg:col-span-5"
           >
-            <div className="sticky top-32 p-10 rounded-[40px] bg-royal-pink text-royal-black overflow-hidden relative">
+            <div className="sticky top-32 p-8 md:p-10 rounded-[40px] bg-royal-pink text-royal-black overflow-hidden relative">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 blur-3xl rounded-full -mr-16 -mt-16" />
               
-              <h3 className="text-3xl font-display font-black mb-6 relative z-10">
+              <h3 className="text-xl sm:text-3xl lg:text-2xl xl:text-3xl break-words font-display font-black mb-6 relative z-10">
                 {t.delegationsPage.cta.title}
               </h3>
               <p className="font-bold mb-10 text-royal-black/80 relative z-10">

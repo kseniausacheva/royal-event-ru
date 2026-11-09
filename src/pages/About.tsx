@@ -90,7 +90,7 @@ const About = () => {
               viewport={{ once: true }}
               className="lg:col-span-1"
             >
-              <h2 className="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-8">
+              <h2 className="text-4xl md:text-6xl lg:text-5xl xl:text-6xl break-words font-display font-black uppercase tracking-tighter leading-none mb-8">
                 {t.aboutPage.mission.title}
               </h2>
               <p className="text-xl text-white/60 leading-relaxed">
@@ -98,7 +98,8 @@ const About = () => {
               </p>
             </motion.div>
 
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Ценности — списком: в три колонки «Безупречность» не помещалось */}
+            <div className="lg:col-span-2 grid grid-cols-1 gap-8">
               {t.aboutPage.values.items.map((value, i) => (
                 <motion.div
                   key={i}
@@ -106,9 +107,9 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-10 rounded-[40px] bg-white/5 border border-white/10"
+                  className="p-8 md:p-10 rounded-[40px] bg-white/5 border border-white/10"
                 >
-                  <h3 className="text-2xl font-display font-bold uppercase mb-4 text-royal-pink">{value.title}</h3>
+                  <h3 className="text-xl sm:text-2xl break-words font-display font-bold uppercase mb-4 text-royal-pink">{value.title}</h3>
                   <p className="text-sm text-white/40 leading-relaxed">{value.desc}</p>
                 </motion.div>
               ))}

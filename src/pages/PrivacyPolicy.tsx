@@ -292,7 +292,7 @@ const PrivacyPolicy = () => {
         description={language === 'ru' ? 'Политика La Royal Event в отношении обработки персональных данных посетителей сайта и клиентов.' : 'How La Royal Event processes and protects the personal data of website visitors and clients.'}
       />
       <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-none mb-12">
+        <h1 className="text-xl min-[400px]:text-2xl sm:text-5xl break-words font-display font-black uppercase tracking-tighter leading-none mb-12">
           {language === 'ru' ? 'Политика обработки персональных данных' : 'Privacy Policy'}
         </h1>
 

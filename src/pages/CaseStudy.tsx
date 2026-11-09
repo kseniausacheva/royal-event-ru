@@ -99,7 +99,7 @@ const CaseStudy = () => {
             <span className="text-royal-pink font-bold text-xs uppercase tracking-[0.4em] mb-4 block">
               Case Study
             </span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-black uppercase tracking-tighter leading-none mb-8">
+            <h1 className="text-2xl min-[400px]:text-3xl sm:text-5xl lg:text-4xl xl:text-5xl break-words font-display font-black uppercase tracking-tighter leading-none mb-8">
               {caseItem.client}
             </h1>
             <div className="flex flex-wrap gap-8 mb-12">

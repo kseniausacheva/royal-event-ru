@@ -51,7 +51,7 @@ const Services = () => {
           <span className="text-royal-pink font-bold text-xs uppercase tracking-[0.4em] mb-4 block">
             {t.nav.services}
           </span>
-          <h1 className="text-3xl sm:text-5xl md:text-8xl font-display font-black uppercase tracking-tighter leading-none break-words">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-display font-black uppercase tracking-tighter leading-none break-words">
             {t.servicesPage.title}
           </h1>
         </motion.div>
