@@ -42,7 +42,9 @@ export function buildVercelRedirects(existing = []) {
 /** Блок правил для .htaccess (без маркеров). */
 export function buildHtaccessRules() {
   return legacyEnRedirects()
-    .map(({ from, to }) => `RewriteRule ^${escapeRegex(from.slice(1, -1))}/?$ ${to} [R=301,L]`)
+    // Абсолютный https-адрес: Apache на reg.ru стоит за nginx, снимающим SSL, и
+    // относительная цель превратилась бы в http:// (лишний редирект через https-правило).
+    .map(({ from, to }) => `RewriteRule ^${escapeRegex(from.slice(1, -1))}/?$ https://%{HTTP_HOST}${to} [R=301,L]`)
     .join('\n');
 }
 
