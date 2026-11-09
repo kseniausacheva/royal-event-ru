@@ -56,7 +56,9 @@ const Services = () => {
           </h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
+        {/* Шрифт заголовков широкий: «Международный» не влезало в карточку в 4 колонки.
+            3 колонки на xl, 2 на md–lg; flex-wrap центрирует неполный последний ряд. */}
+        <div className="flex flex-wrap justify-center gap-8 mb-32">
           {t.servicesPage.items.map((service, i) => {
             const Icon = icons[i];
             return (
@@ -66,10 +68,10 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-12 rounded-[40px] bg-white/5 border border-white/10 hover:border-royal-pink/50 transition-all group"
+                className="w-full md:w-[calc((100%-2rem)/2)] xl:w-[calc((100%-4rem)/3)] p-7 sm:p-8 xl:p-10 rounded-[32px] md:rounded-[40px] bg-white/5 border border-white/10 hover:border-royal-pink/50 transition-all group"
               >
                 <Icon className="w-12 h-12 text-royal-pink mb-8 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-display font-bold uppercase mb-4">{service.title}</h3>
+                <h3 className="text-base min-[360px]:text-lg sm:text-xl lg:text-2xl xl:text-xl 2xl:text-2xl leading-tight break-words font-display font-bold uppercase mb-4">{service.title}</h3>
                 <p className="text-white/40 leading-relaxed">{service.desc}</p>
               </motion.div>
             );
@@ -81,7 +83,7 @@ const Services = () => {
           <h2 className="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter leading-none mb-16 text-center">
             {t.servicesPage.process.title}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12">
             {t.servicesPage.process.items.map((step, i) => (
               <motion.div
                 key={i}
@@ -95,7 +97,7 @@ const Services = () => {
                   {step.step}
                 </div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-display font-bold uppercase mb-4 text-royal-pink">{step.title}</h3>
+                  <h3 className="text-xl sm:text-2xl leading-tight break-words font-display font-bold uppercase mb-4 text-royal-pink">{step.title}</h3>
                   <p className="text-white/40 leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
