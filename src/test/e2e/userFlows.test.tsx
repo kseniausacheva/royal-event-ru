@@ -77,6 +77,9 @@ const TestRoutes = () => (
     <Route path="/ru/portfolio" element={<Portfolio />} />
     <Route path="/ru/delegations" element={<Delegations />} />
     <Route path="/ru/blog" element={<BlogPage />} />
+    <Route path="/ru/blog/:id" element={<BlogPage />} />
+    <Route path="/en/blog" element={<BlogPage />} />
+    <Route path="/en/blog/:id" element={<BlogPage />} />
     <Route path="/ru/contact" element={<Contact />} />
     <Route path="/ru/privacy" element={<PrivacyPolicy />} />
     <Route path="/ru/mailing-consent" element={<MailingConsent />} />
@@ -139,6 +142,41 @@ describe('E2E — Navigation flows', () => {
     await waitFor(() => {
       expect(screen.getByTestId('current-path')).toHaveTextContent('/en/about');
     });
+  });
+
+  it('switching language on an article opens the same article under its English slug', async () => {
+    const user = userEvent.setup();
+    renderApp('/ru/blog/dmc-v-egipte');
+    await user.click(screen.getByTestId('lang-en'));
+    await waitFor(() => {
+      expect(screen.getByTestId('current-path')).toHaveTextContent('/en/blog/dmc-in-egypt');
+    });
+    expect(await screen.findByRole('heading', { level: 1, name: /DMC in Egypt/i })).toBeInTheDocument();
+    await user.click(screen.getByTestId('lang-ru'));
+    await waitFor(() => {
+      expect(screen.getByTestId('current-path')).toHaveTextContent('/ru/blog/dmc-v-egipte');
+    });
+  });
+
+  it('an old English article address redirects to the English slug', async () => {
+    renderApp('/en/blog/dmc-v-egipte');
+    await waitFor(() => {
+      expect(screen.getByTestId('current-path')).toHaveTextContent('/en/blog/dmc-in-egypt');
+    });
+    expect(await screen.findByRole('heading', { level: 1, name: /DMC in Egypt/i })).toBeInTheDocument();
+  });
+
+  it('English blog list links to English slugs, Russian list to Russian ones', async () => {
+    const { unmount } = renderApp('/en/blog');
+    expect(await screen.findAllByRole('link', { name: /DMC in Egypt/i })).not.toHaveLength(0);
+    const enLinks = screen.getAllByRole('link').map((a) => a.getAttribute('href'));
+    expect(enLinks).toContain('/en/blog/dmc-in-egypt');
+    expect(enLinks).not.toContain('/en/blog/dmc-v-egipte');
+    unmount();
+    renderApp('/ru/blog');
+    await screen.findAllByRole('link', { name: /DMC в Египте/i });
+    const ruLinks = screen.getAllByRole('link').map((a) => a.getAttribute('href'));
+    expect(ruLinks).toContain('/ru/blog/dmc-v-egipte');
   });
 
   it('user visiting an unknown URL sees the 404 page', async () => {

@@ -2,11 +2,14 @@
 // Чтобы добавить новую статью — отредактируй ТОЛЬКО src/content/blog-articles.mjs.
 // Sitemap, prerender и категории обновятся автоматически при npm run build.
 import { blogArticles } from './content/blog-articles.mjs';
+import { articleSlug } from './content/blog-slugs.mjs';
 
 // Преобразуем общую структуру блог-статей в "плоский" формат, который ожидают компоненты
 // (id + поля выбранной локали + общий image).
 const ruArticles = blogArticles.map((a) => ({
   id: a.id,
+  // Слаг в адресе статьи: /ru/blog/{slug}
+  slug: articleSlug(a, 'ru'),
   title: a.ru.title,
   date: a.ru.date,
   category: a.ru.category,
@@ -21,6 +24,8 @@ const ruArticles = blogArticles.map((a) => ({
 
 const enArticles = blogArticles.map((a) => ({
   id: a.id,
+  // Английский слаг: /en/blog/{slug}
+  slug: articleSlug(a, 'en'),
   title: a.en.title,
   date: a.en.date,
   category: a.en.category,

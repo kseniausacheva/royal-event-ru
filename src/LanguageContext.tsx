@@ -1,6 +1,7 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { createContext, useContext, ReactNode, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { translations } from './translations';
+import { localizePath } from './content/blog-slugs.mjs';
 
 type Language = 'ru' | 'en';
 
@@ -22,13 +23,14 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return 'ru';
   };
 
-  const [language, setLanguageState] = useState<Language>(getLangFromPath(location.pathname));
+  // Язык берём прямо из адреса, а не из state, обновляемого в эффекте: иначе
+  // первый рендер после смены адреса шёл со старым языком (например, /ru/blog/{id}
+  // рендерился как EN-страница и уводил по редиректу старого EN-адреса обратно).
+  const language: Language = getLangFromPath(location.pathname);
 
   useEffect(() => {
-    const lang = getLangFromPath(location.pathname);
-    setLanguageState(lang);
-    document.documentElement.lang = lang;
-  }, [location.pathname]);
+    document.documentElement.lang = language;
+  }, [language]);
 
   // Redirect root "/" to "/ru"
   useEffect(() => {
@@ -38,9 +40,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   }, [location.pathname, navigate]);
 
   const setLanguage = (lang: Language) => {
-    const currentLang = getLangFromPath(location.pathname);
-    const pathWithoutLang = location.pathname.replace(`/${currentLang}`, '') || '';
-    navigate(`/${lang}${pathWithoutLang}`);
+    // localizePath знает слаги статей: /ru/blog/{id} ↔ /en/blog/{en.slug}
+    navigate(localizePath(location.pathname, lang));
   };
 
   const value = {

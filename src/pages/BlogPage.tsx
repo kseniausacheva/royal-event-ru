@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Tag, User, ArrowLeft, ChevronRight, ArrowRight, Quote, AlertCircle, Info, CheckCircle2, Send, XCircle } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
@@ -15,6 +15,7 @@ import SEO from '../components/SEO';
  * там обязательное поле, поэтому добавление новой статьи автоматически добавит дату сюда.
  */
 import { blogArticles } from '../content/blog-articles.mjs';
+import { findLegacyEnArticle, articleSlug } from '../content/blog-slugs.mjs';
 const ARTICLE_DATES_ISO: Record<string, string> = Object.fromEntries(
   blogArticles.map((a: any) => [a.id, a.datePublished]),
 );
@@ -425,7 +426,14 @@ const BlogPage = () => {
 
   // Single Article View
   if (id) {
-    const article = blogData.articles.find((a: any) => a.id === id);
+    const article = blogData.articles.find((a: any) => a.slug === id);
+
+    // Старый EN-адрес со слагом-транслитом (/en/blog/{id}) → новый английский.
+    // На сервере это 301 (vercel.json, .htaccess); здесь — для переходов внутри SPA.
+    if (!article && language === 'en') {
+      const legacy = findLegacyEnArticle(id);
+      if (legacy) return <Navigate to={lp(`/blog/${articleSlug(legacy, 'en')}`)} replace />;
+    }
 
     if (!article) {
       return (
@@ -439,7 +447,7 @@ const BlogPage = () => {
 
     const canonicalHost = language === 'ru' ? SITE_URL_RU : SITE_URL_EN;
     // Конечный адрес — со слэшем на обоих доменах (Apache 301-ит без него, на Vercel trailingSlash)
-    const articleUrl = `${canonicalHost}/${language}/blog/${article.id}/`;
+    const articleUrl = `${canonicalHost}/${language}/blog/${article.slug}/`;
     const datePublished = ARTICLE_DATES_ISO[article.id];
 
     // Schema.org BlogPosting — Яндекс показывает дату публикации, автора и сниппет в выдаче.
@@ -498,7 +506,7 @@ const BlogPage = () => {
           breadcrumbs={[
             { name: language === 'ru' ? 'Главная' : 'Home', url: `/${language}` },
             { name: language === 'ru' ? 'Блог' : 'Blog', url: `/${language}/blog` },
-            { name: article.title, url: `/${language}/blog/${article.id}` },
+            { name: article.title, url: `/${language}/blog/${article.slug}` },
           ]}
           jsonLd={articleJsonLd}
         />
@@ -642,7 +650,7 @@ const BlogPage = () => {
                     .map((related: any) => (
                       <Link
                         key={related.id}
-                        to={lp(`/blog/${related.id}`)}
+                        to={lp(`/blog/${related.slug}`)}
                         className="group rounded-2xl overflow-hidden border border-white/10 hover:border-royal-pink/50 transition-all"
                       >
                         <div className="aspect-[16/9] overflow-hidden">
@@ -736,7 +744,7 @@ const BlogPage = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="group"
             >
-              <Link to={lp(`/blog/${article.id}`)} className="block">
+              <Link to={lp(`/blog/${article.slug}`)} className="block">
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-6">
                   <img
                     src={article.image}

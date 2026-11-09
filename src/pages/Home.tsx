@@ -1081,7 +1081,7 @@ const Home = () => {
                 transition={{ delay: i * 0.1 }}
                 className="group"
               >
-                <Link to={lp(`/blog/${article.id}`)} className="block">
+                <Link to={lp(`/blog/${article.slug}`)} className="block">
                   <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-8">
                     <img
                       src={article.image}

@@ -3,7 +3,7 @@
  *
  * Добавление новой статьи:
  * 1. Скопируй блок последней статьи ниже (от { до }), вставь после неё
- * 2. Поменяй: id, datePublished, image, ru.title/excerpt/content/category/date
+ * 2. Поменяй: id, datePublished, image, ru.title/excerpt/content/category/date, en.slug
  * 3. (Опционально) сделай en.* — если статья только на русском, можно скопировать ru
  * 4. Запусти `npm run build` — sitemap и prerender обновятся автоматически
  *
@@ -48,6 +48,9 @@
  *   ru.content      — либо строка (простой формат), либо массив блоков (богатый)
  *   ru.category     — категория (отображается на странице)
  *   ru.date         — человекочитаемая дата для отображения (например "15 Июня, 2026")
+ *   en.slug         — английский URL-slug для /en/blog/{en.slug} на .com (латиница через дефис,
+ *                     по английскому заголовку). Не задан — используется id. Менять у уже
+ *                     опубликованной статьи нельзя без 301-редиректа (см. src/content/blog-slugs.mjs)
  */
 
 /** @type {BlogArticle[]} */
@@ -301,6 +304,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "conference-in-egypt",
       "title": "Conference in Egypt: How to Choose the City, Venue and Dates",
       "category": "Business Events",
       "date": "9 November 2026",
@@ -780,6 +784,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "gala-dinner-in-egypt",
       "title": "Gala Dinner in Egypt: Six Venues, the Run of the Evening and What to Plan",
       "category": "Locations",
       "date": "9 November 2026",
@@ -1211,6 +1216,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "mice4u-2026-egypt-mice-destination",
       "title": "MICE4U 2026: presenting Egypt as a MICE destination",
       "category": "Industry",
       "date": "18 September 2026",
@@ -1626,6 +1632,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "shakira-pyramids-of-giza-tickets",
       "title": "Shakira at the Pyramids of Giza: Tickets for 28 November 2027",
       "category": "Locations",
       "date": "September 17, 2026",
@@ -2127,6 +2134,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "dmc-in-egypt",
       "title": "DMC in Egypt: What a Destination Management Company Does and How to Choose One",
       "category": "Business Events",
       "date": "September 17, 2026",
@@ -2805,6 +2813,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "corporate-event-abroad-with-a-local-dmc",
       "title": "Organizing a Corporate Event Abroad: How to Work With a Local DMC So Nothing Falls Through",
       "category": "Business Events",
       "date": "September 17, 2026",
@@ -3550,6 +3559,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "incentive-travel-to-egypt",
       "title": "Incentive Travel to Egypt: Itineraries, Seasons and Programs Teams Remember",
       "category": "Corporate Culture",
       "date": "September 17, 2026",
@@ -4197,6 +4207,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "team-building-in-egypt",
       "title": "Team Building in Egypt: 10 Formats From a Giza Plateau Quest to a Red Sea Regatta",
       "category": "Corporate Culture",
       "date": "September 17, 2026",
@@ -4837,6 +4848,7 @@ export const blogArticles = [
       ]
     },
     "en": {
+      "slug": "corporate-nile-cruise",
       "title": "Corporate Nile Cruise: How a Full-Ship Charter Works and What a Group Can Do in Four Nights",
       "category": "Locations",
       "date": "September 17, 2026",
@@ -5257,6 +5269,7 @@ export const blogArticles = [
       ],
     },
     en: {
+      slug: 'conference-abroad-planning-checklist',
       title: 'Organizing a Conference Abroad: a 6-Month Preparation Checklist',
       category: 'Business Events',
       date: 'July 18, 2026',
@@ -5338,6 +5351,7 @@ export const blogArticles = [
       ],
     },
     en: {
+      slug: 'incentive-travel-for-employees',
       title: 'Incentive Travel for Employees: Formats, Budgets and Measurable Impact',
       category: 'Corporate Culture',
       date: 'July 18, 2026',
@@ -5426,6 +5440,7 @@ export const blogArticles = [
       ],
     },
     en: {
+      slug: 'new-year-corporate-party-abroad',
       title: 'New Year Corporate Party Abroad: Destinations, Budgets and Why to Book in August',
       category: 'Business Events',
       date: 'July 18, 2026',
@@ -5535,6 +5550,7 @@ export const blogArticles = [
       ],
     },
     en: {
+      slug: 'corporate-event-abroad-cost',
       title: 'How Much Does a Corporate Event Abroad Cost in 2026: Budgets by Country',
       category: 'Business Events',
       date: 'July 18, 2026',
@@ -5651,6 +5667,7 @@ export const blogArticles = [
       ],
     },
     en: {
+      slug: 'corporate-event-in-egypt-prices-2026',
       title: 'Corporate Event in Egypt: 2026 Prices — Real Budget for 100 People, Hotel Rates and Seasons',
       category: 'Locations',
       date: 'July 17, 2026',
@@ -5752,6 +5769,7 @@ export const blogArticles = [
       ],
     },
     en: {
+      slug: 'how-to-choose-a-mice-agency',
       title: 'How to Choose a MICE Agency: 12 Questions to Ask Before Signing',
       category: 'Business Events',
       date: 'July 16, 2026',
@@ -5911,6 +5929,7 @@ export const blogArticles = [
       ],
     },
     en: {
+      slug: 'corporate-event-in-dubai',
       title: 'Where to Hold a Corporate Event in UAE: 7 Dubai Hotels, Zones, Budgets and Logistics',
       category: 'Locations',
       date: 'May 27, 2026',
@@ -6090,6 +6109,7 @@ Royal Event Group has been working in UAE since 2010 with a team in Dubai and di
       ],
     },
     en: {
+      slug: 'how-to-choose-a-corporate-event-host',
       title: 'How to Choose an Event Host for Your Corporate Event: 12-Point Checklist and Common Mistakes',
       category: 'Business Events',
       date: 'May 27, 2026',
@@ -6258,6 +6278,7 @@ Royal Event Group has a proven pool of MCs for any format — from small corpora
       ],
     },
     en: {
+      slug: 'b2b-pr-trends-2026',
       title: '6 B2B PR Trends for 2026',
       category: 'Trends',
       date: 'May 27, 2026',
@@ -6498,6 +6519,7 @@ If your B2B PR strategy includes events — Royal Event Group helps design them 
       ],
     },
     en: {
+      slug: 'corporate-event-in-sharm-el-sheikh',
       title: 'Where to Hold a Corporate Event in Sharm El Sheikh: 7 Top Hotels, Districts, Activities and Real Budgets',
       category: 'Locations',
       date: 'June 4, 2026',
@@ -6771,6 +6793,7 @@ Best season: October-April. Royal Event Group has 20+ years in Sharm with direct
       ],
     },
     en: {
+      slug: 'protocol-event-program',
       title: 'How to Design a Protocol Event Program: Speeches, Awards, Banquet & Entertainment',
       category: 'Business Events',
       date: 'June 2, 2026',
@@ -6992,6 +7015,7 @@ Royal Event Group designs and runs protocol events from 50-person company annive
       ],
     },
     en: {
+      slug: 'corporate-event-venues-in-egypt',
       title: 'Where to Hold a Corporate Event in Egypt: 5 Cities, 12 Venues and Real Cases',
       category: 'Locations',
       date: 'May 31, 2026',
@@ -7190,6 +7214,7 @@ Royal Event Group has been working in Egypt for 20+ years with direct contracts 
       ],
     },
     en: {
+      slug: 'corporate-business-retreats',
       title: 'Business Retreats for Companies: Formats, Goals and Specifics',
       category: 'Corporate Culture',
       date: 'May 29, 2026',
@@ -7400,6 +7425,7 @@ Royal Event Group designs and runs business retreats in Egypt, UAE, Turkey, and 
       ],
     },
     en: {
+      slug: 'catering-trends-2026',
       title: 'Top 8 Catering Trends in 2026',
       category: 'Catering',
       date: 'May 27, 2026',
@@ -7593,6 +7619,7 @@ Royal Event Group works with proven catering partners in Egypt, UAE, and Russia.
       ],
     },
     en: {
+      slug: 'conference-abroad-pitfalls',
       title: 'Pitfalls in Organizing a Conference Abroad',
       category: 'Business Events',
       date: 'May 25, 2026',

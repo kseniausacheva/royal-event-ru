@@ -17,6 +17,38 @@ RewriteRule ^(.*)$ https://royaleventandmice.ru/$1 [L,R=301,NE]
 RewriteCond %{HTTP:X-Forwarded-Proto} =http
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301,NE]
 
+# ===== 301: старые английские адреса статей блога =====
+# До 9 ноября 2026 EN-статьи жили по адресу /en/blog/{транслит}; теперь у них
+# английские слаги. Правила стоят ДО отдачи реальных файлов: на хостинге могут
+# остаться старые папки от прошлых деплоев. Блок генерирует
+# scripts/sync-blog-redirects.mjs — руками не править.
+# BEGIN blog-en-redirects
+RewriteRule ^en/blog/konferenciya-v-egipte/?$ /en/blog/conference-in-egypt/ [R=301,L]
+RewriteRule ^en/blog/gala-uzhin-v-egipte/?$ /en/blog/gala-dinner-in-egypt/ [R=301,L]
+RewriteRule ^en/blog/mice4u-2026-egipet-mice-dmc/?$ /en/blog/mice4u-2026-egypt-mice-destination/ [R=301,L]
+RewriteRule ^en/blog/shakira-piramidy-gizy-bilety/?$ /en/blog/shakira-pyramids-of-giza-tickets/ [R=301,L]
+RewriteRule ^en/blog/dmc-v-egipte/?$ /en/blog/dmc-in-egypt/ [R=301,L]
+RewriteRule ^en/blog/organizaciya-meropriyatiya-za-granicej-s-dmc/?$ /en/blog/corporate-event-abroad-with-a-local-dmc/ [R=301,L]
+RewriteRule ^en/blog/insentiv-tur-v-egipet/?$ /en/blog/incentive-travel-to-egypt/ [R=301,L]
+RewriteRule ^en/blog/timbilding-v-egipte/?$ /en/blog/team-building-in-egypt/ [R=301,L]
+RewriteRule ^en/blog/korporativnyj-kruiz-po-nilu/?$ /en/blog/corporate-nile-cruise/ [R=301,L]
+RewriteRule ^en/blog/organizaciya-konferencii-za-rubezhom/?$ /en/blog/conference-abroad-planning-checklist/ [R=301,L]
+RewriteRule ^en/blog/insentiv-tur-dlya-sotrudnikov/?$ /en/blog/incentive-travel-for-employees/ [R=301,L]
+RewriteRule ^en/blog/novogodnij-korporativ-za-granicej/?$ /en/blog/new-year-corporate-party-abroad/ [R=301,L]
+RewriteRule ^en/blog/skolko-stoit-korporativ-za-rubezhom/?$ /en/blog/corporate-event-abroad-cost/ [R=301,L]
+RewriteRule ^en/blog/korporativ-v-egipte-ceny-2026/?$ /en/blog/corporate-event-in-egypt-prices-2026/ [R=301,L]
+RewriteRule ^en/blog/kak-vybrat-mice-agentstvo/?$ /en/blog/how-to-choose-a-mice-agency/ [R=301,L]
+RewriteRule ^en/blog/gde-provesti-korporativ-v-oae-dubai/?$ /en/blog/corporate-event-in-dubai/ [R=301,L]
+RewriteRule ^en/blog/kak-vybrat-vedushchego-dlya-korporativa/?$ /en/blog/how-to-choose-a-corporate-event-host/ [R=301,L]
+RewriteRule ^en/blog/6-trendov-v-b2b-pr-na-2026-god/?$ /en/blog/b2b-pr-trends-2026/ [R=301,L]
+RewriteRule ^en/blog/gde-provesti-korporativ-v-sharm-el-sheikh/?$ /en/blog/corporate-event-in-sharm-el-sheikh/ [R=301,L]
+RewriteRule ^en/blog/kak-podgotovit-programmu-protokolnogo-meropriyatiya/?$ /en/blog/protocol-event-program/ [R=301,L]
+RewriteRule ^en/blog/gde-provesti-korporativ-v-egipte/?$ /en/blog/corporate-event-venues-in-egypt/ [R=301,L]
+RewriteRule ^en/blog/biznes-retraity-dlya-kompanij-formaty-celi/?$ /en/blog/corporate-business-retreats/ [R=301,L]
+RewriteRule ^en/blog/top-8-tendencii-kejteringa-2026/?$ /en/blog/catering-trends-2026/ [R=301,L]
+RewriteRule ^en/blog/podvodnye-kamni-konferencii-za-rubezhom/?$ /en/blog/conference-abroad-pitfalls/ [R=301,L]
+# END blog-en-redirects
+
 # Don't rewrite real files or directories
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

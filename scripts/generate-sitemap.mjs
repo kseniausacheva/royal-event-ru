@@ -19,6 +19,7 @@ import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
 import { execSync } from 'child_process';
 import { blogArticles } from '../src/content/blog-articles.mjs';
+import { localizePath } from '../src/content/blog-slugs.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -30,7 +31,7 @@ const HOST_COM = 'https://www.royaleventandmice.com';
 // `--target com`: карта для www.royaleventandmice.com — основные локи /en/*, hreflang ru → .ru.
 const TARGET = process.argv.includes('--target') ? process.argv[process.argv.indexOf('--target') + 1] : 'ru';
 const HOST = TARGET === 'com' ? HOST_COM : HOST_RU;
-const toTargetPath = (loc) => (TARGET === 'com' ? loc.replace(/^\/ru/, '/en') : loc);
+const toTargetPath = (loc) => (TARGET === 'com' ? localizePath(loc, 'en') : loc);
 
 // lastmod статичных страниц — дата последнего коммита (а не каждой сборки:
 // иначе все страницы выглядят «обновлёнными» при любом деплое). Без git — сегодня.
@@ -193,7 +194,8 @@ function ruUrl(loc) {
   return `${HOST_RU}${loc.endsWith('/') ? loc : `${loc}/`}`;
 }
 function enUrl(loc) {
-  const p = loc.replace(/^\/ru/, '/en');
+  // localizePath переводит и слаги статей: /ru/blog/{id} → /en/blog/{en.slug}
+  const p = localizePath(loc, 'en');
   return `${HOST_COM}${p.endsWith('/') ? p : `${p}/`}`;
 }
 /** Основной URL записи для текущей цели сборки. */

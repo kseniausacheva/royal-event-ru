@@ -26,6 +26,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
 import { blogArticles } from '../src/content/blog-articles.mjs';
+import { localizePath } from '../src/content/blog-slugs.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -91,7 +92,8 @@ const BLOG_ROUTES = blogArticles.map((a) => ({
 }));
 
 const RU_ROUTES = [...STATIC_ROUTES, ...BLOG_ROUTES];
-const EN_ROUTES = RU_ROUTES.map((r) => ({ ...r, route: r.route.replace(/^\/ru/, '/en') }));
+// localizePath переводит и слаги статей: /ru/blog/{id} → /en/blog/{en.slug}
+const EN_ROUTES = RU_ROUTES.map((r) => ({ ...r, route: localizePath(r.route, 'en') }));
 const ROUTES = [...RU_ROUTES, ...EN_ROUTES];
 
 const SEO_BLOCK_RE = /<!-- seo:default:start[\s\S]*?<!-- seo:default:end -->/;
