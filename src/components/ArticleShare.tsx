@@ -111,7 +111,7 @@ const ArticleShare: React.FC<ArticleShareProps> = ({ title, shareText }) => {
         {/* Telegram */}
         <button
           onClick={handleTelegram}
-          aria-label="Поделиться в Telegram"
+          aria-label={language === 'ru' ? 'Поделиться в Telegram' : 'Share on Telegram'}
           className={`${buttonBase} hover:bg-[#0088cc]`}
         >
           <Send className="w-6 h-6 md:w-7 md:h-7" strokeWidth={2} />
@@ -134,7 +134,7 @@ const ArticleShare: React.FC<ArticleShareProps> = ({ title, shareText }) => {
         {/* VK */}
         <button
           onClick={handleVk}
-          aria-label="Поделиться в VK"
+          aria-label={language === 'ru' ? 'Поделиться в VK' : 'Share on VK'}
           className={`${buttonBase} hover:bg-[#4A76A8]`}
         >
           <VkIcon />

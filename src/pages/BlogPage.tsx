@@ -75,6 +75,7 @@ const getVideoEmbed = (url: string): { kind: 'iframe' | 'video'; src: string } =
  * Рендерит один блок богатого контента. Для magazine-style оформления статьи.
  */
 const ArticleBlockRenderer: React.FC<{ block: ArticleBlock; idx: number }> = ({ block, idx }) => {
+  const { language } = useLanguage();
   switch (block.type) {
     case 'paragraph':
       return (
@@ -123,10 +124,10 @@ const ArticleBlockRenderer: React.FC<{ block: ArticleBlock; idx: number }> = ({ 
             <button
               onClick={handleShareQuote}
               className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 hover:text-royal-pink transition-colors font-bold"
-              aria-label="Поделиться цитатой в Telegram"
+              aria-label={language === 'ru' ? 'Поделиться цитатой в Telegram' : 'Share quote on Telegram'}
             >
               <Send className="w-3.5 h-3.5" />
-              Поделиться цитатой
+              {language === 'ru' ? 'Поделиться цитатой' : 'Share quote'}
             </button>
           </div>
         </figure>

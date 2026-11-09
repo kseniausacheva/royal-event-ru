@@ -56,6 +56,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+/**
+ * Язык без требования провайдера: для мелких общих компонентов (лайтбокс),
+ * которые рендерятся и в тестах без LanguageProvider. Вне провайдера — 'ru'.
+ */
+export const useLanguageOrRu = (): Language => useContext(LanguageContext)?.language ?? 'ru';
+
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (context === undefined) {

@@ -2,25 +2,9 @@ import { useEffect } from 'react';
 import { useLanguage } from '../LanguageContext';
 import SEO from '../components/SEO';
 
-const PrivacyPolicy = () => {
-  const { language } = useLanguage();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-royal-black text-white pt-32 pb-20">
-      <SEO
-        title={language === 'ru' ? 'Политика обработки персональных данных' : 'Privacy Policy'}
-        description={language === 'ru' ? 'Политика La Royal Event в отношении обработки персональных данных посетителей сайта и клиентов.' : 'How La Royal Event processes and protects the personal data of website visitors and clients.'}
-      />
-      <div className="max-w-4xl mx-auto px-6">
-        <h1 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-none mb-12">
-          {language === 'ru' ? 'Политика обработки персональных данных' : 'Privacy Policy'}
-        </h1>
-
-        <div className="prose prose-invert prose-lg max-w-none space-y-8 text-white/70 leading-relaxed">
+// Русская версия политики (оригинал, без изменений)
+const PolicyRu = () => (
+  <>
           <section>
             <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">1. Общие положения</h2>
             <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» (далее — Закон о персональных данных) и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые ИП Усачева Ксения Олеговна (далее — Оператор).</p>
@@ -153,6 +137,167 @@ const PrivacyPolicy = () => {
             <p>12.2. В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены её новой версией.</p>
             <p>12.3. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу https://royaleventandmice.ru.</p>
           </section>
+  </>
+);
+
+// English version of the same policy (same numbering, same legal references)
+const PolicyEn = () => (
+  <>
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">1. General Provisions</h2>
+            <p>This Personal Data Processing Policy has been prepared in accordance with the requirements of Federal Law No. 152-FZ of July 27, 2006 “On Personal Data” (the “Personal Data Law”). It sets out the procedure for processing personal data and the measures taken to protect personal data by Individual Entrepreneur Ksenia Olegovna Usacheva (the “Operator”).</p>
+            <p>1.1. The Operator regards respect for the rights and freedoms of individuals in the processing of their personal data, including protection of the right to privacy and to personal and family confidentiality, as its most important objective and as a condition of its activity.</p>
+            <p>1.2. This Operator policy on the processing of personal data (the “Policy”) applies to all information the Operator may obtain about visitors to the website https://www.royaleventandmice.com.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">2. Key Terms Used in This Policy</h2>
+            <p>2.1. Automated processing of personal data means the processing of personal data by means of computer technology.</p>
+            <p>2.2. Blocking of personal data means temporarily suspending the processing of personal data (except where processing is required to clarify the personal data).</p>
+            <p>2.3. Website means the collection of graphic and informational materials, together with the computer programs and databases that make them available on the internet at the network address https://www.royaleventandmice.com.</p>
+            <p>2.4. Personal data information system means the collection of personal data held in databases, together with the information technologies and technical means that enable its processing.</p>
+            <p>2.5. Depersonalization of personal data means actions that make it impossible, without the use of additional information, to attribute personal data to a specific User or other personal data subject.</p>
+            <p>2.6. Processing of personal data means any action (operation) or set of actions (operations) performed on personal data, with or without the use of automated means, including the collection, recording, systematization, accumulation, storage, clarification (updating, modification), retrieval, use, transfer (dissemination, provision, access), depersonalization, blocking, deletion and destruction of personal data.</p>
+            <p>2.7. Operator means a state body, municipal body, legal entity or individual that, alone or jointly with others, organizes and/or carries out the processing of personal data and determines the purposes of processing, the composition of the personal data to be processed, and the actions (operations) performed on personal data.</p>
+            <p>2.8. Personal data means any information relating directly or indirectly to an identified or identifiable User of the website https://www.royaleventandmice.com.</p>
+            <p>2.9. Personal data permitted by the personal data subject for dissemination means personal data to which the personal data subject has granted access to an unlimited number of persons by giving consent to the processing of personal data permitted for dissemination in the manner prescribed by the Personal Data Law (“personal data permitted for dissemination”).</p>
+            <p>2.10. User means any visitor to the website https://www.royaleventandmice.com.</p>
+            <p>2.11. Provision of personal data means actions aimed at disclosing personal data to a specific person or a specific group of persons.</p>
+            <p>2.12. Dissemination of personal data means any actions aimed at disclosing personal data to an indefinite group of persons (transfer of personal data) or at making personal data available to an unlimited number of persons, including publishing personal data in the media, posting it on information and telecommunication networks, or providing access to personal data in any other way.</p>
+            <p>2.13. Cross-border transfer of personal data means the transfer of personal data to the territory of a foreign state, to a foreign government authority, a foreign individual or a foreign legal entity.</p>
+            <p>2.14. Destruction of personal data means any actions as a result of which personal data is destroyed irreversibly, so that its content can no longer be restored in the personal data information system, and/or the physical media containing the personal data are destroyed.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">3. Principal Rights and Obligations of the Operator</h2>
+            <p>3.1. The Operator has the right to:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>receive accurate information and/or documents containing personal data from the personal data subject;</li>
+              <li>where the personal data subject withdraws consent to the processing of personal data or submits a request to stop processing, continue processing the personal data without the subject’s consent where the grounds specified in the Personal Data Law exist;</li>
+              <li>independently determine the composition and list of measures necessary and sufficient to fulfill the obligations set out in the Personal Data Law and the regulations adopted under it, unless otherwise provided by the Personal Data Law or other federal laws.</li>
+            </ul>
+            <p className="mt-4">3.2. The Operator is obliged to:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>provide the personal data subject, at their request, with information concerning the processing of their personal data;</li>
+              <li>organize the processing of personal data in the manner established by the current legislation of the Russian Federation;</li>
+              <li>respond to requests and inquiries from personal data subjects and their legal representatives in accordance with the requirements of the Personal Data Law;</li>
+              <li>provide the authorized body for the protection of the rights of personal data subjects, at its request, with the necessary information within 10 days of receiving the request;</li>
+              <li>publish this Policy on the processing of personal data or otherwise ensure unrestricted access to it;</li>
+              <li>take legal, organizational and technical measures to protect personal data from unlawful or accidental access, destruction, modification, blocking, copying, provision or dissemination, and from other unlawful actions involving personal data;</li>
+              <li>stop the transfer (dissemination, provision, access) of personal data, stop processing and destroy personal data in the manner and in the cases provided for by the Personal Data Law;</li>
+              <li>fulfill other obligations provided for by the Personal Data Law.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">4. Principal Rights and Obligations of Personal Data Subjects</h2>
+            <p>4.1. Personal data subjects have the right to:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>receive information concerning the processing of their personal data, except in the cases provided for by federal law. The Operator provides this information to the personal data subject in an accessible form, and it must not contain personal data relating to other personal data subjects unless there are legal grounds for disclosing such data. The list of information and the procedure for obtaining it are established by the Personal Data Law;</li>
+              <li>require the Operator to clarify, block or destroy their personal data if it is incomplete, outdated, inaccurate, unlawfully obtained or not necessary for the stated purpose of processing, and take the measures provided for by law to protect their rights;</li>
+              <li>make prior consent a condition of the processing of their personal data for the purpose of marketing goods, works and services;</li>
+              <li>withdraw consent to the processing of personal data and submit a request to stop the processing of personal data;</li>
+              <li>appeal unlawful actions or inaction by the Operator in the processing of their personal data to the authorized body for the protection of the rights of personal data subjects or in court;</li>
+              <li>exercise other rights provided for by the legislation of the Russian Federation.</li>
+            </ul>
+            <p className="mt-4">4.2. Personal data subjects are obliged to:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>provide the Operator with accurate information about themselves;</li>
+              <li>inform the Operator of any clarification (updating, modification) of their personal data.</li>
+            </ul>
+            <p className="mt-4">4.3. Persons who provide the Operator with inaccurate information about themselves, or with information about another personal data subject without that subject’s consent, are liable under the legislation of the Russian Federation.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">5. Principles of Personal Data Processing</h2>
+            <p>5.1. Personal data is processed on a lawful and fair basis.</p>
+            <p>5.2. The processing of personal data is limited to the achievement of specific, predetermined and legitimate purposes. Processing personal data in a manner incompatible with the purposes of its collection is not permitted.</p>
+            <p>5.3. Databases containing personal data processed for mutually incompatible purposes may not be combined.</p>
+            <p>5.4. Only personal data that meets the purposes of its processing is processed.</p>
+            <p>5.5. The content and scope of the personal data processed correspond to the stated purposes of processing. Personal data that is excessive in relation to the stated purposes of processing may not be processed.</p>
+            <p>5.6. In processing personal data, the Operator ensures that the data is accurate and sufficient and, where necessary, up to date in relation to the purposes of processing. The Operator takes the necessary measures, or ensures they are taken, to delete or clarify incomplete or inaccurate data.</p>
+            <p>5.7. Personal data is stored in a form that allows the personal data subject to be identified for no longer than the purposes of processing require, unless a retention period is established by federal law or by a contract to which the personal data subject is a party, beneficiary or guarantor. Processed personal data is destroyed or depersonalized once the purposes of processing have been achieved, or when those purposes no longer need to be achieved, unless otherwise provided by federal law.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">6. Purposes of Personal Data Processing</h2>
+            <p><strong className="text-white">Purpose of processing:</strong> informing the User by sending e-mails.</p>
+            <p><strong className="text-white">Personal data:</strong> surname, first name, patronymic; e-mail address; telephone numbers.</p>
+            <p><strong className="text-white">Legal grounds:</strong> Federal Law No. 149-FZ of July 27, 2006 “On Information, Information Technologies and Information Protection”.</p>
+            <p><strong className="text-white">Types of processing:</strong> collection, recording, systematization, accumulation, storage, destruction and depersonalization of personal data; sending informational e-mails to the e-mail address provided.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">7. Conditions of Personal Data Processing</h2>
+            <p>7.1. Personal data is processed with the consent of the personal data subject to the processing of their personal data.</p>
+            <p>7.2. Processing of personal data is necessary to achieve the purposes provided for by an international treaty of the Russian Federation or by law, or to perform the functions, powers and duties assigned to the Operator by the legislation of the Russian Federation.</p>
+            <p>7.3. Processing of personal data is necessary for the administration of justice, or for the enforcement of a judicial act or an act of another body or official that is subject to enforcement under the legislation of the Russian Federation on enforcement proceedings.</p>
+            <p>7.4. Processing of personal data is necessary to perform a contract to which the personal data subject is a party, beneficiary or guarantor, or to conclude a contract at the initiative of the personal data subject or a contract under which the personal data subject will be a beneficiary or guarantor.</p>
+            <p>7.5. Processing of personal data is necessary to exercise the rights and legitimate interests of the Operator or third parties, or to achieve socially significant purposes, provided that the rights and freedoms of the personal data subject are not violated.</p>
+            <p>7.6. The Operator processes personal data to which the personal data subject has granted access to an unlimited number of persons, or which has been made accessible at the subject’s request (“publicly available personal data”).</p>
+            <p>7.7. The Operator processes personal data that is subject to publication or mandatory disclosure under federal law.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">8. Procedure for the Collection, Storage, Transfer and Other Processing of Personal Data</h2>
+            <p>The security of the personal data processed by the Operator is ensured through the legal, organizational and technical measures necessary to comply in full with the requirements of the current legislation on personal data protection.</p>
+            <p>8.1. The Operator safeguards personal data and takes every possible measure to prevent access to personal data by unauthorized persons.</p>
+            <p>8.2. The User’s personal data will never, under any circumstances, be transferred to third parties, except where required by current legislation or where the personal data subject has given the Operator consent to transfer the data to a third party in order to perform obligations under a civil-law contract.</p>
+            <p>8.3. If the User identifies inaccuracies in their personal data, they may update it themselves by sending a notice to the Operator’s e-mail address sale@royaleventandmice.ru with the subject line “Personal data update”.</p>
+            <p>8.4. The period of personal data processing is determined by the achievement of the purposes for which the personal data was collected, unless a different period is provided for by contract or current legislation. The User may withdraw consent to the processing of their personal data at any time by sending a notice to the Operator’s e-mail address sale@royaleventandmice.ru with the subject line “Withdrawal of consent to personal data processing”.</p>
+            <p>8.5. All information collected by third-party services, including payment systems, communication tools and other service providers, is stored and processed by those parties (operators) in accordance with their own User Agreements and Privacy Policies. The Operator is not responsible for the actions of third parties, including the service providers referred to in this clause.</p>
+            <p>8.6. Prohibitions set by the personal data subject on the transfer (other than granting access) of personal data permitted for dissemination, and on its processing or the conditions of its processing (other than obtaining access), do not apply where personal data is processed in the state, public or other public interests defined by the legislation of the Russian Federation.</p>
+            <p>8.7. The Operator ensures the confidentiality of personal data during processing.</p>
+            <p>8.8. The Operator stores personal data in a form that allows the personal data subject to be identified for no longer than the purposes of processing require, unless a retention period is established by federal law or by a contract to which the personal data subject is a party, beneficiary or guarantor.</p>
+            <p>8.9. Processing of personal data may be terminated upon achievement of the purposes of processing, expiry of the personal data subject’s consent, withdrawal of consent by the personal data subject or a request to stop processing, or upon detection of unlawful processing of personal data.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">9. Actions Performed by the Operator on the Personal Data Received</h2>
+            <p>9.1. The Operator collects, records, systematizes, accumulates, stores, clarifies (updates, modifies), retrieves, uses, transfers (disseminates, provides, grants access to), depersonalizes, blocks, deletes and destroys personal data.</p>
+            <p>9.2. The Operator carries out automated processing of personal data, with or without receiving and/or transmitting the information obtained via information and telecommunication networks.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">10. Cross-Border Transfer of Personal Data</h2>
+            <p>10.1. Before beginning any cross-border transfer of personal data, the Operator must notify the authorized body for the protection of the rights of personal data subjects of its intention to carry out cross-border transfers of personal data (this notice is sent separately from the notice of intention to process personal data).</p>
+            <p>10.2. Before submitting the above notice, the Operator must obtain the relevant information from the foreign government authorities, foreign individuals and foreign legal entities to which the cross-border transfer of personal data is planned.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">11. Confidentiality of Personal Data</h2>
+            <p>The Operator and any other persons who have gained access to personal data must not disclose it to third parties or disseminate it without the consent of the personal data subject, unless otherwise provided by federal law.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-display font-bold text-white uppercase tracking-tight mb-4">12. Final Provisions</h2>
+            <p>12.1. The User may obtain clarification on any question concerning the processing of their personal data by contacting the Operator by e-mail at sale@royaleventandmice.ru.</p>
+            <p>12.2. Any changes to the Operator’s personal data processing policy will be reflected in this document. The Policy remains in force indefinitely until it is replaced by a new version.</p>
+            <p>12.3. The current version of the Policy is freely available online at https://www.royaleventandmice.com.</p>
+          </section>
+  </>
+);
+
+const PrivacyPolicy = () => {
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-royal-black text-white pt-32 pb-20">
+      <SEO
+        title={language === 'ru' ? 'Политика обработки персональных данных' : 'Privacy Policy'}
+        description={language === 'ru' ? 'Политика La Royal Event в отношении обработки персональных данных посетителей сайта и клиентов.' : 'How La Royal Event processes and protects the personal data of website visitors and clients.'}
+      />
+      <div className="max-w-4xl mx-auto px-6">
+        <h1 className="text-3xl sm:text-5xl font-display font-black uppercase tracking-tighter leading-none mb-12">
+          {language === 'ru' ? 'Политика обработки персональных данных' : 'Privacy Policy'}
+        </h1>
+
+        <div className="prose prose-invert prose-lg max-w-none space-y-8 text-white/70 leading-relaxed">
+          {language === 'ru' ? <PolicyRu /> : <PolicyEn />}
         </div>
       </div>
     </div>

@@ -1,6 +1,12 @@
 import React, { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 import type { Photo } from '../content/la-royal-event';
+import { useLanguageOrRu } from '../LanguageContext';
+
+const LABELS = {
+  ru: { open: 'Открыть фото', close: 'Закрыть', prev: 'Предыдущее фото', next: 'Следующее фото' },
+  en: { open: 'Open photo', close: 'Close', prev: 'Previous photo', next: 'Next photo' },
+} as const;
 
 /**
  * Фото с увеличением: при наведении кадр мягко приближается и показывает
@@ -18,11 +24,13 @@ type ZoomImageProps = {
   loading?: 'lazy' | 'eager';
 };
 
-export const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, onOpen, className = '', imgClassName = '', loading = 'lazy' }) => (
+export const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, onOpen, className = '', imgClassName = '', loading = 'lazy' }) => {
+  const l = LABELS[useLanguageOrRu()];
+  return (
   <button
     type="button"
     onClick={onOpen}
-    aria-label={`Открыть фото: ${alt}`}
+    aria-label={`${l.open}: ${alt}`}
     className={`group relative block overflow-hidden cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-royal-lilac ${className}`}
   >
     <img
@@ -37,7 +45,8 @@ export const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, onOpen, classNam
       <Maximize2 className="w-3.5 h-3.5" />
     </span>
   </button>
-);
+  );
+};
 
 type PhotoSetProps = {
   photos: Photo[];
@@ -51,6 +60,7 @@ type PhotoSetProps = {
  * поэтому пререндер (SSG) отдаёт только миниатюры.
  */
 export const PhotoSet: React.FC<PhotoSetProps> = ({ photos, children }) => {
+  const l = LABELS[useLanguageOrRu()];
   const [index, setIndex] = useState<number | null>(null);
   const close = useCallback(() => setIndex(null), []);
   const step = useCallback(
@@ -88,15 +98,15 @@ export const PhotoSet: React.FC<PhotoSetProps> = ({ photos, children }) => {
           onClick={close}
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-royal-night/95 p-4 sm:p-8"
         >
-          <button type="button" onClick={close} aria-label="Закрыть" className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20">
+          <button type="button" onClick={close} aria-label={l.close} className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20">
             <X className="w-5 h-5" />
           </button>
           {photos.length > 1 && (
             <>
-              <button type="button" onClick={(e) => { e.stopPropagation(); step(-1); }} aria-label="Предыдущее фото" className={`${navClass} left-2 sm:left-4`}>
+              <button type="button" onClick={(e) => { e.stopPropagation(); step(-1); }} aria-label={l.prev} className={`${navClass} left-2 sm:left-4`}>
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              <button type="button" onClick={(e) => { e.stopPropagation(); step(1); }} aria-label="Следующее фото" className={`${navClass} right-2 sm:right-4`}>
+              <button type="button" onClick={(e) => { e.stopPropagation(); step(1); }} aria-label={l.next} className={`${navClass} right-2 sm:right-4`}>
                 <ChevronRight className="w-6 h-6" />
               </button>
             </>
