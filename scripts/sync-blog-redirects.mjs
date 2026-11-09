@@ -30,9 +30,9 @@ const escapeRegex = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 export function buildVercelRedirects(existing = []) {
   const kept = existing.filter((r) => !BLOG_SOURCE_RE.test(r.source));
   const blog = legacyEnRedirects().map(({ from, to }) => ({
-    // Без конечного слэша: Vercel (trailingSlash: true) сравнивает source
-    // с путём без слэша, так что правило ловит и /x, и /x/.
-    source: from.replace(/\/$/, ''),
+    // Со слэшем: при trailingSlash: true Vercel сначала 308-ит /x на /x/,
+    // а правило без слэша запрос /x/ не ловит (проверено на превью).
+    source: from,
     destination: to,
     statusCode: 301,
   }));
