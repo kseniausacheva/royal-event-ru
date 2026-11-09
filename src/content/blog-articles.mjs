@@ -54,6 +54,964 @@
 export const blogArticles = [
   // ───────────────────────────────────────────────────────────────────────
   {
+    "id": "konferenciya-v-egipte",
+    "datePublished": "2026-11-09",
+    "image": "/nl-4.jpg",
+    "ru": {
+      "title": "Конференция в Египте: как выбрать город, площадку и даты",
+      "category": "Деловые мероприятия",
+      "date": "9 ноября 2026",
+      "author": {
+        "name": "Ксения Усачёва",
+        "jobTitle": "основатель и генеральный директор La Royal Event"
+      },
+      "excerpt": "Каир, Шарм-эль-Шейх, Хургада или теплоход на Ниле: где проводить конференцию в Египте, как проверить зал, когда ехать и с чего начать подготовку за полгода. Разбираем на наших проектах.",
+      "links": [
+        {
+          "path": "/dmc",
+          "label": "DMC в Египте: что мы берём на себя"
+        },
+        {
+          "path": "/cruises",
+          "label": "Конференция на теплоходе: наш флот на Ниле"
+        },
+        {
+          "path": "/programmy",
+          "label": "Программы для группы после деловой части"
+        },
+        {
+          "path": "/portfolio",
+          "label": "Кейсы: Carlsberg, NL International, AFA"
+        },
+        {
+          "path": "/contact",
+          "label": "Запросить предложение"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Запрос «конференция в Египте» обычно приходит, когда компания уже решила вывезти людей за пределы офиса и хочет совместить три вещи: деловую программу, тёплое море и впечатления, ради которых участники согласятся лететь. Египет закрывает все три. Перелёт из Москвы занимает около 4–5 часов, сезон длится с октября по апрель, а у крупных отелей есть залы на сотни человек."
+        },
+        {
+          "type": "paragraph",
+          "text": "Дальше начинаются вопросы, от которых зависит результат: какой город выбрать, как понять, что зал подойдёт, когда ехать и сколько времени нужно на подготовку. Мы работаем в Египте как принимающая компания с 2004 года. В этой статье — то, что мы проверяем на каждом проекте, и примеры из наших конференций."
+        },
+        {
+          "type": "stat",
+          "number": "1000 участников",
+          "label": "самая большая из наших конференций в Египте — для Carlsberg в отеле Domina Coral Bay, Шарм-эль-Шейх: продакшн, развлекательная программа, кейтеринг и финальный гала-ужин"
+        },
+        {
+          "type": "heading",
+          "text": "Город: Каир, Шарм-эль-Шейх, Хургада или Нил",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Город выбирают под задачу конференции, а не по фотографиям отелей. Если нужны встречи с египетскими партнёрами и министерствами, конференцию проводят в Каире. Если цель — собрать команду, дать ей отдохнуть и при этом провести полноценную деловую часть, выбирают Красное море. Для узкого круга руководителей подходит теплоход на Ниле."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Где",
+            "Когда выбирать",
+            "О чём подумать заранее"
+          ],
+          "rows": [
+            [
+              "Каир",
+              "Отраслевые форумы, встречи с госструктурами и местными партнёрами, деловые миссии. В программе — пирамиды Гизы и Большой Египетский музей",
+              "Город большой, пробки серьёзные: трансферы между отелем и площадкой считаем с запасом. Удобнее, когда конференция и проживание в одном отеле"
+            ],
+            [
+              "Шарм-эль-Шейх",
+              "Конференция плюс отдых, группы от 100 до 1000+ человек. Курорты с собственными залами и международный конгресс-центр, где в 2022 году прошла климатическая конференция ООН COP27",
+              "Если программа не выходит за пределы Южного Синая, возможен въезд по штампу Sinai only. Для поездки в Каир или Луксор нужна обычная виза. Правила проверяем при бронировании"
+            ],
+            [
+              "Хургада и Эль-Гуна",
+              "Группы, которым важны море и активная программа: дайвинг, яхты, сафари",
+              "Большие залы есть не в каждом отеле. Вместимость проверяем на инспекции до того, как бронировать блок номеров"
+            ],
+            [
+              "Нил: Луксор — Асуан",
+              "Стратегическая сессия, совет директоров, конференция для топ-менеджмента. На теплоходе Soleil — для 80–100 человек",
+              "Пленарная часть идёт в лаунже судна. Презентации держим локально, а не в облаке: мобильная связь на реке бывает неровной"
+            ]
+          ],
+          "caption": "Четыре сценария, которые мы предлагаем чаще всего. Город можно сменить и внутри одной программы: например, деловая часть в Каире, а потом три дня на Красном море"
+        },
+        {
+          "type": "image",
+          "url": "/nl-2.jpg",
+          "alt": "Участники корпоративного форума NL International в конференц-зале отеля в Шарм-эль-Шейхе",
+          "caption": "NL International: 300 участников, 7 дней в Park Regency, Шарм-эль-Шейх. Деловая часть шла в конференц-залах отеля"
+        },
+        {
+          "type": "heading",
+          "text": "Площадка: что проверить, кроме вместимости",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Цифра «зал на 800 человек» в презентации отеля почти всегда относится к театральной рассадке без сцены. Если поставить сцену с LED-экраном, оставить проходы и зону для техники, получится значительно меньше. Поэтому зал мы проверяем по такому списку."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Вместимость в вашей рассадке. Театр, класс, кабаре и банкет — для одного и того же зала это четыре разные цифры.",
+            "Высота потолка и точки подвеса. От них зависит, поместятся ли экран нужного размера и световые фермы.",
+            "Монтажное окно. Когда зал свободен для застройки и сколько времени дают на демонтаж. Если накануне вечером в зале свадьба, монтаж придётся делать ночью.",
+            "Залы для параллельных сессий и комната для спикеров рядом с основным залом.",
+            "Регистрация и кофе-брейки. Где пройдут регистрацию 500 человек за 20–30 минут и где они будут пить кофе, не мешая следующей сессии.",
+            "Электричество. Хватит ли мощности на свет и звук и есть ли резервный генератор.",
+            "Затемнение. Дневной свет из окон забивает картинку на экране, а шторы есть не везде.",
+            "Номерной фонд. Помещается ли вся группа в один отель и сколько идти от корпусов до зала."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Инспекция до договора",
+          "text": "Каждый зал мы смотрим под конкретную программу: где встанет сцена, откуда пойдут гости после кофе-брейка, где поставить регистрацию и где будет режиссёрский пульт. Если заказчик хочет увидеть площадки сам, инспекционный визит укладываем в один-два дня."
+        },
+        {
+          "type": "heading",
+          "text": "Техника и продакшн: что везти, а что делать на месте",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "В отелях обычно есть базовое оборудование: проектор, микрофоны, небольшой пульт. Для конференции на сотни участников этого мало. Нужны сцена, LED-экраны, свет, звук на весь зал, трансляция на экраны и запись. У нас собственная база в Египте: конструкции, сцены, мебель, свет, звук и LED. Оборудование не нужно ввозить из-за рубежа, поэтому нет таможни и риска, что груз задержится."
+        },
+        {
+          "type": "image",
+          "url": "/nl-3.jpg",
+          "alt": "Панельная дискуссия на сцене конференции с LED-экраном и тематическим оформлением",
+          "caption": "Сцена, экраны и свет — наш продакшн, собранный на месте"
+        },
+        {
+          "type": "paragraph",
+          "text": "Если в зале говорят на нескольких языках, нужны кабины синхронного перевода и переводчики, которые знают отраслевую лексику. Так было на конференции AFA: 250 участников в Grand Rotana и Savoy, российские компании и арабские партнёры. Перевод бронируют вместе с залом, а не за неделю до заезда: хорошие синхронисты заняты заранее."
+        },
+        {
+          "type": "heading",
+          "text": "Даты: сезон, жара и Рамадан",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Лучшее время для конференции в Египте — с октября по апрель. Летом в Каире и на Красном море днём выше 35 °C. Деловая часть идёт в залах с кондиционерами, но экскурсии и выездные форматы приходится переносить на раннее утро и вечер."
+        },
+        {
+          "type": "paragraph",
+          "text": "На российские праздники — новогодние каникулы, начало ноября, майские — курорты заполняются туристами. Блок номеров под группу на эти даты бронируют раньше обычного, а залы в популярных отелях уходят первыми."
+        },
+        {
+          "type": "paragraph",
+          "text": "Рамадан каждый год смещается. В 2027 году он ожидается примерно с 8 февраля по 9 марта, точные даты зависят от луны. На курортах для гостей отелей почти ничего не меняется. В Каире у госучреждений и местных партнёров короче рабочий день, а вечер отдан ифтару. Если в программе деловые встречи с египетской стороной, это нужно учесть."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Срок до заезда",
+            "Что делаем"
+          ],
+          "rows": [
+            [
+              "6 месяцев",
+              "Бриф, выбор города и дат, инспекция, блок номеров и зала"
+            ],
+            [
+              "4 месяца",
+              "Программа и спикеры, договоры с площадками, концепция сцены и оформления"
+            ],
+            [
+              "2 месяца",
+              "Список участников, перелёт, меню, синхронный перевод, вечерняя программа"
+            ],
+            [
+              "1 месяц",
+              "Финальный список, расселение по номерам, поминутный тайминг, брендирование"
+            ],
+            [
+              "Неделя",
+              "Монтаж, техническая репетиция, брифинг координаторов"
+            ],
+            [
+              "После",
+              "Отчёт, фото и видео, закрывающие документы"
+            ]
+          ],
+          "caption": "Рабочий график подготовки конференции на 200–500 человек"
+        },
+        {
+          "type": "heading",
+          "text": "Программа вокруг деловой части",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Конференция в Египте почти всегда больше, чем зал. Участники ждут впечатлений, и вечера запоминаются не хуже пленарной сессии. У NL International после деловой части были мастер-классы, тимбилдинг-квесты, вечер «Luxury Egypt» и «Белая вечеринка» на скале под открытым небом. Для небольших групп можно организовать приватный доступ в Великую пирамиду до открытия плато или после его закрытия, а для топ-менеджмента — ужин на палубе теплохода на Ниле."
+        },
+        {
+          "type": "image",
+          "url": "/nl-28.jpg",
+          "alt": "Неформальная сессия участников корпоративного форума в лаунже отеля",
+          "caption": "Нетворкинг после пленарной сессии: неформальная часть важна не меньше докладов"
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Не ставьте пленарную сессию на день прилёта",
+          "text": "Многие рейсы прилетают ночью или рано утром, и в первый день люди уставшие. В день прилёта лучше заселение, отдых и welcome-ужин, а деловую часть начинать со второго дня. Так зал будет слушать спикеров, а не досыпать."
+        },
+        {
+          "type": "heading",
+          "text": "Кто нужен на месте",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Для группы в несколько сотен человек на месте работает целая команда: руководитель проекта, координаторы трансферов и регистрации, техническая группа, хостес, круглосуточный дежурный офис. Заказчик общается с одним человеком, а за ним стоит вся команда. Если организатор планирует вести конференцию удалённо и прилететь за день до старта, это повод задать ему лишние вопросы."
+        },
+        {
+          "type": "heading",
+          "text": "Вопросы, которые стоит задать организатору",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Какие площадки вы видели сами и когда в последний раз были на инспекции?",
+            "У вас своя команда в Египте или вы работаете через местного партнёра?",
+            "Чьё оборудование будет в зале и кто отвечает, если оно откажет?",
+            "Кто встречает группу в аэропорту и кто на связи ночью?",
+            "Что будет, если число участников изменится за месяц до заезда?",
+            "Какие документы вы закрываете и в какой валюте договор?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "У нас офисы в Каире, Шарм-эль-Шейхе и Москве, своя команда и свой продакшн в Египте. Пришлите даты, число участников и формат конференции — предложим город, две-три площадки и схему дней."
+        }
+      ]
+    },
+    "en": {
+      "title": "Conference in Egypt: How to Choose the City, Venue and Dates",
+      "category": "Business Events",
+      "date": "9 November 2026",
+      "author": {
+        "name": "Ksenia Usacheva",
+        "jobTitle": "founder and CEO of La Royal Event"
+      },
+      "excerpt": "Cairo, Sharm El Sheikh, Hurghada or a Nile ship: where to hold a conference in Egypt, how to check a venue, when to go and how to plan six months out. With examples from our own projects.",
+      "links": [
+        {
+          "path": "/dmc",
+          "label": "What our DMC in Egypt covers"
+        },
+        {
+          "path": "/cruises",
+          "label": "Conferences on board: our Nile fleet"
+        },
+        {
+          "path": "/programmy",
+          "label": "Group programs after the business sessions"
+        },
+        {
+          "path": "/portfolio",
+          "label": "Case studies: Carlsberg, NL International, AFA"
+        },
+        {
+          "path": "/contact",
+          "label": "Request a proposal"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "A request for a conference in Egypt usually comes once a company has decided to take its people out of the office and wants three things at once: a real business agenda, a warm sea and an experience worth the flight. Egypt covers all three. The season runs from October to April, flights from Europe and the Gulf are short, and the large hotels have meeting rooms for hundreds of delegates."
+        },
+        {
+          "type": "paragraph",
+          "text": "Then come the questions that decide the outcome: which city, how to tell whether a room will work, when to go and how much lead time you need. We have worked in Egypt as a destination management company since 2004. This article covers what we check on every project, with examples from our own conferences."
+        },
+        {
+          "type": "stat",
+          "number": "1,000 delegates",
+          "label": "our largest conference in Egypt, for Carlsberg at Domina Coral Bay, Sharm El Sheikh: production, entertainment, catering and the closing gala dinner"
+        },
+        {
+          "type": "heading",
+          "text": "The city: Cairo, Sharm El Sheikh, Hurghada or the Nile",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Choose the city for what the conference has to achieve, not for the hotel photos. If you need meetings with Egyptian partners and ministries, the conference belongs in Cairo. If the goal is to bring the team together, let them rest and still run a full business program, go to the Red Sea. For a small leadership group, consider a Nile ship."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Where",
+            "When it fits",
+            "What to plan for"
+          ],
+          "rows": [
+            [
+              "Cairo",
+              "Industry forums, meetings with government bodies and local partners, trade missions. The Giza pyramids and the Grand Egyptian Museum are on the program",
+              "A big city with heavy traffic: we build generous margins into every transfer. It works best when the sessions and the rooms are in the same hotel"
+            ],
+            [
+              "Sharm El Sheikh",
+              "Conference plus downtime, groups from 100 to 1,000+. Resorts with their own ballrooms and the international convention centre that hosted the UN climate conference COP27 in 2022",
+              "If the program stays within South Sinai, some passports can enter on a Sinai-only stamp. A trip to Cairo or Luxor needs a full visa. We confirm the current rules at booking"
+            ],
+            [
+              "Hurghada and El Gouna",
+              "Groups who want the sea and an active program: diving, yachts, desert safaris",
+              "Not every hotel has a large ballroom. We check capacity on a site inspection before booking the room block"
+            ],
+            [
+              "The Nile: Luxor to Aswan",
+              "Strategy sessions, board meetings, leadership conferences. On our ship Soleil, for 80–100 people",
+              "The plenary runs in the ship's lounge. Keep presentations offline rather than in the cloud: mobile coverage on the river can be patchy"
+            ]
+          ],
+          "caption": "The four scenarios we propose most often. You can also change cities within one program: business days in Cairo, then three days on the Red Sea"
+        },
+        {
+          "type": "image",
+          "url": "/nl-2.jpg",
+          "alt": "NL International forum delegates in a hotel conference hall in Sharm El Sheikh",
+          "caption": "NL International: 300 delegates, 7 days at Park Regency, Sharm El Sheikh. The business sessions ran in the hotel's conference halls"
+        },
+        {
+          "type": "heading",
+          "text": "The venue: what to check besides capacity",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "When a hotel brochure says a room holds 800, it almost always means theatre seating with no stage. Add a stage with an LED wall, aisles and a technical zone, and the number drops considerably. This is the list we check every room against."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Capacity in your layout. Theatre, classroom, cabaret and banquet give four different numbers for the same room.",
+            "Ceiling height and rigging points. They decide whether the screen size you want and the lighting trusses will fit.",
+            "The build window. When the room is free for set-up and how long you get to strike it. If there is a wedding in the room the night before, the build happens overnight.",
+            "Breakout rooms and a speaker room close to the main hall.",
+            "Registration and coffee breaks. Where 500 people can register in 20–30 minutes, and where they can have coffee without disturbing the next session.",
+            "Power. Enough capacity for lighting and sound, and a backup generator.",
+            "Blackout. Daylight from the windows washes out the screen, and not every room has blinds.",
+            "Rooms. Whether the whole group fits in one hotel, and how far it is from the guest blocks to the hall."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Inspect before you sign",
+          "text": "We look at every room against the actual program: where the stage goes, which way delegates walk after the coffee break, where registration sits and where the control desk will be. If the client wants to see the venues in person, we fit the site inspection into one or two days."
+        },
+        {
+          "type": "heading",
+          "text": "Technical production: what to bring and what to source locally",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Hotels usually have basic kit: a projector, microphones, a small mixing desk. For a conference of several hundred people that is not enough. You need a stage, LED screens, lighting, sound that covers the whole room, relay to side screens and recording. We have our own production base in Egypt: staging, structures, furniture, lighting, sound and LED. Nothing has to be shipped in from abroad, so there is no customs clearance and no risk of a delayed shipment."
+        },
+        {
+          "type": "image",
+          "url": "/nl-3.jpg",
+          "alt": "Panel discussion on a conference stage with an LED screen and themed set design",
+          "caption": "Stage, screens and lighting: our own production, built on site"
+        },
+        {
+          "type": "paragraph",
+          "text": "If the room speaks several languages, you need simultaneous interpretation booths and interpreters who know the industry vocabulary. That was the case at the AFA conference: 250 delegates at the Grand Rotana and the Savoy, Russian companies meeting Arab partners. Book interpretation together with the venue, not a week before arrival: good interpreters are booked early."
+        },
+        {
+          "type": "heading",
+          "text": "Dates: season, heat and Ramadan",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The best time for a conference in Egypt is October to April. In summer, daytime temperatures in Cairo and on the Red Sea go above 35 °C. The sessions run in air-conditioned halls, but excursions and outdoor formats have to move to early morning and evening."
+        },
+        {
+          "type": "paragraph",
+          "text": "Around major holidays in your source markets, such as Christmas and New Year, Easter and the school breaks, the resorts fill up with leisure travellers. Book the room block for those dates earlier than usual: the ballrooms in popular hotels go first."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ramadan moves every year. In 2027 it is expected from about 8 February to 9 March, with the exact dates set by the moon. For hotel guests at the resorts, very little changes. In Cairo, government offices and local partners work shorter days, and evenings belong to iftar. If your program includes meetings with Egyptian counterparts, plan around it."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Time before arrival",
+            "What happens"
+          ],
+          "rows": [
+            [
+              "6 months",
+              "Brief, city and dates, site inspection, room block and venue"
+            ],
+            [
+              "4 months",
+              "Program and speakers, venue contracts, stage and set concept"
+            ],
+            [
+              "2 months",
+              "Delegate list, flights, menus, interpretation, evening program"
+            ],
+            [
+              "1 month",
+              "Final list, rooming list, minute-by-minute run of show, branding"
+            ],
+            [
+              "1 week",
+              "Build, technical rehearsal, coordinator briefing"
+            ],
+            [
+              "After",
+              "Report, photos and video, final invoices and documents"
+            ]
+          ],
+          "caption": "Our working timeline for a conference of 200–500 delegates"
+        },
+        {
+          "type": "heading",
+          "text": "The program around the sessions",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A conference in Egypt is almost always more than the meeting room. Delegates expect an experience, and the evenings stay with them as long as the plenary. After the business days, NL International had masterclasses, team-building quests, a “Luxury Egypt” night and a White Party on an open-air clifftop. For smaller groups, we can arrange private access to the Great Pyramid before the plateau opens or after it closes, and for leadership teams, dinner on the deck of a Nile ship."
+        },
+        {
+          "type": "image",
+          "url": "/nl-28.jpg",
+          "alt": "Informal session of corporate forum delegates in a hotel lounge",
+          "caption": "Networking after the plenary: the informal part matters as much as the talks"
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Don't schedule the plenary on arrival day",
+          "text": "Many flights land at night or early in the morning, and on day one people are tired. Use arrival day for check-in, rest and a welcome dinner, and start the sessions on day two. That way the room listens to the speakers instead of catching up on sleep."
+        },
+        {
+          "type": "heading",
+          "text": "Who you need on the ground",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "For a group of several hundred, a full team works on site: a project director, coordinators for transfers and registration, a technical crew, hosts and a 24-hour duty office. The client deals with one person, with the whole team behind them. If an organiser plans to run your conference remotely and fly in the day before, ask them a few more questions."
+        },
+        {
+          "type": "heading",
+          "text": "Questions to ask your organiser",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Which venues have you seen yourselves, and when was your last site inspection?",
+            "Do you have your own team in Egypt, or do you work through a local partner?",
+            "Whose equipment will be in the room, and who is responsible if it fails?",
+            "Who meets the group at the airport, and who answers the phone at night?",
+            "What happens if the number of delegates changes a month before arrival?",
+            "What documents do you provide, and what currency is the contract in?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "We have offices in Cairo, Sharm El Sheikh and Moscow, and our own team and production in Egypt. Send us your dates, delegate numbers and format, and we will propose a city, two or three venues and a day-by-day outline."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
+    "id": "gala-uzhin-v-egipte",
+    "datePublished": "2026-11-09",
+    "image": "/nl-29.jpg",
+    "ru": {
+      "title": "Гала-ужин в Египте: шесть площадок, сценарий вечера и подготовка",
+      "category": "Локации",
+      "date": "9 ноября 2026",
+      "author": {
+        "name": "Ксения Усачёва",
+        "jobTitle": "основатель и генеральный директор La Royal Event"
+      },
+      "excerpt": "Зал отеля, пляж, пустыня, палуба теплохода, остров на Ниле или вид на пирамиды: где провести гала-ужин для компании в Египте, как выстроить вечер по минутам и что решить заранее.",
+      "links": [
+        {
+          "path": "/cruises",
+          "label": "Ужин на палубе и на острове: флот на Ниле"
+        },
+        {
+          "path": "/dmc",
+          "label": "Приватный доступ к пирамидам Гизы"
+        },
+        {
+          "path": "/programmy",
+          "label": "Программы для группы в Египте"
+        },
+        {
+          "path": "/portfolio",
+          "label": "Кейсы: Carlsberg, NL International, Four Seasons"
+        },
+        {
+          "path": "/contact",
+          "label": "Обсудить вечер для вашей компании"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Из корпоративного выезда через год обычно помнят вечер, а не доклады. Гала-ужин — это момент, когда компания собирается вместе, первое лицо говорит главное, а лучших сотрудников награждают при всех. Если вечер получился, о нём рассказывают новичкам. Если нет, выезд запоминается паузами и остывшим горячим."
+        },
+        {
+          "type": "paragraph",
+          "text": "В Египте выбор площадок шире, чем на большинстве направлений: бальный зал отеля, пляж Красного моря, бедуинский лагерь в пустыне, палуба теплохода, остров на Ниле, вид на пирамиды. Мы проводили гала-ужин Carlsberg на 1000 гостей, вечер «Luxury Egypt» и «Белую вечеринку» для NL International, VIP-ужин в бедуинском стиле в Four Seasons. Ниже — как выбрать площадку, выстроить сценарий и что решить до заезда."
+        },
+        {
+          "type": "heading",
+          "text": "Шесть площадок для гала-ужина в Египте",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "1. Бальный зал отеля",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Самый предсказуемый вариант. Погода и ветер не мешают, кухня рядом, горячее приходит горячим, а свет и звук ставятся без ограничений. Подходит для групп от нескольких сотен человек. Но зал выглядит как зал, поэтому здесь работает оформление: драпировка потолка, свет, сцена, тематическая застройка. Для гала-ужина Carlsberg на 1000 гостей мы оформили зал полностью, на собственных конструкциях."
+        },
+        {
+          "type": "heading",
+          "text": "2. Пляж или терраса у моря",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Закат над Красным морем — лучшая декорация для начала вечера. Минусы тоже есть: ветер, песок в аппаратуре, звук на открытом воздухе разносится далеко, а у многих отелей есть ограничения на громкую музыку после определённого часа. Для такой площадки всегда нужен план Б: шатёр или зал на резерве на случай ветра."
+        },
+        {
+          "type": "heading",
+          "text": "3. Бедуинский лагерь в пустыне",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Ковры, низкие столы, костры, музыка и небо, на котором видно все звёзды. Дорога в пустыню — отдельная часть впечатления, но её нужно продумать: на джипах или автобусах, сколько рейсов, кто едет первым. Зимой ночью в пустыне холодно, поэтому пледы раскладываем заранее. Бедуинскую эстетику можно привезти и в отель: так мы сделали VIP-ужин в саду Four Seasons, с дизайн-концепцией, шоу и брендированными подарками."
+        },
+        {
+          "type": "image",
+          "url": "/nl-8.jpg",
+          "alt": "Огненное шоу на вечерней площадке под открытым небом в Шарм-эль-Шейхе",
+          "caption": "Огненное шоу на вечерней программе NL International, Шарм-эль-Шейх"
+        },
+        {
+          "type": "heading",
+          "text": "4. Палуба теплохода на Ниле",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Ужин на верхней палубе на закате, на берегах пальмы и храмы. На теплоходе Soleil ресторан принимает 110 гостей за одну посадку, а лаундж-бар площадью 260 м² вечером становится сценой. Число гостей ограничено вместимостью судна, поэтому такой формат выбирают для групп до ста человек или для топ-менеджмента в рамках большой программы."
+        },
+        {
+          "type": "image",
+          "url": "/cruises/soleil-sunset-deck.webp",
+          "alt": "Верхняя палуба теплохода Soleil на Ниле вечером",
+          "caption": "Вечер на верхней палубе Soleil: ужин можно накрыть прямо здесь"
+        },
+        {
+          "type": "heading",
+          "text": "5. Остров или храм",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Для небольших групп — ужин у костра на нильском острове или приватный вечер в храме после закрытия для туристов. Мы делаем это на чартерном судне Lumière: оно встаёт на ночь у островов, где нет других кораблей. Для таких вечеров нужны разрешения, и получать их — работа принимающей стороны, а не заказчика."
+        },
+        {
+          "type": "heading",
+          "text": "6. С видом на пирамиды",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Закат над плато Гизы — сильный финал дня в Каире. Ужин ставят в ресторане или на террасе с видом на пирамиды. Его можно соединить с приватным доступом на плато: вечерний слот заканчивается около 19:00–20:00, и группа едет на ужин сразу после того, как побывала внутри Великой пирамиды без посторонних. На один пермит приватного доступа — до 50 гостей."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Площадка",
+            "Чем хороша",
+            "О чём подумать заранее"
+          ],
+          "rows": [
+            [
+              "Зал отеля",
+              "Не зависит от погоды, подходит для больших групп",
+              "Оформление и свет, иначе вечер выглядит как банкет"
+            ],
+            [
+              "Пляж, терраса",
+              "Закат и море",
+              "Ветер, ограничения по шуму, план Б"
+            ],
+            [
+              "Пустыня",
+              "Самое атмосферное впечатление",
+              "Трансфер, холод ночью зимой, свет и звук без городской сети"
+            ],
+            [
+              "Палуба теплохода",
+              "Нил на закате, вся группа на одном судне",
+              "Вместимость судна"
+            ],
+            [
+              "Остров, храм",
+              "Эксклюзивность, никого вокруг",
+              "Разрешения, небольшие группы"
+            ],
+            [
+              "Вид на пирамиды",
+              "Финал дня в Каире",
+              "Пробки, время заката, пермиты на плато"
+            ]
+          ],
+          "caption": "Шпаргалка по площадкам"
+        },
+        {
+          "type": "heading",
+          "text": "Сценарий вечера: таймлайн, который работает",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Гала-ужин редко проваливается из-за меню. Чаще его портят паузы: гости час стоят с бокалами, речи затягиваются, шоу начинается, когда принесли горячее. Вот пример таймлайна для группы на 300 человек, который мы подстраиваем под каждую компанию."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "19:00 — сбор гостей, welcome-напитки, фотозона. Не больше 30–40 минут: дольше люди устают стоять.",
+            "19:40 — открытие: ведущий, приветствие первого лица. Речь — до пяти минут.",
+            "19:50 — первая подача. На сцене только фоновая музыка.",
+            "20:30 — награждение лучших сотрудников блоками по 10–15 минут между подачами.",
+            "21:30 — шоу-программа: хедлайнер или тематическое шоу.",
+            "22:15 — десерт и переход к танцам, на сцене DJ.",
+            "00:00 — закрытие или after-party на другой площадке."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "Правило одной точки внимания",
+          "text": "В каждый момент вечера гости смотрят в одно место: на сцену, в тарелку или друг на друга. Если шоу идёт во время горячего, проигрывают оба: еда остывает, а артисты выступают для зала, который занят ужином."
+        },
+        {
+          "type": "heading",
+          "text": "Тема и шоу",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Египет сам подсказывает тему. На вечер «Luxury Egypt» гости NL International пришли в образах, декор был в чёрном и золоте с египетскими мотивами. «Белая вечеринка» на скале — дресс-код, который соблюдают все, и фотографии, которые потом месяцами появляются в соцсетях компании."
+        },
+        {
+          "type": "image",
+          "url": "/nl-24.jpg",
+          "alt": "Гости тематической вечеринки «Luxury Egypt» в образах на фоне золотых декораций",
+          "caption": "NL International: вечер «Luxury Egypt», гости в образах, декор в чёрном и золоте"
+        },
+        {
+          "type": "paragraph",
+          "text": "Из местных шоу хорошо работают танура (суфийский танец с вращающимися юбками), бедуинские музыканты, огненное шоу, живой бэнд. Если нужен хедлайнер, мы ведём переговоры с менеджментом и закрываем технический и бытовой райдер. В Египет мы привозили David Guetta, Son of Son, Tom Enzy и других артистов."
+        },
+        {
+          "type": "heading",
+          "text": "Что решить заранее",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Дресс-код. Объявить вместе с анонсом выезда, чтобы гости взяли наряды с собой.",
+            "Меню и ограничения. Вегетарианцы, аллергии, халяль — собрать в регистрационной анкете, а не выяснять за столом.",
+            "Бар. Формат и время закрытия. Если группа живёт по all-inclusive, уточнить, что входит в пакет на внешней площадке.",
+            "Трансфер. Если площадка вне отеля, обратные автобусы уходят в несколько рейсов, и первый — раньше, для тех, кто устал.",
+            "План Б для открытых площадок: ветер, песчаная буря, ограничения по шуму.",
+            "Разрешения. Площадки вне отелей, пиротехника, съёмка с дрона — в Египте для неё нужно специальное разрешение.",
+            "Фото и видео. Фотограф и видеограф, а для ролика о выезде — отдельная съёмочная группа.",
+            "Подарки и брендированная продукция. Производим на месте, а не везём чемоданами."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Не ставьте гала-ужин на последний вечер перед ранним вылетом",
+          "text": "Если рейс в шесть утра, автобусы уходят из отеля около трёх ночи, и половина гостей пропустит танцы или поедет в аэропорт без сна. Лучше предпоследний вечер, а в последний — свободное время или лёгкий ужин."
+        },
+        {
+          "type": "paragraph",
+          "text": "Напишите, сколько будет гостей, в каком городе и что должно случиться за этот вечер. Предложим две-три площадки и сценарий под вашу компанию."
+        }
+      ]
+    },
+    "en": {
+      "title": "Gala Dinner in Egypt: Six Venues, the Run of the Evening and What to Plan",
+      "category": "Locations",
+      "date": "9 November 2026",
+      "author": {
+        "name": "Ksenia Usacheva",
+        "jobTitle": "founder and CEO of La Royal Event"
+      },
+      "excerpt": "A hotel ballroom, a beach, the desert, a ship's deck, a Nile island or a pyramid view: where to hold a corporate gala dinner in Egypt, how to run the evening minute by minute and what to settle in advance.",
+      "links": [
+        {
+          "path": "/cruises",
+          "label": "Dinner on deck and on an island: our Nile fleet"
+        },
+        {
+          "path": "/dmc",
+          "label": "Private access to the Giza pyramids"
+        },
+        {
+          "path": "/programmy",
+          "label": "Group programs in Egypt"
+        },
+        {
+          "path": "/portfolio",
+          "label": "Case studies: Carlsberg, NL International, Four Seasons"
+        },
+        {
+          "path": "/contact",
+          "label": "Plan an evening for your company"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "A year after a corporate trip, people remember the evening, not the presentations. The gala dinner is when the whole company is in one room, the CEO says what matters and the best performers are recognised in front of everyone. When the evening works, people tell new hires about it. When it doesn't, the trip is remembered for long pauses and cold main courses."
+        },
+        {
+          "type": "paragraph",
+          "text": "Egypt offers more venue options than most destinations: a hotel ballroom, a Red Sea beach, a Bedouin camp in the desert, the deck of a Nile ship, an island, a view of the pyramids. We have produced a gala dinner for 1,000 guests for Carlsberg, a “Luxury Egypt” night and a White Party for NL International, and a VIP Bedouin-style dinner at the Four Seasons. Here is how to choose the venue, build the run of the evening and what to decide before arrival."
+        },
+        {
+          "type": "heading",
+          "text": "Six venues for a gala dinner in Egypt",
+          "level": 2
+        },
+        {
+          "type": "heading",
+          "text": "1. Hotel ballroom",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "The most predictable option. Weather and wind don't matter, the kitchen is next door, hot food arrives hot, and lighting and sound have no limits. It suits groups of several hundred. But a ballroom looks like a ballroom, so the design does the work: ceiling drapes, lighting, a stage, themed sets. For Carlsberg's gala dinner for 1,000 guests, we transformed the entire room using our own structures."
+        },
+        {
+          "type": "heading",
+          "text": "2. Beach or seafront terrace",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Sunset over the Red Sea is the best possible backdrop for the start of the evening. There are trade-offs: wind, sand in the equipment, sound that carries far in the open air, and many hotels restrict loud music after a certain hour. An outdoor venue always needs a plan B: a marquee or a ballroom on standby in case of wind."
+        },
+        {
+          "type": "heading",
+          "text": "3. Bedouin camp in the desert",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Carpets, low tables, fires, music and a sky full of stars. The drive into the desert is part of the experience, but it needs planning: jeeps or coaches, how many runs, who goes first. Desert nights are cold in winter, so we lay out blankets in advance. You can also bring the Bedouin look into a hotel: that is how we produced a VIP dinner in the gardens of the Four Seasons, with a design concept, entertainment and branded gifts."
+        },
+        {
+          "type": "image",
+          "url": "/nl-8.jpg",
+          "alt": "Fire show at an open-air evening venue in Sharm El Sheikh",
+          "caption": "Fire show during the NL International evening program, Sharm El Sheikh"
+        },
+        {
+          "type": "heading",
+          "text": "4. On the deck of a Nile ship",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Dinner on the top deck at sunset, with palms and temples on the banks. On our ship Soleil, the restaurant seats 110 guests in a single sitting, and the 260 m² lounge bar becomes a stage at night. Guest numbers are limited by the ship's capacity, so this format works for groups of up to a hundred, or for the leadership team within a larger program."
+        },
+        {
+          "type": "image",
+          "url": "/cruises/soleil-sunset-deck.webp",
+          "alt": "Top deck of the Soleil ship on the Nile in the evening",
+          "caption": "Evening on Soleil's top deck: dinner can be set up right here"
+        },
+        {
+          "type": "heading",
+          "text": "5. An island or a temple",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "For small groups: dinner by a fire on a Nile island, or a private evening in a temple after it closes to visitors. We do this on our charter ship Lumière, which moors overnight at islands where no other ships stop. These evenings need permits, and obtaining them is the job of the destination management company, not the client."
+        },
+        {
+          "type": "heading",
+          "text": "6. With a view of the pyramids",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Sunset over the Giza plateau is a strong finale to a day in Cairo. Dinner is set in a restaurant or on a terrace overlooking the pyramids. You can combine it with private access to the plateau: the evening slot ends at around 19:00–20:00, and the group goes straight to dinner after visiting the inside of the Great Pyramid with no one else around. One private access permit covers up to 50 guests."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Venue",
+            "Why it works",
+            "What to plan for"
+          ],
+          "rows": [
+            [
+              "Hotel ballroom",
+              "Weatherproof, suits large groups",
+              "Design and lighting, or it looks like a banquet"
+            ],
+            [
+              "Beach, terrace",
+              "Sunset and the sea",
+              "Wind, noise limits, a plan B"
+            ],
+            [
+              "Desert",
+              "The most atmospheric experience",
+              "Transfers, cold winter nights, power for lights and sound"
+            ],
+            [
+              "Ship's deck",
+              "The Nile at sunset, the whole group on one ship",
+              "The ship's capacity"
+            ],
+            [
+              "Island, temple",
+              "Exclusivity, no one else around",
+              "Permits, small groups only"
+            ],
+            [
+              "Pyramid view",
+              "A finale to a day in Cairo",
+              "Traffic, sunset time, plateau permits"
+            ]
+          ],
+          "caption": "Venue cheat sheet"
+        },
+        {
+          "type": "heading",
+          "text": "The run of the evening: a timeline that works",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A gala dinner rarely fails because of the menu. What spoils it is dead time: guests standing with a glass for an hour, speeches that run long, a show that starts just as the main course arrives. Here is a sample timeline for 300 guests, which we adapt for each company."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "19:00: arrival, welcome drinks, photo zone. No more than 30–40 minutes: after that, people get tired of standing.",
+            "19:40: opening by the host, welcome from the CEO. Five minutes at most.",
+            "19:50: first course. Background music only on stage.",
+            "20:30: awards for top performers, in 10–15-minute blocks between courses.",
+            "21:30: show: a headliner or a themed performance.",
+            "22:15: dessert and the move to dancing, with a DJ on stage.",
+            "00:00: close, or an after-party at another venue."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "One focus at a time",
+          "text": "At every moment of the evening, guests should be looking at one thing: the stage, their plate or each other. If the show runs during the main course, both lose: the food goes cold, and the performers play to a room that is busy eating."
+        },
+        {
+          "type": "heading",
+          "text": "Theme and entertainment",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Egypt suggests the theme by itself. For the “Luxury Egypt” night, NL International's guests came in costume, and the set was black and gold with Egyptian motifs. A White Party on a clifftop gives you a dress code everyone follows and photos that keep appearing on the company's social channels for months."
+        },
+        {
+          "type": "image",
+          "url": "/nl-24.jpg",
+          "alt": "Guests in costume at a “Luxury Egypt” themed party against a gold set",
+          "caption": "NL International: the “Luxury Egypt” night, guests in costume, black-and-gold set"
+        },
+        {
+          "type": "paragraph",
+          "text": "Among local acts, tanoura (the Sufi whirling dance with spinning skirts), Bedouin musicians, fire shows and live bands all work well. If you want a headliner, we negotiate with the artist's management and handle the technical and hospitality riders. We have brought David Guetta, Son of Son, Tom Enzy and other artists to Egypt."
+        },
+        {
+          "type": "heading",
+          "text": "What to settle in advance",
+          "level": 2
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Dress code. Announce it with the trip, so guests pack accordingly.",
+            "Menus and dietary needs. Vegetarian, allergies, halal: collect them in the registration form, not at the table.",
+            "The bar. Format and closing time. If the group is on all-inclusive, check what the package covers at an off-site venue.",
+            "Transfers. If the venue is outside the hotel, return coaches run in several waves, with the first leaving early for those who are tired.",
+            "A plan B for outdoor venues: wind, sandstorms, noise restrictions.",
+            "Permits. Off-site venues, pyrotechnics and drone filming: in Egypt, drones need a special permit.",
+            "Photo and video. A photographer and a videographer, and a separate crew if you want a film of the trip.",
+            "Gifts and branded items. We produce them locally rather than bringing suitcases of merchandise."
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Don't put the gala on the last night before an early flight",
+          "text": "If the flight leaves at six in the morning, coaches leave the hotel around three, and half the guests will miss the dancing or head to the airport without sleep. Use the second-to-last evening, and keep the last one for free time or a light dinner."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tell us how many guests, which city and what this evening needs to achieve. We will propose two or three venues and a run of the evening for your company."
+        }
+      ]
+    }
+  },
+  // ───────────────────────────────────────────────────────────────────────
+  {
     "id": "mice4u-2026-egipet-mice-dmc",
     "datePublished": "2026-09-18",
     "image": "/mice4u/photozone.webp",
