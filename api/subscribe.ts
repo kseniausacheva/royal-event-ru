@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { createTransport, escapeHtml, RECIPIENT, stamp } from './_mail';
+import { createTransport, escapeHtml, RECIPIENT, stamp } from './_mail.js';
 
 /** POST /api/subscribe — подписка на рассылку (Vercel, .com). На .ru — public/subscribe.php. */
 export default async function handler(req: VercelRequest, res: VercelResponse) {

@@ -35,6 +35,8 @@ const ContactForm = () => {
   const [mailingConsent, setMailingConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  // Сбой сервера (5xx, не-JSON, сеть): показываем прямые контакты, чтобы заявка не терялась
+  const [serverDown, setServerDown] = useState(false);
 
   const ru = language === 'ru';
   const DIRECTIONS = ru ? ['Египет', 'Россия', 'Другое'] : ['Egypt', 'Russia', 'Other'];
@@ -59,6 +61,7 @@ const ContactForm = () => {
     }
     setStatus('sending');
     setErrorMsg('');
+    setServerDown(false);
 
     // Ответы брифа + комментарий склеиваются в message — формат письма для
     // отдела продаж, contact.php остаётся без изменений
@@ -81,7 +84,9 @@ const ContactForm = () => {
         body: JSON.stringify({ ...formData, message, mailingConsent }),
       });
 
-      const data = await res.json();
+      // 5xx от Vercel приходит не в JSON — это сбой сервера, а не ошибка в полях
+      const data = await res.json().catch(() => null);
+      if (!data || res.status >= 500) throw new Error(`server ${res.status}`);
 
       if (res.ok) {
         setStatus('success');
@@ -94,7 +99,10 @@ const ContactForm = () => {
       }
     } catch {
       setStatus('error');
-      setErrorMsg(language === 'ru' ? 'Ошибка сети. Попробуйте позже.' : 'Network error. Please try again.');
+      setServerDown(true);
+      setErrorMsg(language === 'ru'
+        ? 'Не удалось отправить заявку. Напишите нам напрямую — ответим в рабочее время:'
+        : 'We could not send your request. Please message us directly and we will reply during business hours:');
     }
   };
 
@@ -300,6 +308,13 @@ const ContactForm = () => {
 
         {errorMsg && (
           <p className="text-red-400 text-sm text-center">{errorMsg}</p>
+        )}
+        {serverDown && (
+          <div className="flex flex-wrap justify-center gap-3 text-sm">
+            <a href="https://wa.me/79261233328" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-xl border border-white/20 hover:border-royal-pink hover:text-royal-pink transition-colors">WhatsApp</a>
+            <a href="https://t.me/kseniamerry" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-xl border border-white/20 hover:border-royal-pink hover:text-royal-pink transition-colors">Telegram</a>
+            <a href="mailto:sale@royaleventandmice.ru" className="px-4 py-2 rounded-xl border border-white/20 hover:border-royal-pink hover:text-royal-pink transition-colors">sale@royaleventandmice.ru</a>
+          </div>
         )}
 
         <button

@@ -96,7 +96,7 @@ describe('ContactForm (integration)', () => {
     });
   });
 
-  it('shows error message on network failure', async () => {
+  it('shows direct contacts when the network fails', async () => {
     const fetchMock = vi.fn().mockRejectedValue(new Error('network down'));
     vi.stubGlobal('fetch', fetchMock);
 
@@ -121,7 +121,38 @@ describe('ContactForm (integration)', () => {
     fireEvent.submit(form);
 
     await waitFor(() => {
-      expect(screen.getByText(/ошибка/i)).toBeInTheDocument();
+      expect(screen.getByText(/Не удалось отправить заявку/i)).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: 'WhatsApp' })).toHaveAttribute('href', 'https://wa.me/79261233328');
+    });
+  });
+  it('shows direct contacts when the server answers 500 without JSON', async () => {
+    // Так отвечал Vercel при падении функции: 500 и HTML вместо JSON
+    const fetchMock = vi.fn().mockResolvedValue({ ok: false, status: 500, json: () => Promise.reject(new SyntaxError('Unexpected token')) });
+    vi.stubGlobal('fetch', fetchMock);
+
+    renderForm('/ru');
+    const form = document.querySelector('form')!;
+
+    // Обязательные чипы брифа
+    fireEvent.click(screen.getByRole('button', { name: 'Египет' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Конференция' }));
+
+    // Первый text-инпут — «Когда планируете» из брифа, имя — второй
+    const nameInput = document.querySelectorAll('input[type="text"]')[1] as HTMLInputElement;
+    const emailInput = document.querySelector('input[type="email"]') as HTMLInputElement;
+    const messageInput = document.querySelector('textarea') as HTMLTextAreaElement;
+    nameInput.value = 'A';
+    emailInput.value = 'a@a.com';
+    messageInput.value = 'Test';
+    fireEvent.input(nameInput);
+    fireEvent.input(emailInput);
+    fireEvent.input(messageInput);
+
+    fireEvent.submit(form);
+
+    await waitFor(() => {
+      expect(screen.getByText(/Не удалось отправить заявку/i)).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: 'sale@royaleventandmice.ru' })).toHaveAttribute('href', 'mailto:sale@royaleventandmice.ru');
     });
   });
 
