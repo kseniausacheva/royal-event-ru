@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">A four-day conference program</title>
+  <desc id="desc">Four connected day cards show arrival, plenary sessions, group work and departure.</desc>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="65%">
+      <stop offset="0" stop-color="#c6a4f5" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#0c0814" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#241a35"/>
+      <stop offset="1" stop-color="#151020"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#c6a4f5"/>
+      <stop offset="1" stop-color="#f5a0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#0c0814"/>
+  <ellipse cx="600" cy="400" rx="570" ry="240" fill="url(#halo)"/>
+  <path d="M96 260H1104M96 540H1104" fill="none" stroke="#c6a4f5" stroke-opacity=".08"/>
+  <path d="M120 400H1080" fill="none" stroke="#c6a4f5" stroke-opacity=".1" stroke-dasharray="3 13"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M285 400H915" stroke="#c6a4f5" stroke-opacity=".45" stroke-width="3"/>
+    <rect x="164" y="282" width="198" height="236" rx="24" fill="url(#panel)" stroke="#c6a4f5" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="388" y="282" width="198" height="236" rx="24" fill="url(#panel)" stroke="#cfe64f" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="612" y="282" width="198" height="236" rx="24" fill="url(#panel)" stroke="#f5a0c8" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="836" y="282" width="198" height="236" rx="24" fill="url(#panel)" stroke="#c6a4f5" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M189 283H337" stroke="#c6a4f5" stroke-width="4"/>
+    <path d="M413 283H561" stroke="#cfe64f" stroke-width="4"/>
+    <path d="M637 283H785" stroke="#f5a0c8" stroke-width="4"/>
+    <path d="M861 283H1009" stroke="#c6a4f5" stroke-width="4"/>
+    <path d="M190 375H336M414 375H560M638 375H784M862 375H1008" stroke="#c6a4f5" stroke-opacity=".13" stroke-width="2"/>
+    <rect x="228" y="412" width="70" height="64" rx="10" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M249 412V400H277V412M251 429V460M275 429V460M206 442H244M234 432L244 442L234 452" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M443 409H531V452H443ZM487 452V466M468 466H506" stroke="#cfe64f" stroke-width="3"/>
+    <path d="M454 423H516M454 435H497" stroke="#cfe64f" stroke-opacity=".45" stroke-width="3"/>
+    <path d="M449 485V478M474 485V478M500 485V478M525 485V478" stroke="#cfe64f" stroke-width="6"/>
+    <circle cx="711" cy="416" r="12" stroke="#f5a0c8" stroke-width="3"/>
+    <circle cx="672" cy="458" r="12" stroke="#f5a0c8" stroke-width="3"/>
+    <circle cx="750" cy="458" r="12" stroke="#f5a0c8" stroke-width="3"/>
+    <path d="M700 430L683 445M722 430L739 445M691 464H731" stroke="#f5a0c8" stroke-opacity=".55" stroke-width="3"/>
+    <path d="M696 485Q711 471 726 485M657 484Q672 471 687 484M735 484Q750 471 765 484" stroke="#f5a0c8" stroke-width="3"/>
+    <rect x="895" y="412" width="70" height="64" rx="10" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M916 412V400H944V412M918 429V460M942 429V460M950 442H988M978 432L988 442L978 452" stroke="#c6a4f5" stroke-width="3"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="46" font-weight="700" text-anchor="middle">
+    <text x="263" y="349" fill="#c6a4f5">1</text>
+    <text x="487" y="349" fill="#cfe64f">2</text>
+    <text x="711" y="349" fill="#f5a0c8">3</text>
+    <text x="935" y="349" fill="#c6a4f5">4</text>
+  </g>
+</svg>

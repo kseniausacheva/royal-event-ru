@@ -498,7 +498,7 @@ const BlogPage = () => {
     return (
       <div className="min-h-screen">
         <SEO
-          title={article.title}
+          title={article.seoTitle || article.title}
           description={article.excerpt}
           image={article.image}
           type="article"

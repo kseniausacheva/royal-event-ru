@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Hotel, conference room and transfer planning</title>
+  <desc id="desc">A neutral diagram links a hotel, a conference room and a bus. It does not depict a real venue or project.</desc>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="65%">
+      <stop offset="0" stop-color="#c6a4f5" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#0c0814" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#241a35"/>
+      <stop offset="1" stop-color="#151020"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#c6a4f5"/>
+      <stop offset="1" stop-color="#f5a0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#0c0814"/>
+  <ellipse cx="600" cy="400" rx="570" ry="240" fill="url(#halo)"/>
+  <path d="M96 260H1104M96 540H1104" fill="none" stroke="#c6a4f5" stroke-opacity=".08"/>
+  <path d="M120 400H1080" fill="none" stroke="#c6a4f5" stroke-opacity=".1" stroke-dasharray="3 13"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M377 400H463" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M450 390L464 400L450 410" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M737 400H823" stroke="#f5a0c8" stroke-width="3"/>
+    <path d="M810 390L824 400L810 410" stroke="#f5a0c8" stroke-width="3"/>
+    <rect x="142" y="278" width="234" height="244" rx="26" fill="url(#panel)" stroke="#c6a4f5" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="484" y="278" width="232" height="244" rx="26" fill="url(#panel)" stroke="#cfe64f" stroke-opacity=".45" stroke-width="2"/>
+    <rect x="824" y="278" width="234" height="244" rx="26" fill="url(#panel)" stroke="#f5a0c8" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M168 279H350" stroke="#c6a4f5" stroke-width="4"/>
+    <path d="M510 279H690" stroke="#cfe64f" stroke-width="4"/>
+    <path d="M850 279H1032" stroke="#f5a0c8" stroke-width="4"/>
+    <path d="M194 479V332H324V479M185 479H333M215 332V316H303V332" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M214 353H230V369H214ZM250 353H266V369H250ZM286 353H302V369H286ZM214 390H230V406H214ZM250 390H266V406H250ZM286 390H302V406H286Z" fill="#c6a4f5" fill-opacity=".2" stroke="#c6a4f5" stroke-opacity=".65" stroke-width="2"/>
+    <path d="M246 478V439H272V478" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M525 343H675V414H525ZM516 424H684M600 414V424" stroke="#cfe64f" stroke-width="3"/>
+    <path d="M546 363H625M546 380H652" stroke="#cfe64f" stroke-opacity=".4" stroke-width="4"/>
+    <path d="M540 450H561V470H540ZM590 450H611V470H590ZM640 450H661V470H640Z" fill="#cfe64f" fill-opacity=".12" stroke="#cfe64f" stroke-width="2"/>
+    <path d="M535 481H566M585 481H616M635 481H666" stroke="#cfe64f" stroke-width="3"/>
+    <path d="M853 374Q853 354 873 354H1005Q1025 354 1025 374V447H853Z" stroke="#f5a0c8" stroke-width="3"/>
+    <path d="M868 371H907V408H868ZM920 371H955V408H920ZM968 371H1009V431H968Z" fill="#f5a0c8" fill-opacity=".15" stroke="#f5a0c8" stroke-width="2"/>
+    <path d="M855 423H956M1025 381H1033V403" stroke="#f5a0c8" stroke-width="3"/>
+    <circle cx="884" cy="448" r="16" fill="#0c0814" stroke="#f5a0c8" stroke-width="3"/>
+    <circle cx="995" cy="448" r="16" fill="#0c0814" stroke="#f5a0c8" stroke-width="3"/>
+    <circle cx="884" cy="448" r="5" fill="#f5a0c8" stroke="none"/>
+    <circle cx="995" cy="448" r="5" fill="#f5a0c8" stroke="none"/>
+    <path d="M855 484H1026" stroke="#f5a0c8" stroke-opacity=".18" stroke-width="3"/>
+  </g>
+</svg>

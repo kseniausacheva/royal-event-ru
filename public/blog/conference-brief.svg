@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Preparing a conference brief</title>
+  <desc id="desc">A form with completed checkboxes and a pencil, connected to a planning checklist.</desc>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="65%">
+      <stop offset="0" stop-color="#c6a4f5" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#0c0814" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#241a35"/>
+      <stop offset="1" stop-color="#151020"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#c6a4f5"/>
+      <stop offset="1" stop-color="#f5a0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#0c0814"/>
+  <ellipse cx="600" cy="400" rx="570" ry="240" fill="url(#halo)"/>
+  <path d="M96 260H1104M96 540H1104" fill="none" stroke="#c6a4f5" stroke-opacity=".08"/>
+  <path d="M120 400H1080" fill="none" stroke="#c6a4f5" stroke-opacity=".1" stroke-dasharray="3 13"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M279 400H370" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M356 390L370 400L356 410" stroke="#c6a4f5" stroke-width="3"/>
+    <rect x="160" y="325" width="119" height="150" rx="22" fill="url(#panel)" stroke="#c6a4f5" stroke-opacity=".4" stroke-width="2"/>
+    <path d="M192 360H247M192 385H234M192 410H247" stroke="#c6a4f5" stroke-width="5"/>
+    <path d="M193 445L203 455L224 433" stroke="#cfe64f" stroke-width="5"/>
+    <rect x="390" y="268" width="400" height="264" rx="25" fill="url(#panel)" stroke="#c6a4f5" stroke-opacity=".6" stroke-width="2"/>
+    <path d="M416 269H764" stroke="url(#accent)" stroke-width="4"/>
+    <rect x="428" y="300" width="152" height="10" rx="5" fill="#c6a4f5" stroke="none"/>
+    <rect x="428" y="320" width="234" height="5" rx="2.5" fill="#c6a4f5" fill-opacity=".22" stroke="none"/>
+    <rect x="428" y="353" width="25" height="25" rx="6" stroke="#cfe64f" stroke-width="2"/>
+    <path d="M434 365L440 371L450 359" stroke="#cfe64f" stroke-width="3"/>
+    <path d="M477 365H738" stroke="#c6a4f5" stroke-opacity=".8" stroke-width="6"/>
+    <rect x="428" y="398" width="25" height="25" rx="6" stroke="#cfe64f" stroke-width="2"/>
+    <path d="M434 410L440 416L450 404" stroke="#cfe64f" stroke-width="3"/>
+    <path d="M477 410H682" stroke="#c6a4f5" stroke-opacity=".65" stroke-width="6"/>
+    <rect x="428" y="443" width="25" height="25" rx="6" stroke="#f5a0c8" stroke-width="2"/>
+    <path d="M477 455H715" stroke="#c6a4f5" stroke-opacity=".35" stroke-width="6"/>
+    <path d="M428 497H571" stroke="#c6a4f5" stroke-opacity=".18" stroke-width="5"/>
+    <circle cx="973" cy="400" r="65" stroke="#f5a0c8" stroke-opacity=".16" stroke-width="2"/>
+    <path d="M814 400H890" stroke="#f5a0c8" stroke-width="3" stroke-dasharray="5 8"/>
+  </g>
+  <g transform="translate(961 395) rotate(34)">
+    <rect x="-18" y="-91" width="36" height="139" rx="5" fill="#f5a0c8"/>
+    <path d="M-18 48L0 84L18 48Z" fill="#c6a4f5"/>
+    <path d="M-6 72L0 84L6 72Z" fill="#cfe64f"/>
+    <path d="M-18-64H18" fill="none" stroke="#0c0814" stroke-opacity=".65" stroke-width="5"/>
+    <path d="M0-49V39" fill="none" stroke="#0c0814" stroke-opacity=".3" stroke-width="3"/>
+  </g>
+</svg>

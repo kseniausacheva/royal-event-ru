@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Two conference interpreting channels</title>
+  <desc id="desc">A microphone feeds an interpreting system that sends audio to two channels marked RU and EN.</desc>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="65%">
+      <stop offset="0" stop-color="#c6a4f5" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#0c0814" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#241a35"/>
+      <stop offset="1" stop-color="#151020"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#c6a4f5"/>
+      <stop offset="1" stop-color="#f5a0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#0c0814"/>
+  <ellipse cx="600" cy="400" rx="570" ry="240" fill="url(#halo)"/>
+  <path d="M96 260H1104M96 540H1104" fill="none" stroke="#c6a4f5" stroke-opacity=".08"/>
+  <path d="M120 400H1080" fill="none" stroke="#c6a4f5" stroke-opacity=".1" stroke-dasharray="3 13"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M310 400H450" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M433 389L450 400L433 411" stroke="#c6a4f5" stroke-width="3"/>
+    <rect x="160" y="312" width="150" height="176" rx="28" fill="url(#panel)" stroke="#c6a4f5" stroke-opacity=".4" stroke-width="2"/>
+    <rect x="215" y="338" width="40" height="69" rx="20" stroke="#c6a4f5" stroke-width="4"/>
+    <path d="M202 382V389C202 433 268 433 268 389V382M235 424V454M216 454H254" stroke="#c6a4f5" stroke-width="4"/>
+    <path d="M227 354H243M227 365H243M227 376H243" stroke="#c6a4f5" stroke-opacity=".4" stroke-width="3"/>
+    <rect x="474" y="324" width="218" height="152" rx="26" fill="url(#panel)" stroke="#c6a4f5" stroke-opacity=".6" stroke-width="2"/>
+    <path d="M510 400H522L531 377L544 426L558 364L573 437L588 385L599 410L609 400H656" stroke="url(#accent)" stroke-width="4"/>
+    <circle cx="518" cy="347" r="4" fill="#cfe64f" stroke="none"/>
+    <path d="M532 347H554" stroke="#cfe64f" stroke-opacity=".5" stroke-width="3"/>
+    <path d="M692 400H752" stroke="#c6a4f5" stroke-width="3"/>
+    <path d="M752 400V322Q752 304 770 304H850" stroke="#cfe64f" stroke-width="3"/>
+    <path d="M752 400V478Q752 496 770 496H850" stroke="#f5a0c8" stroke-width="3"/>
+    <circle cx="752" cy="400" r="7" fill="#c6a4f5" stroke="#0c0814" stroke-width="3"/>
+    <path d="M837 294L851 304L837 314" stroke="#cfe64f" stroke-width="3"/>
+    <path d="M837 486L851 496L837 506" stroke="#f5a0c8" stroke-width="3"/>
+    <rect x="874" y="270" width="174" height="68" rx="18" fill="url(#panel)" stroke="#cfe64f" stroke-opacity=".7" stroke-width="2"/>
+    <path d="M898 303V295C898 279 924 279 924 295V303M898 300V312M924 300V312" stroke="#cfe64f" stroke-width="4"/>
+    <path d="M941 292V316" stroke="#cfe64f" stroke-opacity=".23" stroke-width="2"/>
+    <rect x="874" y="462" width="174" height="68" rx="18" fill="url(#panel)" stroke="#f5a0c8" stroke-opacity=".7" stroke-width="2"/>
+    <path d="M898 495V487C898 471 924 471 924 487V495M898 492V504M924 492V504" stroke="#f5a0c8" stroke-width="4"/>
+    <path d="M941 484V508" stroke="#f5a0c8" stroke-opacity=".23" stroke-width="2"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="1">
+    <text x="963" y="314" fill="#cfe64f">RU</text>
+    <text x="963" y="506" fill="#f5a0c8">EN</text>
+  </g>
+</svg>
