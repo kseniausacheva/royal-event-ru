@@ -11,6 +11,7 @@ const ruArticles = blogArticles.map((a) => ({
   // Слаг в адресе статьи: /ru/blog/{slug}
   slug: articleSlug(a, 'ru'),
   title: a.ru.title,
+  seoTitle: a.ru.seoTitle,
   date: a.ru.date,
   category: a.ru.category,
   excerpt: a.ru.excerpt,
@@ -27,6 +28,7 @@ const enArticles = blogArticles.map((a) => ({
   // Английский слаг: /en/blog/{slug}
   slug: articleSlug(a, 'en'),
   title: a.en.title,
+  seoTitle: a.en.seoTitle,
   date: a.en.date,
   category: a.en.category,
   excerpt: a.en.excerpt,

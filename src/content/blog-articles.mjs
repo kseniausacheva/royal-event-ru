@@ -43,6 +43,7 @@
  *   id              — URL-slug латиницей через дефис (попадёт в /ru/blog/{id})
  *   datePublished   — ISO-дата (YYYY-MM-DD) — для Schema.org BlogPosting + sitemap lastmod
  *   image           — URL hero-картинки (Unsplash или /название-файла из public/)
+ *   ru.seoTitle     — необязательный SEO title; без него используется ru.title
  *   ru.title        — заголовок (1 строка, не дублируй "Royal Event Group" — SEO добавит)
  *   ru.excerpt      — короткое описание для превью + meta description (1-2 предложения)
  *   ru.content      — либо строка (простой формат), либо массив блоков (богатый)
@@ -55,6 +56,1488 @@
 
 /** @type {BlogArticle[]} */
 export const blogArticles = [
+  {
+    "id": "brif-na-konferenciyu-v-egipte",
+    "datePublished": "2026-11-15",
+    "image": "/blog/conference-brief.svg",
+    "ru": {
+      "title": "Бриф на конференцию в Египте",
+      "seoTitle": "Бриф на конференцию в Египте: что указать в запросе",
+      "category": "Деловые мероприятия",
+      "date": "15 ноября 2026",
+      "excerpt": "Что включить в бриф на конференцию в Египте: цели, участники, даты, площадка, техника и бюджет. Условный заполненный пример и шаблон запроса предложения.",
+      "links": [
+        {
+          "path": "/blog/konferenciya-v-egipte",
+          "label": "Конференция в Египте: как выбрать город, площадку и даты"
+        },
+        {
+          "path": "/services",
+          "label": "Услуги La Royal Event"
+        },
+        {
+          "path": "/contact",
+          "label": "Отправить запрос на конференцию"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Чтобы получить предложение по конференции в Египте, полезно сразу описать задачу бизнеса и условия поездки. Тогда организатор сможет подбирать площадки под вашу программу, а вы — сравнивать варианты по одинаковым критериям. Для первого обращения достаточно короткого брифа. В нём можно оставить открытые вопросы: важно показать, какие решения уже приняты и где вы ждёте рекомендации."
+        },
+        {
+          "type": "heading",
+          "text": "Начните с задачи конференции",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Объясните, зачем компания собирает людей. Представить продукт партнёрам, согласовать стратегию с руководителями филиалов, обучить дилеров и подвести итоги года — разные задачи. От них зависят продолжительность сессий, рассадка, количество отдельных залов и соотношение деловой и неформальной программы."
+        },
+        {
+          "type": "paragraph",
+          "text": "Добавьте ожидаемый результат и способ его оценить. Например: участники должны обсудить план продаж и уехать с согласованными действиями. Если программу готовят несколько подразделений, обозначьте человека, который собирает их требования. Уже на этом этапе полезно назвать обязательные элементы: выступление первого лица, переговоры с партнёрами или церемонию награждения."
+        },
+        {
+          "type": "heading",
+          "text": "Опишите участников и состав группы",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Укажите ожидаемое число гостей и возможный диапазон изменений. Разница между предварительным списком и подтверждённым составом влияет на подбор зала и номерного блока. Отдельно посчитайте спикеров, команду заказчика, приглашённых партнёров и сопровождающих: для них могут потребоваться другие условия проживания и участия."
+        },
+        {
+          "type": "paragraph",
+          "text": "Сообщите города вылета, рабочие языки и особенности аудитории, которые важны для программы. Например, части гостей нужен перевод, а несколько человек смогут участвовать только в деловых сессиях. В первом брифе достаточно общих требований к доступности и питанию. Именные списки и чувствительные сведения согласуют отдельно, когда понятны порядок и цель их передачи."
+        },
+        {
+          "type": "heading",
+          "text": "Укажите даты и степень свободы в выборе города",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Напишите желаемые даты, число ночей и допустимое смещение поездки. Если конференция привязана к запуску продукта или приезду руководителя, это нужно знать до поиска площадок. Если даты гибкие, назовите несколько подходящих периодов: организатор сможет проверить доступность залов и размещения для каждого варианта."
+        },
+        {
+          "type": "paragraph",
+          "text": "Город можно оставить открытым. Вместо предположения «нам точно нужен Шарм» опишите приоритеты: деловые встречи в Каире, проживание у моря или компактная программа без частых переездов. Для предварительного выбора пригодится основной гид «Конференция в Египте: как выбрать город, площадку и даты». Окончательное решение принимают после проверки конкретных вариантов."
+        },
+        {
+          "type": "heading",
+          "text": "Разложите деловую программу на форматы",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Для подбора площадки достаточно рабочего описания дня. Сколько часов займёт общая сессия? Будут ли параллельные группы, переговоры, практические занятия? Нужна ли отдельная комната спикерам? Укажите предполагаемую рассадку и задачи участников: слушать презентации, работать за столами или перемещаться между зонами."
+        },
+        {
+          "type": "paragraph",
+          "text": "Отметьте регистрацию, кофе-брейки и питание, а также требования к размещению этих зон. Вместимость зала уточняют с учётом сцены, экранов, проходов и места для технического пульта. Поэтому формулировка «один зал для всей группы, сцена и работа за столами» полезнее одного числа мест из презентации отеля."
+        },
+        {
+          "type": "heading",
+          "text": "Опишите проживание и перемещения",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Укажите желаемый уровень отеля и принципы расселения: одноместные или двухместные номера, отдельные условия для спикеров, возможность проживания всей группы в одном объекте. Добавьте, обязательно ли проводить конференцию там же. Если требования пока обсуждаются, попросите показать, как каждый вариант меняет программу и состав расходов."
+        },
+        {
+          "type": "paragraph",
+          "text": "Для трансферов важны предполагаемые аэропорты, число рейсов и возможные отдельные заезды. Точное расписание можно передать позже. Уже в первом обращении стоит предупредить о раздельных потоках гостей, дополнительном багаже или запланированном переезде между городами. Продолжительность маршрутов организатор должен проверить применительно к выбранным отелям и площадкам."
+        },
+        {
+          "type": "heading",
+          "text": "Перечислите технические задачи и вечерние события",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Опишите, что должно происходить на сцене: презентации, дискуссия нескольких спикеров, удалённое включение, показ видео, запись или трансляция. Укажите языки выступлений и необходимость синхронного перевода. Готовый технический райдер можно приложить к запросу; если его нет, перечисления задач достаточно для первого обсуждения."
+        },
+        {
+          "type": "paragraph",
+          "text": "Отдельно обозначьте вечернюю часть: спокойный ужин, награждение, концерт или программа вне отеля. Напишите, нужны ли оформление, ведущий, артисты и транспорт. Для нестандартной площадки сначала проверяют допустимый формат и условия проведения. Подтверждение такой программы должно быть отдельным пунктом предложения."
+        },
+        {
+          "type": "heading",
+          "text": "Задайте бюджетные рамки и границы ответственности",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Укажите общий ориентир бюджета, валюту и перечень расходов, которые он должен покрывать. Уточните, входят ли перелёты, проживание, деловая программа, питание, техника и вечерние мероприятия. Если бюджет ещё утверждается, обозначьте приоритеты и попросите разделить обязательную часть и дополнительные опции."
+        },
+        {
+          "type": "paragraph",
+          "text": "Сообщите, что заказчик делает самостоятельно: покупает билеты, приглашает спикеров, готовит презентации или привозит оформление. Назовите срок получения предложения и порядок согласования. Если для закупки нужны определённые документы, формат сметы или несколько вариантов, это лучше указать сразу. Состав услуг La Royal Event можно посмотреть на странице «Услуги» и отметить подходящие направления в запросе."
+        },
+        {
+          "type": "heading",
+          "text": "Условный пример заполненного брифа",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Ниже вымышленный пример, который показывает уровень подробности первого обращения. Это не описание проекта La Royal Event и не готовая программа."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Задача: собрать региональных партнёров для обсуждения продуктовой линейки и совместного плана работы.",
+            "Группа: ориентировочно 80 гостей, возможный диапазон — 70–90; рабочий язык русский, для части переговоров нужен английский.",
+            "Поездка: четыре ночи в ноябре; конкретные даты гибкие. Рассматриваем Шарм-эль-Шейх, готовы обсудить альтернативу.",
+            "Деловая часть: два дня, общая сессия и две параллельные группы; зал и проживание желательно в одном отеле.",
+            "Техника: презентации, панельная дискуссия, запись выступлений; трансляция не нужна.",
+            "Проживание: преимущественно одноместное размещение. Перелёты покупает заказчик, трансферы включить в предложение.",
+            "Вечерняя часть: приветственный ужин и финальное награждение. Бюджет обсуждается; обязательные расходы и опции показать отдельно."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Краткий шаблон для копирования",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Заполните известные поля. Для остальных напишите «уточняется» или «нужна рекомендация» — это позволит начать обсуждение без ложной точности."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Компания и контактное лицо:",
+            "Задача конференции и ожидаемый результат:",
+            "Число участников и возможный диапазон:",
+            "Города вылета и рабочие языки:",
+            "Даты, гибкость дат и число ночей:",
+            "Предпочтительный город и приоритеты выбора:",
+            "Деловая программа, рассадка и отдельные залы:",
+            "Техника, перевод, запись или трансляция:",
+            "Проживание, питание и трансферы:",
+            "Вечерняя программа и дополнительные пожелания:",
+            "Бюджет, валюта и включённые расходы:",
+            "Что организует заказчик самостоятельно:",
+            "Срок предложения, требования к документам и согласованию:"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Что проверить в полученном предложении",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Сверьте ответ с брифом: какие требования учтены, где предложены альтернативы и что остаётся на уточнение. Важно видеть состав услуг, допущения расчёта, включённые и дополнительные расходы. Также уточните, проверена ли доступность площадки и что необходимо для её подтверждения."
+        },
+        {
+          "type": "paragraph",
+          "text": "Если вы сравниваете нескольких организаторов, отправьте им одинаковые исходные данные. Тогда различия в предложениях будет проще объяснить: одна команда предусмотрела перевод и техническую репетицию, другая оставила их за рамками расчёта. После выбора концепции бриф обновляют, чтобы все стороны работали с одной согласованной версией."
+        },
+        {
+          "type": "paragraph",
+          "text": "Отправьте La Royal Event заполненный бриф или известные параметры поездки. На первом обсуждении можно уточнить открытые вопросы и определить, какие варианты стоит рассматривать дальше."
+        }
+      ]
+    },
+    "en": {
+      "slug": "conference-brief-egypt",
+      "title": "A Brief for Your Conference in Egypt",
+      "seoTitle": "Conference Brief for Egypt: What to Include in Your Enquiry",
+      "category": "Business Events",
+      "date": "15 November 2026",
+      "excerpt": "What to include in a brief for a conference in Egypt: objectives, delegates, dates, venue, equipment and budget. A hypothetical example and a reusable template.",
+      "links": [
+        {
+          "path": "/blog/conference-in-egypt",
+          "label": "Conference in Egypt: How to Choose the City, Venue and Dates"
+        },
+        {
+          "path": "/services",
+          "label": "La Royal Event Services"
+        },
+        {
+          "path": "/contact",
+          "label": "Send a Conference Enquiry"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "To receive a proposal for a conference in Egypt, it helps to describe the business objective and the practical requirements for the trip from the outset. This allows the organiser to select venues around your program and lets you compare options against the same criteria. A short brief is enough for the initial enquiry. Some questions can remain open: make clear which decisions have been made and where you would like recommendations."
+        },
+        {
+          "type": "heading",
+          "text": "Start with the purpose of the conference",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Explain why the company is bringing people together. Presenting a product to partners, agreeing a strategy with regional managers, training dealers and reviewing the year are different objectives. They affect session lengths, seating arrangements, the number of separate rooms and the balance between business sessions and informal activities."
+        },
+        {
+          "type": "paragraph",
+          "text": "Add the expected outcome and how you will assess it. For example, delegates should discuss the sales plan and leave with agreed actions. If several departments are developing the program, identify the person who gathers their requirements. It is also useful to name essential elements at this stage: an address by the company leader, partner negotiations or an awards ceremony."
+        },
+        {
+          "type": "heading",
+          "text": "Describe the delegates and the group",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "State the expected number of guests and the possible range. The difference between a provisional list and confirmed attendance affects the choice of meeting room and the accommodation block. Count speakers, the client's own team, invited partners and accompanying guests separately: they may need different accommodation and participation arrangements."
+        },
+        {
+          "type": "paragraph",
+          "text": "Provide departure cities, working languages and any audience requirements that matter to the program. For example, some guests may need interpreting, while others may only attend the business sessions. General accessibility and dietary requirements are enough for the initial brief. Named lists and sensitive information can be agreed separately once the purpose and process for sharing them are clear."
+        },
+        {
+          "type": "heading",
+          "text": "Give your dates and flexibility on location",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Specify your preferred dates, number of nights and how far the trip can move. If the conference is tied to a product launch or an executive's visit, the organiser needs to know before searching for venues. If your dates are flexible, suggest several suitable periods so that meeting room and accommodation availability can be checked for each option."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can leave the city open. Rather than assuming that it has to be Sharm El Sheikh, describe your priorities: business meetings in Cairo, a seaside hotel or a compact program without frequent transfers. For an initial comparison, see our main guide, “Conference in Egypt: How to Choose the City, Venue and Dates”. Make the final decision after specific options have been checked."
+        },
+        {
+          "type": "heading",
+          "text": "Break the business program down into formats",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A working outline of the day is enough to begin selecting a venue. How many hours will the plenary session take? Will there be parallel groups, negotiations or practical workshops? Do speakers need a separate room? State the proposed seating arrangement and what delegates will do: listen to presentations, work at tables or move between different areas."
+        },
+        {
+          "type": "paragraph",
+          "text": "Include registration, coffee breaks and meals, along with requirements for where these areas should be located. Room capacity must take account of the stage, screens, aisles and space for the technical control desk. An outline such as “one room for the whole group, a stage and work at tables” is therefore more useful than a single capacity figure from a hotel brochure."
+        },
+        {
+          "type": "heading",
+          "text": "Describe accommodation and transport",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "State your preferred hotel standard and rooming arrangements: single or double occupancy, separate requirements for speakers and whether the whole group should stay at one property. Say whether the conference must take place there too. If these requirements are still under discussion, ask how each option would change the program and the breakdown of costs."
+        },
+        {
+          "type": "paragraph",
+          "text": "For transfers, the likely airports, number of flights and any separate arrivals matter. Exact schedules can follow later. In the first enquiry, flag separate guest arrival groups, extra luggage or a planned move between cities. The organiser should check journey times for the specific hotels and venues being considered."
+        },
+        {
+          "type": "heading",
+          "text": "List technical requirements and evening events",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Describe what needs to happen on stage: presentations, a panel discussion, a remote contribution, video playback, recording or streaming. State the languages of the presentations and whether simultaneous interpreting is needed. Attach a technical rider if you have one; otherwise, a list of the tasks is enough for the first discussion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Describe the evening program separately: a relaxed dinner, awards ceremony, concert or an event outside the hotel. Say whether you need styling, a host, performers and transport. For an unusual venue, first check which event formats are permitted and under what conditions. Confirmation of that program should be a separate item in the proposal."
+        },
+        {
+          "type": "heading",
+          "text": "Set budget parameters and responsibilities",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Give an overall budget guideline, the currency and the expenses it should cover. Clarify whether flights, accommodation, the business program, meals, equipment and evening events are included. If the budget is still awaiting approval, state your priorities and ask for the essential elements and optional extras to be shown separately."
+        },
+        {
+          "type": "paragraph",
+          "text": "Explain what the client will handle independently: buying flights, inviting speakers, preparing presentations or bringing decorative materials. Give the deadline for receiving the proposal and outline the approval process. If procurement requires particular documents, a specific estimate format or several options, mention this at the outset. Review La Royal Event's Services page and identify the relevant services in your enquiry."
+        },
+        {
+          "type": "heading",
+          "text": "A hypothetical completed brief",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The fictional example below shows the level of detail needed for an initial enquiry. It does not describe a La Royal Event project and is not a finished program."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Objective: bring regional partners together to discuss the product range and a joint action plan.",
+            "Group: approximately 80 guests, with a possible range of 70–90; the working language is Russian, with English needed for some negotiations.",
+            "Trip: four nights in November, with flexible dates. Sharm El Sheikh is under consideration, but alternatives are welcome.",
+            "Business program: two days, with a plenary session and two parallel groups; the meeting rooms and accommodation should ideally be in one hotel.",
+            "Technical requirements: presentations, a panel discussion and recording of the talks; streaming is not required.",
+            "Accommodation: mainly single occupancy. The client will book flights; transfers should be included in the proposal.",
+            "Evening program: a welcome dinner and closing awards ceremony. The budget is under discussion; show essential costs and optional extras separately."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "A short template to copy",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Complete the fields you can. For the rest, write “to be confirmed” or “recommendation needed” so that the discussion can begin without false precision."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Company and contact person:",
+            "Conference objective and expected outcome:",
+            "Number of delegates and possible range:",
+            "Departure cities and working languages:",
+            "Dates, flexibility and number of nights:",
+            "Preferred city and selection priorities:",
+            "Business program, seating and separate rooms:",
+            "Equipment, interpreting, recording or streaming:",
+            "Accommodation, meals and transfers:",
+            "Evening program and additional requests:",
+            "Budget, currency and included expenses:",
+            "What the client will arrange independently:",
+            "Proposal deadline, documentation and approval requirements:"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "What to check in the proposal",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Compare the response with your brief: which requirements have been covered, where alternatives have been suggested and what still needs clarification. Look for the scope of services, pricing assumptions, included expenses and additional costs. Also ask whether venue availability has been checked and what is needed to confirm the booking."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you are comparing several organisers, send them the same information. It will then be easier to explain differences between proposals: one team may have allowed for interpreting and a technical rehearsal, while another has left them outside the estimate. Once a concept is chosen, update the brief so that everyone works from one agreed version."
+        },
+        {
+          "type": "paragraph",
+          "text": "Send La Royal Event your completed brief or the trip details you already know. The initial discussion can clarify open questions and identify which options are worth exploring."
+        }
+      ]
+    }
+  },
+  {
+    "id": "sinhronnyj-perevod-na-konferencii-v-egipte",
+    "datePublished": "2026-11-15",
+    "image": "/blog/conference-interpretation.svg",
+    "ru": {
+      "title": "Синхронный перевод на конференции в Египте",
+      "seoTitle": "Синхронный перевод на конференции в Египте: бриф и подготовка",
+      "category": "Деловые мероприятия",
+      "date": "15 ноября 2026",
+      "excerpt": "Как подготовить перевод на конференции в Египте: языки, сессии, материалы спикеров, вопросы из зала, техника и ответственность организаторов.",
+      "links": [
+        {
+          "path": "/blog/konferenciya-v-egipte",
+          "label": "Конференция в Египте: выбор города, площадки и дат"
+        },
+        {
+          "path": "/services",
+          "label": "Организация конференций и технический продакшн"
+        },
+        {
+          "path": "/dmc",
+          "label": "Принимающая команда La Royal Event в Египте"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Когда на конференции встречаются участники из разных стран, перевод становится частью программы. Он влияет на выбор зала, длительность выступлений, работу модератора и техническую схему. Поэтому запрос «нужны переводчики и наушники» стоит превратить в подробный бриф ещё до окончательного согласования площадки. Разберём, что в нём должно быть и как проверить готовность до прихода гостей."
+        },
+        {
+          "type": "heading",
+          "text": "Начните с языков участников и задач конференции",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Сначала выясните, кто на каком языке выступает и кто что должен понимать. Язык презентации, речь спикера и язык аудитории могут различаться. Доклад на английском с русскими слайдами всё равно требует решения для тех, кто не понимает устную речь. При этом не каждому участнику нужен перевод на каждом блоке."
+        },
+        {
+          "type": "paragraph",
+          "text": "Отдельно опишите деловые встречи, панельные дискуссии, экскурсии и вечернюю программу. Переводчик в основном зале не сможет одновременно сопровождать переговоры в другой комнате. Эти задачи должны появиться в запросе отдельными строками."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Языки выступлений и аудитории по каждому блоку программы.",
+            "Направления перевода: например, с русского на арабский и с арабского на русский.",
+            "Ожидаемое число слушателей, которым нужен каждый язык.",
+            "Тема конференции, профессиональная терминология и названия компаний.",
+            "Участие онлайн-спикеров и удалённых слушателей, если они предусмотрены."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Выберите формат под конкретный блок",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Синхронный перевод позволяет слушать выступление на другом языке по мере его произнесения. Его имеет смысл рассматривать для пленарных заседаний и других блоков, где важно сохранить общий темп. Состав команды, рабочее место переводчиков и оборудование подбирают после знакомства с программой, языками и площадкой."
+        },
+        {
+          "type": "paragraph",
+          "text": "При последовательном переводе спикер делает паузы, чтобы переводчик передал сказанное. Такие паузы необходимо заложить в сценарий. Для переговоров небольшой группы это может быть удобным решением; для насыщенной пленарной программы нужно отдельно оценить влияние на расписание."
+        },
+        {
+          "type": "paragraph",
+          "text": "В одной конференции допустимо сочетать форматы: синхронный перевод в основном зале и последовательный на отдельных встречах. Выбор согласуют вместе с переводчиками и технической командой, а затем отражают в программе и смете."
+        },
+        {
+          "type": "heading",
+          "text": "Разложите программу по залам и времени",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Для расчёта полезна таблица: время, зал, формат, языки, спикеры и число слушателей. Она показывает, какие задачи идут одновременно, где нужен переход между помещениями и когда предстоит перенастройка. Само количество участников не даёт ответов на эти вопросы."
+        },
+        {
+          "type": "paragraph",
+          "text": "Условный пример: утром вся группа слушает пленарные доклады с переводом с русского на английский. После обеда начинаются две параллельные секции, а в переговорной идут встречи с арабоязычными партнёрами. Это три одновременные задачи. Решение для утреннего заседания нельзя автоматически считать решением на весь день."
+        },
+        {
+          "type": "heading",
+          "text": "Подготовьте спикеров и материалы",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Переводчикам нужны программа, темы докладов, презентации и список имён. Если готового текста выступления нет, передайте тезисы и объясните контекст: что за продукт обсуждают, какие решения ожидают от аудитории, какие сокращения приняты внутри компании."
+        },
+        {
+          "type": "paragraph",
+          "text": "Для отраслевой конференции соберите рабочий глоссарий. Спорные термины, названия должностей и продуктов согласуйте с человеком со стороны заказчика, который знает предмет. Это особенно полезно, когда привычное внутреннее название отличается от официального."
+        },
+        {
+          "type": "paragraph",
+          "text": "Договоритесь о сроке передачи материалов и порядке обновлений. Если спикер меняет презентацию, переводчики и техническая команда должны получить одну и ту же актуальную версию. Видеоролики, интервью и заранее записанные обращения тоже включите в перечень материалов для подготовки."
+        },
+        {
+          "type": "heading",
+          "text": "Продумайте вопросы из зала",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Доклад может быть подготовлен идеально, а обсуждение — остановиться на первом вопросе. Участники говорят на разных языках, спикер слышит не все из них, модератору нужно управлять очередью. Сценарий этого блока стоит обсудить заранее."
+        },
+        {
+          "type": "paragraph",
+          "text": "Уточните, на каких языках можно задавать вопросы, как их услышат переводчики и как перевод получит спикер. Модератор должен знать выбранный порядок и напомнить его аудитории. Вопрос без микрофона переводчики и удалённые участники могут не услышать, поэтому ведущему важно просить дождаться микрофона."
+        },
+        {
+          "type": "paragraph",
+          "text": "Если вопросы собирают письменно или через приложение, определите, кто отбирает и переводит их для модератора. Для удалённого спикера отдельно проверьте путь вопроса и ответа через платформу подключения."
+        },
+        {
+          "type": "heading",
+          "text": "Проверьте всю звуковую цепочку",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "На репетиции важно пройти реальный сценарий: речь со сцены, вопрос из зала, звук презентационного видео, включение удалённого участника. Проверка только одного микрофона не показывает, что произойдёт во всех этих случаях."
+        },
+        {
+          "type": "paragraph",
+          "text": "Вместе с переводчиками и технической командой проверьте, что переводчики слышат исходную речь, а слушатели получают нужный язык. Затем проверьте переключения между источниками звука и действия при сбое. Заранее согласуйте, кто принимает решение о паузе и кто объясняет происходящее залу."
+        },
+        {
+          "type": "paragraph",
+          "text": "Если нужна запись, отдельно определите её состав: оригинальный звук, перевод или несколько дорожек. Это задача для технической подготовки. После завершения мероприятия нужную дорожку может оказаться невозможно восстановить."
+        },
+        {
+          "type": "heading",
+          "text": "Организуйте получение перевода слушателями",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Если используются приёмники, продумайте их выдачу и сбор как часть движения гостей. Где участник получает устройство, кто объясняет выбор канала, куда обращаться при неисправности и где вернуть комплект? Эти вопросы нужно решить до открытия регистрации."
+        },
+        {
+          "type": "paragraph",
+          "text": "Количество устройств и согласованный резерв привяжите к аудитории конкретных сессий. На месте назначьте ответственных за учёт, выдачу, помощь слушателям и возврат. Если выбран перевод через личные устройства, заранее проверьте доступ, совместимость и понятность инструкции в условиях этой площадки."
+        },
+        {
+          "type": "heading",
+          "text": "Зафиксируйте ответственность в одном документе",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Заказчик подтверждает языки аудитории, программу и терминологию. Переводчики согласуют условия своей работы и получают материалы. Техническая команда отвечает за утверждённую звуковую схему. Координаторы помогают слушателям получить перевод. Конкретное распределение обязанностей может отличаться, но каждую задачу должен принять названный человек."
+        },
+        {
+          "type": "paragraph",
+          "text": "Сведите договорённости в рабочий документ: программа по залам, языки, контактные лица, сроки материалов, порядок репетиции и действия при изменениях. Назначьте руководителя, который собирает подтверждения всех сторон. Тогда замена спикера или перенос секции будет запускать понятную проверку последствий для перевода."
+        },
+        {
+          "type": "paragraph",
+          "text": "Планируете конференцию в Египте с участниками из разных стран? Пришлите предварительную программу, языки выступлений и аудитории, число гостей и сведения о параллельных сессиях. La Royal Event поможет связать перевод с площадкой, техническим продакшном и работой команды на месте."
+        }
+      ]
+    },
+    "en": {
+      "slug": "simultaneous-interpreting-conference-egypt",
+      "title": "Simultaneous Interpreting at a Conference in Egypt",
+      "seoTitle": "Simultaneous Interpreting at a Conference in Egypt: Planning",
+      "category": "Business Events",
+      "date": "15 November 2026",
+      "excerpt": "How to prepare interpreting for a conference in Egypt: languages, sessions, speaker materials, audience questions, equipment and organiser responsibilities.",
+      "links": [
+        {
+          "path": "/blog/conference-in-egypt",
+          "label": "Conference in Egypt: Choosing the City, Venue and Dates"
+        },
+        {
+          "path": "/services",
+          "label": "Conference Organisation and Technical Production"
+        },
+        {
+          "path": "/dmc",
+          "label": "La Royal Event's Local Team in Egypt"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "When a conference brings together delegates from different countries, interpreting becomes part of the program. It affects the choice of room, the timing of presentations, the moderator's work and the technical setup. A request for “interpreters and headphones” should therefore become a detailed brief before the venue is finally agreed. Here is what to include and how to check that everything is ready before guests arrive."
+        },
+        {
+          "type": "heading",
+          "text": "Start with the delegates' languages and the conference objectives",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "First establish who will speak which language and who needs to understand what. The language of the slides, the speaker's delivery and the audience may differ. A talk in English with Russian slides still needs a solution for delegates who do not understand the spoken language. At the same time, not every delegate needs interpreting for every session."
+        },
+        {
+          "type": "paragraph",
+          "text": "Describe business meetings, panel discussions, excursions and evening events separately. An interpreter in the main room cannot also cover negotiations in another room at the same time. These tasks should appear as separate items in the enquiry."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "The languages of speakers and listeners for each part of the program.",
+            "Interpreting directions: for example, Russian into Arabic and Arabic into Russian.",
+            "The expected number of listeners who need each language.",
+            "The conference subject, specialist terminology and company names.",
+            "Any remote speakers and remote listeners."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Choose a format for each session",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Simultaneous interpreting allows listeners to hear a speech in another language as it is delivered. It is worth considering for plenary sessions and other parts of the program where maintaining the overall pace matters. The interpreting team, their working space and the equipment are selected after reviewing the program, languages and venue."
+        },
+        {
+          "type": "paragraph",
+          "text": "With consecutive interpreting, the speaker pauses for the interpreter to convey what has been said. These pauses need to be built into the running order. This can work well for negotiations in a small group; for a busy plenary program, its effect on the schedule needs separate consideration."
+        },
+        {
+          "type": "paragraph",
+          "text": "A conference can combine formats: simultaneous interpreting in the main room and consecutive interpreting at individual meetings. Agree the choices with the interpreters and technical team, then reflect them in the program and estimate."
+        },
+        {
+          "type": "heading",
+          "text": "Map the program by room and time",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A table with the time, room, format, languages, speakers and number of listeners helps with planning and estimating. It shows which tasks run simultaneously, where people need to move between rooms and when the setup needs to change. Delegate numbers alone do not answer these questions."
+        },
+        {
+          "type": "paragraph",
+          "text": "Here is a hypothetical example: in the morning, the whole group attends plenary talks with interpreting from Russian into English. After lunch, two parallel sessions begin, while meetings with Arabic-speaking partners take place in a separate meeting room. These are three simultaneous tasks. The solution for the morning session cannot automatically be treated as the solution for the whole day."
+        },
+        {
+          "type": "heading",
+          "text": "Prepare the speakers and materials",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Interpreters need the program, presentation topics, slides and a list of names. If a full speech script is unavailable, provide key points and explain the context: which product is being discussed, what decisions the audience is expected to make and which abbreviations the company uses."
+        },
+        {
+          "type": "paragraph",
+          "text": "For a specialist conference, put together a working glossary. Agree ambiguous terms, job titles and product names with someone on the client's side who knows the subject. This is particularly useful when a familiar internal name differs from the official one."
+        },
+        {
+          "type": "paragraph",
+          "text": "Agree a deadline for supplying materials and a process for updates. If a speaker changes a presentation, the interpreters and technical team should receive the same current version. Include videos, interviews and prerecorded addresses in the list of materials for preparation."
+        },
+        {
+          "type": "heading",
+          "text": "Plan for questions from the audience",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A presentation can be perfectly prepared, yet the discussion can stall at the first question. Delegates speak different languages, the speaker may not understand all of them and the moderator needs to manage the order of questions. Discuss how this part of the session will work in advance."
+        },
+        {
+          "type": "paragraph",
+          "text": "Clarify which languages delegates can use to ask questions, how the interpreters will hear them and how the speaker will receive the interpretation. The moderator should know the agreed process and explain it to the audience. Interpreters and remote participants may not hear a question asked without a microphone, so the host should ask delegates to wait for one."
+        },
+        {
+          "type": "paragraph",
+          "text": "If questions are collected in writing or through an app, decide who will select and translate them for the moderator. For a remote speaker, separately check how the question and answer will pass through the connection platform."
+        },
+        {
+          "type": "heading",
+          "text": "Check the entire audio chain",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "At rehearsal, run through the actual scenarios: speech from the stage, a question from the audience, audio from a presentation video and a remote participant joining. Testing a single microphone does not show what will happen in all these situations."
+        },
+        {
+          "type": "paragraph",
+          "text": "Together with the interpreters and technical team, check that interpreters can hear the original speech and listeners receive the right language. Then test switching between audio sources and the response to a failure. Agree in advance who decides whether to pause and who explains what is happening to the room."
+        },
+        {
+          "type": "paragraph",
+          "text": "If recording is required, define what it should include: original audio, interpretation or several tracks. This needs to be addressed during technical preparation. Once the event is over, it may be impossible to recover a missing track."
+        },
+        {
+          "type": "heading",
+          "text": "Arrange how listeners will receive the interpretation",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "If receivers are being used, plan their distribution and collection as part of the guest flow. Where does a delegate pick up a device? Who explains channel selection? Where should they go if it fails, and where should they return the set? Resolve these questions before registration opens."
+        },
+        {
+          "type": "paragraph",
+          "text": "Base device numbers and the agreed reserve on the audience for the relevant sessions. On site, assign responsibility for tracking devices, issuing them, helping listeners and collecting returns. If interpreting will be delivered through personal devices, check access, compatibility and the clarity of the instructions at the actual venue in advance."
+        },
+        {
+          "type": "heading",
+          "text": "Record responsibilities in one document",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The client confirms the audience languages, program and terminology. Interpreters agree their working conditions and receive the materials. The technical team is responsible for the agreed audio setup. Coordinators help listeners access the interpretation. The precise division of duties may vary, but a named person should accept responsibility for each task."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bring the agreements together in a working document: the program by room, languages, contacts, material deadlines, rehearsal arrangements and procedures for changes. Appoint a lead who gathers confirmation from everyone involved. A replacement speaker or a rescheduled session will then trigger a clear review of the implications for interpreting."
+        },
+        {
+          "type": "paragraph",
+          "text": "Planning a conference in Egypt with delegates from different countries? Send your provisional program, the languages of speakers and listeners, guest numbers and details of parallel sessions. La Royal Event can coordinate interpreting with the venue, technical production and the team working on site."
+        }
+      ]
+    }
+  },
+  {
+    "id": "programma-konferencii-v-egipte-na-4-dnya",
+    "datePublished": "2026-11-15",
+    "image": "/blog/conference-programme.svg",
+    "ru": {
+      "title": "Программа корпоративной конференции в Египте на четыре дня",
+      "seoTitle": "Программа конференции в Египте на четыре дня",
+      "category": "Деловые мероприятия",
+      "date": "15 ноября 2026",
+      "excerpt": "Пример программы корпоративной конференции в Египте на четыре дня: прилёт, деловые сессии, встречи, отдых и вылет. Что учесть при составлении расписания.",
+      "links": [
+        {
+          "path": "/blog/konferenciya-v-egipte",
+          "label": "Как выбрать город и площадку для конференции в Египте"
+        },
+        {
+          "path": "/services",
+          "label": "Организация корпоративных конференций"
+        },
+        {
+          "path": "/programmy",
+          "label": "Программы для групп после деловой части"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Четыре дня поездки обычно дают меньше четырёх дней совместной работы. Часть времени занимают дорога, заселение, подготовка спикеров и вылет. Поэтому программу конференции в Египте стоит собирать вокруг того, что компания должна обсудить и решить, а затем добавлять встречи, отдых и вечерние события. Ниже — пример, который помогает распределить нагрузку и увидеть, где расписанию нужен запас."
+        },
+        {
+          "type": "heading",
+          "text": "Для какой поездки подходит этот пример",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Возьмём условную корпоративную конференцию с тремя ночами в одном отеле. Основная группа прибывает в первый день и уезжает во второй половине четвёртого. Зал находится в отеле проживания. В программе нужны общее обсуждение планов, работа по направлениям и время для личных встреч. Это модель для адаптации, а не описание проведённого проекта."
+        },
+        {
+          "type": "paragraph",
+          "text": "Расписание ниже приведено по местному времени и не заменяет рабочий тайминг. Его можно использовать в Каире или на курорте после проверки рейсов, условий заселения и возможностей площадки. Если нужно сначала определиться с городом, начните с материала «Конференция в Египте: как выбрать город, площадку и даты»."
+        },
+        {
+          "type": "heading",
+          "text": "Сначала определите результат деловой части",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Запишите, что должно появиться к концу встречи: согласованный план, решения по продукту, обратная связь от партнёров или договорённости между подразделениями. Для каждого результата нужен подходящий формат. Доклад помогает передать информацию; обсуждение и рабочая сессия нужны, когда участники должны выработать решение."
+        },
+        {
+          "type": "paragraph",
+          "text": "У каждого блока должны быть ответственный, ожидаемый итог и способ его зафиксировать. Тогда длительность сессий определяется работой, которую нужно выполнить. Свободное место в расписании само по себе не повод добавлять ещё одно выступление."
+        },
+        {
+          "type": "heading",
+          "text": "День первый прибытие и знакомство",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Первый день оставьте для встречи группы, размещения и спокойного включения в поездку. Пока одни гости уже отдыхают в отеле, другие могут находиться в дороге. Важные объявления лучше продублировать письменно, чтобы поздний прилёт не означал пропущенную информацию."
+        },
+        {
+          "type": "paragraph",
+          "text": "Для команды организаторов этот день может включать проверку площадки, регистрацию участников и репетицию со спикерами. Доступ в зал и монтаж согласуют отдельно: прибытие группы не означает, что площадка уже подготовлена."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Днём — прибытие, размещение и свободное время с учётом фактического времени готовности номеров.",
+            "Примерно с 18:00 до 19:00 — необязательное знакомство и короткий организационный сбор для прибывших гостей.",
+            "Примерно с 19:00 до 21:00 — приветственный ужин без обязательной деловой повестки; для поздних прибытий заранее согласуют питание."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "День второй общая повестка и первые обсуждения",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Второй день посвящён темам, которые нужны всей аудитории. После вступления руководителя и ключевых докладов оставьте время на вопросы. Если ответы постоянно переносятся на потом, участники могут уйти в секции с разным пониманием общих задач."
+        },
+        {
+          "type": "paragraph",
+          "text": "После обеда полезно сменить способ работы: вместо продолжения длинного ряда презентаций запланировать обсуждение кейсов, вопросы к руководителям или работу в небольших группах. День стоит завершить фиксацией решений и перечнем вопросов для следующего утра."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "9:30–11:00 — открытие и первый содержательный блок.",
+            "11:00–11:30 — пауза; её продолжительность проверяют с учётом числа гостей и организации обслуживания.",
+            "11:30–13:00 — второй блок с обсуждением и вопросами.",
+            "13:00–14:30 — обед и время без обязательных встреч.",
+            "14:30–16:00 — рабочие группы или обсуждение практических задач.",
+            "После 16:00 — подведение итогов, запланированные личные встречи и свободное время. Вечерняя программа начинается после отдельной паузы на отдых."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "День третий работа по направлениям и общий итог",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Третий день подходит для секций и встреч, которым требуется подготовка по итогам общей повестки. Коммерческий блок, продуктовая команда и партнёры могут работать отдельно, если у каждой группы есть своя задача. Совместный финал нужен, чтобы результаты не остались внутри отдельных комнат."
+        },
+        {
+          "type": "paragraph",
+          "text": "После деловой части можно добавить общую активность или свободное время. Выездную программу выбирают после расчёта дороги, сборов и возвращения. Перечень доступных форматов стоит смотреть в разделе программ для групп, когда уже понятно, сколько времени действительно осталось."
+        },
+        {
+          "type": "paragraph",
+          "text": "Если вечером планируются награждение или гала-ужин, для них составляют отдельный сценарий. Репетиция ведущего и выступающих не должна занимать единственный отдых участников между сессиями и вечером."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "9:30–11:00 — секции по направлениям или заранее назначенные деловые встречи.",
+            "11:00–11:30 — пауза и переход между залами.",
+            "11:30–13:00 — представление результатов групп и обсуждение общих решений.",
+            "13:00–14:30 — обед.",
+            "После 14:30 — общая активность, личные встречи или отдых по выбранному сценарию.",
+            "Вечером — заключительный ужин с учётом времени на подготовку гостей и команды."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "День четвёртый завершение и вылет",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "В нашей модели основная работа закончена вечером третьего дня. Утром четвёртого возможны короткие встречи для тех, кто успевает на них без риска для выезда. Обязательные решения не стоит оставлять на момент, когда часть группы уже сдала номера и уехала."
+        },
+        {
+          "type": "paragraph",
+          "text": "Время освобождения номеров, хранение багажа, питание до вылета и порядок отправления машин согласуют заранее. Время выезда определяют по конкретному рейсу и маршруту. Универсальное окно из готовой программы для этого не подходит."
+        },
+        {
+          "type": "heading",
+          "text": "Как изменить программу под поздний прилёт",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Если большинство прилетает ночью перед вторым днём, утренняя пленарная сессия становится слабым местом модели. Возможные решения — перенести начало, добавить ночь до конференции или сократить число обязательных блоков. Выбор зависит от цели поездки и возможностей группы."
+        },
+        {
+          "type": "paragraph",
+          "text": "При нескольких волнах прибытия общую сессию ставят после приезда тех, чьё участие необходимо для решений. Материалы вводных блоков можно передать отдельно. Попытка сохранить плотную повестку для всех без учёта перелётов создаёт программу, которую часть аудитории физически не сможет пройти."
+        },
+        {
+          "type": "heading",
+          "text": "Что меняется при параллельных секциях",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Параллельная работа требует проверки состава участников: человек не сможет присутствовать в двух залах одновременно. Если один руководитель нужен нескольким группам, их обсуждения разводят по времени или предусматривают отдельное согласование с ним."
+        },
+        {
+          "type": "paragraph",
+          "text": "Заранее согласуйте время окончания секций, паузы и формат общего отчёта. Дополнительно проверяют наличие модераторов, оборудования и перевода в каждом используемом пространстве. Состав работ рассчитывают под конкретное расписание; оборудование общего зала нельзя автоматически считать доступным для всех секций."
+        },
+        {
+          "type": "heading",
+          "text": "Что проверить перед утверждением",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Гостевая программа показывает участнику, куда и когда приходить. Рабочий тайминг команды дополнительно содержит монтаж, репетиции, готовность питания, передачу презентаций и ответственных за каждый переход. Эти документы должны соответствовать друг другу."
+        },
+        {
+          "type": "paragraph",
+          "text": "Перед отправкой участникам пройдите расписание по пути одного гостя: от завтрака до зала, затем до обеда и вечерней площадки. Отдельно пройдите его глазами спикера и технического руководителя. Так проще заметить пересечения и задачи, для которых ещё не выделено время."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Рейсы и время прибытия позволяют участвовать в обязательных сессиях.",
+            "Для перемещений, питания и отдыха предусмотрены отдельные окна.",
+            "Спикеры, модераторы и переводчики согласовали свои блоки.",
+            "У каждого обсуждения есть итог и ответственный за следующие действия.",
+            "Изменения доводятся до гостей и команды через согласованный канал связи."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Для подготовки программы конференции в Египте пришлите La Royal Event даты, города вылета, число участников и задачи деловой части. Укажите обязательные сессии, языки и желаемый формат вечеров — эти данные помогут связать расписание с площадкой, логистикой и составом работ."
+        }
+      ]
+    },
+    "en": {
+      "slug": "four-day-conference-programme-egypt",
+      "title": "A Four-Day Programme for a Corporate Conference in Egypt",
+      "seoTitle": "A Four-Day Conference Programme in Egypt",
+      "category": "Business Events",
+      "date": "15 November 2026",
+      "excerpt": "A sample four-day corporate conference programme in Egypt: arrivals, business sessions, meetings, downtime and departures. What to consider when building the schedule.",
+      "links": [
+        {
+          "path": "/blog/conference-in-egypt",
+          "label": "How to choose the city and venue for a conference in Egypt"
+        },
+        {
+          "path": "/services",
+          "label": "Corporate conference organisation"
+        },
+        {
+          "path": "/programmy",
+          "label": "Group programmes after the business sessions"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "A four-day trip usually leaves less than four days for working together. Travel, check-in, speaker preparation and departures take up part of that time. Build your conference programme in Egypt around what the company needs to discuss and decide, then add meetings, downtime and evening events. The example below helps distribute the workload and identify where the schedule needs a buffer."
+        },
+        {
+          "type": "heading",
+          "text": "The type of trip this example is designed for",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Consider a hypothetical corporate conference with three nights in one hotel. The main group arrives on day one and leaves in the second half of day four. The meeting room is in the hotel where delegates are staying. The programme needs to include a shared discussion of plans, work by business area and time for individual meetings. This is a model to adapt, rather than an account of a completed project."
+        },
+        {
+          "type": "paragraph",
+          "text": "The schedule below uses local time and does not replace the operational run of show. It can be used in Cairo or at a resort after checking flights, check-in arrangements and the venue's capabilities. If you first need to choose a city, start with our article 'Conference in Egypt: How to Choose the City, Venue and Dates'."
+        },
+        {
+          "type": "heading",
+          "text": "Define the outcome of the business programme first",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Write down what the meeting should produce: an agreed plan, product decisions, feedback from partners or agreements between departments. Each outcome needs an appropriate format. A presentation helps communicate information; a discussion or working session is needed when participants have to develop a solution."
+        },
+        {
+          "type": "paragraph",
+          "text": "Each session should have an owner, an expected outcome and a way to record it. Session length can then follow the work that needs to be done. An empty slot in the schedule is not, in itself, a reason to add another presentation."
+        },
+        {
+          "type": "heading",
+          "text": "Day one arrivals and introductions",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the first day for welcoming the group, checking in and settling into the trip. Some guests may already be relaxing at the hotel while others are still travelling. Repeat important announcements in writing so that arriving late does not mean missing information."
+        },
+        {
+          "type": "paragraph",
+          "text": "For the organising team, this day may include checking the venue, delegate registration and rehearsals with speakers. Agree access to the meeting room and set-up separately: the group's arrival does not mean the venue is already ready."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "During the day — arrivals, check-in and free time, allowing for when rooms are actually ready.",
+            "Approximately 18:00–19:00 — optional introductions and a short organisational briefing for guests who have arrived.",
+            "Approximately 19:00–21:00 — a welcome dinner without a mandatory business agenda; arrange meals for late arrivals in advance."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Day two the shared agenda and initial discussions",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Dedicate day two to topics the whole audience needs to hear. Leave time for questions after the leadership introduction and key presentations. If answers are repeatedly put off until later, delegates may go into breakout sessions with different understandings of the shared objectives."
+        },
+        {
+          "type": "paragraph",
+          "text": "After lunch, it helps to change the way people work: instead of continuing a long sequence of presentations, plan case discussions, questions for leadership or work in small groups. End the day by recording decisions and the questions to address the following morning."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "9:30–11:00 — opening and the first substantive session.",
+            "11:00–11:30 — a break; check its duration against delegate numbers and service arrangements.",
+            "11:30–13:00 — a second session with discussion and questions.",
+            "13:00–14:30 — lunch and time without mandatory meetings.",
+            "14:30–16:00 — working groups or discussion of practical tasks.",
+            "After 16:00 — a recap, scheduled individual meetings and free time. The evening programme starts after a separate break for rest."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Day three work by business area and shared conclusions",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Day three works well for breakout sessions and meetings that need preparation following the shared agenda. Commercial teams, product teams and partners can work separately if each group has its own task. A joint closing session is needed so that the results do not remain within individual rooms."
+        },
+        {
+          "type": "paragraph",
+          "text": "After the business sessions, you can add a group activity or free time. Choose an off-site programme after allowing for travel, assembly and the return journey. Look through the available formats in the group programmes section once you know how much time is actually left."
+        },
+        {
+          "type": "paragraph",
+          "text": "If an awards ceremony or gala dinner is planned for the evening, prepare a separate run of show. Rehearsals for the host and speakers should not take up delegates' only break between the sessions and the evening."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "9:30–11:00 — breakout sessions by business area or business meetings arranged in advance.",
+            "11:00–11:30 — a break and movement between rooms.",
+            "11:30–13:00 — presentation of group results and discussion of shared decisions.",
+            "13:00–14:30 — lunch.",
+            "After 14:30 — a group activity, individual meetings or downtime, according to the chosen plan.",
+            "In the evening — a closing dinner, allowing time for guests and the team to get ready."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Day four closing the trip and departures",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "In this model, the main work is complete by the evening of day three. Short meetings are possible on the morning of day four for those who can attend without jeopardising their departure. Do not leave essential decisions until some of the group have already checked out and left."
+        },
+        {
+          "type": "paragraph",
+          "text": "Agree check-out time, luggage storage, meals before departure and the order of vehicle departures in advance. Set the departure time according to the specific flight and route. A generic time slot from a ready-made programme is not suitable for this."
+        },
+        {
+          "type": "heading",
+          "text": "How to adapt the programme for late arrivals",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "If most delegates arrive overnight before day two, a morning plenary becomes a weak point in the model. Possible solutions include starting later, adding a night before the conference or reducing the number of mandatory sessions. The choice depends on the purpose of the trip and the group's circumstances."
+        },
+        {
+          "type": "paragraph",
+          "text": "With several waves of arrivals, schedule the shared session after the arrival of everyone needed to make decisions. Materials from introductory sessions can be shared separately. Trying to maintain a packed agenda for everyone without allowing for flights creates a programme that part of the audience will be physically unable to attend."
+        },
+        {
+          "type": "heading",
+          "text": "What changes with parallel breakout sessions",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Parallel work requires a check of who is attending: one person cannot be in two rooms at once. If several groups need the same leader, schedule their discussions at different times or arrange a separate opportunity to obtain that leader's approval."
+        },
+        {
+          "type": "paragraph",
+          "text": "Agree session end times, breaks and the format for reporting back to the whole group in advance. Also check the availability of moderators, equipment and interpretation in every space being used. The scope of work is calculated for the specific schedule; equipment in the plenary room cannot automatically be treated as available to all breakout sessions."
+        },
+        {
+          "type": "heading",
+          "text": "What to check before approval",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The delegate programme tells participants where to be and when. The team's operational run of show also covers set-up, rehearsals, catering readiness, presentation handover and the people responsible for each transition. These documents must be consistent with each other."
+        },
+        {
+          "type": "paragraph",
+          "text": "Before sending the programme to delegates, follow the schedule from one guest's perspective: from breakfast to the meeting room, then to lunch and the evening venue. Review it separately from the perspective of a speaker and the technical director. This makes it easier to spot clashes and tasks for which no time has yet been allocated."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Flights and arrival times allow delegates to attend mandatory sessions.",
+            "Separate time slots are provided for travel, meals and rest.",
+            "Speakers, moderators and interpreters have agreed their sessions.",
+            "Every discussion has an outcome and someone responsible for the next steps.",
+            "Changes are communicated to guests and the team through an agreed channel."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "To prepare a conference programme in Egypt, send La Royal Event your dates, departure cities, delegate numbers and the objectives of the business sessions. Include mandatory sessions, languages and your preferred evening formats — this information will help align the schedule with the venue, logistics and scope of work."
+        }
+      ]
+    }
+  },
+  {
+    "id": "konferenciya-v-kaire",
+    "datePublished": "2026-11-15",
+    "image": "/blog/conference-cairo.svg",
+    "ru": {
+      "title": "Подготовка конференции в Каире",
+      "seoTitle": "Конференция в Каире: площадка, программа и логистика",
+      "category": "Деловые мероприятия",
+      "date": "15 ноября 2026",
+      "excerpt": "Как подготовить конференцию в Каире: выбрать площадку, связать проживание и трансферы, организовать регистрацию, перевод и деловые встречи.",
+      "links": [
+        {
+          "path": "/blog/konferenciya-v-egipte",
+          "label": "Как выбрать город и площадку для конференции в Египте"
+        },
+        {
+          "path": "/dmc",
+          "label": "DMC в Египте и команда на месте"
+        },
+        {
+          "path": "/services",
+          "label": "Организация корпоративных конференций"
+        },
+        {
+          "path": "/contact",
+          "label": "Обсудить конференцию в Каире"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "При подготовке конференции в Каире отель, деловая площадка и маршруты участников должны работать как одна программа. Даже подходящий зал не решит задачу, если гости не успевают на сессии, переговоры пересекаются, а время сборов выпадает из расписания. Начните с состава аудитории и обязательных встреч, затем проверяйте площадки и перемещения под эту задачу."
+        },
+        {
+          "type": "heading",
+          "text": "Реальный пример конференции в Каире",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Наша команда организовала конференцию на 500 участников в отеле Kempinski в Каире. Название компании заказчика сохраняем конфиденциальным."
+        },
+        {
+          "type": "paragraph",
+          "text": "Для новой конференции похожего масштаба потребуется отдельная проверка залов, размещения и программы: число участников само по себе не определяет подходящую конфигурацию. Ниже — рекомендации по подготовке такого мероприятия. Они не описывают подробный ход упомянутого проекта."
+        },
+        {
+          "type": "heading",
+          "text": "Когда выбирать Каир для конференции",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Каир стоит рассматривать, когда важная часть поездки связана с местными партнёрами, деловыми встречами и городской программой. Сначала перечислите обязательные точки: где должны быть участники, с кем им нужно встретиться и кто присутствует только на отдельных блоках. Это поможет определить район поиска отеля и площадки."
+        },
+        {
+          "type": "paragraph",
+          "text": "Если выбор между Каиром и курортом ещё открыт, сравнивайте конкретные сценарии. Для выезда команды с отдыхом у моря и для конференции с деловыми встречами в городе могут потребоваться разные условия. В основном гиде о конференциях в Египте разобраны задачи, под которые подходят Каир, Красное море и Нил."
+        },
+        {
+          "type": "heading",
+          "text": "Проверьте проживание вместе с деловой площадкой",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Проведение сессий в отеле проживания сокращает число обязательных поездок, но и внутри одного объекта нужно пройти путь гостя. Где находится номерной корпус, как попасть в зал, куда идти на кофе-брейк и есть ли понятная навигация? Проверяйте эти вопросы на плане и во время инспекции."
+        },
+        {
+          "type": "paragraph",
+          "text": "При размещении в нескольких отелях составьте отдельную схему прибытия на конференцию. Уточните место посадки в автобусы, порядок сбора, высадки и возвращения. Для спикеров и гостей, приезжающих только на деловую часть, понадобится свой порядок встречи."
+        },
+        {
+          "type": "paragraph",
+          "text": "Зал оценивают в конфигурации конкретного мероприятия. Вместимость с театральной рассадкой не отвечает на вопрос, сколько участников разместится после установки сцены, экранов, технического пульта и проходов. До подтверждения площадки нужен план с выбранной рассадкой."
+        },
+        {
+          "type": "heading",
+          "text": "Стройте трансферы по фактическим маршрутам",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Для расчёта перемещений нужны адреса, даты и часы поездок, предполагаемые рейсы и состав каждой группы. Продолжительность маршрута проверяют для конкретного времени и добавляют согласованный запас. Одно обещание «всё рядом» не заменяет этой работы."
+        },
+        {
+          "type": "paragraph",
+          "text": "Список рейсов полезно разделить на потоки прибытия. Назначьте место встречи, контакт координатора и порядок действий при задержке. Отдельно продумайте ситуацию, когда часть группы уже готова ехать, а несколько гостей ещё проходят аэропортовые формальности."
+        },
+        {
+          "type": "paragraph",
+          "text": "В гостевой программе укажите время сбора и точку отправления. В рабочем документе команды дополнительно должны быть сведения о машинах, водителях, координаторах и порядке обновления списков. При изменении рейса информация должна дойти до всех, кто отвечает за встречу."
+        },
+        {
+          "type": "heading",
+          "text": "Разведите общую сессию и отдельные встречи",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "На конференцию могут приезжать несколько аудиторий: сотрудники компании, партнёры, приглашённые спикеры и гости отдельных встреч. Составьте матрицу участия, чтобы видеть, кому нужен каждый блок. Это особенно важно, если руководитель или переводчик задействован сразу в нескольких форматах."
+        },
+        {
+          "type": "paragraph",
+          "text": "Пленарную сессию, переговоры и секции распределяют с учётом переходов между помещениями. Для встреч с внешними гостями заранее согласуйте продолжительность, состав, языки и ответственного за встречу. Представитель заказчика должен подтвердить имена, должности и порядок выступлений."
+        },
+        {
+          "type": "paragraph",
+          "text": "Внутри делового дня оставьте время на фиксацию договорённостей. Если цель поездки — согласовать дальнейшие действия с партнёрами, у каждой встречи должен быть человек, который запишет решения и передаст их ответственным. Простое количество проведённых сессий не показывает результат конференции."
+        },
+        {
+          "type": "heading",
+          "text": "Подготовьте регистрацию к разным потокам гостей",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Участники, проживающие в отеле, приглашённые гости и спикеры могут приходить разными путями. Опишите для каждого потока, где начинается регистрация, какие материалы выдаются и кто помогает при вопросах. Проверьте, чтобы ожидание не перекрывало вход в зал и проход к другим зонам."
+        },
+        {
+          "type": "paragraph",
+          "text": "Если используются разные категории бейджей, их смысл должен быть понятен команде. Для исправления имени или уточнения регистрации лучше предусмотреть отдельного сотрудника, чтобы один сложный вопрос не останавливал весь поток."
+        },
+        {
+          "type": "paragraph",
+          "text": "Списки участников, расселение и деловые встречи ведите в согласованных версиях. Устаревший список у одного координатора создаёт ошибки даже при правильно подготовленной программе. Назначьте человека, который подтверждает изменения и сообщает их нужным службам."
+        },
+        {
+          "type": "heading",
+          "text": "Свяжите перевод с технической подготовкой",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Для международной аудитории укажите языки выступлений, обсуждений и переговоров. Одного общего пункта «перевод на конференции» недостаточно, если в соседних комнатах одновременно проходят разные встречи. Языковую схему проверяют по залам и времени."
+        },
+        {
+          "type": "paragraph",
+          "text": "На технической репетиции пройдите все запланированные форматы: выступление, панельную дискуссию, вопрос из зала, видеоролик и удалённое подключение, если оно предусмотрено. Переводчики должны получать нужный звук, а слушатели — понимать, как выбрать язык и куда обратиться за помощью."
+        },
+        {
+          "type": "paragraph",
+          "text": "Координатор со стороны заказчика подтверждает актуальные презентации и терминологию. Технический руководитель согласует порядок переключений. Руководитель проекта собирает подтверждения и проверяет, что последняя версия программы дошла до всех исполнителей."
+        },
+        {
+          "type": "heading",
+          "text": "Добавляйте городскую программу после расчёта времени",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Пирамиды Гизы и Большой Египетский музей можно рассматривать для культурной части поездки. Для каждой выбранной программы заранее проверяют условия посещения, доступность на нужную дату, транспорт и время всей поездки. В расписании учитывают также сборы и возвращение, а не только пребывание на объекте."
+        },
+        {
+          "type": "paragraph",
+          "text": "После насыщенного делового дня группе может подойти ужин рядом с отелем или свободное время. Если выездная программа обязательна, согласуйте её место в расписании до утверждения длительности сессий. Выбор активности должен учитывать интересы участников и их готовность к дополнительной нагрузке."
+        },
+        {
+          "type": "paragraph",
+          "text": "Вариант на случай изменения программы продумывают заранее. Важно понимать, кто принимает решение о замене, как оно влияет на питание и транспорт и кто сообщает гостям новый порядок действий."
+        },
+        {
+          "type": "heading",
+          "text": "Что подготовить для запроса конференции в Каире",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Первый запрос может быть коротким. Важнее обозначить обязательные условия и вопросы, по которым вы ждёте предложения. Тогда подбор площадок будет связан с задачей поездки, а варианты можно будет сравнить по одному набору требований."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Цель конференции и ожидаемый результат деловой части.",
+            "Число участников, отдельные категории гостей и возможные изменения состава.",
+            "Даты, продолжительность поездки и предварительные города вылета.",
+            "Обязательные встречи и адреса, если они уже известны.",
+            "Общая сессия, переговоры, параллельные залы и рабочие языки.",
+            "Требования к проживанию, питанию и перемещениям.",
+            "Бюджетные рамки и перечень расходов, которые должны войти в расчёт.",
+            "Зона ответственности заказчика и срок получения предложения."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Планируете конференцию в Каире? Пришлите La Royal Event даты, состав группы, задачи деловой части и список обязательных встреч. Эти данные помогут подобрать площадку и связать программу с проживанием, переводом и логистикой."
+        }
+      ]
+    },
+    "en": {
+      "slug": "conference-in-cairo",
+      "title": "Preparing a Conference in Cairo",
+      "seoTitle": "Conference in Cairo: Venue, Programme and Logistics",
+      "category": "Business Events",
+      "date": "15 November 2026",
+      "excerpt": "How to prepare a conference in Cairo: choose a venue, coordinate accommodation and transfers, and organise registration, interpretation and business meetings.",
+      "links": [
+        {
+          "path": "/blog/conference-in-egypt",
+          "label": "How to choose the city and venue for a conference in Egypt"
+        },
+        {
+          "path": "/dmc",
+          "label": "DMC in Egypt and the team on the ground"
+        },
+        {
+          "path": "/services",
+          "label": "Corporate conference organisation"
+        },
+        {
+          "path": "/contact",
+          "label": "Discuss a conference in Cairo"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "When preparing a conference in Cairo, the hotel, business venue and delegate routes need to work as one programme. Even a suitable meeting room will not solve the problem if guests cannot reach sessions on time, meetings overlap and assembly time is missing from the schedule. Start with the audience and mandatory meetings, then assess venues and travel arrangements against those requirements."
+        },
+        {
+          "type": "heading",
+          "text": "A real example of a conference in Cairo",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Our team organised a conference for 500 delegates at a Kempinski hotel in Cairo. We are keeping the client company's name confidential."
+        },
+        {
+          "type": "paragraph",
+          "text": "A new conference of a similar size will need its own assessment of meeting rooms, accommodation and programme: delegate numbers alone do not determine the right configuration. The following recommendations explain how to prepare such an event. They do not describe the detailed delivery of the project mentioned above."
+        },
+        {
+          "type": "heading",
+          "text": "When to choose Cairo for a conference",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Consider Cairo when an important part of the trip involves local partners, business meetings and activities in the city. Start by listing the essential stops: where delegates need to be, whom they need to meet and who will attend only specific sessions. This helps define the area in which to look for a hotel and venue."
+        },
+        {
+          "type": "paragraph",
+          "text": "If the choice between Cairo and a resort is still open, compare specific scenarios. A team trip with time by the sea and a conference with business meetings in the city may need different arrangements. Our main guide to conferences in Egypt covers the objectives suited to Cairo, the Red Sea and the Nile."
+        },
+        {
+          "type": "heading",
+          "text": "Assess accommodation together with the business venue",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Holding sessions in the hotel where delegates are staying reduces the number of essential journeys, but you still need to walk through the guest's route within the property. Where is the accommodation block, how do guests reach the meeting room, where do they go for a coffee break, and is the signage clear? Check these points on the plan and during the site inspection."
+        },
+        {
+          "type": "paragraph",
+          "text": "If delegates are staying in several hotels, prepare a separate arrival plan for the conference. Confirm coach boarding points, the assembly process, drop-off and the return journey. Speakers and guests attending only the business sessions will need their own reception arrangements."
+        },
+        {
+          "type": "paragraph",
+          "text": "Assess the meeting room in the configuration required for the specific event. Theatre-style capacity does not tell you how many delegates will fit once the stage, screens, technical control desk and aisles are in place. Before confirming the venue, you need a floor plan with the chosen seating layout."
+        },
+        {
+          "type": "heading",
+          "text": "Plan transfers around the actual routes",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "To calculate travel arrangements, you need addresses, journey dates and times, expected flights and the composition of each group. Check journey duration for the particular time of travel and add an agreed buffer. A promise that 'everything is nearby' is no substitute for this work."
+        },
+        {
+          "type": "paragraph",
+          "text": "It helps to divide the flight list into arrival groups. Specify a meeting point, the coordinator's contact details and what to do in the event of a delay. Separately consider what happens when part of the group is ready to leave while a few guests are still completing airport formalities."
+        },
+        {
+          "type": "paragraph",
+          "text": "Include the assembly time and departure point in the delegate programme. The team's working document should also contain vehicle, driver and coordinator details, along with the process for updating lists. If a flight changes, the information needs to reach everyone responsible for meeting the guests."
+        },
+        {
+          "type": "heading",
+          "text": "Schedule the plenary and individual meetings separately",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Several groups may attend the conference: company employees, partners, invited speakers and guests at individual meetings. Create an attendance matrix showing who needs each session. This is particularly important when a leader or interpreter is involved in several formats."
+        },
+        {
+          "type": "paragraph",
+          "text": "Schedule the plenary, business meetings and breakout sessions with movement between rooms in mind. For meetings with external guests, agree the duration, attendees, languages and the person responsible for welcoming them in advance. The client's representative should confirm names, job titles and the speaking order."
+        },
+        {
+          "type": "paragraph",
+          "text": "Leave time during the business day to record agreements. If the purpose of the trip is to agree next steps with partners, each meeting needs someone to record decisions and pass them to the people responsible. The number of sessions held does not, on its own, show the outcome of the conference."
+        },
+        {
+          "type": "heading",
+          "text": "Prepare registration for different arrival flows",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Delegates staying at the hotel, invited guests and speakers may arrive by different routes. Define where registration starts for each flow, which materials are handed out and who helps with questions. Make sure that people waiting do not block the entrance to the meeting room or access to other areas."
+        },
+        {
+          "type": "paragraph",
+          "text": "If different badge categories are used, the team needs to understand what they mean. Consider assigning a separate member of staff to name corrections and registration queries, so that one complicated question does not stop the whole flow."
+        },
+        {
+          "type": "paragraph",
+          "text": "Maintain agreed versions of delegate lists, room allocations and business meetings. An outdated list held by one coordinator can cause errors even when the programme has been prepared correctly. Appoint someone to confirm changes and inform the relevant teams."
+        },
+        {
+          "type": "heading",
+          "text": "Coordinate interpretation with technical preparation",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "For an international audience, specify the languages of presentations, discussions and business meetings. A single general line stating 'conference interpretation' is not enough if different meetings are taking place in neighbouring rooms at the same time. Check the language plan by room and time."
+        },
+        {
+          "type": "paragraph",
+          "text": "During the technical rehearsal, run through every planned format: a presentation, panel discussion, audience question, video and remote connection, if included. Interpreters need the correct audio feed, and listeners need to understand how to select a language and where to get help."
+        },
+        {
+          "type": "paragraph",
+          "text": "The client's coordinator confirms the current presentations and terminology. The technical director agrees how cues and transitions will work. The project manager gathers confirmations and checks that the latest programme has reached everyone delivering it."
+        },
+        {
+          "type": "heading",
+          "text": "Add city activities after calculating the time required",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The Giza pyramids and the Grand Egyptian Museum can be considered for the cultural part of the trip. For each selected programme, check visiting conditions, availability on the required date, transport and the duration of the whole outing in advance. The schedule needs to allow for assembly and the return journey, as well as time at the site."
+        },
+        {
+          "type": "paragraph",
+          "text": "After a busy business day, dinner near the hotel or free time may suit the group. If an off-site programme is mandatory, agree where it fits in the schedule before approving session lengths. The choice of activity should take delegates' interests and willingness to take on additional activity into account."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prepare an alternative in case the programme changes. Establish who decides on the replacement, how it affects catering and transport, and who informs guests of the new arrangements."
+        },
+        {
+          "type": "heading",
+          "text": "What to prepare for a Cairo conference enquiry",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "The first enquiry can be brief. It is more important to identify the essential requirements and the questions on which you would like a proposal. Venue selection will then be tied to the purpose of the trip, and options can be compared against the same set of requirements."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "The purpose of the conference and the expected outcome of the business sessions.",
+            "Delegate numbers, separate guest categories and possible changes to the group.",
+            "Dates, trip duration and provisional departure cities.",
+            "Mandatory meetings and addresses, if already known.",
+            "The plenary, business meetings, parallel rooms and working languages.",
+            "Accommodation, catering and travel requirements.",
+            "Budget parameters and the costs that need to be included in the calculation.",
+            "The client's responsibilities and the deadline for receiving a proposal."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Planning a conference in Cairo? Send La Royal Event your dates, group details, the objectives of the business programme and a list of mandatory meetings. This information will help select a venue and coordinate the programme with accommodation, interpretation and logistics."
+        }
+      ]
+    }
+  },
   // ───────────────────────────────────────────────────────────────────────
   {
     "id": "konferenciya-v-egipte",
@@ -89,6 +1572,22 @@ export const blogArticles = [
         {
           "path": "/contact",
           "label": "Запросить предложение"
+        },
+        {
+          "path": "/blog/brif-na-konferenciyu-v-egipte",
+          "label": "Бриф на конференцию в Египте"
+        },
+        {
+          "path": "/blog/sinhronnyj-perevod-na-konferencii-v-egipte",
+          "label": "Синхронный перевод на конференции в Египте"
+        },
+        {
+          "path": "/blog/programma-konferencii-v-egipte-na-4-dnya",
+          "label": "Программа корпоративной конференции в Египте на четыре дня"
+        },
+        {
+          "path": "/blog/konferenciya-v-kaire",
+          "label": "Подготовка конференции в Каире"
         }
       ],
       "content": [
@@ -333,6 +1832,22 @@ export const blogArticles = [
         {
           "path": "/contact",
           "label": "Request a proposal"
+        },
+        {
+          "path": "/blog/conference-brief-egypt",
+          "label": "A Brief for Your Conference in Egypt"
+        },
+        {
+          "path": "/blog/simultaneous-interpreting-conference-egypt",
+          "label": "Simultaneous Interpreting at a Conference in Egypt"
+        },
+        {
+          "path": "/blog/four-day-conference-programme-egypt",
+          "label": "A Four-Day Programme for a Corporate Conference in Egypt"
+        },
+        {
+          "path": "/blog/conference-in-cairo",
+          "label": "Preparing a Conference in Cairo"
         }
       ],
       "content": [
