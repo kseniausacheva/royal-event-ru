@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build:com",
+  "buildCommand": "npm run lint && npm test && npm run build && npm run build:com",
   "outputDirectory": "dist",
   "framework": "vite",
   "trailingSlash": true,
@@ -168,5 +168,6 @@
         }
       ]
     }
-  ]
+  ],
+  "installCommand": "PUPPETEER_SKIP_DOWNLOAD=true npm ci"
 }
