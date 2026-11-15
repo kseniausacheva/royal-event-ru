@@ -57,6 +57,318 @@
 /** @type {BlogArticle[]} */
 export const blogArticles = [
   {
+    "id": "mice-connection-2026-la-royal-event",
+    "datePublished": "2026-11-15",
+    "image": "/blog/mice-connection-2026/negotiations.jpg",
+    "ru": {
+      "title": "La Royal Event на воркшопе «Лица Российской MICE индустрии 2026»",
+      "seoTitle": "«Лица Российской MICE индустрии 2026»: участие в воркшопе",
+      "category": "Новости компании",
+      "date": "15 ноября 2026",
+      "excerpt": "Команда La Royal Event на B2B-воркшопе MICE-Connection: зачем мы встречаемся с агентствами и заказчиками и как это помогает готовить мероприятия в Египте.",
+      "links": [
+        {
+          "path": "/dmc",
+          "label": "Принимающая команда La Royal Event в Египте"
+        },
+        {
+          "path": "/services",
+          "label": "Организация конференций и корпоративных мероприятий"
+        },
+        {
+          "path": "/contact",
+          "label": "Обсудить проект"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "5 ноября 2026 года команда La Royal Event приняла участие в B2B-воркшопе проекта «Лица Российской MICE индустрии 2026» от MICE-Connection. Встречи проходили в гостинице Radisson Collection Москва. Для нас участие — возможность познакомиться с агентствами и корпоративными заказчиками, представить свою команду в Египте и обсудить будущие проекты."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event представили руководители компании Ксения Усачева и Екатерина Гайдук. Ксения — основатель La Royal Event, Екатерина — совладелец компании."
+        },
+        {
+          "type": "heading",
+          "text": "Профессиональные встречи в рамках MICE-Connection",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "По данным организатора, деловая часть проекта объединила 70 компаний-байеров и 50 компаний-экспонентов. В воркшопе участвовали 230 человек, а общее число встреч превысило 750."
+        },
+        {
+          "type": "paragraph",
+          "text": "Для нас ценность такого формата — в возможности поговорить с профессиональной аудиторией напрямую. Партнёр может познакомиться с принимающей командой и обсудить подход к работе ещё до появления конкретного запроса на мероприятие."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/workshop-hall.jpg",
+          "alt": "Зал B2B-воркшопа с переговорными столами и участниками",
+          "caption": "B2B-встречи в рамках проекта «Лица Российской MICE индустрии 2026»."
+        },
+        {
+          "type": "heading",
+          "text": "Познакомиться до первого проекта",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Когда компания планирует мероприятие за границей, ей важно понимать, кому она доверяет организацию на месте. За предложением должны стоять люди, которые смогут проверить площадку, подготовить программу и встретить группу. Личный разговор помогает познакомиться с этой командой ещё до появления подробного брифа."
+        },
+        {
+          "type": "paragraph",
+          "text": "На воркшоп мы приходим, чтобы партнёр мог задать вопросы напрямую. Как устроено взаимодействие с принимающей стороной? Какие данные нужны для подбора площадки? Кто будет координировать работу в Египте? Обсуждая такие вещи, проще понять ожидания друг друга и определить, подходит ли нам совместный формат."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/team.jpg",
+          "alt": "Екатерина Гайдук в белом жакете и Ксения Усачева в сером во время мероприятия",
+          "caption": "Екатерина Гайдук и Ксения Усачева — руководители La Royal Event."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/ksenia-usacheva.jpg",
+          "alt": "Ксения Усачева с бейджем участника MICE-Connection",
+          "caption": "Ксения Усачева, основатель La Royal Event."
+        },
+        {
+          "type": "heading",
+          "text": "Слышать задачи тех, кто организует мероприятия",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Для нас важно быть в профессиональном диалоге с людьми, которые выбирают направления, защищают проекты внутри компании и отвечают за результат перед своей аудиторией. Их задачи помогают смотреть на программу глазами организатора."
+        },
+        {
+          "type": "paragraph",
+          "text": "Один заказчик собирает партнёров для деловой конференции, другой готовит мотивационную поездку для сотрудников. Даже при одинаковом числе гостей требования к этим проектам будут различаться. В первом случае решающими могут стать пространство для переговоров и работа с языками, во втором — общая программа и возможности для общения команды."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ценность B2B-встреч для нас именно в возможности обсуждать контекст: что должна решить поездка, какие условия обязательны и где организатору нужна помощь местной команды. Такой разговор помогает перейти к предложению, которое можно оценить по конкретным требованиям."
+        },
+        {
+          "type": "heading",
+          "text": "Показать, как работает принимающая команда в Египте",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event работает с собственной командой в Каире и Шарм-эль-Шейхе. Мы занимаемся организацией корпоративных мероприятий, конференций и инсентив-программ, а также техническим продакшном. Для партнёра важно понимать, как эти направления соединяются в одном проекте."
+        },
+        {
+          "type": "paragraph",
+          "text": "Например, идея провести конференцию в Египте сразу ставит несколько практических вопросов. Подходит ли зал для выбранной рассадки? Можно ли разместить группу рядом с деловой площадкой? Когда проводить репетицию? Как встроить вечернюю программу, оставив гостям время на отдых?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Личная встреча позволяет обсудить подход к таким задачам и объяснить, какую часть подготовки берёт на себя DMC — принимающая компания. Это полезно и агентству, которое ищет партнёра на направлении, и корпоративной команде, которая впервые рассматривает Египет для своего мероприятия."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/badges.jpg",
+          "alt": "Бейджи MICE-Connection с обозначениями Exhibitor и Buyer",
+          "caption": "Формат воркшопа объединяет поставщиков услуг, агентства и корпоративных заказчиков."
+        },
+        {
+          "type": "heading",
+          "text": "Согласовать понятный порядок сотрудничества",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "У агентства и принимающей стороны могут быть разные зоны ответственности. Заказчик или агентство готовит концепцию и деловую повестку, местная команда подбирает площадки и собирает наземную программу. В другом проекте распределение будет иным. Его важно обсуждать в начале работы."
+        },
+        {
+          "type": "paragraph",
+          "text": "Поэтому профессиональное знакомство для нас включает разговор об организации самого процесса: как передаётся бриф, кто собирает уточнения, как согласуют изменения и какие решения нужно принять до подтверждения программы. Чем понятнее этот порядок обеим сторонам, тем легче вести конкретный проект."
+        },
+        {
+          "type": "paragraph",
+          "text": "Для будущего клиента польза такого общения проявляется в подготовке. Организатор уже знает, к кому обратиться за проверкой идеи, какие параметры передать для расчёта и как включить принимающую команду в обсуждение."
+        },
+        {
+          "type": "heading",
+          "text": "Продолжить знакомство после воркшопа",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "Короткая B2B-встреча даёт возможность познакомиться и наметить темы для продолжения. Следующий содержательный шаг — обсудить конкретную задачу: состав группы, предполагаемые даты, формат деловой части и требования к поездке."
+        },
+        {
+          "type": "paragraph",
+          "text": "Мы участвуем в отраслевых событиях, чтобы La Royal Event знали как команду, с которой можно обсуждать мероприятия в Египте предметно. Нам важно поддерживать профессиональные связи и быть доступными для диалога на этапе, когда проект ещё только формируется."
+        },
+        {
+          "type": "paragraph",
+          "text": "Спасибо организаторам MICE-Connection и коллегам за возможность встретиться лично. Будем рады продолжить знакомство и обсудить ваши планы."
+        },
+        {
+          "type": "paragraph",
+          "text": "Если мы познакомились на воркшопе или вы рассматриваете Египет для корпоративного мероприятия, напишите La Royal Event. Расскажите о цели поездки, датах и составе группы — с этого можно начать обсуждение программы и работы на месте."
+        }
+      ]
+    },
+    "en": {
+      "slug": "mice-connection-2026-la-royal-event",
+      "title": "La Royal Event at the Faces of the Russian MICE Industry 2026 Workshop",
+      "seoTitle": "Faces of the Russian MICE Industry 2026: Our Participation",
+      "category": "Company News",
+      "date": "November 15, 2026",
+      "excerpt": "La Royal Event at the MICE-Connection B2B workshop: why we meet agencies and corporate clients, and how these conversations support event planning in Egypt.",
+      "links": [
+        {
+          "path": "/dmc",
+          "label": "La Royal Event's destination team in Egypt"
+        },
+        {
+          "path": "/services",
+          "label": "Conference and corporate event organization"
+        },
+        {
+          "path": "/contact",
+          "label": "Discuss your project"
+        }
+      ],
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "On November 5, 2026, the La Royal Event team took part in the B2B workshop for MICE-Connection's 'Faces of the Russian MICE Industry 2026' project. The meetings took place at the Radisson Collection Moscow hotel. For us, participating is an opportunity to meet agencies and corporate clients, introduce our team in Egypt and discuss future projects."
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event was represented by company leaders Ksenia Usacheva and Ekaterina Gaiduk. Ksenia is the founder of La Royal Event, and Ekaterina is a co-owner of the company."
+        },
+        {
+          "type": "heading",
+          "text": "Professional meetings at MICE-Connection",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "According to the organizer, the project's business program brought together 70 buyer companies and 50 exhibiting companies. The workshop had 230 participants, and the total number of meetings exceeded 750."
+        },
+        {
+          "type": "paragraph",
+          "text": "For us, the value of this format lies in the opportunity to speak directly with a professional audience. A potential partner can meet the destination team and discuss its approach before there is a specific event brief."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/workshop-hall.jpg",
+          "alt": "The B2B workshop room with meeting tables and participants",
+          "caption": "B2B meetings as part of the Faces of the Russian MICE Industry 2026 project."
+        },
+        {
+          "type": "heading",
+          "text": "Getting to know each other before the first project",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "When a company plans an event abroad, it needs to understand whom it is trusting with delivery on the ground. Behind a proposal, there must be people who can inspect the venue, prepare the program and welcome the group. A conversation in person is a chance to meet that team before a detailed brief takes shape."
+        },
+        {
+          "type": "paragraph",
+          "text": "We attend workshops so that potential partners can ask us questions directly. How does collaboration with a destination partner work? What information is needed to select a venue? Who will coordinate the work in Egypt? Discussing these points makes it easier to understand each other's expectations and decide whether our ways of working are a good fit."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/team.jpg",
+          "alt": "Ekaterina Gaiduk in a white jacket and Ksenia Usacheva in gray during the event",
+          "caption": "Ekaterina Gaiduk and Ksenia Usacheva, leaders of La Royal Event."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/ksenia-usacheva.jpg",
+          "alt": "Ksenia Usacheva wearing a MICE-Connection participant badge",
+          "caption": "Ksenia Usacheva, founder of La Royal Event."
+        },
+        {
+          "type": "heading",
+          "text": "Listening to the people who organize events",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "It matters to us to stay in professional dialogue with the people who choose destinations, secure internal approval for projects and are accountable to their audiences for the outcome. Their objectives help us look at a program through the organizer's eyes."
+        },
+        {
+          "type": "paragraph",
+          "text": "One client may be bringing partners together for a business conference, while another is planning an incentive trip for employees. Even with the same number of guests, the requirements will differ. For the first, meeting space and language arrangements may be decisive; for the second, the shared program and opportunities for the team to connect may matter most."
+        },
+        {
+          "type": "paragraph",
+          "text": "For us, the value of B2B meetings is precisely this opportunity to discuss the context: what the trip needs to achieve, which conditions are essential and where the organizer needs help from a local team. That conversation helps turn the initial discussion into a proposal that can be assessed against specific requirements."
+        },
+        {
+          "type": "heading",
+          "text": "Showing how the destination team works in Egypt",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "La Royal Event has its own team in Cairo and Sharm El Sheikh. We organize corporate events, conferences and incentive programs, and provide technical production. A partner needs to understand how these services come together within one project."
+        },
+        {
+          "type": "paragraph",
+          "text": "For example, the idea of holding a conference in Egypt immediately raises several practical questions. Does the meeting room work with the chosen seating layout? Can the group stay close to the business venue? When should rehearsals take place? How can the evening program fit into the schedule while leaving guests time to rest?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Meeting in person allows us to discuss our approach to these tasks and explain which parts of the preparation a DMC — a destination management company — takes on. This is useful both for an agency looking for a partner in the destination and for a corporate team considering Egypt for an event for the first time."
+        },
+        {
+          "type": "image",
+          "url": "/blog/mice-connection-2026/badges.jpg",
+          "alt": "MICE-Connection badges marked Exhibitor and Buyer",
+          "caption": "The workshop format brings together service providers, agencies and corporate clients."
+        },
+        {
+          "type": "heading",
+          "text": "Agreeing on a clear way of working together",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "An agency and a destination partner may have different responsibilities. The client or agency may develop the concept and business agenda, while the local team selects venues and puts together the ground arrangements. Another project may divide the work differently. It is important to discuss this at the start."
+        },
+        {
+          "type": "paragraph",
+          "text": "For us, getting to know a professional partner therefore includes talking about the process itself: how the brief is shared, who gathers clarifications, how changes are approved and which decisions are needed before the program can be confirmed. The clearer this process is to both sides, the easier it is to manage a specific project."
+        },
+        {
+          "type": "paragraph",
+          "text": "For a future client, the benefit of these conversations becomes apparent during preparation. The organizer already knows whom to approach to check an idea, which details to provide for a cost estimate and how to bring the destination team into the discussion."
+        },
+        {
+          "type": "heading",
+          "text": "Continuing the conversation after the workshop",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "text": "A short B2B meeting is an opportunity to get acquainted and identify topics to explore further. The next substantive step is to discuss a specific brief: the group, provisional dates, the format of the business sessions and the requirements for the trip."
+        },
+        {
+          "type": "paragraph",
+          "text": "We take part in industry events so that people know La Royal Event as a team with whom they can discuss events in Egypt in practical terms. We value maintaining professional relationships and being available for a conversation while a project is still taking shape."
+        },
+        {
+          "type": "paragraph",
+          "text": "Thank you to the MICE-Connection organizers and our industry colleagues for the opportunity to meet in person. We look forward to continuing the conversation and discussing your plans."
+        },
+        {
+          "type": "paragraph",
+          "text": "If we met at the workshop, or if you are considering Egypt for a corporate event, get in touch with La Royal Event. Tell us the purpose of the trip, your dates and who will be attending — that is a starting point for discussing the program and arrangements on the ground."
+        }
+      ]
+    }
+  },
+  {
     "id": "brif-na-konferenciyu-v-egipte",
     "datePublished": "2026-11-15",
     "image": "/blog/conference-brief.svg",
