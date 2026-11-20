@@ -11,6 +11,14 @@ Vite + React 19 + Tailwind 4, SSG-пререндер (`scripts/prerender.mjs`). 
 живут в `src/site-config.ts`, `.env` / `.env.com`, `scripts/*.mjs --target`, `vercel.json`.
 Формы: на .ru — `public/contact.php`, `public/subscribe.php`; на .com — `api/contact.ts`, `api/subscribe.ts`.
 
+Анкета партнёров: `https://www.royaleventandmice.com/partners/questionnaire/`.
+Статические страницы и фирменные ресурсы находятся в `partner-portal/`; только
+`build:com` копирует их в `dist/partners/` после пререндера основного сайта.
+Локальные ссылки имеют префикс `/partners/`. Профили отправляются напрямую
+в существующий API собственной CRM; доступ к реестру требует авторизации.
+Версия privacy notice и текст явного согласия проверяются перед отправкой.
+Анкета не включает подписку на рассылку или принятие черновика соглашения.
+
 ## Локально
 
 ```bash

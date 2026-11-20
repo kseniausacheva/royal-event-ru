@@ -6,7 +6,7 @@
   "trailingSlash": true,
   "rewrites": [
     {
-      "source": "/((?!api/).*)",
+      "source": "/((?!api/|partners/).*)",
       "destination": "/index.html"
     }
   ],
